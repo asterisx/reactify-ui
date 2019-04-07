@@ -1,15 +1,14 @@
 {
-  "name": "docs",
+  "name": "reactify-docs",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "install": "^0.12.2",
     "node-sass": "^4.11.0",
-    "npm": "^6.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "reactify": "file:../reactify"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,0 +1,18 @@
+{
+    "extends": [
+        "react-app",
+        "airbnb",
+        "plugin:jsx-a11y/recommended"
+    ],
+    "plugins": [
+        "jsx-a11y"
+    ],
+    "rules": {
+        "react/jsx-filename-extension": "off",
+        "import/prefer-default-export": "off",
+        "react/prop-types": "off",
+        "jsx-a11y/label-has-for": "off",
+        "react/destructuring-assignment": "off",
+        "jsx-a11y/label-has-associated-control": "off"
+    }
+}

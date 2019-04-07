@@ -1,0 +1,65 @@
+{
+  "name": "reactify",
+  "version": "0.1.0",
+  "description": "A feature-rich React UI componennts library",
+  "main": "out/index.js",
+  "directories": {
+    "out": "out"
+  },
+  "dependencies": {
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-icons": "^3.5.0",
+    "react-scripts": "2.1.8"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "eslint": "5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-react-app": "^3.0.8",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-config-standard-react": "^6.0.0",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^3.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "postinstall": "babel lib --out-dir out"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asterisx/reactify.git"
+  },
+  "keywords": [
+    "React",
+    "Component",
+    "UI"
+  ],
+  "author": "Ashwin Singh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asterisx/reactify/issues"
+  },
+  "homepage": "https://github.com/asterisx/reactify#readme"
+}
