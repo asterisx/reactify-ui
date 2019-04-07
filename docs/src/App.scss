@@ -1,0 +1,9 @@
+.reactify-docs {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__components-list {
+    list-style-type: none;
+  }
+}

@@ -1,19 +1,23 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import './App.scss';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
-const App = () => (
-  <div className="reactify-docs__container">
-    <div>
-      <ul>
-        <li><Link to="/"></Link></li>
-      </ul>
-    </div>
-    <Router>
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className="reactify-docs__container">
+          <ul className="reactify-docs__components-list">
+            <li><Link to='/'>Home</Link></li>
+          </ul>
 
-      <hr />
-      <Route path="/" component={undefined} />
-    </Router>
-  </div>
-);
+          <hr />
+
+          <Route exact path='/' component={undefined} />
+        </div>
+      </Router>
+    );
+  }
+}
 
 export default App;
