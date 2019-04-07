@@ -12,3 +12,9 @@ $theme-color-success: $flat-green-light;
 $theme-color-dark: $flat-black;
 $theme-color-light: $flat-white;
 $theme-color-default: $flat-black;
+
+.reactify--disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.6;
+}
