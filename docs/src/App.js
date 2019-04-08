@@ -7,13 +7,15 @@ class App extends Component {
     return (
       <Router>
         <div className="reactify-docs__container">
-          <ul className="reactify-docs__components-list">
-            <li><Link to='/'>Home</Link></li>
-          </ul>
-
-          <hr />
-
-          <Route exact path='/' component={undefined} />
+          <div className="pr-2">
+            Components
+            <ul className="reactify-docs__components-list">
+              <li><Link to="/full-screen"></Link></li>
+            </ul>
+          </div>
+          <div className="p-3">
+            <Route exact path="/full-screen" component={undefined} />
+          </div>
         </div>
       </Router>
     );

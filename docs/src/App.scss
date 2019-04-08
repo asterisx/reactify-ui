@@ -1,9 +1,18 @@
 .reactify-docs {
-  &__container {
-    display: flex;
-    flex-direction: column;
-  }
-  &__components-list {
-    list-style-type: none;
-  }
+    &__container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__components-list {
+        list-style-type: none;
+    }
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.height-50 {
+    height: 50%;
 }

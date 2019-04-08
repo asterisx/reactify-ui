@@ -13,8 +13,23 @@ $theme-color-dark: $flat-black;
 $theme-color-light: $flat-white;
 $theme-color-default: $flat-black;
 
-.reactify--disabled {
-    cursor: not-allowed;
-    pointer-events: none;
-    opacity: 0.6;
+.reactify {
+    &--disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+        opacity: 0.6;
+    }
+
+    &--hidden {
+        display: none !important;
+    }
+
+    &--pl-1 {
+        padding-left: 1em;
+    }
+
+    &--pr-1 {
+        padding-right: 1em;
+    }
+
 }
