@@ -1,18 +1,4 @@
-.reactify-docs {
-    &__container {
-        display: flex;
-        flex-direction: row;
-    }
+ .overflow-scroll {
+     overflow: auto !important;
 
-    &__components-list {
-        list-style-type: none;
-    }
-}
-
-.width-50 {
-    width: 50%;
-}
-
-.height-50 {
-    height: 50%;
-}
+ }

@@ -1,0 +1,72 @@
+.reactify--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.6; }
+
+.reactify--hidden {
+  display: none !important; }
+
+.reactify--pl-1 {
+  padding-left: 1em; }
+
+.reactify--pr-1 {
+  padding-right: 1em; }
+
+.reactify-switch__container {
+  font-size: 16px;
+  display: inline-flex;
+  align-content: center; }
+
+.reactify-switch--font-small {
+  font-size: 8px; }
+
+.reactify-switch--font-medium {
+  font-size: 16px; }
+
+.reactify-switch--font-large {
+  font-size: 24px; }
+
+.reactify-switch__input {
+  -webkit-appearance: none;
+  height: 1.4em;
+  width: 4em;
+  background-color: darkgray;
+  border-radius: 4em;
+  position: relative;
+  cursor: pointer; }
+  .reactify-switch__input::after {
+    content: '';
+    width: 1.6em;
+    height: 1.6em;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100%;
+    transition: .3s; }
+  .reactify-switch__input:checked::after {
+    transform: translateX(2.4em) translateY(-50%);
+    background-color: currentColor; }
+  .reactify-switch__input:focus {
+    outline-color: transparent; }
+  .reactify-switch__input--theme-default:checked::after {
+    transform: translateX(2.4em) translateY(-50%);
+    background-color: #141414; }
+  .reactify-switch__input--theme-dark:checked::after {
+    transform: translateX(2.4em) translateY(-50%);
+    background-color: #141414; }
+  .reactify-switch__input--theme-light:checked::after {
+    transform: translateX(2.4em) translateY(-50%);
+    background-color: #fff; }
+  .reactify-switch__input--theme-info:checked::after {
+    transform: translateX(2.4em) translateY(-50%);
+    background-color: #3498db; }
+  .reactify-switch__input--theme-warning:checked::after {
+    transform: translateX(2.4em) translateY(-50%);
+    background-color: #f39c12; }
+  .reactify-switch__input--theme-danger:checked::after {
+    transform: translateX(2.4em) translateY(-50%);
+    background-color: #e74c3c; }
+  .reactify-switch__input--theme-success:checked::after {
+    transform: translateX(2.4em) translateY(-50%);
+    background-color: #2ecc71; }

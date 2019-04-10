@@ -4,31 +4,39 @@
   "description": "Test coverage for reactify",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "preinstall": "rm -rf node_modules/reactify && npm install ../reactify"
   },
   "author": "Ashwin Singh",
   "license": "MIT",
   "devDependencies": {
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.12.1",
-    "jest": "^24.7.1",
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/preset-env": "^7.4.3",
-    "@babel/preset-react": "^7.0.0"
+    "@babel/preset-react": "^7.0.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.7.1"
   },
   "dependencies": {
+    "babel-plugin-react-css-modules": "^5.2.4",
+    "babel-plugin-transform-rename-import": "^2.3.0",
     "chai": "^4.2.0",
+    "chai-enzyme": "^1.0.0-beta.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "sinon": "^7.3.1",
-    "babel-plugin-react-css-modules": "^5.2.4",
-    "babel-plugin-transform-rename-import": "^2.3.0"
+    "reactify": "file:../reactify",
+    "sinon": "^7.3.1"
   },
   "jest": {
     "setupFilesAfterEnv": [
       "./src/setUp.js"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
   }
 }

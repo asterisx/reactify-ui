@@ -22,6 +22,7 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
+    "react-syntax-highlighter": "^10.2.1",
     "reactify": "file:../reactify"
   },
   "scripts": {
@@ -29,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "preinstall": "npm install ../reactify"
+    "preinstall": "rm -rf node_modules/reacify && npm install ../reactify"
   },
   "eslintConfig": {
     "extends": "react-app"

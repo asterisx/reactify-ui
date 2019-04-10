@@ -1,0 +1,125 @@
+@import '../styles.scss';
+
+$theme-color: $theme-color-default;
+$transform: translateX(2.4em) translateY(-50%);
+
+.reactify-switch {
+    &__container {
+        font-size: 16px;
+        display: inline-flex;
+        align-content: center;
+    }
+
+    &--font {
+        &-small {
+            font-size: 8px;
+        }
+
+        &-medium {
+            font-size: 16px;
+        }
+
+        &-large {
+            font-size: 24px;
+        }
+    }
+
+    &__input {
+        $theme-color: currentColor;
+        -webkit-appearance: none;
+        height: 1.4em;
+        width: 4em;
+        background-color: darkgray;
+        border-radius: 4em;
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            width: 1.6em;
+            height: 1.6em;
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 100%;
+            transition: .3s;
+        }
+
+        &:checked {
+            &::after {
+                transform: $transform;
+                background-color: $theme-color;
+            }
+        }
+
+        &:focus {
+            outline-color: transparent;
+        }
+
+        &--theme {
+            &-default {
+                &:checked {
+                    &::after {
+                        transform: $transform;
+                        background-color: $theme-color-default;
+                    }
+                }
+            }
+
+            &-dark {
+                &:checked {
+                    &::after {
+                        transform: $transform;
+                        background-color: $theme-color-dark;
+                    }
+                }
+            }
+
+            &-light {
+                &:checked {
+                    &::after {
+                        transform: $transform;
+                        background-color: $theme-color-light;
+                    }
+                }
+            }
+
+            &-info {
+                &:checked {
+                    &::after {
+                        transform: $transform;
+                        background-color: $theme-color-info;
+                    }
+                }
+            }
+
+            &-warning {
+                &:checked {
+                    &::after {
+                        transform: $transform;
+                        background-color: $theme-color-warning;
+                    }
+                }
+            }
+
+            &-danger {
+                &:checked {
+                    &::after {
+                        transform: $transform;
+                        background-color: $theme-color-danger;
+                    }
+                }
+            }
+
+            &-success {
+                &:checked {
+                    &::after {
+                        transform: $transform;
+                        background-color: $theme-color-success;
+                    }
+                }
+            }
+        }
+    }
+}
