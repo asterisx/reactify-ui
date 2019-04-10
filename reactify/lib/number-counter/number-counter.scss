@@ -1,0 +1,33 @@
+@import '../styles.scss';
+
+.reactify-number-counter {
+    &__container {
+        font-size: 2em;
+    }
+
+    &--theme {
+        &-dark {
+            color: $theme-color-dark;
+        }
+
+        &-light {
+            color: $theme-color-light;
+        }
+
+        &-info {
+            color: $theme-color-info;
+        }
+
+        &-warning {
+            color: $theme-color-warning;
+        }
+
+        &-danger {
+            color: $theme-color-danger;
+        }
+
+        &-success {
+            color: $theme-color-success;
+        }
+    }
+}
