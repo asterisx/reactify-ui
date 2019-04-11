@@ -41,14 +41,12 @@ describe('Radio Input Component', () => {
         it('should display the border direction correctly when direction prop is passed', () => {
             const shallowWrapper = shallow(<Alert direction="left"></Alert>);
             expect(shallowWrapper.hasClass('reactify-alert-border-left'));
-            console.log(shallowWrapper.debug());
 
             const shallowWrapper1 = shallow(<Alert direction={['left', 'right', 'top', 'bottom']}></Alert>);
             expect(shallowWrapper1.hasClass('reactify-alert-border-left'));
             expect(shallowWrapper1.hasClass('reactify-alert-border-right'));
             expect(shallowWrapper1.hasClass('reactify-alert-border-top'));
             expect(shallowWrapper1.hasClass('reactify-alert-border-bottom'));
-            console.log(shallowWrapper1.debug());
         });
  
         describe('should have correct theme when theme prop is passed', () => {
