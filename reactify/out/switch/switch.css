@@ -28,6 +28,8 @@
 
 .reactify-switch__input {
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   height: 1.4em;
   width: 4em;
   background-color: darkgray;

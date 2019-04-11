@@ -65,37 +65,37 @@ describe('Switch Component', () => {
         });
 
         it('should have disabled class when disabled prop is pass', () => {
-            const shallowWrapper = shallow(<switchInput disabled={true} />);
+            const shallowWrapper = shallow(<Switch disabled={true} />);
             expect(shallowWrapper.hasClass('reactify--disabled'));
         });
  
         describe('should have correct theme when theme prop is passed', () => {
             it('default theme', () => {
-                const shallowWrapper = shallow(<switchInput theme="default" />);
+                const shallowWrapper = shallow(<Switch theme="default" />);
                 expect(shallowWrapper.hasClass('reactify-switch--theme-default'));
             });
             it('dark theme', () => {
-                const shallowWrapper = shallow(<switchInput theme="default" />);
+                const shallowWrapper = shallow(<Switch theme="default" />);
                 expect(shallowWrapper.hasClass('reactify-switch--theme-dark'));
             });
             it('light theme', () => {
-                const shallowWrapper = shallow(<switchInput theme="default" />);
+                const shallowWrapper = shallow(<Switch theme="default" />);
                 expect(shallowWrapper.hasClass('reactify-switch--theme-light'));
             });
             it('info theme', () => {
-                const shallowWrapper = shallow(<switchInput theme="default" />);
+                const shallowWrapper = shallow(<Switch theme="default" />);
                 expect(shallowWrapper.hasClass('reactify-switch--theme-info'));
             });
             it('warning theme', () => {
-                const shallowWrapper = shallow(<switchInput theme="default" />);
+                const shallowWrapper = shallow(<Switch theme="default" />);
                 expect(shallowWrapper.hasClass('reactify-switch--theme-warning'));
             });
             it('danger theme', () => {
-                const shallowWrapper = shallow(<switchInput theme="default" />);
+                const shallowWrapper = shallow(<Switch theme="default" />);
                 expect(shallowWrapper.hasClass('reactify-switch--theme-danger'));
             });
             it('success theme', () => {
-                const shallowWrapper = shallow(<switchInput theme="default" />);
+                const shallowWrapper = shallow(<Switch theme="default" />);
                 expect(shallowWrapper.hasClass('reactify-switch--theme-success'));
             });
         })
