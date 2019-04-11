@@ -8,11 +8,11 @@ const Alert = ({ children, theme, className, direction, color, disabled, ...othe
     .map(dir => `reactify-alert-border-${dir}`);
 
   const cssClass = ["reactify-alert__container"]
-    .concat(`reactify-alert-border--theme-${color ? 'custom' : theme} ${disabled ? 'reactify--disabled' : ''}`, ...borderDirectionClasses, className)
+    .concat(`${!color ? `reactify-alert-border--theme-${theme}` : ''} ${disabled ? 'reactify--disabled' : ''}`, ...borderDirectionClasses, className)
     .join(" ");
 
   return (
-    <div style={!!color ? { color } : undefined} className={cssClass} {...otherProps}>
+    <div style={!!color ? { borderColor: color } : undefined} className={cssClass} {...otherProps}>
       {children}
     </div>
   );

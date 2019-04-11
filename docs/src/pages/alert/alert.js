@@ -115,7 +115,7 @@ const AlertDemo = () => (
       </div>
       <div className="card-body">
         <Alert color="violet">
-          Alert with custom border color, to change the font-color, wrap the children inside a container and give that container a color css property
+          Alert with custom border color
         </Alert>
         <br />
 
