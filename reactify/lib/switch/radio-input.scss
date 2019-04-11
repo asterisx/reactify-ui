@@ -1,55 +1,53 @@
 @import '../styles.scss';
 
-$theme-color: $theme-color-default;
-$transform: translateX(2.4em) translateY(-50%);
+$background-hover: darken(darkgray, 25);
 
-.reactify-switch {
+.reactify-radio-button {
     &__container {
-        font-size: 16px;
         display: inline-flex;
-        align-content: center;
+        align-items: center;
+        height: 1.7em;
     }
 
-    &--font {
-        &-small {
-            font-size: 8px;
-        }
-
-        &-medium {
-            font-size: 16px;
-        }
-
-        &-large {
-            font-size: 24px;
-        }
+    &__label {
+        padding-left: 10px;
     }
 
     &__input {
         $theme-color: currentColor;
-        -webkit-appearance: none;
-        height: 1.4em;
-        width: 4em;
-        background-color: darkgray;
-        border-radius: 4em;
+        height: 1.6em;
+        width: 1.6em;
         position: relative;
         cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
 
-        &::after {
+        &::before {
             content: '';
-            width: 1.6em;
-            height: 1.6em;
-            background-color: white;
+            width: 1.1em;
+            height: 1.1em;
+            background-color: darkgray;
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
             border-radius: 100%;
-            transition: .3s;
+            padding: .2em;
+            border: .1em solid darkgray;
+            pointer-events: none;
+            background-clip: content-box;
+            transition: .2s;
         }
 
         &:checked {
-            &::after {
-                transform: $transform;
+            &::before {
                 background-color: $theme-color;
+                border: .1em solid $theme-color;
+            }
+        }
+
+        &:hover:not(:checked) {
+            &::before {
+                background-color: $background-hover;
+                border: .1em solid $background-hover;
             }
         }
 
@@ -61,7 +59,6 @@ $transform: translateX(2.4em) translateY(-50%);
             &-default {
                 &:checked {
                     &::after {
-                        transform: $transform;
                         background-color: $theme-color-default;
                     }
                 }
@@ -70,7 +67,6 @@ $transform: translateX(2.4em) translateY(-50%);
             &-dark {
                 &:checked {
                     &::after {
-                        transform: $transform;
                         background-color: $theme-color-dark;
                     }
                 }
@@ -79,7 +75,6 @@ $transform: translateX(2.4em) translateY(-50%);
             &-light {
                 &:checked {
                     &::after {
-                        transform: $transform;
                         background-color: $theme-color-light;
                     }
                 }
@@ -88,7 +83,6 @@ $transform: translateX(2.4em) translateY(-50%);
             &-info {
                 &:checked {
                     &::after {
-                        transform: $transform;
                         background-color: $theme-color-info;
                     }
                 }
@@ -97,7 +91,6 @@ $transform: translateX(2.4em) translateY(-50%);
             &-warning {
                 &:checked {
                     &::after {
-                        transform: $transform;
                         background-color: $theme-color-warning;
                     }
                 }
@@ -106,7 +99,6 @@ $transform: translateX(2.4em) translateY(-50%);
             &-danger {
                 &:checked {
                     &::after {
-                        transform: $transform;
                         background-color: $theme-color-danger;
                     }
                 }
@@ -115,11 +107,10 @@ $transform: translateX(2.4em) translateY(-50%);
             &-success {
                 &:checked {
                     &::after {
-                        transform: $transform;
                         background-color: $theme-color-success;
                     }
                 }
-            }
+             }    
         }
     }
 }

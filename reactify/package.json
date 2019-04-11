@@ -42,7 +42,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "babel lib --out-dir out && node-sass lib --output out"
+    "postinstall": "rm -rf out && babel lib --out-dir out && node-sass lib --output out"
   },
   "eslintConfig": {
     "extends": "react-app"

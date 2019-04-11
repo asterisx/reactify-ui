@@ -1,16 +1,19 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './switch.scss';
+import './radio-input.scss';
 
-class Switch extends Component {
+class RadioInput extends Component {
     static propTypes = {
       checked: PropTypes.bool,
       iconColor: PropTypes.string,
       size: PropTypes.string,
       disabled: PropTypes.bool,
+      label: PropTypes.string,
+      labelPosition: PropTypes.oneOf(['left', 'right']),
       theme: PropTypes.string,
       onChange: PropTypes.func,
+      onClick: PropTypes.func
     }
 
     static defaultProps = {
@@ -20,18 +23,19 @@ class Switch extends Component {
       disabled: false,
       theme: undefined,
       onChange: () => {},
-
+      onClick: () => {}
     }
 
     state = { checked: this.props.checked || false }
 
     validFontSizes = ['small', 'medium', 'large'];
 
-    toggle = () => {
+    toggle = (evt) => {
       this.setState(
         prevProps => ({ checked: !prevProps.checked }),
         () => {
           if (this.props.onChange) { this.props.onChange(this.state.checked); }
+          if (this.props.onClick) { this.props.onClick(evt) }
         },
       );
     }
@@ -51,31 +55,37 @@ class Switch extends Component {
         iconColor,
         size,
         disabled,
+        label,
+        labelPosition,
         theme,
         onChange,
+        onClick,
         ...otherProps
       } = this.props;
       let fontClass;
-      if (this.validFontSizes.find(elem => elem === size)) { fontClass = `reactify-switch--font-${size}`; }
+      if (this.validFontSizes.find(elem => elem === size)) { fontClass = `reactify-radio-input--font-${size}`; }
       const style = this.getStyle();
+      const text = label && <label class="reactify-radio-button__label">{label}</label>;
       return (
         <div
-          className={`reactify-switch__container ${fontClass || ''} ${className || ''} ${disabled ? 'reactify--disabled' : ''}`}
+          className={`reactify-radio-input__container ${fontClass || ''} ${className || ''} ${disabled ? 'reactify--disabled' : ''}`}
           style={!this.validFontSizes.find(elem => elem === size) ? { fontSize: size } : {}}
+          onClick={(evt) => this.toggle(evt)}
           {...otherProps}
         >
+          {labelPosition === 'left' && text}
           <input
-            className={`reactify-switch__input ${theme ? `reactify-switch__input--theme-${theme}` : ''} `}
+            className={`reactify-radio-input__input ${theme ? `reactify-radio-input__input--theme-${theme}` : ''} `}
             type="checkbox"
             style={style}
-            onClick={this.toggle}
-            onChange={() => {}}
+            type="radio"
             checked={this.state.checked}
           />
+          {labelPosition === 'right' && text}
           {children}
         </div>
       );
     }
 }
 
-export default Switch;
+export default RadioInput;
