@@ -15,33 +15,45 @@ describe('Radio Input Component', () => {
 
     it('defaults to unchecked state', () => {
         const shallowWrapper = shallow(<RadioInput />);
-        const switchInput = shallowWrapper.find('.reactify-radio-input__input');
-        expect(switchInput.should.not.be.checked());
+        const radioInput = shallowWrapper.find('.reactify-radio-input__input');
+        expect(radioInput.should.not.be.checked());
     })
 
     it('should be checked when checked prop is passed', () => {
         const shallowWrapper = shallow(<RadioInput checked={true}/>);
-        const switchInput = shallowWrapper.find('.reactify-radio-input__input');
-        expect(switchInput.should.be.checked());
+        const radioInput = shallowWrapper.find('.reactify-radio-input__input');
+        expect(radioInput.should.be.checked());
     })
 
     it('should change state when clicked', () => {
         const shallowWrapper = shallow(<RadioInput />);
-        const switchInput = shallowWrapper.find('.reactify-radio-input__input');
-        switchInput.simulate('click');
+        const radioInput = shallowWrapper.find('.reactify-radio-input__input');
+        radioInput.simulate('click');
         setTimeout(() => {
-            switchInput.should.be.checked()
+            radioInput.should.be.checked()
         }, 0);
+    })
+    it('should display children prop passed', () => {
+        let someClass = "someClass";
+        let childElem = <div className={someClass}></div>;
+        const shallowWrapper = shallow(<RadioInput>{childElem}</RadioInput>);
+        const childContent = shallowWrapper.find(`.${someClass}`);
+        expect(childContent).not.be.null;
     })
 
     describe('props', () => {
+        it('should accept className prop and pass it to the root container', () => {
+            let someClass = "someClass";
+            const shallowWrapper = shallow(<RadioInput className={someClass}></RadioInput>);
+            expect(shallowWrapper.hasClass(someClass));
+        })
         it('should have correct iconColor passed as props', () => {
             let color = "red";
             const shallowWrapper = shallow(<RadioInput iconColor={color} checked={true}/>);
             setTimeout(
                 () => {
-                    const switchInput = shallowWrapper.find('.reactify-radio-input__input');
-                    expect(switchInput).to.have.style('background-color', color)
+                    const radioInput = shallowWrapper.find('.reactify-radio-input__input');
+                    expect(radioInput).to.have.style('background-color', color)
                 }, 0);
         });
 
@@ -67,6 +79,25 @@ describe('Radio Input Component', () => {
         it('should have disabled class when disabled prop is pass', () => {
             const shallowWrapper = shallow(<RadioInput disabled={true} />);
             expect(shallowWrapper.hasClass('reactify--disabled'));
+        });
+
+        it('should display the label correctly when label prop is passed', () => {
+            let labelText = "This is a label";
+            const shallowWrapper = shallow(<RadioInput label={labelText}></RadioInput>);
+            console.log(shallowWrapper.debug());
+            const label = shallowWrapper.find(`.reactify-radio-input__label--position-right`);
+            expect(label.text()).to.equal(labelText);
+        });
+
+        it('should display the labelPosition correctly when label prop is passed', () => {
+            let labelText = "This is a label";
+            const shallowWrapper = shallow(<RadioInput label={labelText} labelPosition="left"></RadioInput>);
+            const label = shallowWrapper.find(`.reactify-radio-input__label--position-left`);
+            expect(label.text()).to.equal(labelText);
+
+            const shallowWrapper1 = shallow(<RadioInput label={labelText} labelPosition="right"></RadioInput>);
+            const label1 = shallowWrapper1.find(`.reactify-radio-input__label--position-right`);
+            expect(label1.text()).to.equal(labelText);
         });
  
         describe('should have correct theme when theme prop is passed', () => {

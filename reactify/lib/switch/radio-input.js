@@ -21,6 +21,8 @@ class RadioInput extends Component {
       iconColor: undefined,
       size: 'medium',
       disabled: false,
+      label: undefined,
+      labelPosition: 'right',
       theme: undefined,
       onChange: () => {},
       onClick: () => {}
@@ -65,7 +67,7 @@ class RadioInput extends Component {
       let fontClass;
       if (this.validFontSizes.find(elem => elem === size)) { fontClass = `reactify-radio-input--font-${size}`; }
       const style = this.getStyle();
-      const text = label && <label class="reactify-radio-button__label">{label}</label>;
+      const text = !!label && <label className={`reactify-radio-input__label--position-${labelPosition}`}>{label}</label>;
       return (
         <div
           className={`reactify-radio-input__container ${fontClass || ''} ${className || ''} ${disabled ? 'reactify--disabled' : ''}`}
@@ -79,6 +81,7 @@ class RadioInput extends Component {
             type="checkbox"
             style={style}
             type="radio"
+            onChange={() => {}}
             checked={this.state.checked}
           />
           {labelPosition === 'right' && text}
