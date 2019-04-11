@@ -1,0 +1,65 @@
+@import '../styles.scss';
+
+$size-vertical: 0.4rem;
+$size-horizontal: 0.6rem;
+$border-width-default: 1px;
+$customColor: black;
+
+.reactify-alert {
+    &__container {
+        padding: $size-vertical $size-vertical;
+        border: $border-width-default solid;
+    }
+
+    &-border {
+        &-left {
+            border-left: $size-vertical solid;
+        }
+
+        &-top {
+            border-top: $size-vertical solid;
+        }
+
+        &-right {
+            border-right: $size-vertical solid;
+        }
+
+        &-bottom {
+            border-bottom: $size-vertical solid;
+        }
+
+        &--theme {
+            &-custom {
+                border-color: currentColor;
+            }
+
+            &-default {
+                border-color: $theme-color-default;
+            }
+
+            &-dark {
+                border-color: $theme-color-dark;
+            }
+
+            &-light {
+                border-color: darken($theme-color-light, 25);
+            }
+
+            &-info {
+                border-color: $theme-color-info;
+            }
+
+            &-warning {
+                border-color: $theme-color-warning;
+            }
+
+            &-danger {
+                border-color: $theme-color-danger;
+            }
+
+            &-success {
+                border-color: $theme-color-success;
+            }
+        }
+    }
+}
