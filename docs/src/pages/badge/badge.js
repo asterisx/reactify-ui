@@ -1,20 +1,22 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import Alert from 'reactify';
+import Badge from 'reactify';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { IoIosMail } from 'react-icons/io';
 import {
   simpleCode,
   disabledCode,
   customThemeCode,
-  borderPositionCode,
+  customPositionCode,
   customColorCode,
   childrenCode,
   customClass,
+  customSizeCode,
 } from './code-refrence';
-import './alert.scss';
+import './badge.scss';
 
-const AlertDemo = () => (
+const BadgeDemo = () => (
   <div>
     <section className="card m-2">
       <div className="card-header d-flex justify-content-between mb-3">
@@ -22,11 +24,80 @@ const AlertDemo = () => (
         <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#simpleUseDemo">Show Code</button>
       </div>
       <div className="card-body">
-        <Alert className="align-self-center">
-          A simple alert
-        </Alert>
+        <Badge className="align-self-center" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
         <div id="simpleUseDemo" className="collapse">
           <SyntaxHighlighter language="javascript" style={dark}>{simpleCode}</SyntaxHighlighter>
+        </div>
+      </div>
+    </section>
+
+    <section className="card m-2">
+      <div className="card-header d-flex justify-content-between mb-3">
+        <span className="align-self-center">Custom Sizes</span>
+        <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#customSizeDemo">Show Code</button>
+      </div>
+      <div className="card-body">
+        <Badge size="small" className="pb-2" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
+        <br />
+        <Badge size="medium" className="pb-2" count="10">
+          <IoIosMail size="100px" />
+        </Badge>
+        <br />
+        <Badge size="large" className="pb-2" count="10">
+          <IoIosMail size="200px" />
+        </Badge>
+        <br />
+        <Badge size="35px" className="pb-2" count="10">
+          <IoIosMail size="200px" />
+        </Badge>
+        <br />
+
+        <div id="customSizeDemo" className="collapse">
+          <SyntaxHighlighter language="javascript" style={dark}>{customSizeCode}</SyntaxHighlighter>
+        </div>
+      </div>
+    </section>
+
+    <section className="card m-2">
+      <div className="card-header d-flex justify-content-between mb-3">
+        <span className="align-self-center">Themes</span>
+        <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#customThemeDemo">Show Code</button>
+      </div>
+      <div className="card-body">
+        <Badge theme="default" className="pb-2" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
+        <br />
+        <Badge theme="dark" className="pb-2" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
+        <br />
+        <Badge theme="light" className="pb-2" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
+        <br />
+        <Badge theme="info" className="pb-2" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
+        <br />
+        <Badge theme="warning" className="pb-2" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
+        <br />
+        <Badge theme="danger" className="pb-2" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
+        <br />
+        <Badge theme="success" className="pb-2" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
+
+        <div id="customThemeDemo" className="collapse">
+          <SyntaxHighlighter language="javascript" style={dark}>{customThemeCode}</SyntaxHighlighter>
         </div>
       </div>
     </section>
@@ -37,9 +108,9 @@ const AlertDemo = () => (
         <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#disabledDemo">Show Code</button>
       </div>
       <div className="card-body">
-        <Alert disabled>
-          This is disabled
-        </Alert>
+        <Badge disabled count="10">
+          <IoIosMail size="50px" />
+        </Badge>
         <br />
 
         <div id="disabledDemo" className="collapse">
@@ -50,37 +121,29 @@ const AlertDemo = () => (
 
     <section className="card m-2">
       <div className="card-header d-flex justify-content-between mb-3">
-        <span className="align-self-center">Direction (can accept a string or an array. Valid values 'left', 'right', 'top', 'bottom')</span>
+        <span className="align-self-center">Position: (Valid values 'top-left', 'top-right', 'bottom-left', 'bottom-right')</span>
         <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#directionUseDemo">Show Code</button>
       </div>
       <div className="card-body">
-        <Alert direction="left">
-          This is a left alert!
-        </Alert>
+        <Badge position="top-left" size="small" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
         <br />
-        <Alert direction="right">
-          This is a right alert!
-        </Alert>
+        <Badge position="top-right" size="small" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
         <br />
-        <Alert direction="top">
-          This is a top alert!
-        </Alert>
+        <Badge position="bottom-right" size="small" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
         <br />
-        <Alert direction="bottom">
-          This is a bottom alert!
-        </Alert>
-        <br />
-        <Alert direction={['left', 'right', 'top', 'bottom']}>
-          This is all direction alert!
-        </Alert>
-        <br />
-        <Alert direction={['left', 'top']}>
-          This is a two direction alert!
-        </Alert>
+        <Badge position="bottom-left" size="small" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
         <br />
 
         <div id="directionUseDemo" className="collapse">
-          <SyntaxHighlighter language="javascript" style={dark}>{borderPositionCode}</SyntaxHighlighter>
+          <SyntaxHighlighter language="javascript" style={dark}>{customPositionCode}</SyntaxHighlighter>
         </div>
       </div>
     </section>
@@ -91,7 +154,7 @@ const AlertDemo = () => (
         <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#childrenDemo">Show Code</button>
       </div>
       <div className="card-body">
-        <Alert checked>
+        <Badge size="medium" count="10">
           <div className="card" style={{ width: '18rem' }}>
             <div className="card-body">
               <h5 className="card-title">Card title</h5>
@@ -99,7 +162,7 @@ const AlertDemo = () => (
               <a href="#" className="btn btn-primary">Go somewhere</a>
             </div>
           </div>
-        </Alert>
+        </Badge>
         <br />
 
         <div id="childrenDemo" className="collapse">
@@ -114,9 +177,9 @@ const AlertDemo = () => (
         <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#customColorDemo">Show Code</button>
       </div>
       <div className="card-body">
-        <Alert color="violet">
-          Alert with custom border color, to change the font-color, wrap the children inside a container and give that container a color css property
-        </Alert>
+        <Badge color="violet" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
         <br />
 
         <div id="customColorDemo" className="collapse">
@@ -131,9 +194,9 @@ const AlertDemo = () => (
         <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#customClassDemo">Show Code</button>
       </div>
       <div className="card-body">
-        <Alert className="text-light bg-dark p-2">
-        This Alert has custom class
-        </Alert>
+        <Badge className="text-light bg-dark p-2 shadow" count="10">
+          <IoIosMail size="50px" />
+        </Badge>
         <br />
 
         <div id="customClassDemo" className="collapse">
@@ -141,48 +204,7 @@ const AlertDemo = () => (
         </div>
       </div>
     </section>
-
-    <section className="card m-2">
-      <div className="card-header d-flex justify-content-between mb-3">
-        <span className="align-self-center">Themes</span>
-        <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#customThemeDemo">Show Code</button>
-      </div>
-      <div className="card-body">
-        <Alert theme="default" className="pb-2">
-        Default theme
-        </Alert>
-        <br />
-        <Alert theme="dark" className="pb-2">
-          Dark theme
-        </Alert>
-        <br />
-        <Alert theme="light" className="pb-2">
-          Light theme
-        </Alert>
-        <br />
-        <Alert theme="info" className="pb-2">
-          Info theme
-        </Alert>
-        <br />
-        <Alert theme="warning" className="pb-2">
-          Warning theme
-        </Alert>
-        <br />
-        <Alert theme="danger" className="pb-2">
-          Danger theme
-        </Alert>
-        <br />
-        <Alert theme="success" className="pb-2">
-          Success theme
-        </Alert>
-
-        <div id="customThemeDemo" className="collapse">
-          <SyntaxHighlighter language="javascript" style={dark}>{customThemeCode}</SyntaxHighlighter>
-        </div>
-      </div>
-    </section>
-
   </div>
 );
 
-export default AlertDemo;
+export default BadgeDemo;

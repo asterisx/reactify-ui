@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-import AlertDemo from './pages/alert';
+import BadgeDemo from './pages/badge';
 
 const App = () => (
   <Router>
@@ -10,11 +10,11 @@ const App = () => (
         <div className="card text-white bg-dark mb-3 col-2">
           <div className="card-header">Components</div>
           <ul className="card-body">
-            <li className="list-group-item"><Link to="/alert">Alert</Link></li>
+            <li className="list-group-item"><Link to="/badge">Badge</Link></li>
           </ul>
         </div>
         <div className="col-10 overflow-scroll">
-          <Route exact path="/alert" component={AlertDemo} />
+          <Route exact path="/badge" component={BadgeDemo} />
         </div>
       </div>
 
