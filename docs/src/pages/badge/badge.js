@@ -24,7 +24,7 @@ const BadgeDemo = () => (
         <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#simpleUseDemo">Show Code</button>
       </div>
       <div className="card-body">
-        <Badge className="align-self-center" count="10">
+        <Badge count="10">
           <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
         <div id="simpleUseDemo" className="collapse">
