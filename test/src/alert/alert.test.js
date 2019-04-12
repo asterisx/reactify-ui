@@ -7,7 +7,7 @@ import chaiEnzyme from 'chai-enzyme';
 chai.should();
 chai.use(chaiEnzyme())
 
-describe('Radio Input Component', () => {
+describe('Alert Component', () => {
     it('renders correctly', () => {
         const shallowWrapper = shallow(<Alert />);
         expect(shallowWrapper).not.be.null;
