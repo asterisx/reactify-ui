@@ -1,22 +1,22 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import Badge from 'reactify';
+import Label from 'reactify';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import {
   simpleCode,
   disabledCode,
   customThemeCode,
-  customPositionCode,
   customColorCode,
   childrenCode,
   customClass,
   customSizeCode,
 } from './code-refrence';
-import './badge.scss';
+import './label.scss';
 
-const BadgeDemo = () => (
+const LabelDemo = () => (
   <div>
     <section className="card m-2">
       <div className="card-header d-flex justify-content-between mb-3">
@@ -24,9 +24,9 @@ const BadgeDemo = () => (
         <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#simpleUseDemo">Show Code</button>
       </div>
       <div className="card-body">
-        <Badge count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
+        <Label>
+          Simple Label
+        </Label>
         <div id="simpleUseDemo" className="collapse">
           <SyntaxHighlighter language="javascript" style={dark}>{simpleCode}</SyntaxHighlighter>
         </div>
@@ -39,21 +39,21 @@ const BadgeDemo = () => (
         <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#customSizeDemo">Show Code</button>
       </div>
       <div className="card-body">
-        <Badge size="small" className="pb-2" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
+        <Label size="small" className="mb-2">
+          Small Label
+        </Label>
         <br />
-        <Badge size="medium" className="pb-2" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="100px" width="100px" />
-        </Badge>
+        <Label size="medium" className="mb-2">
+          Medium Label
+        </Label>
         <br />
-        <Badge size="large" className="pb-2" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="200px" width="200px" />
-        </Badge>
+        <Label size="large" className="mb-2">
+          Large Label
+        </Label>
         <br />
-        <Badge size="35px" className="pb-2" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="200px" width="200px" />
-        </Badge>
+        <Label size="35px" className="mb-2">
+          Label with size 35px
+        </Label>
         <br />
 
         <div id="customSizeDemo" className="collapse">
@@ -68,33 +68,33 @@ const BadgeDemo = () => (
         <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#customThemeDemo">Show Code</button>
       </div>
       <div className="card-body">
-        <Badge theme="default" className="pb-2" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
+        <Label theme="default" className="mb-2">
+          Default Theme
+        </Label>
         <br />
-        <Badge theme="dark" className="pb-2" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
+        <Label theme="dark" className="mb-2">
+          Dark Theme
+        </Label>
         <br />
-        <Badge theme="light" className="pb-2" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
+        <Label theme="light" className="mb-2">
+          Light Theme
+        </Label>
         <br />
-        <Badge theme="info" className="pb-2" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
+        <Label theme="info" className="mb-2">
+          Info Theme
+        </Label>
         <br />
-        <Badge theme="warning" className="pb-2" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
+        <Label theme="warning" className="mb-2">
+          Warning Theme
+        </Label>
         <br />
-        <Badge theme="danger" className="pb-2" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
+        <Label theme="danger" className="mb-2">
+          Danger Theme
+        </Label>
         <br />
-        <Badge theme="success" className="pb-2" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
+        <Label theme="success" className="mb-2">
+          Success Theme
+        </Label>
 
         <div id="customThemeDemo" className="collapse">
           <SyntaxHighlighter language="javascript" style={dark}>{customThemeCode}</SyntaxHighlighter>
@@ -108,9 +108,9 @@ const BadgeDemo = () => (
         <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#disabledDemo">Show Code</button>
       </div>
       <div className="card-body">
-        <Badge disabled count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
+        <Label disabled>
+          Disabled Label
+        </Label>
         <br />
 
         <div id="disabledDemo" className="collapse">
@@ -121,52 +121,19 @@ const BadgeDemo = () => (
 
     <section className="card m-2">
       <div className="card-header d-flex justify-content-between mb-3">
-        <span className="align-self-center">Position: (Valid values 'top-left', 'top-right', 'bottom-left', 'bottom-right')</span>
-        <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#directionUseDemo">Show Code</button>
-      </div>
-      <div className="card-body">
-        <Badge position="top-left" size="small" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
-        <br />
-        <br />
-        <Badge position="top-right" size="small" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
-        <br />
-        <br />
-        <Badge position="bottom-right" size="small" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
-        <br />
-        <br />
-        <Badge position="bottom-left" size="small" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
-        <br />
-        <br />
-
-        <div id="directionUseDemo" className="collapse">
-          <SyntaxHighlighter language="javascript" style={dark}>{customPositionCode}</SyntaxHighlighter>
-        </div>
-      </div>
-    </section>
-
-    <section className="card m-2">
-      <div className="card-header d-flex justify-content-between mb-3">
         <span className="align-self-center">Children</span>
         <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#childrenDemo">Show Code</button>
       </div>
       <div className="card-body">
-        <Badge size="medium" count="10">
-          <div className="card" style={{ width: '18rem' }}>
+        <Label size="medium" className="p-2">
+          <div className="card text-dark" style={{ width: '18rem' }}>
             <div className="card-body">
               <h5 className="card-title">Card title</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="#" className="btn btn-primary">Go somewhere</a>
             </div>
           </div>
-        </Badge>
+        </Label>
         <br />
 
         <div id="childrenDemo" className="collapse">
@@ -181,9 +148,9 @@ const BadgeDemo = () => (
         <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#customColorDemo">Show Code</button>
       </div>
       <div className="card-body">
-        <Badge color="violet" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
+        <Label color="violet">
+          Simple Label
+        </Label>
         <br />
 
         <div id="customColorDemo" className="collapse">
@@ -198,9 +165,9 @@ const BadgeDemo = () => (
         <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target="#customClassDemo">Show Code</button>
       </div>
       <div className="card-body">
-        <Badge className="text-light bg-dark p-2 shadow" count="10">
-          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
-        </Badge>
+        <Label className="text-light bg-dark p-2 shadow">
+          Simple Label
+        </Label>
         <br />
 
         <div id="customClassDemo" className="collapse">
@@ -211,4 +178,4 @@ const BadgeDemo = () => (
   </div>
 );
 
-export default BadgeDemo;
+export default LabelDemo;
