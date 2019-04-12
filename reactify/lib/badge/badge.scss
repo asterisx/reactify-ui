@@ -79,21 +79,25 @@
             &-top-left {
                 top: 0px;
                 left: 0px;
+                transform: translate(-50%, -50%);
             }
 
             &-top-right {
                 top: 0px;
                 right: 0px;
+                transform: translate(50%, -50%);
             }
 
             &-bottom-left {
                 bottom: 0px;
                 left: 0px;
+                transform: translate(-50%, 50%);
             }
 
             &-bottom-right {
                 bottom: 0px;
                 right: 0px;
+                transform: translate(50%, 50%);
             }
         }
     }

@@ -1,9 +1,9 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Badge from 'reactify';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { IoIosMail } from 'react-icons/io';
 import {
   simpleCode,
   disabledCode,
@@ -25,7 +25,7 @@ const BadgeDemo = () => (
       </div>
       <div className="card-body">
         <Badge className="align-self-center" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
         <div id="simpleUseDemo" className="collapse">
           <SyntaxHighlighter language="javascript" style={dark}>{simpleCode}</SyntaxHighlighter>
@@ -40,19 +40,19 @@ const BadgeDemo = () => (
       </div>
       <div className="card-body">
         <Badge size="small" className="pb-2" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
         <br />
         <Badge size="medium" className="pb-2" count="10">
-          <IoIosMail size="100px" />
+          <img className="img-message" src="../../../assets/mail.png" height="100px" width="100px" />
         </Badge>
         <br />
         <Badge size="large" className="pb-2" count="10">
-          <IoIosMail size="200px" />
+          <img className="img-message" src="../../../assets/mail.png" height="200px" width="200px" />
         </Badge>
         <br />
         <Badge size="35px" className="pb-2" count="10">
-          <IoIosMail size="200px" />
+          <img className="img-message" src="../../../assets/mail.png" height="200px" width="200px" />
         </Badge>
         <br />
 
@@ -69,31 +69,31 @@ const BadgeDemo = () => (
       </div>
       <div className="card-body">
         <Badge theme="default" className="pb-2" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
         <br />
         <Badge theme="dark" className="pb-2" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
         <br />
         <Badge theme="light" className="pb-2" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
         <br />
         <Badge theme="info" className="pb-2" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
         <br />
         <Badge theme="warning" className="pb-2" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
         <br />
         <Badge theme="danger" className="pb-2" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
         <br />
         <Badge theme="success" className="pb-2" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
 
         <div id="customThemeDemo" className="collapse">
@@ -109,7 +109,7 @@ const BadgeDemo = () => (
       </div>
       <div className="card-body">
         <Badge disabled count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
         <br />
 
@@ -126,20 +126,24 @@ const BadgeDemo = () => (
       </div>
       <div className="card-body">
         <Badge position="top-left" size="small" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
+        <br />
         <br />
         <Badge position="top-right" size="small" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
+        <br />
         <br />
         <Badge position="bottom-right" size="small" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
         <br />
+        <br />
         <Badge position="bottom-left" size="small" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
+        <br />
         <br />
 
         <div id="directionUseDemo" className="collapse">
@@ -178,7 +182,7 @@ const BadgeDemo = () => (
       </div>
       <div className="card-body">
         <Badge color="violet" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
         <br />
 
@@ -195,7 +199,7 @@ const BadgeDemo = () => (
       </div>
       <div className="card-body">
         <Badge className="text-light bg-dark p-2 shadow" count="10">
-          <IoIosMail size="50px" />
+          <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
         </Badge>
         <br />
 
