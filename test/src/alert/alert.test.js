@@ -55,27 +55,27 @@ describe('Radio Input Component', () => {
                 expect(shallowWrapper.hasClass('reactify-alert--theme-default'));
             });
             it('dark theme', () => {
-                const shallowWrapper = shallow(<Alert theme="default" />);
+                const shallowWrapper = shallow(<Alert theme="dark" />);
                 expect(shallowWrapper.hasClass('reactify-alert-border--theme-dark'));
             });
             it('light theme', () => {
-                const shallowWrapper = shallow(<Alert theme="default" />);
+                const shallowWrapper = shallow(<Alert theme="light" />);
                 expect(shallowWrapper.hasClass('reactify-alert-border--theme-light'));
             });
             it('info theme', () => {
-                const shallowWrapper = shallow(<Alert theme="default" />);
+                const shallowWrapper = shallow(<Alert theme="info" />);
                 expect(shallowWrapper.hasClass('reactify-alert-border--theme-info'));
             });
             it('warning theme', () => {
-                const shallowWrapper = shallow(<Alert theme="default" />);
+                const shallowWrapper = shallow(<Alert theme="warning" />);
                 expect(shallowWrapper.hasClass('reactify-alert-border--theme-warning'));
             });
             it('danger theme', () => {
-                const shallowWrapper = shallow(<Alert theme="default" />);
+                const shallowWrapper = shallow(<Alert theme="danger" />);
                 expect(shallowWrapper.hasClass('reactify-alert-border--theme-danger'));
             });
             it('success theme', () => {
-                const shallowWrapper = shallow(<Alert theme="default" />);
+                const shallowWrapper = shallow(<Alert theme="success" />);
                 expect(shallowWrapper.hasClass('reactify-alert-border--theme-success'));
             });
         })
