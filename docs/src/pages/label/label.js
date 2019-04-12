@@ -166,7 +166,7 @@ const LabelDemo = () => (
       </div>
       <div className="card-body">
         <Label className="text-light bg-dark p-2 shadow">
-          Simple Label
+          Custom Class Label
         </Label>
         <br />
 

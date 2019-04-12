@@ -10,7 +10,7 @@ const App = () => (
         <div className="card text-white bg-dark mb-3 col-2">
           <div className="card-header">Components</div>
           <ul className="card-body">
-            <li className="list-group-item"><Link className="w-100 h-100" to="/label">Label</Link></li>
+            <li className="list-group-item"><Link className="d-block" to="/label">Label</Link></li>
           </ul>
         </div>
         <div className="col-10 overflow-scroll">
