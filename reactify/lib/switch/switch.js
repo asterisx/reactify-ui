@@ -9,7 +9,15 @@ class Switch extends Component {
       iconColor: PropTypes.string,
       size: PropTypes.string,
       disabled: PropTypes.bool,
-      theme: PropTypes.string,
+      theme: PropTypes.oneOf([
+        'default',
+        'dark',
+        'light',
+        'info',
+        'warning',
+        'danger',
+        'success',
+      ]),
       onChange: PropTypes.func,
     }
 
@@ -18,7 +26,7 @@ class Switch extends Component {
       iconColor: undefined,
       size: 'medium',
       disabled: false,
-      theme: undefined,
+      theme: 'default',
       onChange: () => {},
 
     }
