@@ -45,7 +45,7 @@ describe('Radio Input Component', () => {
         it('should accept className prop and pass it to the root container', () => {
             let someClass = "someClass";
             const shallowWrapper = shallow(<RadioInput className={someClass}></RadioInput>);
-            expect(shallowWrapper.hasClass(someClass));
+            expect(shallowWrapper.hasClass(someClass)).to.be.true;
         })
         it('should have correct iconColor passed as props', () => {
             let color = "red";
@@ -59,13 +59,13 @@ describe('Radio Input Component', () => {
 
         it('should have correct size passed as props', () => {
             const shallowWrapper = shallow(<RadioInput size="small" />);
-            expect(shallowWrapper.hasClass('reactify-radio-input--font-small'));
+            expect(shallowWrapper.hasClass('reactify-radio-input--font-small')).to.be.true;
 
             const shallowWrapper1 = shallow(<RadioInput size="medium" />);
-            expect(shallowWrapper1.hasClass('reactify-radio-input--font-medium'));
+            expect(shallowWrapper1.hasClass('reactify-radio-input--font-medium')).to.be.true;
 
             const shallowWrapper2 = shallow(<RadioInput size="large" />);
-            expect(shallowWrapper2.hasClass('reactify-radio-input--font-large'));
+            expect(shallowWrapper2.hasClass('reactify-radio-input--font-large')).to.be.true;
 
             let fontSize = "40px";
             const shallowWrapper3 = shallow(<RadioInput size={fontSize} />);
@@ -84,7 +84,6 @@ describe('Radio Input Component', () => {
         it('should display the label correctly when label prop is passed', () => {
             let labelText = "This is a label";
             const shallowWrapper = shallow(<RadioInput label={labelText}></RadioInput>);
-            console.log(shallowWrapper.debug());
             const label = shallowWrapper.find(`.reactify-radio-input__label--position-right`);
             expect(label.text()).to.equal(labelText);
         });
@@ -103,31 +102,38 @@ describe('Radio Input Component', () => {
         describe('should have correct theme when theme prop is passed', () => {
             it('default theme', () => {
                 const shallowWrapper = shallow(<RadioInput theme="default" />);
-                expect(shallowWrapper.hasClass('reactify-radio-input--theme-default'));
+                const input = shallowWrapper.find('.reactify-radio-input__input');
+                expect(input.hasClass('reactify-radio-input__input--theme-default')).to.be.true;
             });
             it('dark theme', () => {
-                const shallowWrapper = shallow(<RadioInput theme="default" />);
-                expect(shallowWrapper.hasClass('reactify-radio-input--theme-dark'));
+                const shallowWrapper = shallow(<RadioInput theme="dark" />);
+                const input = shallowWrapper.find('.reactify-radio-input__input');
+                expect(input.hasClass('reactify-radio-input__input--theme-dark')).to.be.true;
             });
             it('light theme', () => {
-                const shallowWrapper = shallow(<RadioInput theme="default" />);
-                expect(shallowWrapper.hasClass('reactify-radio-input--theme-light'));
+                const shallowWrapper = shallow(<RadioInput theme="light" />);
+                const input = shallowWrapper.find('.reactify-radio-input__input');
+                expect(input.hasClass('reactify-radio-input__input--theme-light')).to.be.true;
             });
             it('info theme', () => {
-                const shallowWrapper = shallow(<RadioInput theme="default" />);
-                expect(shallowWrapper.hasClass('reactify-radio-input--theme-info'));
+                const shallowWrapper = shallow(<RadioInput theme="info" />);
+                const input = shallowWrapper.find('.reactify-radio-input__input');
+                expect(input.hasClass('reactify-radio-input__input--theme-info')).to.be.true;
             });
             it('warning theme', () => {
-                const shallowWrapper = shallow(<RadioInput theme="default" />);
-                expect(shallowWrapper.hasClass('reactify-radio-input--theme-warning'));
+                const shallowWrapper = shallow(<RadioInput theme="warning" />);
+                const input = shallowWrapper.find('.reactify-radio-input__input');
+                expect(input.hasClass('reactify-radio-input__input--theme-warning')).to.be.true;
             });
             it('danger theme', () => {
-                const shallowWrapper = shallow(<RadioInput theme="default" />);
-                expect(shallowWrapper.hasClass('reactify-radio-input--theme-danger'));
+                const shallowWrapper = shallow(<RadioInput theme="danger" />);
+                const input = shallowWrapper.find('.reactify-radio-input__input');
+                expect(input.hasClass('reactify-radio-input__input--theme-danger')).to.be.true;
             });
             it('success theme', () => {
-                const shallowWrapper = shallow(<RadioInput theme="default" />);
-                expect(shallowWrapper.hasClass('reactify-radio-input--theme-success'));
+                const shallowWrapper = shallow(<RadioInput theme="success" />);
+                const input = shallowWrapper.find('.reactify-radio-input__input');
+                expect(input.hasClass('reactify-radio-input__input--theme-success')).to.be.true;
             });
         })
     })

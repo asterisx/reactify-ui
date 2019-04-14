@@ -13,7 +13,7 @@ class RadioInput extends Component {
       labelPosition: PropTypes.oneOf(['left', 'right']),
       theme: PropTypes.string,
       onChange: PropTypes.func,
-      onClick: PropTypes.func
+      onClick: PropTypes.func,
     }
 
     static defaultProps = {
@@ -25,7 +25,7 @@ class RadioInput extends Component {
       labelPosition: 'right',
       theme: undefined,
       onChange: () => {},
-      onClick: () => {}
+      onClick: () => {},
     }
 
     state = { checked: this.props.checked || false }
@@ -37,7 +37,7 @@ class RadioInput extends Component {
         prevProps => ({ checked: !prevProps.checked }),
         () => {
           if (this.props.onChange) { this.props.onChange(this.state.checked); }
-          if (this.props.onClick) { this.props.onClick(evt) }
+          if (this.props.onClick) { this.props.onClick(evt); }
         },
       );
     }
@@ -72,13 +72,12 @@ class RadioInput extends Component {
         <div
           className={`reactify-radio-input__container ${fontClass || ''} ${className || ''} ${disabled ? 'reactify--disabled' : ''}`}
           style={!this.validFontSizes.find(elem => elem === size) ? { fontSize: size } : {}}
-          onClick={(evt) => this.toggle(evt)}
+          onClick={evt => this.toggle(evt)}
           {...otherProps}
         >
           {labelPosition === 'left' && text}
           <input
             className={`reactify-radio-input__input ${theme ? `reactify-radio-input__input--theme-${theme}` : ''} `}
-            type="checkbox"
             style={style}
             type="radio"
             onChange={() => {}}
