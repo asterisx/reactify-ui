@@ -46,15 +46,15 @@ describe('Badge Component', () => {
         it('should have correct size passed as props', () => {
             const shallowWrapper = shallow(<Badge size="small" />);
             const bubble = shallowWrapper.find('.reactify-badge-bubble');
-            expect(bubble.hasClass('reactify-badge-bubble--font-size-small'));
+            expect(bubble.hasClass('reactify-badge-bubble--font-size-small')).to.be.true;
 
             const shallowWrapper1 = shallow(<Badge size="medium" />);
             const bubble1 = shallowWrapper1.find('.reactify-badge-bubble');
-            expect(bubble1.hasClass('reactify-badge-bubble--font-size-medium'));
+            expect(bubble1.hasClass('reactify-badge-bubble--font-size-medium')).to.be.true;
 
             const shallowWrapper2 = shallow(<Badge size="large" />);
             const bubble2 = shallowWrapper2.find('.reactify-badge-bubble');
-            expect(bubble2.hasClass('reactify-badge-bubble--font-size-large'));
+            expect(bubble2.hasClass('reactify-badge-bubble--font-size-large')).to.be.true;
 
             const fontSize = "40px";
             const shallowWrapper3 = shallow(<Badge size={fontSize} />);
@@ -71,56 +71,56 @@ describe('Badge Component', () => {
         it('should display the position correctly when position prop is passed', () => {
             const shallowWrapper = shallow(<Badge position="top-left"></Badge>);
             const bubble = shallowWrapper.find('.reactify-badge-bubble');
-            expect(bubble.hasClass('reactify-badge-bubble--position-top-left'));
+            expect(bubble.hasClass('reactify-badge-bubble--position-top-left')).to.be.true;
 
             const shallowWrapper1 = shallow(<Badge position="top-right"></Badge>);
             const bubble1 = shallowWrapper1.find('.reactify-badge-bubble');
-            expect(bubble1.hasClass('reactify-badge-bubble--position-top-right'));
+            expect(bubble1.hasClass('reactify-badge-bubble--position-top-right')).to.be.true;
 
             const shallowWrapper2 = shallow(<Badge position="bottom-right"></Badge>);
             const bubble2 = shallowWrapper2.find('.reactify-badge-bubble');
-            expect(bubble2.hasClass('reactify-badge-bubble--position-bottom-right'));
+            expect(bubble2.hasClass('reactify-badge-bubble--position-bottom-right')).to.be.true;
 
             const shallowWrapper3 = shallow(<Badge position="bottom-left"></Badge>);
             const bubble3 = shallowWrapper3.find('.reactify-badge-bubble');
-            expect(bubble3.hasClass('reactify-badge-bubble--position-bottom-left'));
+            expect(bubble3.hasClass('reactify-badge-bubble--position-bottom-left')).to.be.true;
         });
  
         describe('should have correct theme when theme prop is passed', () => {
             it('default theme', () => {
                 const shallowWrapper = shallow(<Badge theme="default" />);
                 const bubble = shallowWrapper.find('.reactify-badge-bubble');
-                expect(bubble.hasClass('reactify-badge-bubble--theme-default'));
+                expect(bubble.hasClass('reactify-badge-bubble--theme-default')).to.be.true;
             });
             it('dark theme', () => {
                 const shallowWrapper = shallow(<Badge theme="dark" />);
                 const bubble = shallowWrapper.find('.reactify-badge-bubble');
-                expect(bubble.hasClass('reactify-badge-bubble--theme-dark'));
+                expect(bubble.hasClass('reactify-badge-bubble--theme-dark')).to.be.true;
             });
             it('light theme', () => {
                 const shallowWrapper = shallow(<Badge theme="light" />);
                 const bubble = shallowWrapper.find('.reactify-badge-bubble');
-                expect(bubble.hasClass('reactify-badge-bubble--theme-light'));
+                expect(bubble.hasClass('reactify-badge-bubble--theme-light')).to.be.true;
             });
             it('info theme', () => {
                 const shallowWrapper = shallow(<Badge theme="info" />);
                 const bubble = shallowWrapper.find('.reactify-badge-bubble');
-                expect(bubble.hasClass('reactify-badge-bubble--theme-info'));
+                expect(bubble.hasClass('reactify-badge-bubble--theme-info')).to.be.true;
             });
             it('warning theme', () => {
                 const shallowWrapper = shallow(<Badge theme="warning" />);
                 const bubble = shallowWrapper.find('.reactify-badge-bubble');
-                expect(bubble.hasClass('reactify-badge-bubble--theme-warning'));
+                expect(bubble.hasClass('reactify-badge-bubble--theme-warning')).to.be.true;
             });
             it('danger theme', () => {
                 const shallowWrapper = shallow(<Badge theme="danger" />);
                 const bubble = shallowWrapper.find('.reactify-badge-bubble');
-                expect(bubble.hasClass('reactify-badge-bubble--theme-danger'));
+                expect(bubble.hasClass('reactify-badge-bubble--theme-danger')).to.be.true;
             });
             it('success theme', () => {
                 const shallowWrapper = shallow(<Badge theme="success" />);
                 const bubble = shallowWrapper.find('.reactify-badge-bubble');
-                expect(bubble.hasClass('reactify-badge-bubble--theme-success'));
+                expect(bubble.hasClass('reactify-badge-bubble--theme-success')).to.be.true;
             });
         })
     })
