@@ -9,6 +9,7 @@
   "dependencies": {
     "babel-plugin-react-css-modules": "^5.2.4",
     "babel-plugin-transform-rename-import": "^2.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
