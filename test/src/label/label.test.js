@@ -25,7 +25,7 @@ describe('Label Component', () => {
         it('should accept className prop and pass it to the root container', () => {
             let someClass = "someClass";
             const shallowWrapper = shallow(<Label className={someClass}></Label>);
-            expect(shallowWrapper.hasClass(someClass));
+            expect(shallowWrapper.hasClass(someClass)).to.be.true;
         })
         it('should have correct color passed as props', () => {
             let color = "red";
@@ -39,15 +39,15 @@ describe('Label Component', () => {
         it('should have correct size passed as props', () => {
             const shallowWrapper = shallow(<Label size="small" />);
             const bubble = shallowWrapper.find('.reactify-label__container');
-            expect(bubble.hasClass('reactify-label__container--font-size-small'));
+            expect(bubble.hasClass('reactify-label--font-size-small')).to.be.true;
 
             const shallowWrapper1 = shallow(<Label size="medium" />);
             const bubble1 = shallowWrapper1.find('.reactify-label__container');
-            expect(bubble1.hasClass('reactify-label__container--font-size-medium'));
+            expect(bubble1.hasClass('reactify-label--font-size-medium')).to.be.true;
 
             const shallowWrapper2 = shallow(<Label size="large" />);
             const bubble2 = shallowWrapper2.find('.reactify-label__container');
-            expect(bubble2.hasClass('reactify-label__container--font-size-large'));
+            expect(bubble2.hasClass('reactify-label--font-size-large')).to.be.true;
 
             const fontSize = "40px";
             const shallowWrapper3 = shallow(<Label size={fontSize} />);
@@ -58,37 +58,37 @@ describe('Label Component', () => {
 
         it('should have disabled class when disabled prop is pass', () => {
             const shallowWrapper = shallow(<Label disabled={true} />);
-            expect(shallowWrapper.hasClass('reactify--disabled'));
+            expect(shallowWrapper.hasClass('reactify--disabled')).to.be.true;
         });
  
         describe('should have correct theme when theme prop is passed', () => {
             it('default theme', () => {
                 const shallowWrapper = shallow(<Label theme="default" />);
-                expect(shallowWrapper.hasClass('reactify-label__container--theme-default'));
+                expect(shallowWrapper.hasClass('reactify-label--theme-default')).to.be.true;
             });
             it('dark theme', () => {
                 const shallowWrapper = shallow(<Label theme="dark" />);
-                expect(shallowWrapper.hasClass('reactify-label__container--theme-dark'));
+                expect(shallowWrapper.hasClass('reactify-label--theme-dark')).to.be.true;
             });
             it('light theme', () => {
                 const shallowWrapper = shallow(<Label theme="light" />);
-                expect(shallowWrapper.hasClass('reactify-label__container--theme-light'));
+                expect(shallowWrapper.hasClass('reactify-label--theme-light')).to.be.true;
             });
             it('info theme', () => {
                 const shallowWrapper = shallow(<Label theme="info" />);
-                expect(shallowWrapper.hasClass('reactify-label__container--theme-info'));
+                expect(shallowWrapper.hasClass('reactify-label--theme-info')).to.be.true;
             });
             it('warning theme', () => {
                 const shallowWrapper = shallow(<Label theme="warning" />);
-                expect(shallowWrapper.hasClass('reactify-label__container--theme-warning'));
+                expect(shallowWrapper.hasClass('reactify-label--theme-warning')).to.be.true;
             });
             it('danger theme', () => {
                 const shallowWrapper = shallow(<Label theme="danger" />);
-                expect(shallowWrapper.hasClass('reactify-label__container--theme-danger'));
+                expect(shallowWrapper.hasClass('reactify-label--theme-danger')).to.be.true;
             });
             it('success theme', () => {
                 const shallowWrapper = shallow(<Label theme="success" />);
-                expect(shallowWrapper.hasClass('reactify-label__container--theme-success'));
+                expect(shallowWrapper.hasClass('reactify-label--theme-success')).to.be.true;
             });
         })
     })

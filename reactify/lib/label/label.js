@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './label.scss';
 
-const oneOfdefaultSizes = (size) => ['small', 'medium', 'large'].find(ds => ds === size);
+const oneOfdefaultSizes = size => ['small', 'medium', 'large'].find(ds => ds === size);
 
 const Label = ({
   children,
@@ -13,7 +13,7 @@ const Label = ({
   disabled,
   ...otherProps
 }) => (
-    <div style = {{fontSize: !oneOfdefaultSizes(size) ? size : undefined, backgroundColor: color}} className={`reactify-label__container reactify-label--font-size-${size} reactify-label--theme-${theme} ${disabled ? 'reactify--disabled' : ''} ${className || ''}`} {...otherProps}>
+  <div style={{ fontSize: !oneOfdefaultSizes(size) ? size : undefined, backgroundColor: color }} className={`reactify-label__container reactify-label--font-size-${size} reactify-label--theme-${theme} ${disabled ? 'reactify--disabled' : ''} ${className || ''}`} {...otherProps}>
     {children}
   </div>
 );
