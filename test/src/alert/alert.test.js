@@ -30,53 +30,53 @@ describe('Alert Component', () => {
         it('should have correct color passed as props', () => {
             let color = "red";
             const shallowWrapper = shallow(<Alert color={color}/>);
-            expect(shallowWrapper.hasClass('reactify-alert-border--theme-custom'));
+            expect(shallowWrapper.props().style['borderColor']).to.equal(color);
         });
 
         it('should have disabled class when disabled prop is pass', () => {
             const shallowWrapper = shallow(<Alert disabled={true} />);
-            expect(shallowWrapper.hasClass('reactify--disabled'));
+            expect(shallowWrapper.hasClass('reactify--disabled')).to.be.true;
         });
 
         it('should display the border direction correctly when direction prop is passed', () => {
             const shallowWrapper = shallow(<Alert direction="left"></Alert>);
-            expect(shallowWrapper.hasClass('reactify-alert-border-left'));
+            expect(shallowWrapper.hasClass('reactify-alert-border-left')).to.be.true;
 
             const shallowWrapper1 = shallow(<Alert direction={['left', 'right', 'top', 'bottom']}></Alert>);
-            expect(shallowWrapper1.hasClass('reactify-alert-border-left'));
-            expect(shallowWrapper1.hasClass('reactify-alert-border-right'));
-            expect(shallowWrapper1.hasClass('reactify-alert-border-top'));
-            expect(shallowWrapper1.hasClass('reactify-alert-border-bottom'));
+            expect(shallowWrapper1.hasClass('reactify-alert-border-left')).to.be.true;
+            expect(shallowWrapper1.hasClass('reactify-alert-border-right')).to.be.true;
+            expect(shallowWrapper1.hasClass('reactify-alert-border-top')).to.be.true;
+            expect(shallowWrapper1.hasClass('reactify-alert-border-bottom')).to.be.true;
         });
  
         describe('should have correct theme when theme prop is passed', () => {
             it('default theme', () => {
                 const shallowWrapper = shallow(<Alert theme="default" />);
-                expect(shallowWrapper.hasClass('reactify-alert--theme-default'));
+                expect(shallowWrapper.hasClass('reactify-alert-border--theme-default')).to.be.true;
             });
             it('dark theme', () => {
                 const shallowWrapper = shallow(<Alert theme="dark" />);
-                expect(shallowWrapper.hasClass('reactify-alert-border--theme-dark'));
+                expect(shallowWrapper.hasClass('reactify-alert-border--theme-dark')).to.be.true;
             });
             it('light theme', () => {
                 const shallowWrapper = shallow(<Alert theme="light" />);
-                expect(shallowWrapper.hasClass('reactify-alert-border--theme-light'));
+                expect(shallowWrapper.hasClass('reactify-alert-border--theme-light')).to.be.true;
             });
             it('info theme', () => {
                 const shallowWrapper = shallow(<Alert theme="info" />);
-                expect(shallowWrapper.hasClass('reactify-alert-border--theme-info'));
+                expect(shallowWrapper.hasClass('reactify-alert-border--theme-info')).to.be.true;
             });
             it('warning theme', () => {
                 const shallowWrapper = shallow(<Alert theme="warning" />);
-                expect(shallowWrapper.hasClass('reactify-alert-border--theme-warning'));
+                expect(shallowWrapper.hasClass('reactify-alert-border--theme-warning')).to.be.true;
             });
             it('danger theme', () => {
                 const shallowWrapper = shallow(<Alert theme="danger" />);
-                expect(shallowWrapper.hasClass('reactify-alert-border--theme-danger'));
+                expect(shallowWrapper.hasClass('reactify-alert-border--theme-danger')).to.be.true;
             });
             it('success theme', () => {
                 const shallowWrapper = shallow(<Alert theme="success" />);
-                expect(shallowWrapper.hasClass('reactify-alert-border--theme-success'));
+                expect(shallowWrapper.hasClass('reactify-alert-border--theme-success')).to.be.true;
             });
         })
     })
