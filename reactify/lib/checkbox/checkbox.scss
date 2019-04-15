@@ -1,0 +1,57 @@
+@import '../styles.scss';
+
+.reactify-checkbox {
+    &__container {
+        display: inline-flex;
+        align-content: center;
+        align-items: center;
+    }
+
+    &--font-size {
+        &-small {
+            font-size: 0.6em;
+        }
+
+        &-medium {
+            font-size: 1.2em;
+        }
+
+        &-large {
+            font-size: 1.8em;
+        }
+    }
+
+    &__icon {
+        padding: 0.3em;
+
+        &--theme {
+            &-default {
+                color: $theme-color-default;
+            }
+
+            &-dark {
+                color: $theme-color-dark;
+            }
+
+            &-light {
+                color: $theme-color-light;
+            }
+
+            &-info {
+                color: $theme-color-info;
+            }
+
+            &-warning {
+                color: $theme-color-warning;
+            }
+
+            &-danger {
+                color: $theme-color-danger;
+            }
+
+            &-success {
+                color: $theme-color-success;
+            }
+        }
+    }
+}
