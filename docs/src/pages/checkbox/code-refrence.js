@@ -1,6 +1,6 @@
 const simpleCode = '<Checkbox />';
 const checkedCode = '<Checkbox checked />';
-const disabledCode = '<Checkbox checked disabled />';
+const disabledCode = '<Checkbox checked disabled label="This checkbox is disabled" />';
 const customColorCode = '<Checkbox checked color="violet" />';
 const customSizeCode = `
   <Checkbox size="small" label='size="small"' />
@@ -18,9 +18,9 @@ const customThemeCode = `
   <Checkbox theme="success" checked />
 `;
 const onChangeCode = '<Checkbox onChange={val => alert("checked: " +  val)} />';
-const checkboxPositionCode = `
-  <Checkbox checkBoxPosition="left"> This is a checkbox with left position</Checkbox>
-  <Checkbox checkBoxPosition="right">This is a checkbox with right position</Checkbox>
+const labelPositionCode = `
+  <Checkbox labelPosition="left" label="This is a checkbox with left position" />
+  <Checkbox labelPosition="right" label="This is a checkbox with right position" />
 `;
 const childrenCode = `
   <Checkbox checked>
@@ -43,7 +43,7 @@ export {
   customSizeCode,
   customThemeCode,
   onChangeCode,
-  checkboxPositionCode,
+  labelPositionCode,
   childrenCode,
   customClassCode,
 };

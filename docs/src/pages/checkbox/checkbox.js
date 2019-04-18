@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Checkbox from 'reactify';
@@ -9,7 +10,7 @@ import {
   customSizeCode,
   customThemeCode,
   onChangeCode,
-  checkboxPositionCode,
+  labelPositionCode,
   childrenCode,
   customClassCode,
 } from './code-refrence';
@@ -19,21 +20,21 @@ import DemoCard from '../../components';
 const CheckboxDemo = () => (
   <div>
     <DemoCard title="Simple Use" uniqueIdentifier="simpleUse" sourceCode={simpleCode}>
-      <Checkbox />
+      <Checkbox label="This is a checkbox" />
     </DemoCard>
 
     <DemoCard title="Checked" uniqueIdentifier="checkedUse" sourceCode={checkedCode}>
-      <Checkbox checked />
+      <Checkbox checked label="This is a checked label" />
     </DemoCard>
 
     <DemoCard title="Disabled" uniqueIdentifier="disabledUse" sourceCode={disabledCode}>
-      <Checkbox checked disabled />
+      <Checkbox checked disabled label="This checkbox is disabled" />
     </DemoCard>
 
-    <DemoCard title="Position (left, right)" uniqueIdentifier="checkboxUse" sourceCode={checkboxPositionCode}>
-      <Checkbox checkBoxPosition="left">This is a checkbox with left position</Checkbox>
+    <DemoCard title="Position (left, right)" uniqueIdentifier="checkboxUse" sourceCode={labelPositionCode}>
+      <Checkbox labelPosition="left" label="This is a checkbox with left position" />
       <br />
-      <Checkbox checkBoxPosition="right">This is a checkbox with right position</Checkbox>
+      <Checkbox labelPosition="right" label="This is a checkbox with right position" />
     </DemoCard>
 
     <DemoCard title="Children" uniqueIdentifier="childrenUse" sourceCode={childrenCode}>
