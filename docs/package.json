@@ -36,7 +36,7 @@
     "eject": "react-scripts eject",
     "preinstall": "rm -rf node_modules/reacify && npm install ../reactify",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages -b gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
