@@ -24,7 +24,7 @@ const BadgeDemo = () => (
       sourceCode={simpleCode}
     >
       <Badge count="10">
-        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
     </DemoCard>
 
