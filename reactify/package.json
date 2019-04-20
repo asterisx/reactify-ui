@@ -2,9 +2,9 @@
   "name": "reactify",
   "version": "0.1.0",
   "description": "A feature-rich React UI componennts library",
-  "main": "out/index.js",
+  "main": "build/index.js",
   "directories": {
-    "out": "out"
+    "build": "build"
   },
   "dependencies": {
     "babel-plugin-react-css-modules": "^5.2.4",
@@ -42,7 +42,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "rm -rf out && babel lib --out-dir out && node-sass lib --output out"
+    "postinstall": "rm -rf build && babel lib --out-dir build && node-sass lib --output build"
   },
   "eslintConfig": {
     "extends": "react-app"

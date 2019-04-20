@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import ButtonDemo from './pages/button';
 import LabelDemo from './pages/label';
 
 const App = () => (
@@ -10,14 +11,23 @@ const App = () => (
         <div className="card text-white bg-dark mb-3 col-2">
           <div className="card-header">Components</div>
           <ul className="card-body">
-            <li className="list-group-item"><Link className="d-block" to="/label">Label</Link></li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/button">
+                Button
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/label">
+                Label
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="col-10 overflow-scroll">
+          <Route exact path="/button" component={ButtonDemo} />
           <Route exact path="/label" component={LabelDemo} />
         </div>
       </div>
-
     </div>
   </Router>
 );

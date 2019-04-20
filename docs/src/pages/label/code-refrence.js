@@ -19,7 +19,7 @@ const childrenCode = `
     </div>
   </Label>
 `;
-const customClass = `
+const customClassCode = `
   <Label className="text-light bg-dark p-2 shadow">
     Custom Class Label
   </Label>
@@ -82,6 +82,6 @@ export {
   customThemeCode,
   customColorCode,
   childrenCode,
-  customClass,
+  customClassCode,
   customSizeCode,
 };

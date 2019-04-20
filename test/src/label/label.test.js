@@ -1,5 +1,5 @@
 import React from 'react';
-import Label from 'reactify';
+import { Label } from 'reactify';
 import { shallow } from 'enzyme';
 import chai, { expect } from 'chai';
 import chaiEnzyme from 'chai-enzyme';
