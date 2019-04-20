@@ -24,7 +24,7 @@ const BadgeDemo = () => (
       sourceCode={simpleCode}
     >
       <Badge count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
     </DemoCard>
 
@@ -34,7 +34,7 @@ const BadgeDemo = () => (
       sourceCode={disabledCode}
     >
       <Badge disabled count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
     </DemoCard>
 
@@ -44,19 +44,19 @@ const BadgeDemo = () => (
       sourceCode={customSizeCode}
     >
       <Badge size="small" className="pb-2" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge size="medium" className="pb-2" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="100px" width="100px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="100px" width="100px" />
       </Badge>
       <br />
       <Badge size="large" className="pb-2" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="200px" width="200px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="200px" width="200px" />
       </Badge>
       <br />
       <Badge size="35px" className="pb-2" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="200px" width="200px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="200px" width="200px" />
       </Badge>
       <br />
     </DemoCard>
@@ -67,31 +67,31 @@ const BadgeDemo = () => (
       sourceCode={customThemeCode}
     >
       <Badge theme="default" className="pb-2" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge theme="dark" className="pb-2" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge theme="light" className="pb-2" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge theme="info" className="pb-2" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge theme="warning" className="pb-2" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge theme="danger" className="pb-2" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge theme="success" className="pb-2" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
     </DemoCard>
 
@@ -101,22 +101,22 @@ const BadgeDemo = () => (
       sourceCode={customPositionCode}
     >
       <Badge position="top-left" size="small" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <br />
       <Badge position="top-right" size="small" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <br />
       <Badge position="bottom-right" size="small" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <br />
       <Badge position="bottom-left" size="small" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <br />
@@ -144,7 +144,7 @@ const BadgeDemo = () => (
       sourceCode={customColorCode}
     >
       <Badge color="violet" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
     </DemoCard>
 
@@ -154,7 +154,7 @@ const BadgeDemo = () => (
       sourceCode={customClassCode}
     >
       <Badge className="text-light bg-dark p-2 shadow" count="10">
-        <img className="img-message" src="../../../assets/mail.png" height="50px" width="50px" />
+        <img className="img-message" src="~/public/assets/mail.png" height="50px" width="50px" />
       </Badge>
     </DemoCard>
   </div>
