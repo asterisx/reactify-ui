@@ -1,0 +1,115 @@
+@import "../styles.scss";
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+$darkenBy: 10;
+
+%tray-placement-common {
+    position: relative;
+    right: 0px;
+}
+
+.reactify-user_profile {
+    &__container {}
+
+    &__img-container {
+        width: 30px;
+        height: 30px;
+        border-radius: 40px;
+        border: 1px solid map_get($df-light, 6);
+        box-shadow: 0 0 1px #fff;
+        margin-left: 10px;
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__tray {
+        &--placement {
+            &-top {
+                @extend %tray-placement-common;
+                top: 10%;
+            }
+
+            &-bottom {
+                @extend %tray-placement-common;
+                bottom: -10%;
+            }
+        }
+    }
+
+    &--theme {
+        &-info {
+            color: $theme-color-info;
+
+            &:hover {
+                color: darken($color:$theme-color-info, $amount: $darkenBy)
+            }
+        }
+
+        &-warning {
+            color: $theme-color-warning;
+
+            &:hover {
+                color: darken($color:$theme-color-warning, $amount: $darkenBy)
+            }
+        }
+
+        &-danger {
+            color: $theme-color-danger;
+
+            &:hover {
+                color: darken($color:$theme-color-danger, $amount: $darkenBy)
+            }
+        }
+
+        &-success {
+            color: $theme-color-success;
+
+            &:hover {
+                color: darken($color:$theme-color-success, $amount: $darkenBy)
+            }
+        }
+    }
+
+    &-hide {
+        &-breakpoint {
+            &-sm {
+                @media (min-width: #{$screen-sm-min}) {
+                    display: none;
+                }
+            }
+
+            &-md {
+                @media (min-width: #{$screen-md-min}) {
+                    display: none;
+                }
+            }
+
+            &-lg {
+                @media (min-width: #{$screen-lg-min}) {
+                    display: none;
+                }
+            }
+
+            &-xl {
+                @media (min-width: #{$screen-xl-min}) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
