@@ -10,7 +10,7 @@ const DemoCard = ({
   sourceCode,
 }) => (
   <section className={`card m-2 ${className || ''}`}>
-    <div className="card-header d-flex justify-content-between mb-3">
+    <div className="card-header d-flex justify-content-between">
       <span className="align-self-center">{title}</span>
       <button type="button" className="btn btn-light btn-xs" data-toggle="collapse" data-target={`#${uniqueIdentifier}Demo`}>Show Code</button>
     </div>

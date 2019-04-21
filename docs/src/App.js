@@ -7,6 +7,7 @@ import ButtonDemo from './pages/button';
 import CheckBoxDemo from './pages/checkbox';
 import FullScreenDemo from './pages/full-screen';
 import LabelDemo from './pages/label';
+import LegendDemo from './pages/legend';
 import RadioInputDemo from './pages/radio-input';
 import SwitchDemo from './pages/switch';
 
@@ -15,7 +16,7 @@ const App = () => (
     <div className="container-fluid">
       <div className="row">
         <div className="card text-white bg-dark mb-3 col-2">
-          <div className="card-header">Components</div>
+          <h3 className="card-header">Components</h3>
           <ul className="card-body">
             <li className="list-group-item">
               <Link className="d-block" to="/alert">
@@ -48,6 +49,11 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/legend">
+                Legend
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/radio-input">
                 Radio Input
               </Link>
@@ -66,6 +72,7 @@ const App = () => (
           <Route exact path="/checkbox" component={CheckBoxDemo} />
           <Route exact path="/full-screen" component={FullScreenDemo} />
           <Route exact path="/label" component={LabelDemo} />
+          <Route exact path="/legend" component={LegendDemo} />
           <Route exact path="/radio-input" component={RadioInputDemo} />
           <Route exact path="/switch" component={SwitchDemo} />
         </div>

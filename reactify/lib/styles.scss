@@ -16,6 +16,8 @@ $theme-color-default: $flat-black;
 $font-light: $flat-white;
 $font-dark: $flat-black;
 
+$darken-by: 25;
+
 .reactify {
   &--disabled {
     cursor: not-allowed;
