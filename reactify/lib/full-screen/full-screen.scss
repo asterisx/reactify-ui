@@ -1,0 +1,38 @@
+@import '../styles.scss';
+
+.reactify-fullScreen {
+    &__container {
+        position: relative;
+        background: white;
+        border: 0;
+        padding: 0;
+    }
+
+    &__icon {
+        position: absolute;
+        display: inline;
+        color: $flat-black;
+        top: 0px;
+        right: 0px;
+    }
+
+    &--allSpace {
+        left: 0 !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        z-index: 1000 !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    &--expanded {
+        position: fixed;
+        @extend .reactify-fullScreen--allSpace;
+    }
+
+    &--relative {
+        position: relative;
+        @extend .reactify-fullScreen--allSpace;
+    }
+}

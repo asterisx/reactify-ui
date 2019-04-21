@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 import './alert.scss';
 
 const Alert = ({
-  children, theme, className, direction, color, disabled, ...otherProps
+  children,
+  theme,
+  className,
+  direction,
+  color,
+  disabled,
+  ...otherProps
 }) => {
   const borderDirectionClasses = []
     .concat(direction)
