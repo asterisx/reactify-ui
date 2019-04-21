@@ -5,6 +5,7 @@ import AlertDemo from './pages/alert';
 import BadgeDemo from './pages/badge';
 import ButtonDemo from './pages/button';
 import CheckBoxDemo from './pages/checkbox';
+import FullScreenDemo from './pages/full-screen';
 import LabelDemo from './pages/label';
 import RadioInputDemo from './pages/radio-input';
 import SwitchDemo from './pages/switch';
@@ -37,6 +38,11 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/full-screen">
+                FullScreen
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/label">
                 Label
               </Link>
@@ -58,6 +64,7 @@ const App = () => (
           <Route exact path="/badge" component={BadgeDemo} />
           <Route exact path="/button" component={ButtonDemo} />
           <Route exact path="/checkbox" component={CheckBoxDemo} />
+          <Route exact path="/full-screen" component={FullScreenDemo} />
           <Route exact path="/label" component={LabelDemo} />
           <Route exact path="/radio-input" component={RadioInputDemo} />
           <Route exact path="/switch" component={SwitchDemo} />
