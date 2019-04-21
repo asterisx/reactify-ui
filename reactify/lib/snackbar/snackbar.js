@@ -9,6 +9,7 @@ class SnackBar extends Component {
     color: PropTypes.string,
     disabled: PropTypes.bool,
     theme: PropTypes.oneOf([
+      'default',
       'dark',
       'light',
       'info',
@@ -76,16 +77,16 @@ class SnackBar extends Component {
       !this.state.isHidden && (
       <div
         className={
-          `reactify-snackbar__container reactify-snackbar--position-${position} reactify-snackbar--theme-${theme} ${className || ''} ${disabled && 'reactify--disabled'}`
+          `reactify-snackbar__container reactify-snackbar--position-${position} reactify-snackbar--theme-${theme} ${className || ''} ${!disabled || 'reactify--disabled'}`
         }
         style={{ backgroundColor: color || undefined }}
         {...otherProps}
       >
         {children || (
         <div className="reactify-snackbar__options">
-          <span className="reactify--pl-1 reactify--pr-1">{message}</span>
-            {!!action && <span className="reactify--pl-1 reactify--pr-1" onClick={onActionClick}>{action}</span>}
-            {showDismiss && <span className="reactify--pl-1 reactify--pr-1" onClick={this.dismiss}>Dismiss</span>}
+          <span className="reactify-snackbar__message reactify--pl-1 reactify--pr-1">{message}</span>
+              {!!action && <span className="reactify-snackbar__action reactify--pl-1 reactify--pr-1" onClick={onActionClick}>{action}</span>}
+            {showDismiss && <span className="reactify-snackbar__dismiss reactify--pl-1 reactify--pr-1" onClick={this.dismiss}>Dismiss</span>}
         </div>
         )}
       </div>

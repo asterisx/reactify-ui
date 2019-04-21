@@ -7,6 +7,7 @@ import Label from './label';
 import { Legend, LegendItem } from './legend';
 import RadioInput from './radio-input';
 import Switch from './switch';
+import SnackBar from './snackbar';
 
 export {
   Alert,
@@ -19,4 +20,5 @@ export {
   LegendItem,
   RadioInput,
   Switch,
+  SnackBar,
 };
