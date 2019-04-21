@@ -6,6 +6,8 @@ class SnackBar extends Component {
   state = { isHidden: false };
 
   static propTypes = {
+    color: PropTypes.string,
+    disabled: PropTypes.bool,
     theme: PropTypes.oneOf([
       'dark',
       'light',
@@ -31,6 +33,8 @@ class SnackBar extends Component {
   timeout = {};
 
   static defaultProps = {
+    color: undefined,
+    disabled: false,
     theme: 'dark',
     message: '',
     action: undefined,
@@ -56,6 +60,8 @@ class SnackBar extends Component {
     const {
       children,
       className,
+      color,
+      disabled,
       theme,
       message,
       action,
@@ -70,8 +76,9 @@ class SnackBar extends Component {
       !this.state.isHidden && (
       <div
         className={
-          `reactify-snackbar__container reactify-snackbar--position-${position} reactify-snackbar--theme-${theme} ${className || ''}`
+          `reactify-snackbar__container reactify-snackbar--position-${position} reactify-snackbar--theme-${theme} ${className || ''} ${disabled && 'reactify--disabled'}`
         }
+        style={{ backgroundColor: color || undefined }}
         {...otherProps}
       >
         {children || (
