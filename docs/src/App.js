@@ -8,6 +8,7 @@ import CheckBoxDemo from './pages/checkbox';
 import FullScreenDemo from './pages/full-screen';
 import LabelDemo from './pages/label';
 import LegendDemo from './pages/legend';
+import NumberCounterDemo from './pages/number-counter';
 import RadioInputDemo from './pages/radio-input';
 import SwitchDemo from './pages/switch';
 import SnackBarDemo from './pages/snackbar';
@@ -56,6 +57,11 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/number-counter">
+                Number Counter
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/radio-input">
                 Radio Input
               </Link>
@@ -85,6 +91,7 @@ const App = () => (
           <Route exact path="/full-screen" component={FullScreenDemo} />
           <Route exact path="/label" component={LabelDemo} />
           <Route exact path="/legend" component={LegendDemo} />
+          <Route exact path="/number-counter" component={NumberCounterDemo} />
           <Route exact path="/radio-input" component={RadioInputDemo} />
           <Route exact path="/switch" component={SwitchDemo} />
           <Route exact path="/snackbar" component={SnackBarDemo} />

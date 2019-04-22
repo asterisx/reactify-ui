@@ -5,6 +5,7 @@ import Checkbox from './checkbox';
 import FullScreen from './full-screen';
 import Label from './label';
 import { Legend, LegendItem } from './legend';
+import NumberCounter from './number-counter';
 import RadioInput from './radio-input';
 import Switch from './switch';
 import SnackBar from './snackbar';
@@ -19,6 +20,7 @@ export {
   Label,
   Legend,
   LegendItem,
+  NumberCounter,
   RadioInput,
   Switch,
   SnackBar,
