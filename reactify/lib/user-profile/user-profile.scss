@@ -1,34 +1,53 @@
 @import "../styles.scss";
 
 // Small tablets and large smartphones (landscape view)
-$screen-sm-min: 576px;
+$screen-sm: 576px;
 
 // Small tablets (portrait view)
-$screen-md-min: 768px;
+$screen-md: 768px;
 
 // Tablets and small desktops
-$screen-lg-min: 992px;
+$screen-lg: 992px;
 
 // Large tablets and desktops
-$screen-xl-min: 1200px;
+$screen-xl: 1200px;
 
-$darkenBy: 10;
-
-%tray-placement-common {
-    position: relative;
-    right: 0px;
-}
+$darken-by: 10;
 
 .reactify-user_profile {
-    &__container {}
+    &__container {
+        display: inline-flex;
+        align-items: center;
+        align-content: center;
+        transition-duration: 0.5s;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__main {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        padding: 0.2em;
+    }
+
+    &__info-container {
+        display: flex;
+        align-items: center;
+        align-content: center;
+    }
+
+    &__info {
+        padding-left: 0.2em;
+        padding-right: 0.2em;
+    }
 
     &__img-container {
-        width: 30px;
-        height: 30px;
-        border-radius: 40px;
-        border: 1px solid map_get($df-light, 6);
+        width: 2em;
+        height: 2em;
+        border-radius: 2.4em;
         box-shadow: 0 0 1px #fff;
-        margin-left: 10px;
         overflow: hidden;
     }
 
@@ -40,73 +59,103 @@ $darkenBy: 10;
     &__tray {
         &--placement {
             &-top {
-                @extend %tray-placement-common;
-                top: 10%;
+                position: absolute;
+                right: 0px;
+                bottom: 1.9em;
             }
 
             &-bottom {
-                @extend %tray-placement-common;
-                bottom: -10%;
+                position: absolute;
+                right: 0px;
+                top: 1.9em;
             }
         }
     }
 
     &--theme {
-        &-info {
-            color: $theme-color-info;
+        &-default {
+            background-color: $theme-color-default;
+            color: $font-light;
 
             &:hover {
-                color: darken($color:$theme-color-info, $amount: $darkenBy)
+                background-color: darken($color:$theme-color-default, $amount: $darken-by)
+            }
+        }
+        &-dark {
+            background-color: $theme-color-dark;
+            color: $font-light;
+
+            &:hover {
+                background-color: darken($color:$theme-color-dark, $amount: $darken-by)
+            }
+        }
+        &-light {
+            background-color: $theme-color-light;
+            color: $font-dark;
+
+            &:hover {
+                background-color: darken($color:$theme-color-light, $amount: $darken-by)
+            }
+        }
+        &-info {
+            background-color: $theme-color-info;
+            color: $font-light;
+
+            &:hover {
+                background-color: darken($color:$theme-color-info, $amount: $darken-by)
             }
         }
 
         &-warning {
-            color: $theme-color-warning;
+            background-color: $theme-color-warning;
+            color: $font-light;
 
             &:hover {
-                color: darken($color:$theme-color-warning, $amount: $darkenBy)
+                color: darken($color:$theme-color-warning, $amount: $darken-by)
             }
         }
 
         &-danger {
-            color: $theme-color-danger;
+            background-color: $theme-color-danger;
+            color: $font-light;
 
             &:hover {
-                color: darken($color:$theme-color-danger, $amount: $darkenBy)
+                background-color: darken($color:$theme-color-danger, $amount: $darken-by)
             }
         }
 
         &-success {
-            color: $theme-color-success;
+            background-color: $theme-color-success;
+            color: $font-light;
 
             &:hover {
-                color: darken($color:$theme-color-success, $amount: $darkenBy)
+                background-color: darken($color:$theme-color-success, $amount: $darken-by)
             }
         }
     }
 
-    &-hide {
+    &--hide {
         &-breakpoint {
             &-sm {
-                @media (min-width: #{$screen-sm-min}) {
+                @media (max-width: #{$screen-sm}) {
                     display: none;
                 }
             }
 
             &-md {
-                @media (min-width: #{$screen-md-min}) {
+                @media (max-width: #{$screen-md}) {
                     display: none;
                 }
             }
 
             &-lg {
-                @media (min-width: #{$screen-lg-min}) {
+                @media (max-width: #{$screen-lg}) {
                     display: none;
                 }
             }
 
             &-xl {
-                @media (min-width: #{$screen-xl-min}) {
+                @media (max-width: #{$screen-xl}) {
                     display: none;
                 }
             }

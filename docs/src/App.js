@@ -11,6 +11,7 @@ import LegendDemo from './pages/legend';
 import RadioInputDemo from './pages/radio-input';
 import SwitchDemo from './pages/switch';
 import SnackBarDemo from './pages/snackbar';
+import UserProfileDemo from './pages/user-profile';
 
 const App = () => (
   <Router>
@@ -69,6 +70,11 @@ const App = () => (
                 SnackBar
               </Link>
             </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/user-profile">
+                User Profile
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="col-10 overflow-scroll">
@@ -82,6 +88,7 @@ const App = () => (
           <Route exact path="/radio-input" component={RadioInputDemo} />
           <Route exact path="/switch" component={SwitchDemo} />
           <Route exact path="/snackbar" component={SnackBarDemo} />
+          <Route exact path="/user-profile" component={UserProfileDemo} />
         </div>
       </div>
     </div>

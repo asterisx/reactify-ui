@@ -16,33 +16,37 @@ describe('Switch Component', () => {
     it('defaults to unchecked state', () => {
         const shallowWrapper = shallow(<Switch />);
         const switchInput = shallowWrapper.find('.reactify-switch__input');
-        expect(switchInput.should.not.be.checked());
+        expect(switchInput.props().checked).to.be.false;
     })
 
     it('should be checked when checked prop is passed', () => {
         const shallowWrapper = shallow(<Switch checked={true}/>);
         const switchInput = shallowWrapper.find('.reactify-switch__input');
-        expect(switchInput.should.be.checked());
+        expect(switchInput.props().checked).to.be.true;
     })
 
     it('should change state when clicked', () => {
         const shallowWrapper = shallow(<Switch />);
         const switchInput = shallowWrapper.find('.reactify-switch__input');
         switchInput.simulate('click');
+        jest.useFakeTimers();
         setTimeout(() => {
-            switchInput.should.be.checked()
+            expect(switchInput.props().checked).to.be.false;
         }, 0);
+        jest.runAllTimers();
     })
 
     describe('props', () => {
         it('should have correct iconColor passed as props', () => {
             let color = "red";
             const shallowWrapper = shallow(<Switch iconColor={color} checked={true}/>);
+            jest.useFakeTimers();
             setTimeout(
                 () => {
                     const switchInput = shallowWrapper.find('.reactify-switch__input');
-                    expect(switchInput).to.have.style('background-color', color)
-                }, 0);
+                    expect(switchInput.props().style['color']).to.equal(color);
+            }, 0);
+            jest.runAllTimers();
         });
 
         it('should have correct size passed as props', () => {

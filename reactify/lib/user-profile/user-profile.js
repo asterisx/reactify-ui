@@ -2,9 +2,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './user-profile.scss';
+import { IoMdArrowDropdown } from 'react-icons/io';
 
 class UserProfile extends Component {
-  state = { trayOpen: true }
+  state = { trayOpen: false }
+
+  closeTray = () => {
+    this.setState({ trayOpen: false });
+  }
+
+  toggleTray = () => {
+    this.setState(prevState => ({ trayOpen: !prevState.trayOpen }));
+  }
 
   closeTray = () => {
     this.setState({ trayOpen: false });
@@ -20,8 +29,11 @@ class UserProfile extends Component {
       welcomeMessage,
       dropDownPLacement,
       breakPoints,
-      imagePath,
+      imgPath,
       theme,
+      color,
+      disabled,
+      onClick,
       ...otherProps
     } = this.props;
 
@@ -32,25 +44,31 @@ class UserProfile extends Component {
 
     const image = (
       <div className="reactify-user_profile__img-container">
-        <img className="reactify-user_profile__img" src={imagePath} />
+        <img className="reactify-user_profile__img" src={imgPath} />
       </div>
     );
     return (
-      <div className={`reactify-user_profile__container ${className || ''}`} {...otherProps}>
-        <div className={`reactify-user_profile__info reactify-user_profile--theme-${theme}`}>
-          {avatarPosition === 'left' && image}
-          <p>
-            {showMessage && <span>{welcomeMessage}</span>}
-            {', '}
-            <span>{userName}</span>
-          </p>
-          {avatarPosition === 'right' && image}
+      <div className={`reactify-user_profile__container ${disabled ? 'reactify--disabled' : ''} ${className || ''}`} onClick={() => { this.toggleTray(); if (onClick) { onClick(); } }} {...otherProps}>
+        <div
+          className={`reactify-user_profile__main reactify-user_profile--theme-${theme}`}
+          style={{ backgroundColor: color }}
+        >
+          <div className="reactify-user_profile__info-container">
+            {avatarPosition === 'left' && image}
+            <span className={`reactify-user_profile__info ${breakpoints}`}>
+              {showMessage && <span className="reactify-user_profile__message">{welcomeMessage}</span>}
+              {(showMessage && userName) && ', '}
+              <span className="reactify-user_profile__username">{userName}</span>
+            </span>
+            {avatarPosition === 'right' && image}
+          </div>
+          <IoMdArrowDropdown className="reactify-user_profile__dropdown-icon" />
         </div>
         {
           this.state.trayOpen
           && (
-          <div className={`reactify--z-index-10000 reactify-user_profile__tray--placement-${dropDownPLacement} ${breakpoints}`}>
-            {children(this.closeTray)}
+          <div className={`reactify--z-index-10000 reactify-user_profile__tray--placement-${dropDownPLacement}`}>
+            {children && (typeof children === 'function' ? children(this.closeTray) : children)}
           </div>
           )
         }
@@ -64,8 +82,15 @@ UserProfile.propTypes = {
   avatarPosition: PropTypes.string,
   showMessage: PropTypes.bool,
   welcomeMessage: PropTypes.string,
-  dropDownPLacement: PropTypes.string,
-  breakPoints: PropTypes.string,
+  imgPath: PropTypes.string.isRequired,
+  dropDownPLacement: PropTypes.oneOf([
+    'top',
+    'bottom',
+  ]),
+  breakPoints: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
   theme: PropTypes.oneOf([
     'default',
     'dark',
@@ -75,15 +100,19 @@ UserProfile.propTypes = {
     'danger',
     'success',
   ]),
+  color: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 
 UserProfile.defaultProps = {
   avatarPosition: 'left',
   showMessage: true,
   welcomeMessage: 'Welcome',
-  dropDownPLacement: 'up',
+  dropDownPLacement: 'bottom',
   breakPoints: undefined,
-  theme: 'default',
+  theme: 'light',
+  color: undefined,
+  disabled: false,
 };
 
 export default UserProfile;
