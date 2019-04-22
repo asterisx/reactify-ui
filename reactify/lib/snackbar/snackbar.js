@@ -85,8 +85,8 @@ class SnackBar extends Component {
         {children || (
         <div className="reactify-snackbar__options">
           <span className="reactify-snackbar__message reactify--pl-1 reactify--pr-1">{message}</span>
-              {!!action && <span className="reactify-snackbar__action reactify--pl-1 reactify--pr-1" onClick={onActionClick}>{action}</span>}
-            {showDismiss && <span className="reactify-snackbar__dismiss reactify--pl-1 reactify--pr-1" onClick={this.dismiss}>Dismiss</span>}
+          {!!action && <span className="reactify-snackbar__action reactify--pl-1 reactify--pr-1" onClick={onActionClick}>{action}</span>}
+          {showDismiss && <span className="reactify-snackbar__dismiss reactify--pl-1 reactify--pr-1" onClick={this.dismiss}>dismiss</span>}
         </div>
         )}
       </div>
