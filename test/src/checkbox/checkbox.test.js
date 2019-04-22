@@ -1,6 +1,6 @@
 import React from 'react';
 import { Checkbox } from 'reactify';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import chai, { expect } from 'chai';
 import chaiEnzyme from 'chai-enzyme';
 
@@ -24,12 +24,13 @@ describe('Checkbox Component', () => {
     })
 
     it('should change state when clicked', () => {
-        const shallowWrapper = shallow(<Checkbox />);
-        const checkbox = shallowWrapper.find('.reactify-checkbox__icon');
-        checkbox.simulate('click');
+        const mountWrapper = mount(<Checkbox />);
+        mountWrapper.simulate('click');
+        jest.useFakeTimers();
         setTimeout(() => {
-            expect(shallowWrapper.state().checked).to.be.true;
+            expect(mountWrapper.state().checked).to.be.true;
         }, 0);
+        jest.runAllTimers();
     })
     it('should display children prop passed', () => {
         let someClass = "someClass";
@@ -65,11 +66,12 @@ describe('Checkbox Component', () => {
 
             let fontSize = "40px";
             const shallowWrapper3 = shallow(<Checkbox size={fontSize} />);
+            jest.useFakeTimers();
             setTimeout(
                 () => {
                     expect(shallowWrapper3).to.have.style('font-size', fontSize)
-                }, 0);
-
+            }, 0);
+            jest.runAllTimers();
         });
 
         it('should have disabled class when disabled prop is pass', () => {

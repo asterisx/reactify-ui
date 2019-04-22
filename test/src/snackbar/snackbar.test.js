@@ -32,10 +32,12 @@ describe('SnackBar Component', () => {
         it('should have correct color passed as props', () => {
             let color = "red";
             const shallowWrapper = shallow(<SnackBar color={color} />);
+            jest.useFakeTimers();
             setTimeout(
                 () => {
                     expect(shallowWrapper).to.have.style('background-color', color)
-                }, 0);
+            }, 0);
+            jest.runAllTimers();
         });
 
         it('should dismiss after delay and also call onClose', () => {
@@ -43,22 +45,26 @@ describe('SnackBar Component', () => {
             const onCloseSpy = sinon.spy();
             const wrapper = mount(<SnackBar delay={delay} onClose={onCloseSpy} />);
             const spy = sinon.spy(wrapper.instance(), 'dismiss');
+            jest.useFakeTimers();
             setTimeout(
                 () => {
-                    expect(spy.toHaveBeenCalled()).to.be.true;
-                    expect(onCloseSpy.toHaveBeenCalled()).to.be.true;
-                }, delay);
+                    expect(spy.called).to.be.true;
+                    expect(onCloseSpy.called).to.be.true;
+            }, delay);
+            jest.runAllTimers();
         });
 
         it('should call onAction when action prop is passed and pressed', () => {
             const spy = sinon.spy();
-            const shallowWrapper = shallow(<SnackBar action="Some Action" onAction={spy} />);
+            const shallowWrapper = shallow(<SnackBar action="Some Action" onActionClick={spy} />);
             const action = shallowWrapper.find('.reactify-snackbar__action');
             action.simulate('click');
+            jest.useFakeTimers();
             setTimeout(
                 () => {
-                expect(spy.toHaveBeenCalled()).to.be.true;
-                }, 0);
+                expect(spy.called).to.be.true;
+            }, 0);
+            jest.runAllTimers();
         });
 
         it('should have disabled class when disabled prop is pass', () => {
@@ -74,7 +80,7 @@ describe('SnackBar Component', () => {
         });
 
         it('should display the showDismiss correctly when showDismiss prop is passed', () => {
-            let dismissText = "Dismiss";
+            let dismissText = "dismiss";
             const shallowWrapper = shallow(<SnackBar showDismiss></SnackBar>);
             const label = shallowWrapper.find(`.reactify-snackbar__dismiss`);
             expect(label.text()).to.equal(dismissText);
