@@ -1,6 +1,10 @@
 {
     "plugins": ["jest"],
-    "extends": ["plugin:jest/recommended"],
+    "extends": [
+        "plugin:jest/recommended", 
+        "react-app",
+        "airbnb"
+    ],
     "rules": {
         "jest/no-disabled-tests": "warn",
         "jest/no-focused-tests": "error",
