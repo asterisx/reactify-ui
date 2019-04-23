@@ -47,11 +47,7 @@ describe('FullScreen Component', () => {
         it('should contract when contractOnEscapeKey is true', () => {
             const mountWrapper = mount(<FullScreen expanded contractOnEscapeKey/>);
             mountWrapper.childAt(0).simulate('keydown', {key: 'Escape', keyCode: 27, which: 27});
-            jest.useFakeTimers();
-            setTimeout(() => {
-                expect(mountWrapper.state().expanded).to.be.false;
-            }, 0);
-            jest.runAllTimers();
+            expect(mountWrapper.state().expanded).to.be.false;
         });
     })
 });

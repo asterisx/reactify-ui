@@ -6,6 +6,7 @@ import {
   breakPointsCode,
   customColorCode,
   customThemeCode,
+  customClassCode,
   closeProgramaticallyCode,
   disabledCode,
   dropDownPlacementCode,
@@ -228,6 +229,19 @@ breakPoints="md"
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
         color="violet"
+      />
+    </DemoCard>
+
+    <DemoCard
+      title="Custom Class"
+      uniqueIdentifier="customClassUse"
+      sourceCode={customClassCode}
+    >
+      <UserProfile
+        imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+        userName="Joe"
+        theme="info"
+        className="p-3"
       />
     </DemoCard>
   </div>

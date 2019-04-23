@@ -29,11 +29,7 @@ describe('Radio Input Component', () => {
         const mountWrapper = mount(<RadioInput />);
         mountWrapper.simulate('click');
         const radioInput = mountWrapper.find('.reactify-radio-input__input');
-        jest.useFakeTimers();
-        setTimeout(() => {
-            expect(radioInput.props().checked).to.be.true;
-        }, 0);
-        jest.runAllTimers();
+        expect(radioInput.props().checked).to.be.true;
     })
     it('should display children prop passed', () => {
         let someClass = "someClass";
@@ -52,13 +48,8 @@ describe('Radio Input Component', () => {
         it('should have correct iconColor passed as props', () => {
             let color = "red";
             const shallowWrapper = shallow(<RadioInput iconColor={color} checked={true}/>);
-            jest.useFakeTimers();
-            setTimeout(
-                () => {
-                    const radioInput = shallowWrapper.find('.reactify-radio-input__input');
-                    expect(radioInput.props().style['color']).to.equal(color);
-            }, 0);
-            jest.runAllTimers();
+            const radioInput = shallowWrapper.find('.reactify-radio-input__input');
+            expect(radioInput.props().style['color']).to.equal(color);
         });
 
         it('should have correct size passed as props', () => {
@@ -73,13 +64,7 @@ describe('Radio Input Component', () => {
 
             let fontSize = "40px";
             const shallowWrapper3 = shallow(<RadioInput size={fontSize} />);
-            jest.useFakeTimers();
-            setTimeout(
-                () => {
-                    expect(shallowWrapper3).to.have.style('font-size', fontSize)
-            }, 0);
-            jest.runAllTimers();
-
+            expect(shallowWrapper3.props().style['fontSize']).to.equal(fontSize);
         });
 
         it('should have disabled class when disabled prop is pass', () => {

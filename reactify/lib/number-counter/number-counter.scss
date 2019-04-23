@@ -1,8 +1,11 @@
 @import '../styles.scss';
 
+$darken-by: 15;
 .reactify-number-counter {
     &__container {
-        display: inline-block;
+        display: inline-flex;
+        align-content: center;
+        align-items: center;
     }
 
     &--size {
@@ -23,7 +26,7 @@
         }
 
         &-light {
-            color: $theme-color-light;
+            color: darken($theme-color-light, $darken-by);
         }
 
         &-info {

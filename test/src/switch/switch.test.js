@@ -29,11 +29,7 @@ describe('Switch Component', () => {
         const shallowWrapper = shallow(<Switch />);
         const switchInput = shallowWrapper.find('.reactify-switch__input');
         switchInput.simulate('click');
-        jest.useFakeTimers();
-        setTimeout(() => {
-            expect(switchInput.props().checked).to.be.false;
-        }, 0);
-        jest.runAllTimers();
+        expect(switchInput.props().checked).to.be.false;
     })
 
     describe('props', () => {

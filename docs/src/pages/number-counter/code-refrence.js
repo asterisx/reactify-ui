@@ -1,79 +1,59 @@
-const avatarPositionCode = `
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
-  avatarPosition="left"
-/>
-
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
-  avatarPosition="right"
-/>
-`;
-
-const breakPointsCode = `
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
-  breakPoints="md"
-/>
-
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
-  breakPoints={['sm', 'md', 'lg', 'xl']}
-/>
-`;
-
 const customColorCode = `
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
   color="violet"
 />
 `;
 
+const customClassCode = `
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  className="bg-dark p-3"
+/>
+`;
+
 const customThemeCode = `
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
-  theme="light"
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  theme="default"
 />
 
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
-  theme="default"
-  />
-
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
   theme="dark"
 />
 
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  theme="light"
+/>
+
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
   theme="info"
 />
 
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
   theme="warning"
 />
 
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
   theme="danger"
 />
 
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
   theme="success"
 />
 `;
@@ -96,29 +76,62 @@ Close Tray
 `;
 
 const disabledCode = `
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
   disabled
 />
 `;
-const dropDownPlacementCode = `
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
-  showMessage
->
-  <img alt="" width="auto" height="100px" src="https://i.gifer.com/YYdO.gif" />
-</UserProfile>
 
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
-  showMessage={false}
-  dropDownPLacement="top"
+const dynamicCode = `
+<NumberCounter
+  from={this.state.directionCounter.from}
+  to={this.state.directionCounter.to}
+/>
+
+<button
+  type="button"
+  className="btn btn-primary d-inline"
+  onClick={
+    () => this.setState({ directionCounter: { to: Math.floor(Math.random() * 10000) } })
+  }
 >
-  <img alt="" width="auto" height="100px" src="https://i.gifer.com/YYdO.gif" />
-</UserProfile>
+  Random
+</button>
+`;
+
+const delayCode = `
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  delay={15000}
+/>
+`;
+
+const intervalCode = `
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  interval={1000}
+/>
+`;
+
+const resetCode = `
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  interval={100}
+>
+{reset => (
+  <button
+    type="button"
+    className="btn btn-primary d-block ml-3"
+    onClick={() => reset()}
+  >
+    Reset
+  </button>
+)}
+</NumberCounter>
 `;
 
 const simpleCode = `
@@ -128,37 +141,43 @@ const simpleCode = `
 />
 `;
 
-const showMessageCode = `
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
-  showMessage
+const sizeCode = `
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  size="small"
 />
 
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
-  showMessage={false}
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  size="medium"
+/>
+
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  size="large"
+/>
+
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  size="75px"
 />
 `;
 
-const welcomeMessageCode = `
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
-  welcomeMessage="how are you doing?"
-/>
-`;
 
 export {
-  avatarPositionCode,
-  breakPointsCode,
   customColorCode,
+  customClassCode,
   customThemeCode,
   closeProgramaticallyCode,
   disabledCode,
-  dropDownPlacementCode,
-  showMessageCode,
+  delayCode,
+  dynamicCode,
+  intervalCode,
+  resetCode,
   simpleCode,
-  welcomeMessageCode,
+  sizeCode,
 };

@@ -21,21 +21,13 @@ describe('UserProfile Component', () => {
     it('should change state when clicked', () => {
         const shallowWrapper = shallow(<UserProfile  imgPath="" userName="Joe"/>);
         shallowWrapper.simulate('click');
-        jest.useFakeTimers();
-        setTimeout(() => {
-            expect(shallowWrapper.state().trayOpen).to.be.true;
-        }, 0);
-        jest.runAllTimers();
+        expect(shallowWrapper.state().trayOpen).to.be.true;
     })
 
     it('can call closeTray from functional children to close tray', () => {
         const shallowWrapper = shallow(<UserProfile imgPath="" userName="Joe">{(closeTray) => setTimeout(() => closeTray(), 1000)}</UserProfile>);
         shallowWrapper.find('.reactify-user_profile__dropdown-icon').simulate('click');
-        jest.useFakeTimers();
-        setTimeout(()=> {
-            expect(shallowWrapper.state().trayOpen).to.be.false;
-        }, 1000);
-        jest.runAllTimers();
+        expect(shallowWrapper.state().trayOpen).to.be.false;
     })
     describe('props', () => {
         it('should display username when username prop is passed', () => {
@@ -102,12 +94,7 @@ describe('UserProfile Component', () => {
             const color = "violet"
             const shallowWrapper = shallow(<UserProfile imgPath="" userName="Joe" color={color} />);
             const mainContainer = shallowWrapper.find('.reactify-user_profile__main');
-            jest.useFakeTimers();
-            setTimeout(
-                () => {
-                    expect(mainContainer).to.have.style('background-color', color)
-            }, 0);
-            jest.runAllTimers();
+            expect(mainContainer.props().style['backgroundColor']).to.equal(color);
         });
  
         describe('should have correct theme when theme prop is passed', () => {

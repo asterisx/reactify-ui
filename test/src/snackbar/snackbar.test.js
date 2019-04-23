@@ -32,26 +32,16 @@ describe('SnackBar Component', () => {
         it('should have correct color passed as props', () => {
             let color = "red";
             const shallowWrapper = shallow(<SnackBar color={color} />);
-            jest.useFakeTimers();
-            setTimeout(
-                () => {
-                    expect(shallowWrapper).to.have.style('background-color', color)
-            }, 0);
-            jest.runAllTimers();
+            expect(shallowWrapper).to.have.style('background-color', color)
         });
 
         it('should dismiss after delay and also call onClose', () => {
-            let delay = 1000;
+            let delay = 10;
             const onCloseSpy = sinon.spy();
-            const wrapper = mount(<SnackBar delay={delay} onClose={onCloseSpy} />);
-            const spy = sinon.spy(wrapper.instance(), 'dismiss');
             jest.useFakeTimers();
-            setTimeout(
-                () => {
-                    expect(spy.called).to.be.true;
-                    expect(onCloseSpy.called).to.be.true;
-            }, delay);
+            mount(<SnackBar delay={delay} onClose={onCloseSpy} />);
             jest.runAllTimers();
+            expect(onCloseSpy.called).to.be.true;
         });
 
         it('should call onAction when action prop is passed and pressed', () => {
@@ -59,12 +49,7 @@ describe('SnackBar Component', () => {
             const shallowWrapper = shallow(<SnackBar action="Some Action" onActionClick={spy} />);
             const action = shallowWrapper.find('.reactify-snackbar__action');
             action.simulate('click');
-            jest.useFakeTimers();
-            setTimeout(
-                () => {
-                expect(spy.called).to.be.true;
-            }, 0);
-            jest.runAllTimers();
+            expect(spy.called).to.be.true;
         });
 
         it('should have disabled class when disabled prop is pass', () => {
