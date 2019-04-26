@@ -1,10 +1,10 @@
 @import "../styles.scss";
 
-.reactify-horizontal-card {
+.reactify-card {
     &__container {
-        display: inline-flex;
+        display: inline-block;
         border-radius: 0.1em;
-        height: 10em; 
+        width: 20em;
     }
 
     &--shadowed {
@@ -12,6 +12,7 @@
     }
 
     &__header {
+        display: inline;
     }
 
     &__body {
@@ -24,20 +25,20 @@
 
     &--size {
         &-small {
-            height: 10em;
+            width: 15em;
         }
 
         &-medium {
-            height: 15em;
+            width: 20em;
         }
 
         &-large {
-            height: 20em;
+            width: 30em;
         }
     }
 
     &--bordered {
-        border-left: 1px solid darkgray;
-        padding-left: 0.8em;
+        border-top: 1px solid darkgray;
+        padding-top: 0.8em;
     }
 }

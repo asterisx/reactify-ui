@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import AlertDemo from './pages/alert';
 import BadgeDemo from './pages/badge';
 import ButtonDemo from './pages/button';
+import CardDemo from './pages/card';
 import CheckBoxDemo from './pages/checkbox';
 import FullScreenDemo from './pages/full-screen';
 import HorizontalCardDemo from './pages/horizontal-card';
@@ -92,6 +93,7 @@ const App = () => (
           <Route exact path="/alert" component={AlertDemo} />
           <Route exact path="/badge" component={BadgeDemo} />
           <Route exact path="/button" component={ButtonDemo} />
+          <Route exact path="/card" component={CardDemo} />
           <Route exact path="/checkbox" component={CheckBoxDemo} />
           <Route exact path="/full-screen" component={FullScreenDemo} />
           <Route exact path="/horizontal-card" component={HorizontalCardDemo} />
