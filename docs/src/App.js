@@ -1,17 +1,18 @@
-import React from 'react';
-import './App.scss';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-import AlertDemo from './pages/alert';
-import BadgeDemo from './pages/badge';
-import ButtonDemo from './pages/button';
-import CheckBoxDemo from './pages/checkbox';
-import FullScreenDemo from './pages/full-screen';
-import LabelDemo from './pages/label';
-import LegendDemo from './pages/legend';
-import RadioInputDemo from './pages/radio-input';
-import SwitchDemo from './pages/switch';
-import SnackBarDemo from './pages/snackbar';
-import UserProfileDemo from './pages/user-profile';
+import React from "react";
+import "./App.scss";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import AlertDemo from "./pages/alert";
+import BadgeDemo from "./pages/badge";
+import ButtonDemo from "./pages/button";
+import CardDemo from "./pages/card";
+import CheckBoxDemo from "./pages/checkbox";
+import FullScreenDemo from "./pages/full-screen";
+import LabelDemo from "./pages/label";
+import LegendDemo from "./pages/legend";
+import RadioInputDemo from "./pages/radio-input";
+import SwitchDemo from "./pages/switch";
+import SnackBarDemo from "./pages/snackbar";
+import UserProfileDemo from "./pages/user-profile";
 
 const App = () => (
   <Router>
@@ -33,6 +34,11 @@ const App = () => (
             <li className="list-group-item">
               <Link className="d-block" to="/button">
                 Button
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/card">
+                Card
               </Link>
             </li>
             <li className="list-group-item">
@@ -81,6 +87,7 @@ const App = () => (
           <Route exact path="/alert" component={AlertDemo} />
           <Route exact path="/badge" component={BadgeDemo} />
           <Route exact path="/button" component={ButtonDemo} />
+          <Route exact path="/card" component={CardDemo} />
           <Route exact path="/checkbox" component={CheckBoxDemo} />
           <Route exact path="/full-screen" component={FullScreenDemo} />
           <Route exact path="/label" component={LabelDemo} />
