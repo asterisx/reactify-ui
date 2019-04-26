@@ -1,7 +1,7 @@
 import Alert from './alert';
 import Badge from './badge';
 import Button from './button';
-import Card from './card';
+import HorizontalCard from './horizontal-card';
 import Checkbox from './checkbox';
 import FullScreen from './full-screen';
 import Label from './label';
@@ -15,7 +15,7 @@ export {
   Alert,
   Badge,
   Button,
-  Card,
+  HorizontalCard,
   Checkbox,
   FullScreen,
   Label,

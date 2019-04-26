@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "reactify";
+import { HorizontalCard } from "reactify";
 import { shallow } from "enzyme";
 import chai, { expect } from "chai";
 import chaiEnzyme from "chai-enzyme";
@@ -7,96 +7,96 @@ import chaiEnzyme from "chai-enzyme";
 chai.should();
 chai.use(chaiEnzyme());
 
-describe("Card Component", () => {
+describe("HorizontalCard Component", () => {
   it("renders correctly", () => {
-    const shallowWrapper = shallow(<Card />);
+    const shallowWrapper = shallow(<HorizontalCard />);
     expect(shallowWrapper).not.be.null;
   });
 
-  describe("Card Header", () => {
+  describe("HorizontalCard Header", () => {
     it("renders correctly", () => {
-      const shallowWrapper = shallow(<Card.Header />);
+      const shallowWrapper = shallow(<HorizontalCard.Header />);
       expect(shallowWrapper).not.be.null;
     });
 
     it("should accept className correctly", () => {
       const someClass = "some classname";
-      const shallowWrapper = shallow(<Card.Header className={someClass} />);
+      const shallowWrapper = shallow(<HorizontalCard.Header className={someClass} />);
       expect(shallowWrapper.hasClass(someClass)).to.be.true;
     });
 
     it("should display children prop passed", () => {
       let someClass = "someClass";
       let childElem = <div className={someClass} />;
-      const shallowWrapper = shallow(<Card.Header>{childElem}</Card.Header>);
+      const shallowWrapper = shallow(<HorizontalCard.Header>{childElem}</HorizontalCard.Header>);
       const childContent = shallowWrapper.find(`.${someClass}`);
       expect(childContent).not.be.null;
     });
   });
 
-  describe("Card Body", () => {
+  describe("HorizontalCard Body", () => {
     it("renders correctly", () => {
-      const shallowWrapper = shallow(<Card.Body />);
+      const shallowWrapper = shallow(<HorizontalCard.Body />);
       expect(shallowWrapper).not.be.null;
     });
 
     it("should accept className correctly", () => {
       const someClass = "some classname";
-      const shallowWrapper = shallow(<Card.Body className={someClass} />);
+      const shallowWrapper = shallow(<HorizontalCard.Body className={someClass} />);
       expect(shallowWrapper.hasClass(someClass)).to.be.true;
     });
 
     it("should display children prop passed", () => {
       let someClass = "someClass";
       let childElem = <div className={someClass} />;
-      const shallowWrapper = shallow(<Card.Body>{childElem}</Card.Body>);
+      const shallowWrapper = shallow(<HorizontalCard.Body>{childElem}</HorizontalCard.Body>);
       const childContent = shallowWrapper.find(`.${someClass}`);
       expect(childContent).not.be.null;
     });
 
     it("should have bordered class", () => {
-      const shallowWrapper = shallow(<Card.Body bordered />);
-      expect(shallowWrapper.hasClass("reactify-card--bordered")).to.be.true;
+      const shallowWrapper = shallow(<HorizontalCard.Body bordered />);
+      expect(shallowWrapper.hasClass("reactify-horizontal-card--bordered")).to.be.true;
     });
 
     it("should have borderColor", () => {
       let borderColor = "violet";
       const shallowWrapper3 = shallow(
-        <Card.Body bordered borderColor={borderColor} />
+        <HorizontalCard.Body bordered borderColor={borderColor} />
       );
       expect(shallowWrapper3.props().style["borderColor"]).to.equal(borderColor);
     });
   });
 
-  describe("Card Footer", () => {
+  describe("HorizontalCard Footer", () => {
     it("renders correctly", () => {
-      const shallowWrapper = shallow(<Card.Footer />);
+      const shallowWrapper = shallow(<HorizontalCard.Footer />);
       expect(shallowWrapper).not.be.null;
     });
 
     it("should accept className correctly", () => {
       const someClass = "some classname";
-      const shallowWrapper = shallow(<Card.Footer className={someClass} />);
+      const shallowWrapper = shallow(<HorizontalCard.Footer className={someClass} />);
       expect(shallowWrapper.hasClass(someClass)).to.be.true;
     });
 
     it("should display children prop passed", () => {
       let someClass = "someClass";
       let childElem = <div className={someClass} />;
-      const shallowWrapper = shallow(<Card.Footer>{childElem}</Card.Footer>);
+      const shallowWrapper = shallow(<HorizontalCard.Footer>{childElem}</HorizontalCard.Footer>);
       const childContent = shallowWrapper.find(`.${someClass}`);
       expect(childContent).not.be.null;
     });
 
     it("should have bordered class", () => {
-      const shallowWrapper = shallow(<Card.Footer bordered />);
-      expect(shallowWrapper.hasClass("reactify-card--bordered")).to.be.true;
+      const shallowWrapper = shallow(<HorizontalCard.Footer bordered />);
+      expect(shallowWrapper.hasClass("reactify-horizontal-card--bordered")).to.be.true;
     });
 
     it("should have borderColor", () => {
       let borderColor = "violet";
       const shallowWrapper3 = shallow(
-        <Card.Footer bordered borderColor={borderColor} />
+        <HorizontalCard.Footer bordered borderColor={borderColor} />
       );
       expect(shallowWrapper3.props().style["borderColor"]).to.equal(borderColor);
     });
@@ -105,27 +105,27 @@ describe("Card Component", () => {
   describe("props", () => {
     it("should accept className prop and pass it to the root container", () => {
       let someClass = "someClass";
-      const shallowWrapper = shallow(<Card className={someClass} />);
+      const shallowWrapper = shallow(<HorizontalCard className={someClass} />);
       expect(shallowWrapper.hasClass(someClass)).to.be.true;
     });
 
     it("should have correct size passed as props", () => {
-      const shallowWrapper = shallow(<Card size="small" />);
-      expect(shallowWrapper.hasClass("reactify-card--size-small")).to.be.true;
+      const shallowWrapper = shallow(<HorizontalCard size="small" />);
+      expect(shallowWrapper.hasClass("reactify-horizontal-card--size-small")).to.be.true;
 
-      const shallowWrapper1 = shallow(<Card size="medium" />);
-      expect(shallowWrapper1.hasClass("reactify-card--size-medium")).to.be.true;
+      const shallowWrapper1 = shallow(<HorizontalCard size="medium" />);
+      expect(shallowWrapper1.hasClass("reactify-horizontal-card--size-medium")).to.be.true;
 
-      const shallowWrapper2 = shallow(<Card size="large" />);
-      expect(shallowWrapper2.hasClass("reactify-card--size-large")).to.be.true;
+      const shallowWrapper2 = shallow(<HorizontalCard size="large" />);
+      expect(shallowWrapper2.hasClass("reactify-horizontal-card--size-large")).to.be.true;
 
       let size = "40px";
-      const shallowWrapper3 = shallow(<Card size={size} />);
-      expect(shallowWrapper3).to.have.style("width", size);
+      const shallowWrapper3 = shallow(<HorizontalCard size={size} />);
+      expect(shallowWrapper3).to.have.style("height", size);
     });
 
     it("should have disabled class when disabled prop is pass", () => {
-      const shallowWrapper = shallow(<Card disabled />);
+      const shallowWrapper = shallow(<HorizontalCard disabled />);
       expect(shallowWrapper.hasClass("reactify--disabled"));
     });
   });
