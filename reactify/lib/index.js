@@ -8,6 +8,7 @@ import FullScreen from './full-screen';
 import Label from './label';
 import { Legend, LegendItem } from './legend';
 import RadioInput from './radio-input';
+import StackedCard from './stacked-card';
 import Switch from './switch';
 import SnackBar from './snackbar';
 import UserProfile from './user-profile';
@@ -24,6 +25,7 @@ export {
   Legend,
   LegendItem,
   RadioInput,
+  StackedCard,
   Switch,
   SnackBar,
   UserProfile,

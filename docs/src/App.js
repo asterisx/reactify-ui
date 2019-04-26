@@ -11,6 +11,7 @@ import HorizontalCardDemo from './pages/horizontal-card';
 import LabelDemo from './pages/label';
 import LegendDemo from './pages/legend';
 import RadioInputDemo from './pages/radio-input';
+import StackedCardDemo from './pages/stacked-card';
 import SwitchDemo from './pages/switch';
 import SnackBarDemo from './pages/snackbar';
 import UserProfileDemo from './pages/user-profile';
@@ -73,6 +74,11 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/stacked-card">
+                Stacked Card
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/switch">
                 Switch
               </Link>
@@ -100,6 +106,7 @@ const App = () => (
           <Route exact path="/label" component={LabelDemo} />
           <Route exact path="/legend" component={LegendDemo} />
           <Route exact path="/radio-input" component={RadioInputDemo} />
+          <Route exact path="/stacked-card" component={StackedCardDemo} />
           <Route exact path="/switch" component={SwitchDemo} />
           <Route exact path="/snackbar" component={SnackBarDemo} />
           <Route exact path="/user-profile" component={UserProfileDemo} />
