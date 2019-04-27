@@ -1,0 +1,104 @@
+@import '../styles.scss';
+
+.reactify-badge {
+    &__container {
+        display: inline-block;
+    }
+
+    &__children {
+        position: relative;
+    }
+
+    &-bubble {
+        position: absolute;
+        color: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        height: 2em;
+        min-width: 2em;
+        z-index: 100;
+        box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.2);
+        padding: 2px;
+
+        &--theme {
+            &-custom {}
+
+            &-default {
+                background-color: $theme-color-default;
+            }
+
+            &-dark {
+                background-color: $theme-color-dark;
+
+            }
+
+            &-light {
+                background-color: darken($theme-color-light, 25);
+            }
+
+            &-info {
+                background-color: $theme-color-info;
+            }
+
+            &-warning {
+                background-color: $theme-color-warning;
+            }
+
+            &-danger {
+                background-color: $theme-color-danger;
+            }
+
+            &-success {
+                background-color: $theme-color-success;
+            }
+        }
+
+
+        &--font-size {
+            &-small {
+                font-size: 0.6em !important;
+                border-radius: 2em;
+            }
+
+            &-medium {
+                font-size: 1.2em !important;
+                border-radius: 1.2em;
+            }
+
+            &-large {
+                font-size: 1.8em !important;
+                border-radius: 1.8em;
+            }
+        }
+
+        &--position {
+            &-top-left {
+                top: 0px;
+                left: 0px;
+                transform: translate(-50%, -50%);
+            }
+
+            &-top-right {
+                top: 0px;
+                right: 0px;
+                transform: translate(50%, -50%);
+            }
+
+            &-bottom-left {
+                bottom: 0px;
+                left: 0px;
+                transform: translate(-50%, 50%);
+            }
+
+            &-bottom-right {
+                bottom: 0px;
+                right: 0px;
+                transform: translate(50%, 50%);
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+$flat-blue-light: #3498db;
+$flat-orange-light: #f39c12;
+$flat-red-light: #e74c3c;
+$flat-green-light: #2ecc71;
+$flat-black: #141414;
+$flat-white: #fff;
+
+$theme-color-info: $flat-blue-light;
+$theme-color-warning: $flat-orange-light;
+$theme-color-danger: $flat-red-light;
+$theme-color-success: $flat-green-light;
+$theme-color-dark: $flat-black;
+$theme-color-light: $flat-white;
+$theme-color-default: $flat-black;
+
+$font-light: $flat-white;
+$font-dark: $flat-black;
+
+$darken-by: 25;
+
+.reactify {
+  &--disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.6 !important;
+  }
+
+  &--hidden {
+    display: none !important;
+  }
+
+  &--pl-1 {
+    padding-left: 1em;
+  }
+
+  &--pr-1 {
+    padding-right: 1em;
+  }
+
+  &--z-index {
+    &-1 {
+      z-index: 1;
+    }
+
+    &-10 {
+      z-index: 10;
+    }
+
+    &-11 {
+      z-index: 11;
+    }
+
+    &-100 {
+      z-index: 100;
+    }
+
+    &-101 {
+      z-index: 101;
+    }
+
+    &-1000 {
+      z-index: 1000;
+    }
+
+    &-1001 {
+      z-index: 1001;
+    }
+
+    &-10000 {
+      z-index: 10000;
+    }
+
+    &-10001 {
+      z-index: 10001;
+    }
+  }
+}
+
