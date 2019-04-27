@@ -102,6 +102,7 @@ const App = () => (
           </ul>
         </div>
         <div className="col-10 overflow-scroll">
+          <Route exact path="/" component={AlertDemo} />
           <Route exact path="/alert" component={AlertDemo} />
           <Route exact path="/badge" component={BadgeDemo} />
           <Route exact path="/button" component={ButtonDemo} />
