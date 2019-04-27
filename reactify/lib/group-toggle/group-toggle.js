@@ -19,21 +19,21 @@ class GroupToggle extends Component {
       const {
         className,
         children,
+        onSelectionChange,
         ...otherProps
       } = this.props;
       return (
         <div className={`reactify-group-toggle__container ${className || ''}`} {...otherProps}>
           {children
-          && React.Children.map(children({ selectedIndex: this.state.selectedIndex }).props.children,
-            (child) => {
-              const cloned = React.cloneElement(child, {
-                onClick: (evt) => {
-                  this.toggleSelect(child.props.index);
-                  if (child.props.onClick) child.props.onClick(evt);
-                },
-              });
-              return cloned;
-            })}
+          && React.Children.map(
+            children({ selectedIndex: this.state.selectedIndex }).props.children,
+            child => React.cloneElement(child, {
+              onClick: (evt) => {
+                this.toggleSelect(child.props.index);
+                if (child.props.onClick) child.props.onClick(evt);
+              },
+            }),
+          )}
         </div>
       );
     }

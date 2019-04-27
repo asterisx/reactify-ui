@@ -19,6 +19,7 @@ class RadioGroup extends Component {
       const {
         className,
         children,
+        onSelectionChange,
         ...otherProps
       } = this.props;
       return (

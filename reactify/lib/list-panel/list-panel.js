@@ -129,6 +129,7 @@ ListPanel.propTypes = {
     'success',
   ]),
   disabled: PropTypes.bool,
+  onSelectionChange: PropTypes.func,
 };
 
 ListPanel.defaultProps = {
@@ -138,6 +139,7 @@ ListPanel.defaultProps = {
   color: undefined,
   theme: 'light',
   disabled: false,
+  onSelectionChange: () => {},
 };
 
 ListPanel.Item.propTypes = {

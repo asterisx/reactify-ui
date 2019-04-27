@@ -28,9 +28,16 @@ class RadioInput extends Component {
       onClick: () => {},
     }
 
-    state = { checked: this.props.checked || false }
+    state = { checked: this.props.checked };
 
     validFontSizes = ['small', 'medium', 'large'];
+
+    componentDidUpdate(prevProps) {
+      if (this.props.checked !== prevProps.checked && this.props.checked !== this.state.checked) {
+        // eslint-disable-next-line react/no-did-update-set-state
+        this.setState({ checked: this.props.checked });
+      }
+    }
 
     toggle = (evt) => {
       this.setState(
