@@ -7,6 +7,7 @@ import Checkbox from './checkbox';
 import FullScreen from './full-screen';
 import Label from './label';
 import { Legend, LegendItem } from './legend';
+import ListPanel from './list-panel';
 import NumberCounter from './number-counter';
 import RadioInput from './radio-input';
 import StackedCard from './stacked-card';
@@ -25,6 +26,7 @@ export {
   Label,
   Legend,
   LegendItem,
+  ListPanel,
   NumberCounter,
   RadioInput,
   StackedCard,
