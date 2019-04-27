@@ -15,7 +15,6 @@ describe("Card Component", () => {
 
   it("should have a shadow by default", () => {
     const shallowWrapper = shallow(<Card />);
-    console.log(shallowWrapper.debug())
     expect(shallowWrapper.hasClass('reactify-card--shadowed')).to.be.true;
   });
 

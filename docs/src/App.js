@@ -10,6 +10,7 @@ import FullScreenDemo from './pages/full-screen';
 import HorizontalCardDemo from './pages/horizontal-card';
 import LabelDemo from './pages/label';
 import LegendDemo from './pages/legend';
+import ListPanelDemo from './pages/list-panel';
 import NumberCounterDemo from './pages/number-counter';
 import RadioInputDemo from './pages/radio-input';
 import StackedCardDemo from './pages/stacked-card';
@@ -70,6 +71,11 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/list-panel">
+                List Panel
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/number-counter">
                 Number Counter
               </Link>
@@ -112,6 +118,7 @@ const App = () => (
           <Route exact path="/horizontal-card" component={HorizontalCardDemo} />
           <Route exact path="/label" component={LabelDemo} />
           <Route exact path="/legend" component={LegendDemo} />
+          <Route exact path="/list-panel" component={ListPanelDemo} />
           <Route exact path="/number-counter" component={NumberCounterDemo} />
           <Route exact path="/radio-input" component={RadioInputDemo} />
           <Route exact path="/stacked-card" component={StackedCardDemo} />

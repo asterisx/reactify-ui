@@ -1,0 +1,185 @@
+@import "../styles.scss";
+
+.reactify-list-panel {
+    &__container {
+        display: inline-block;
+        border-radius: 0.2em;
+        color: white;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        transition-duration: 0.5s;
+    }
+
+    &--theme {
+        &-default {
+            background-color: lighten($theme-color-default, $darken-by);
+
+            &:hover {
+                background-color: $theme-color-default;
+            }
+        }
+
+        &-dark {
+            background-color: lighten($theme-color-dark, $darken-by);
+
+            &:hover {
+                background-color: $theme-color-dark;
+            }
+        }
+
+        &-light {
+            background-color: $theme-color-light, $darken-by;
+            color: black;
+
+            &:hover {
+                background-color: darken($theme-color-light, $darken-by);
+            }
+        }
+
+        &-info {
+            background-color: $theme-color-info;
+
+            &:hover {
+                background-color: darken($theme-color-info, $darken-by);
+            }
+        }
+
+        &-warning {
+            background-color: $theme-color-warning;
+
+            &:hover {
+                background-color: darken($theme-color-warning, $darken-by);
+            }
+        }
+
+        &-danger {
+            background-color: $theme-color-danger;
+
+            &:hover {
+                background-color: darken($theme-color-danger, $darken-by);
+            }
+        }
+
+        &-success {
+            background-color: $theme-color-success;
+
+            &:hover {
+                background-color: darken($theme-color-success, $darken-by);
+            }
+        }
+    }
+   
+    &__list-item {
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        padding-left: 0.4em;
+        padding-right: 0.4em;
+        cursor: pointer;
+        color: white;
+
+        &--theme {
+            &-default {
+                background-color: lighten($theme-color-default, $darken-by);
+
+                &:hover {
+                    background-color: $theme-color-default;
+                }
+                
+                &-selected {
+                    background-color: $theme-color-default;
+                }
+            }
+    
+            &-dark {
+                background-color: lighten($theme-color-dark, $darken-by);
+
+                &:hover {
+                    background-color: $theme-color-dark;
+                }
+                
+                &-selected {
+                    background-color: $theme-color-dark;
+                }
+            }
+    
+            &-light {
+                background-color: $theme-color-light;
+                color: black;
+
+                &-selected {
+                    background-color: darken($theme-color-light, $darken-by);
+                }
+
+                &:hover {
+                    background-color: darken($theme-color-light, $darken-by);
+                }
+            }
+    
+            &-info {
+                background-color: $theme-color-info;
+
+                &-selected {
+                    background-color: darken($theme-color-info, $darken-by);
+                }
+    
+                &:hover {
+                    background-color: darken($theme-color-info, $darken-by);
+                }
+            }
+    
+            &-warning {
+                background-color: $theme-color-warning;
+
+                &-selected {
+                    background-color: darken($theme-color-warning, $darken-by);
+                }
+    
+                &:hover {
+                    background-color: darken($theme-color-warning, $darken-by);
+                }
+            }
+    
+            &-danger {
+                background-color: $theme-color-danger;
+
+                &-selected {
+                    background-color: darken($theme-color-danger, $darken-by);
+                }
+    
+                &:hover {
+                    background-color: darken($theme-color-danger, $darken-by);
+                }
+            }
+    
+            &-success {
+                background-color: $theme-color-success;
+
+                &-selected {
+                    background-color: darken($theme-color-success, $darken-by);
+                }
+    
+                &:hover {
+                    background-color: darken($theme-color-success, $darken-by);
+                }
+            }
+        }
+
+        &--bordered {
+            border-top: 1px solid darkgray;
+        }
+        &--size {
+            &-small {
+                font-size: 0.8em;
+            }
+    
+            &-medium {
+                font-size: 1.2em;
+            }
+    
+            &-large {
+                font-size: 1.6em;
+            }
+        }
+    }
+}

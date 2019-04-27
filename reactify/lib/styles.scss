@@ -23,6 +23,9 @@ $darken-by: 25;
     cursor: not-allowed;
     pointer-events: none;
     opacity: 0.6 !important;
+    &:hover {
+      pointer-events: none !important;
+    }
   }
 
   &--hidden {
