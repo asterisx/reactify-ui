@@ -7,6 +7,7 @@ import ButtonDemo from './pages/button';
 import CardDemo from './pages/card';
 import CheckBoxDemo from './pages/checkbox';
 import FullScreenDemo from './pages/full-screen';
+import GroupToggleDemo from './pages/group-toggle';
 import HorizontalCardDemo from './pages/horizontal-card';
 import LabelDemo from './pages/label';
 import LegendDemo from './pages/legend';
@@ -53,6 +54,11 @@ const App = () => (
             <li className="list-group-item">
               <Link className="d-block" to="/full-screen">
                 FullScreen
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/group-toggle">
+                Group Toggle
               </Link>
             </li>
             <li className="list-group-item">
@@ -115,6 +121,7 @@ const App = () => (
           <Route exact path="/card" component={CardDemo} />
           <Route exact path="/checkbox" component={CheckBoxDemo} />
           <Route exact path="/full-screen" component={FullScreenDemo} />
+          <Route exact path="/group-toggle" component={GroupToggleDemo} />
           <Route exact path="/horizontal-card" component={HorizontalCardDemo} />
           <Route exact path="/label" component={LabelDemo} />
           <Route exact path="/legend" component={LegendDemo} />
