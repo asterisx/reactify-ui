@@ -14,6 +14,7 @@ import LegendDemo from './pages/legend';
 import ListPanelDemo from './pages/list-panel';
 import NumberCounterDemo from './pages/number-counter';
 import RadioInputDemo from './pages/radio-input';
+import RadioGroupDemo from './pages/radio-group';
 import StackedCardDemo from './pages/stacked-card';
 import SwitchDemo from './pages/switch';
 import SnackBarDemo from './pages/snackbar';
@@ -92,6 +93,11 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/radio-group">
+                Radio Group
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/stacked-card">
                 Stacked Card
               </Link>
@@ -128,6 +134,7 @@ const App = () => (
           <Route exact path="/list-panel" component={ListPanelDemo} />
           <Route exact path="/number-counter" component={NumberCounterDemo} />
           <Route exact path="/radio-input" component={RadioInputDemo} />
+          <Route exact path="/radio-group" component={RadioGroupDemo} />
           <Route exact path="/stacked-card" component={StackedCardDemo} />
           <Route exact path="/switch" component={SwitchDemo} />
           <Route exact path="/snackbar" component={SnackBarDemo} />
