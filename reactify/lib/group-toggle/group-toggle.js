@@ -19,9 +19,10 @@ class GroupToggle extends Component {
       const {
         className,
         children,
+        ...otherProps
       } = this.props;
       return (
-        <div className={`reactify-group-toggle__container ${className || ''}`}>
+        <div className={`reactify-group-toggle__container ${className || ''}`} {...otherProps}>
           {children
           && React.Children.map(children({ selectedIndex: this.state.selectedIndex }).props.children,
             (child) => {
