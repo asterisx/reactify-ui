@@ -98,7 +98,7 @@ const ListPanelDemo = () => (
         {' '}
         <b>default is bordered for all List Panel Items</b>
       </h6>
-      <ListPanel mode="multiple">
+      <ListPanel>
         <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item index={2} bordered={false}>Item 2</ListPanel.Item>
         <ListPanel.Item index={3}>Item 3</ListPanel.Item>
@@ -172,7 +172,7 @@ const ListPanelDemo = () => (
       uniqueIdentifier="customListUse"
       sourceCode={customListCode}
     >
-      <ListPanel mode="multiple">
+      <ListPanel>
         <ListPanel.Item index={1} bordered={false}>
           <div className="d-inline-flex justify-content-between align-items-center">
             <FaApple className="mr-4" />
@@ -212,7 +212,7 @@ const ListPanelDemo = () => (
       sourceCode={customThemeCode}
     >
       <h6 className="pt-3 pb-3">Default theme</h6>
-      <ListPanel mode="multiple" theme="default">
+      <ListPanel theme="default">
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
@@ -220,7 +220,7 @@ const ListPanelDemo = () => (
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
       </ListPanel>
       <h6 className="pt-3 pb-3">Dark theme</h6>
-      <ListPanel mode="multiple" theme="dark">
+      <ListPanel theme="dark">
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
@@ -228,7 +228,7 @@ const ListPanelDemo = () => (
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
       </ListPanel>
       <h6 className="pt-3 pb-3">Light theme</h6>
-      <ListPanel mode="multiple" theme="light">
+      <ListPanel theme="light">
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
@@ -236,7 +236,7 @@ const ListPanelDemo = () => (
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
       </ListPanel>
       <h6 className="pt-3 pb-3">Info theme</h6>
-      <ListPanel mode="multiple" theme="info">
+      <ListPanel theme="info">
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
@@ -244,7 +244,7 @@ const ListPanelDemo = () => (
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
       </ListPanel>
       <h6 className="pt-3 pb-3">Warning theme</h6>
-      <ListPanel mode="multiple" theme="warning">
+      <ListPanel theme="warning">
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
@@ -252,7 +252,7 @@ const ListPanelDemo = () => (
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
       </ListPanel>
       <h6 className="pt-3 pb-3">Danger theme</h6>
-      <ListPanel mode="multiple" theme="danger">
+      <ListPanel theme="danger">
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
@@ -260,7 +260,7 @@ const ListPanelDemo = () => (
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
       </ListPanel>
       <h6 className="pt-3 pb-3">Success theme</h6>
-      <ListPanel mode="multiple" theme="success">
+      <ListPanel theme="success">
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
@@ -268,7 +268,7 @@ const ListPanelDemo = () => (
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
       </ListPanel>
       <h6 className="pt-3 pb-3">Mixed theme</h6>
-      <ListPanel mode="multiple">
+      <ListPanel>
         <ListPanel.Item theme="light" className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item theme="dark" className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item theme="info" className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
