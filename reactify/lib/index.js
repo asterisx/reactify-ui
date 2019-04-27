@@ -11,6 +11,7 @@ import { Legend, LegendItem } from './legend';
 import ListPanel from './list-panel';
 import NumberCounter from './number-counter';
 import RadioInput from './radio-input';
+import RadioGroup from './radio-group';
 import StackedCard from './stacked-card';
 import Switch from './switch';
 import SnackBar from './snackbar';
@@ -31,6 +32,7 @@ export {
   ListPanel,
   NumberCounter,
   RadioInput,
+  RadioGroup,
   StackedCard,
   Switch,
   SnackBar,
