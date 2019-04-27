@@ -2,6 +2,7 @@ import Alert from './alert';
 import Badge from './badge';
 import Button from './button';
 import Card from './card';
+import GroupToggle from './group-toggle';
 import HorizontalCard from './horizontal-card';
 import Checkbox from './checkbox';
 import FullScreen from './full-screen';
@@ -20,6 +21,7 @@ export {
   Badge,
   Button,
   Card,
+  GroupToggle,
   HorizontalCard,
   Checkbox,
   FullScreen,
