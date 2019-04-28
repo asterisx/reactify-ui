@@ -1,53 +1,83 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './alert.scss';
+import { styles } from './styles';
 
 const Alert = ({
   children,
-  theme,
-  className,
   direction,
-  color,
   disabled,
+  borderLeft,
+  borderRight,
+  borderTop,
+  borderBottom,
+  borderColor,
+  primary,
+  secondary,
+  dark,
+  light,
+  info,
+  warning,
+  danger,
+  success,
+  theme,
   ...otherProps
-}) => {
-  const borderDirectionClasses = []
-    .concat(direction)
-    .map(dir => `reactify-alert-border-${dir}`);
-
-  const cssClass = ['reactify-alert__container']
-    .concat(`${!color ? `reactify-alert-border--theme-${theme}` : ''} ${disabled ? 'reactify--disabled' : ''}`, ...borderDirectionClasses, className)
-    .join(' ');
-
-  return (
-    <div style={color ? { borderColor: color } : undefined} className={cssClass} {...otherProps}>
-      {children}
-    </div>
-  );
-};
+}) => (
+  <div
+    css={[
+      styles.container,
+      styles.getPropBasedStyles({
+        disabled,
+        borderLeft,
+        borderRight,
+        borderTop,
+        borderBottom,
+        borderColor,
+        primary,
+        secondary,
+        dark,
+        light,
+        info,
+        warning,
+        danger,
+        success,
+        theme,
+      }),
+    ]}
+    {...otherProps}
+  >
+    {children}
+  </div>
+);
 
 Alert.propTypes = {
-  theme: PropTypes.oneOf([
-    'default',
-    'dark',
-    'light',
-    'info',
-    'warning',
-    'danger',
-    'success',
-  ]),
-  direction: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.string),
-  ]),
-  color: PropTypes.string,
+  borderLeft: PropTypes.bool,
+  borderRight: PropTypes.bool,
+  borderTop: PropTypes.bool,
+  borderBottom: PropTypes.bool,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  dark: PropTypes.bool,
+  light: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool,
   disabled: PropTypes.bool,
 };
 
 Alert.defaultProps = {
-  theme: 'default',
-  direction: 'left',
-  color: undefined,
+  borderLeft: true,
+  borderRight: false,
+  borderTop: false,
+  borderBottom: false,
+  primary: true,
+  secondary: false,
+  dark: false,
+  light: false,
+  info: false,
+  warning: false,
+  danger: false,
+  success: false,
   disabled: false,
 };
 

@@ -27,8 +27,8 @@ const AlertDemo = () => (
     </DemoCard>
 
     <DemoCard
-      title="Checked"
-      uniqueIdentifier="checkedUse"
+      title="Disabled"
+      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
     >
       <Alert disabled>
@@ -41,27 +41,27 @@ const AlertDemo = () => (
       uniqueIdentifier="directionUse"
       sourceCode={borderPositionCode}
     >
-      <Alert direction="left">
+      <Alert borderLeft>
           This is a left alert!
       </Alert>
       <br />
-      <Alert direction="right">
+      <Alert borderRight>
           This is a right alert!
       </Alert>
       <br />
-      <Alert direction="top">
+      <Alert borderTop>
           This is a top alert!
       </Alert>
       <br />
-      <Alert direction="bottom">
+      <Alert borderBottom>
           This is a bottom alert!
       </Alert>
       <br />
-      <Alert direction={['left', 'right', 'top', 'bottom']}>
+      <Alert borderLeft borderRight borderTop borderBottom>
           This is all direction alert!
       </Alert>
       <br />
-      <Alert direction={['left', 'top']}>
+      <Alert borderLeft borderRight>
           This is a two direction alert!
       </Alert>
       <br />
@@ -88,7 +88,7 @@ const AlertDemo = () => (
       uniqueIdentifier="customBorderUse"
       sourceCode={customColorCode}
     >
-      <Alert color="violet">
+      <Alert style={{ borderColor: 'violet' }}>
           Alert with custom border color
       </Alert>
     </DemoCard>
@@ -108,31 +108,35 @@ const AlertDemo = () => (
       uniqueIdentifier="customTheme"
       sourceCode={customThemeCode}
     >
-      <Alert theme="default" className="pb-2">
-        Default theme
+      <Alert primary className="pb-2">
+        Primary theme
       </Alert>
       <br />
-      <Alert theme="dark" className="pb-2">
+      <Alert secondary className="pb-2">
+        Secondary theme
+      </Alert>
+      <br />
+      <Alert dark className="pb-2">
           Dark theme
       </Alert>
       <br />
-      <Alert theme="light" className="pb-2">
+      <Alert light className="pb-2">
           Light theme
       </Alert>
       <br />
-      <Alert theme="info" className="pb-2">
+      <Alert info className="pb-2">
           Info theme
       </Alert>
       <br />
-      <Alert theme="warning" className="pb-2">
+      <Alert warning className="pb-2">
           Warning theme
       </Alert>
       <br />
-      <Alert theme="danger" className="pb-2">
+      <Alert danger className="pb-2">
           Danger theme
       </Alert>
       <br />
-      <Alert theme="success" className="pb-2">
+      <Alert success className="pb-2">
           Success theme
       </Alert>
     </DemoCard>

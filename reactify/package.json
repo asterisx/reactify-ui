@@ -7,6 +7,9 @@
     "build": "build"
   },
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.9",
+    "@emotion/core": "^10.0.10",
+    "babel-plugin-emotion": "^10.0.9",
     "babel-plugin-react-css-modules": "^5.2.4",
     "babel-plugin-transform-rename-import": "^2.3.0",
     "node-sass": "^4.11.0",
