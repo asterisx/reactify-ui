@@ -16,12 +16,18 @@ import StackedCard from './stacked-card';
 import Switch from './switch';
 import SnackBar from './snackbar';
 import UserProfile from './user-profile';
+import { defaultThemeColors } from '../common';
+
+const Constants = {
+  defaultThemeColors,
+};
 
 export {
   Alert,
   Badge,
   Button,
   Card,
+  Constants,
   GroupToggle,
   HorizontalCard,
   Checkbox,

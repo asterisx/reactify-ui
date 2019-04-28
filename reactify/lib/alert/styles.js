@@ -1,6 +1,6 @@
+/* eslint-disable no-underscore-dangle */
 import { css } from '@emotion/core';
-import { defaultThemeColors } from '../../common';
-import { commonStyles } from '../../common/styles';
+import { defaultThemeColors, commonStyles } from '../../common';
 
 export const styles = {
   container: {
@@ -19,6 +19,47 @@ export const styles = {
   borderBottom: {
     borderBottom: '0.4em solid',
   },
+
+
+  _getBorderStyles: (
+    borderLeft,
+    borderRight,
+    borderTop,
+    borderBottom,
+  ) => Object.entries({
+    borderLeft,
+    borderRight,
+    borderTop,
+    borderBottom,
+  }).reduce(
+    (borderStyle, [key, isTrue]) => (
+      isTrue ? Object.assign({}, { ...borderStyle }, styles[key]) : borderStyle
+    ), {},
+  ),
+
+
+  _getBorderColor: (
+    primary,
+    secondary,
+    dark,
+    light,
+    info,
+    warning,
+    danger,
+    success,
+    theme,
+  ) => Object.entries({
+    primary,
+    secondary,
+    dark,
+    light,
+    info,
+    warning,
+    danger,
+    success,
+  }).reduce((color, [key, isTrue]) => (isTrue ? theme[key] : color), undefined),
+
+
   getPropBasedStyles: ({
     disabled,
     borderLeft,
@@ -35,18 +76,8 @@ export const styles = {
     success,
     theme = defaultThemeColors,
   }) => css`
-  ${borderLeft ? styles.borderLeft : undefined};
-  ${borderRight ? styles.borderRight : undefined};
-  ${borderTop ? styles.borderTop : undefined};
-  ${borderBottom ? styles.borderBottom : undefined};
-  border-color: ${primary ? theme.primary : undefined};
-  border-color: ${secondary ? theme.secondary : undefined};
-  border-color: ${dark ? theme.dark : undefined};
-  border-color: ${light ? theme.light : undefined};
-  border-color: ${info ? theme.info : undefined};
-  border-color: ${warning ? theme.warning : undefined};
-  border-color: ${danger ? theme.danger : undefined};
-  border-color: ${success ? theme.success : undefined};
+  ${styles._getBorderStyles(borderLeft, borderRight, borderTop, borderBottom, theme)}
+  border-color: ${styles._getBorderColor(primary, secondary, dark, light, info, warning, danger, success)};
   ${disabled ? commonStyles.disabled : undefined}
 `,
 };

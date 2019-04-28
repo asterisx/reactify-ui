@@ -110,6 +110,7 @@ const AlertDemo = () => (
     >
       <Alert primary className="pb-2">
         Primary theme
+        <b className="pl-3">alert uses this theme by default</b>
       </Alert>
       <br />
       <Alert secondary className="pb-2">
