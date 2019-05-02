@@ -1,0 +1,51 @@
+{
+  "name": "docs",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://asterisx.github.io/reactify/",
+  "devDependencies": {
+    "eslint": "5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-react-app": "^3.0.8",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-config-standard-react": "^6.0.0",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^3.1.0",
+    "typescript": "^3.4.4"
+  },
+  "dependencies": {
+    "gh-pages": "^2.0.1",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-icons": "^3.6.1",
+    "react-markdown": "^4.0.8",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "react-syntax-highlighter": "^10.2.1",
+    "reactify": "file:../reactify"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "preinstall": "rm -rf node_modules/reacify && npm install ../reactify",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

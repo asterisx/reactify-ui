@@ -1,0 +1,25 @@
+{
+    "presets": [
+        "@babel/preset-react",
+        "@babel/preset-env",
+        "@emotion/babel-preset-css-prop"
+    ],
+    "plugins": [
+        ["emotion"],
+        [
+            "@babel/plugin-proposal-class-properties"
+        ],
+        [
+            "react-css-modules",
+        ],
+        [
+            "transform-rename-import",
+            {
+      "replacements": [
+                    { "original":"^(.+?)\\.scss$", "replacement": "$1.css"
+                    }
+                ]
+            }
+        ]
+    ]
+}
