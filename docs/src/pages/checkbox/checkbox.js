@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Checkbox } from 'reactify';
+import { Checkbox } from '@../../../../reactify/build';
 import {
   simpleCode,
   checkedCode,
@@ -20,21 +20,21 @@ import DemoCard from '../../components/demo-card';
 const CheckboxDemo = () => (
   <div>
     <DemoCard title="Simple Use" uniqueIdentifier="simpleUse" sourceCode={simpleCode}>
-      <Checkbox label="This is a checkbox" />
+      <Checkbox>This is a checkbox</Checkbox>
     </DemoCard>
 
     <DemoCard title="Checked" uniqueIdentifier="checkedUse" sourceCode={checkedCode}>
-      <Checkbox checked label="This is a checked label" />
+      <Checkbox checked>This is a checked label</Checkbox>
     </DemoCard>
 
     <DemoCard title="Disabled" uniqueIdentifier="disabledUse" sourceCode={disabledCode}>
-      <Checkbox checked disabled label="This checkbox is disabled" />
+      <Checkbox checked disabled>This checkbox is disabled</Checkbox>
     </DemoCard>
 
     <DemoCard title="Position (left, right)" uniqueIdentifier="checkboxUse" sourceCode={labelPositionCode}>
-      <Checkbox labelPosition="left" label="This is a checkbox with left position" />
+      <Checkbox>This is a checkbox with left position</Checkbox>
       <br />
-      <Checkbox labelPosition="right" label="This is a checkbox with right position" />
+      <Checkbox style={{ flexDirection: 'row-reverse' }}>This is a checkbox with right position</Checkbox>
     </DemoCard>
 
     <DemoCard title="Children" uniqueIdentifier="childrenUse" sourceCode={childrenCode}>
@@ -50,39 +50,41 @@ const CheckboxDemo = () => (
     </DemoCard>
 
     <DemoCard title="Custom Color" uniqueIdentifier="customColorUse" sourceCode={customColorCode}>
-      <Checkbox checked color="violet" />
+      <Checkbox checked iconColor="violet">Custom Color</Checkbox>
     </DemoCard>
 
 
     <DemoCard title="Custom Class" uniqueIdentifier="customClassUse" sourceCode={customClassCode}>
-      <Checkbox checked className="bg-dark p-5" />
+      <Checkbox checked className="bg-dark p-5">This checkbox has custom class</Checkbox>
     </DemoCard>
 
     <DemoCard title="Custom Size" uniqueIdentifier="customSizeUse" sourceCode={customSizeCode}>
-      <Checkbox size="small" label='size="small"' />
+      <Checkbox small>Small Size</Checkbox>
       <br />
-      <Checkbox size="medium" label='size="medium"' />
+      <Checkbox medium>Medium Size</Checkbox>
       <br />
-      <Checkbox size="large" label='size="large"' />
+      <Checkbox large>Large Size</Checkbox>
       <br />
-      <Checkbox size="40px" label='size="40px"' />
+      <Checkbox style={{ fontSize: '40px' }}>{'style={{ fontSize: \'40px\' }}'}</Checkbox>
       <br />
     </DemoCard>
 
-    <DemoCard title="Thmes" uniqueIdentifier="customThemeUse" sourceCode={customThemeCode}>
-      <Checkbox theme="default" className="pb-2" checked />
+    <DemoCard title="Themes" uniqueIdentifier="customThemeUse" sourceCode={customThemeCode}>
+      <Checkbox primary className="pb-2" checked>Primary Checkbox</Checkbox>
       <br />
-      <Checkbox theme="dark" className="pb-2" checked />
+      <Checkbox secondary className="pb-2" checked>Secondary Checkbox</Checkbox>
       <br />
-      <Checkbox theme="light" className="pb-2" checked />
+      <Checkbox dark className="pb-2" checked>Dark Checkbox</Checkbox>
       <br />
-      <Checkbox theme="info" className="pb-2" checked />
+      <Checkbox light className="pb-2" checked>Light Checkbox</Checkbox>
       <br />
-      <Checkbox theme="warning" className="pb-2" checked />
+      <Checkbox info className="pb-2" checked>Info Checkbox</Checkbox>
       <br />
-      <Checkbox theme="danger" className="pb-2" checked />
+      <Checkbox warning className="pb-2" checked>Warning Checkbox</Checkbox>
       <br />
-      <Checkbox theme="success" checked />
+      <Checkbox danger className="pb-2" checked>Danger Checkbox</Checkbox>
+      <br />
+      <Checkbox success checked>Success Checkbox</Checkbox>
       <br />
     </DemoCard>
 

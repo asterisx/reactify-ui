@@ -2,13 +2,13 @@ const avatarPositionCode = `
 <UserProfile
   imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
   userName="Joe"
-  avatarPosition="left"
+  avatarLeft
 />
 
 <UserProfile
   imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
   userName="Joe"
-  avatarPosition="right"
+  avatarRight
 />
 `;
 
@@ -16,13 +16,15 @@ const breakPointsCode = `
 <UserProfile
   imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
   userName="Joe"
-  breakPoints="md"
+  md
 />
-
 <UserProfile
   imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
   userName="Joe"
-  breakPoints={['sm', 'md', 'lg', 'xl']}
+  sm
+  md
+  lg
+  xl
 />
 `;
 
@@ -38,50 +40,56 @@ const customThemeCode = `
 <UserProfile
   imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
   userName="Joe"
-  theme="light"
+  primary
 />
 
 <UserProfile
   imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
   userName="Joe"
-  theme="default"
-  />
-
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
-  theme="dark"
+  secondary
 />
 
 <UserProfile
   imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
   userName="Joe"
-  theme="info"
+  dark
 />
 
 <UserProfile
   imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
   userName="Joe"
-  theme="warning"
+  light
 />
 
 <UserProfile
   imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
   userName="Joe"
-  theme="danger"
+  info
 />
 
 <UserProfile
   imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
   userName="Joe"
-  theme="success"
+  warning
+/>
+
+<UserProfile
+  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+  userName="Joe"
+  danger
+/>
+
+<UserProfile
+  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+  userName="Joe"
+  success
 />
 `;
 const customClassCode = `
 <UserProfile
   imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
   userName="Joe"
-  theme="info"
+  info
   className="p-3"
 />
 `;
@@ -122,9 +130,8 @@ const dropDownPlacementCode = `
 <UserProfile
   imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
   userName="Joe"
-  showMessage={false}
-  dropDownPLacement="top"
->
+  dropDownTop
+  >
   <img alt="" width="auto" height="100px" src="https://i.gifer.com/YYdO.gif" />
 </UserProfile>
 `;

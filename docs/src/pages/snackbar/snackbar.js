@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/button-has-type */
 import React, { Component } from 'react';
-import { SnackBar } from 'reactify';
+import { SnackBar, Constants } from '@../../../../reactify/build';
 import {
   actionCode,
   childrenCode,
   customColorCode,
   customClassCode,
   customThemeCode,
-  delayCode,
+  durationCode,
   disabledCode,
   dismissCode,
   messageCode,
@@ -30,16 +30,17 @@ class SnackBarDemo extends Component {
     showPositionTopRightSnackbar: false,
     showPositionBottomLeftSnackbar: false,
     showPositionBottomRightSnackbar: false,
-    showThemeDefaultSnackbar: false,
-    showThemeLightSnackbar: false,
+    showThemePrimarySnackbar: false,
+    showThemeSecondarySnackbar: false,
     showThemeDarkSnackbar: false,
+    showThemeLightSnackbar: false,
     showThemeInfoSnackbar: false,
     showThemeWarningSnackbar: false,
     showThemeDangerSnackbar: false,
     showThemeSuccessSnackbar: false,
     showColorSnackbar: false,
     showClassNameSnackbar: false,
-    showDelaySnackbar: false,
+    showdurationSnackbar: false,
   };
 
   render() {
@@ -60,7 +61,7 @@ class SnackBarDemo extends Component {
           && (
           <SnackBar
             onClose={() => this.setState({ showSimpleSnackbar: false })}
-            delay={3000}
+            duration={3000}
             message="SnackBar :)"
           />
           )}
@@ -81,7 +82,7 @@ class SnackBarDemo extends Component {
           && (
           <SnackBar
             onClose={() => this.setState({ showMessageSnackbar: false })}
-            delay={3000}
+            duration={3000}
             message="This is a custom message!!!"
           />
           )}
@@ -108,7 +109,7 @@ class SnackBarDemo extends Component {
           && (
           <SnackBar
             onClose={() => this.setState({ showActionSnackbar: false })}
-            delay={3000}
+            duration={3000}
             action="undo"
             onActionClick={() => { this.setState({ showActionSnackbar: false }); alert('Acion Clicked'); }}
             message="Disabled SnackBar :)"
@@ -131,7 +132,7 @@ class SnackBarDemo extends Component {
           && (
           <SnackBar
             onClose={() => this.setState({ showDisabledSnackbar: false })}
-            delay={3000}
+            duration={3000}
             disabled
             showDismiss
             message="Disabled SnackBar :)"
@@ -162,27 +163,27 @@ class SnackBarDemo extends Component {
               showDismiss
               message="Click on dismiss to dismiss now!"
               onClose={() => { this.setState({ showDismissSnackbar: false }); alert('Snackbar is closed'); }}
-              delay={5000}
+              duration={5000}
             />
           )}
         </DemoCard>
 
         <DemoCard
-          title="Delay"
-          uniqueIdentifier="delayUse"
-          sourceCode={delayCode}
+          title="Duration"
+          uniqueIdentifier="durationUse"
+          sourceCode={durationCode}
         >
           <button
             className="btn btn-primary"
-            onClick={() => this.setState({ showDelaySnackbar: true })}
+            onClick={() => this.setState({ showdurationSnackbar: true })}
           >
-            Show SnackBar with 10 sec delay
+            Show SnackBar for 10 sec
           </button>
-          {this.state.showDelaySnackbar
+          {this.state.showdurationSnackbar
             && (
               <SnackBar
-                onClose={() => this.setState({ showDelaySnackbar: false })}
-                delay={10000}
+                onClose={() => this.setState({ showdurationSnackbar: false })}
+                duration={10000}
                 showDismiss
                 message="This snackbar will show for ten seconds :)"
               />
@@ -204,8 +205,8 @@ class SnackBarDemo extends Component {
             && (
               <SnackBar
                 onClose={() => this.setState({ showColorSnackbar: false })}
-                delay={3000}
-                color="violet"
+                duration={3000}
+                style={{ backgroundColor: 'violet' }}
                 showDismiss
                 message="A violet snackbar :O"
               />
@@ -227,8 +228,8 @@ class SnackBarDemo extends Component {
             && (
             <SnackBar
               onClose={() => this.setState({ showImageSnackbar: false })}
-              color="transparent"
-              delay={5000}
+              style={{ backgroundColor: 'transparent' }}
+              duration={5000}
             >
               <img alt="" width="auto" height="100px" src="https://i.gifer.com/YYdO.gif" />
             </SnackBar>
@@ -251,10 +252,10 @@ class SnackBarDemo extends Component {
           {this.state.showPositionTopLeftSnackbar
             && (
               <SnackBar
-                position="top-left"
+                topLeft
                 showDismiss
                 onClose={() => this.setState({ showPositionTopLeftSnackbar: false })}
-                delay={3000}
+                duration={3000}
                 message="SnackBar at top left :)"
               />
             )
@@ -271,10 +272,10 @@ class SnackBarDemo extends Component {
           {this.state.showPositionBottomLeftSnackbar
             && (
               <SnackBar
-                position="bottom-left"
+                bottomLeft
                 showDismiss
                 onClose={() => this.setState({ showPositionBottomLeftSnackbar: false })}
-                delay={3000}
+                duration={3000}
                 message="SnackBar at bottom left :)"
               />
             )
@@ -291,10 +292,10 @@ class SnackBarDemo extends Component {
           {this.state.showPositionTopRightSnackbar
             && (
               <SnackBar
-                position="top-right"
+                topRight
                 showDismiss
                 onClose={() => this.setState({ showPositionTopRightSnackbar: false })}
-                delay={3000}
+                duration={3000}
                 message="SnackBar at top right :)"
               />
             )
@@ -311,10 +312,10 @@ class SnackBarDemo extends Component {
           {this.state.showPositionBottomRightSnackbar
             && (
               <SnackBar
-                position="bottom-right"
+                bottomRight
                 showDismiss
                 onClose={() => this.setState({ showPositionBottomRightSnackbar: false })}
-                delay={3000}
+                duration={3000}
                 message="SnackBar at bottom right :)"
               />
             )
@@ -327,26 +328,58 @@ class SnackBarDemo extends Component {
           sourceCode={customThemeCode}
         >
           <button
-            className="btn btn-dark"
-            onClick={() => this.setState({ showThemeDefaultSnackbar: true })}
+            className="btn"
+            style={{
+              backgroundColor: Constants.defaultThemeColors.primary.color,
+              color: Constants.defaultThemeColors.primary.fontColor,
+            }}
+            onClick={() => this.setState({ showThemePrimarySnackbar: true })}
           >
-            Show SnackBar with default theme
+            Show SnackBar with primary theme
           </button>
           <br />
           <br />
-          {this.state.showThemeDefaultSnackbar
+          {this.state.showThemePrimarySnackbar
             && (
               <SnackBar
-                onClose={() => this.setState({ showThemeDefaultSnackbar: false })}
-                delay={3000}
+                onClose={() => this.setState({ showThemePrimarySnackbar: false })}
+                duration={3000}
                 showDismiss
-                theme="default"
+                primary
                 message="This snackbar has default theme"
               />
             )}
 
           <button
-            className="btn btn-dark"
+            className="btn"
+            style={{
+              backgroundColor: Constants.defaultThemeColors.secondary.color,
+              color: Constants.defaultThemeColors.secondary.fontColor,
+            }}
+            onClick={() => this.setState({ showThemeSecondarySnackbar: true })}
+          >
+            Show SnackBar with secondary theme
+          </button>
+          <br />
+          <br />
+          {this.state.showThemeSecondarySnackbar
+            && (
+              <SnackBar
+                onClose={() => this.setState({ showThemeSecondarySnackbar: false })}
+                duration={3000}
+                showDismiss
+                secondary
+                message="This snackbar has default theme"
+              />
+            )}
+
+
+          <button
+            className="btn"
+            style={{
+              backgroundColor: Constants.defaultThemeColors.dark.color,
+              color: Constants.defaultThemeColors.dark.fontColor,
+            }}
             onClick={() => this.setState({ showThemeDarkSnackbar: true })}
           >
             Show SnackBar with dark theme
@@ -357,15 +390,19 @@ class SnackBarDemo extends Component {
             && (
               <SnackBar
                 onClose={() => this.setState({ showThemeDarkSnackbar: false })}
-                delay={3000}
+                duration={3000}
                 showDismiss
-                theme="dark"
+                dark
                 message="This snackbar has dark theme"
               />
             )}
 
           <button
-            className="btn btn-light"
+            className="btn"
+            style={{
+              backgroundColor: Constants.defaultThemeColors.light.color,
+              color: Constants.defaultThemeColors.light.fontColor,
+            }}
             onClick={() => this.setState({ showThemeLightSnackbar: true })}
           >
             Show SnackBar with light theme
@@ -376,15 +413,19 @@ class SnackBarDemo extends Component {
             && (
               <SnackBar
                 onClose={() => this.setState({ showThemeLightSnackbar: false })}
-                delay={3000}
+                duration={3000}
                 showDismiss
-                theme="light"
+                light
                 message="This snackbar has light theme"
               />
             )}
 
           <button
-            className="btn btn-info"
+            className="btn"
+            style={{
+              backgroundColor: Constants.defaultThemeColors.info.color,
+              color: Constants.defaultThemeColors.info.fontColor,
+            }}
             onClick={() => this.setState({ showThemeInfoSnackbar: true })}
           >
             Show SnackBar with info theme
@@ -395,15 +436,19 @@ class SnackBarDemo extends Component {
             && (
               <SnackBar
                 onClose={() => this.setState({ showThemeInfoSnackbar: false })}
-                delay={3000}
+                duration={3000}
                 showDismiss
-                theme="info"
+                info
                 message="This snackbar has info theme"
               />
             )}
 
           <button
-            className="btn btn-warning"
+            className="btn"
+            style={{
+              backgroundColor: Constants.defaultThemeColors.warning.color,
+              color: Constants.defaultThemeColors.warning.fontColor,
+            }}
             onClick={() => this.setState({ showThemeWarningSnackbar: true })}
           >
             Show SnackBar with warning theme
@@ -414,15 +459,19 @@ class SnackBarDemo extends Component {
             && (
               <SnackBar
                 onClose={() => this.setState({ showThemeWarningSnackbar: false })}
-                delay={3000}
+                duration={3000}
                 showDismiss
-                theme="warning"
+                warning
                 message="This snackbar has warning theme"
               />
             )}
 
           <button
-            className="btn btn-danger"
+            className="btn"
+            style={{
+              backgroundColor: Constants.defaultThemeColors.danger.color,
+              color: Constants.defaultThemeColors.danger.fontColor,
+            }}
             onClick={() => this.setState({ showThemeDangerSnackbar: true })}
           >
             Show SnackBar with danger theme
@@ -433,15 +482,19 @@ class SnackBarDemo extends Component {
             && (
               <SnackBar
                 onClose={() => this.setState({ showThemeDangerSnackbar: false })}
-                delay={3000}
+                duration={3000}
                 showDismiss
-                theme="danger"
+                danger
                 message="This snackbar has danger theme"
               />
             )}
 
           <button
-            className="btn btn-success"
+            className="btn"
+            style={{
+              backgroundColor: Constants.defaultThemeColors.success.color,
+              color: Constants.defaultThemeColors.success.fontColor,
+            }}
             onClick={() => this.setState({ showThemeSuccessSnackbar: true })}
           >
             Show SnackBar with success theme
@@ -452,9 +505,9 @@ class SnackBarDemo extends Component {
             && (
               <SnackBar
                 onClose={() => this.setState({ showThemeSuccessSnackbar: false })}
-                delay={3000}
+                duration={3000}
                 showDismiss
-                theme="success"
+                success
                 message="This snackbar has success theme"
               />
             )}
@@ -475,7 +528,7 @@ class SnackBarDemo extends Component {
             && (
               <SnackBar
                 onClose={() => this.setState({ showClassNameSnackbar: false })}
-                delay={3000}
+                duration={3000}
                 showDismiss
                 className="p-3 bg-primary"
                 message="This snackbar has custom class"

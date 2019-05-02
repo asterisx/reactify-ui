@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Legend, LegendItem } from 'reactify';
+import { Legend, LegendItem } from '@../../../../reactify/build';
 import {
   childrenCode,
   customColorCode,
@@ -22,7 +22,7 @@ const LegendDemo = () => (
       sourceCode={simpleCode}
     >
       <Legend>
-        <LegendItem label="Inventory" />
+        <LegendItem>Inventory</LegendItem>
       </Legend>
     </DemoCard>
 
@@ -32,16 +32,16 @@ const LegendDemo = () => (
       sourceCode={directionCode}
     >
       <h6>Vertical</h6>
-      <Legend direction="vertical">
-        <LegendItem label="Inventory 1" />
-        <LegendItem label="Inventory 2" />
+      <Legend vertical>
+        <LegendItem>Inventory 1</LegendItem>
+        <LegendItem>Inventory 2</LegendItem>
       </Legend>
       <br />
       <br />
       <h6>Horizontal</h6>
-      <Legend direction="horizontal">
-        <LegendItem label="Inventory 1" />
-        <LegendItem label="Inventory 2" />
+      <Legend horizontal>
+        <LegendItem>Inventory 1</LegendItem>
+        <LegendItem>Inventory 2</LegendItem>
       </Legend>
     </DemoCard>
 
@@ -51,9 +51,9 @@ const LegendDemo = () => (
       sourceCode={childrenCode}
     >
       <h6>LegendItem's are usually used as children for Legend, but both Legend and LegendItems's can accept any children</h6>
-      <Legend direction="vertical">
-        <LegendItem label="Inventory 1"><b className="pl-2">Legend items also accept children</b></LegendItem>
-        <LegendItem label="Inventory 2" />
+      <Legend vertical>
+        <LegendItem><b className="pl-2">Legend items also accept children</b></LegendItem>
+        <LegendItem>Inventory 2</LegendItem>
       </Legend>
     </DemoCard>
 
@@ -63,7 +63,7 @@ const LegendDemo = () => (
       sourceCode={customColorCode}
     >
       <Legend>
-        <LegendItem iconColor="violet" label="Inventory" />
+        <LegendItem iconColor="violet">Inventory</LegendItem>
       </Legend>
     </DemoCard>
 
@@ -72,14 +72,15 @@ const LegendDemo = () => (
       uniqueIdentifier="customTheme"
       sourceCode={customThemeCode}
     >
-      <Legend direction="vertical">
-        <LegendItem theme="default" label="Default Theme" />
-        <LegendItem theme="dark" label="Dark Theme" />
-        <LegendItem theme="light" label="Light Theme" />
-        <LegendItem theme="info" label="Info Theme" />
-        <LegendItem theme="warning" label="Warning Theme" />
-        <LegendItem theme="danger" label="Danger Theme" />
-        <LegendItem theme="success" label="Success Theme" />
+      <Legend vertical>
+        <LegendItem primary>Primary Theme</LegendItem>
+        <LegendItem secondary>Secondary Theme</LegendItem>
+        <LegendItem dark>Dark Theme</LegendItem>
+        <LegendItem light>Light Theme</LegendItem>
+        <LegendItem info>Info Theme</LegendItem>
+        <LegendItem warning>Warning Theme</LegendItem>
+        <LegendItem danger>Danger Theme</LegendItem>
+        <LegendItem success>Success Theme</LegendItem>
       </Legend>
     </DemoCard>
 
@@ -89,7 +90,7 @@ const LegendDemo = () => (
       sourceCode={customClassCode}
     >
       <Legend className="p-2 bg-primary">
-        <LegendItem label="Inventory" className="text-light bg-secondary pr-1 pl-1" />
+        <LegendItem className="text-light bg-secondary pr-1 pl-1">Inventory</LegendItem>
       </Legend>
     </DemoCard>
   </div>

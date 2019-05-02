@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { StackedCard, Button } from 'reactify';
+import { StackedCard, Button } from '@../../../../reactify/build';
 import './stacked-card.scss';
 
 import {
@@ -36,8 +36,8 @@ const StackedCardDemo = () => (
         </StackedCard.Body>
         <StackedCard.Footer bordered>
           <div className=" d-flex flex-column h-100 justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </StackedCard.Footer>
       </StackedCard>
@@ -62,8 +62,8 @@ const StackedCardDemo = () => (
         </StackedCard.Body>
         <StackedCard.Footer bordered>
           <div className=" d-flex flex-column h-100 justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </StackedCard.Footer>
       </StackedCard>
@@ -74,8 +74,8 @@ const StackedCardDemo = () => (
       uniqueIdentifier="customSizes"
       sourceCode={customSizeCode}
     >
-      <h6 className="pt-3 pb-3">size="small"</h6>
-      <StackedCard size="small">
+      <h6 className="pt-3 pb-3">small</h6>
+      <StackedCard small>
         <StackedCard.Header>
           <img className="size-small" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </StackedCard.Header>
@@ -88,19 +88,18 @@ const StackedCardDemo = () => (
         </StackedCard.Body>
         <StackedCard.Footer bordered>
           <div className=" d-flex flex-column h-100 justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </StackedCard.Footer>
       </StackedCard>
       <br />
 
       <h6 className="pt-3 pb-3">
-        size="medium"
-        {' '}
+          medium
         <b className="pl-3">Default Size</b>
       </h6>
-      <StackedCard size="medium">
+      <StackedCard medium>
         <StackedCard.Header>
           <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </StackedCard.Header>
@@ -113,15 +112,15 @@ const StackedCardDemo = () => (
         </StackedCard.Body>
         <StackedCard.Footer bordered>
           <div className=" d-flex flex-column h-100 justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </StackedCard.Footer>
       </StackedCard>
       <br />
 
-      <h6 className="pt-3 pb-3">size="large"</h6>
-      <StackedCard size="large">
+      <h6 className="pt-3 pb-3">large</h6>
+      <StackedCard large>
         <StackedCard.Header>
           <img className="size-large" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </StackedCard.Header>
@@ -134,19 +133,17 @@ const StackedCardDemo = () => (
         </StackedCard.Body>
         <StackedCard.Footer bordered>
           <div className=" d-flex flex-column h-100 justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </StackedCard.Footer>
       </StackedCard>
 
       <h6 className="pt-3 pb-3">
-        size="100px"
-        {' '}
-        <b className="pl-3">Can be any valid css size value</b>
+        {'style={{ height: \'100px\' }}'}
       </h6>
-      <StackedCard size="100px" className="header-margin-left-small">
-        <StackedCard.Header className="header-margin-left-small-negative">
+      <StackedCard style={{ height: '100px', marginLeft: '3em' }} className="header-margin-left-small">
+        <StackedCard.Header style={{ marginLeft: '-3em' }} className="header-margin-left-small-negative">
           <img className="size-custom" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </StackedCard.Header>
         <StackedCard.Body className="p-1 m-0">
@@ -157,8 +154,8 @@ const StackedCardDemo = () => (
         </StackedCard.Body>
         <StackedCard.Footer bordered className="p-1 m-0">
           <div className=" d-flex flex-column h-100 justify-content-between">
-            <Button theme="danger" className="font-small">Dislike</Button>
-            <Button theme="success" className="font-small d-flex justify-content-center">Like</Button>
+            <Button small danger>Dislike</Button>
+            <Button small success className="d-flex justify-content-center">Like</Button>
           </div>
         </StackedCard.Footer>
       </StackedCard>
@@ -182,8 +179,8 @@ const StackedCardDemo = () => (
         </StackedCard.Body>
         <StackedCard.Footer bordered>
           <div className=" d-flex flex-column h-100 justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </StackedCard.Footer>
       </StackedCard>
@@ -202,7 +199,7 @@ const StackedCardDemo = () => (
         <StackedCard.Header>
           <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </StackedCard.Header>
-        <StackedCard.Body bordered borderColor="violet">
+        <StackedCard.Body bordered style={{ borderColor: 'violet' }}>
           <span className="size-medium">
             <h5>Avenger's Endgame</h5>
             Adrift in space with no food or water, Tony Stark sends a message to
@@ -211,8 +208,8 @@ const StackedCardDemo = () => (
         </StackedCard.Body>
         <StackedCard.Footer bordered>
           <div className=" d-flex flex-column h-100 justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </StackedCard.Footer>
       </StackedCard>
@@ -242,8 +239,8 @@ const StackedCardDemo = () => (
         </StackedCard.Body>
         <StackedCard.Footer bordered className="p-3">
           <div className=" d-flex flex-column h-100 justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </StackedCard.Footer>
       </StackedCard>

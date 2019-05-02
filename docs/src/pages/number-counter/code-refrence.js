@@ -2,7 +2,7 @@ const customColorCode = `
 <NumberCounter
   from={this.state.simpleCounter.from}
   to={this.state.simpleCounter.to}
-  color="violet"
+  style={{ color: 'violet' }}
 />
 `;
 
@@ -18,43 +18,48 @@ const customThemeCode = `
 <NumberCounter
   from={this.state.simpleCounter.from}
   to={this.state.simpleCounter.to}
-  theme="default"
+  primary
+/>
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  secondary
 />
 
 <NumberCounter
   from={this.state.simpleCounter.from}
   to={this.state.simpleCounter.to}
-  theme="dark"
+  dark
 />
 
 <NumberCounter
   from={this.state.simpleCounter.from}
   to={this.state.simpleCounter.to}
-  theme="light"
+  light
 />
 
 <NumberCounter
   from={this.state.simpleCounter.from}
   to={this.state.simpleCounter.to}
-  theme="info"
+  info
 />
 
 <NumberCounter
   from={this.state.simpleCounter.from}
   to={this.state.simpleCounter.to}
-  theme="warning"
+  warning
 />
 
 <NumberCounter
   from={this.state.simpleCounter.from}
   to={this.state.simpleCounter.to}
-  theme="danger"
+  danger
 />
 
 <NumberCounter
   from={this.state.simpleCounter.from}
   to={this.state.simpleCounter.to}
-  theme="success"
+  success
 />
 `;
 
@@ -143,27 +148,28 @@ const simpleCode = `
 
 const sizeCode = `
 <NumberCounter
-  from={this.state.simpleCounter.from}
-  to={this.state.simpleCounter.to}
-  size="small"
+from={this.state.simpleCounter.from}
+to={this.state.simpleCounter.to}
+small
 />
 
 <NumberCounter
-  from={this.state.simpleCounter.from}
-  to={this.state.simpleCounter.to}
-  size="medium"
+from={this.state.simpleCounter.from}
+to={this.state.simpleCounter.to}
+medium
 />
 
 <NumberCounter
-  from={this.state.simpleCounter.from}
-  to={this.state.simpleCounter.to}
-  size="large"
+from={this.state.simpleCounter.from}
+to={this.state.simpleCounter.to}
+large
 />
 
+<h6 className="pt-3">style={{ fontSize: '75px' }}</h6>
 <NumberCounter
-  from={this.state.simpleCounter.from}
-  to={this.state.simpleCounter.to}
-  size="75px"
+from={this.state.simpleCounter.from}
+to={this.state.simpleCounter.to}
+style={{ fontSize: '75px' }}
 />
 `;
 
