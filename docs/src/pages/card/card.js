@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { Card, Button } from 'reactify';
+import { Card, Button } from '@../../../../reactify/build';
 import './card.scss';
 
 import {
@@ -35,8 +35,8 @@ const CardDemo = () => (
         </Card.Body>
         <Card.Footer bordered>
           <div className="d-flex justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </Card.Footer>
       </Card>
@@ -62,8 +62,8 @@ const CardDemo = () => (
         </Card.Body>
         <Card.Footer bordered>
           <div className="d-flex justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </Card.Footer>
       </Card>
@@ -74,8 +74,8 @@ const CardDemo = () => (
       uniqueIdentifier="customSizes"
       sourceCode={customSizeCode}
     >
-      <h6 className="pt-3 pb-3">size="small"</h6>
-      <Card size="small">
+      <h6 className="pt-3 pb-3">small</h6>
+      <Card small>
         <Card.Header>
           <img className="w-100" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </Card.Header>
@@ -88,19 +88,18 @@ const CardDemo = () => (
         </Card.Body>
         <Card.Footer bordered>
           <div className="d-flex justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </Card.Footer>
       </Card>
       <br />
 
       <h6 className="pt-3 pb-3">
-        size="medium"
-        {' '}
+        medium
         <b className="pl-3">Default Size</b>
       </h6>
-      <Card size="medium">
+      <Card medium>
         <Card.Header>
           <img className="w-100" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </Card.Header>
@@ -113,15 +112,15 @@ const CardDemo = () => (
         </Card.Body>
         <Card.Footer bordered>
           <div className="d-flex justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </Card.Footer>
       </Card>
       <br />
 
-      <h6 className="pt-3 pb-3">size="large"</h6>
-      <Card size="large">
+      <h6 className="pt-3 pb-3">large</h6>
+      <Card large>
         <Card.Header>
           <img className="w-100" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </Card.Header>
@@ -134,18 +133,18 @@ const CardDemo = () => (
         </Card.Body>
         <Card.Footer bordered>
           <div className="d-flex justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </Card.Footer>
       </Card>
 
       <h6 className="pt-3 pb-3">
-        size="350px"
+        {'style={{ width: \'350px\' }}'}
         {' '}
         <b className="pl-3">Can be any valid css size value</b>
       </h6>
-      <Card size="350px">
+      <Card style={{ width: '350px' }}>
         <Card.Header>
           <img className="w-100" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </Card.Header>
@@ -158,8 +157,8 @@ const CardDemo = () => (
         </Card.Body>
         <Card.Footer bordered>
           <div className="d-flex justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </Card.Footer>
       </Card>
@@ -183,8 +182,8 @@ const CardDemo = () => (
         </Card.Body>
         <Card.Footer bordered>
           <div className="d-flex justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </Card.Footer>
       </Card>
@@ -212,8 +211,8 @@ const CardDemo = () => (
         </Card.Body>
         <Card.Footer bordered>
           <div className="d-flex justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </Card.Footer>
       </Card>
@@ -240,8 +239,8 @@ const CardDemo = () => (
         </Card.Body>
         <Card.Footer bordered className="p-3">
           <div className="d-flex justify-content-between">
-            <Button theme="danger">Dislike</Button>
-            <Button theme="success">Like</Button>
+            <Button danger>Dislike</Button>
+            <Button success>Like</Button>
           </div>
         </Card.Footer>
       </Card>

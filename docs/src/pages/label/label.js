@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Label } from 'reactify';
+import { Label } from '@../../../../reactify/build';
 import {
   simpleCode,
   disabledCode,
@@ -30,19 +30,19 @@ const LabelDemo = () => (
       uniqueIdentifier="customSizes"
       sourceCode={customSizeCode}
     >
-      <Label size="small" className="mb-2">
+      <Label small className="mb-2">
         Small Label
       </Label>
       <br />
-      <Label size="medium" className="mb-2">
+      <Label medium className="mb-2">
         Medium Label
       </Label>
       <br />
-      <Label size="large" className="mb-2">
+      <Label large className="mb-2">
         Large Label
       </Label>
       <br />
-      <Label size="35px" className="mb-2">
+      <Label style={{ fontSize: '35px' }} className="mb-2">
         Label with size 35px
       </Label>
       <br />
@@ -53,31 +53,35 @@ const LabelDemo = () => (
       uniqueIdentifier="customThemes"
       sourceCode={customThemeCode}
     >
-      <Label theme="default" className="mb-2">
-        Default Theme
+      <Label primary className="mb-2">
+        Primary Theme
       </Label>
       <br />
-      <Label theme="dark" className="mb-2">
+      <Label secondary className="mb-2">
+        Secondary Theme
+      </Label>
+      <br />
+      <Label dark className="mb-2">
         Dark Theme
       </Label>
       <br />
-      <Label theme="light" className="mb-2">
+      <Label light className="mb-2">
         Light Theme
       </Label>
       <br />
-      <Label theme="info" className="mb-2">
+      <Label info className="mb-2">
         Info Theme
       </Label>
       <br />
-      <Label theme="warning" className="mb-2">
+      <Label warning className="mb-2">
         Warning Theme
       </Label>
       <br />
-      <Label theme="danger" className="mb-2">
+      <Label danger className="mb-2">
         Danger Theme
       </Label>
       <br />
-      <Label theme="success" className="mb-2">
+      <Label success className="mb-2">
         Success Theme
       </Label>
       <br />
@@ -97,7 +101,7 @@ const LabelDemo = () => (
       uniqueIdentifier="childrenUse"
       sourceCode={childrenCode}
     >
-      <Label size="medium" className="p-2">
+      <Label medium className="p-2">
         <div className="card text-dark" style={{ width: '18rem' }}>
           <div className="card-body">
             <h5 className="card-title">Card title</h5>
@@ -119,7 +123,7 @@ const LabelDemo = () => (
       uniqueIdentifier="customColorUse"
       sourceCode={customColorCode}
     >
-      <Label color="violet">Simple Label</Label>
+      <Label style={{ backgroundColor: 'violet' }}>Simple Label</Label>
       <br />
     </DemoCard>
 

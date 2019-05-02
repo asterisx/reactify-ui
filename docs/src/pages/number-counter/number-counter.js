@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { Component } from 'react';
-import { NumberCounter } from 'reactify';
+import { NumberCounter } from '@../../../../reactify/build';
 import {
   customColorCode,
   customClassCode,
@@ -129,36 +129,36 @@ class NumberCounterDemo extends Component {
           uniqueIdentifier="sizeUse"
           sourceCode={sizeCode}
         >
-          <h6>size="small"</h6>
+          <h6>small</h6>
           <NumberCounter
             from={this.state.simpleCounter.from}
             to={this.state.simpleCounter.to}
-            size="small"
+            small
           />
 
           <h6 className="pt-3">
-            size="medium"
+            medium
             {' '}
             <b className="pl-3">default</b>
           </h6>
           <NumberCounter
             from={this.state.simpleCounter.from}
             to={this.state.simpleCounter.to}
-            size="medium"
+            medium
           />
 
-          <h6 className="pt-3">size="large"</h6>
+          <h6 className="pt-3">large</h6>
           <NumberCounter
             from={this.state.simpleCounter.from}
             to={this.state.simpleCounter.to}
-            size="large"
+            large
           />
 
-          <h6 className="pt-3">size="75px"</h6>
+          <h6 className="pt-3">{'style={{ fontSize: \'75px\' }}'}</h6>
           <NumberCounter
             from={this.state.simpleCounter.from}
             to={this.state.simpleCounter.to}
-            size="75px"
+            style={{ fontSize: '75px' }}
           />
         </DemoCard>
 
@@ -170,7 +170,7 @@ class NumberCounterDemo extends Component {
           <NumberCounter
             from={this.state.simpleCounter.from}
             to={this.state.simpleCounter.to}
-            color="violet"
+            style={{ color: 'violet' }}
           />
         </DemoCard>
 
@@ -179,57 +179,60 @@ class NumberCounterDemo extends Component {
           uniqueIdentifier="themeUse"
           sourceCode={customThemeCode}
         >
-          <h6>theme="default"</h6>
+          <h6>Primary</h6>
           <NumberCounter
             from={this.state.simpleCounter.from}
             to={this.state.simpleCounter.to}
-            theme="default"
+            primary
           />
 
-          <h6 className="pt-3">theme="dark"</h6>
+          <h6>Secondary</h6>
           <NumberCounter
             from={this.state.simpleCounter.from}
             to={this.state.simpleCounter.to}
-            theme="dark"
+            secondary
           />
 
-          <h6 className="pt-3">theme="light"</h6>
+          <h6 className="pt-3">Dark</h6>
           <NumberCounter
             from={this.state.simpleCounter.from}
             to={this.state.simpleCounter.to}
-            theme="light"
+            dark
           />
 
-          <h6 className="pt-3">
-            theme="info"
-            {' '}
-            <b className="pl-3">default</b>
-          </h6>
+          <h6 className="pt-3">Light</h6>
           <NumberCounter
             from={this.state.simpleCounter.from}
             to={this.state.simpleCounter.to}
-            theme="info"
+            light
           />
 
-          <h6 className="pt-3">theme="warning"</h6>
+          <h6 className="pt-3">Info</h6>
           <NumberCounter
             from={this.state.simpleCounter.from}
             to={this.state.simpleCounter.to}
-            theme="warning"
+            info
           />
 
-          <h6 className="pt-3">theme="danger"</h6>
+          <h6 className="pt-3">Warning</h6>
           <NumberCounter
             from={this.state.simpleCounter.from}
             to={this.state.simpleCounter.to}
-            theme="danger"
+            warning
           />
 
-          <h6 className="pt-3">theme="success"</h6>
+          <h6 className="pt-3">Danger</h6>
           <NumberCounter
             from={this.state.simpleCounter.from}
             to={this.state.simpleCounter.to}
-            theme="success"
+            danger
+          />
+
+          <h6 className="pt-3">Success</h6>
+          <NumberCounter
+            from={this.state.simpleCounter.from}
+            to={this.state.simpleCounter.to}
+            success
           />
         </DemoCard>
 

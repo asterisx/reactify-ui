@@ -17,7 +17,7 @@ const DemoCard = ({
     <div className="card-body">
       {children}
       <div id={`${uniqueIdentifier}Demo`} className="collapse">
-        <SyntaxHighlighter language="javascript" style={dark}>{sourceCode}</SyntaxHighlighter>
+        <SyntaxHighlighter language="html" style={dark}>{sourceCode}</SyntaxHighlighter>
       </div>
     </div>
   </section>

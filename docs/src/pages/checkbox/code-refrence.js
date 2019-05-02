@@ -1,26 +1,27 @@
 const simpleCode = '<Checkbox />';
 const checkedCode = '<Checkbox checked />';
-const disabledCode = '<Checkbox checked disabled label="This checkbox is disabled" />';
+const disabledCode = '<Checkbox checked disabled>This checkbox is disabled</Checkbox>';
 const customColorCode = '<Checkbox checked color="violet" />';
 const customSizeCode = `
-  <Checkbox size="small" label='size="small"' />
-  <Checkbox size="medium" label='size="medium"' />
-  <Checkbox size="large" label='size="large"' />
-  <Checkbox size="40px" label='size="40px"' />
+<Checkbox small>Small Size</Checkbox>
+<Checkbox medium>Medium Size</Checkbox>
+<Checkbox large>Large Size</Checkbox>
+<Checkbox style={{ fontSize: '40px' }}>style={{ fontSize: '40px' }}</Checkbox>
 `;
 const customThemeCode = `
-  <Checkbox theme="default" checked />
-  <Checkbox theme="dark" checked />
-  <Checkbox theme="light" checked />
-  <Checkbox theme="info" checked />
-  <Checkbox theme="warning" checked />
-  <Checkbox theme="danger" checked />
-  <Checkbox theme="success" checked />
+<Checkbox primary checked>Primary Checkbox</Checkbox>
+<Checkbox secondary checked>Secondary Checkbox</Checkbox>
+<Checkbox dark checked>Dark Checkbox</Checkbox>
+<Checkbox light checked>Light Checkbox</Checkbox>
+<Checkbox info checked>Info Checkbox</Checkbox>
+<Checkbox warning checked>Warning Checkbox</Checkbox>
+<Checkbox danger checked>Danger Checkbox</Checkbox>
+<Checkbox success checked>Success Checkbox</Checkbox>
 `;
 const onChangeCode = '<Checkbox onChange={val => alert("checked: " +  val)} />';
 const labelPositionCode = `
-  <Checkbox labelPosition="left" label="This is a checkbox with left position" />
-  <Checkbox labelPosition="right" label="This is a checkbox with right position" />
+<Checkbox>This is a checkbox with left position</Checkbox>
+<Checkbox style={{ flexDirection: 'row-reverse' }}>This is a checkbox with right position</Checkbox>
 `;
 const childrenCode = `
   <Checkbox checked>

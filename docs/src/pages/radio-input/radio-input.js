@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { RadioInput } from 'reactify';
+import { RadioInput } from '@../../../../reactify/build';
 import {
   simpleCode,
   checkedCode,
@@ -41,15 +41,15 @@ const RadioInputDemo = () => (
       uniqueIdentifier="disabled"
       sourceCode={disabledCode}
     >
-      <RadioInput disabled checked className="align-self-center" />
+      <RadioInput disabled checked className="align-self-center">This is disabled</RadioInput>
     </DemoCard>
 
     <DemoCard
-      title="Label (default is 'right')"
+      title="Label"
       uniqueIdentifier="label"
       sourceCode={labelCode}
     >
-      <RadioInput checked label="Dogs, cats and birds" />
+      <RadioInput checked>Dogs, cats and birds</RadioInput>
     </DemoCard>
 
     <DemoCard
@@ -57,7 +57,9 @@ const RadioInputDemo = () => (
       uniqueIdentifier="labelPosition"
       sourceCode={labelPositionCode}
     >
-      <RadioInput checked label="Dogs, cats and birds" labelPosition="left" />
+      <RadioInput checked>Dogs, cats and birds</RadioInput>
+      <br />
+      <RadioInput checked style={{ flexDirection: 'row-reverse' }}>Dogs, cats and birds</RadioInput>
     </DemoCard>
 
     <DemoCard
@@ -81,7 +83,7 @@ const RadioInputDemo = () => (
       uniqueIdentifier="customIcon"
       sourceCode={customIconCode}
     >
-      <RadioInput iconColor="red" checked />
+      <RadioInput iconColor="red" checked>Dogs, cats and birds</RadioInput>
     </DemoCard>
 
     <DemoCard
@@ -89,7 +91,7 @@ const RadioInputDemo = () => (
       uniqueIdentifier="customClass"
       sourceCode={customClassCode}
     >
-      <RadioInput className="text-light bg-dark p-2" label="This is a label" />
+      <RadioInput className="text-light bg-dark p-2">This RadioInput has custom class</RadioInput>
     </DemoCard>
 
     <DemoCard
@@ -97,13 +99,13 @@ const RadioInputDemo = () => (
       uniqueIdentifier="customSize"
       sourceCode={customSizeCode}
     >
-      <RadioInput size="small" label='size="small"' />
+      <RadioInput small>small</RadioInput>
       <br />
-      <RadioInput size="medium" label='size="medium"' />
+      <RadioInput medium>medium</RadioInput>
       <br />
-      <RadioInput size="large" label='size="large"' />
+      <RadioInput large>large</RadioInput>
       <br />
-      <RadioInput size="40px" label='size="40px"' />
+      <RadioInput style={{ fontSize: '40px' }}>{'style={{ fontSize: \'40px\' }}'}</RadioInput>
       <br />
     </DemoCard>
 
@@ -112,20 +114,21 @@ const RadioInputDemo = () => (
       uniqueIdentifier="themes"
       sourceCode={customThemeCode}
     >
-      <RadioInput theme="default" className="pb-2" checked label={'theme="default"'} />
+      <RadioInput primary className="pb-2" checked>Primary</RadioInput>
       <br />
-      <RadioInput theme="dark" className="pb-2" checked label={'theme="dark"'} />
+      <RadioInput secondary className="pb-2" checked>Secondary</RadioInput>
       <br />
-      <RadioInput theme="light" className="pb-2" checked label={'theme="light"'} />
+      <RadioInput dark className="pb-2" checked>Dark</RadioInput>
       <br />
-      <RadioInput theme="info" className="pb-2" checked label={'theme="info"'} />
+      <RadioInput light className="pb-2" checked>Light</RadioInput>
       <br />
-      <RadioInput theme="warning" className="pb-2" checked label={'theme="warning"'} />
+      <RadioInput info className="pb-2" checked>Info</RadioInput>
       <br />
-      <RadioInput theme="danger" className="pb-2" checked label={'theme="danger"'} />
+      <RadioInput warning className="pb-2" checked>Warning</RadioInput>
       <br />
-      <RadioInput theme="success" checked label={'theme="success"'} />
+      <RadioInput danger className="pb-2" checked>Danger</RadioInput>
       <br />
+      <RadioInput success className="pb-2" checked>Success</RadioInput>
     </DemoCard>
 
     <DemoCard

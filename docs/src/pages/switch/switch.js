@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch } from 'reactify';
+import { Switch, Label } from '@../../../../reactify/build';
 import {
   simpleCode,
   checkedCode,
@@ -43,13 +43,13 @@ const SwitchDemo = () => (
       uniqueIdentifier="customSizes"
       sourceCode={customSizeCode}
     >
-      <Switch size="small" text="Small Button" />
+      <Switch small>Small Switch</Switch>
       <br />
-      <Switch size="medium" text="Medium Button" />
+      <Switch medium>Medium Switch</Switch>
       <br />
-      <Switch size="large" text="Large Button" />
+      <Switch large>Large Switch</Switch>
       <br />
-      <Switch size="35px" text="Custom Size Button" />
+      <Switch style={{ fontSize: '35px' }}>Custom Size Switch</Switch>
     </DemoCard>
 
     <DemoCard
@@ -57,7 +57,7 @@ const SwitchDemo = () => (
       uniqueIdentifier="customIconColor"
       sourceCode={customIconCode}
     >
-      <Switch iconColor="red" checked />
+      <Switch iconColor="red" checked><Label light>Custom Color</Label></Switch>
     </DemoCard>
 
     <DemoCard
@@ -65,31 +65,35 @@ const SwitchDemo = () => (
       uniqueIdentifier="customThemes"
       sourceCode={customThemeCode}
     >
-      <Switch theme="default" className="mb-2">
-        Default Theme
+      <Switch primary checked className="mb-2">
+        Primary Theme
       </Switch>
       <br />
-      <Switch theme="dark" className="mb-2">
+      <Switch secondary checked className="mb-2">
+        Secondary Theme
+      </Switch>
+      <br />
+      <Switch dark checked className="mb-2">
         Dark Theme
       </Switch>
       <br />
-      <Switch theme="light" className="mb-2">
+      <Switch light checked className="mb-2">
         Light Theme
       </Switch>
       <br />
-      <Switch theme="info" className="mb-2">
+      <Switch info checked className="mb-2">
         Info Theme
       </Switch>
       <br />
-      <Switch theme="warning" className="mb-2">
+      <Switch warning checked className="mb-2">
         Warning Theme
       </Switch>
       <br />
-      <Switch theme="danger" className="mb-2">
+      <Switch danger checked className="mb-2">
         Danger Theme
       </Switch>
       <br />
-      <Switch theme="success" className="mb-2">
+      <Switch success checked className="mb-2">
         Success Theme
       </Switch>
       <br />

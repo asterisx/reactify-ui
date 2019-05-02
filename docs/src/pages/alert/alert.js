@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Alert } from 'reactify';
+import { Alert } from '@../../../../reactify/build';
 import {
   simpleCode,
   disabledCode,

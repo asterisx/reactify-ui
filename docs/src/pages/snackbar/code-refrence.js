@@ -1,6 +1,6 @@
 const actionCode = `
 <SnackBar
-    delay={3000}
+    duration={3000}
     action="undo"
     onActionClick={() => alert("Acion Clicked")} 
     message="Disabled SnackBar :)"
@@ -8,23 +8,23 @@ const actionCode = `
 `;
 const childrenCode = `
 <SnackBar
-    color="transparent"
-    delay={5000}
+    style={{backgroundColor: 'transparent'}}
+    duration={5000}
 >
     <img alt="" width="auto" height="100px" src="https://i.gifer.com/YYdO.gif" />
 </SnackBar>
 `;
 const customColorCode = `
 <SnackBar
-    delay={3000}
-    color="violet"
+    duration={3000}
+    style={{ backgroundColor: 'violet' }}
     showDismiss
     message="A violet snackbar :O"
 />
 `;
 const customClassCode = `
 <SnackBar
-    delay={3000}
+    duration={3000}
     showDismiss
     className="p-3 bg-primary"
     message="This snackbar has custom class"
@@ -32,64 +32,71 @@ const customClassCode = `
 `;
 const customThemeCode = `
 <SnackBar
-    delay={3000}
+    duration={3000}
     showDismiss
-    theme="default"
-    message="This snackbar has default theme"
+    primary
+    message="This snackbar has primary theme"
 />
 
 <SnackBar
-    delay={3000}
+    duration={3000}
     showDismiss
-    theme="dark"
+    secondary
+    message="This snackbar has secondary theme"
+/>
+
+<SnackBar
+    duration={3000}
+    showDismiss
+    dark
     message="This snackbar has dark theme"
 />
 
 <SnackBar
-    delay={3000}
+    duration={3000}
     showDismiss
-    theme="light"
+    light
     message="This snackbar has light theme"
 />
 
 <SnackBar
-    delay={3000}
+    duration={3000}
     showDismiss
-    theme="info"
+    info
     message="This snackbar has info theme"
 />
 
 <SnackBar
-    delay={3000}
+    duration={3000}
     showDismiss
-    theme="warning"
+    warning
     message="This snackbar has warning theme"
 />
 
 <SnackBar
-    delay={3000}
+    duration={3000}
     showDismiss
-    theme="danger"
+    danger"
     message="This snackbar has danger theme"
 />
 
 <SnackBar
-    delay={3000}
+    duration={3000}
     showDismiss
-    theme="success"
+    success
     message="This snackbar has success theme"
 />
 `;
-const delayCode = `
+const durationCode = `
 <SnackBar
-    delay={10000}
+    duration={10000}
     showDismiss
     message="This snackbar will show for ten seconds :)"
 />
 `;
 const disabledCode = `
 <SnackBar
-    delay={3000}
+    duration={3000}
     disabled
     message="Disabled SnackBar :)"
 />
@@ -98,47 +105,47 @@ const dismissCode = `
 <SnackBar
     showDismiss
     message="Click on dismiss to dismiss now!"
-    delay={3000}
+    duration={3000}
 />
 `;
 const messageCode = `
 <SnackBar
-    delay={3000}
+    duration={3000}
     message="This is a custom message!!!"
 />
 `;
 const positionCode = `
 <SnackBar
-    position="top-left"
+    topLeft
     showDismiss
-    delay={3000}
+    duration={3000}
     message="SnackBar at top left :)"
 />
 
 <SnackBar
-    position="bottom-left"
+    bottomLeft
     showDismiss
-    delay={3000}
+    duration={3000}
     message="SnackBar at bottom left :)"
 />
 
 <SnackBar
-    position="top-right"
+    topRight
     showDismiss
-    delay={3000}
+    duration={3000}
     message="SnackBar at top right :)"
 />
 
 <SnackBar
-    position="bottom-right"
+    bottomRight
     showDismiss
-    delay={3000}
+    duration={3000}
     message="SnackBar at bottom right :)"
 />
 `;
 const simpleCode = `
 <SnackBar
-    delay={3000}
+    duration={3000}
     message="SnackBar :)"
 />
 `;
@@ -149,7 +156,7 @@ export {
   customColorCode,
   customClassCode,
   customThemeCode,
-  delayCode,
+  durationCode,
   disabledCode,
   dismissCode,
   messageCode,

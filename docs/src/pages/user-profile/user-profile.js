@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { UserProfile } from 'reactify';
+import { UserProfile } from '@../../../../reactify/build';
 import {
   avatarPositionCode,
   breakPointsCode,
@@ -51,14 +51,14 @@ const UserProfileDemo = () => (
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
-        avatarPosition="left"
+        avatarLeft
       />
 
       <h6 className="mt-5">Avatar Position: right</h6>
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
-        avatarPosition="right"
+        avatarRight
       />
     </DemoCard>
 
@@ -113,8 +113,7 @@ const UserProfileDemo = () => (
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
-        showMessage={false}
-        dropDownPLacement="top"
+        dropDownTop
       >
         <img alt="" width="auto" height="100px" src="https://i.gifer.com/YYdO.gif" />
       </UserProfile>
@@ -148,20 +147,23 @@ const UserProfileDemo = () => (
     >
       <h5>Can except a string or array of the following values: sm, md, lg, xl</h5>
       <h6>
-breakPoints="md"
+        md
         <b className="pl-1">View on a md screen</b>
       </h6>
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
-        breakPoints="md"
+        md
       />
 
-      <h6 className="mt-5">{"breakPoints={['sm', 'md', 'lg', 'xl']}"}</h6>
+      <h6 className="mt-5">sm md lg xl</h6>
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
-        breakPoints={['sm', 'md', 'lg', 'xl']}
+        sm
+        md
+        lg
+        xl
       />
     </DemoCard>
 
@@ -170,53 +172,60 @@ breakPoints="md"
       uniqueIdentifier="themesUse"
       sourceCode={customThemeCode}
     >
-      <h6>Light Theme (this is used by default)</h6>
+      <h6>Primary Theme (this is used by default)</h6>
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
-        theme="light"
+        primary
       />
 
-      <h6 className="mt-5">Default Theme</h6>
+      <h6 className="mt-5">Secondary Theme</h6>
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
-        theme="default"
+        secondary
       />
 
       <h6 className="mt-5">Dark Theme</h6>
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
-        theme="dark"
+        dark
+      />
+
+      <h6 className="mt-5">Light Theme</h6>
+      <UserProfile
+        imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+        userName="Joe"
+        light
       />
 
       <h6 className="mt-5">Info Theme</h6>
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
-        theme="info"
+        info
       />
 
       <h6 className="mt-5">Warning Theme</h6>
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
-        theme="warning"
+        warning
       />
 
       <h6 className="mt-5">Danger Theme</h6>
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
-        theme="danger"
+        danger
       />
 
       <h6 className="mt-5">Success Theme</h6>
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
-        theme="success"
+        success
       />
     </DemoCard>
 
@@ -228,7 +237,7 @@ breakPoints="md"
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
-        color="violet"
+        style={{ backgroundColor: 'violet' }}
       />
     </DemoCard>
 
@@ -240,7 +249,7 @@ breakPoints="md"
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
         userName="Joe"
-        theme="info"
+        info
         className="p-3"
       />
     </DemoCard>

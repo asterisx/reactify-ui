@@ -1,19 +1,26 @@
 const onSelectionCode = `
 <RadioGroup onSelectionChange={index => alert('Selected index: ' + index)}>
-  <RadioInput label="option 1" index={0} />
-  <RadioInput label="option 2" index={1} />
-  <RadioInput label="option 3" index={2} />
+  <RadioInput index={0}>option 1</RadioInput>
+  <RadioInput index={1}>option 1</RadioInput>
+  <RadioInput index={2}>option 1</RadioInput>
 </RadioGroup>
 `;
 const simpleCode = `
 <RadioGroup>
-  <RadioInput label="option 1" index={0} />
-  <RadioInput label="option 2" index={1} />
-  <RadioInput label="option 3" index={2} />
+  <RadioInput index={0}>option 1</RadioInput>
+  <RadioInput index={1}>option 1</RadioInput>
+  <RadioInput index={2}>option 1</RadioInput>
 </RadioGroup>
 `;
-
+const disabledCode = `
+<RadioGroup disabled>
+  <RadioInput index={0}>option 1</RadioInput>
+  <RadioInput index={1}>option 1</RadioInput>
+  <RadioInput index={2}>option 1</RadioInput>
+</RadioGroup>
+`;
 export {
   onSelectionCode,
   simpleCode,
+  disabledCode,
 };

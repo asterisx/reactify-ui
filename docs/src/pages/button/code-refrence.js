@@ -1,64 +1,62 @@
 const simpleCode = `
-  <Button text="Default Button"/>
+<Button>Default Button</Button>
 `;
 const disabledCode = `
-  <Button disabled text="Disabled Button" />
+<Button disabled>Disabled Button</Button>
 `;
 const childrenCode = `
-  <Button>
-    <div className="card text-dark" style={{ width: '18rem' }}>
-      <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
+<Button>
+  <div className="card text-dark" style={{ width: '18rem' }}>
+    <div className="card-body">
+      <h5 className="card-title">Card title</h5>
+      <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
-  </Button>
+  </div>
+</Button>
 `;
 const customClassCode = `
-  <Button text="Custom Class Button" className="p-5" />
+<Button className="p-5">Custom Class Button</Button>
 `;
 const customThemeCode = `
-  <Button theme="default" text="Default Button" />
-  <Button theme="dark" text="Dark Button" />
-  <Button theme="light" text="Light Button" />
-  <Button theme="info" text="Info Button" />
-  <Button theme="warning" text="Warning Button" />
-  <Button theme="danger" text="Danger Button" />
-  <Button theme="success" text="Success Button" />
+<Button primary>Primary Button</Button>
+<Button secondary>Secondary Button</Button>
+<Button dark>Dark Button</Button>
+<Button light>Light Button</Button>
+<Button info>Info Button</Button>
+<Button warning>Warning Button</Button>
+<Button danger>Danger Button</Button>
+<Button success>Success Button</Button>
 `;
 const customColorCode = `
-  <Button text="Custom Color Button" color="violet" />
+<Button style={{ backgroundColor: 'violter', color: 'white' }}>Custom Color Button</Button>
 `;
 const customSizeCode = `
-  <Button size="small" text="Small Button" />
-  <Button size="medium" text="Medium Button" />
-  <Button size="large" text="Large Button" />
-  <Button size="35px" text="Custom Size Button" />
+<Button small>Small Button</Button>
+<Button medium>Medium Button</Button>
+<Button large>Large Button</Button>
+<Button style={{ fontSize: '35px' }}>Custom Size Button</Button>
 `;
 
 const clearBorderedCode = `
-  <Button theme="default" clear bordered text="Default Button" />    
-  <Button theme="dark" clear bordered text="Dark Button" />    
-  <Button theme="light" clear bordered text="Light Button" />    
-  <Button theme="info" clear bordered text="Info Button" />    
-  <Button theme="warning" clear bordered text="Warning Button" />    
-  <Button theme="danger" clear bordered text="Danger Button" />    
-  <Button theme="success" clear bordered text="Success Button" />
-`;
-
-const loaderCode = `
-  <Button text="Loader Button" loading />
-  <Button text="Loader Button with position" loading loaderPosition="right" />
+<Button primary clear bordered>Primary Button</Button>
+<Button secondary clear bordered>Secondary Button</Button>
+<Button dark clear bordered>Dark Button</Button>
+<Button light clear bordered>Light Button</Button>
+<Button info clear bordered>Info Button</Button>
+<Button warning clear bordered>Warning Button</Button>
+<Button danger clear bordered>Danger Button</Button>
+<Button success clear bordered>Success Button</Button>
 `;
 
 const clearCode = `
-  <Button theme="default" clear text="Default Button" />    
-  <Button theme="dark" clear text="Dark Button" />    
-  <Button theme="light" clear text="Light Button" />    
-  <Button theme="info" clear text="Info Button" />    
-  <Button theme="warning" clear text="Warning Button" />    
-  <Button theme="danger" clear text="Danger Button" />    
-  <Button theme="success" clear text="Success Button" />
+<Button primary clear>Primary Button</Button>
+<Button secondary clear>Secondary Button</Button>
+<Button dark clear>Dark Button</Button>
+<Button light clear>Light Button</Button>
+<Button info clear>Info Button</Button>
+<Button warning clear>Warning Button</Button>
+<Button danger clear>Danger Button</Button>
+<Button success clear>Success Button</Button>
 `;
 
 export {
@@ -70,6 +68,5 @@ export {
   customClassCode,
   customSizeCode,
   clearBorderedCode,
-  loaderCode,
   clearCode,
 };

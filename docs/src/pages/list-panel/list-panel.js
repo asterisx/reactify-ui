@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { ListPanel } from 'reactify';
+import { ListPanel } from '@../../../../reactify/build';
 import {
   FaApple,
   FaAndroid,
@@ -14,7 +14,6 @@ import {
   selectionModeCode,
   defaultSelectionCode,
   disabledCode,
-  customColorCode,
   customListCode,
   customThemeCode,
   customSizesCode,
@@ -46,8 +45,8 @@ const ListPanelDemo = () => (
       uniqueIdentifier="selectionModeUse"
       sourceCode={selectionModeCode}
     >
-      <h6 className="pt-3 pb-3">mode="multiple"</h6>
-      <ListPanel mode="multiple">
+      <h6 className="pt-3 pb-3">multiple</h6>
+      <ListPanel multiple>
         <ListPanel.Item selected index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item selected index={3}>Item 3</ListPanel.Item>
@@ -112,7 +111,7 @@ const ListPanelDemo = () => (
       uniqueIdentifier="defaultSelectionUse"
       sourceCode={defaultSelectionCode}
     >
-      <ListPanel mode="multiple">
+      <ListPanel multiple>
         <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item selected index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item index={3}>Item 3</ListPanel.Item>
@@ -127,7 +126,7 @@ const ListPanelDemo = () => (
       sourceCode={customSizesCode}
     >
       <h6 className="pt-3 pb-3">size="small"</h6>
-      <ListPanel size="small">
+      <ListPanel small>
         <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item index={3}>Item 3</ListPanel.Item>
@@ -140,7 +139,7 @@ const ListPanelDemo = () => (
         {' '}
         <b className="pl-2">default</b>
       </h5>
-      <ListPanel size="medium">
+      <ListPanel medium>
         <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item index={3}>Item 3</ListPanel.Item>
@@ -149,7 +148,7 @@ const ListPanelDemo = () => (
       </ListPanel>
 
       <h4 className="pt-3 pb-3">size="large"</h4>
-      <ListPanel size="large">
+      <ListPanel large>
         <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item index={3}>Item 3</ListPanel.Item>
@@ -158,7 +157,7 @@ const ListPanelDemo = () => (
       </ListPanel>
 
       <h3 className="pt-3 pb-3">size="40px"</h3>
-      <ListPanel size="40px">
+      <ListPanel style={{ fontSize: '40px' }}>
         <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item index={3}>Item 3</ListPanel.Item>
@@ -172,7 +171,7 @@ const ListPanelDemo = () => (
       uniqueIdentifier="customListUse"
       sourceCode={customListCode}
     >
-      <ListPanel>
+      <ListPanel multiple>
         <ListPanel.Item index={1} bordered={false}>
           <div className="d-inline-flex justify-content-between align-items-center">
             <FaApple className="mr-4" />
@@ -211,8 +210,16 @@ const ListPanelDemo = () => (
       uniqueIdentifier="themeUse"
       sourceCode={customThemeCode}
     >
-      <h6 className="pt-3 pb-3">Default theme</h6>
-      <ListPanel theme="default">
+      <h6 className="pt-3 pb-3">Primary theme</h6>
+      <ListPanel primary>
+        <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
+        <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
+        <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
+        <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={4}>Item 4</ListPanel.Item>
+        <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
+      </ListPanel>
+      <h6 className="pt-3 pb-3">Secondary theme</h6>
+      <ListPanel secondary>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
@@ -220,7 +227,7 @@ const ListPanelDemo = () => (
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
       </ListPanel>
       <h6 className="pt-3 pb-3">Dark theme</h6>
-      <ListPanel theme="dark">
+      <ListPanel dark>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
@@ -228,7 +235,7 @@ const ListPanelDemo = () => (
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
       </ListPanel>
       <h6 className="pt-3 pb-3">Light theme</h6>
-      <ListPanel theme="light">
+      <ListPanel light>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
@@ -236,7 +243,7 @@ const ListPanelDemo = () => (
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
       </ListPanel>
       <h6 className="pt-3 pb-3">Info theme</h6>
-      <ListPanel theme="info">
+      <ListPanel info>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
@@ -244,7 +251,7 @@ const ListPanelDemo = () => (
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
       </ListPanel>
       <h6 className="pt-3 pb-3">Warning theme</h6>
-      <ListPanel theme="warning">
+      <ListPanel warning>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
@@ -252,7 +259,7 @@ const ListPanelDemo = () => (
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
       </ListPanel>
       <h6 className="pt-3 pb-3">Danger theme</h6>
-      <ListPanel theme="danger">
+      <ListPanel danger>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
@@ -260,7 +267,7 @@ const ListPanelDemo = () => (
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
       </ListPanel>
       <h6 className="pt-3 pb-3">Success theme</h6>
-      <ListPanel theme="success">
+      <ListPanel success>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
@@ -269,27 +276,15 @@ const ListPanelDemo = () => (
       </ListPanel>
       <h6 className="pt-3 pb-3">Mixed theme</h6>
       <ListPanel>
-        <ListPanel.Item theme="light" className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
-        <ListPanel.Item theme="dark" className="pl-5 pr-5 pt-2 pb-2" index={2}>Item 2</ListPanel.Item>
-        <ListPanel.Item theme="info" className="pl-5 pr-5 pt-2 pb-2" index={3}>Item 3</ListPanel.Item>
-        <ListPanel.Item theme="warning" className="pl-5 pr-5 pt-2 pb-2" index={4}>Item 4</ListPanel.Item>
-        <ListPanel.Item theme="danger" className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
-        <ListPanel.Item theme="success" className="pl-5 pr-5 pt-2 pb-2" index={6}>Item 6</ListPanel.Item>
-        <ListPanel.Item color="violet" className="pl-5 pr-5 pt-2 pb-2" index={7}>Item 7</ListPanel.Item>
-      </ListPanel>
-    </DemoCard>
-
-    <DemoCard
-      title="Custom Color"
-      uniqueIdentifier="customColorUse"
-      sourceCode={customColorCode}
-    >
-      <ListPanel color="violet">
-        <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
-        <ListPanel.Item index={2}>Item 2</ListPanel.Item>
-        <ListPanel.Item index={3}>Item 3</ListPanel.Item>
-        <ListPanel.Item index={4}>Item 4</ListPanel.Item>
-        <ListPanel.Item index={5}>Item 5</ListPanel.Item>
+        <ListPanel.Item primary className="pl-5 pr-5 pt-2 pb-2" index={1} bordered={false}>Item 1</ListPanel.Item>
+        <ListPanel.Item secondary className="pl-5 pr-5 pt-2 pb-2" index={2} bordered={false}>Item 2</ListPanel.Item>
+        <ListPanel.Item light className="pl-5 pr-5 pt-2 pb-2" index={3} bordered={false}>Item 3</ListPanel.Item>
+        <ListPanel.Item dark className="pl-5 pr-5 pt-2 pb-2" index={4}>Item 4</ListPanel.Item>
+        <ListPanel.Item info className="pl-5 pr-5 pt-2 pb-2" index={5}>Item 5</ListPanel.Item>
+        <ListPanel.Item warning className="pl-5 pr-5 pt-2 pb-2" index={6}>Item 6</ListPanel.Item>
+        <ListPanel.Item danger className="pl-5 pr-5 pt-2 pb-2" index={7}>Item 7</ListPanel.Item>
+        <ListPanel.Item success className="pl-5 pr-5 pt-2 pb-2" index={8}>Item 8</ListPanel.Item>
+        <ListPanel.Item style={{ backgroundColor: 'violet' }} className="pl-5 pr-5 pt-2 pb-2" index={9}>Item 9</ListPanel.Item>
       </ListPanel>
     </DemoCard>
 
@@ -298,7 +293,7 @@ const ListPanelDemo = () => (
       uniqueIdentifier="onSelectionChangeUse"
       sourceCode={onSelectionChangeCode}
     >
-      <ListPanel mode="singular" onSelectionChange={({ index, selected }) => alert(`Index: ${index}\nSelected: ${selected}`)}>
+      <ListPanel singular onSelectionChange={({ index, selected }) => alert(`Index: ${index}\nSelected: ${selected}`)}>
         <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item index={3}>Item 3</ListPanel.Item>

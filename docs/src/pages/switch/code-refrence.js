@@ -1,21 +1,46 @@
 const simpleCode = '<Switch />';
 const checkedCode = '<Switch checked />';
 const disabledCode = '<Switch disabled checked />';
-const customIconCode = ' <Switch iconColor="red" checked/>';
+const customIconCode = '<Switch iconColor="red" checked><Label light>Custom Color</Label></Switch>';
 const customSizeCode = `
-<Switch size="small" />
-<Switch size="medium" />
-<Switch size="large" />
-<Switch size="40px" />
+<Switch small>Small Switch</Switch>
+<Switch medium>Medium Switch</Switch>
+<Switch large>Large Switch</Switch>
+<Switch style={{ fontSize: '35px' }}>Custom Size Switch</Switch>
 `;
 const customThemeCode = `
-<Switch theme="default" checked />
-<Switch theme="dark" checked />
-<Switch theme="light" checked />
-<Switch theme="info" checked />
-<Switch theme="warning" checked />
-<Switch theme="danger" checked />
-<Switch theme="success" checked />
+<Switch primary checked>
+  Primary Theme
+</Switch>
+
+<Switch secondary checked>
+  Secondary Theme
+</Switch>
+
+<Switch dark checked>
+  Dark Theme
+</Switch>
+
+<Switch light checked>
+  Light Theme
+</Switch>
+
+<Switch info checked>
+  Info Theme
+</Switch>
+
+<Switch warning checked>
+  Warning Theme
+</Switch>
+
+<Switch danger checked>
+  Danger Theme
+</Switch>
+
+<Switch success checked>
+  Success Theme
+</Switch>
+
 `;
 const onChangeCode = '<Switch onChange={val => alert("checked: " + val}")} />';
 

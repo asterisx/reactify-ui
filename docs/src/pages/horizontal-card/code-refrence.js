@@ -1,10 +1,10 @@
 const borderedColoredCode = `
 <HorizontalCard>
   <HorizontalCard.Header>
-    <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+    <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
   </HorizontalCard.Header>
-  <HorizontalCard.Body bordered borderColor="violet">
-    <span className="size-medium">
+  <HorizontalCard.Body bordered style={{ borderColor: 'violet' }}>
+    <span>
       <h5>Avenger's Endgame</h5>
       Adrift in space with no food or water, Tony Stark sends a message to
       Pepper Potts as his oxygen supply starts to dwindle.
@@ -21,10 +21,10 @@ const borderedColoredCode = `
 const customClassCode = `
 <HorizontalCard className="p-3">
   <HorizontalCard.Header>
-    <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+    <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
   </HorizontalCard.Header>
   <HorizontalCard.Body bordered className="p-3">
-    <span className="size-medium">
+    <span>
       <h5>Avenger's Endgame</h5>
       Adrift in space with no food or water, Tony Stark sends a message to
       Pepper Potts as his oxygen supply starts to dwindle.
@@ -39,12 +39,12 @@ const customClassCode = `
 </HorizontalCard>
 `;
 const customSizeCode = `
-<HorizontalCard size="small">
+<HorizontalCard small>
 <HorizontalCard.Header>
-  <img className="size-small" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+  <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
 </HorizontalCard.Header>
 <HorizontalCard.Body>
-  <span className="size-small">
+  <span>
     <h5>Avenger's Endgame</h5>
     Adrift in space with no food or water, Tony Stark sends a message to
     Pepper Potts as his oxygen supply starts to dwindle.
@@ -58,12 +58,12 @@ const customSizeCode = `
 </HorizontalCard.Footer>
 </HorizontalCard>
 
-<HorizontalCard size="medium">
+<HorizontalCard medium>
   <HorizontalCard.Header>
-    <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+    <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
   </HorizontalCard.Header>
   <HorizontalCard.Body>
-    <span className="size-medium">
+    <span>
       <h5>Avenger's Endgame</h5>
       Adrift in space with no food or water, Tony Stark sends a message to
       Pepper Potts...
@@ -77,7 +77,7 @@ const customSizeCode = `
   </HorizontalCard.Footer>
 </HorizontalCa
 
-<HorizontalCard size="large">
+<HorizontalCard large>
   <HorizontalCard.Header>
     <img className="size-large" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
   </HorizontalCard.Header>
@@ -96,7 +96,7 @@ const customSizeCode = `
   </HorizontalCard.Footer>
 </HorizontalCard>
 
-<HorizontalCard size="100px">
+<HorizontalCard style={{ height: '100px' }}>
   <HorizontalCard.Header>
     <img className="size-custom" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
   </HorizontalCard.Header>
@@ -137,10 +137,10 @@ const disabledCode = `
 const noShadowCode = `
 <HorizontalCard shadowed={false}>
   <HorizontalCard.Header>
-    <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+    <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
   </HorizontalCard.Header>
   <HorizontalCard.Body>
-    <span className="size-medium">
+    <span>
       <h5>Avenger's Endgame</h5>
       Adrift in space with no food or water, Tony Stark sends a message to
       Pepper Potts as his oxygen supply starts to dwindle.
@@ -155,12 +155,12 @@ const noShadowCode = `
 </HorizontalCard>
 `;
 const simpleCode = `
-<HorizontalCard shadowed={false}>
+<HorizontalCard>
 <HorizontalCard.Header>
-  <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+  <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
 </HorizontalCard.Header>
 <HorizontalCard.Body>
-  <span className="size-medium">
+  <span>
     <h5>Avenger's Endgame</h5>
     Adrift in space with no food or water, Tony Stark sends a message to
     Pepper Potts as his oxygen supply starts to dwindle.

@@ -1,8 +1,9 @@
 import React from 'react';
-import { RadioGroup, RadioInput } from 'reactify';
+import { RadioGroup, RadioInput } from '@../../../../reactify/build';
 import {
   onSelectionCode,
   simpleCode,
+  disabledCode,
 } from './code-refrence';
 import './radio-group.scss';
 import DemoCard from '../../components/demo-card';
@@ -15,9 +16,9 @@ const RadioGroupDemo = () => (
       sourceCode={simpleCode}
     >
       <RadioGroup>
-        <RadioInput label="option 1" index={0} />
-        <RadioInput label="option 2" index={1} />
-        <RadioInput label="option 3" index={2} />
+        <RadioInput index={0}>option 1</RadioInput>
+        <RadioInput index={1}>option 1</RadioInput>
+        <RadioInput index={2}>option 1</RadioInput>
       </RadioGroup>
     </DemoCard>
 
@@ -27,9 +28,21 @@ const RadioGroupDemo = () => (
       sourceCode={onSelectionCode}
     >
       <RadioGroup onSelectionChange={index => alert(`Selected index: ${index}`)}>
-        <RadioInput label="option 1" index={0} />
-        <RadioInput label="option 2" index={1} />
-        <RadioInput label="option 3" index={2} />
+        <RadioInput index={0}>option 1</RadioInput>
+        <RadioInput index={1}>option 1</RadioInput>
+        <RadioInput index={2}>option 1</RadioInput>
+      </RadioGroup>
+    </DemoCard>
+
+    <DemoCard
+      title="Disabled"
+      uniqueIdentifier="disabledUse"
+      sourceCode={disabledCode}
+    >
+      <RadioGroup disabled>
+        <RadioInput index={0}>option 1</RadioInput>
+        <RadioInput index={1}>option 1</RadioInput>
+        <RadioInput index={2}>option 1</RadioInput>
       </RadioGroup>
     </DemoCard>
   </div>

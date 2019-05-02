@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { Button } from 'reactify';
+import { Button } from '@../../../../reactify/build';
 
 import {
   simpleCode,
@@ -12,7 +12,6 @@ import {
   customSizeCode,
   clearCode,
   clearBorderedCode,
-  loaderCode,
 } from './code-refrence';
 import './button.scss';
 import DemoCard from '../../components/demo-card';
@@ -24,7 +23,7 @@ const ButtonDemo = () => (
       uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
     >
-      <Button text="Default Button" />
+      <Button>Default Button</Button>
     </DemoCard>
 
     <DemoCard
@@ -32,16 +31,16 @@ const ButtonDemo = () => (
       uniqueIdentifier="customSizes"
       sourceCode={customSizeCode}
     >
-      <Button size="small" text="Small Button" />
+      <Button small>Small Button</Button>
       <br />
       <br />
-      <Button size="medium" text="Medium Button" />
+      <Button medium>Medium Button</Button>
       <br />
       <br />
-      <Button size="large" text="Large Button" />
+      <Button large>Large Button</Button>
       <br />
       <br />
-      <Button size="35px" text="Custom Size Button" />
+      <Button style={{ fontSize: '35px' }}>Custom Size Button</Button>
     </DemoCard>
 
     <DemoCard
@@ -49,25 +48,28 @@ const ButtonDemo = () => (
       uniqueIdentifier="customTheme"
       sourceCode={customThemeCode}
     >
-      <Button theme="default" text="Default Button" />
+      <Button primary>Primary Button</Button>
       <br />
       <br />
-      <Button theme="dark" text="Dark Button" />
+      <Button secondary>Secondary Button</Button>
       <br />
       <br />
-      <Button theme="light" text="Light Button" />
+      <Button dark>Dark Button</Button>
       <br />
       <br />
-      <Button theme="info" text="Info Button" />
+      <Button light>Light Button</Button>
       <br />
       <br />
-      <Button theme="warning" text="Warning Button" />
+      <Button info>Info Button</Button>
       <br />
       <br />
-      <Button theme="danger" text="Danger Button" />
+      <Button warning>Warning Button</Button>
       <br />
       <br />
-      <Button theme="success" text="Success Button" />
+      <Button danger>Danger Button</Button>
+      <br />
+      <br />
+      <Button success>Success Button</Button>
     </DemoCard>
 
     <DemoCard
@@ -75,7 +77,7 @@ const ButtonDemo = () => (
       uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
     >
-      <Button disabled text="Disabled Button" />
+      <Button disabled>Disabled Button</Button>
     </DemoCard>
 
     <DemoCard
@@ -98,7 +100,7 @@ const ButtonDemo = () => (
       uniqueIdentifier="customColorUse"
       sourceCode={customColorCode}
     >
-      <Button text="Custom Color Button" color="violet" />
+      <Button style={{ backgroundColor: 'violter', color: 'white' }}>Custom Color Button</Button>
     </DemoCard>
 
     <DemoCard
@@ -106,7 +108,7 @@ const ButtonDemo = () => (
       uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
     >
-      <Button text="Custom Class Button" className="p-5" />
+      <Button className="p-5">Custom Class Button</Button>
     </DemoCard>
 
     <DemoCard
@@ -114,25 +116,28 @@ const ButtonDemo = () => (
       uniqueIdentifier="clear"
       sourceCode={clearCode}
     >
-      <Button theme="default" clear text="Default Button" />
+      <Button primary clear>Primary Button</Button>
       <br />
       <br />
-      <Button theme="dark" clear text="Dark Button" />
+      <Button secondary clear>Secondary Button</Button>
       <br />
       <br />
-      <Button theme="light" clear text="Light Button" />
+      <Button dark clear>Dark Button</Button>
       <br />
       <br />
-      <Button theme="info" clear text="Info Button" />
+      <Button light clear>Light Button</Button>
       <br />
       <br />
-      <Button theme="warning" clear text="Warning Button" />
+      <Button info clear>Info Button</Button>
       <br />
       <br />
-      <Button theme="danger" clear text="Danger Button" />
+      <Button warning clear>Warning Button</Button>
       <br />
       <br />
-      <Button theme="success" clear text="Success Button" />
+      <Button danger clear>Danger Button</Button>
+      <br />
+      <br />
+      <Button success clear>Success Button</Button>
     </DemoCard>
 
     <DemoCard
@@ -140,36 +145,28 @@ const ButtonDemo = () => (
       uniqueIdentifier="clearBordered"
       sourceCode={clearBorderedCode}
     >
-      <Button theme="default" clear bordered text="Default Button" />
+      <Button primary clear bordered>Primary Button</Button>
       <br />
       <br />
-      <Button theme="dark" clear bordered text="Dark Button" />
+      <Button secondary clear bordered>Secondary Button</Button>
       <br />
       <br />
-      <Button theme="light" clear bordered text="Light Button" />
+      <Button dark clear bordered>Dark Button</Button>
       <br />
       <br />
-      <Button theme="info" clear bordered text="Info Button" />
+      <Button light clear bordered>Light Button</Button>
       <br />
       <br />
-      <Button theme="warning" clear bordered text="Warning Button" />
+      <Button info clear bordered>Info Button</Button>
       <br />
       <br />
-      <Button theme="danger" clear bordered text="Danger Button" />
+      <Button warning clear bordered>Warning Button</Button>
       <br />
       <br />
-      <Button theme="success" clear bordered text="Success Button" />
-    </DemoCard>
-
-    <DemoCard
-      title="Loader"
-      uniqueIdentifier="loaderUse"
-      sourceCode={loaderCode}
-    >
-      <Button text="Loader Button" loading />
+      <Button danger clear bordered>Danger Button</Button>
       <br />
       <br />
-      <Button text="Loader Button with position" loading loaderPosition="right" />
+      <Button success clear bordered>Success Button</Button>
     </DemoCard>
   </div>
 );

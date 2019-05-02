@@ -12,7 +12,9 @@
     "babel-plugin-emotion": "^10.0.9",
     "babel-plugin-react-css-modules": "^5.2.4",
     "babel-plugin-transform-rename-import": "^2.3.0",
+    "clsx": "^1.0.4",
     "node-sass": "^4.11.0",
+    "polished": "^3.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -37,15 +39,14 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-standard": "^3.1.0",
-    "sass-loader": "^7.1.0"
+    "eslint-plugin-standard": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "rm -rf build && babel lib --out-dir build && node-sass lib --output build"
+    "postinstall": "rm -rf build && babel lib --out-dir build"
   },
   "eslintConfig": {
     "extends": "react-app"

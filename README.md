@@ -15,7 +15,7 @@ npm install --save reactify
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'reactify'
+import MyComponent from '@../../../../reactify/build'
 
 class Example extends Component {
   render () {

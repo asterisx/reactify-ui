@@ -31,7 +31,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 `;
 
 const childrenCode = `
-<FullScreen size="medium" className="p-2">
+<FullScreen>
 <div className="card text-dark" style={{ width: '18rem' }}>
   <div className="card-body">
     <h5 className="card-title">Card title</h5>
