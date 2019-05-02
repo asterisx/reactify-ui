@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "05d6edfe5bb30c01b749",
+    "revision": "ed01e20ee4342cccab3f",
     "url": "/reactify/static/css/main.3da9b1a6.chunk.css"
   },
   {
-    "revision": "05d6edfe5bb30c01b749",
-    "url": "/reactify/static/js/main.aaac9e8d.chunk.js"
+    "revision": "ed01e20ee4342cccab3f",
+    "url": "/reactify/static/js/main.04932a35.chunk.js"
   },
   {
     "revision": "fffc0ed3d49eaa90f927",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/reactify/static/js/2.13725c77.chunk.js"
   },
   {
-    "revision": "797062659fb50bd3fb1cce75f21063aa",
+    "revision": "62b64f3f92c7a03369c5460e212190b3",
     "url": "/reactify/index.html"
   }
 ];
