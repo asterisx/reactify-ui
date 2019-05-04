@@ -29,6 +29,8 @@ class Portal extends PureComponent {
 
   conatinerBgRef = React.createRef();
 
+  containerRef = React.createRef();
+
   componentDidMount() {
     const {
       left, right, bottom, top, hideBackDrop,
@@ -38,6 +40,7 @@ class Portal extends PureComponent {
       right,
       bottom,
       top,
+      this.containerRef.current,
       this.containerChildRef.current,
       this.conatinerBgRef.current,
       hideBackDrop,
@@ -49,11 +52,13 @@ class Portal extends PureComponent {
     right,
     bottom,
     top,
+    container,
     elem,
     elemBg,
     hideBackDrop,
     duration = 300,
   ) => {
+    $(container).show();
     $(elemBg).animate(
       {
         opacity: hideBackDrop ? 1 : 0.6,
@@ -100,11 +105,13 @@ class Portal extends PureComponent {
     right,
     bottom,
     top,
+    container,
     elem,
     elemBg,
     callBack,
     duration = 300,
   ) => {
+    $(container).hide();
     $(elemBg).animate(
       {
         opacity: 0,
@@ -184,6 +191,7 @@ class Portal extends PureComponent {
       right,
       bottom,
       top,
+      this.containerRef.current,
       this.containerChildRef.current,
       this.conatinerBgRef.current,
       this.props.onClose,
@@ -203,6 +211,7 @@ class Portal extends PureComponent {
     } = this.props;
     return (
       <div
+        ref={this.containerRef}
         css={[
           styles.container,
         ]}

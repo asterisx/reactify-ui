@@ -9,6 +9,7 @@ import FullScreen from './components/full-screen';
 import Label from './components/label';
 import { Legend, LegendItem } from './components/legend';
 import ListPanel from './components/list-panel';
+import Modal from './components/modal';
 import NumberCounter from './components/number-counter';
 import Portal from './components/portal';
 import Paper from './components/paper';
@@ -48,6 +49,7 @@ export {
   Legend,
   LegendItem,
   ListPanel,
+  Modal,
   NumberCounter,
   Portal,
   Paper,
