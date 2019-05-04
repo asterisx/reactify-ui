@@ -11,6 +11,7 @@ import { Legend, LegendItem } from './components/legend';
 import ListPanel from './components/list-panel';
 import NumberCounter from './components/number-counter';
 import Portal from './components/portal';
+import Paper from './components/paper';
 import RadioInput from './components/radio-input';
 import RadioGroup from './components/radio-group';
 import StackedCard from './components/stacked-card';
@@ -47,6 +48,7 @@ export {
   ListPanel,
   NumberCounter,
   Portal,
+  Paper,
   RadioInput,
   RadioGroup,
   StackedCard,

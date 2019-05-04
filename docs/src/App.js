@@ -14,6 +14,7 @@ import LegendDemo from './pages/legend';
 import ListPanelDemo from './pages/list-panel';
 import NumberCounterDemo from './pages/number-counter';
 import PortalDemo from './pages/portal';
+import PaperDemo from './pages/paper';
 import RadioInputDemo from './pages/radio-input';
 import RadioGroupDemo from './pages/radio-group';
 import StackedCardDemo from './pages/stacked-card';
@@ -93,6 +94,11 @@ const App = () => (
                 Portal
               </Link>
             </li>
+            <li>
+              <Link className="d-block" to="/paper">
+                Paper
+              </Link>
+            </li>
             <li className="list-group-item">
               <Link className="d-block" to="/radio-input">
                 Radio Input
@@ -140,6 +146,7 @@ const App = () => (
           <Route exact path="/list-panel" component={ListPanelDemo} />
           <Route exact path="/number-counter" component={NumberCounterDemo} />
           <Route exact path="/portal" component={PortalDemo} />
+          <Route exact path="/paper" component={PaperDemo} />
           <Route exact path="/radio-input" component={RadioInputDemo} />
           <Route exact path="/radio-group" component={RadioGroupDemo} />
           <Route exact path="/stacked-card" component={StackedCardDemo} />
