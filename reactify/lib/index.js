@@ -15,6 +15,7 @@ import Paper from './components/paper';
 import RadioInput from './components/radio-input';
 import RadioGroup from './components/radio-group';
 import StackedCard from './components/stacked-card';
+import StarRating from './components/star-rating';
 import Switch from './components/switch';
 import SnackBar from './components/snackbar';
 import UserProfile from './components/user-profile';
@@ -52,6 +53,7 @@ export {
   RadioInput,
   RadioGroup,
   StackedCard,
+  StarRating,
   Switch,
   SnackBar,
   UserProfile,
