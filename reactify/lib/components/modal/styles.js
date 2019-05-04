@@ -37,13 +37,13 @@ export const styles = {
   },
   sizes: {
     small: {
-      width: '30em',
+      width: '25%',
     },
     medium: {
-      width: '50em',
+      width: '50%',
     },
     large: {
-      width: '70em',
+      width: '75%',
     },
   },
   getSize: ({

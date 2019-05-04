@@ -22,15 +22,15 @@ describe('Modal Component', () => {
 
     it('should have correct size passed as props', () => {
         const child = mount(<Modal small />).findWhere(n => n.name() === 'div' && n.hasClass('reactify-ui-modal__children'));
-        expect(child).toHaveStyleRule('width', '30em');
+        expect(child).toHaveStyleRule('width', '25%');
 
         const child1 = mount(<Modal medium />).findWhere(n => n.name() === 'div' && n.hasClass('reactify-ui-modal__children'));
-        expect(child1).toHaveStyleRule('width', '50em');
+        expect(child1).toHaveStyleRule('width', '50%');
 
         const child2 = mount(<Modal large />).findWhere(n => n.name() === 'div' && n.hasClass('reactify-ui-modal__children'));
-        expect(child2).toHaveStyleRule('width', '70em');
+        expect(child2).toHaveStyleRule('width', '75%');
 
-        const width = "40px";
+        const width = "90%";
         const child3 = mount(<Modal style={{width: width}} />).findWhere(n => n.name() === 'div' && n.hasClass('reactify-ui-modal__children'));
         expect(child3).toHaveStyleRule('width', width);
     });

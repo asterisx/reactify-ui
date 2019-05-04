@@ -161,7 +161,7 @@ class ModalDemo extends Component {
                 Open Custom Size Modal
             </Button>
             {this.state.customSizeModal && (
-            <Modal style={{ width: '80em' }} onClose={() => this.setState({ customSizeModal: false })}>
+            <Modal style={{ width: '90%' }} onClose={() => this.setState({ customSizeModal: false })}>
               {closeToggle => (
                 <div
                   style={{

@@ -1,12 +1,12 @@
 const simpleCode = `
-<Button onClick={() => this.setState({ simplePortalOpen: true })}>Open Portal</Button>
-{this.state.simplePortalOpen && (
-<Portal top>
+<Button onClick={() => this.setState({ simpleModalOpen: true })}>Open Modal</Button>
+{this.state.simpleModalOpen && (
+<Modal onClose={() => this.setState({ simpleModalOpen: false })}>
   {closeToggle => (
     <div
       style={{
         width: '100%',
-        height: '100px',
+        height: '250px',
         display: 'flex',
         justifyContent: 'center',
         alignContent: 'center',
@@ -18,144 +18,27 @@ const simpleCode = `
         style={{ fontSize: '20px' }}
         type="button"
         value="Close"
-        onClick={() => this.setState({ simplePortalOpen: true }, closeToggle())}
+        onClick={closeToggle}
       />
     </div>
   )}
-</Portal>
-)}
-`;
-const portalLocationCode = `
-<Button onClick={() => this.setState({ topPortalOpen: true })}>Open Top Portal</Button>
-  {this.state.topPortalOpen && (
-  <Portal top>
-    {closeToggle => (
-      <div
-        style={{
-          width: '100%',
-          height: '100px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignContent: 'center',
-          alignItems: 'center',
-          background: 'white',
-        }}
-      >
-        <input
-          style={{ fontSize: '20px' }}
-          type="button"
-          value="Close"
-          onClick={() => this.setState({ topPortalOpen: true }, closeToggle())}
-        />
-      </div>
-    )}
-  </Portal>
-  )}
-
-<Button
-  onClick={() => this.setState({ leftPortalOpen: true })}
->
-    Open Left Portal
-</Button>
-{this.state.leftPortalOpen && (
-<Portal top>
-  {closeToggle => (
-    <div
-      style={{
-        width: '100px',
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignContent: 'center',
-        alignItems: 'center',
-        background: 'white',
-      }}
-    >
-      <input
-        style={{ fontSize: '20px' }}
-        type="button"
-        value="Close"
-        onClick={() => this.setState({ leftPortalOpen: true }, closeToggle())}
-      />
-    </div>
-  )}
-</Portal>
-)}
-
-<Button
-onClick={() => this.setState({ rightPortalOpen: true })}
->
-  Open Right Portal
-</Button>
-{this.state.rightPortalOpen && (
-<Portal right>
-{closeToggle => (
-  <div
-    style={{
-      width: '100px',
-      height: '100%',
-      display: 'flex',
-      justifyContent: 'center',
-      alignContent: 'center',
-      alignItems: 'center',
-      background: 'white',
-    }}
-  >
-    <input
-      style={{ fontSize: '20px' }}
-      type="button"
-      value="Close"
-      onClick={() => this.setState({ rightPortalOpen: true }, closeToggle())}
-    />
-  </div>
-)}
-</Portal>
-)}
-
-<Button
-  onClick={() => this.setState({ bottomPortalOpen: true })}
->
-    Open Bottom Portal
-</Button>
-{this.state.bottomPortalOpen && (
-<Portal bottom>
-  {closeToggle => (
-    <div
-      style={{
-        width: '100%',
-        height: '100px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignContent: 'center',
-        alignItems: 'center',
-        background: 'white',
-      }}
-    >
-      <input
-        style={{ fontSize: '20px' }}
-        type="button"
-        value="Close"
-        onClick={() => this.setState({ bottomPortalOpen: true }, closeToggle())}
-      />
-    </div>
-  )}
-</Portal>
+</Modal>
 )}
 `;
 
 const autoCloseCode = `
 <Button
-onClick={() => this.setState({ autoClosePortalOpen: true })}
+onClick={() => this.setState({ autoCloseModalOpen: true })}
 >
-  Open Portal
+  Open Modal
 </Button>
-{this.state.autoClosePortalOpen && (
-<Portal top autoClose={false}>
+{this.state.autoCloseModalOpen && (
+<Modal autoClose={false}>
 {closeToggle => (
   <div
     style={{
       width: '100%',
-      height: '100px',
+      height: '250px',
       display: 'flex',
       justifyContent: 'center',
       alignContent: 'center',
@@ -167,57 +50,33 @@ onClick={() => this.setState({ autoClosePortalOpen: true })}
       style={{ fontSize: '20px' }}
       type="button"
       value="Close"
-      onClick={() => this.setState({ autoClosePortalOpen: true }, closeToggle())}
+      onClick={
+          () => {
+            this.setState({ autoCloseModalOpen: false });
+            closeToggle();
+          }}
     />
   </div>
 )}
-</Portal>
+</Modal>
 )}
 `;
 const hideBackdropCode = `
 <Button
-  onClick={() => this.setState({ hideBackdropPortalOpen: true })}
+onClick={() => this.setState({ hideBackdropModalOpen: true })}
 >
-    Open Portal
+  Open Modal
 </Button>
-{this.state.hideBackdropPortalOpen && (
-<Portal top hideBackDrop>
-  {closeToggle => (
-    <div
-      style={{
-        width: '100%',
-        height: '100px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignContent: 'center',
-        alignItems: 'center',
-        background: 'white',
-      }}
-    >
-      <input
-        style={{ fontSize: '20px' }}
-        type="button"
-        value="Close"
-        onClick={() => this.setState({ hideBackdropPortalOpen: true }, closeToggle())}
-      />
-    </div>
-  )}
-</Portal>
-)}
-`;
-const onCloseCode = `
-<Button
-onClick={() => this.setState({ onClosePortal: true })}
+{this.state.hideBackdropModalOpen && (
+<Modal
+hideBackDrop
+onClose={() => this.setState({ hideBackdropModalOpen: false })}
 >
-  Open Portal
-</Button>
-{this.state.onClosePortal && (
-<Portal top hideBackDrop onClose={() => { this.setState({ onClosePortal: false }); alert('Closed'); }}>
 {closeToggle => (
   <div
     style={{
       width: '100%',
-      height: '100px',
+      height: '250px',
       display: 'flex',
       justifyContent: 'center',
       alignContent: 'center',
@@ -233,15 +92,165 @@ onClick={() => this.setState({ onClosePortal: true })}
     />
   </div>
 )}
-</Portal>
+</Modal>
 )}
 `;
-const modalSizeCode = '';
+const onCloseCode = `
+<Button
+  onClick={() => this.setState({ onCloseModal: true })}
+>
+    Open Modal
+</Button>
+{this.state.onCloseModal && (
+<Modal top onClose={() => { this.setState({ onCloseModal: false }); alert('Closed'); }}>
+  {closeToggle => (
+    <div
+      style={{
+        width: '100%',
+        height: '250px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center',
+        background: 'white',
+      }}
+    >
+      <input
+        style={{ fontSize: '20px' }}
+        type="button"
+        value="Close"
+        onClick={closeToggle}
+      />
+    </div>
+  )}
+</Modal>
+)}
+`;
+const modalSizeCode = `
+<Button
+  onClick={() => this.setState({ smallModalOpen: true })}
+>
+  Open Small Modal
+</Button>
+{this.state.smallModalOpen && (
+<Modal small onClose={() => this.setState({ smallModalOpen: false })}>
+  {closeToggle => (
+    <div
+      style={{
+        width: '100%',
+        height: '250px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center',
+        background: 'white',
+      }}
+    >
+      <input
+        style={{ fontSize: '20px' }}
+        type="button"
+        value="Close"
+        onClick={closeToggle}
+      />
+    </div>
+  )}
+</Modal>
+)}
+
+<Button
+onClick={() => this.setState({ mediumModalOpen: true })}
+>
+  Open Medium Modal
+</Button>
+{this.state.mediumModalOpen && (
+<Modal medium onClose={() => this.setState({ mediumModalOpen: false })}>
+{closeToggle => (
+  <div
+    style={{
+      width: '100%',
+      height: '250px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignContent: 'center',
+      alignItems: 'center',
+      background: 'white',
+    }}
+  >
+    <input
+      style={{ fontSize: '20px' }}
+      type="button"
+      value="Close"
+      onClick={closeToggle}
+    />
+  </div>
+)}
+</Modal>
+)}
+
+<Button
+  onClick={() => this.setState({ largeModalOpen: true })}
+>
+    Open Large Modal
+</Button>
+{this.state.largeModalOpen && (
+<Modal large onClose={() => this.setState({ largeModalOpen: false })}>
+  {closeToggle => (
+    <div
+      style={{
+        width: '100%',
+        height: '250px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center',
+        background: 'white',
+      }}
+    >
+      <input
+        style={{ fontSize: '20px' }}
+        type="button"
+        value="Close"
+        onClick={closeToggle}
+      />
+    </div>
+  )}
+</Modal>
+)}
+
+<Button
+  onClick={() => this.setState({ customSizeModal: true })}
+>
+    Open Custom Size Modal
+</Button>
+{this.state.customSizeModal && (
+<Modal style={{ width: '90%' }} onClose={() => this.setState({ customSizeModal: false })}>
+  {closeToggle => (
+    <div
+      style={{
+        width: '100%',
+        height: '250px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center',
+        background: 'white',
+      }}
+    >
+      <input
+        style={{ fontSize: '20px' }}
+        type="button"
+        value="Close"
+        onClick={closeToggle}
+      />
+    </div>
+  )}
+</Modal>
+)}
+`;
 export {
   autoCloseCode,
   hideBackdropCode,
   simpleCode,
-  portalLocationCode,
   onCloseCode,
   modalSizeCode,
 };
