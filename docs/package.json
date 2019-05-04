@@ -19,6 +19,7 @@
     "typescript": "^3.4.4"
   },
   "dependencies": {
+    "@githubprimer/octicons-react": "^8.5.0",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",

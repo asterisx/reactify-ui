@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.scss';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import './App.scss';
 import AlertDemo from './pages/alert';
 import BadgeDemo from './pages/badge';
 import ButtonDemo from './pages/button';
@@ -21,6 +21,7 @@ import StackedCardDemo from './pages/stacked-card';
 import StarRatingDemo from './pages/star-rating';
 import SwitchDemo from './pages/switch';
 import SnackBarDemo from './pages/snackbar';
+import TopBarDemo from './pages/top-bar';
 import UserProfileDemo from './pages/user-profile';
 
 const App = () => (
@@ -131,6 +132,11 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/top-bar">
+                Top Bar
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/user-profile">
                 User Profile
               </Link>
@@ -159,6 +165,7 @@ const App = () => (
           <Route exact path="/stacked-card" component={StackedCardDemo} />
           <Route exact path="/star-rating" component={StarRatingDemo} />
           <Route exact path="/switch" component={SwitchDemo} />
+          <Route exact path="/top-bar" component={TopBarDemo} />
           <Route exact path="/user-profile" component={UserProfileDemo} />
         </div>
       </div>
