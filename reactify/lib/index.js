@@ -18,6 +18,7 @@ import StackedCard from './components/stacked-card';
 import StarRating from './components/star-rating';
 import Switch from './components/switch';
 import SnackBar from './components/snackbar';
+import TopBar from './components/top-bar';
 import UserProfile from './components/user-profile';
 import {
   defaultThemeColors,
@@ -56,5 +57,6 @@ export {
   StarRating,
   Switch,
   SnackBar,
+  TopBar,
   UserProfile,
 };
