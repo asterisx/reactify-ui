@@ -13,6 +13,7 @@ import LabelDemo from './pages/label';
 import LegendDemo from './pages/legend';
 import ListPanelDemo from './pages/list-panel';
 import NumberCounterDemo from './pages/number-counter';
+import PortalDemo from './pages/portal';
 import PaperDemo from './pages/paper';
 import RadioInputDemo from './pages/radio-input';
 import RadioGroupDemo from './pages/radio-group';
@@ -94,6 +95,11 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/portal">
+                Portal
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/radio-input">
                 Radio Input
               </Link>
@@ -104,6 +110,11 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/snackbar">
+                SnackBar
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/stacked-card">
                 Stacked Card
               </Link>
@@ -111,11 +122,6 @@ const App = () => (
             <li className="list-group-item">
               <Link className="d-block" to="/switch">
                 Switch
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <Link className="d-block" to="/snackbar">
-                SnackBar
               </Link>
             </li>
             <li className="list-group-item">
@@ -140,11 +146,12 @@ const App = () => (
           <Route exact path="/list-panel" component={ListPanelDemo} />
           <Route exact path="/number-counter" component={NumberCounterDemo} />
           <Route exact path="/paper" component={PaperDemo} />
+          <Route exact path="/portal" component={PortalDemo} />
           <Route exact path="/radio-input" component={RadioInputDemo} />
           <Route exact path="/radio-group" component={RadioGroupDemo} />
+          <Route exact path="/snackbar" component={SnackBarDemo} />
           <Route exact path="/stacked-card" component={StackedCardDemo} />
           <Route exact path="/switch" component={SwitchDemo} />
-          <Route exact path="/snackbar" component={SnackBarDemo} />
           <Route exact path="/user-profile" component={UserProfileDemo} />
         </div>
       </div>
