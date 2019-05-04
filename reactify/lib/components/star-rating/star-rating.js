@@ -1,0 +1,127 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { styles, BEMClassNames } from './styles';
+import {
+  themePropTypes,
+  defaultThemePropTypes,
+  sizePropTypes,
+  defaultSizePropTypes,
+} from '../../common';
+
+class StarRating extends Component {
+    static propTypes = {
+      disabled: PropTypes.bool,
+      highestRating: PropTypes.number,
+      rating: PropTypes.number,
+      ...sizePropTypes,
+      ...themePropTypes,
+      onChange: PropTypes.func,
+    };
+
+    static defaultProps = {
+      disabled: false,
+      highestRating: 5,
+      rating: 0,
+      ...defaultSizePropTypes,
+      ...defaultThemePropTypes,
+      onChange: () => {},
+    };
+
+    state = { rating: this.props.rating, prevRating: null };
+
+    setRating = rating => this.setState({
+      rating,
+      prevRating: rating,
+    }, this.props.onChange(rating));
+
+    starOver = (rating) => {
+      this.setState(prevState => ({
+        rating,
+        prevRating: prevState.rating,
+      }));
+    }
+
+    starOut = () => {
+      this.setState(prevState => ({ rating: prevState.prevRating }));
+    }
+
+    getStars = (highestRating) => {
+      const stars = [];
+
+      for (let i = 1; i <= highestRating; i += 1) {
+        const starStyles = [];
+        starStyles.push(styles.star);
+
+        if (this.state.rating >= i) {
+          starStyles.push(styles.starSelected);
+        }
+
+        stars.push(
+          <label
+            key={i}
+            css={starStyles}
+            onClick={() => this.setRating(i)}
+            onMouseOver={() => this.starOver(i)}
+            onMouseOut={() => this.starOut(i)}
+            onFocus={() => this.starOver(i)}
+            onBlur={() => this.starOut(i)}
+            className={BEMClassNames.star}
+          >
+            ★
+          </label>,
+        );
+      }
+      return stars;
+    }
+
+    render() {
+      const {
+        highestRating,
+        primary,
+        secondary,
+        dark,
+        light,
+        info,
+        warning,
+        danger,
+        success,
+        theme,
+        small,
+        medium,
+        large,
+        disabled,
+        ...otherProps
+      } = this.props;
+      return (
+        <span
+          css={[
+            styles.container,
+            styles.getFontSizeStyle({
+              small,
+              medium,
+              large,
+            }),
+            styles.getFontColorStyle({
+              primary,
+              secondary,
+              dark,
+              light,
+              info,
+              warning,
+              danger,
+              success,
+              theme,
+            }),
+            styles.getDisabledStyle({
+              disabled,
+            }),
+          ]}
+          {...otherProps}
+        >
+          {this.getStars(highestRating)}
+        </span>
+      );
+    }
+}
+
+export default StarRating;
