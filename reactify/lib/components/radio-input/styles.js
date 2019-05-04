@@ -18,7 +18,7 @@ export const styles = {
     appearance: 'none',
     height: '1.6em',
     width: '1.6em',
-    padding: '0.1em',
+    margin: '0.1em',
     position: 'relative',
     cursor: 'pointer',
     outline: 'none',

@@ -17,7 +17,6 @@ class GroupToggle extends Component {
 
     render() {
       const {
-        className,
         children,
         onSelectionChange,
         disabled,

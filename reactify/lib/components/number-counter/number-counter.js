@@ -103,7 +103,6 @@ class NumberCounter extends Component {
     render() {
       const {
         children,
-        className,
         primary,
         secondary,
         dark,

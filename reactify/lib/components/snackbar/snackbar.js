@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
 import { defaultThemePropTypes, themePropTypes } from '../../common';
 import { styles, BEMClassNames } from './styles';
 
@@ -54,7 +53,6 @@ class SnackBar extends Component {
   render() {
     const {
       children,
-      className,
       primary,
       secondary,
       dark,
@@ -114,7 +112,6 @@ class SnackBar extends Component {
             disabled,
           }),
         ]}
-        className={clsx(BEMClassNames.container, className)}
         {...otherProps}
       >
         {children || (

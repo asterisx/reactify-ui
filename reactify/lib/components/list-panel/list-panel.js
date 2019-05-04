@@ -24,7 +24,6 @@ class ListPanel extends Component {
     selected,
     bordered,
     children,
-    className,
     disabled,
     onClick,
     ...otherProps

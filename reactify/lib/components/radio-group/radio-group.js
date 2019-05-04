@@ -25,7 +25,6 @@ class RadioGroup extends Component {
       const {
         disabled,
         children,
-        className,
         primary,
         secondary,
         dark,

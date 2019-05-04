@@ -3,7 +3,6 @@ import { commonStyles, libraryName } from '../../common';
 const componentName = 'snackbar';
 
 export const BEMClassNames = {
-  container: `${libraryName}-${componentName}__container`,
   dismiss: `${libraryName}-${componentName}__dismiss`,
   message: `${libraryName}-${componentName}__message`,
   action: `${libraryName}-${componentName}__action`,

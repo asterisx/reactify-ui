@@ -86,7 +86,6 @@ class FullScreen extends Component {
       disabled,
       expanded,
       showIcon,
-      className,
       children,
       ...otherProps
     } = this.props;

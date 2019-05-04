@@ -5,7 +5,6 @@ import { defaultThemePropTypes, themePropTypes } from '../../common';
 
 const Legend = ({
   children,
-  className,
   horizontal,
   vertical,
   ...otherProps
