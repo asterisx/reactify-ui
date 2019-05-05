@@ -122,7 +122,7 @@ class UserProfile extends Component {
           <div
             css={[
               dropDownTop && styles.tray.placement.top,
-              dropDownBottom && styles.tray.placement.bottom,
+              (dropDownBottom && !dropDownTop) && styles.tray.placement.bottom,
               styles.zdIndex.z10000,
             ]}
             className={BEMClassNames.children}
