@@ -21,6 +21,8 @@ export const styles = {
     position: 'relative',
     cursor: 'pointer',
     outline: 'none',
+    margin: '0 .2em',
+
     '&::after': {
       content: '""',
       width: '1.6em',
