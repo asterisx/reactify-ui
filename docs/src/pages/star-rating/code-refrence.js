@@ -31,6 +31,9 @@ const disabledCode = '<StarRating disabled />';
 const customClassCode = '<StarRating className="bg-dark text-light" />';
 const onChangeCode = '<StarRating onChange={rating => alert(\'Rated: \' + rating + \' stars\')} />';
 const propsCode = `
+<StarRating highestRating={10} />
+
+<StarRating rating={2} />
 `;
 
 export {

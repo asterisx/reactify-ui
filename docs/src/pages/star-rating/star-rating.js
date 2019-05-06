@@ -49,14 +49,14 @@ const StarRatingDemo = () => (
       <h6>
         {'highestRating={10}'}
       </h6>
-      <StarRating medium highestRating={10} />
+      <StarRating highestRating={10} />
 
       <h6>
         pre rating
         {' '}
         <b>{'rating={2}'}</b>
       </h6>
-      <StarRating medium rating={2} />
+      <StarRating rating={2} />
 
     </DemoCard>
 
