@@ -9,7 +9,7 @@ describe('FullScreen Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<FullScreen>Simple FullScreen</FullScreen>);
         expect(mountWrapper).toBeDefined();
-    })
+    });
 
     it('should display children prop passed', () => {
         let someClass = "someClass";
@@ -17,6 +17,16 @@ describe('FullScreen Component', () => {
         const mountWrapper = mount(<FullScreen>{childElem}</FullScreen>);
         const childContent = mountWrapper.find(`.${someClass}`);
         expect(childContent).toBeDefined();
+    });
+
+    it('can be proramatically expanded and reset', () => {
+        let expandFunc = undefined, resetFunc = undefined;
+        const mountWrapper = mount(<FullScreen>{({expand, reset}) => { expandFunc = expand; resetFunc = reset;}}</FullScreen>);
+        expect(mountWrapper.state().expanded).toBeFalsy();
+        expandFunc();
+        expect(mountWrapper.state().expanded).toBeTruthy();
+        resetFunc();
+        expect(mountWrapper.state().expanded).toBeFalsy();
     })
 
     describe('props', () => {
@@ -32,8 +42,8 @@ describe('FullScreen Component', () => {
             expect(icon.hasClass('reactify--disabled')).toBeTruthy(); */
         });
 
-        it('should not display icon when showIcon is false', () => {
-            const mountWrapper = mount(<FullScreen showIcon={false} />);
+        it('should not display icon when hideIcon is passed', () => {
+            const mountWrapper = mount(<FullScreen hideIcon />);
             expect(mountWrapper.find('.reactify-ui-fullScreen__icon').exists()).toBeFalsy();
         });
 

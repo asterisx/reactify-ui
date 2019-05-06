@@ -6,14 +6,14 @@ import { styles, BEMClassNames } from './styles';
 class FullScreen extends Component {
   static propTypes = {
     expanded: PropTypes.bool,
-    showIcon: PropTypes.bool,
+    hideIcon: PropTypes.bool,
     contractOnEscapeKey: PropTypes.bool,
     disabled: PropTypes.bool,
   };
 
   static defaultProps = {
     expanded: false,
-    showIcon: true,
+    hideIcon: false,
     contractOnEscapeKey: false,
     disabled: false,
   };
@@ -85,7 +85,7 @@ class FullScreen extends Component {
       contractOnEscapeKey,
       disabled,
       expanded,
-      showIcon,
+      hideIcon,
       children,
       ...otherProps
     } = this.props;
@@ -107,7 +107,7 @@ class FullScreen extends Component {
         ref={this.containerRef}
         {...otherProps}
       >
-        {showIcon && (
+        {!hideIcon && (
         <div
           css={[
             styles.icon,
@@ -120,7 +120,7 @@ class FullScreen extends Component {
           {iconToShow}
         </div>
         )}
-        {children}
+        {typeof children === 'function' ? children({ expand: this.expand, reset: this.reset }) : children}
       </div>
     );
   }
