@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   themePropTypes,
   defaultThemePropTypes,
@@ -22,11 +23,12 @@ const Paper = ({
   large,
   disabled,
   theme,
+  noShadow,
   ...otherProps
 }) => (
   <div
     css={[
-      styles.container,
+      styles.container({ noShadow }),
       styles.getFontSizeStyle({
         small,
         medium,
@@ -67,11 +69,13 @@ const Paper = ({
 Paper.propTypes = {
   ...sizePropTypes,
   ...themePropTypes,
+  noShadow: PropTypes.bool,
 };
 
 Paper.defaultProps = {
   ...defaultThemePropTypes,
   ...defaultSizePropTypes,
+  noShadow: false,
 };
 
 export default Paper;

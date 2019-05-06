@@ -12,7 +12,6 @@ describe('Paper Component', () => {
     })
 
     describe('props', () => {
-
         it('should have correct size passed as props', () => {
             const mountWrapper = mount(<Paper small />);
             expect(mountWrapper).toHaveStyleRule('font-size', Constants.commonStyles.sizes.small.fontSize);
@@ -28,6 +27,10 @@ describe('Paper Component', () => {
             expect(mountWrapper3.props().style.fontSize).toBe(fontSize);
         });
 
+        it('should not have a schadow when noShadow props is passed', () => {
+            const mountWrapper = mount(<Paper small noShadow/>);
+            expect(mountWrapper.findWhere(n => n.name() === 'div')).not.toHaveStyleRule('box-shadow', expect(String.any));
+        })
  
         describe('should have correct theme when theme prop is passed', () => {
             let ThemeColors = Constants.defaultThemeColors;

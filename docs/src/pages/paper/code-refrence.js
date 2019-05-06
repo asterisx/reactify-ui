@@ -31,9 +31,13 @@ const sizeCode = `
 <Paper style={{ fontSize: '75px' }}>Paper has some text, it can act as a base for building components</Paper>
 `;
 
+const noShadowCode = `
+<Paper noShadow>Paper has some text, it can act as a base for building components</Paper>
+`;
 
 export {
   customThemeCode,
   simpleCode,
   sizeCode,
+  noShadowCode,
 };

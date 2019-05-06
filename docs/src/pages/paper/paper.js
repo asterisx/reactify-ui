@@ -5,6 +5,7 @@ import {
   customThemeCode,
   simpleCode,
   sizeCode,
+  noShadowCode,
 } from './code-refrence';
 import './paper.scss';
 import DemoCard from '../../components/demo-card';
@@ -17,6 +18,14 @@ const NumberCounterDemo = () => (
       sourceCode={simpleCode}
     >
       <Paper>Paper has some text, it can act as a base for building components</Paper>
+    </DemoCard>
+
+    <DemoCard
+      title="No Shadow"
+      uniqueIdentifier="noShadowUse"
+      sourceCode={noShadowCode}
+    >
+      <Paper noShadow>Paper has some text, it can act as a base for building components</Paper>
     </DemoCard>
 
     <DemoCard
