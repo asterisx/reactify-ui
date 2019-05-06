@@ -3,6 +3,20 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import './App.scss';
 import AlertDemo from './pages/alert';
 import BadgeDemo from './pages/badge';
+import {
+  BallsDemo,
+  BarsDemo,
+  CircleDemo,
+  ClockDemo,
+  HydrogenDemo,
+  LoadbarDemo,
+  SphereDemo,
+  SlicesDemo,
+  TextureDemo,
+  VolumeDemo,
+  VortexDemo,
+  WaveDemo,
+} from './pages/spinner';
 import ButtonDemo from './pages/button';
 import CardDemo from './pages/card';
 import CheckBoxDemo from './pages/checkbox';
@@ -43,6 +57,16 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/balls">
+                Balls
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/bars">
+                Bars
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/button">
                 Button
               </Link>
@@ -55,6 +79,16 @@ const App = () => (
             <li className="list-group-item">
               <Link className="d-block" to="/checkbox">
                 Checkbox
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/circle">
+                Circle
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/clock">
+                Clock
               </Link>
             </li>
             <li className="list-group-item">
@@ -73,6 +107,11 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/hydrogen">
+                Hydrogen
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/label">
                 Label
               </Link>
@@ -85,6 +124,11 @@ const App = () => (
             <li className="list-group-item">
               <Link className="d-block" to="/list-panel">
                 List Panel
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/loadbar">
+                Loadbar
               </Link>
             </li>
             <li className="list-group-item">
@@ -123,6 +167,16 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/slices">
+                Slices
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/sphere">
+                Sphere
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/stacked-card">
                 Stacked Card
               </Link>
@@ -138,6 +192,11 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/texture">
+                Texture
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/top-bar">
                 Top Bar
               </Link>
@@ -147,21 +206,42 @@ const App = () => (
                 User Profile
               </Link>
             </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/volume">
+                Volume
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/vortex">
+                Vortex
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/wave">
+                Wave
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="col-10 overflow-scroll">
           <Route exact path="/reactify" component={AlertDemo} />
           <Route exact path="/alert" component={AlertDemo} />
           <Route exact path="/badge" component={BadgeDemo} />
+          <Route exact path="/balls" component={BallsDemo} />
+          <Route exact path="/bars" component={BarsDemo} />
           <Route exact path="/button" component={ButtonDemo} />
           <Route exact path="/card" component={CardDemo} />
           <Route exact path="/checkbox" component={CheckBoxDemo} />
+          <Route exact path="/circle" component={CircleDemo} />
+          <Route exact path="/clock" component={ClockDemo} />
           <Route exact path="/full-screen" component={FullScreenDemo} />
           <Route exact path="/group-toggle" component={GroupToggleDemo} />
           <Route exact path="/horizontal-card" component={HorizontalCardDemo} />
+          <Route exact path="/hydrogen" component={HydrogenDemo} />
           <Route exact path="/label" component={LabelDemo} />
           <Route exact path="/legend" component={LegendDemo} />
           <Route exact path="/list-panel" component={ListPanelDemo} />
+          <Route exact path="/loadbar" component={LoadbarDemo} />
           <Route exact path="/modal" component={ModalDemo} />
           <Route exact path="/number-counter" component={NumberCounterDemo} />
           <Route exact path="/paper" component={PaperDemo} />
@@ -169,11 +249,17 @@ const App = () => (
           <Route exact path="/radio-input" component={RadioInputDemo} />
           <Route exact path="/radio-group" component={RadioGroupDemo} />
           <Route exact path="/snackbar" component={SnackBarDemo} />
+          <Route exact path="/slices" component={SlicesDemo} />
+          <Route exact path="/sphere" component={SphereDemo} />
           <Route exact path="/stacked-card" component={StackedCardDemo} />
           <Route exact path="/star-rating" component={StarRatingDemo} />
           <Route exact path="/switch" component={SwitchDemo} />
+          <Route exact path="/texture" component={TextureDemo} />
           <Route exact path="/top-bar" component={TopBarDemo} />
           <Route exact path="/user-profile" component={UserProfileDemo} />
+          <Route exact path="/volume" component={VolumeDemo} />
+          <Route exact path="/vortex" component={VortexDemo} />
+          <Route exact path="/wave" component={WaveDemo} />
         </div>
       </div>
     </div>
