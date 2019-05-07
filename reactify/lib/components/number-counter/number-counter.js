@@ -17,6 +17,8 @@ class NumberCounter extends Component {
       disabled: PropTypes.bool,
       interval: PropTypes.number,
       step: PropTypes.number,
+      onValueChange: PropTypes.func,
+      onComplete: PropTypes.func,
       ...themePropTypes,
     }
 
@@ -66,14 +68,18 @@ class NumberCounter extends Component {
     updateTicker = () => {
       if (this.props.to === this.state.ticker) {
         this.clearTimeoutAndInterval();
+        if (this.props.onComplete) this.props.onComplete(this.state.ticker);
       } else if (this.state.valueToAdd >= 0
         && this.state.ticker + this.state.valueToAdd >= this.props.to) {
-        this.setState(({ ticker: this.props.to }));
+        this.setState(({ ticker: this.props.to }),
+          () => { if (this.props.onValueChange) this.props.onValueChange(this.state.ticker); });
       } else if (this.state.valueToAdd <= 0
         && this.state.ticker + this.state.valueToAdd <= this.props.to) {
-        this.setState(({ ticker: this.props.to }));
+        this.setState(({ ticker: this.props.to }),
+          () => { if (this.props.onValueChange) this.props.onValueChange(this.state.ticker); });
       } else {
-        this.setState(prevState => ({ ticker: prevState.ticker + prevState.valueToAdd }));
+        this.setState(prevState => ({ ticker: prevState.ticker + prevState.valueToAdd }),
+          () => { if (this.props.onValueChange) this.props.onValueChange(this.state.ticker); });
       }
     }
 
@@ -122,6 +128,8 @@ class NumberCounter extends Component {
         reset,
         color,
         interval,
+        onValueChange,
+        onComplete,
         ...otherProps
       } = this.props;
       return (

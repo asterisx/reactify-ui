@@ -14,7 +14,7 @@ describe('NumberCounter Component', () => {
 
 
     describe('props', () => {
-        //TODO change dynamically, interval, delay
+        //TODO change dynamically, interval, delay, onChange, onComplete
 
         it('should call reset function when reset called from children', () => {
             let resetPointer = () => {};

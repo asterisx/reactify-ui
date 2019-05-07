@@ -8,6 +8,7 @@ import {
   disabledCode,
   delayCode,
   dynamicCode,
+  eventCode,
   intervalCode,
   resetCode,
   simpleCode,
@@ -33,6 +34,20 @@ class NumberCounterDemo extends Component {
           <NumberCounter
             from={this.state.simpleCounter.from}
             to={this.state.simpleCounter.to}
+          />
+        </DemoCard>
+
+        <DemoCard
+          title="Events"
+          uniqueIdentifier="eventsUse"
+          sourceCode={eventCode}
+        >
+          <h6>Check the console for events logs</h6>
+          <NumberCounter
+            from={this.state.simpleCounter.from}
+            to={this.state.simpleCounter.to}
+            onValueChange={value => console.log(`Number Counter: Value Changed to: ${value}`)}
+            onComplete={value => console.log(`Number Counter: Final Value: ${value}`)}
           />
         </DemoCard>
 

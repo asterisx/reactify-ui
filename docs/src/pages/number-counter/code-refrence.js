@@ -113,6 +113,15 @@ const delayCode = `
 />
 `;
 
+const eventCode = `
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  onValueChange={value => console.log('Number Counter: Value Changed to: ' + value)}
+  onComplete={value => console.log('Number Counter: Final Value: ' + value)}
+/>
+`;
+
 const intervalCode = `
 <NumberCounter
   from={this.state.simpleCounter.from}
@@ -148,28 +157,27 @@ const simpleCode = `
 
 const sizeCode = `
 <NumberCounter
-from={this.state.simpleCounter.from}
-to={this.state.simpleCounter.to}
-small
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  small
 />
 
 <NumberCounter
-from={this.state.simpleCounter.from}
-to={this.state.simpleCounter.to}
-medium
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  medium
 />
 
 <NumberCounter
-from={this.state.simpleCounter.from}
-to={this.state.simpleCounter.to}
-large
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  large
 />
 
-<h6 className="pt-3">style={{ fontSize: '75px' }}</h6>
 <NumberCounter
-from={this.state.simpleCounter.from}
-to={this.state.simpleCounter.to}
-style={{ fontSize: '75px' }}
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  style={{ fontSize: '75px' }}
 />
 `;
 
@@ -182,6 +190,7 @@ export {
   disabledCode,
   delayCode,
   dynamicCode,
+  eventCode,
   intervalCode,
   resetCode,
   simpleCode,
