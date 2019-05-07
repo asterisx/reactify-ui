@@ -21,7 +21,6 @@ class GroupToggle extends Component {
         onSelectionChange,
         selectedIndex,
         disabled,
-        selectedIndex,
         ...otherProps
       } = this.props;
       return (
