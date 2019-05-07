@@ -20,6 +20,7 @@ import StackedCard from './components/stacked-card';
 import StarRating from './components/star-rating';
 import Switch from './components/switch';
 import SnackBar from './components/snackbar';
+import { Tabs, Tab } from './components/tabs';
 import TopBar from './components/top-bar';
 import UserProfile from './components/user-profile';
 import {
@@ -61,6 +62,8 @@ export {
   StarRating,
   Switch,
   SnackBar,
+  Tabs,
+  Tab,
   TopBar,
   UserProfile,
 };

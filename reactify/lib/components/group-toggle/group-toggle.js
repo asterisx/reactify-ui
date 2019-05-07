@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { styles } from './styles';
 
 class GroupToggle extends Component {
-    state = { selectedIndex: undefined };
+    state = { selectedIndex: this.props.selectedIndex };
 
     toggleSelect = (index) => {
       if (this.state.selectedIndex !== index) {
@@ -19,6 +19,7 @@ class GroupToggle extends Component {
       const {
         children,
         onSelectionChange,
+        selectedIndex,
         disabled,
         ...otherProps
       } = this.props;
@@ -34,12 +35,14 @@ class GroupToggle extends Component {
         >
           {children
             && React.Children.map(
-              children({ selectedIndex: this.state.selectedIndex }).props.children,
+              typeof children === 'function' ? children({ selectedIndex: this.state.selectedIndex }).props.children : children,
               child => React.cloneElement(child, {
                 onClick: (evt) => {
                   this.toggleSelect(child.props.index);
                   if (child.props.onClick) child.props.onClick(evt);
                 },
+                index: null,
+                key: child.props.index,
               }),
             )}
         </div>
@@ -49,11 +52,13 @@ class GroupToggle extends Component {
 
 GroupToggle.propTypes = {
   disabled: PropTypes.bool,
+  selectedIndex: PropTypes.number,
   onSelectionChange: PropTypes.func,
 };
 
 GroupToggle.defaultProps = {
   disabled: false,
+  selectedIndex: 0,
   onSelectionChange: () => {},
 };
 

@@ -36,6 +36,7 @@ import StackedCardDemo from './pages/stacked-card';
 import StarRatingDemo from './pages/star-rating';
 import SwitchDemo from './pages/switch';
 import SnackBarDemo from './pages/snackbar';
+import TabsDemo from './pages/tabs';
 import TopBarDemo from './pages/top-bar';
 import UserProfileDemo from './pages/user-profile';
 
@@ -192,6 +193,11 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/tabs">
+                Tabs
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/texture">
                 Texture
               </Link>
@@ -254,6 +260,7 @@ const App = () => (
           <Route exact path="/stacked-card" component={StackedCardDemo} />
           <Route exact path="/star-rating" component={StarRatingDemo} />
           <Route exact path="/switch" component={SwitchDemo} />
+          <Route exact path="/tabs" component={TabsDemo} />
           <Route exact path="/texture" component={TextureDemo} />
           <Route exact path="/top-bar" component={TopBarDemo} />
           <Route exact path="/user-profile" component={UserProfileDemo} />
