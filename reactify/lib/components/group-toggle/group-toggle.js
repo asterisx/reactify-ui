@@ -19,6 +19,7 @@ class GroupToggle extends Component {
       const {
         children,
         onSelectionChange,
+        selectedIndex,
         disabled,
         selectedIndex,
         ...otherProps
@@ -35,12 +36,14 @@ class GroupToggle extends Component {
         >
           {children
             && React.Children.map(
-              children({ selectedIndex: this.state.selectedIndex }).props.children,
+              typeof children === 'function' ? children({ selectedIndex: this.state.selectedIndex }).props.children : children,
               child => React.cloneElement(child, {
                 onClick: (evt) => {
                   this.toggleSelect(child.props.index);
                   if (child.props.onClick) child.props.onClick(evt);
                 },
+                index: null,
+                key: child.props.index,
               }),
             )}
         </div>
