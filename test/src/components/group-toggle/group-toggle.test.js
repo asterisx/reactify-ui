@@ -15,6 +15,22 @@ describe('GroupToggle Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
+    it('selects index when selectedIndex props is passed', () => {
+      const selectedIndex = 1;
+      const mountWrapper = mount(
+        <GroupToggle selectedIndex={selectedIndex}>
+        {({ selectedIndex }) => (
+          <>
+            <Button index={0}/>
+            <Button index={1}/>
+            <Button index={2}/>
+          </>
+        )}
+      </GroupToggle>
+    );
+    expect(mountWrapper.state().selectedIndex).toBe(selectedIndex);
+  });
+
     it('should change selection index when children items clicked', () => {
         const mountWrapper = mount(
             <GroupToggle>
@@ -59,16 +75,16 @@ describe('GroupToggle Component', () => {
 
         const items = mountWrapper.find(Button);
         
-        const firstItem = items.at(0);
+        const firstItem = items.at(2);
         firstItem.simulate('click');
-        expect(spy.firstCall.calledWithExactly(0)).toBeTruthy();
+        expect(spy.firstCall.calledWithExactly(2)).toBeTruthy();
 
         const secondItem = items.at(1);
         secondItem.simulate('click');
         expect(spy.secondCall.calledWithExactly(1)).toBeTruthy();
         
-        const thirdItem = items.at(2);
+        const thirdItem = items.at(0);
         thirdItem.simulate('click');
-        expect(spy.thirdCall.calledWithExactly(2)).toBeTruthy();
+        expect(spy.thirdCall.calledWithExactly(0)).toBeTruthy();
     });
 });

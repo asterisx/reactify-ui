@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { styles } from './styles';
 
 class GroupToggle extends Component {
-    state = { selectedIndex: undefined };
+    state = { selectedIndex: this.props.selectedIndex };
 
     toggleSelect = (index) => {
       if (this.state.selectedIndex !== index) {
@@ -20,6 +20,7 @@ class GroupToggle extends Component {
         children,
         onSelectionChange,
         disabled,
+        selectedIndex,
         ...otherProps
       } = this.props;
       return (
@@ -49,11 +50,13 @@ class GroupToggle extends Component {
 
 GroupToggle.propTypes = {
   disabled: PropTypes.bool,
+  selectedIndex: PropTypes.number,
   onSelectionChange: PropTypes.func,
 };
 
 GroupToggle.defaultProps = {
   disabled: false,
+  selectedIndex: 0,
   onSelectionChange: () => {},
 };
 
