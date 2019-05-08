@@ -108,36 +108,36 @@ const AlertDemo = () => (
       uniqueIdentifier="customTheme"
       sourceCode={customThemeCode}
     >
-      <Alert primary className="pb-2">
+      <Alert primary>
         Primary theme
         <b className="pl-3">alert uses this theme by default</b>
       </Alert>
       <br />
-      <Alert secondary className="pb-2">
+      <Alert secondary>
         Secondary theme
       </Alert>
       <br />
-      <Alert dark className="pb-2">
+      <Alert dark>
           Dark theme
       </Alert>
       <br />
-      <Alert light className="pb-2">
+      <Alert light>
           Light theme
       </Alert>
       <br />
-      <Alert info className="pb-2">
+      <Alert info>
           Info theme
       </Alert>
       <br />
-      <Alert warning className="pb-2">
+      <Alert warning>
           Warning theme
       </Alert>
       <br />
-      <Alert danger className="pb-2">
+      <Alert danger>
           Danger theme
       </Alert>
       <br />
-      <Alert success className="pb-2">
+      <Alert success>
           Success theme
       </Alert>
     </DemoCard>
