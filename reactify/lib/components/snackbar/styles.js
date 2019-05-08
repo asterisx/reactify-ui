@@ -15,6 +15,7 @@ export const styles = {
       opacity: '0.9',
       display: 'inline',
       borderRadius: '3px',
+      transitionDuration: '50ms',
     },
     commonStyles.zdIndex.z100000,
   ),

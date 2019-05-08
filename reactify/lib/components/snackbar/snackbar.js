@@ -1,10 +1,50 @@
 import React, { Component } from 'react';
+import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
+import { Transition } from 'react-transition-group';
 import { defaultThemePropTypes, themePropTypes } from '../../common';
 import { styles, BEMClassNames } from './styles';
 
+const transitionStyles = ({
+  topLeft, topRight, bottomLeft, bottomRight,
+}) => {
+  if (bottomRight) {
+    return {
+      entering: { transform: 'translateY(100%)', bottom: 0, right: '10px' },
+      entered: { transform: 'translateY(0%)', bottom: '10px', right: '10px' },
+      exiting: { transform: 'translateY(100%)', bottom: 0, right: '10px' },
+      exited: { transform: 'translateY(100%)', bottom: 0, right: '10px' },
+    };
+  }
+  if (bottomLeft) {
+    return {
+      entering: { transform: 'translateY(100%)', bottom: 0, left: '10px' },
+      entered: { transform: 'translateY(0%)', bottom: '10px', left: '10px' },
+      exiting: { transform: 'translateY(100%)', bottom: 0, left: '10px' },
+      exited: { transform: 'translateY(100%)', bottom: 0, left: '10px' },
+    };
+  }
+  if (topLeft) {
+    return {
+      entering: { transform: 'translateY(-100%)', top: 0, left: '10px' },
+      entered: { transform: 'translateY(0%)', top: '10px', left: '10px' },
+      exiting: { transform: 'translateY(-100%)', top: 0, left: '10px' },
+      exited: { transform: 'translateY(-100%)', top: 0, left: '10px' },
+    };
+  }
+  if (topRight) {
+    return {
+      entering: { transform: 'translateY(-100%)', top: 0, right: '10px' },
+      entered: { transform: 'translateY(0%)', top: '10px', right: '10px' },
+      exiting: { transform: 'translateY(-100%)', top: 0, right: '10px' },
+      exited: { transform: 'translateY(-100%)', top: 0, right: '10px' },
+    };
+  }
+
+  return null;
+};
 class SnackBar extends Component {
-  state = { isHidden: false };
+  state = { in: true };
 
   static propTypes = {
     color: PropTypes.string,
@@ -34,20 +74,25 @@ class SnackBar extends Component {
     bottomLeft: false,
     bottomRight: false,
     ...defaultThemePropTypes,
-    onActionClick: () => {},
-    onClose: () => {},
-  }
-
-  componentDidMount() {
-    this.timeout = setTimeout(() => this.dismiss(), this.props.duration);
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.timeout);
+    onActionClick: undefined,
+    onClose: undefined,
   }
 
   dismiss = () => {
-    this.setState({ isHidden: true }, () => { clearTimeout(this.timeout); this.props.onClose(); });
+    this.setState({ in: false });
+  }
+
+  closed = () => {
+    this.clearTimeout();
+    if (this.props.onClose) this.props.onClose();
+  }
+
+  startTimeout = () => {
+    this.timeout = setTimeout(() => this.dismiss(), this.props.duration);
+  }
+
+  clearTimeout = () => {
+    clearTimeout(this.timeout);
   }
 
   render() {
@@ -73,90 +118,102 @@ class SnackBar extends Component {
       onActionClick,
       onClose,
       showDismiss,
+      style,
       ...otherProps
     } = this.props;
-    return (
-      !this.state.isHidden && (
-      <div
-        css={[
-          styles.container,
-          styles.getPositionStyles({
-            topRight,
-            bottomRight,
-            bottomLeft,
-            topLeft,
-          }),
-          styles.getThemedBackgroundStyle({
-            primary,
-            secondary,
-            dark,
-            light,
-            info,
-            warning,
-            danger,
-            success,
-            theme,
-          }),
-          styles.getFontColorStyle({
-            primary,
-            secondary,
-            dark,
-            light,
-            info,
-            warning,
-            danger,
-            success,
-            theme,
-          }),
-          styles.getDisabledStyle({
-            disabled,
-          }),
-        ]}
-        {...otherProps}
+    return createPortal(
+      <Transition
+        appear
+        mountOnEnter
+        unmountOnExit
+        in={this.state.in}
+        onEntered={this.startTimeout}
+        onExited={() => this.closed()}
+        timeout={50}
       >
-        {children || (
-        <div
-          css={[styles.options]}
-        >
-          <span
+        {state => (
+          <div
             css={[
-              styles.cursorPointer,
-              styles.paddingBoth,
+              styles.container,
+              styles.getThemedBackgroundStyle({
+                primary,
+                secondary,
+                dark,
+                light,
+                info,
+                warning,
+                danger,
+                success,
+                theme,
+              }),
+              styles.getFontColorStyle({
+                primary,
+                secondary,
+                dark,
+                light,
+                info,
+                warning,
+                danger,
+                success,
+                theme,
+              }),
+              styles.getDisabledStyle({
+                disabled,
+              }),
             ]}
-            className={BEMClassNames.message}
+            {...otherProps}
+            style={{
+              ...style,
+              ...transitionStyles({
+                topLeft, topRight, bottomLeft, bottomRight,
+              })[state],
+            }}
           >
-            {message}
-          </span>
+            {children || (
+              <div
+                css={[styles.options]}
+              >
+                <span
+                  css={[
+                    styles.cursorPointer,
+                    styles.paddingBoth,
+                  ]}
+                  className={BEMClassNames.message}
+                >
+                  {message}
+                </span>
 
-          {!!action && (
-          <span
-            css={[
-              styles.cursorPointer,
-              styles.paddingBoth,
-            ]}
-            className={BEMClassNames.action}
-            onClick={onActionClick}
-          >
-            {action}
-          </span>
-          )}
+                {!!action && (
+                <span
+                  css={[
+                    styles.cursorPointer,
+                    styles.paddingBoth,
+                  ]}
+                  className={BEMClassNames.action}
+                  onClick={() => { if (this.props.onActionClick) this.props.onActionClick(); }}
+                >
+                  {action}
+                </span>
+                )}
 
-          {showDismiss && (
-          <span
-            css={[
-              styles.cursorPointer,
-              styles.paddingBoth,
-            ]}
-            className={BEMClassNames.dismiss}
-            onClick={this.dismiss}
-          >
+                {showDismiss && (
+                <span
+                  css={[
+                    styles.cursorPointer,
+                    styles.paddingBoth,
+                  ]}
+                  className={BEMClassNames.dismiss}
+                  onClick={this.dismiss}
+                >
             dismiss
-          </span>
-          )}
-        </div>
+                </span>
+                )}
+              </div>
+            )}
+          </div>
         )}
-      </div>
-      )
+      </Transition>,
+      document.body,
     );
   }
 }
