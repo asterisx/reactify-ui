@@ -2,6 +2,7 @@ import Alert from './components/alert';
 import Badge from './components/badge';
 import Button from './components/button';
 import Card from './components/card';
+import Dismiss from './components/dismiss';
 import GroupToggle from './components/group-toggle';
 import HorizontalCard from './components/horizontal-card';
 import Checkbox from './components/checkbox';
@@ -43,6 +44,7 @@ export {
   Button,
   Card,
   Constants,
+  Dismiss,
   GroupToggle,
   HorizontalCard,
   Checkbox,
