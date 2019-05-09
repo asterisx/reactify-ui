@@ -20,6 +20,7 @@ export const styles = {
   progressContainer: {
     backgroundColor: '#f5f5f5',
     borderRadius: '3px',
+    animationDuration: '1s',
   },
   striped: {
     backgroundImage: 'linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)',
@@ -28,9 +29,12 @@ export const styles = {
   getWidth: ({ percentage }) => ({
     width: `${percentage}%`,
   }),
-  animation: {
-    animation: `${progressBarStripes} 1s linear infinite`,
+  progress: {
+    animationDuration: 'inherit !important',
     transitionDuration: 'inherit',
+  },
+  animation: {
+    animation: `${progressBarStripes} linear infinite`,
   },
   textLeft: {
     textAlign: 'left',

@@ -1,9 +1,9 @@
 const customColorCode = `
-.CustomColor .reactify-ui-progress-bar__progress {
+.bgViolet .reactify-ui-progress-bar__progress {
   background-color: violet;
 }
 
-<ProgressBar className="CustomColor" striped percentage={30}>30% Complete</ProgressBar>
+<ProgressBar className="bgViolet" striped percentage={30}>30% Complete</ProgressBar>
 `;
 const customThemeCode = `
 <ProgressBar striped primary percentage={60}>60% complete</ProgressBar>

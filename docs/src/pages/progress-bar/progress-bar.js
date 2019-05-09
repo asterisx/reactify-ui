@@ -65,7 +65,14 @@ class ProgressBarDemo extends Component {
           uniqueIdentifier="customColorUse"
           sourceCode={customColorCode}
         >
-          <ProgressBar className="CustomColor" striped percentage={30}>30% Complete</ProgressBar>
+          <h6 className="pb-3">
+            You have to directly add the background-color css property to '.reactify-ui-progress-bar__progress'.
+            <b className="pl-1">
+              Warning! Don't do it directly but instead
+              pass Progress Bar a class which modifies the '.reactify-ui-progress-bar__progress' class
+            </b>
+          </h6>
+          <ProgressBar className="bgViolet" striped percentage={30}>30% Complete</ProgressBar>
         </DemoCard>
 
         <DemoCard

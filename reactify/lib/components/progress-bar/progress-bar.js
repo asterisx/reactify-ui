@@ -42,6 +42,7 @@ const ProgressBar = ({
   >
     <div
       css={[
+        styles.progress,
         styles.getBackgroundStyle({
           primary,
           secondary,
