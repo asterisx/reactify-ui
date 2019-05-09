@@ -4,14 +4,9 @@ import uuidv1 from 'uuid/v1';
 import PropTypes from 'prop-types';
 import { ToastController } from './ToastController';
 import { ToastContainer } from './ToastContainer';
+import { canUseDOM } from '../../common';
 
 const { Consumer, Provider } = React.createContext();
-const canUseDOM = !!(
-  typeof window !== 'undefined'
-  && window.document
-  && window.document.createElement
-);
-
 export class ToastProvider extends Component {
   state = { toasts: [] }
 

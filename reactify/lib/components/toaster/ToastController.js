@@ -5,29 +5,7 @@ import { Transition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import { Toast } from './Toast';
 import Dismiss from '../dismiss';
-
-function Timer(callback, delay) {
-  let timerId = delay;
-  let start = delay;
-  let remaining = delay;
-
-  this.clear = () => {
-    clearTimeout(timerId);
-  };
-
-  this.pause = () => {
-    clearTimeout(timerId);
-    remaining -= Date.now() - start;
-  };
-
-  this.resume = () => {
-    start = Date.now();
-    clearTimeout(timerId);
-    timerId = setTimeout(callback, remaining);
-  };
-
-  this.resume();
-}
+import { Timer } from '../../common';
 
 export class ToastController extends Component {
   state = {

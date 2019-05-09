@@ -11,8 +11,10 @@ import {
   sizePropTypes,
   defaultSizePropTypes,
 } from './prop-types';
+import { canUseDOM, Timer } from './utils';
 
 export {
+  canUseDOM,
   defaultThemeColors,
   libraryName,
   darkenBy,
@@ -22,4 +24,5 @@ export {
   defaultThemePropTypes,
   sizePropTypes,
   defaultSizePropTypes,
+  Timer,
 };
