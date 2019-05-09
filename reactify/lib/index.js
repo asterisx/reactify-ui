@@ -12,8 +12,9 @@ import { Legend, LegendItem } from './components/legend';
 import ListPanel from './components/list-panel';
 import Modal from './components/modal';
 import NumberCounter from './components/number-counter';
-import Portal from './components/portal';
 import Paper from './components/paper';
+import Portal from './components/portal';
+import ProgressBar from './components/progress-bar';
 import RadioInput from './components/radio-input';
 import RadioGroup from './components/radio-group';
 import Spinner from './components/spinner';
@@ -55,8 +56,9 @@ export {
   ListPanel,
   Modal,
   NumberCounter,
-  Portal,
   Paper,
+  Portal,
+  ProgressBar,
   RadioInput,
   RadioGroup,
   Spinner,
