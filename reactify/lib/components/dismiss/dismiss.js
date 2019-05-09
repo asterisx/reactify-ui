@@ -22,7 +22,11 @@ class Dismiss extends Component {
   static defaultProps = {
     ...defaultThemePropTypes,
     ...defaultSizePropTypes,
-    onClose: undefined,
+    primary: false,
+    info: true,
+    autoDismiss: true,
+    onClose: PropTypes.func,
+    onCloseIconClick: undefined,
     disabled: false,
   }
 
@@ -30,6 +34,7 @@ class Dismiss extends Component {
     ...themePropTypes,
     ...sizePropTypes,
     onClose: PropTypes.func,
+    onCloseIconClick: PropTypes.func,
     disabled: PropTypes.bool,
   }
 
@@ -49,8 +54,6 @@ class Dismiss extends Component {
 
     if (light) return <FaRegDotCircle />;
 
-    if (info) return <FaInfo />;
-
     if (warning) return <FaExclamation />;
 
     if (danger) return <FaRegTimesCircle />;
@@ -58,6 +61,8 @@ class Dismiss extends Component {
     if (success) return <FaCheck />;
 
     if (primary) return <FaRegDotCircle />;
+
+    if (info) return <FaInfo />;
 
     return null;
   }
@@ -85,9 +90,12 @@ class Dismiss extends Component {
       icon,
       closeIcon,
       onClose,
+      onCloseIconClick,
+      autoDismiss,
       ...otherProps
     } = this.props;
     const { closed } = this.state;
+    const { close } = this;
     return !closed && (
     <div
       css={[
@@ -140,7 +148,11 @@ class Dismiss extends Component {
       <span className={BEMClassNames.children} css={[styles.children]}>
         {children}
       </span>
-      <span className={BEMClassNames.close} css={[styles.close]} onClick={this.close}>
+      <span
+        className={BEMClassNames.close}
+        css={[styles.close]}
+        onClick={() => { if (autoDismiss) { close(); } if (onCloseIconClick) onCloseIconClick(); }}
+      >
         {closeIcon || <FaWindowClose />}
       </span>
     </div>

@@ -21,7 +21,8 @@
     "react-dom": "^16.8.6",
     "react-icons": "^3.5.0",
     "react-scripts": "2.1.8",
-    "react-transition-group": "^4.0.0"
+    "react-transition-group": "^4.0.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",

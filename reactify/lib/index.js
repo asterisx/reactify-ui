@@ -22,6 +22,7 @@ import StackedCard from './components/stacked-card';
 import StarRating from './components/star-rating';
 import Switch from './components/switch';
 import SnackBar from './components/snackbar';
+import { ToastProvider, ToastConsumer } from './components/toaster';
 import { Tabs, Tab } from './components/tabs';
 import TopBar from './components/top-bar';
 import UserProfile from './components/user-profile';
@@ -69,5 +70,7 @@ export {
   Tabs,
   Tab,
   TopBar,
+  ToastProvider,
+  ToastConsumer,
   UserProfile,
 };
