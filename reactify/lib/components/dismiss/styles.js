@@ -14,6 +14,7 @@ export const styles = {
     padding: '0.4em',
     alignContent: 'center',
     alignItems: 'center',
+    verticalAlign: 'text-top',
   },
   children: {
     textAlign: 'justify',
@@ -21,8 +22,8 @@ export const styles = {
     marginRight: '0.2em',
   },
   icon: {
-    marginTop: '0.1em',
-    fontSize: '1.2em',
+    marginTop: '0.2em',
+    fontSize: '1em',
     alignSelf: 'flex-start',
     display: 'inline-flex',
     alignItems: 'flex-start',
@@ -30,7 +31,7 @@ export const styles = {
   close: {
     cursor: 'pointer',
     marginLeft: 'auto',
-    marginTop: '0.1em',
+    marginTop: '0.2em',
     fontSize: '1.2em',
     alignSelf: 'flex-start',
     display: 'inline-flex',

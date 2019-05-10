@@ -6,8 +6,8 @@ import {
   FaExclamation,
   FaRegTimesCircle,
   FaCheck,
-  FaWindowClose,
 } from 'react-icons/fa';
+import { IoIosClose } from 'react-icons/io';
 import {
   defaultThemePropTypes,
   defaultSizePropTypes,
@@ -153,7 +153,7 @@ class Dismiss extends Component {
         css={[styles.close]}
         onClick={() => { if (autoDismiss) { close(); } if (onCloseIconClick) onCloseIconClick(); }}
       >
-        {closeIcon || <FaWindowClose />}
+        {closeIcon || <IoIosClose />}
       </span>
     </div>
     );

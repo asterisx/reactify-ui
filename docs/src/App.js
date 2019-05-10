@@ -19,6 +19,7 @@ import {
 } from './pages/spinner';
 import ButtonDemo from './pages/button';
 import CardDemo from './pages/card';
+import ChipsDemo from './pages/chips';
 import CheckBoxDemo from './pages/checkbox';
 import DismissDemo from './pages/dismiss';
 import FullScreenDemo from './pages/full-screen';
@@ -84,6 +85,11 @@ const App = () => (
             <li className="list-group-item">
               <Link className="d-block" to="/checkbox">
                 Checkbox
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/chips">
+                Chips
               </Link>
             </li>
             <li className="list-group-item">
@@ -262,6 +268,7 @@ const App = () => (
           <Route exact path="/button" component={ButtonDemo} />
           <Route exact path="/card" component={CardDemo} />
           <Route exact path="/checkbox" component={CheckBoxDemo} />
+          <Route exact path="/chips" component={ChipsDemo} />
           <Route exact path="/circle" component={CircleDemo} />
           <Route exact path="/clock" component={ClockDemo} />
           <Route exact path="/dismiss" component={DismissDemo} />
