@@ -34,6 +34,7 @@ import PortalDemo from './pages/portal';
 import ProgressBarDemo from './pages/progress-bar';
 import RadioInputDemo from './pages/radio-input';
 import RadioGroupDemo from './pages/radio-group';
+import SliderDemo from './pages/slider';
 import StackedCardDemo from './pages/stacked-card';
 import StarRatingDemo from './pages/star-rating';
 import SwitchDemo from './pages/switch';
@@ -176,13 +177,18 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
-              <Link className="d-block" to="/snackbar">
-                SnackBar
+              <Link className="d-block" to="/slices">
+                Slices
               </Link>
             </li>
             <li className="list-group-item">
-              <Link className="d-block" to="/slices">
-                Slices
+              <Link className="d-block" to="/slider">
+                Slider
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/snackbar">
+                SnackBar
               </Link>
             </li>
             <li className="list-group-item">
@@ -274,8 +280,9 @@ const App = () => (
           <Route exact path="/progress-bar" component={ProgressBarDemo} />
           <Route exact path="/radio-input" component={RadioInputDemo} />
           <Route exact path="/radio-group" component={RadioGroupDemo} />
-          <Route exact path="/snackbar" component={SnackBarDemo} />
           <Route exact path="/slices" component={SlicesDemo} />
+          <Route exact path="/slider" component={SliderDemo} />
+          <Route exact path="/snackbar" component={SnackBarDemo} />
           <Route exact path="/sphere" component={SphereDemo} />
           <Route exact path="/stacked-card" component={StackedCardDemo} />
           <Route exact path="/star-rating" component={StarRatingDemo} />
