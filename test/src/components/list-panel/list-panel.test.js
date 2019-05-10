@@ -151,7 +151,7 @@ describe('ListPanel Component', () => {
             expect(mountWrapper).toBeDefined();
         });
 
-        it('renders correctly', () => {
+        it('calls callback', () => {
             const onClickCallback = sinon.spy();
             const mountWrapper = mount(<ListPanel.Item onClick={onClickCallback}  index={1}/>);
             mountWrapper.simulate('click');
