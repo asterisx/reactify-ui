@@ -16,6 +16,14 @@ describe('NumberCounter Component', () => {
     describe('props', () => {
         //TODO change dynamically, interval, delay, onChange, onComplete
 
+        it('should start the timer on mount', () => {
+            const clock = sinon.useFakeTimers();
+            const mountWrapper = mount(<NumberCounter to={10000}/>);
+            const spy = sinon.spy(mountWrapper.instance(), 'updateTicker');
+            clock.tick(11);
+            expect(spy.calledOnce).toBeTruthy();
+        });
+
         it('should call reset function when reset called from children', () => {
             let resetPointer = () => {};
             const mountWrapper = mount(<NumberCounter from={0} to={10000}>{(reset) => { resetPointer = reset; return <span>Children</span>}}</NumberCounter>);

@@ -11,7 +11,7 @@ import {
   sizePropTypes,
   defaultSizePropTypes,
 } from './prop-types';
-import { canUseDOM, Timer } from './utils';
+import { canUseDOM, Timer, getTimeFromMillis } from './utils';
 
 export {
   canUseDOM,
@@ -25,4 +25,5 @@ export {
   sizePropTypes,
   defaultSizePropTypes,
   Timer,
+  getTimeFromMillis,
 };

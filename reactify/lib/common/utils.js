@@ -27,8 +27,7 @@ export function Timer(callback, delay) {
   this.resume();
 }
 
-export const getTImeFromMillis = (millis) => {
-
+export const getTimeFromMillis = (millis) => {
   let delta = Math.abs(millis) / 1000;
 
   const days = Math.floor(delta / 86400);
@@ -42,6 +41,7 @@ export const getTImeFromMillis = (millis) => {
 
   const seconds = delta % 60;
 
-  return { days, hours, minutes, seconds };
-}
-
+  return {
+    days, hours, minutes, seconds,
+  };
+};
