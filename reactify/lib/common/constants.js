@@ -38,3 +38,17 @@ export const darkenBy = 0.25;
 export const lightenBy = 0.25;
 
 export const libraryName = 'reactify-ui';
+
+export const screenSizes = {
+  screenSm: '576px',
+  screenMd: '768px',
+  screenLg: '992px',
+  screenXl: '1200px',
+};
+
+export const screenSizesInPx = {
+  screenSm: 576,
+  screenMd: 768,
+  screenLg: 992,
+  screenXl: 1200,
+};

@@ -4,6 +4,7 @@ import Button from './components/button';
 import Card from './components/card';
 import { Chip, Chips } from './components/chips';
 import Dismiss from './components/dismiss';
+import Dropdown from './components/dropdown';
 import GroupToggle from './components/group-toggle';
 import HorizontalCard from './components/horizontal-card';
 import Checkbox from './components/checkbox';
@@ -34,6 +35,8 @@ import {
   commonStyles,
   darkenBy,
   lightenBy,
+  screenSizesInPx,
+  screenSizes,
 } from './common';
 
 const Constants = {
@@ -41,6 +44,8 @@ const Constants = {
   commonStyles,
   darkenBy,
   lightenBy,
+  screenSizesInPx,
+  screenSizes,
 };
 
 export {
@@ -52,6 +57,7 @@ export {
   Chips,
   Constants,
   Dismiss,
+  Dropdown,
   GroupToggle,
   HorizontalCard,
   Checkbox,
