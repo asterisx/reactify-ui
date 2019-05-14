@@ -22,6 +22,7 @@ import CardDemo from './pages/card';
 import ChipsDemo from './pages/chips';
 import CheckBoxDemo from './pages/checkbox';
 import DismissDemo from './pages/dismiss';
+import DropdownDemo from './pages/dropdown';
 import FullScreenDemo from './pages/full-screen';
 import GroupToggleDemo from './pages/group-toggle';
 import HorizontalCardDemo from './pages/horizontal-card';
@@ -106,6 +107,11 @@ const App = () => (
             <li className="list-group-item">
               <Link className="d-block" to="/dismiss">
                 Dismiss
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/dropdown">
+                Dropdown
               </Link>
             </li>
             <li className="list-group-item">
@@ -278,6 +284,7 @@ const App = () => (
           <Route exact path="/circle" component={CircleDemo} />
           <Route exact path="/clock" component={ClockDemo} />
           <Route exact path="/dismiss" component={DismissDemo} />
+          <Route exact path="/dropdown" component={DropdownDemo} />
           <Route exact path="/full-screen" component={FullScreenDemo} />
           <Route exact path="/group-toggle" component={GroupToggleDemo} />
           <Route exact path="/horizontal-card" component={HorizontalCardDemo} />

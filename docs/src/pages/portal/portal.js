@@ -33,7 +33,7 @@ class PortalDemo extends Component {
             <Button onClick={() => this.setState({ simplePortalOpen: true })}>Open Portal</Button>
             {this.state.simplePortalOpen && (
             <Portal top onClose={() => this.setState({ simplePortalOpen: false })}>
-              {closeToggle => (
+              {closePortal => (
                 <div
                   style={{
                     width: '100%',
@@ -49,7 +49,7 @@ class PortalDemo extends Component {
                     style={{ fontSize: '20px' }}
                     type="button"
                     value="Close"
-                    onClick={closeToggle}
+                    onClick={closePortal}
                   />
                 </div>
               )}
@@ -65,7 +65,7 @@ class PortalDemo extends Component {
             <Button onClick={() => this.setState({ topPortalOpen: true })}>Open Top Portal</Button>
             {this.state.topPortalOpen && (
             <Portal top onClose={() => this.setState({ topPortalOpen: false })}>
-              {closeToggle => (
+              {closePortal => (
                 <div
                   style={{
                     width: '100%',
@@ -81,7 +81,7 @@ class PortalDemo extends Component {
                     style={{ fontSize: '20px' }}
                     type="button"
                     value="Close"
-                    onClick={closeToggle}
+                    onClick={closePortal}
                   />
                 </div>
               )}
@@ -96,7 +96,7 @@ class PortalDemo extends Component {
             </Button>
             {this.state.leftPortalOpen && (
             <Portal left onClose={() => this.setState({ leftPortalOpen: false })}>
-              {closeToggle => (
+              {closePortal => (
                 <div
                   style={{
                     width: '100px',
@@ -112,7 +112,7 @@ class PortalDemo extends Component {
                     style={{ fontSize: '20px' }}
                     type="button"
                     value="Close"
-                    onClick={closeToggle}
+                    onClick={closePortal}
                   />
                 </div>
               )}
@@ -127,7 +127,7 @@ class PortalDemo extends Component {
             </Button>
             {this.state.rightPortalOpen && (
             <Portal right onClose={() => this.setState({ rightPortalOpen: false })}>
-              {closeToggle => (
+              {closePortal => (
                 <div
                   style={{
                     width: '100px',
@@ -143,7 +143,7 @@ class PortalDemo extends Component {
                     style={{ fontSize: '20px' }}
                     type="button"
                     value="Close"
-                    onClick={closeToggle}
+                    onClick={closePortal}
                   />
                 </div>
               )}
@@ -158,7 +158,7 @@ class PortalDemo extends Component {
             </Button>
             {this.state.bottomPortalOpen && (
             <Portal bottom onClose={() => this.setState({ bottomPortalOpen: false })}>
-              {closeToggle => (
+              {closePortal => (
                 <div
                   style={{
                     width: '100%',
@@ -174,7 +174,7 @@ class PortalDemo extends Component {
                     style={{ fontSize: '20px' }}
                     type="button"
                     value="Close"
-                    onClick={closeToggle}
+                    onClick={closePortal}
                   />
                 </div>
               )}
@@ -201,7 +201,7 @@ class PortalDemo extends Component {
             </Button>
             {this.state.autoClosePortalOpen && (
             <Portal top autoClose={false}>
-              {closeToggle => (
+              {closePortal => (
                 <div
                   style={{
                     width: '100%',
@@ -220,7 +220,7 @@ class PortalDemo extends Component {
                     onClick={
                         () => {
                           this.setState({ autoClosePortalOpen: false });
-                          closeToggle();
+                          closePortal();
                         }}
                   />
                 </div>
@@ -248,7 +248,7 @@ class PortalDemo extends Component {
               hideBackDrop
               onClose={() => this.setState({ hideBackdropPortalOpen: false })}
             >
-              {closeToggle => (
+              {closePortal => (
                 <div
                   style={{
                     width: '100%',
@@ -264,7 +264,7 @@ class PortalDemo extends Component {
                     style={{ fontSize: '20px' }}
                     type="button"
                     value="Close"
-                    onClick={closeToggle}
+                    onClick={closePortal}
                   />
                 </div>
               )}
@@ -284,7 +284,7 @@ class PortalDemo extends Component {
             </Button>
             {this.state.onClosePortal && (
             <Portal top onClose={() => { this.setState({ onClosePortal: false }); alert('Closed'); }}>
-              {closeToggle => (
+              {closePortal => (
                 <div
                   style={{
                     width: '100%',
@@ -300,7 +300,7 @@ class PortalDemo extends Component {
                     style={{ fontSize: '20px' }}
                     type="button"
                     value="Close"
-                    onClick={closeToggle}
+                    onClick={closePortal}
                   />
                 </div>
               )}

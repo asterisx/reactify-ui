@@ -3,6 +3,8 @@ import {
   libraryName,
   darkenBy,
   lightenBy,
+  screenSizes,
+  screenSizesInPx,
 } from './constants';
 import { commonStyles } from './styles';
 import {
@@ -26,4 +28,6 @@ export {
   defaultSizePropTypes,
   Timer,
   getTimeFromMillis,
+  screenSizes,
+  screenSizesInPx,
 };

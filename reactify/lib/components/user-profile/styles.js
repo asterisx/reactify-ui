@@ -1,7 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 import { css } from '@emotion/core';
 import { darken } from 'polished';
-import { commonStyles, libraryName, darkenBy } from '../../common';
+import {
+  commonStyles, libraryName, darkenBy, screenSizes,
+} from '../../common';
 
 const componentName = 'user-profile';
 
@@ -14,13 +16,6 @@ export const BEMClassNames = {
   infoContainer: `${libraryName}-${componentName}__infoContainer`,
   info: `${libraryName}-${componentName}__info`,
   icon: `${libraryName}-${componentName}__icon`,
-};
-
-const values = {
-  screenSm: '576px',
-  screenMd: '768px',
-  screenLg: '992px',
-  screenXl: '1200px',
 };
 
 export const styles = {
@@ -76,22 +71,22 @@ export const styles = {
   hide: {
     breakpoint: {
       sm: css`
-       @media (max-width: ${values.screenSm}) {
+       @media (max-width: ${screenSizes.screenSm}) {
             display: none;
         }
       `,
       md: css`
-       @media (max-width: ${values.screenMd}) {
+       @media (max-width: ${screenSizes.screenMd}) {
             display: none;
         }
       `,
       lg: css`
-       @media (max-width: ${values.screenLg}) {
+       @media (max-width: ${screenSizes.screenLg}) {
             display: none;
         }
       `,
       xl: css`
-        @media (max-width: ${values.screenXl}) {
+        @media (max-width: ${screenSizes.screenXl}) {
              display: none;
          }
        `,

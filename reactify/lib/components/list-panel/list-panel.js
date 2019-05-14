@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   defaultThemePropTypes,
+  defaultSizePropTypes,
   themePropTypes,
   sizePropTypes,
 } from '../../common';
@@ -187,9 +188,9 @@ ListPanel.propTypes = {
   bordered: PropTypes.bool,
   singular: PropTypes.bool,
   multiple: PropTypes.bool,
+  disabled: PropTypes.bool,
   ...themePropTypes,
   ...sizePropTypes,
-  disabled: PropTypes.bool,
   onSelectionChange: PropTypes.func,
 };
 
@@ -199,6 +200,7 @@ ListPanel.defaultProps = {
   multiple: false,
   disabled: false,
   ...defaultThemePropTypes,
+  ...defaultSizePropTypes,
   onSelectionChange: () => {},
 };
 
@@ -206,16 +208,17 @@ ListPanel.Item.propTypes = {
   selected: PropTypes.bool,
   bordered: PropTypes.bool,
   index: PropTypes.number.isRequired,
+  disabled: PropTypes.bool,
   ...themePropTypes,
   ...sizePropTypes,
-  disabled: PropTypes.bool,
 };
 
 ListPanel.Item.defaultProps = {
   selected: false,
   bordered: true,
-  ...defaultThemePropTypes,
   disabled: false,
+  ...defaultThemePropTypes,
+  ...defaultSizePropTypes,
 };
 
 ListPanel.Item.displayName = 'ListPanel.Item';

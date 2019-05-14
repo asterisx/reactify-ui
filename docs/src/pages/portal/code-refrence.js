@@ -2,7 +2,7 @@ const simpleCode = `
 <Button onClick={() => this.setState({ simplePortalOpen: true })}>Open Portal</Button>
 {this.state.simplePortalOpen && (
 <Portal top>
-  {closeToggle => (
+  {closePortal => (
     <div
       style={{
         width: '100%',
@@ -18,7 +18,7 @@ const simpleCode = `
         style={{ fontSize: '20px' }}
         type="button"
         value="Close"
-        onClick={() => this.setState({ simplePortalOpen: true }, closeToggle())}
+        onClick={() => this.setState({ simplePortalOpen: true }, closePortal())}
       />
     </div>
   )}
@@ -29,7 +29,7 @@ const portalLocationCode = `
 <Button onClick={() => this.setState({ topPortalOpen: true })}>Open Top Portal</Button>
   {this.state.topPortalOpen && (
   <Portal top>
-    {closeToggle => (
+    {closePortal => (
       <div
         style={{
           width: '100%',
@@ -45,7 +45,7 @@ const portalLocationCode = `
           style={{ fontSize: '20px' }}
           type="button"
           value="Close"
-          onClick={() => this.setState({ topPortalOpen: true }, closeToggle())}
+          onClick={() => this.setState({ topPortalOpen: true }, closePortal())}
         />
       </div>
     )}
@@ -59,7 +59,7 @@ const portalLocationCode = `
 </Button>
 {this.state.leftPortalOpen && (
 <Portal top>
-  {closeToggle => (
+  {closePortal => (
     <div
       style={{
         width: '100px',
@@ -75,7 +75,7 @@ const portalLocationCode = `
         style={{ fontSize: '20px' }}
         type="button"
         value="Close"
-        onClick={() => this.setState({ leftPortalOpen: true }, closeToggle())}
+        onClick={() => this.setState({ leftPortalOpen: true }, closePortal())}
       />
     </div>
   )}
@@ -89,7 +89,7 @@ onClick={() => this.setState({ rightPortalOpen: true })}
 </Button>
 {this.state.rightPortalOpen && (
 <Portal right>
-{closeToggle => (
+{closePortal => (
   <div
     style={{
       width: '100px',
@@ -105,7 +105,7 @@ onClick={() => this.setState({ rightPortalOpen: true })}
       style={{ fontSize: '20px' }}
       type="button"
       value="Close"
-      onClick={() => this.setState({ rightPortalOpen: true }, closeToggle())}
+      onClick={() => this.setState({ rightPortalOpen: true }, closePortal())}
     />
   </div>
 )}
@@ -119,7 +119,7 @@ onClick={() => this.setState({ rightPortalOpen: true })}
 </Button>
 {this.state.bottomPortalOpen && (
 <Portal bottom>
-  {closeToggle => (
+  {closePortal => (
     <div
       style={{
         width: '100%',
@@ -135,7 +135,7 @@ onClick={() => this.setState({ rightPortalOpen: true })}
         style={{ fontSize: '20px' }}
         type="button"
         value="Close"
-        onClick={() => this.setState({ bottomPortalOpen: true }, closeToggle())}
+        onClick={() => this.setState({ bottomPortalOpen: true }, closePortal())}
       />
     </div>
   )}
@@ -151,7 +151,7 @@ onClick={() => this.setState({ autoClosePortalOpen: true })}
 </Button>
 {this.state.autoClosePortalOpen && (
 <Portal top autoClose={false}>
-{closeToggle => (
+{closePortal => (
   <div
     style={{
       width: '100%',
@@ -167,7 +167,7 @@ onClick={() => this.setState({ autoClosePortalOpen: true })}
       style={{ fontSize: '20px' }}
       type="button"
       value="Close"
-      onClick={() => this.setState({ autoClosePortalOpen: true }, closeToggle())}
+      onClick={() => this.setState({ autoClosePortalOpen: true }, closePortal())}
     />
   </div>
 )}
@@ -182,7 +182,7 @@ const hideBackdropCode = `
 </Button>
 {this.state.hideBackdropPortalOpen && (
 <Portal top hideBackDrop>
-  {closeToggle => (
+  {closePortal => (
     <div
       style={{
         width: '100%',
@@ -198,7 +198,7 @@ const hideBackdropCode = `
         style={{ fontSize: '20px' }}
         type="button"
         value="Close"
-        onClick={() => this.setState({ hideBackdropPortalOpen: true }, closeToggle())}
+        onClick={() => this.setState({ hideBackdropPortalOpen: true }, closePortal())}
       />
     </div>
   )}
@@ -213,7 +213,7 @@ onClick={() => this.setState({ onClosePortal: true })}
 </Button>
 {this.state.onClosePortal && (
 <Portal top hideBackDrop onClose={() => { this.setState({ onClosePortal: false }); alert('Closed'); }}>
-{closeToggle => (
+{closePortal => (
   <div
     style={{
       width: '100%',
@@ -229,7 +229,7 @@ onClick={() => this.setState({ onClosePortal: true })}
       style={{ fontSize: '20px' }}
       type="button"
       value="Close"
-      onClick={closeToggle}
+      onClick={closePortal}
     />
   </div>
 )}

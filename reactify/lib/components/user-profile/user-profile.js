@@ -114,7 +114,7 @@ class UserProfile extends Component {
             </span>
             {avatarRight && image}
           </div>
-          <IoMdArrowDropdown css={[styles.icon]} className={BEMClassNames.icon} />
+          <IoMdArrowDropdown className={BEMClassNames.icon} />
         </div>
         {
           this.state.trayOpen
