@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { throttle } from 'throttle-debounce';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import { Portal, ListPanel } from '../..';
+import Portal from '../portal';
+import ListPanel from '../list-panel';
 import {
   defaultThemePropTypes,
   defaultSizePropTypes,
