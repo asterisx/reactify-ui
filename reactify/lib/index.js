@@ -19,6 +19,7 @@ import Portal from './components/portal';
 import ProgressBar from './components/progress-bar';
 import RadioInput from './components/radio-input';
 import RadioGroup from './components/radio-group';
+import SearchBar from './components/search-bar';
 import Slider from './components/slider';
 import Spinner from './components/spinner';
 import StackedCard from './components/stacked-card';
@@ -73,6 +74,7 @@ export {
   ProgressBar,
   RadioInput,
   RadioGroup,
+  SearchBar,
   Slider,
   Spinner,
   StackedCard,
