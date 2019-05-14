@@ -294,7 +294,8 @@ const ListPanelDemo = () => (
       sourceCode={onSelectionChangeCode}
     >
       <h6>
-        * Listpanel item can also be unseletable via prop
+        <b>*</b>
+        Listpanel item can also be unseletable via prop
         {' isSelectable={false}'}
       </h6>
       <ListPanel singular onSelectionChange={({ index, selected }) => alert(`Index: ${index}\nSelected: ${selected}`)}>
