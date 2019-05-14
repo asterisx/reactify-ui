@@ -26,6 +26,7 @@ class ListPanel extends Component {
     bordered,
     children,
     disabled,
+    isSelectable,
     onClick,
     ...otherProps
   }) => (
@@ -159,7 +160,7 @@ class ListPanel extends Component {
             return React.cloneElement(child, {
               selected: this.state.selectedindexs.findIndex(sk => sk === child.props.index) !== -1,
               onClick: (evt) => {
-                this.toggleSelect(child.props.index);
+                if (child.props.isSelectable) this.toggleSelect(child.props.index);
                 if (child.props.onClick) child.props.onClick(evt);
               },
               primary: child.props.primary || primary,
@@ -209,6 +210,7 @@ ListPanel.Item.propTypes = {
   bordered: PropTypes.bool,
   index: PropTypes.number.isRequired,
   disabled: PropTypes.bool,
+  isSelectable: PropTypes.bool,
   ...themePropTypes,
   ...sizePropTypes,
 };
@@ -217,6 +219,7 @@ ListPanel.Item.defaultProps = {
   selected: false,
   bordered: true,
   disabled: false,
+  isSelectable: true,
   ...defaultThemePropTypes,
   ...defaultSizePropTypes,
 };

@@ -293,9 +293,13 @@ const ListPanelDemo = () => (
       uniqueIdentifier="onSelectionChangeUse"
       sourceCode={onSelectionChangeCode}
     >
+      <h6>
+        * Listpanel item can also be unseletable via prop
+        {' isSelectable={false}'}
+      </h6>
       <ListPanel singular onSelectionChange={({ index, selected }) => alert(`Index: ${index}\nSelected: ${selected}`)}>
         <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
-        <ListPanel.Item index={2}>Item 2</ListPanel.Item>
+        <ListPanel.Item isSelectable={false} index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item index={3}>Item 3</ListPanel.Item>
         <ListPanel.Item index={4}>Item 4</ListPanel.Item>
         <ListPanel.Item index={5}>Item 5</ListPanel.Item>
