@@ -11,6 +11,7 @@ import {
 class NumberCounter extends Component {
     static propTypes = {
       ...sizePropTypes,
+      ...themePropTypes,
       from: PropTypes.number,
       to: PropTypes.number.isRequired,
       delay: PropTypes.number,
@@ -19,7 +20,6 @@ class NumberCounter extends Component {
       step: PropTypes.number,
       onValueChange: PropTypes.func,
       onComplete: PropTypes.func,
-      ...themePropTypes,
     }
 
     static defaultProps = {
@@ -120,8 +120,8 @@ class NumberCounter extends Component {
         small,
         medium,
         large,
-        disabled,
         theme,
+        disabled,
         from,
         to,
         delay,
