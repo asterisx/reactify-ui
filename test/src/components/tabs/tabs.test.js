@@ -25,8 +25,8 @@ describe('Tabs Component', () => {
     it("tab headers should be disabled when tabsDisabled passed", () => {
         const mountWrapper = mount(
             <Tabs tabsDisabled selectedIndex={1}>
-                <Tab>
-                    <Tab.Header index={0}>
+                <Tab index={0}>
+                    <Tab.Header>
                         <Button/>
                     </Tab.Header>
                     <Tab.Body>
@@ -34,8 +34,8 @@ describe('Tabs Component', () => {
                     </Tab.Body>
                 </Tab>
 
-                <Tab>
-                    <Tab.Header index={1}>
+                <Tab index={1}>
+                    <Tab.Header>
                         <Button/>
                     </Tab.Header>
                     <Tab.Body>
@@ -43,8 +43,8 @@ describe('Tabs Component', () => {
                     </Tab.Body>
                 </Tab>
 
-                <Tab>
-                    <Tab.Header index={2}>
+                <Tab index={2}>
+                    <Tab.Header>
                         <Button/>
                     </Tab.Header>
                     <Tab.Body>
@@ -59,7 +59,7 @@ describe('Tabs Component', () => {
     describe('Tab Component', () => {
         it('renders correctly', () => {
             const mountWrapper = mount(
-            <Tab>
+            <Tab index={0}>
                 <div/>
             </Tab>
             );

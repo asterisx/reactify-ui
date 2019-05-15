@@ -12,14 +12,6 @@ describe('Spinner Clock Component', () => {
     });
 
     describe('props', () => {
-        it('should have custom color when color prop is passed', () => {
-            const color = "violet";
-            const mountWrapper = mount(<Spinner clock style={{color}} />);
-            const spinnerSpan = mountWrapper.findWhere(n => n.name() === 'span');
-            expect(spinnerSpan).toHaveStyleRule('border', expect.stringContaining(color));
-            expect(spinnerSpan).toHaveStyleRule('border-left', expect.stringContaining(color), { target: ':before'});
-        });
-        
         describe('should have correct theme when theme prop is passed', () => {
             let ThemeColors = Constants.defaultThemeColors;
             Object.keys(ThemeColors).map(key => {

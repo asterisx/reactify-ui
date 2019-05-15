@@ -10,7 +10,7 @@ describe('GroupToggle Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(
         <GroupToggle>
-            {({ selectedIndex }) => <div />}
+            {({ selectedIndex }) => <div index={0}/>}
         </GroupToggle>);
         expect(mountWrapper).toBeDefined();
     });

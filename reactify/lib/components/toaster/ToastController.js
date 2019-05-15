@@ -1,5 +1,3 @@
-// @flow
-
 import React, { Component } from 'react';
 import { Transition } from 'react-transition-group';
 import PropTypes from 'prop-types';

@@ -29,6 +29,7 @@ import HorizontalCardDemo from './pages/horizontal-card';
 import LabelDemo from './pages/label';
 import LegendDemo from './pages/legend';
 import ListPanelDemo from './pages/list-panel';
+import LoginDemo from './pages/login';
 import ModalDemo from './pages/modal';
 import NumberCounterDemo from './pages/number-counter';
 import PaperDemo from './pages/paper';
@@ -154,6 +155,11 @@ const App = () => (
             <li className="list-group-item">
               <Link className="d-block" to="/loadbar">
                 Loadbar
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/login">
+                Login
               </Link>
             </li>
             <li className="list-group-item">
@@ -305,6 +311,7 @@ const App = () => (
           <Route exact path="/legend" component={LegendDemo} />
           <Route exact path="/list-panel" component={ListPanelDemo} />
           <Route exact path="/loadbar" component={LoadbarDemo} />
+          <Route exact path="/login" component={LoginDemo} />
           <Route exact path="/modal" component={ModalDemo} />
           <Route exact path="/number-counter" component={NumberCounterDemo} />
           <Route exact path="/paper" component={PaperDemo} />

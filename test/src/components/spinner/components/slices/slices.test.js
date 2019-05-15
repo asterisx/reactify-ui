@@ -13,16 +13,6 @@ describe('Spinner Slices Component', () => {
     });
 
     describe('props', () => {
-        it('should have custom color when color prop is passed', () => {
-            const color = "violet"
-            const mountWrapper = mount(<Spinner slices style={{color: color}} />);
-            const spinnerSpan = mountWrapper.findWhere(n => n.name() === 'span');
-            expect(spinnerSpan).toHaveStyleRule('border-top', expect.stringContaining(rgba(color, 0.75)));
-            expect(spinnerSpan).toHaveStyleRule('border-left', expect.stringContaining(rgba(color, 0.25)));
-            expect(spinnerSpan).toHaveStyleRule('border-bottom', expect.stringContaining(rgba(color, 0.25)));
-            expect(spinnerSpan).toHaveStyleRule('border-right', expect.stringContaining(rgba(color, 0.25)));
-        });
- 
         it('should have custom animation duration when prop is passed', () =>{
             const animationDuration = "1s";
             const mountWrapper = mount(<Spinner slices style={{animationDuration}} />);

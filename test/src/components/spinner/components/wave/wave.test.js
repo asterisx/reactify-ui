@@ -12,13 +12,6 @@ describe('Spinner Wave Component', () => {
     });
 
     describe('props', () => {
-        it('should have custom color when color prop is passed', () => {
-            const color = "violet"
-            const mountWrapper = mount(<Spinner wave style={{color: color}} />);
-            const spinnerSpan = mountWrapper.findWhere(n => n.name() === 'span');
-            expect(spinnerSpan).toHaveStyleRule('border', expect.stringContaining(color), { target: ':before'});
-        });
- 
         it('should have custom animation duration when prop is passed', () =>{
             const animationDuration = "1s";
             const mountWrapper = mount(<Spinner wave style={{animationDuration}} />);

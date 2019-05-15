@@ -5,18 +5,25 @@
         "@emotion/babel-preset-css-prop"
     ],
     "plugins": [
-        ["emotion"],
         [
-            "@babel/plugin-proposal-class-properties"
+            "emotion",
+            null
+        ],
+        [
+            "@babel/plugin-proposal-class-properties",
+            null
         ],
         [
             "react-css-modules",
+            null
         ],
         [
             "transform-rename-import",
             {
-      "replacements": [
-                    { "original":"^(.+?)\\.scss$", "replacement": "$1.css"
+                "replacements": [
+                    {
+                        "original": "^(.+?)\\.scss$",
+                        "replacement": "$1.css"
                     }
                 ]
             }

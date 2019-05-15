@@ -13,14 +13,6 @@ describe('Spinner Circle Component', () => {
     });
 
     describe('props', () => {
-        it('should have custom color when color prop is passed', () => {
-            const color = "violet";
-            const mountWrapper = mount(<Spinner circle style={{color}} />);
-            const spinnerSpan = mountWrapper.findWhere(n => n.name() === 'span');
-            expect(spinnerSpan).toHaveStyleRule('border', expect.stringContaining(rgba(color, 0.25)));
-            expect(spinnerSpan).toHaveStyleRule('border-top', expect.stringContaining(rgba(color, 1)));
-        });
-
         it('should have custom animation duration when prop is passed', () =>{
             const animationDuration = "1s";
             const mountWrapper = mount(<Spinner circle style={{animationDuration}} />);

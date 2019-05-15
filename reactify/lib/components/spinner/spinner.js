@@ -30,7 +30,7 @@ const getSpinner = ({
   volume,
   vortex,
   wave,
-  otherProps,
+  ...otherProps
 }) => {
   if (bars) return <Bars {...otherProps} />;
 
@@ -75,6 +75,15 @@ const Spinner = ({
   small,
   medium,
   large,
+  primary,
+  secondary,
+  dark,
+  light,
+  info,
+  warning,
+  danger,
+  success,
+  theme,
   ...otherProps
 }) => (
   <div
@@ -86,6 +95,7 @@ const Spinner = ({
         large,
       }),
     ]}
+    {...otherProps}
   >
     {getSpinner({
       balls,
@@ -100,7 +110,15 @@ const Spinner = ({
       volume,
       vortex,
       wave,
-      otherProps,
+      primary,
+      secondary,
+      dark,
+      light,
+      info,
+      warning,
+      danger,
+      success,
+      theme,
     })}
   </div>
 );

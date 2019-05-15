@@ -12,23 +12,6 @@ describe('Spinner Bars Component', () => {
     });
 
     describe('props', () => {
-        it('should have custom color when color prop is passed', () => {
-            const color = "violet"
-            const mountWrapper = mount(<Spinner bars style={{color: color}} />);
-            const spinnerSpan = mountWrapper.findWhere(n => n.name() === 'span');
-            expect(spinnerSpan).toHaveStyleRule('background-color', color);
-        
-        });
- 
-        it('should have custom animation duration when prop is passed', () =>{
-            const animationDuration = "1s";
-            const mountWrapper = mount(<Spinner bars style={{animationDuration}} />);
-            const spinnerSpan = mountWrapper.findWhere(n => n.name() === 'span');
-            expect(spinnerSpan).toHaveStyleRule('animation', expect.stringContaining(animationDuration));
-            expect(spinnerSpan).toHaveStyleRule('animation', expect.stringContaining(animationDuration), { target: ':before' });
-            expect(spinnerSpan).toHaveStyleRule('animation', expect.stringContaining(animationDuration), { target: ':before' });
-        });
-
         describe('should have correct theme when theme prop is passed', () => {
             let ThemeColors = Constants.defaultThemeColors;
             Object.keys(ThemeColors).map(key => {

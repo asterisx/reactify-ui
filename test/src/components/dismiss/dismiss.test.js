@@ -53,7 +53,7 @@ describe('Dismiss Component', () => {
         it('should dismiss after delay and also call onClose', () => {
             const onCloseSpy = sinon.spy();
             const mountWrapper = mount(<Dismiss onClose={onCloseSpy} onClose={onCloseSpy} />);
-            mountWrapper.findWhere(n => n.name() === 'FaWindowClose').simulate('click');
+            mountWrapper.findWhere(n => n.name() === 'IoIosClose').simulate('click');
             expect(onCloseSpy.called).toBeTruthy();
         });
 

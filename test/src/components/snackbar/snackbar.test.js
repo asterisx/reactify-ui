@@ -69,20 +69,28 @@ describe('SnackBar Component', () => {
         describe('should have correct position when position is passed', () => {
             it('should have correct size passed as props', () => {
                 const mountWrapper = mount(<SnackBar topLeft />);
-                expect(mountWrapper).toHaveStyleRule('top', '10px');
-                expect(mountWrapper).toHaveStyleRule('left', '10px');
+                setTimeout(() => {
+                    expect(mountWrapper).toHaveStyleRule('top', '10px');
+                    expect(mountWrapper).toHaveStyleRule('left', '10px');
+                }, 1000);
 
                 const mountWrapper1 = mount(<SnackBar topRight />);
-                expect(mountWrapper1).toHaveStyleRule('top', '10px');
-                expect(mountWrapper1).toHaveStyleRule('right', '10px');
+                setTimeout(() => {
+                    expect(mountWrapper1).toHaveStyleRule('top', '10px');
+                    expect(mountWrapper1).toHaveStyleRule('right', '10px');
+                }, 1000);
 
                 const mountWrapper2 = mount(<SnackBar bottomLeft />);
-                expect(mountWrapper2).toHaveStyleRule('bottom', '10px');
-                expect(mountWrapper2).toHaveStyleRule('left', '10px');
+                setTimeout(() => {
+                    expect(mountWrapper2).toHaveStyleRule('bottom', '10px');
+                    expect(mountWrapper2).toHaveStyleRule('left', '10px');
+                }, 1000);
 
                 const mountWrapper3 = mount(<SnackBar bottomRight />);
-                expect(mountWrapper3).toHaveStyleRule('bottom', '10px');
-                expect(mountWrapper3).toHaveStyleRule('right', '10px');
+                setTimeout(() => {
+                    expect(mountWrapper3).toHaveStyleRule('bottom', '10px');
+                    expect(mountWrapper3).toHaveStyleRule('right', '10px');
+                }, 1000);
             });
         })
 

@@ -12,14 +12,6 @@ describe('Spinner Balls Component', () => {
     });
 
     describe('props', () => {
-        it('should have custom color when color prop is passed', () => {
-            const color = "violet";
-            const mountWrapper = mount(<Spinner balls style={{color}} />);
-            const spinnerSpan = mountWrapper.findWhere(n => n.name() === 'span');
-            expect(spinnerSpan).toHaveStyleRule('background-color', color);
-        
-        });
-
         it('should have custom animation duration when prop is passed', () =>{
             const animationDuration = "1s";
             const mountWrapper = mount(<Spinner balls style={{animationDuration}} />);

@@ -12,6 +12,7 @@ import FullScreen from './components/full-screen';
 import Label from './components/label';
 import { Legend, LegendItem } from './components/legend';
 import ListPanel from './components/list-panel';
+import Login from './components/login';
 import Modal from './components/modal';
 import NumberCounter from './components/number-counter';
 import Paper from './components/paper';
@@ -68,6 +69,7 @@ export {
   Legend,
   LegendItem,
   ListPanel,
+  Login,
   Modal,
   NumberCounter,
   Paper,
