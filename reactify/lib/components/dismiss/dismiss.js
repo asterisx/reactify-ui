@@ -22,10 +22,8 @@ class Dismiss extends Component {
   static defaultProps = {
     ...defaultThemePropTypes,
     ...defaultSizePropTypes,
-    primary: false,
-    info: true,
     autoDismiss: true,
-    onClose: PropTypes.func,
+    onClose: undefined,
     onCloseIconClick: undefined,
     disabled: false,
   }
@@ -60,9 +58,9 @@ class Dismiss extends Component {
 
     if (success) return <FaCheck />;
 
-    if (primary) return <FaRegDotCircle />;
-
     if (info) return <FaInfo />;
+
+    if (primary) return <FaRegDotCircle />;
 
     return null;
   }

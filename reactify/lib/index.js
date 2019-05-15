@@ -30,6 +30,7 @@ import { ToastProvider, ToastConsumer } from './components/toaster';
 import { Tabs, Tab } from './components/tabs';
 import Timer from './components/timer';
 import TopBar from './components/top-bar';
+import Tooltip from './components/tooltip';
 import UserProfile from './components/user-profile';
 import {
   defaultThemeColors,
@@ -85,6 +86,7 @@ export {
   Tab,
   Timer,
   TopBar,
+  Tooltip,
   ToastProvider,
   ToastConsumer,
   UserProfile,
