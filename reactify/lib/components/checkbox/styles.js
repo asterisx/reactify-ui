@@ -15,7 +15,12 @@ export const styles = {
   },
   icon: {
     userSelect: 'none',
+    display: 'inline-flex',
+    alignContent: 'center',
+    alignItems: 'center',
   },
+
+  reactIcon: commonStyles.reactIconStyle,
 
   getFontSizeStyle: commonStyles.get.font.size,
 

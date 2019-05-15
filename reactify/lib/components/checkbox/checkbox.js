@@ -79,7 +79,9 @@ class Checkbox extends Component {
           style={{ color: iconColor }}
           className={BEMClassNames.icon}
         >
-          {this.state.checked ? <IoIosCheckboxOutline /> : <IoIosSquareOutline />}
+          {this.state.checked ? (
+            <IoIosCheckboxOutline />
+          ) : <IoIosSquareOutline />}
         </div>
         {children}
       </div>
