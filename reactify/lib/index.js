@@ -3,12 +3,13 @@ import Badge from './components/badge';
 import Button from './components/button';
 import Card from './components/card';
 import { Chip, Chips } from './components/chips';
+import Checkbox from './components/checkbox';
 import Dismiss from './components/dismiss';
 import Dropdown from './components/dropdown';
+import FullScreen from './components/full-screen';
 import GroupToggle from './components/group-toggle';
 import HorizontalCard from './components/horizontal-card';
-import Checkbox from './components/checkbox';
-import FullScreen from './components/full-screen';
+import Input from './components/input';
 import Label from './components/label';
 import { Legend, LegendItem } from './components/legend';
 import Link from './components/link';
@@ -60,13 +61,14 @@ export {
   Card,
   Chip,
   Chips,
+  Checkbox,
   Constants,
   Dismiss,
   Dropdown,
+  FullScreen,
   GroupToggle,
   HorizontalCard,
-  Checkbox,
-  FullScreen,
+  Input,
   Label,
   Legend,
   LegendItem,
