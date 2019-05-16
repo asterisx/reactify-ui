@@ -28,6 +28,7 @@ import GroupToggleDemo from './pages/group-toggle';
 import HorizontalCardDemo from './pages/horizontal-card';
 import LabelDemo from './pages/label';
 import LegendDemo from './pages/legend';
+import LinkDemo from './pages/link';
 import ListPanelDemo from './pages/list-panel';
 import LoginDemo from './pages/login';
 import ModalDemo from './pages/modal';
@@ -146,6 +147,11 @@ const App = () => (
             <li className="list-group-item">
               <Link className="d-block" to="/legend">
                 Legend
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/link">
+                Link
               </Link>
             </li>
             <li className="list-group-item">
@@ -315,6 +321,7 @@ const App = () => (
           <Route exact path="/hydrogen" component={HydrogenDemo} />
           <Route exact path="/label" component={LabelDemo} />
           <Route exact path="/legend" component={LegendDemo} />
+          <Route exact path="/link" component={LinkDemo} />
           <Route exact path="/list-panel" component={ListPanelDemo} />
           <Route exact path="/loadbar" component={LoadbarDemo} />
           <Route exact path="/login" component={LoginDemo} />

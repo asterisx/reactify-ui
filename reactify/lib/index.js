@@ -11,6 +11,7 @@ import Checkbox from './components/checkbox';
 import FullScreen from './components/full-screen';
 import Label from './components/label';
 import { Legend, LegendItem } from './components/legend';
+import Link from './components/link';
 import ListPanel from './components/list-panel';
 import Login from './components/login';
 import Modal from './components/modal';
@@ -69,6 +70,7 @@ export {
   Label,
   Legend,
   LegendItem,
+  Link,
   ListPanel,
   Login,
   Modal,
