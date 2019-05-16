@@ -12,13 +12,13 @@ const disabledStyle = {
 
 const sizes = {
   small: {
-    fontSize: '0.6em',
+    fontSize: '0.5em',
   },
   medium: {
-    fontSize: '1.2em',
+    fontSize: '1em',
   },
   large: {
-    fontSize: '1.8em',
+    fontSize: '1.5em',
   },
 };
 

@@ -9,7 +9,7 @@ import {
 import { styles } from './styles';
 
 class RadioGroup extends Component {
-    state = { selectedIndex: undefined };
+    state = { selectedIndex: this.props.selectedIndex };
 
     toggleSelect = (index) => {
       if (this.state.selectedIndex !== index) {
@@ -37,6 +37,7 @@ class RadioGroup extends Component {
         small,
         medium,
         large,
+        selectedIndex,
         onSelectionChange,
         ...otherProps
       } = this.props;
@@ -82,6 +83,7 @@ RadioGroup.propTypes = {
   ...themePropTypes,
   ...sizePropTypes,
   onSelectionChange: PropTypes.func,
+  selectedIndex: PropTypes.number,
 };
 
 RadioGroup.defaultProps = {
