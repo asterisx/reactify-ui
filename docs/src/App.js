@@ -44,6 +44,7 @@ import StarRatingDemo from './pages/star-rating';
 import SwitchDemo from './pages/switch';
 import SnackBarDemo from './pages/snackbar';
 import TabsDemo from './pages/tabs';
+import TextDemo from './pages/text';
 import TimerDemo from './pages/timer';
 import ToastDemo from './pages/toast';
 import TooltipDemo from './pages/tooltip';
@@ -243,6 +244,11 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/text">
+                Text
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/texture">
                 Texture
               </Link>
@@ -328,6 +334,7 @@ const App = () => (
           <Route exact path="/star-rating" component={StarRatingDemo} />
           <Route exact path="/switch" component={SwitchDemo} />
           <Route exact path="/tabs" component={TabsDemo} />
+          <Route exact path="/text" component={TextDemo} />
           <Route exact path="/texture" component={TextureDemo} />
           <Route exact path="/timer" component={TimerDemo} />
           <Route exact path="/toast" component={ToastDemo} />
