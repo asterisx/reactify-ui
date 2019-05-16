@@ -29,6 +29,7 @@ import Switch from './components/switch';
 import SnackBar from './components/snackbar';
 import { ToastProvider, ToastConsumer } from './components/toaster';
 import { Tabs, Tab } from './components/tabs';
+import Text from './components/text';
 import Timer from './components/timer';
 import TopBar from './components/top-bar';
 import Tooltip from './components/tooltip';
@@ -86,6 +87,7 @@ export {
   SnackBar,
   Tabs,
   Tab,
+  Text,
   Timer,
   TopBar,
   Tooltip,
