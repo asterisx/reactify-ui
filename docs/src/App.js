@@ -45,7 +45,7 @@ import SliderDemo from './pages/slider';
 import StackedCardDemo from './pages/stacked-card';
 import StarRatingDemo from './pages/star-rating';
 import SwitchDemo from './pages/switch';
-import SnackBarDemo from './pages/snackbar';
+import SnackbarDemo from './pages/snackbar';
 import TabsDemo from './pages/tabs';
 import TextDemo from './pages/text';
 import TimerDemo from './pages/timer';
@@ -232,8 +232,8 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
-              <Link className="d-block" to="/snackbar">
-                SnackBar
+              <Link className="d-block" to="/Snackbar">
+                Snackbar
               </Link>
             </li>
             <li className="list-group-item">
@@ -349,7 +349,7 @@ const App = () => (
           <Route exact path="/search-bar" component={SearchBarDemo} />
           <Route exact path="/slices" component={SlicesDemo} />
           <Route exact path="/slider" component={SliderDemo} />
-          <Route exact path="/snackbar" component={SnackBarDemo} />
+          <Route exact path="/Snackbar" component={SnackbarDemo} />
           <Route exact path="/sphere" component={SphereDemo} />
           <Route exact path="/stacked-card" component={StackedCardDemo} />
           <Route exact path="/star-rating" component={StarRatingDemo} />

@@ -29,7 +29,7 @@ import Spinner from './components/spinner';
 import StackedCard from './components/stacked-card';
 import StarRating from './components/star-rating';
 import Switch from './components/switch';
-import SnackBar from './components/snackbar';
+import Snackbar from './components/snackbar';
 import { ToastProvider, ToastConsumer } from './components/toaster';
 import { Tabs, Tab } from './components/tabs';
 import Text from './components/text';
@@ -90,7 +90,7 @@ export {
   StackedCard,
   StarRating,
   Switch,
-  SnackBar,
+  Snackbar,
   Tabs,
   Tab,
   Text,

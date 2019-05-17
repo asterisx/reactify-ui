@@ -6,7 +6,12 @@ import { defaultThemePropTypes, themePropTypes } from '../../common';
 import { styles, BEMClassNames } from './styles';
 
 const transitionStyles = ({
-  topLeft, topRight, bottomLeft, bottomRight,
+  topLeft,
+  bottomLeft,
+  bottomRight,
+  bottomCenter,
+  topCenter,
+  topRight,
 }) => {
   if (bottomRight) {
     return {
@@ -32,6 +37,22 @@ const transitionStyles = ({
       exited: { transform: 'translateY(-100%)', top: 0, left: '10px' },
     };
   }
+  if (bottomCenter) {
+    return {
+      entering: { transform: 'translateY(100%) translateX(-50%)', bottom: 0, left: '50%' },
+      entered: { transform: 'translateY(0%) translateX(-50%)', bottom: '10px', left: '50%' },
+      exiting: { transform: 'translateY(100%) translateX(-50%)', bottom: 0, left: '50%' },
+      exited: { transform: 'translateY(100%) translateX(-50%)', bottom: 0, left: '50%' },
+    };
+  }
+  if (topCenter) {
+    return {
+      entering: { transform: 'translateY(-100%) translateX(-50%)', left: '50%' },
+      entered: { transform: 'translateY(0%) translateX(-50%)', top: '10px', left: '50%' },
+      exiting: { transform: 'translateY(-100%) translateX(-50%)', top: 0, left: '50%' },
+      exited: { transform: 'translateY(-100%) translateX(-50%)', top: 0, left: '50%' },
+    };
+  }
   if (topRight) {
     return {
       entering: { transform: 'translateY(-100%)', top: 0, right: '10px' },
@@ -43,7 +64,7 @@ const transitionStyles = ({
 
   return null;
 };
-class SnackBar extends Component {
+class Snackbar extends Component {
   state = { in: true };
 
   static propTypes = {
@@ -56,6 +77,8 @@ class SnackBar extends Component {
     topRight: PropTypes.bool,
     bottomLeft: PropTypes.bool,
     bottomRight: PropTypes.bool,
+    bottomCenter: PropTypes.bool,
+    topCenter: PropTypes.bool,
     ...themePropTypes,
     onActionClick: PropTypes.func,
     onClose: PropTypes.func,
@@ -73,6 +96,8 @@ class SnackBar extends Component {
     topRight: true,
     bottomLeft: false,
     bottomRight: false,
+    bottomCenter: false,
+    topCenter: false,
     ...defaultThemePropTypes,
     onActionClick: undefined,
     onClose: undefined,
@@ -107,10 +132,12 @@ class SnackBar extends Component {
       danger,
       success,
       theme,
-      topRight,
-      bottomRight,
-      bottomLeft,
       topLeft,
+      bottomLeft,
+      bottomRight,
+      bottomCenter,
+      topCenter,
+      topRight,
       disabled,
       message,
       action,
@@ -165,7 +192,12 @@ class SnackBar extends Component {
             style={{
               ...style,
               ...transitionStyles({
-                topLeft, topRight, bottomLeft, bottomRight,
+                topLeft,
+                bottomLeft,
+                bottomRight,
+                bottomCenter,
+                topCenter,
+                topRight,
               })[state],
             }}
           >
@@ -218,4 +250,4 @@ class SnackBar extends Component {
   }
 }
 
-export default SnackBar;
+export default Snackbar;

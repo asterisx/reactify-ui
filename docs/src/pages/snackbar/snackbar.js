@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/Button-has-type */
 import React, { Component } from 'react';
-import { SnackBar, Button } from '@../../../../reactify/build';
+import { Snackbar, Button } from '@../../../../reactify/build';
 import {
   actionCode,
   childrenCode,
@@ -18,7 +18,7 @@ import {
 import './snackbar.scss';
 import DemoCard from '../../components/demo-card';
 
-class SnackBarDemo extends Component {
+class SnackbarDemo extends Component {
   state = {
     showActionSnackbar: false,
     showSimpleSnackbar: false,
@@ -30,6 +30,8 @@ class SnackBarDemo extends Component {
     showPositionTopRightSnackbar: false,
     showPositionBottomLeftSnackbar: false,
     showPositionBottomRightSnackbar: false,
+    showPositionBottomCenterSnackbar: false,
+    showPositionTopCenterSnackbar: false,
     showThemePrimarySnackbar: false,
     showThemeSecondarySnackbar: false,
     showThemeDarkSnackbar: false,
@@ -54,14 +56,14 @@ class SnackBarDemo extends Component {
           <Button
             onClick={() => this.setState({ showSimpleSnackbar: true })}
           >
-            Show SnackBar
+            Show Snackbar
           </Button>
           {this.state.showSimpleSnackbar
           && (
-          <SnackBar
+          <Snackbar
             onClose={() => this.setState({ showSimpleSnackbar: false })}
             duration={3000}
-            message="SnackBar :)"
+            message="Snackbar :)"
           />
           )}
         </DemoCard>
@@ -74,11 +76,11 @@ class SnackBarDemo extends Component {
           <Button
             onClick={() => this.setState({ showMessageSnackbar: true })}
           >
-            Show SnackBar
+            Show Snackbar
           </Button>
           {this.state.showMessageSnackbar
           && (
-          <SnackBar
+          <Snackbar
             onClose={() => this.setState({ showMessageSnackbar: false })}
             duration={3000}
             message="This is a custom message!!!"
@@ -104,12 +106,12 @@ class SnackBarDemo extends Component {
           </Button>
           {this.state.showActionSnackbar
           && (
-          <SnackBar
+          <Snackbar
             onClose={() => this.setState({ showActionSnackbar: false })}
             duration={3000}
             action="undo"
             onActionClick={() => { this.setState({ showActionSnackbar: false }); alert('Acion Clicked'); }}
-            message="Disabled SnackBar :)"
+            message="Disabled Snackbar :)"
           />
           )}
         </DemoCard>
@@ -122,16 +124,16 @@ class SnackBarDemo extends Component {
           <Button
             onClick={() => this.setState({ showDisabledSnackbar: true })}
           >
-            Show Disabled SnackBar
+            Show Disabled Snackbar
           </Button>
           {this.state.showDisabledSnackbar
           && (
-          <SnackBar
+          <Snackbar
             onClose={() => this.setState({ showDisabledSnackbar: false })}
             duration={3000}
             disabled
             showDismiss
-            message="Disabled SnackBar :)"
+            message="Disabled Snackbar :)"
           />
           )}
         </DemoCard>
@@ -154,7 +156,7 @@ class SnackBarDemo extends Component {
           </Button>
           {this.state.showDismissSnackbar
           && (
-            <SnackBar
+            <Snackbar
               showDismiss
               message="Click on dismiss to dismiss now!"
               onClose={() => { this.setState({ showDismissSnackbar: false }); alert('Snackbar is closed'); }}
@@ -171,15 +173,15 @@ class SnackBarDemo extends Component {
           <Button
             onClick={() => this.setState({ showdurationSnackbar: true })}
           >
-            Show SnackBar for 10 sec
+            Show Snackbar for 10 sec
           </Button>
           {this.state.showdurationSnackbar
             && (
-              <SnackBar
+              <Snackbar
                 onClose={() => this.setState({ showdurationSnackbar: false })}
                 duration={10000}
                 showDismiss
-                message="This snackbar will show for ten seconds :)"
+                message="This Snackbar will show for ten seconds :)"
               />
             )}
         </DemoCard>
@@ -192,16 +194,16 @@ class SnackBarDemo extends Component {
           <Button
             onClick={() => this.setState({ showColorSnackbar: true })}
           >
-            Show SnackBar with custom color
+            Show Snackbar with custom color
           </Button>
           {this.state.showColorSnackbar
             && (
-              <SnackBar
+              <Snackbar
                 onClose={() => this.setState({ showColorSnackbar: false })}
                 duration={3000}
                 style={{ backgroundColor: 'violet' }}
                 showDismiss
-                message="A violet snackbar :O"
+                message="A violet Snackbar :O"
               />
             )}
         </DemoCard>
@@ -214,17 +216,17 @@ class SnackBarDemo extends Component {
           <Button
             onClick={() => this.setState({ showImageSnackbar: true })}
           >
-            Show SnackBar with Children
+            Show Snackbar with Children
           </Button>
           {this.state.showImageSnackbar
             && (
-            <SnackBar
+            <Snackbar
               onClose={() => this.setState({ showImageSnackbar: false })}
               style={{ backgroundColor: 'transparent' }}
               duration={5000}
             >
               <img alt="" width="auto" height="100px" src="https://i.gifer.com/YYdO.gif" />
-            </SnackBar>
+            </Snackbar>
             )}
         </DemoCard>
 
@@ -242,12 +244,12 @@ class SnackBarDemo extends Component {
           <br />
           {this.state.showPositionTopLeftSnackbar
             && (
-              <SnackBar
+              <Snackbar
                 topLeft
                 showDismiss
                 onClose={() => this.setState({ showPositionTopLeftSnackbar: false })}
                 duration={3000}
-                message="SnackBar at top left :)"
+                message="Snackbar at top left :)"
               />
             )
           }
@@ -261,12 +263,12 @@ class SnackBarDemo extends Component {
           <br />
           {this.state.showPositionBottomLeftSnackbar
             && (
-              <SnackBar
+              <Snackbar
                 bottomLeft
                 showDismiss
                 onClose={() => this.setState({ showPositionBottomLeftSnackbar: false })}
                 duration={3000}
-                message="SnackBar at bottom left :)"
+                message="Snackbar at bottom left :)"
               />
             )
           }
@@ -280,12 +282,12 @@ class SnackBarDemo extends Component {
           <br />
           {this.state.showPositionTopRightSnackbar
             && (
-              <SnackBar
+              <Snackbar
                 topRight
                 showDismiss
                 onClose={() => this.setState({ showPositionTopRightSnackbar: false })}
                 duration={3000}
-                message="SnackBar at top right :)"
+                message="Snackbar at top right :)"
               />
             )
           }
@@ -299,12 +301,50 @@ class SnackBarDemo extends Component {
           <br />
           {this.state.showPositionBottomRightSnackbar
             && (
-              <SnackBar
+              <Snackbar
                 bottomRight
                 showDismiss
                 onClose={() => this.setState({ showPositionBottomRightSnackbar: false })}
                 duration={3000}
-                message="SnackBar at bottom right :)"
+                message="Snackbar at bottom right :)"
+              />
+            )
+          }
+
+          <Button
+            onClick={() => this.setState({ showPositionTopCenterSnackbar: true })}
+          >
+            Show Top Center
+          </Button>
+          <br />
+          <br />
+          {this.state.showPositionTopCenterSnackbar
+            && (
+              <Snackbar
+                topCenter
+                showDismiss
+                onClose={() => this.setState({ showPositionTopCenterSnackbar: false })}
+                duration={3000}
+                message="Snackbar at top right :)"
+              />
+            )
+          }
+
+          <Button
+            onClick={() => this.setState({ showPositionBottomCenterSnackbar: true })}
+          >
+            Show Bottom Center
+          </Button>
+          <br />
+          <br />
+          {this.state.showPositionBottomCenterSnackbar
+            && (
+              <Snackbar
+                bottomCenter
+                showDismiss
+                onClose={() => this.setState({ showPositionBottomCenterSnackbar: false })}
+                duration={3000}
+                message="Snackbar at bottom right :)"
               />
             )
           }
@@ -318,18 +358,18 @@ class SnackBarDemo extends Component {
           <Button
             onClick={() => this.setState({ showThemePrimarySnackbar: true })}
           >
-            Show SnackBar with primary theme
+            Show Snackbar with primary theme
           </Button>
           <br />
           <br />
           {this.state.showThemePrimarySnackbar
             && (
-              <SnackBar
+              <Snackbar
                 onClose={() => this.setState({ showThemePrimarySnackbar: false })}
                 duration={3000}
                 showDismiss
                 primary
-                message="This snackbar has default theme"
+                message="This Snackbar has default theme"
               />
             )}
 
@@ -337,18 +377,18 @@ class SnackBarDemo extends Component {
             secondary
             onClick={() => this.setState({ showThemeSecondarySnackbar: true })}
           >
-            Show SnackBar with secondary theme
+            Show Snackbar with secondary theme
           </Button>
           <br />
           <br />
           {this.state.showThemeSecondarySnackbar
             && (
-              <SnackBar
+              <Snackbar
                 onClose={() => this.setState({ showThemeSecondarySnackbar: false })}
                 duration={3000}
                 showDismiss
                 secondary
-                message="This snackbar has default theme"
+                message="This Snackbar has default theme"
               />
             )}
 
@@ -357,18 +397,18 @@ class SnackBarDemo extends Component {
             dark
             onClick={() => this.setState({ showThemeDarkSnackbar: true })}
           >
-            Show SnackBar with dark theme
+            Show Snackbar with dark theme
           </Button>
           <br />
           <br />
           {this.state.showThemeDarkSnackbar
             && (
-              <SnackBar
+              <Snackbar
                 onClose={() => this.setState({ showThemeDarkSnackbar: false })}
                 duration={3000}
                 showDismiss
                 dark
-                message="This snackbar has dark theme"
+                message="This Snackbar has dark theme"
               />
             )}
 
@@ -376,18 +416,18 @@ class SnackBarDemo extends Component {
             light
             onClick={() => this.setState({ showThemeLightSnackbar: true })}
           >
-            Show SnackBar with light theme
+            Show Snackbar with light theme
           </Button>
           <br />
           <br />
           {this.state.showThemeLightSnackbar
             && (
-              <SnackBar
+              <Snackbar
                 onClose={() => this.setState({ showThemeLightSnackbar: false })}
                 duration={3000}
                 showDismiss
                 light
-                message="This snackbar has light theme"
+                message="This Snackbar has light theme"
               />
             )}
 
@@ -395,18 +435,18 @@ class SnackBarDemo extends Component {
             info
             onClick={() => this.setState({ showThemeInfoSnackbar: true })}
           >
-            Show SnackBar with info theme
+            Show Snackbar with info theme
           </Button>
           <br />
           <br />
           {this.state.showThemeInfoSnackbar
             && (
-              <SnackBar
+              <Snackbar
                 onClose={() => this.setState({ showThemeInfoSnackbar: false })}
                 duration={3000}
                 showDismiss
                 info
-                message="This snackbar has info theme"
+                message="This Snackbar has info theme"
               />
             )}
 
@@ -414,18 +454,18 @@ class SnackBarDemo extends Component {
             warning
             onClick={() => this.setState({ showThemeWarningSnackbar: true })}
           >
-            Show SnackBar with warning theme
+            Show Snackbar with warning theme
           </Button>
           <br />
           <br />
           {this.state.showThemeWarningSnackbar
             && (
-              <SnackBar
+              <Snackbar
                 onClose={() => this.setState({ showThemeWarningSnackbar: false })}
                 duration={3000}
                 showDismiss
                 warning
-                message="This snackbar has warning theme"
+                message="This Snackbar has warning theme"
               />
             )}
 
@@ -433,18 +473,18 @@ class SnackBarDemo extends Component {
             danger
             onClick={() => this.setState({ showThemeDangerSnackbar: true })}
           >
-            Show SnackBar with danger theme
+            Show Snackbar with danger theme
           </Button>
           <br />
           <br />
           {this.state.showThemeDangerSnackbar
             && (
-              <SnackBar
+              <Snackbar
                 onClose={() => this.setState({ showThemeDangerSnackbar: false })}
                 duration={3000}
                 showDismiss
                 danger
-                message="This snackbar has danger theme"
+                message="This Snackbar has danger theme"
               />
             )}
 
@@ -452,18 +492,18 @@ class SnackBarDemo extends Component {
             success
             onClick={() => this.setState({ showThemeSuccessSnackbar: true })}
           >
-            Show SnackBar with success theme
+            Show Snackbar with success theme
           </Button>
           <br />
           <br />
           {this.state.showThemeSuccessSnackbar
             && (
-              <SnackBar
+              <Snackbar
                 onClose={() => this.setState({ showThemeSuccessSnackbar: false })}
                 duration={3000}
                 showDismiss
                 success
-                message="This snackbar has success theme"
+                message="This Snackbar has success theme"
               />
             )}
         </DemoCard>
@@ -476,16 +516,16 @@ class SnackBarDemo extends Component {
           <Button
             onClick={() => this.setState({ showClassNameSnackbar: true })}
           >
-            Show SnackBar with custom class
+            Show Snackbar with custom class
           </Button>
           {this.state.showClassNameSnackbar
             && (
-              <SnackBar
+              <Snackbar
                 onClose={() => this.setState({ showClassNameSnackbar: false })}
                 duration={3000}
                 showDismiss
                 className="p-3 bg-primary"
-                message="This snackbar has custom class"
+                message="This Snackbar has custom class"
               />
             )}
         </DemoCard>
@@ -494,4 +534,4 @@ class SnackBarDemo extends Component {
   }
 }
 
-export default SnackBarDemo;
+export default SnackbarDemo;
