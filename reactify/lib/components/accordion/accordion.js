@@ -8,6 +8,7 @@ class Accordion extends Comment {
       children,
       index,
       open,
+      disabled,
       onHeaderClick,
     }) => (
       <div
@@ -20,7 +21,8 @@ class Accordion extends Comment {
             return null;
           } if (child.type === Accordion.body) {
             return React.cloneElement(child, {
-              toggleItem: () => onHeaderClick(index),
+              toggleItem: () => { if (onHeaderClick) onHeaderClick(index); },
+              disabled,
             });
           }
           return child;
@@ -115,6 +117,19 @@ Accordion.propTypes = {
 Accordion.defaultProps = {
   singular: false,
   multiple: true,
+};
+
+Accordion.Item.propTypes = {
+  index: PropTypes.number.isRequired,
+  open: PropTypes.bool,
+  disabled: PropTypes.bool,
+  onHeaderClick: PropTypes.func,
+};
+
+Accordion.Item.defaultProps = {
+  open: false,
+  disabled: false,
+  onHeaderClick: undefined,
 };
 
 export default Accordion;
