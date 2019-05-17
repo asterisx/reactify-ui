@@ -148,6 +148,7 @@ class Snackbar extends Component {
       style,
       ...otherProps
     } = this.props;
+    const { dismiss } = this;
     return createPortal(
       <Transition
         appear
@@ -201,47 +202,49 @@ class Snackbar extends Component {
               })[state],
             }}
           >
-            {children || (
-              <div
-                css={[styles.options]}
-              >
-                <span
-                  css={[
-                    styles.cursorPointer,
-                    styles.paddingBoth,
-                  ]}
-                  className={BEMClassNames.message}
+            {children
+              ? (() => { if (typeof children === 'function') return children({ dismiss }); return children; })()
+              : (
+                <div
+                  css={[styles.options]}
                 >
-                  {message}
-                </span>
+                  <span
+                    css={[
+                      styles.cursorPointer,
+                      styles.paddingBoth,
+                    ]}
+                    className={BEMClassNames.message}
+                  >
+                    {message}
+                  </span>
 
-                {!!action && (
-                <span
-                  css={[
-                    styles.cursorPointer,
-                    styles.paddingBoth,
-                  ]}
-                  className={BEMClassNames.action}
-                  onClick={() => { if (this.props.onActionClick) this.props.onActionClick(); }}
-                >
-                  {action}
-                </span>
-                )}
+                  {!!action && (
+                  <span
+                    css={[
+                      styles.cursorPointer,
+                      styles.paddingBoth,
+                    ]}
+                    className={BEMClassNames.action}
+                    onClick={() => { if (this.props.onActionClick) this.props.onActionClick(); }}
+                  >
+                    {action}
+                  </span>
+                  )}
 
-                {showDismiss && (
-                <span
-                  css={[
-                    styles.cursorPointer,
-                    styles.paddingBoth,
-                  ]}
-                  className={BEMClassNames.dismiss}
-                  onClick={this.dismiss}
-                >
-            dismiss
-                </span>
-                )}
-              </div>
-            )}
+                  {showDismiss && (
+                  <span
+                    css={[
+                      styles.cursorPointer,
+                      styles.paddingBoth,
+                    ]}
+                    className={BEMClassNames.dismiss}
+                    onClick={dismiss}
+                  >
+                    dismiss
+                  </span>
+                  )}
+                </div>
+              )}
           </div>
         )}
       </Transition>,

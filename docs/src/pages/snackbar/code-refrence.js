@@ -1,152 +1,153 @@
 const actionCode = `
-<SnackBar
+<Snackbar
     duration={3000}
     action="undo"
     onActionClick={() => alert("Acion Clicked")} 
-    message="Disabled SnackBar :)"
+    message="Disabled Snackbar :)"
 />
 `;
 const childrenCode = `
-<SnackBar
+<Snackbar
     style={{backgroundColor: 'transparent'}}
     duration={5000}
 >
     <img alt="" width="auto" height="100px" src="https://i.gifer.com/YYdO.gif" />
-</SnackBar>
+</Snackbar>
 `;
 const customColorCode = `
-<SnackBar
+<Snackbar
     duration={3000}
     style={{ backgroundColor: 'violet' }}
     showDismiss
-    message="A violet snackbar :O"
+    message="A violet Snackbar :O"
 />
 `;
 const customClassCode = `
-<SnackBar
+<Snackbar
     duration={3000}
     showDismiss
     className="p-3 bg-primary"
-    message="This snackbar has custom class"
+    message="This Snackbar has custom class"
 />
 `;
 const customThemeCode = `
-<SnackBar
+<Snackbar
     duration={3000}
     showDismiss
     primary
-    message="This snackbar has primary theme"
+    message="This Snackbar has primary theme"
 />
 
-<SnackBar
+<Snackbar
     duration={3000}
     showDismiss
     secondary
-    message="This snackbar has secondary theme"
+    message="This Snackbar has secondary theme"
 />
 
-<SnackBar
+<Snackbar
     duration={3000}
     showDismiss
     dark
-    message="This snackbar has dark theme"
+    message="This Snackbar has dark theme"
 />
 
-<SnackBar
+<Snackbar
     duration={3000}
     showDismiss
     light
-    message="This snackbar has light theme"
+    message="This Snackbar has light theme"
 />
 
-<SnackBar
+<Snackbar
     duration={3000}
     showDismiss
     info
-    message="This snackbar has info theme"
+    message="This Snackbar has info theme"
 />
 
-<SnackBar
+<Snackbar
     duration={3000}
     showDismiss
     warning
-    message="This snackbar has warning theme"
+    message="This Snackbar has warning theme"
 />
 
-<SnackBar
+<Snackbar
     duration={3000}
     showDismiss
     danger"
-    message="This snackbar has danger theme"
+    message="This Snackbar has danger theme"
 />
 
-<SnackBar
+<Snackbar
     duration={3000}
     showDismiss
     success
-    message="This snackbar has success theme"
+    message="This Snackbar has success theme"
 />
 `;
 const durationCode = `
-<SnackBar
+<Snackbar
     duration={10000}
     showDismiss
-    message="This snackbar will show for ten seconds :)"
+    message="This Snackbar will show for ten seconds :)"
 />
 `;
 const disabledCode = `
-<SnackBar
+<Snackbar
     duration={3000}
     disabled
-    message="Disabled SnackBar :)"
+    message="Disabled Snackbar :)"
 />
 `;
 const dismissCode = `
-<SnackBar
+<Snackbar
     showDismiss
     message="Click on dismiss to dismiss now!"
-    duration={3000}
+    onClose={() => { this.setState({ showDismissSnackbar: false }); alert('Snackbar is closed'); }}
+    duration={5000}
 />
 `;
 const messageCode = `
-<SnackBar
+<Snackbar
     duration={3000}
     message="This is a custom message!!!"
 />
 `;
 const positionCode = `
-<SnackBar
+<Snackbar
     topLeft
     showDismiss
     duration={3000}
-    message="SnackBar at top left :)"
+    message="Snackbar at top left :)"
 />
 
-<SnackBar
+<Snackbar
     bottomLeft
     showDismiss
     duration={3000}
-    message="SnackBar at bottom left :)"
+    message="Snackbar at bottom left :)"
 />
 
-<SnackBar
+<Snackbar
     topRight
     showDismiss
     duration={3000}
-    message="SnackBar at top right :)"
+    message="Snackbar at top right :)"
 />
 
-<SnackBar
+<Snackbar
     bottomRight
     showDismiss
     duration={3000}
-    message="SnackBar at bottom right :)"
+    message="Snackbar at bottom right :)"
 />
 `;
 const simpleCode = `
-<SnackBar
+<Snackbar
     duration={3000}
-    message="SnackBar :)"
+    message="Snackbar :)"
 />
 `;
 

@@ -9,15 +9,16 @@ describe('Snackbar Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<Snackbar />);
         expect(mountWrapper).toBeDefined();
-    })
+    });
 
     it('should display children prop passed', () => {
         let someClass = "someClass";
         let childElem = <div className={someClass}></div>;
         const mountWrapper = mount(<Snackbar>{childElem}</Snackbar>);
+        console.log(mountWrapper);
         const childContent = mountWrapper.find(`.${someClass}`);
         expect(childContent.exists()).toBeTruthy();
-    })
+    });
 
     describe('props', () => {
         it('should accept className prop pass it to the root container', () => {

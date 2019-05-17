@@ -10,6 +10,9 @@ export const styles = {
     justifyContent: 'space-between',
     alignContent: 'center',
     alignItems: 'center',
+    border: '2px solid black',
+    padding: '15px',
+    borderRadius: '10px',
   },
   input: {
     border: 0,
@@ -31,6 +34,9 @@ export const styles = {
   error: {
     fontSize: '0.8em',
     color: 'red',
+  },
+  flexStart: {
+    alignSelf: 'flex-start',
   },
 
   getDisabledStyle: commonStyles.get.disabled.style,

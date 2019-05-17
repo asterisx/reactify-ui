@@ -92,6 +92,7 @@ class Login extends React.Component {
           ]}
           {...otherProps}
         >
+          <h4>Login</h4>
           <div
             css={[
               styles.fieldContainer,
@@ -127,7 +128,15 @@ class Login extends React.Component {
                 primary
               />
             </div>
-            {username.isError && <span css={[styles.error]}>{username.errorText}</span>}
+            {username.isError && (
+            <span
+              css={[
+                styles.error,
+                styles.flexStart]}
+            >
+              {username.errorText}
+            </span>
+            )}
           </div>
 
           <div
@@ -165,7 +174,15 @@ class Login extends React.Component {
                 primary
               />
             </div>
-            {password.isError && <span css={[styles.error]}>{password.errorText}</span>}
+            {password.isError && (
+            <span
+              css={[
+                styles.error,
+                styles.flexStart]}
+            >
+              {password.errorText}
+            </span>
+            )}
           </div>
           <div
             css={[
