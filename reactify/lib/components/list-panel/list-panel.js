@@ -81,6 +81,18 @@ class ListPanel extends Component {
     });
   }
 
+  static getDerivedStateFromProps(props) {
+    let selectedindexs = [];
+    React.Children.forEach(props.children, (child) => {
+      if (props.singular && !props.multiple && child.selected) {
+        selectedindexs = [child.index];
+      } else if (props.multiple && child.selected) {
+        selectedindexs.push(child.index);
+      }
+    });
+    return { selectedindexs };
+  }
+
   toggleState = (index) => {
     if (this.props.singular && !this.props.multiple) {
       this.setState(
