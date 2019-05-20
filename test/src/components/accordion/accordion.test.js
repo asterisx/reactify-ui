@@ -1,0 +1,117 @@
+import React from 'react';
+import { Accordion } from '@../../../../reactify/build';
+import { mount } from 'enzyme';
+import { matchers } from 'jest-emotion';
+import sinon from 'sinon';
+import { displaysChildren, hasDisabledStyle } from '../../common';
+
+expect.extend(matchers);
+
+describe('Accordion Component', () => {
+    it('renders correctly', () => {
+        const mountWrapper = mount(<Accordion />);
+        expect(mountWrapper).toBeDefined();
+    });
+
+    displaysChildren(<Accordion></Accordion>);
+
+    hasDisabledStyle(<Accordion.Header></Accordion.Header>);
+
+    it('should call callback when its clicked', () => {
+        const spy = sinon.spy();
+        const mountWrapper = mount(
+            <Accordion onChange={spy}>
+                <Accordion.Item index={1}>
+                    <Accordion.Header>
+
+                    </Accordion.Header>
+                </Accordion.Item>
+            </Accordion>
+        );
+        const headerWrapper = mountWrapper.find(Accordion.Header);
+        headerWrapper.simulate('click');
+        expect(spy.called).toBeTruthy();
+    });
+
+    it('can only select one item when in singular mode', () => {
+        const indexes = [1, 2, 3];
+        const mountWrapper = mount(
+            <Accordion singular>
+                <Accordion.Item index={indexes[0]}>
+                    <Accordion.Header>
+                    </Accordion.Header>
+                </Accordion.Item>
+                <Accordion.Item index={indexes[1]}>
+                    <Accordion.Header>
+                    </Accordion.Header>
+                </Accordion.Item>
+                <Accordion.Item index={indexes[2]}>
+                    <Accordion.Header>
+                    </Accordion.Header>
+                </Accordion.Item>
+            </Accordion>
+        );
+
+        const headerWrapper = mountWrapper.find(Accordion.Header).at(0);
+        headerWrapper.simulate('click');
+
+        expect(mountWrapper.state().items[indexes[0]].open).toBeTruthy();
+        expect(mountWrapper.state().items[indexes[1]]).not.toBeDefined();
+        expect(mountWrapper.state().items[indexes[2]]).not.toBeDefined();
+
+        const headerWrapper1 = mountWrapper.find(Accordion.Header).at(1);
+        headerWrapper1.simulate('click');
+
+        expect(mountWrapper.state().items[indexes[0]]).not.toBeDefined();
+        expect(mountWrapper.state().items[indexes[1]].open).toBeTruthy();
+        expect(mountWrapper.state().items[indexes[2]]).not.toBeDefined();
+
+        const headerWrapper2 = mountWrapper.find(Accordion.Header).at(2);
+        headerWrapper2.simulate('click');
+
+        expect(mountWrapper.state().items[indexes[0]]).not.toBeDefined();
+        expect(mountWrapper.state().items[indexes[1]]).not.toBeDefined();
+        expect(mountWrapper.state().items[indexes[2]].open).toBeTruthy();
+    });
+
+    it('can select multiple items when in multiple mode', () => {
+        const indexes = [1, 2, 3];
+        const mountWrapper = mount(
+            <Accordion>
+                <Accordion.Item index={indexes[0]}>
+                    <Accordion.Header>
+                    </Accordion.Header>
+                </Accordion.Item>
+                <Accordion.Item index={indexes[1]}>
+                    <Accordion.Header>
+                    </Accordion.Header>
+                </Accordion.Item>
+                <Accordion.Item index={indexes[2]}>
+                    <Accordion.Header>
+                    </Accordion.Header>
+                </Accordion.Item>
+            </Accordion>
+        );
+
+        const headerWrapper = mountWrapper.find(Accordion.Header).at(0);
+        headerWrapper.simulate('click');
+
+        expect(mountWrapper.state().items[indexes[0]].open).toBeTruthy();
+        expect(mountWrapper.state().items[indexes[1]].open).toBeFalsy();
+        expect(mountWrapper.state().items[indexes[2]].open).toBeFalsy();
+
+        const headerWrapper1 = mountWrapper.find(Accordion.Header).at(1);
+        headerWrapper1.simulate('click');
+
+        expect(mountWrapper.state().items[indexes[0]].open).toBeTruthy();
+        expect(mountWrapper.state().items[indexes[1]].open).toBeTruthy();
+        expect(mountWrapper.state().items[indexes[2]].open).toBeFalsy();
+
+        const headerWrapper2 = mountWrapper.find(Accordion.Header).at(2);
+        headerWrapper2.simulate('click');
+
+        expect(mountWrapper.state().items[indexes[0]].open).toBeTruthy();
+        expect(mountWrapper.state().items[indexes[1]].open).toBeTruthy();
+        expect(mountWrapper.state().items[indexes[2]].open).toBeTruthy();
+    });
+});

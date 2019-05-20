@@ -73,40 +73,50 @@ class ListPanel extends Component {
     </li>
   );
 
-  state = { selectedindexs: [] };
+  state = { items: {} };
 
   componentDidMount() {
+    let items = {};
     React.Children.forEach(this.props.children, (child) => {
-      if (child.props.selected) { this.toggleState(child.props.index); }
+      const { index, selected } = child.props;
+      if (this.props.singular && !this.props.multiple) {
+        items = {};
+      }
+      items[index] = { selected };
+    });
+    this.setState({
+      items,
     });
   }
 
-  toggleState = (index) => {
-    if (this.props.singular && !this.props.multiple) {
-      this.setState(
-        prevState => (
-          {
-            selectedindexs:
-             prevState.selectedindexs.findIndex(sk => sk === index) !== -1 ? [] : [index],
-          }),
-      );
-    } else if (this.props.multiple) {
-      this.setState(
-        prevState => ({
-          selectedindexs: prevState.selectedindexs.findIndex(sk => sk === index) !== -1
-            ? prevState.selectedindexs.filter(sk => sk !== index)
-            : prevState.selectedindexs.concat([index]),
-        }),
-      );
-    }
-  }
-
   toggleSelect = (index) => {
-    this.toggleState(index);
-    if (this.props.onSelectionChange) {
-      this.props.onSelectionChange({
-        index,
-        selected: this.state.selectedindexs.findIndex(sk => sk === index) === -1,
+    if (this.props.singular && !this.props.multiple) {
+      const items = {};
+      if (Object.prototype.hasOwnProperty.call(this.state.items, index)) {
+        items[index] = { selected: !this.state.items[index].selected };
+      } else items[index] = { selected: true };
+      this.setState({
+        items,
+      }, () => {
+        if (this.props.onSelectionChange) {
+          this.props.onSelectionChange({
+            index,
+            selected: this.state.items[index].selected,
+          });
+        }
+      });
+    } else {
+      const { items } = this.state;
+      items[index].selected = !items[index].selected;
+      this.setState({
+        items,
+      }, () => {
+        if (this.props.onSelectionChange) {
+          this.props.onSelectionChange({
+            index,
+            selected: this.state.items[index].selected,
+          });
+        }
       });
     }
   }
@@ -133,7 +143,7 @@ class ListPanel extends Component {
       onSelectionChange,
       ...otherProps
     } = this.props;
-
+    const { items } = this.state;
     return (
       <ul
         css={[
@@ -158,7 +168,8 @@ class ListPanel extends Component {
         {React.Children.map(children, (child) => {
           if (child.type === ListPanel.Item) {
             return React.cloneElement(child, {
-              selected: this.state.selectedindexs.findIndex(sk => sk === child.props.index) !== -1,
+              selected: items[child.props.index]
+              && items[child.props.index].selected,
               onClick: (evt) => {
                 if (child.props.isSelectable) this.toggleSelect(child.props.index);
                 if (child.props.onClick) child.props.onClick(evt);

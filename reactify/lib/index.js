@@ -1,3 +1,4 @@
+import Accordion from './components/accordion';
 import Alert from './components/alert';
 import Badge from './components/badge';
 import Button from './components/button';
@@ -56,6 +57,7 @@ const Constants = {
 };
 
 export {
+  Accordion,
   Alert,
   Badge,
   Button,
