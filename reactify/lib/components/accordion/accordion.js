@@ -1,135 +1,189 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { FaAngleDown } from 'react-icons/fa';
-import { styles } from './styles';
+import { FaPlus, FaMinus } from 'react-icons/fa';
+import { styles, BEMClassNames } from './styles';
 
-class Accordion extends Comment {
-    static item = ({
-      children,
-      index,
-      open,
-      disabled,
-      onHeaderClick,
-    }) => (
+class Accordion extends Component {
+  static Item = ({
+    children,
+    index,
+    open,
+    disabled,
+    onHeaderClick,
+    ...otherProps
+  }) => (
+    <div
+      {...otherProps}
+    >
+      {React.Children.map(children, (child) => {
+        if ((child.type === Accordion.Body) && !open) {
+          return null;
+        } if (child.type === Accordion.Header) {
+          return React.cloneElement(child, {
+            toggleItem: () => { if (onHeaderClick) onHeaderClick(index); },
+            open,
+            disabled,
+          });
+        }
+        return child;
+      })}
+    </div>
+  )
+
+  static Header = ({
+    children,
+    icon,
+    showIcon,
+    disabled,
+    open,
+    toggleItem,
+    ...otherProps
+  }) => (typeof children === 'function' ? children({ toggleItem, disabled })
+    : (
       <div
         css={[
-          styles.item,
+          styles.header,
+          styles.getDisabledStyle({ disabled }),
+        ]}
+        onClick={toggleItem}
+        {...otherProps}
+      >
+        {children}
+        {showIcon && (
+          <span>
+            {icon || (open
+              ? <FaMinus className={BEMClassNames.icon} />
+              : <FaPlus className={BEMClassNames.icon} />)}
+          </span>
+        )}
+      </div>
+    ))
+
+  static Body = ({
+    children,
+    ...otherProps
+  }) => (
+    <div
+      css={[
+        styles.body,
+      ]}
+      {...otherProps}
+    >
+      {children}
+    </div>
+  )
+
+  state = {
+    items: {},
+  }
+
+  componentDidMount() {
+    const { children, singular } = this.props;
+    let items = {};
+    React.Children.forEach(children, (child) => {
+      const { index, open } = child.props;
+      if (singular && child.open) {
+        items = {};
+      }
+      items[index] = { open };
+    });
+    this.setState({ items });
+  }
+
+  toggleItem = (index) => {
+    if (this.props.multiple && !this.props.singular) {
+      const { items } = this.state;
+      items[index].open = !items[index].open;
+      this.setState({
+        items,
+      }, () => {
+        if (this.props.onChange) {
+          this.props.onChange({ index, opened: this.state.items[index].open });
+        }
+      });
+    } else {
+      const items = {};
+      if (Object.prototype.hasOwnProperty.call(this.state.items, index)) {
+        items[index] = { open: !this.state.items[index].open };
+      } else items[index] = { open: true };
+      this.setState({
+        items,
+      }, () => {
+        if (this.props.onChange) {
+          this.props.onChange({ index, opened: this.state.items[index].open });
+        }
+      });
+    }
+  }
+
+  render() {
+    const {
+      children,
+      singular,
+      multiple,
+      disabled,
+      ...otherProps
+    } = this.props;
+    const { items } = this.state;
+    const { toggleItem } = this;
+    return (
+      <div
+        {...otherProps}
+        css={[
+          styles.getDisabledStyle({ disabled }),
         ]}
       >
         {React.Children.map(children, (child) => {
-          if ((child.type === Accordion.body) && !open) {
-            return null;
-          } if (child.type === Accordion.body) {
+          if (child.type === Accordion.Item) {
             return React.cloneElement(child, {
-              toggleItem: () => { if (onHeaderClick) onHeaderClick(index); },
-              disabled,
+              open: items[child.props.index] && items[child.props.index].open,
+              onHeaderClick: () => toggleItem(child.props.index),
             });
           }
           return child;
         })}
       </div>
-    )
-
-    static header = ({
-      children,
-      icon,
-      showIcon,
-      disabled,
-      toggleItem,
-    }) => (typeof children === 'function' ? children({ toggleItem, disabled })
-      : (
-        <div css={[
-          styles.header,
-          styles.getDisabledStyle({ disabled }),
-        ]}
-        >
-          {children}
-          {showIcon && <span onClick={toggleItem}>{icon || <FaAngleDown />}</span>}
-        </div>
-      ))
-
-    static body = ({
-      children,
-    }) => (
-      <div css={[
-        styles.body,
-      ]}
-      >
-        {children}
-      </div>
-    )
-
-    state = {
-      openAccordionIndexes: [],
-    }
-
-    componentDidMount() {
-      React.Children.forEach(this.props.children, (child) => {
-        if (child.props.open) { this.toggleState(child.props.index); }
-      });
-    }
-
-    static getDerivedStateFromProps(props) {
-      let openindexs = [];
-      React.Children.forEach(props.children, (child) => {
-        if (props.singular && child.open) {
-          openindexs = [child.index];
-        } else if (props.multiple && !props.singular && child.open) {
-          openindexs.push(child.index);
-        }
-      });
-      return { openindexs };
-    }
-
-    render() {
-      const {
-        children,
-        singular,
-        multiple,
-        ...otherProps
-      } = this.props;
-      const { openAccordionIndexes } = this.state;
-      return (
-        <div
-          css={[
-            styles.accordion,
-          ]}
-          {...otherProps}
-        >
-          {React.Children.map(children, (child) => {
-            if (child.type === Accordion.Item) {
-              return React.cloneElement(child, {
-                open: openAccordionIndexes.findIndex(sk => sk === child.props.index) !== -1,
-              });
-            }
-            return child;
-          })}
-        </div>
-      );
-    }
+    );
+  }
 }
+
+Accordion.Item.displayName = 'Accordion.Item';
+Accordion.Header.displayName = 'Accordion.Header';
+Accordion.Body.displayName = 'Accordion.Body';
 
 Accordion.propTypes = {
   singular: PropTypes.bool,
   multiple: PropTypes.bool,
+  disabled: PropTypes.bool,
 };
 
 Accordion.defaultProps = {
   singular: false,
   multiple: true,
+  disabled: false,
 };
 
 Accordion.Item.propTypes = {
   index: PropTypes.number.isRequired,
   open: PropTypes.bool,
   disabled: PropTypes.bool,
-  onHeaderClick: PropTypes.func,
+  onChange: PropTypes.func,
 };
 
 Accordion.Item.defaultProps = {
   open: false,
   disabled: false,
-  onHeaderClick: undefined,
+  onChange: undefined,
+};
+
+Accordion.Header.propTypes = {
+  icon: PropTypes.element,
+  showIcon: PropTypes.bool,
+};
+
+Accordion.Header.defaultProps = {
+  icon: undefined,
+  showIcon: true,
 };
 
 export default Accordion;

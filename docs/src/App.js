@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import './App.scss';
+import AccordionDemo from './pages/accordion';
 import AlertDemo from './pages/alert';
 import BadgeDemo from './pages/badge';
 import {
@@ -61,6 +62,11 @@ const App = () => (
         <div className="card text-white bg-dark mb-3 col-2">
           <h3 className="card-header">Components</h3>
           <ul className="card-body">
+            <li className="list-group-item">
+              <Link className="d-block" to="/accordion">
+                Accordion
+              </Link>
+            </li>
             <li className="list-group-item">
               <Link className="d-block" to="/alert">
                 Alert
@@ -315,6 +321,7 @@ const App = () => (
         </div>
         <div className="col-10 overflow-scroll">
           <Route exact path="/reactify" component={AlertDemo} />
+          <Route exact path="/accordion" component={AccordionDemo} />
           <Route exact path="/alert" component={AlertDemo} />
           <Route exact path="/badge" component={BadgeDemo} />
           <Route exact path="/balls" component={BallsDemo} />
