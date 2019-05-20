@@ -2,6 +2,7 @@ import React from 'react';
 import { Paper, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -9,7 +10,9 @@ describe('Paper Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<Paper>Some Text</Paper>);
         expect(mountWrapper).toBeDefined();
-    })
+    });
+
+    displaysChildren(<Paper></Paper>);
 
     describe('props', () => {
         it('should have correct size passed as props', () => {

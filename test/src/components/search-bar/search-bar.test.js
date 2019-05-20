@@ -3,6 +3,7 @@ import { SearchBar, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -13,10 +14,8 @@ describe('SearchBar Component', () => {
     });
 
     describe('props', () => {
-        it('should have disabled class when disabled prop is passed', () => {
-           /*  const mountWrapper = mount(<SearchBar to={10000} disabled />);
-            expect(mountWrapper.hasClass('reactify--disabled')).toBeTruthy(); */
-        });
+       
+        hasDisabledStyle(<SearchBar></SearchBar>);
 
         it('should accept placeholder text', () => {
             const placeholder = 'some placeholder';

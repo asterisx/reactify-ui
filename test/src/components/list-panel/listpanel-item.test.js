@@ -4,6 +4,7 @@ import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
 import { darken } from 'polished';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -20,13 +21,7 @@ describe('ListPanel.Item Component', () => {
         expect(onClickCallback.called).toBeTruthy();
     });
 
-    it("should display children prop passed", () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass} />;
-        const mountWrapper = mount(<ListPanel.Item index={1}>{childElem}</ListPanel.Item>);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent).toBeDefined();
-    });
+    displaysChildren(<ListPanel.Item></ListPanel.Item>);
 
     it('should have border when border prop is passed', () => {
         const mountWrapper = mount(<ListPanel.Item bordered index={1}/>);

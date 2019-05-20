@@ -2,6 +2,7 @@ import React from 'react';
 import { RadioInput, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -63,10 +64,8 @@ describe('Radio Input Component', () => {
             expect(mountWrapper3.props().style.fontSize).toBe(fontSize);
         });
 
-        it('should have disabled class when disabled prop is pass', () => {
-           /*  const mountWrapper = mount(<RadioInput disabled={true} />);
-            expect(mountWrapper.hasClass('reactify--disabled')); */
-        });
+      
+        hasDisabledStyle(<RadioInput></RadioInput>);
  
         describe('should have correct theme when theme prop is passed', () => {
             let ThemeColors = Constants.defaultThemeColors;

@@ -2,6 +2,7 @@ import React from "react";
 import { StackedCard, Constants } from "reactify";
 import { mount } from "enzyme";
 import { matchers } from 'jest-emotion';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -28,13 +29,7 @@ describe("StackedCard Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    it("should display children prop passed", () => {
-      let someClass = "someClass";
-      let childElem = <div className={someClass} />;
-      const mountWrapper = mount(<StackedCard.Header>{childElem}</StackedCard.Header>);
-      const childContent = mountWrapper.find(`.${someClass}`);
-      expect(childContent).toBeDefined();
-    });
+    displaysChildren(<StackedCard.Header></StackedCard.Header>);
   });
 
   describe("StackedCard Body", () => {
@@ -49,13 +44,7 @@ describe("StackedCard Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    it("should display children prop passed", () => {
-      let someClass = "someClass";
-      let childElem = <div className={someClass} />;
-      const mountWrapper = mount(<StackedCard.Body>{childElem}</StackedCard.Body>);
-      const childContent = mountWrapper.find(`.${someClass}`);
-      expect(childContent).toBeDefined();
-    });
+    displaysChildren(<StackedCard.Body></StackedCard.Body>);
 
     it("should have bordered class", () => {
       const mountWrapper = mount(<StackedCard.Body bordered />);
@@ -84,13 +73,7 @@ describe("StackedCard Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    it("should display children prop passed", () => {
-      let someClass = "someClass";
-      let childElem = <div className={someClass} />;
-      const mountWrapper = mount(<StackedCard.Footer>{childElem}</StackedCard.Footer>);
-      const childContent = mountWrapper.find(`.${someClass}`);
-      expect(childContent).toBeDefined();
-    });
+    displaysChildren(<StackedCard.Footer></StackedCard.Footer>);
 
     it("should have bordered class", () => {
       const mountWrapper = mount(<StackedCard.Footer bordered />);
@@ -134,9 +117,8 @@ describe("StackedCard Component", () => {
       expect(mountWrapper3.props().style.height).toBe(height);
     });
 
-    it("should have disabled class when disabled prop is pass", () => {
-     /*  const mountWrapper = mount(<StackedCard disabled />);
-      expect(mountWrapper.hasClass("reactify--disabled")); */
-    });
+    displaysChildren(<StackedCard></StackedCard>);
+
+    hasDisabledStyle(<StackedCard></StackedCard>);
   });
 });

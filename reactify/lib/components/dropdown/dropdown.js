@@ -49,7 +49,7 @@ class Dropdown extends Component {
     )
 
     trayToggle = () => {
-      this.setState(prevProps => ({ isTrayOpen: !prevProps.isTrayOpen }));
+      setTimeout(() => this.setState(prevProps => ({ isTrayOpen: !prevProps.isTrayOpen })), 0);
     }
 
     onSelectedIndex = ({ index, selected }) => {

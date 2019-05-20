@@ -3,6 +3,7 @@ import { Tabs, Tab, GroupToggle, Button } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -14,13 +15,7 @@ describe('Tabs Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    it("should display children prop passed", () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass} />;
-        const mountWrapper = mount(<Tabs>{childElem}</Tabs>);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent).toBeDefined();
-    });
+    displaysChildren(<Tabs></Tabs>);
 
     it("tab headers should be disabled when tabsDisabled passed", () => {
         const mountWrapper = mount(

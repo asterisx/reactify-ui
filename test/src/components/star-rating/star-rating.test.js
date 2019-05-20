@@ -3,6 +3,7 @@ import { StarRating, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -10,7 +11,10 @@ describe('StarRating Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<StarRating />);
         expect(mountWrapper).toBeDefined();
-    })
+    });
+
+
+    hasDisabledStyle(<StarRating></StarRating>);
 
     describe('props', () => {
         it('should call onChange function when a rating is clicked', () => {

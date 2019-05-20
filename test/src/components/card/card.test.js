@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Constants } from "reactify";
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -29,13 +30,7 @@ describe("Card Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    it("should display children prop passed", () => {
-      let someClass = "someClass";
-      let childElem = <div className={someClass} />;
-      const mountWrapper = mount(<Card.Header>{childElem}</Card.Header>);
-      const childContent = mountWrapper.find(`.${someClass}`);
-      expect(childContent).toBeDefined();
-    });
+    displaysChildren(<Card.Header></Card.Header>);
   });
 
   describe("Card Body", () => {
@@ -50,13 +45,7 @@ describe("Card Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    it("should display children prop passed", () => {
-      let someClass = "someClass";
-      let childElem = <div className={someClass} />;
-      const mountWrapper = mount(<Card.Body>{childElem}</Card.Body>);
-      const childContent = mountWrapper.find(`.${someClass}`);
-      expect(childContent).toBeDefined();
-    });
+    displaysChildren(<Card.Body></Card.Body>);
 
     it("should have bordered class", () => {
       const mountWrapper = mount(<Card.Body bordered />);
@@ -85,13 +74,8 @@ describe("Card Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    it("should display children prop passed", () => {
-      let someClass = "someClass";
-      let childElem = <div className={someClass} />;
-      const mountWrapper = mount(<Card.Footer>{childElem}</Card.Footer>);
-      const childContent = mountWrapper.find(`.${someClass}`);
-      expect(childContent).toBeDefined();
-    });
+    displaysChildren(<Card.Footer></Card.Footer>);
+
 
     it("should have bordered style", () => {
       const mountWrapper = mount(<Card.Footer bordered />);
@@ -135,9 +119,6 @@ describe("Card Component", () => {
       expect(mountWrapper3.props().style.width).toBe(width);
     });
 
-    it("should have disabled class when disabled prop is pass", () => {
-      /* const mountWrapper = mount(<Card disabled />);
-      expect(mountWrapper.hasClass("reactify--disabled")); */
-    });
+    hasDisabledStyle(<Card></Card>);
   });
 });

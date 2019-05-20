@@ -4,6 +4,7 @@ import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
 import { darken } from 'polished';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -13,13 +14,9 @@ describe('ListPanel Component', () => {
         expect(mountWrapper).toBeDefined();
     })
 
-    it("should display children prop passed", () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass} />;
-        const mountWrapper = mount(<ListPanel>{childElem}</ListPanel>);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent).toBeDefined();
-    });
+    displaysChildren(<ListPanel></ListPanel>);
+
+    hasDisabledStyle(<ListPanel></ListPanel>);
 
     describe('props', () => {
         it('should call onSelectionChange function when List Panel item is clicked', () => {
@@ -111,11 +108,6 @@ describe('ListPanel Component', () => {
                 }, 0);
             });
         })
-
-        it('should have disabled class when disabled prop is passed', () => {
-           /*  const mountWrapper = mount(<ListPanel disabled />);
-            expect(mountWrapper.hasClass('reactify--disabled')).toBeTruthy(); */
-        });
 
         it('should have correct size passed as props and should drill it to List Items', () => {
             const mountWrapper = mount(<ListPanel><ListPanel.Item small index={0}/></ListPanel>);

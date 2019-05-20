@@ -2,6 +2,7 @@ import React from 'react';
 import { Alert, Constants } from '@../../../../reactify/build';
 import { shallow, mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -9,15 +10,9 @@ describe('Alert Component', () => {
     it('renders correctly', () => {
         const shallowWrapper = shallow(<Alert />);
         expect(shallowWrapper).toBeDefined();
-    })
+    });
 
-    it('should display children prop passed', () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass}></div>;
-        const shallowWrapper = shallow(<Alert>{childElem}</Alert>);
-        const childContent = shallowWrapper.find(`.${someClass}`);
-        expect(childContent).toBeDefined();
-    })
+    displaysChildren(<Alert></Alert>);
 
     describe('props', () => {
         it('should accept className prop and pass it to the root container', () => {

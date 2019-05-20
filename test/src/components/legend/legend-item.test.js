@@ -2,6 +2,7 @@ import React from 'react';
 import { LegendItem, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -9,15 +10,9 @@ describe('LegendItem Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<LegendItem />);
         expect(mountWrapper).toBeDefined();
-    })
+    });
 
-    it('should display children prop passed', () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass}></div>;
-        const mountWrapper = mount(<LegendItem>{childElem}</LegendItem>);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent).toBeDefined();
-    })
+    displaysChildren(<LegendItem></LegendItem>);
 
     describe('props', () => {
         it('should accept className prop and pass it to the root container', () => {

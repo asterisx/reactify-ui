@@ -2,6 +2,7 @@ import React from 'react';
 import { Badge, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -9,15 +10,11 @@ describe('Badge Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<Badge />);
         expect(mountWrapper).toBeDefined();
-    })
+    });
 
-    it('should display children prop passed', () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass}></div>;
-        const mountWrapper = mount(<Badge>{childElem}</Badge>);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent).toBeDefined();
-    })
+    displaysChildren(<Badge></Badge>);
+
+    hasDisabledStyle(<Badge></Badge>);
 
     describe('props', () => {
         it('should accept className prop and pass it to the root container', () => {
@@ -26,10 +23,6 @@ describe('Badge Component', () => {
             expect(mountWrapper.hasClass(someClass));
         });
 
-        it('should have disabled class when disabled prop is pass', () => {
-           /*  const mountWrapper = mount(<Badge disabled={true} />);
-            expect(mountWrapper.hasClass('reactify--disabled')); */
-        });
         describe('Badge Bubble', () => {
             it('renders correctly', () => {
                 const mountWrapper = mount(<Badge.Bubble />);

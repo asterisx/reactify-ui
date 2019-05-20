@@ -4,6 +4,7 @@ import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
 import { darken } from 'polished';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -13,16 +14,9 @@ describe('TopBar Component', () => {
         expect(mountWrapper).toBeDefined();
     })
 
-    it("should display children prop passed", () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass} />;
-        const mountWrapper = mount(<TopBar>{childElem}</TopBar>);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent).toBeDefined();
-    });
+    displaysChildren(<TopBar></TopBar>);
 
     describe('props', () => {
-
         it('should have disabled class when disabled prop is passed', () => {
            /*  const mountWrapper = mount(<TopBar disabled />);
             expect(mountWrapper.hasClass('reactify--disabled')).toBeTruthy(); */

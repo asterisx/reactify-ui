@@ -2,6 +2,7 @@ import React from "react";
 import { HorizontalCard, Constants } from "reactify";
 import { mount } from "enzyme";
 import { matchers } from 'jest-emotion';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -28,13 +29,7 @@ describe("HorizontalCard Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    it("should display children prop passed", () => {
-      let someClass = "someClass";
-      let childElem = <div className={someClass} />;
-      const mountWrapper = mount(<HorizontalCard.Header>{childElem}</HorizontalCard.Header>);
-      const childContent = mountWrapper.find(`.${someClass}`);
-      expect(childContent).toBeDefined();
-    });
+    displaysChildren(<HorizontalCard></HorizontalCard>);
   });
 
   describe("HorizontalCard Body", () => {
@@ -49,13 +44,7 @@ describe("HorizontalCard Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    it("should display children prop passed", () => {
-      let someClass = "someClass";
-      let childElem = <div className={someClass} />;
-      const mountWrapper = mount(<HorizontalCard.Body>{childElem}</HorizontalCard.Body>);
-      const childContent = mountWrapper.find(`.${someClass}`);
-      expect(childContent).toBeDefined();
-    });
+    displaysChildren(<HorizontalCard.Body></HorizontalCard.Body>);
 
     it("should have bordered class", () => {
       const mountWrapper = mount(<HorizontalCard.Body bordered />);
@@ -84,13 +73,7 @@ describe("HorizontalCard Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    it("should display children prop passed", () => {
-      let someClass = "someClass";
-      let childElem = <div className={someClass} />;
-      const mountWrapper = mount(<HorizontalCard.Footer>{childElem}</HorizontalCard.Footer>);
-      const childContent = mountWrapper.find(`.${someClass}`);
-      expect(childContent).toBeDefined();
-    });
+    displaysChildren(<HorizontalCard.Footer></HorizontalCard.Footer>);
 
     it("should have bordered class", () => {
       const mountWrapper = mount(<HorizontalCard.Footer bordered />);
@@ -134,9 +117,6 @@ describe("HorizontalCard Component", () => {
       expect(mountWrapper3.props().style.height).toBe(height);
     });
 
-    it("should have disabled class when disabled prop is pass", () => {
-     /*  const mountWrapper = mount(<HorizontalCard disabled />);
-      expect(mountWrapper.hasClass("reactify--disabled")); */
-    });
+    hasDisabledStyle(<HorizontalCard></HorizontalCard>);
   });
 });

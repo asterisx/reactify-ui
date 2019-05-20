@@ -2,6 +2,7 @@ import React from 'react';
 import { FullScreen } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -11,13 +12,7 @@ describe('FullScreen Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    it('should display children prop passed', () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass}></div>;
-        const mountWrapper = mount(<FullScreen>{childElem}</FullScreen>);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent).toBeDefined();
-    });
+    displaysChildren(<FullScreen></FullScreen>);
 
     it('can be proramatically expanded and reset', () => {
         let expandFunc = undefined, resetFunc = undefined;

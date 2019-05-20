@@ -3,6 +3,7 @@ import { Button, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import { darken } from 'polished';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -12,13 +13,9 @@ describe('Button Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    it('should display children prop passed', () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass}></div>;
-        const mountWrapper = mount(<Button>{childElem}</Button>);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent).toBeDefined();
-    });
+    displaysChildren(<Button></Button>);
+
+    hasDisabledStyle(<Button></Button>);
 
     describe('props', () => {
         it('should accept className prop and pass it to the root container', () => {
@@ -46,11 +43,6 @@ describe('Button Component', () => {
             const fontSize = "40px";
             const mountWrapper3 = mount(<Button style={{fontSize: fontSize}} />);
             expect(mountWrapper3.props().style.fontSize).toBe(fontSize);
-        });
-
-        it('should have disabled class when disabled prop is pass', () => {
-           /*  const mountWrapper = mount(<Button disabled={true} />);
-            expect(mountWrapper.hasClass('reactify--disabled')).to.be.true; */
         });
  
         describe('should have correct theme when theme prop is passed', () => {

@@ -2,6 +2,7 @@ import React from 'react';
 import { Checkbox, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -9,30 +10,27 @@ describe('Checkbox Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<Checkbox />);
         expect(mountWrapper).toBeDefined();
-    })
+    });
 
     it('defaults to unchecked state', () => {
         const mountWrapper = mount(<Checkbox />);
         expect(mountWrapper.state().checked).toBeFalsy();
-    })
+    });
 
     it('should be checked when checked prop is passed', () => {
         const mountWrapper = mount(<Checkbox checked />);
         expect(mountWrapper.state().checked).toBeTruthy();
-    })
+    });
 
     it('should change state when clicked', () => {
         const mountWrapper = mount(<Checkbox />);
         mountWrapper.simulate('click');
         expect(mountWrapper.state().checked).toBeTruthy();
-    })
-    it('should display children prop passed', () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass}></div>;
-        const mountWrapper = mount(<Checkbox>{childElem}</Checkbox>);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent).toBeDefined();
-    })
+    });
+    
+    displaysChildren(<Checkbox></Checkbox>);
+
+    hasDisabledStyle(<Checkbox></Checkbox>);
 
     describe('props', () => {
         it('should accept className prop and pass it to the root container', () => {
@@ -60,11 +58,6 @@ describe('Checkbox Component', () => {
             const fontSize = "40px";
             const mountWrapper3 = mount(<Checkbox style={{fontSize: fontSize}} />);
             expect(mountWrapper3.props().style.fontSize).toBe(fontSize);
-        });
-
-        it('should have disabled class when disabled prop is pass', () => {
-           /*  const mountWrapper = mount(<Checkbox disabled />);
-            expect(mountWrapper.hasClass('reactify--disabled')); */
         });
  
         describe('should have correct theme when theme prop is passed', () => {

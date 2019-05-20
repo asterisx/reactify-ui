@@ -4,6 +4,7 @@ import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
 import { darken } from 'polished';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -13,10 +14,7 @@ describe('Chips Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    it('should have disabled styles when disabled prop is passed', () => {
-        /*  const mountWrapper = mount(<ListPanel disabled />);
-         expect(mountWrapper.hasClass('reactify--disabled')).toBeTruthy(); */
-     });
+    hasDisabledStyle(<Chips></Chips>);
 
     it("should display children prop passed", () => {
         let someClass = "someClass";
@@ -31,11 +29,8 @@ describe('Chips Component', () => {
             const mountWrapper = mount(<Chip />);
             expect(mountWrapper).toBeDefined();
         });
-    
-        it('should have disabled styles when disabled prop is passed', () => {
-            /*  const mountWrapper = mount(<ListPanel disabled />);
-             expect(mountWrapper.hasClass('reactify--disabled')).toBeTruthy(); */
-         });
+
+        hasDisabledStyle(<Chip></Chip>);
     
         it('calls callback', () => {
             const onClickCallback = sinon.spy();

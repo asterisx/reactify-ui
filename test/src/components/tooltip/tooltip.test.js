@@ -3,6 +3,7 @@ import { Tooltip, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -11,6 +12,8 @@ describe('Tooltip Component', () => {
         const mountWrapper = mount(<Tooltip />);
         expect(mountWrapper).toBeDefined();
     });
+
+    displaysChildren(<Tooltip></Tooltip>);
 
     describe('props', () => {
         describe('position', () => {

@@ -3,6 +3,7 @@ import { Slider, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -14,10 +15,8 @@ describe('Slider Component', () => {
 
 
     describe('props', () => {
-        it('should have disabled class when disabled prop is passed', () => {
-           /*  const mountWrapper = mount(<Slider to={10000} disabled />);
-            expect(mountWrapper.hasClass('reactify--disabled')).toBeTruthy(); */
-        });
+      
+        hasDisabledStyle(<Slider></Slider>);
 
         it('should not allow to set value less than minAllowed and maxAllowed', () => {
             const minAllowed = 10;

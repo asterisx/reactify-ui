@@ -3,6 +3,7 @@ import { ProgressBar, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -14,10 +15,8 @@ describe('ProgressBar Component', () => {
 
 
     describe('props', () => {
-        it('should have disabled class when disabled prop is passed', () => {
-           /*  const mountWrapper = mount(<ProgressBar to={10000} disabled />);
-            expect(mountWrapper.hasClass('reactify--disabled')).toBeTruthy(); */
-        });
+       
+        hasDisabledStyle(<ProgressBar></ProgressBar>);
 
         it('should have stripes when striped is passed', () => {
             // TODO 

@@ -4,6 +4,7 @@ import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
 import { darken } from 'polished';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -13,13 +14,7 @@ describe('Dropdown Component', () => {
         expect(mountWrapper).toBeDefined();
     })
 
-    it("should display children prop passed", () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass} />;
-        const mountWrapper = mount(<Dropdown>{childElem}</Dropdown>);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent).toBeDefined();
-    });
+    displaysChildren(<Dropdown></Dropdown>);
 
     describe('breakpoints', () => {
         it('sm', () => {
@@ -56,8 +51,10 @@ describe('Dropdown Component', () => {
             const selectionCallback = sinon.spy();
             const mountWrapper = mount(<Dropdown className={someClass}><Dropdown.Item index={1}></Dropdown.Item></Dropdown>);
             mountWrapper.findWhere(n => n.name() === 'div' && n.hasClass(someClass)).simulate('click');
-            expect(mountWrapper.state().isTrayOpen).toBeTruthy();
-            expect(mountWrapper.find(ListPanel)).toBeDefined();
+            setTimeout(() => {
+                expect(mountWrapper.state().isTrayOpen).toBeTruthy();
+                expect(mountWrapper.find(ListPanel)).toBeDefined();
+            }, 0);
         });
 
         it('should call dropdown onSelectionChange when listpanel item is clicked', () => {
@@ -65,14 +62,13 @@ describe('Dropdown Component', () => {
             const selectionCallback = sinon.spy();
             const mountWrapper = mount(<Dropdown className={someClass} onSelectionChange={selectionCallback}><Dropdown.Item index={1}></Dropdown.Item></Dropdown>);
             mountWrapper.findWhere(n => n.name() === 'div' && n.hasClass(someClass)).simulate('click');
-            mountWrapper.find(ListPanel.Item).simulate('click');
-            expect(selectionCallback.called).toBeTruthy();
+            setTimeout(() => {
+                mountWrapper.find(ListPanel.Item).simulate('click');
+                expect(selectionCallback.called).toBeTruthy();
+            }, 0);
         });
 
-        it('should have disabled class when disabled prop is passed', () => {
-           /*  const mountWrapper = mount(<Dropdown disabled />);
-            expect(mountWrapper.hasClass('reactify--disabled')).toBeTruthy(); */
-        });
+        hasDisabledStyle(<Dropdown></Dropdown>);
 
         it('should accept ListPanel props and drill it to ListPanel', () => {
             const props = {

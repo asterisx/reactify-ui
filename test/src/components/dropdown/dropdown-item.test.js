@@ -2,6 +2,7 @@ import React from 'react';
 import { Dropdown, ListPanel, Constants, Portal } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -11,14 +12,7 @@ describe('Dropdown.Item Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    it("should display children prop passed", () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass} />;
-        const mountWrapper = mount(<Dropdown.Item>{childElem}</Dropdown.Item>);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent).toBeDefined();
-    });
-
+    displaysChildren(<Dropdown.Item></Dropdown.Item>);
     
     it('should accept ListPanel Item props and drill it to ListPanel Item', () => {
         const props = {

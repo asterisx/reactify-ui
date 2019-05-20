@@ -3,6 +3,8 @@ import { Snackbar, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
+import { displaysChildren, hasDisabledStyle } from '../../common';
+
 expect.extend(matchers);
 
 describe('Snackbar Component', () => {
@@ -11,14 +13,7 @@ describe('Snackbar Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    it('should display children prop passed', () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass}></div>;
-        const mountWrapper = mount(<Snackbar>{childElem}</Snackbar>);
-        console.log(mountWrapper);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent.exists()).toBeTruthy();
-    });
+    displaysChildren(<Snackbar></Snackbar>);
 
     describe('props', () => {
         it('should accept className prop pass it to the root container', () => {
@@ -50,10 +45,7 @@ describe('Snackbar Component', () => {
             expect(spy.called).toBeTruthy();
         });
 
-        it('should have disabled class when disabled prop is pass', () => {
-            /* const mountWrapper = mount(<Snackbar disabled={true} />);
-            expect(mountWrapper.hasClass('reactify--disabled')); */
-        });
+        hasDisabledStyle(<Snackbar></Snackbar>);
 
         it('should display the message correctly when message prop is passed', () => {
             let messageText = "This is a label";

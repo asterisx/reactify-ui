@@ -3,6 +3,7 @@ import { Modal, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -10,7 +11,9 @@ describe('Modal Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<Modal />);
         expect(mountWrapper).toBeDefined();
-    })
+    });
+
+    hasDisabledStyle(<Modal></Modal>);
 
     it('should call back function when closed on outside', () => {
         const spy = sinon.spy();
@@ -18,7 +21,7 @@ describe('Modal Component', () => {
         setTimeout(() => {
             expect(spy.called).toBeTruthy();
         }, 0);
-    })
+    });
 
     it('should have correct size passed as props', () => {
         const child = mount(<Modal small />).findWhere(n => n.name() === 'div' && n.hasClass('reactify-ui-modal__children'));

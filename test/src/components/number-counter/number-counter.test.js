@@ -3,6 +3,7 @@ import { NumberCounter, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -10,8 +11,7 @@ describe('NumberCounter Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<NumberCounter to={10000}/>);
         expect(mountWrapper).toBeDefined();
-    })
-
+    });
 
     describe('props', () => {
         //TODO change dynamically, interval, delay, onChange, onComplete
@@ -34,10 +34,7 @@ describe('NumberCounter Component', () => {
             }, 0);
         });
 
-        it('should have disabled class when disabled prop is passed', () => {
-           /*  const mountWrapper = mount(<NumberCounter to={10000} disabled />);
-            expect(mountWrapper.hasClass('reactify--disabled')).toBeTruthy(); */
-        });
+        hasDisabledStyle(<NumberCounter></NumberCounter>);
 
         it('should have custom color when color prop is passed', () => {
             const color = "violet"

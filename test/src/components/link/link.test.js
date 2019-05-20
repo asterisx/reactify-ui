@@ -3,6 +3,7 @@ import { Link, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -12,13 +13,7 @@ describe('Link Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    it('should display children prop passed', () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass}></div>;
-        const mountWrapper = mount(<Link>{childElem}</Link>);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent.exists()).toBeTruthy();
-    });
+    displaysChildren(<Link></Link>);
 
     describe('props', () => {
         it('should have custom color when color prop is passed', () => {

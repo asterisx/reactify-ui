@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -9,13 +10,17 @@ describe('Switch Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<Switch />);
         expect(mountWrapper).toBeDefined();
-    })
+    });
+
+    displaysChildren(<Switch></Switch>);
+
+    hasDisabledStyle(<Switch></Switch>);
 
     it('defaults to unchecked state', () => {
         const mountWrapper = mount(<Switch />);
         const switchInput = mountWrapper.find('.reactify-ui-switch__icon').at(1);
         expect(switchInput.props().checked).toBeFalsy();
-    })
+    });
 
     it('should be checked when checked prop is passed', () => {
         const mountWrapper = mount(<Switch checked={true}/>);
@@ -28,7 +33,7 @@ describe('Switch Component', () => {
         const switchInput = mountWrapper.find('.reactify-ui-switch__icon').at(1);
         switchInput.simulate('click');
         expect(switchInput.props().checked).toBeFalsy();
-    })
+    });
 
     describe('props', () => {
         it('should have correct iconColor passed as props', () => {
@@ -51,11 +56,6 @@ describe('Switch Component', () => {
             const fontSize = "40px";
             const mountWrapper3 = mount(<Switch style={{fontSize: fontSize}} />);
             expect(mountWrapper3.props().style.fontSize).toBe(fontSize);
-        });
-
-        it('should have disabled class when disabled prop is pass', () => {
-          /*   const mountWrapper = mount(<Switch disabled={true} />);
-            expect(mountWrapper.hasClass('reactify--disabled')).toBeTruthy(); */
         });
  
         describe('should have correct theme when theme prop is passed', () => {

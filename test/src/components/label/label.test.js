@@ -2,6 +2,7 @@ import React from 'react';
 import { Label, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
+import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
 
@@ -9,15 +10,9 @@ describe('Label Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<Label>Simple Label</Label>);
         expect(mountWrapper).toBeDefined();
-    })
+    });
 
-    it('should display children prop passed', () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass}></div>;
-        const mountWrapper = mount(<Label>{childElem}</Label>);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent).toBeDefined();
-    })
+    displaysChildren(<Label></Label>);
 
     describe('props', () => {
         it('should accept className prop and pass it to the root container', () => {

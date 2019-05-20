@@ -3,6 +3,8 @@ import { Dismiss, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
+import { displaysChildren, hasDisabledStyle } from '../../common';
+
 expect.extend(matchers);
 
 describe('Dismiss Component', () => {
@@ -11,13 +13,9 @@ describe('Dismiss Component', () => {
         expect(mountWrapper).toBeDefined();
     })
 
-    it('should display children prop passed', () => {
-        let someClass = "someClass";
-        let childElem = <div className={someClass}></div>;
-        const mountWrapper = mount(<Dismiss>{childElem}</Dismiss>);
-        const childContent = mountWrapper.find(`.${someClass}`);
-        expect(childContent.exists()).toBeTruthy();
-    });
+    displaysChildren(<Dismiss></Dismiss>);
+
+    hasDisabledStyle(<Dismiss></Dismiss>);
 
     it('should display custom icons', () => {
         let someClass = "someClass";
@@ -29,12 +27,6 @@ describe('Dismiss Component', () => {
         const mountWrapper1 = mount(<Dismiss closeIcon={childElem}></Dismiss>);
         const childContent1 = mountWrapper1.find(`.${someClass}`);
         expect(childContent1.exists()).toBeTruthy();
-    });
-
-
-    it('should have disabled class when disabled prop is pass', () => {
-        /* const mountWrapper = mount(<Dismiss disabled={true} />);
-        expect(mountWrapper.hasClass('reactify--disabled')); */
     });
 
     describe('props', () => {
