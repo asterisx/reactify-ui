@@ -59,22 +59,27 @@ const Highlight = ({
   danger,
   success,
   theme,
+  ...otherProps
 }) => (
-  // eslint-disable-next-line react/no-danger
-  <span dangerouslySetInnerHTML={getHighlightedText({
-    children,
-    filter,
-    insensitive,
-    primary,
-    secondary,
-    dark,
-    light,
-    info,
-    warning,
-    danger,
-    success,
-    theme,
-  })}
+  <span
+    // eslint-disable-next-line react/no-danger
+    dangerouslySetInnerHTML={
+      getHighlightedText({
+        children,
+        filter,
+        insensitive,
+        primary,
+        secondary,
+        dark,
+        light,
+        info,
+        warning,
+        danger,
+        success,
+        theme,
+      })
+    }
+    {...otherProps}
   />
 );
 

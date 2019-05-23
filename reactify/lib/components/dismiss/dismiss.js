@@ -65,8 +65,13 @@ class Dismiss extends Component {
     return null;
   }
 
-  close = () => {
-    this.setState({ closed: true }, () => { if (this.props.onClose) this.props.onClose(); });
+  close = (event) => {
+    this.setState(
+      {
+        closed: true,
+      },
+      () => { if (this.props.onClose) this.props.onClose({ event }); },
+    );
   }
 
   render() {
@@ -149,7 +154,11 @@ class Dismiss extends Component {
       <span
         className={BEMClassNames.close}
         css={[styles.close]}
-        onClick={() => { if (autoDismiss) { close(); } if (onCloseIconClick) onCloseIconClick(); }}
+        onClick={
+          (event) => {
+            if (autoDismiss) { close(event); }
+            if (onCloseIconClick) onCloseIconClick(event);
+          }}
       >
         {closeIcon || <IoIosClose />}
       </span>

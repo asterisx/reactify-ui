@@ -1,5 +1,5 @@
 const defaultSelectionCode = `
-<ListPanel multiple>
+<ListPanel multiple onItemClicked={props => console.log(props)}>
   <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
   <ListPanel.Item selected index={2}>Item 2</ListPanel.Item>
   <ListPanel.Item index={3}>Item 3</ListPanel.Item>
@@ -16,8 +16,8 @@ const borderedCode = `
   <ListPanel.Item index={5}>Item 5</ListPanel.Item>
 </ListPanel>
 `;
-const onSelectionChangeCode = `
-<ListPanel singular onSelectionChange={({ index, selected }) => alert('Index: ' + index + '\nSelected: ' + selected)}>
+const eventsCode = `
+<ListPanel onSelectionChange={({ event, index, selected }) => console.log(event, index, selected)} onItemClicked={({ event, index }) => console.log(event, index)}>
   <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
   <ListPanel.Item isSelectable={false} index={2}>Item 2</ListPanel.Item>
   <ListPanel.Item index={3}>Item 3</ListPanel.Item>
@@ -195,6 +195,15 @@ const selectionModeCode = `
   <ListPanel.Item index={5}>Item 5</ListPanel.Item>
 </ListPanel>
 `;
+const multipleCode = `
+<ListPanel multiple>
+  <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={2}>Item 2</ListPanel.Item>
+  <ListPanel.Item index={3}>Item 3</ListPanel.Item>
+  <ListPanel.Item index={4}>Item 4</ListPanel.Item>
+  <ListPanel.Item index={5}>Item 5</ListPanel.Item>
+</ListPanel>
+`;
 const simpleCode = `
 <ListPanel>
   <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
@@ -203,7 +212,6 @@ const simpleCode = `
   <ListPanel.Item index={4}>Item 4</ListPanel.Item>
   <ListPanel.Item index={5}>Item 5</ListPanel.Item>
 </ListPanel>
-
 `;
 
 export {
@@ -214,6 +222,7 @@ export {
   customThemeCode,
   customSizesCode,
   borderedCode,
-  onSelectionChangeCode,
+  eventsCode,
+  multipleCode,
   simpleCode,
 };

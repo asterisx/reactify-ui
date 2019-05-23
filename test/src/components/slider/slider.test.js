@@ -11,22 +11,43 @@ describe('Slider Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<Slider value={10}/>);
         expect(mountWrapper).toBeDefined();
-    })
+    });
 
+    hasDisabledStyle(<Slider></Slider>);
+
+    it('should automatically go in controlled mode when checked prop is passed', () => {
+        const spy = sinon.spy();
+        const mountWrapper = mount(<Slider value={20} onChange={spy}/>);
+        expect(mountWrapper.state().value).toBe(0);
+
+        const value = 10;
+        const input = mountWrapper.findWhere(n => n.name() === 'input');
+        input.simulate("change", { target: { value } });
+        expect(spy.called).toBeTruthy();
+        expect(spy.firstCall.args[0].value).toBe(value);
+        expect(mountWrapper.state().value).toBe(0);
+    });
 
     describe('props', () => {
-      
-        hasDisabledStyle(<Slider></Slider>);
-
         it('should not allow to set value less than minAllowed and maxAllowed', () => {
             const minAllowed = 10;
             const mountWrapper = mount(<Slider value={0} minAllowed={minAllowed} />);
-            expect(mountWrapper.state().currValue).toBe(minAllowed);
+            const input = mountWrapper.find('input');
+            expect(input.props().value).toBe(minAllowed);
 
             const maxAllowed = 80;
-            const mountWrapper2 = mount(<Slider value={100} maxAllowed={maxAllowed} />);
-            expect(mountWrapper2.state().currValue).toBe(maxAllowed);
-        })
+            const mountWrapper1 = mount(<Slider value={100} maxAllowed={maxAllowed} />);
+            const input1 = mountWrapper1.find('input');
+            expect(input1.props().value).toBe(maxAllowed);
+
+            const mountWrapper2 = mount(<Slider defaultValue={0} minAllowed={minAllowed} />);
+            const input2 = mountWrapper2.find('input');
+            expect(input2.props().value).toBe(minAllowed);
+
+            const mountWrapper3 = mount(<Slider defaultValue={100} maxAllowed={maxAllowed} />);
+            const input3 = mountWrapper3.find('input');
+            expect(input3.props().value).toBe(maxAllowed);
+        });
 
         it('should have correct size passed as props', () => {
             const mountWrapper = mount(<Slider value={0} small />);
@@ -56,7 +77,7 @@ describe('Slider Component', () => {
                     const props = {};
                     props[key] = true;
                     const mountWrapper = mount(<Slider value={10} {...props}></Slider>);
-                    const progressDiv = mountWrapper.findWhere(n => n.name() === 'input');
+                    const progressDiv = mountWrapper.find('input');
                     // expect(progressDiv).toHaveStyleRule('background', ThemeColors[key].color);
                 });
             });

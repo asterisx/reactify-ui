@@ -1,8 +1,9 @@
 import React from 'react';
-import { Accordion } from '@../../../../reactify/build';
+import { Accordion, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
+import { darken } from 'polished';
 import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
@@ -38,5 +39,19 @@ describe('Accordion.Header Component', () => {
         const mountWrapper = mount(<Accordion.Header icon={icon} />);
         const customIcon = mountWrapper.find(`.${classname}`);
         expect(customIcon).toBeDefined();
+    });
+
+    describe('should have correct theme when theme prop is passed', () => {
+        let ThemeColors = Constants.defaultThemeColors;
+        Object.keys(ThemeColors).map(key => {
+            it(`${key} theme`, () => {
+                const props = {};
+                props[key] = true;
+                const mountWrapper = mount(<Accordion.Header {...props}></Accordion.Header>);
+                expect(mountWrapper).toHaveStyleRule('background-color', ThemeColors[key].color);
+                expect(mountWrapper).toHaveStyleRule('color', ThemeColors[key].fontColor);
+                expect(mountWrapper).toHaveStyleRule('background-color', darken(Constants.darkenBy, Constants.defaultThemeColors[key].color), { target: ':hover' });
+            });
+        });
     });
 });

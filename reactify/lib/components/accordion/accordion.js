@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 import { styles, BEMClassNames } from './styles';
+import {
+  defaultThemePropTypes,
+  themePropTypes,
+} from '../../common';
 
 class Accordion extends Component {
   static Item = ({
@@ -9,6 +13,15 @@ class Accordion extends Component {
     index,
     open,
     disabled,
+    primary,
+    secondary,
+    dark,
+    light,
+    info,
+    warning,
+    danger,
+    success,
+    theme,
     onHeaderClick,
     ...otherProps
   }) => (
@@ -23,6 +36,15 @@ class Accordion extends Component {
             toggleItem: () => { if (onHeaderClick) onHeaderClick(index); },
             open,
             disabled,
+            primary: child.props.primary || primary,
+            secondary: child.props.secondary || secondary,
+            dark: child.props.dark || dark,
+            light: child.props.light || light,
+            info: child.props.info || info,
+            warning: child.props.warning || warning,
+            danger: child.props.danger || danger,
+            success: child.props.success || success,
+            theme: child.props.theme || theme,
           });
         }
         return child;
@@ -35,6 +57,15 @@ class Accordion extends Component {
     icon,
     showIcon,
     disabled,
+    primary,
+    secondary,
+    dark,
+    light,
+    info,
+    warning,
+    danger,
+    success,
+    theme,
     open,
     toggleItem,
     ...otherProps
@@ -44,6 +75,17 @@ class Accordion extends Component {
         css={[
           styles.header,
           styles.getDisabledStyle({ disabled }),
+          styles.getBackgroundStyle({
+            primary,
+            secondary,
+            dark,
+            light,
+            info,
+            warning,
+            danger,
+            success,
+            theme,
+          }),
         ]}
         onClick={toggleItem}
         {...otherProps}
@@ -122,6 +164,15 @@ class Accordion extends Component {
       singular,
       multiple,
       disabled,
+      primary,
+      secondary,
+      dark,
+      light,
+      info,
+      warning,
+      danger,
+      success,
+      theme,
       ...otherProps
     } = this.props;
     const { items } = this.state;
@@ -138,6 +189,15 @@ class Accordion extends Component {
             return React.cloneElement(child, {
               open: items[child.props.index] && items[child.props.index].open,
               onHeaderClick: () => toggleItem(child.props.index),
+              primary: child.props.primary || primary,
+              secondary: child.props.secondary || secondary,
+              dark: child.props.dark || dark,
+              light: child.props.light || light,
+              info: child.props.info || info,
+              warning: child.props.warning || warning,
+              danger: child.props.danger || danger,
+              success: child.props.success || success,
+              theme: child.props.theme || theme,
             });
           }
           return child;
@@ -155,12 +215,14 @@ Accordion.propTypes = {
   singular: PropTypes.bool,
   multiple: PropTypes.bool,
   disabled: PropTypes.bool,
+  ...themePropTypes,
 };
 
 Accordion.defaultProps = {
   singular: false,
   multiple: true,
   disabled: false,
+  ...defaultThemePropTypes,
 };
 
 Accordion.Item.propTypes = {
@@ -168,22 +230,26 @@ Accordion.Item.propTypes = {
   open: PropTypes.bool,
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
+  ...themePropTypes,
 };
 
 Accordion.Item.defaultProps = {
   open: false,
   disabled: false,
   onChange: undefined,
+  ...defaultThemePropTypes,
 };
 
 Accordion.Header.propTypes = {
   icon: PropTypes.element,
   showIcon: PropTypes.bool,
+  ...themePropTypes,
 };
 
 Accordion.Header.defaultProps = {
   icon: undefined,
   showIcon: true,
+  ...defaultThemePropTypes,
 };
 
 export default Accordion;

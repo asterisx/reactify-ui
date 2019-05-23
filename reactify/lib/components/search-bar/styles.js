@@ -14,6 +14,9 @@ export const styles = {
     color: 'gray',
     padding: '4px',
   },
+  hidden: {
+    visibility: 'hidden',
+  },
 
   getFontColorStyle: commonStyles.get.font.color.ofTheme,
 

@@ -17,6 +17,7 @@ export const styles = {
     outline: 'none',
     transition: 'background 450ms ease-in',
     appearance: 'none',
+    cursor: 'pointer',
     '::-webkit-slider-thumb': { ...commonPseudo },
     '::-moz-range-thumb': { ...commonPseudo },
     '::-ms-thumb': { ...commonPseudo },
@@ -31,13 +32,13 @@ export const styles = {
     danger,
     success,
     theme,
-    color,
-    currValue,
+    fillColor,
+    value,
     min,
     max,
     minAllowed,
   }) => {
-    const bgColor = color || commonStyles.get.theme.color({
+    const bgColor = fillColor || commonStyles.get.theme.color({
       primary,
       secondary,
       dark,
@@ -49,7 +50,7 @@ export const styles = {
       theme,
     });
     const minPercentage = ((minAllowed - min) / (max - min)) * 100;
-    const currentValue = ((currValue - min) / (max - min)) * 100;
+    const currentValue = ((value - min) / (max - min)) * 100;
     return `linear-gradient(to right, 
         #ABABAB 0%, #ABABAB ${minPercentage}%, 
         ${bgColor} ${minPercentage}%, ${bgColor} ${currentValue}%,

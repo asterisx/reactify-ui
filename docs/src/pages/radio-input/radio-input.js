@@ -29,11 +29,11 @@ const RadioInputDemo = () => (
     </DemoCard>
 
     <DemoCard
-      title="Checked"
+      title="Checked (Controlled)"
       uniqueIdentifier="checkedUse"
       sourceCode={checkedCode}
     >
-      <RadioInput checked className="align-self-center" />
+      <RadioInput defaultChecked className="align-self-center" />
     </DemoCard>
 
     <DemoCard
@@ -41,7 +41,7 @@ const RadioInputDemo = () => (
       uniqueIdentifier="disabled"
       sourceCode={disabledCode}
     >
-      <RadioInput disabled checked className="align-self-center">This is disabled</RadioInput>
+      <RadioInput disabled defaultChecked className="align-self-center">This is disabled</RadioInput>
     </DemoCard>
 
     <DemoCard
@@ -49,7 +49,7 @@ const RadioInputDemo = () => (
       uniqueIdentifier="label"
       sourceCode={labelCode}
     >
-      <RadioInput checked>Dogs, cats and birds</RadioInput>
+      <RadioInput defaultChecked>Dogs, cats and birds</RadioInput>
     </DemoCard>
 
     <DemoCard
@@ -57,9 +57,9 @@ const RadioInputDemo = () => (
       uniqueIdentifier="labelPosition"
       sourceCode={labelPositionCode}
     >
-      <RadioInput checked>Dogs, cats and birds</RadioInput>
+      <RadioInput defaultChecked>Dogs, cats and birds</RadioInput>
       <br />
-      <RadioInput checked style={{ flexDirection: 'row-reverse' }}>Dogs, cats and birds</RadioInput>
+      <RadioInput defaultChecked style={{ flexDirection: 'row-reverse' }}>Dogs, cats and birds</RadioInput>
     </DemoCard>
 
     <DemoCard
@@ -67,7 +67,7 @@ const RadioInputDemo = () => (
       uniqueIdentifier="children"
       sourceCode={childrenCode}
     >
-      <RadioInput checked>
+      <RadioInput defaultChecked>
         <div className="card" style={{ width: '18rem' }}>
           <div className="card-body">
             <h5 className="card-title">Card title</h5>
@@ -83,7 +83,7 @@ const RadioInputDemo = () => (
       uniqueIdentifier="customIcon"
       sourceCode={customIconCode}
     >
-      <RadioInput iconColor="red" checked>Dogs, cats and birds</RadioInput>
+      <RadioInput iconColor="red" defaultChecked>Dogs, cats and birds</RadioInput>
     </DemoCard>
 
     <DemoCard
@@ -114,21 +114,21 @@ const RadioInputDemo = () => (
       uniqueIdentifier="themes"
       sourceCode={customThemeCode}
     >
-      <RadioInput primary className="pb-2" checked>Primary</RadioInput>
+      <RadioInput primary className="pb-2" defaultChecked>Primary</RadioInput>
       <br />
-      <RadioInput secondary className="pb-2" checked>Secondary</RadioInput>
+      <RadioInput secondary className="pb-2" defaultChecked>Secondary</RadioInput>
       <br />
-      <RadioInput dark className="pb-2" checked>Dark</RadioInput>
+      <RadioInput dark className="pb-2" defaultChecked>Dark</RadioInput>
       <br />
-      <RadioInput light className="pb-2" checked>Light</RadioInput>
+      <RadioInput light className="pb-2" defaultChecked>Light</RadioInput>
       <br />
-      <RadioInput info className="pb-2" checked>Info</RadioInput>
+      <RadioInput info className="pb-2" defaultChecked>Info</RadioInput>
       <br />
-      <RadioInput warning className="pb-2" checked>Warning</RadioInput>
+      <RadioInput warning className="pb-2" defaultChecked>Warning</RadioInput>
       <br />
-      <RadioInput danger className="pb-2" checked>Danger</RadioInput>
+      <RadioInput danger className="pb-2" defaultChecked>Danger</RadioInput>
       <br />
-      <RadioInput success className="pb-2" checked>Success</RadioInput>
+      <RadioInput success className="pb-2" defaultChecked>Success</RadioInput>
     </DemoCard>
 
     <DemoCard
@@ -136,7 +136,7 @@ const RadioInputDemo = () => (
       uniqueIdentifier="onChange"
       sourceCode={onChangeCode}
     >
-      <RadioInput onChange={val => alert(`checked: ${val}`)} />
+      <RadioInput onChange={({ event, checked }) => console.log(event, checked)} />
     </DemoCard>
   </div>
 );

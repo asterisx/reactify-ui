@@ -1,7 +1,7 @@
 const simpleCode = '<Checkbox />';
-const checkedCode = '<Checkbox checked />';
-const disabledCode = '<Checkbox checked disabled>This checkbox is disabled</Checkbox>';
-const customColorCode = '<Checkbox checked color="violet" />';
+const checkedCode = '<Checkbox defaultChecked />';
+const disabledCode = '<Checkbox defaultChecked disabled>This checkbox is disabled</Checkbox>';
+const customColorCode = '<Checkbox defaultChecked color="violet" />';
 const customSizeCode = `
 <Checkbox small>Small Size</Checkbox>
 <Checkbox medium>Medium Size</Checkbox>
@@ -9,22 +9,22 @@ const customSizeCode = `
 <Checkbox style={{ fontSize: '40px' }}>style={{ fontSize: '40px' }}</Checkbox>
 `;
 const customThemeCode = `
-<Checkbox primary checked>Primary Checkbox</Checkbox>
-<Checkbox secondary checked>Secondary Checkbox</Checkbox>
-<Checkbox dark checked>Dark Checkbox</Checkbox>
-<Checkbox light checked>Light Checkbox</Checkbox>
-<Checkbox info checked>Info Checkbox</Checkbox>
-<Checkbox warning checked>Warning Checkbox</Checkbox>
-<Checkbox danger checked>Danger Checkbox</Checkbox>
-<Checkbox success checked>Success Checkbox</Checkbox>
+<Checkbox primary defaultChecked>Primary Checkbox</Checkbox>
+<Checkbox secondary defaultChecked>Secondary Checkbox</Checkbox>
+<Checkbox dark defaultChecked>Dark Checkbox</Checkbox>
+<Checkbox light defaultChecked>Light Checkbox</Checkbox>
+<Checkbox info defaultChecked>Info Checkbox</Checkbox>
+<Checkbox warning defaultChecked>Warning Checkbox</Checkbox>
+<Checkbox danger defaultChecked>Danger Checkbox</Checkbox>
+<Checkbox success defaultChecked>Success Checkbox</Checkbox>
 `;
-const onChangeCode = '<Checkbox onChange={val => alert("checked: " +  val)} />';
+const onChangeCode = '<RadioInput onChange={({ event, checked }) => console.log(event, checked)} />';
 const labelPositionCode = `
 <Checkbox>This is a checkbox with left position</Checkbox>
 <Checkbox style={{ flexDirection: 'row-reverse' }}>This is a checkbox with right position</Checkbox>
 `;
 const childrenCode = `
-  <Checkbox checked>
+  <Checkbox defaultChecked>
     <div className="card" style={{ width: '18rem' }}>
       <div className="card-body">
         <h5 className="card-title">Card title</h5>
@@ -34,7 +34,7 @@ const childrenCode = `
     </div>
   </Checkbox>
 `;
-const customClassCode = '<Checkbox checked className="bg-dark p-5" />';
+const customClassCode = '<Checkbox defaultChecked className="bg-dark p-5" />';
 
 export {
   simpleCode,

@@ -11,7 +11,7 @@ class Modal extends PureComponent {
     hideBackDrop: false,
     ...defaultSizePropTypes,
     style: { width: undefined },
-    onClose: () => {},
+    onClose: undefined,
   };
 
   static propTypes = {
@@ -65,12 +65,12 @@ class Modal extends PureComponent {
     $(child).fadeOut(duration, callBack);
   };
 
-  close = () => {
+  close = (event) => {
     this.animateOut(
       this.containerRef.current,
       this.containerChildRef.current,
       this.conatinerBgRef.current,
-      this.props.onClose,
+      () => { if (this.props.onClose) this.props.onClose({ event }); },
     );
   };
 
@@ -85,6 +85,9 @@ class Modal extends PureComponent {
       style: { width, ...otherStyles },
       ...otherProps
     } = this.props;
+
+    const { close } = this;
+
     return (
       <div
         ref={this.containerRef}
@@ -96,7 +99,7 @@ class Modal extends PureComponent {
       >
         <div
           ref={this.conatinerBgRef}
-          onClick={autoClose ? this.close : undefined}
+          onClick={autoClose ? close : undefined}
           css={[
             styles.bg,
           ]}

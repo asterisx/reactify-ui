@@ -128,6 +128,17 @@ const get = {
     },
   },
   backgroundColor: {
+    /**
+     * @param {boolean} primary 'true' by default
+     * @param {boolean} secondary 'false' by default
+     * @param {boolean} dark 'false' by default
+     * @param {boolean} light 'false' by default
+     * @param {boolean} info 'false' by default
+     * @param {boolean} warning 'false' by default
+     * @param {boolean} danger 'false' by default
+     * @param {boolean} success 'false' by default
+     * @returns {object} The background style
+     */
     forTheme: ({
       primary,
       secondary,
@@ -156,6 +167,17 @@ const get = {
     style: ({ disabled }) => (disabled ? disabledStyle : undefined),
   },
   theme: {
+    /**
+     * @param {boolean} primary 'true' by default
+     * @param {boolean} secondary 'false' by default
+     * @param {boolean} dark 'false' by default
+     * @param {boolean} light 'false' by default
+     * @param {boolean} info 'false' by default
+     * @param {boolean} warning 'false' by default
+     * @param {boolean} danger 'false' by default
+     * @param {boolean} success 'false' by default
+     * @returns {string} The color value
+     */
     color: ({
       primary,
       secondary,

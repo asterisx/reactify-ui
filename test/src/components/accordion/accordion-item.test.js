@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion } from '@../../../../reactify/build';
+import { Accordion, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
@@ -29,5 +29,22 @@ describe('Accordion.Item Component', () => {
         
         headerWrapper.simulate('click');
         expect(spy.called).toBeTruthy();
+    });
+    describe('should have correct theme when theme prop is passed and drill it in to Accordion items', () => {
+        let ThemeColors = Constants.defaultThemeColors;
+        Object.keys(ThemeColors).map(key => {
+            it(`${key} theme`, () => {
+                const props = {};
+                props[key] = true;
+                const mountWrapper = mount(
+                        <Accordion.Item index={0} {...props}>
+                            <Accordion.Header>
+                            </Accordion.Header>
+                        </Accordion.Item>
+                        );
+                const header = mountWrapper.find(Accordion.Header);
+                expect(header.props()[key]).toBeTruthy();
+            });
+        });
     });
 });

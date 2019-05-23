@@ -2,6 +2,7 @@ import React from 'react';
 import { Checkbox, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
+import sinon from 'sinon';
 import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
@@ -17,8 +18,8 @@ describe('Checkbox Component', () => {
         expect(mountWrapper.state().checked).toBeFalsy();
     });
 
-    it('should be checked when checked prop is passed', () => {
-        const mountWrapper = mount(<Checkbox checked />);
+    it('should be checked when defaultChecked prop is passed', () => {
+        const mountWrapper = mount(<Checkbox defaultChecked />);
         expect(mountWrapper.state().checked).toBeTruthy();
     });
 
@@ -26,6 +27,17 @@ describe('Checkbox Component', () => {
         const mountWrapper = mount(<Checkbox />);
         mountWrapper.simulate('click');
         expect(mountWrapper.state().checked).toBeTruthy();
+    });
+
+    it('should automatically go in controlled mode when checked prop is passed', () => {
+        const spy = sinon.spy();
+        const mountWrapper = mount(<Checkbox checked={true} onChange={spy}/>);
+        expect(mountWrapper.state().checked).toBeFalsy();
+
+        mountWrapper.simulate("click", { target: { checked: true } });
+        expect(spy.called).toBeTruthy();
+        expect(spy.firstCall.args[0].checked).toBeTruthy();
+        expect(mountWrapper.state().checked).toBeFalsy();
     });
     
     displaysChildren(<Checkbox></Checkbox>);

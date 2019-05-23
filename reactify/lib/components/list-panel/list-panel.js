@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
+  areArraysDifferent,
   defaultThemePropTypes,
   defaultSizePropTypes,
   themePropTypes,
@@ -23,6 +24,7 @@ class ListPanel extends Component {
     medium,
     large,
     selected,
+    defaultSelected,
     bordered,
     children,
     disabled,
@@ -78,45 +80,81 @@ class ListPanel extends Component {
   componentDidMount() {
     let items = {};
     React.Children.forEach(this.props.children, (child) => {
-      const { index, selected } = child.props;
-      if (this.props.singular && !this.props.multiple) {
-        items = {};
+      if (child && child.props) {
+        const { index, selected, defaultSelected } = child.props;
+        // Is selected is not passed, it means the component is set
+        // to be controlled
+        if (selected === undefined) {
+          if (this.props.singular && !this.props.multiple) {
+            items = {};
+          }
+          items[index] = { selected: defaultSelected };
+        }
       }
-      items[index] = { selected };
     });
     this.setState({
       items,
     });
   }
 
-  toggleSelect = (index) => {
-    if (this.props.singular && !this.props.multiple) {
-      const items = {};
-      if (Object.prototype.hasOwnProperty.call(this.state.items, index)) {
-        items[index] = { selected: !this.state.items[index].selected };
-      } else items[index] = { selected: true };
-      this.setState({
-        items,
-      }, () => {
-        if (this.props.onSelectionChange) {
-          this.props.onSelectionChange({
-            index,
-            selected: this.state.items[index].selected,
-          });
+  static getDerivedStateFromProps(props, state) {
+    if (!areArraysDifferent(state.items, props.children, ['index', 'selected'])) { return null; }
+    let { items } = state;
+    React.Children.forEach(props.children, (child) => {
+      if (child && child.props) {
+        const { index, selected, defaultSelected } = child.props;
+        // If selected is not passed, it means the component is set
+        // to be controlled
+        if (selected === undefined) {
+          if (props.singular && !props.multiple) {
+            items = {};
+          }
+          items[index] = { selected: defaultSelected };
         }
-      });
-    } else {
-      const { items } = this.state;
-      items[index].selected = !items[index].selected;
-      this.setState({
-        items,
-      }, () => {
-        if (this.props.onSelectionChange) {
-          this.props.onSelectionChange({
-            index,
-            selected: this.state.items[index].selected,
-          });
-        }
+      }
+    });
+    return { items };
+  }
+
+  itemClicked = ({ event, index, isControlled }) => {
+    if (!isControlled) {
+      if (this.props.singular && !this.props.multiple) {
+        const items = {};
+        if (Object.prototype.hasOwnProperty.call(this.state.items, index)) {
+          items[index] = { selected: !this.state.items[index].selected };
+        } else items[index] = { selected: true };
+        this.setState({
+          items,
+        }, () => {
+          if (this.props.onSelectionChange) {
+            this.props.onSelectionChange({
+              event,
+              index,
+              selected: this.state.items[index].selected,
+            });
+          }
+        });
+      } else {
+        const { items } = this.state;
+        items[index].selected = !items[index].selected;
+        this.setState({
+          items,
+        }, () => {
+          if (this.props.onSelectionChange) {
+            this.props.onSelectionChange({
+              event,
+              index,
+              selected: this.state.items[index].selected,
+            });
+          }
+        });
+      }
+    }
+
+    if (this.props.onItemClicked) {
+      this.props.onItemClicked({
+        event,
+        index,
       });
     }
   }
@@ -141,9 +179,12 @@ class ListPanel extends Component {
       medium,
       large,
       onSelectionChange,
+      onItemClicked,
       ...otherProps
     } = this.props;
+
     const { items } = this.state;
+
     return (
       <ul
         css={[
@@ -166,13 +207,18 @@ class ListPanel extends Component {
         {...otherProps}
       >
         {React.Children.map(children, (child) => {
-          if (child.type === ListPanel.Item) {
+          if (child && child.type === ListPanel.Item) {
+            const isControlled = child.props.selected !== undefined;
             return React.cloneElement(child, {
-              selected: items[child.props.index]
-              && items[child.props.index].selected,
-              onClick: (evt) => {
-                if (child.props.isSelectable) this.toggleSelect(child.props.index);
-                if (child.props.onClick) child.props.onClick(evt);
+              onClick: (event) => {
+                if (child.props.isSelectable) {
+                  this.itemClicked({
+                    event,
+                    index: child.props.index,
+                    isControlled,
+                  });
+                }
+                if (child.props.onClick) child.props.onClick(event);
               },
               primary: child.props.primary || primary,
               secondary: child.props.secondary || secondary,
@@ -187,6 +233,8 @@ class ListPanel extends Component {
               medium: child.props.medium || medium,
               large: child.props.large || large,
               disabled: child.props.disabled || disabled,
+              selected: isControlled ? child.props.selected : (items[child.props.index]
+              && items[child.props.index].selected),
             });
           }
           return child;
@@ -198,26 +246,27 @@ class ListPanel extends Component {
 
 ListPanel.propTypes = {
   bordered: PropTypes.bool,
+  disabled: PropTypes.bool,
   singular: PropTypes.bool,
   multiple: PropTypes.bool,
-  disabled: PropTypes.bool,
   ...themePropTypes,
   ...sizePropTypes,
-  onSelectionChange: PropTypes.func,
+  onItemClicked: PropTypes.func,
 };
 
 ListPanel.defaultProps = {
   bordered: true,
+  disabled: false,
   singular: true,
   multiple: false,
-  disabled: false,
   ...defaultThemePropTypes,
   ...defaultSizePropTypes,
-  onSelectionChange: () => {},
+  onItemClicked: undefined,
 };
 
 ListPanel.Item.propTypes = {
   selected: PropTypes.bool,
+  defaultSelected: PropTypes.bool,
   bordered: PropTypes.bool,
   index: PropTypes.number.isRequired,
   disabled: PropTypes.bool,
@@ -227,7 +276,8 @@ ListPanel.Item.propTypes = {
 };
 
 ListPanel.Item.defaultProps = {
-  selected: false,
+  selected: undefined,
+  defaultSelected: false,
   bordered: true,
   disabled: false,
   isSelectable: true,

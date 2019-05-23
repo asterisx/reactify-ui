@@ -78,32 +78,32 @@ const propsCode = `
 const simpleCode = `
 <Accordion>
   <Accordion.Item index={1}>
-    <Accordion.Header>
+    <Accordion.Header danger>
       Accordion 1
     </Accordion.Header>
     <Accordion.Body>
       A lot of things can be here.
-      A paragraph of some other content, a component too and other things too...
+      A paragraph or some other content, a component too and other things too...
     </Accordion.Body>
   </Accordion.Item>
 
   <Accordion.Item index={2}>
-    <Accordion.Header>
+    <Accordion.Header success>
       Accordion 2
     </Accordion.Header>
     <Accordion.Body>
       A lot of things can be here.
-      A paragraph of some other content, a component too and other things too...
+      A paragraph or some other content, a component too and other things too...
     </Accordion.Body>
   </Accordion.Item>
 
   <Accordion.Item index={3}>
-    <Accordion.Header>
+    <Accordion.Header warning>
       Accordion 3
     </Accordion.Header>
     <Accordion.Body>
       A lot of things can be here.
-      A paragraph of some other content, a component too and other things too...
+      A paragraph or some other content, a component too and other things too...
     </Accordion.Body>
   </Accordion.Item>
 </Accordion>
