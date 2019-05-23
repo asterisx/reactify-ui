@@ -6,6 +6,92 @@ import { styles, BEMClassNames } from './styles';
 import { defaultThemePropTypes, themePropTypes } from '../../common';
 
 class UserProfile extends Component {
+  static propTypes = {
+    /**
+     * The username value of the user
+     */
+    userName: PropTypes.string.isRequired,
+    /**
+     * If 'true', the avatar is place left of username
+     */
+    avatarLeft: PropTypes.bool,
+    /**
+     * If 'true', the avatar is place right of username
+     */
+    avatarRight: PropTypes.bool,
+    /**
+     * If 'true', the message is to shown
+     * Defaults to 'true'
+     */
+    showMessage: PropTypes.bool,
+    /**
+     * The welcome mesaage
+     */
+    welcomeMessage: PropTypes.string,
+    /**
+     * The `path` of the avatar
+     */
+    imgPath: PropTypes.string.isRequired,
+    /**
+     * If 'true', the dropdown is shown top
+     * Defaults to 'false'
+     */
+    dropDownTop: PropTypes.bool,
+    /**
+     * If 'true', the dropdown is shown bottom
+     * Defaults to 'true'
+     */
+    dropDownBottom: PropTypes.bool,
+    /**
+     * If 'true', the message and username is
+     * not shown on sm screens.
+     * Defaults to 'false'
+     */
+    sm: PropTypes.bool,
+    /**
+     * If 'true', the message and username is
+     * not shown on sm screens.
+     * Defaults to 'false'
+     */
+    md: PropTypes.bool,
+    /**
+     * If 'true', the message and username is
+     * not shown on lg screens.
+     * Defaults to 'false'
+     */
+    lg: PropTypes.bool,
+    /**
+     * If 'true', the message and username is
+     * not shown on xl screens.
+     * Defaults to 'false'
+     */
+    xl: PropTypes.bool,
+    /**
+     * If 'true', the component is disabled
+     * Default is 'false'
+     */
+    disabled: PropTypes.bool,
+    /**
+     * A collection of valid theme types, all boolean values
+     */
+    ...themePropTypes,
+  }
+
+  static defaultProps = {
+    avatarLeft: true,
+    avatarRight: false,
+    showMessage: true,
+    welcomeMessage: 'Welcome',
+    dropDownTop: false,
+    dropDownBottom: true,
+    sm: false,
+    md: false,
+    lg: false,
+    xl: false,
+    disabled: false,
+    ...defaultThemePropTypes,
+  }
+
   state = { trayOpen: false }
 
   closeTray = () => {
@@ -135,37 +221,5 @@ class UserProfile extends Component {
     );
   }
 }
-
-UserProfile.propTypes = {
-  userName: PropTypes.string.isRequired,
-  avatarLeft: PropTypes.bool,
-  avatarRight: PropTypes.bool,
-  showMessage: PropTypes.bool,
-  welcomeMessage: PropTypes.string,
-  imgPath: PropTypes.string.isRequired,
-  dropDownTop: PropTypes.bool,
-  dropDownBottom: PropTypes.bool,
-  sm: PropTypes.bool,
-  md: PropTypes.bool,
-  lg: PropTypes.bool,
-  xl: PropTypes.bool,
-  disabled: PropTypes.bool,
-  ...themePropTypes,
-};
-
-UserProfile.defaultProps = {
-  avatarLeft: true,
-  avatarRight: false,
-  showMessage: true,
-  welcomeMessage: 'Welcome',
-  dropDownTop: false,
-  dropDownBottom: true,
-  sm: false,
-  md: false,
-  lg: false,
-  xl: false,
-  disabled: false,
-  ...defaultThemePropTypes,
-};
 
 export default UserProfile;

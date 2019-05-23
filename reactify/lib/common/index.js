@@ -18,6 +18,7 @@ import {
   Timer,
   getTimeFromMillis,
   areArraysDifferent,
+  mergeDeep,
 } from './utils';
 
 export {
@@ -36,4 +37,5 @@ export {
   screenSizes,
   screenSizesInPx,
   areArraysDifferent,
+  mergeDeep,
 };

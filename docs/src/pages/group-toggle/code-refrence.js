@@ -1,5 +1,5 @@
 const onSelectionCode = `
-<GroupToggle onSelectionChange={index => alert('Selected index + index')}>
+<GroupToggle onSelectionChange={({ event, index }) => console.log(event, index)}>
   {({ selectedIndex }) => (
     <>
       <Button

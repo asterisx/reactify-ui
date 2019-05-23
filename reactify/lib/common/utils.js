@@ -53,3 +53,31 @@ export const areArraysDifferent = (items1, items2, fields) => {
     item1 => items2.find(item2 => fields.every(field => item1[field] === item2[field])),
   );
 };
+
+export function isObject(item) {
+  return (item && typeof item === 'object' && !Array.isArray(item));
+}
+
+/**
+ * Deep merge two objects.
+ * @param target
+ * @param ...sources
+*/
+export const mergeDeep = (target, ...sources) => {
+  if (!sources.length) return target;
+  const source = sources.shift();
+
+  if (isObject(target) && isObject(source)) {
+    // eslint-disable-next-line no-restricted-syntax
+    for (const key in source) {
+      if (isObject(source[key])) {
+        if (!target[key]) Object.assign(target, { [key]: {} });
+        mergeDeep(target[key], source[key]);
+      } else {
+        Object.assign(target, { [key]: source[key] });
+      }
+    }
+  }
+
+  return mergeDeep(target, ...sources);
+};

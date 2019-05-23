@@ -49,7 +49,13 @@ const Text = ({
 );
 
 Text.propTypes = {
+  /**
+   * A collection of valid theme types, all boolean values
+   */
   ...themePropTypes,
+  /**
+   * A collection of valid size types, all boolean values
+   */
   ...sizePropTypes,
 };
 

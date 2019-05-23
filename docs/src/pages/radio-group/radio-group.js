@@ -17,8 +17,8 @@ const RadioGroupDemo = () => (
     >
       <RadioGroup>
         <RadioInput index={0}>option 1</RadioInput>
-        <RadioInput index={1}>option 1</RadioInput>
-        <RadioInput index={2}>option 1</RadioInput>
+        <RadioInput index={1}>option 2</RadioInput>
+        <RadioInput index={2}>option 3</RadioInput>
       </RadioGroup>
     </DemoCard>
 
@@ -29,8 +29,8 @@ const RadioGroupDemo = () => (
     >
       <RadioGroup onSelectionChange={index => alert(`Selected index: ${index}`)}>
         <RadioInput index={0}>option 1</RadioInput>
-        <RadioInput index={1}>option 1</RadioInput>
-        <RadioInput index={2}>option 1</RadioInput>
+        <RadioInput index={1}>option 2</RadioInput>
+        <RadioInput index={2}>option 3</RadioInput>
       </RadioGroup>
     </DemoCard>
 
@@ -41,8 +41,8 @@ const RadioGroupDemo = () => (
     >
       <RadioGroup disabled>
         <RadioInput index={0}>option 1</RadioInput>
-        <RadioInput index={1}>option 1</RadioInput>
-        <RadioInput index={2}>option 1</RadioInput>
+        <RadioInput index={1}>option 2</RadioInput>
+        <RadioInput index={2}>option 3</RadioInput>
       </RadioGroup>
     </DemoCard>
   </div>

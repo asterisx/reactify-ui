@@ -234,14 +234,14 @@ describe('Tabs Component', () => {
         
         const firstItem = items.at(2);
         firstItem.simulate('click');
-        expect(spy.firstCall.calledWithExactly(2)).toBeTruthy();
+        expect(spy.firstCall.args[0].index).toBe(2);
 
         const secondItem = items.at(1);
         secondItem.simulate('click');
-        expect(spy.secondCall.calledWithExactly(1)).toBeTruthy();
+        expect(spy.secondCall.args[0].index).toBe(1);
     
         const thirdItem = items.at(0);
         thirdItem.simulate('click');
-        expect(spy.thirdCall.calledWithExactly(0)).toBeTruthy();
+        expect(spy.thirdCall.args[0].index).toBe(0);
     });
 });

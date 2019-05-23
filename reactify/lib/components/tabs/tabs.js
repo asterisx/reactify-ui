@@ -54,7 +54,11 @@ class Tabs extends Component {
 
     render() {
       const {
-        children = null, onSelectionChange, selectedIndex, tabsDisabled, ...otherProps
+        children = null,
+        onSelectionChange: onSelectionChangeProp,
+        selectedIndex,
+        tabsDisabled,
+        ...otherProps
       } = this.props;
       const { currentActiveTabIndex } = this.state;
       const {
@@ -66,8 +70,9 @@ class Tabs extends Component {
             <GroupToggle
               disabled={tabsDisabled}
               selectedIndex={this.state.currentActiveTabIndex}
-              onSelectionChange={(index) => {
-                this.setState({ currentActiveTabIndex: index }); onSelectionChange(index);
+              onSelectionChange={({ event, index }) => {
+                this.setState({ currentActiveTabIndex: index });
+                if (onSelectionChangeProp) onSelectionChangeProp({ event, index });
               }}
             >
               {groupToggleItems.map(item => item)}
@@ -80,15 +85,29 @@ class Tabs extends Component {
 }
 
 Tabs.propTypes = {
+  /**
+   * The index of the currently selected tab
+   * This should match the `index` prop of the tab
+   */
   selectedIndex: PropTypes.number,
+  /**
+   * If 'true', the tabs are disabled
+   * Default is 'false'
+   */
   tabsDisabled: PropTypes.bool,
+  /**
+   * Callback fired when new tab is selected
+   *
+   * @param {object} event The event source
+   * @param {number} index The `index` of the new selected tab
+   */
   onSelectionChange: PropTypes.func,
 };
 
 Tabs.defaultProps = {
   selectedIndex: 0,
   tabsDisabled: false,
-  onSelectionChange: () => {},
+  onSelectionChange: undefined,
 };
 
 Tab.Body.propTypes = {

@@ -11,7 +11,11 @@ const replaceAll = (target, strReplace, callback) => {
   return target.replace(reg, callback);
 };
 
-const labelStyle = { fontSize: 'inherit', padding: 0, margin: 0 };
+const labelStyle = {
+  fontSize: 'inherit',
+  padding: 0,
+  margin: 0,
+};
 
 const getHighlightedText = ({
   children,
@@ -84,7 +88,14 @@ const Highlight = ({
 );
 
 Highlight.propTypes = {
+  /**
+   * The filter text
+   */
   filter: PropTypes.string,
+  /**
+   * If 'true', the filtering is case insensitive
+   * Default is 'false'
+   */
   insensitive: PropTypes.bool,
 };
 

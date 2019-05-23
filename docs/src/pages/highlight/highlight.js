@@ -23,7 +23,7 @@ class HighlightDemo extends Component {
     this.setState({ filter: event.target.value });
   }
 
-  handleCheckboxChange = (checked) => {
+  handleCheckboxChange = ({ checked }) => {
     this.setState({ insensitive: checked });
   }
 
@@ -51,7 +51,7 @@ class HighlightDemo extends Component {
               checked={insensitive}
               onChange={handleCheckboxChange}
               className="ml-2"
-              style={{ fontSize: '0.8em' }}
+              style={{ fontSize: '1em' }}
             >
               Case Insensitive
             </Checkbox>
@@ -73,7 +73,6 @@ class HighlightDemo extends Component {
             <RadioInput index={7}>Success</RadioInput>
           </RadioGroup>
           <Highlight
-            className="d-flex"
             insensitive={insensitive}
             filter={filter}
             primary={selectedIndex === 0}

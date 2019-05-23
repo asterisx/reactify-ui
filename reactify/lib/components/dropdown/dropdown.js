@@ -10,13 +10,40 @@ import { styles, BEMClassNames } from './styles';
 
 class Dropdown extends Component {
   static propTypes = {
+    /**
+     * If 'true', the component is disabled
+     * Default is 'false'
+     */
     disabled: PropTypes.bool,
+    /**
+     * If 'true', the dropdown's try is open, i.e dropdown is displaying content
+     * Default is 'false'
+     */
     trayOpen: PropTypes.bool,
+    /**
+     * The label prop, can be any valid react element,
+     */
     // eslint-disable-next-line react/forbid-prop-types
     label: PropTypes.any,
+    /**
+     * If 'true', the view is optimized for sm screens
+     * Defaults to 'false'
+     */
     sm: PropTypes.bool,
+    /**
+     * If 'true', the view is optimized for md screens
+     * Defaults to 'false'
+     */
     md: PropTypes.bool,
+    /**
+     * If 'true', the view is optimized for lg screens
+     * Defaults to 'false'
+     */
     lg: PropTypes.bool,
+    /**
+     * If 'true', the view is optimized for xl screens
+     * Defaults to 'false'
+     */
     xl: PropTypes.bool,
   }
 

@@ -2,7 +2,7 @@ import { commonStyles } from '../../common';
 
 export const styles = {
   container: {
-    display: 'inline-block',
+    display: 'inline',
     borderRadius: '0.2em',
   },
 

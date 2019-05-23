@@ -86,16 +86,31 @@ const Chip = ({
 );
 
 Chip.propTypes = {
-  ...themePropTypes,
-  ...sizePropTypes,
+  /**
+   * If 'true', the component is disabled
+   * Default is 'false'
+   */
   disabled: PropTypes.bool,
+  /**
+   * A collection of valid theme types, all boolean values
+   */
+  ...themePropTypes,
+  /**
+   * A collection of valid size types, all boolean values
+   */
+  ...sizePropTypes,
+  /**
+   * Callback fired when the close icons is clicked
+   *
+   * @param {object} event The event source for the callback.
+   */
   onCloseClick: PropTypes.func,
 };
 
 Chip.defaultProps = {
+  disabled: false,
   ...defaultThemePropTypes,
   ...defaultSizePropTypes,
-  disabled: false,
   onCloseClick: undefined,
 };
 
@@ -116,6 +131,10 @@ const Chips = ({
 );
 
 Chips.propTypes = {
+  /**
+   * If 'true', the component is disabled
+   * Default is 'false'
+   */
   disabled: PropTypes.bool,
 };
 

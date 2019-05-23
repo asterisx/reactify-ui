@@ -4,6 +4,7 @@ import { styles } from './styles';
 import {
   themePropTypes,
   defaultThemePropTypes,
+  defaultSizePropTypes,
   sizePropTypes,
 } from '../../common';
 
@@ -24,7 +25,7 @@ const Label = ({
   theme,
   ...otherProps
 }) => (
-  <div
+  <span
     css={[
       styles.container,
       styles.getFontSizeStyle({
@@ -61,17 +62,28 @@ const Label = ({
     {...otherProps}
   >
     {children}
-  </div>
+  </span>
 );
 
 Label.propTypes = {
-  ...sizePropTypes,
+  /**
+   * If 'true', the component is disabled
+   * Default is 'false'
+   */
   disabled: PropTypes.bool,
+  /**
+   * A collection of valid theme types, all boolean values
+   */
   ...themePropTypes,
+  /**
+   * A collection of valid size types, all boolean values
+   */
+  ...sizePropTypes,
 };
 Label.defaultProps = {
   disabled: false,
   ...defaultThemePropTypes,
+  ...defaultSizePropTypes,
 };
 
 export default Label;

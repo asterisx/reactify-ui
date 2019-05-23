@@ -26,18 +26,18 @@ describe('RadioGroup Component', () => {
           </RadioGroup>
         );
 
-        const items = mountWrapper.find(RadioInput);
+        const items = mountWrapper.find('input');
         
         const firstItem = items.at(0);
-        firstItem.simulate('click');
+        firstItem.simulate('change');
         expect(mountWrapper.state().selectedIndex).toBe(0);
 
         const secondItem = items.at(1);
-        secondItem.simulate('click');
+        secondItem.simulate('change');
         expect(mountWrapper.state().selectedIndex).toBe(1);
         
         const thirdItem = items.at(2);
-        thirdItem.simulate('click');
+        thirdItem.simulate('change');
         expect(mountWrapper.state().selectedIndex).toBe(2);
     });
 
@@ -51,18 +51,18 @@ describe('RadioGroup Component', () => {
           </RadioGroup>
         );
 
-        const items = mountWrapper.find(RadioInput);
+        const items = mountWrapper.find('input');
         
         const firstItem = items.at(0);
-        firstItem.simulate('click');
+        firstItem.simulate('change');
         expect(spy.firstCall.calledWithExactly(0)).toBeTruthy();
 
         const secondItem = items.at(1);
-        secondItem.simulate('click');
+        secondItem.simulate('change');
         expect(spy.secondCall.calledWithExactly(1)).toBeTruthy();
         
         const thirdItem = items.at(2);
-        thirdItem.simulate('click');
+        thirdItem.simulate('change');
         expect(spy.thirdCall.calledWithExactly(2)).toBeTruthy();
     });
 });

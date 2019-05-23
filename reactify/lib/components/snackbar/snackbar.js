@@ -5,89 +5,71 @@ import { Transition } from 'react-transition-group';
 import { defaultThemePropTypes, themePropTypes } from '../../common';
 import { styles, BEMClassNames } from './styles';
 
-const transitionStyles = ({
-  topLeft,
-  bottomLeft,
-  bottomRight,
-  bottomCenter,
-  topCenter,
-  topRight,
-}) => {
-  if (bottomRight) {
-    return {
-      entering: { transform: 'translateY(100%)', bottom: 0, right: '10px' },
-      entered: { transform: 'translateY(0%)', bottom: '10px', right: '10px' },
-      exiting: { transform: 'translateY(100%)', bottom: 0, right: '10px' },
-      exited: { transform: 'translateY(100%)', bottom: 0, right: '10px' },
-    };
-  }
-  if (bottomLeft) {
-    return {
-      entering: { transform: 'translateY(100%)', bottom: 0, left: '10px' },
-      entered: { transform: 'translateY(0%)', bottom: '10px', left: '10px' },
-      exiting: { transform: 'translateY(100%)', bottom: 0, left: '10px' },
-      exited: { transform: 'translateY(100%)', bottom: 0, left: '10px' },
-    };
-  }
-  if (topLeft) {
-    return {
-      entering: { transform: 'translateY(-100%)', top: 0, left: '10px' },
-      entered: { transform: 'translateY(0%)', top: '10px', left: '10px' },
-      exiting: { transform: 'translateY(-100%)', top: 0, left: '10px' },
-      exited: { transform: 'translateY(-100%)', top: 0, left: '10px' },
-    };
-  }
-  if (bottomCenter) {
-    return {
-      entering: { transform: 'translateY(100%) translateX(-50%)', bottom: 0, left: '50%' },
-      entered: { transform: 'translateY(0%) translateX(-50%)', bottom: '10px', left: '50%' },
-      exiting: { transform: 'translateY(100%) translateX(-50%)', bottom: 0, left: '50%' },
-      exited: { transform: 'translateY(100%) translateX(-50%)', bottom: 0, left: '50%' },
-    };
-  }
-  if (topCenter) {
-    return {
-      entering: { transform: 'translateY(-100%) translateX(-50%)', left: '50%' },
-      entered: { transform: 'translateY(0%) translateX(-50%)', top: '10px', left: '50%' },
-      exiting: { transform: 'translateY(-100%) translateX(-50%)', top: 0, left: '50%' },
-      exited: { transform: 'translateY(-100%) translateX(-50%)', top: 0, left: '50%' },
-    };
-  }
-  if (topRight) {
-    return {
-      entering: { transform: 'translateY(-100%)', top: 0, right: '10px' },
-      entered: { transform: 'translateY(0%)', top: '10px', right: '10px' },
-      exiting: { transform: 'translateY(-100%)', top: 0, right: '10px' },
-      exited: { transform: 'translateY(-100%)', top: 0, right: '10px' },
-    };
-  }
-
-  return null;
-};
 class Snackbar extends Component {
-  state = { in: true };
-
   static propTypes = {
-    color: PropTypes.string,
+    /**
+     * If 'true', the component is disabled
+     * Default is 'false'
+     */
     disabled: PropTypes.bool,
+    /**
+     * The message to show
+     */
     message: PropTypes.string,
+    /**
+     * The name of optional action
+     */
     action: PropTypes.string,
+    /**
+     * The duration to make the snackbar visible for
+     */
     duration: PropTypes.number,
+    /**
+     * If 'true', the snackbar will be positioned top left
+     * Defaults to 'true'
+     */
     topLeft: PropTypes.bool,
+    /**
+     * If 'true', the snackbar will be positioned top right
+     * Defaults to 'false'
+     */
     topRight: PropTypes.bool,
+    /**
+     * If 'true', the snackbar will be positioned bottom left
+     * Defaults to 'false'
+     */
     bottomLeft: PropTypes.bool,
+    /**
+     * If 'true', the snackbar will be positioned bottom right
+     * Defaults to 'false'
+     */
     bottomRight: PropTypes.bool,
+    /**
+     * If 'true', the snackbar will be positioned bottom center
+     * Defaults to 'false'
+     */
     bottomCenter: PropTypes.bool,
+    /**
+     * If 'true', the snackbar will be positioned top center
+     * Defaults to 'false'
+     */
     topCenter: PropTypes.bool,
+    /**
+     * A collection of valid theme types, all boolean values
+     */
     ...themePropTypes,
+    /**
+     * The callback called when action is clicked
+     * @param {object} event The `event` itself
+     */
     onActionClick: PropTypes.func,
+    /**
+     * The callback when snackbar is closed
+     */
     onClose: PropTypes.func,
   }
 
-  timeout = {};
-
   static defaultProps = {
-    color: undefined,
     disabled: false,
     message: '',
     action: undefined,
@@ -102,6 +84,10 @@ class Snackbar extends Component {
     onActionClick: undefined,
     onClose: undefined,
   }
+
+  state = { in: true };
+
+  timeout = {};
 
   dismiss = () => {
     this.setState({ in: false });
@@ -192,7 +178,7 @@ class Snackbar extends Component {
             {...otherProps}
             style={{
               ...style,
-              ...transitionStyles({
+              ...styles.getTransitionStyles({
                 topLeft,
                 bottomLeft,
                 bottomRight,
@@ -225,7 +211,9 @@ class Snackbar extends Component {
                       styles.paddingBoth,
                     ]}
                     className={BEMClassNames.action}
-                    onClick={() => { if (this.props.onActionClick) this.props.onActionClick(); }}
+                    onClick={(event) => {
+                      if (this.props.onActionClick) this.props.onActionClick(event);
+                    }}
                   >
                     {action}
                   </span>

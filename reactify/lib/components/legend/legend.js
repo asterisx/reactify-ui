@@ -64,7 +64,15 @@ const LegendItem = ({
 );
 
 Legend.propTypes = {
+  /**
+   * If 'true' the layout is horizontal
+   * Default is 'true'
+   */
   horizontal: PropTypes.bool,
+  /**
+   * If 'true' the layout is vertical
+   * Default is 'false'
+   */
   vertical: PropTypes.bool,
 };
 
@@ -74,8 +82,18 @@ Legend.defaultProps = {
 };
 
 LegendItem.propTypes = {
+  /**
+   * The label value string
+   */
   label: PropTypes.string,
+  /**
+   * The color for the icon
+   * Accepts any valid css color value
+   */
   iconColor: PropTypes.string,
+  /**
+   * A collection of valid theme types, all boolean values
+   */
   ...themePropTypes,
 };
 

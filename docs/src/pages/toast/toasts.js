@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Button, Dismiss, ToastProvider, ToastConsumer,
+  Button, Dismiss, Paper, ToastProvider, ToastConsumer,
 } from '@../../../../reactify/build';
 import {
   directionCode,
@@ -22,15 +22,15 @@ class ToastDemo extends Component {
           uniqueIdentifier="simpleUse"
           sourceCode={simpleCode}
         >
-          <ToastProvider>
+          <ToastProvider autoDismissTimeout={10000}>
             <ToastConsumer>
               {({ addToast }) => (
                 <Button
                   onClick={
                   () => addToast(
-                    <Dismiss>
-                    Lorem Ipsum is not gypsum. Did you know Toast
-                    </Dismiss>,
+                    <Paper success>
+                      Any content can go here, check this sample's code
+                    </Paper>,
                   )
                   }
                 >
@@ -88,6 +88,25 @@ class ToastDemo extends Component {
           uniqueIdentifier="directionUse"
           sourceCode={directionCode}
         >
+          <ToastProvider topLeft>
+            <ToastConsumer>
+              {({ addToast }) => (
+                <Button
+                  onClick={
+                () => addToast(
+                  <Dismiss>
+                  Top Left Toast
+                  </Dismiss>,
+                )
+                }
+                >
+              Show Top Left
+                </Button>
+              )}
+            </ToastConsumer>
+          </ToastProvider>
+          <br />
+          <br />
           <ToastProvider topCenter>
             <ToastConsumer>
               {({ addToast }) => (

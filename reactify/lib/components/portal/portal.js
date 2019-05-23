@@ -5,24 +5,51 @@ import $ from 'jquery';
 import { styles, BEMClassNames } from './styles';
 
 class Portal extends PureComponent {
+  static propTypes = {
+    /**
+     * If 'true', the portal will be positioned top
+     * Defaults to 'true'
+     */
+    top: PropTypes.bool,
+    /**
+     * If 'true', the portal will be positioned bottom
+     * Defaults to 'false'
+     */
+    bottom: PropTypes.bool,
+    /**
+     * If 'true', the portal will be positioned left
+     * Defaults to 'false'
+     */
+    left: PropTypes.bool,
+    /**
+     * If 'true', the portal will be positioned right
+     * Defaults to 'false'
+     */
+    right: PropTypes.bool,
+    /**
+     * If 'true', the modal can be closed by clicking outside it
+     * Defaults to 'true'
+     */
+    autoClose: PropTypes.bool,
+    /**
+     * If 'true', the background is not visible once the modal is open
+     * Defaults to 'false'
+     */
+    hideBackDrop: PropTypes.bool,
+    /**
+     * The callback called when modal is closed
+     */
+    onClose: PropTypes.func,
+  };
+
   static defaultProps = {
+    top: true,
     left: false,
     right: false,
     bottom: false,
-    top: true,
     autoClose: true,
     hideBackDrop: false,
     onClose: undefined,
-  };
-
-  static propTypes = {
-    left: PropTypes.bool,
-    right: PropTypes.bool,
-    bottom: PropTypes.bool,
-    top: PropTypes.bool,
-    autoClose: PropTypes.bool,
-    hideBackDrop: PropTypes.bool,
-    onClose: PropTypes.func,
   };
 
   containerChildRef = React.createRef();

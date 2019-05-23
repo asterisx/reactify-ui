@@ -15,13 +15,43 @@ class Select extends Component {
   static Item = ({ children, ...otherProps }) => <span {...otherProps}>{children}</span>;
 
   static propTypes = {
+    /**
+     * If 'true' select items are searcable
+     * i.e Shows a search box which filters select items
+     * Defaults to false
+     */
     searchable: PropTypes.bool,
+    /**
+     * If 'true' select items are all selectable
+     * i.e Shows a check box which select all items
+     * Defaults to false
+     */
     allSelectable: PropTypes.bool,
+    /**
+     * If 'true' only one item can be open at a time.
+     * Defaults to false
+     */
     singular: PropTypes.bool,
+    /**
+     * If 'true' multiple items can be open at a time.
+     * Defaults to true
+     */
     multiple: PropTypes.bool,
-    onSelectionChange: PropTypes.func,
+    /**
+     * A collection of valid theme types, all boolean values
+     */
     ...themePropTypes,
+    /**
+     * A collection of valid size types, all boolean values
+     */
     ...sizePropTypes,
+    /**
+     * Callback fired when the state is changed.
+     *
+     * @param {number} index The value of index prop of the selected value.
+     * @param {boolean} selected The `selected` value of the selected item is also passed
+     */
+    onSelectionChange: PropTypes.func,
   }
 
   static defaultProps = {
@@ -29,9 +59,9 @@ class Select extends Component {
     allSelectable: false,
     singular: false,
     multiple: true,
-    onSelectionChange: undefined,
     ...defaultThemePropTypes,
     ...defaultSizePropTypes,
+    onSelectionChange: undefined,
   }
 
   state = {

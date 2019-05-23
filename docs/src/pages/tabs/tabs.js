@@ -25,23 +25,29 @@ class TabsDemo extends Component {
           sourceCode={simpleCode}
         >
           <Tabs
-            selectedIndex={1}
+            selectedIndex={this.state.simpleSelectedIndex}
             onSelectionChange={
-              selectedIndex => this.setState({ simpleSelectedIndex: selectedIndex })
+              ({ index }) => this.setState({ simpleSelectedIndex: index })
             }
           >
-            <Tab index={0} selectedIndex={this.state.simpleSelectedIndex}>
+            <Tab index={0}>
               <Tab.Header>
                 <Button
                   style={{ borderRadius: 0 }}
-                  primary
+                  primary={this.state.simpleSelectedIndex === 0}
                   dark={this.state.simpleSelectedIndex !== 0}
                 >
                   Tab 1
                 </Button>
               </Tab.Header>
               <Tab.Body>
-                <Paper primary style={{ height: '300px', transitionDuration: '0.3s' }} className="d-flex w-100 align-items-center align-content-center justify-content-center font-large">Tab 1</Paper>
+                <Paper
+                  primary
+                  style={{ height: '300px', transitionDuration: '0.3s' }}
+                  className="d-flex w-100 align-items-center align-content-center justify-content-center font-large"
+                >
+                  Tab 1
+                </Paper>
               </Tab.Body>
             </Tab>
             <Tab index={1}>
@@ -55,7 +61,13 @@ class TabsDemo extends Component {
                 </Button>
               </Tab.Header>
               <Tab.Body>
-                <Paper danger style={{ height: '300px', transitionDuration: '0.3s' }} className="d-flex w-100 align-items-center align-content-center justify-content-center font-large">Tab 2</Paper>
+                <Paper
+                  danger
+                  style={{ height: '300px', transitionDuration: '0.3s' }}
+                  className="d-flex w-100 align-items-center align-content-center justify-content-center font-large"
+                >
+                  Tab 2
+                </Paper>
               </Tab.Body>
             </Tab>
             <Tab index={2}>
@@ -69,7 +81,13 @@ class TabsDemo extends Component {
                 </Button>
               </Tab.Header>
               <Tab.Body>
-                <Paper warning style={{ height: '300px', transitionDuration: '0.3s' }} className="d-flex w-100 align-items-center align-content-center justify-content-center font-large">Tab 3</Paper>
+                <Paper
+                  warning
+                  style={{ height: '300px', transitionDuration: '0.3s' }}
+                  className="d-flex w-100 align-items-center align-content-center justify-content-center font-large"
+                >
+                  Tab 3
+                </Paper>
               </Tab.Body>
             </Tab>
           </Tabs>
@@ -82,7 +100,6 @@ class TabsDemo extends Component {
         >
           <Tabs
             tabsDisabled
-            className="d-flex flex-column"
           >
             <Tab index={0}>
               <Tab.Header>
@@ -126,7 +143,7 @@ class TabsDemo extends Component {
         >
           <Tabs
             onSelectionChange={
-              selectedIndex => this.setState({ stylingSelectedIndex: selectedIndex })
+              ({ index }) => this.setState({ stylingSelectedIndex: index })
             }
             className="d-flex flex-column"
           >

@@ -71,4 +71,64 @@ export const styles = {
   getFontColorStyle: commonStyles.get.font.color.forTheme,
 
   getDisabledStyle: commonStyles.get.disabled.style,
+
+  getTransitionStyles: ({
+    topLeft,
+    bottomLeft,
+    bottomRight,
+    bottomCenter,
+    topCenter,
+    topRight,
+  }) => {
+    if (bottomRight) {
+      return {
+        entering: { transform: 'translateY(100%)', bottom: 0, right: '10px' },
+        entered: { transform: 'translateY(0%)', bottom: '10px', right: '10px' },
+        exiting: { transform: 'translateY(100%)', bottom: 0, right: '10px' },
+        exited: { transform: 'translateY(100%)', bottom: 0, right: '10px' },
+      };
+    }
+    if (bottomLeft) {
+      return {
+        entering: { transform: 'translateY(100%)', bottom: 0, left: '10px' },
+        entered: { transform: 'translateY(0%)', bottom: '10px', left: '10px' },
+        exiting: { transform: 'translateY(100%)', bottom: 0, left: '10px' },
+        exited: { transform: 'translateY(100%)', bottom: 0, left: '10px' },
+      };
+    }
+    if (topLeft) {
+      return {
+        entering: { transform: 'translateY(-100%)', top: 0, left: '10px' },
+        entered: { transform: 'translateY(0%)', top: '10px', left: '10px' },
+        exiting: { transform: 'translateY(-100%)', top: 0, left: '10px' },
+        exited: { transform: 'translateY(-100%)', top: 0, left: '10px' },
+      };
+    }
+    if (bottomCenter) {
+      return {
+        entering: { transform: 'translateY(100%) translateX(-50%)', bottom: 0, left: '50%' },
+        entered: { transform: 'translateY(0%) translateX(-50%)', bottom: '10px', left: '50%' },
+        exiting: { transform: 'translateY(100%) translateX(-50%)', bottom: 0, left: '50%' },
+        exited: { transform: 'translateY(100%) translateX(-50%)', bottom: 0, left: '50%' },
+      };
+    }
+    if (topCenter) {
+      return {
+        entering: { transform: 'translateY(-100%) translateX(-50%)', left: '50%' },
+        entered: { transform: 'translateY(0%) translateX(-50%)', top: '10px', left: '50%' },
+        exiting: { transform: 'translateY(-100%) translateX(-50%)', top: 0, left: '50%' },
+        exited: { transform: 'translateY(-100%) translateX(-50%)', top: 0, left: '50%' },
+      };
+    }
+    if (topRight) {
+      return {
+        entering: { transform: 'translateY(-100%)', top: 0, right: '10px' },
+        entered: { transform: 'translateY(0%)', top: '10px', right: '10px' },
+        exiting: { transform: 'translateY(-100%)', top: 0, right: '10px' },
+        exited: { transform: 'translateY(-100%)', top: 0, right: '10px' },
+      };
+    }
+
+    return null;
+  },
 };

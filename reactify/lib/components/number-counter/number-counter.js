@@ -10,14 +10,44 @@ import {
 
 class NumberCounter extends Component {
     static propTypes = {
-      ...sizePropTypes,
+      /**
+       * A collection of valid theme types, all boolean values
+       */
       ...themePropTypes,
+      /**
+       * A collection of valid size types, all boolean values
+       */
+      ...sizePropTypes,
+      /**
+       * The 'from' where the counter starts from
+       */
       from: PropTypes.number,
+      /**
+       * The 'to' where the counter goes to
+       */
       to: PropTypes.number.isRequired,
+      /**
+       * The delay before the counter starts
+       */
       delay: PropTypes.number,
+      /**
+       * If 'true', the component is disabled
+       * Default is 'false'
+       */
       disabled: PropTypes.bool,
+      /**
+       * The interval for the setInterval
+       */
       interval: PropTypes.number,
+      /**
+       * By how much the counter steps by
+       */
       step: PropTypes.number,
+      /**
+       * Callback fired when the value is changed.
+       *
+       * @param {number} value The new `value` value of the number counter
+       */
       onValueChange: PropTypes.func,
       onComplete: PropTypes.func,
     }

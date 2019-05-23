@@ -11,17 +11,27 @@ export class ToastController extends Component {
     isRunning: this.props.autoDismiss,
   };
 
+  static propTypes = {
+    /**
+     * If 'true', the Toast is autodismissable and will dismiss
+     * after the timeout runs out
+     */
+    autoDismiss: PropTypes.bool,
+    /**
+     * The autodimss timeout
+     */
+    autoDismissTimeout: PropTypes.number,
+    /**
+     * The callback called when Toast is dismissed
+     */
+    onDismiss: PropTypes.func,
+  }
+
   static defaultProps = {
     autoDismiss: false,
-    onDismiss: undefined,
     autoDismissTimeout: PropTypes.number.isRequired,
+    onDismiss: undefined,
   };
-
-  static propTypes = {
-    autoDismiss: PropTypes.bool,
-    onDismiss: PropTypes.func,
-    autoDismissTimeout: PropTypes.number,
-  }
 
   static getDerivedStateFromProps({
     autoDismiss,
@@ -81,10 +91,12 @@ export class ToastController extends Component {
       ...otherProps
     } = this.props;
 
+    const { onMouseEnter, onMouseLeave } = this;
+
     const hasMouseEvents = pauseOnHover && autoDismiss;
-    // NOTE: conditions here so methods can be clean
-    const handleMouseEnter = hasMouseEvents ? this.onMouseEnter : null;
-    const handleMouseLeave = hasMouseEvents ? this.onMouseLeave : null;
+
+    const handleMouseEnter = hasMouseEvents ? onMouseEnter : null;
+    const handleMouseLeave = hasMouseEvents ? onMouseLeave : null;
 
     return (
       <Transition appear mountOnEnter unmountOnExit timeout={transitionDuration} {...otherProps}>

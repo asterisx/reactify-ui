@@ -6,19 +6,33 @@ import { defaultSizePropTypes, sizePropTypes } from '../../common';
 import { styles, BEMClassNames } from './styles';
 
 class Modal extends PureComponent {
+  static propTypes = {
+    /**
+     * If 'true', the modal can be closed by clicking outside it
+     * Defaults to 'true'
+     */
+    autoClose: PropTypes.bool,
+    /**
+     * If 'true', the background is not visible once the modal is open
+     * Defaults to 'false'
+     */
+    hideBackDrop: PropTypes.bool,
+    /**
+     * A collection of valid size types, all boolean values
+     */
+    ...sizePropTypes,
+    /**
+     * The callback called when modal is closed
+     */
+    onClose: PropTypes.func,
+  };
+
   static defaultProps = {
     autoClose: true,
     hideBackDrop: false,
-    ...defaultSizePropTypes,
     style: { width: undefined },
+    ...defaultSizePropTypes,
     onClose: undefined,
-  };
-
-  static propTypes = {
-    autoClose: PropTypes.bool,
-    hideBackDrop: PropTypes.bool,
-    ...sizePropTypes,
-    onClose: PropTypes.func,
   };
 
   containerChildRef = React.createRef();

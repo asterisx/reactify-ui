@@ -62,6 +62,10 @@ HorizontalCard.Footer = ({
 );
 
 HorizontalCard.Body.propTypes = {
+  /**
+   * If 'true', shows a borderLeft
+   * Default to 'false'
+   */
   bordered: PropTypes.bool,
 };
 
@@ -70,6 +74,10 @@ HorizontalCard.Body.defaultProps = {
 };
 
 HorizontalCard.Footer.propTypes = {
+  /**
+   * If 'true', shows a borderLeft
+   * Default to 'false'
+   */
   bordered: PropTypes.bool,
 };
 
@@ -78,8 +86,19 @@ HorizontalCard.Footer.defaultProps = {
 };
 
 HorizontalCard.propTypes = {
+  /**
+   * A collection of valid size types, all boolean values
+   */
   ...sizePropTypes,
+  /**
+   * If 'true', the component is disabled
+   * Default is 'false'
+   */
   disabled: PropTypes.bool,
+  /**
+   * If 'true', shows a shadow
+   * Default to 'true'
+   */
   shadowed: PropTypes.bool,
 };
 

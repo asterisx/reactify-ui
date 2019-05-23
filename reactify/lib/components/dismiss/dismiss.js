@@ -19,21 +19,31 @@ import { styles, BEMClassNames } from './styles';
 class Dismiss extends Component {
   state = { closed: false };
 
+  static propTypes = {
+    onClose: PropTypes.func,
+    onCloseIconClick: PropTypes.func,
+    /**
+     * If 'true', the component is disabled
+     * Default is 'false'
+     */
+    disabled: PropTypes.bool,
+    /**
+     * A collection of valid theme types, all boolean values
+     */
+    ...themePropTypes,
+    /**
+     * A collection of valid size types, all boolean values
+     */
+    ...sizePropTypes,
+  }
+
   static defaultProps = {
-    ...defaultThemePropTypes,
-    ...defaultSizePropTypes,
     autoDismiss: true,
     onClose: undefined,
     onCloseIconClick: undefined,
     disabled: false,
-  }
-
-  static propTypes = {
-    ...themePropTypes,
-    ...sizePropTypes,
-    onClose: PropTypes.func,
-    onCloseIconClick: PropTypes.func,
-    disabled: PropTypes.bool,
+    ...defaultThemePropTypes,
+    ...defaultSizePropTypes,
   }
 
   getIcon = ({

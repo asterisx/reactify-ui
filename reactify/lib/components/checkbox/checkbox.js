@@ -28,7 +28,7 @@ class Checkbox extends Component {
      */
     iconColor: PropTypes.string,
     /**
-     * If 'true', the comoponent is disabled
+     * If 'true', the component is disabled
      * Default is 'false'
      */
     disabled: PropTypes.bool,
@@ -73,7 +73,7 @@ class Checkbox extends Component {
           }
         });
     } else if (this.props.onChange) {
-      this.props.onChange({ event, checked: !this.props.defaultChecked });
+      this.props.onChange({ event, checked: !this.props.checked });
     }
 
     if (this.props.onClick) { this.props.onClick(event); }

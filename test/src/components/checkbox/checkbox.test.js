@@ -34,11 +34,22 @@ describe('Checkbox Component', () => {
         const mountWrapper = mount(<Checkbox checked={true} onChange={spy}/>);
         expect(mountWrapper.state().checked).toBeFalsy();
 
-        mountWrapper.simulate("click", { target: { checked: true } });
+        mountWrapper.simulate('click');
         expect(spy.called).toBeTruthy();
-        expect(spy.firstCall.args[0].checked).toBeTruthy();
+        expect(spy.firstCall.args[0].checked).toBeFalsy();
         expect(mountWrapper.state().checked).toBeFalsy();
     });
+
+    it('should call onChnage hander with correct value', () => {
+        const spy = sinon.spy();
+        const mountWrapper = mount(<Checkbox onChange={spy}/>);
+        expect(mountWrapper.state().checked).toBeFalsy();
+
+        mountWrapper.simulate('click');
+        expect(spy.called).toBeTruthy();
+        expect(spy.firstCall.args[0].checked).toBeTruthy();
+        expect(mountWrapper.state().checked).toBeTruthy();
+    })
     
     displaysChildren(<Checkbox></Checkbox>);
 

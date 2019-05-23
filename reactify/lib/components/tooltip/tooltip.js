@@ -15,21 +15,43 @@ class Tooltip extends Component {
   }
 
   static propTypes = {
-    ...themePropTypes,
-    ...sizePropTypes,
+    /**
+     * If 'true', the tooltip will be positioned top
+     * Defaults to 'true'
+     */
     top: PropTypes.bool,
+    /**
+     * If 'true', the tooltip will be positioned bottom
+     * Defaults to 'false'
+     */
     bottom: PropTypes.bool,
+    /**
+     * If 'true', the tooltip will be positioned left
+     * Defaults to 'false'
+     */
     left: PropTypes.bool,
+    /**
+     * If 'true', the tooltip will be positioned right
+     * Defaults to 'false'
+     */
     right: PropTypes.bool,
+    /**
+     * A collection of valid theme types, all boolean values
+     */
+    ...themePropTypes,
+    /**
+     * A collection of valid size types, all boolean values
+     */
+    ...sizePropTypes,
   }
 
   static defaultProps = {
-    ...defaultThemePropTypes,
-    ...defaultSizePropTypes,
     top: true,
     bottom: false,
     left: false,
     right: false,
+    ...defaultThemePropTypes,
+    ...defaultSizePropTypes,
   }
 
   hideTooltip = () => {

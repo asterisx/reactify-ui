@@ -80,6 +80,10 @@ Card.Footer = ({
 );
 
 Card.Body.propTypes = {
+  /**
+   * If 'true', shows a borderTop
+   * Default to 'false'
+   */
   bordered: PropTypes.bool,
 };
 
@@ -88,6 +92,10 @@ Card.Body.defaultProps = {
 };
 
 Card.Footer.propTypes = {
+  /**
+   * If 'true', shows a borderTop
+   * Default to 'false'
+   */
   bordered: PropTypes.bool,
 };
 
@@ -96,8 +104,19 @@ Card.Footer.defaultProps = {
 };
 
 Card.propTypes = {
+  /**
+   * A collection of valid size types, all boolean values
+   */
   ...sizePropTypes,
+  /**
+   * If 'true', the component is disabled
+   * Default is 'false'
+   */
   disabled: PropTypes.bool,
+  /**
+   * If 'true', shows a shadow
+   * Default to 'true'
+   */
   shadowed: PropTypes.bool,
 };
 

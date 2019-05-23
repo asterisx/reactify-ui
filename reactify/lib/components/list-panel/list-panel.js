@@ -185,6 +185,8 @@ class ListPanel extends Component {
 
     const { items } = this.state;
 
+    const { itemClicked } = this;
+
     return (
       <ul
         css={[
@@ -212,7 +214,7 @@ class ListPanel extends Component {
             return React.cloneElement(child, {
               onClick: (event) => {
                 if (child.props.isSelectable) {
-                  this.itemClicked({
+                  itemClicked({
                     event,
                     index: child.props.index,
                     isControlled,
@@ -245,12 +247,43 @@ class ListPanel extends Component {
 }
 
 ListPanel.propTypes = {
+  /**
+   * This is used to set a borderTop to list items
+   * This is drilled directly to ListPanel.Item 'as is'
+   */
   bordered: PropTypes.bool,
+  /**
+   * If 'true', the component is disabled
+   * Default is 'false'
+   */
   disabled: PropTypes.bool,
+  /**
+   * If 'true' only one item can be open at a time.
+   * Defaults to false
+   */
   singular: PropTypes.bool,
+  /**
+   * If 'true' multiple items can be open at a time.
+   * Defaults to true
+   */
   multiple: PropTypes.bool,
+  /**
+   * A collection of valid theme types, all boolean values
+   * This is drilled directly to ListPanel.Item 'as is'
+   */
   ...themePropTypes,
+  /**
+   * A collection of valid size types, all boolean values
+   * This is drilled directly to ListPanel.Item 'as is'
+   */
   ...sizePropTypes,
+  /**
+   * Callback fired when the state is changed.
+   *
+   * @param {number} index The value of index prop of the selected value.
+   * @param {object} event The 'event' itself
+   * @param {boolean} [selected] The `selected` value of the selected item is also passed
+   */
   onItemClicked: PropTypes.func,
 };
 
@@ -265,13 +298,43 @@ ListPanel.defaultProps = {
 };
 
 ListPanel.Item.propTypes = {
+  /**
+   * If 'true', makes the item selected
+   * This also makes the item 'Controlled'
+   */
   selected: PropTypes.bool,
+  /**
+   * If 'true', makes the item selected
+   * Default is 'false'
+   * This does **not** makes the item 'Controlled'
+   */
   defaultSelected: PropTypes.bool,
+  /**
+   * This is used to set a borderTop to the item
+   */
   bordered: PropTypes.bool,
+  /**
+   * Uniquely identifies an item,
+   * the same is returned to event handlers
+   */
   index: PropTypes.number.isRequired,
+  /**
+   * If 'true', the component is disabled
+   * Default is 'false'
+   */
   disabled: PropTypes.bool,
+  /**
+   * If 'false', the item cannot be selected and will not raise any events
+   * Default is 'true'
+   */
   isSelectable: PropTypes.bool,
+  /**
+   * A collection of valid theme types, all boolean values
+   */
   ...themePropTypes,
+  /**
+   * A collection of valid size types, all boolean values
+   */
   ...sizePropTypes,
 };
 

@@ -5,9 +5,25 @@ import { styles, BEMClassNames } from './styles';
 
 class FullScreen extends Component {
   static propTypes = {
+    /**
+     * If 'true', the component is expanded by default
+     * Default is 'false'
+     */
     expanded: PropTypes.bool,
+    /**
+     * If 'true', the icon is hidden
+     * Default is 'false'
+     */
     hideIcon: PropTypes.bool,
+    /**
+     * If 'true', the expanded state can be contracted with esc key
+     * Default is 'false'
+     */
     contractOnEscapeKey: PropTypes.bool,
+    /**
+     * If 'true', the component is disabled
+     * Default is 'false'
+     */
     disabled: PropTypes.bool,
   };
 

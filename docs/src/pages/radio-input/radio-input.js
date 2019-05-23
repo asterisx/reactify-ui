@@ -33,7 +33,7 @@ const RadioInputDemo = () => (
       uniqueIdentifier="checkedUse"
       sourceCode={checkedCode}
     >
-      <RadioInput defaultChecked className="align-self-center" />
+      <RadioInput checked className="align-self-center" />
     </DemoCard>
 
     <DemoCard

@@ -116,6 +116,12 @@ class Accordion extends Component {
   )
 
   state = {
+    /* items store the accordion items's open state
+     * If the mode is singular, items is an object with a single
+     * key matching the open items's index with value like: { open: true | false }
+     * If the mode is multiple, items is a collection of fields
+     * where the keys are same as index and values is an object like: { open: true | false }
+     */
     items: {},
   }
 
@@ -212,8 +218,19 @@ Accordion.Header.displayName = 'Accordion.Header';
 Accordion.Body.displayName = 'Accordion.Body';
 
 Accordion.propTypes = {
+  /**
+   * If 'true' only one accordion item can be open at a time.
+   * Defaults to false
+   */
   singular: PropTypes.bool,
+  /**
+   * If 'true' multiple accordion items can be open at a time.
+   * Defaults to true
+   */
   multiple: PropTypes.bool,
+  /**
+   * If 'true' accordion will be disabled and will have no events
+   */
   disabled: PropTypes.bool,
   ...themePropTypes,
 };
@@ -226,10 +243,29 @@ Accordion.defaultProps = {
 };
 
 Accordion.Item.propTypes = {
+  /**
+   * A unique identifier for each item,
+   * This is passed on as to event handlers
+   */
   index: PropTypes.number.isRequired,
+  /**
+   * If 'true' the accordion item is opened by default
+   */
   open: PropTypes.bool,
+  /**
+   * If 'true' accordion item will be disabled and will have no events
+   */
   disabled: PropTypes.bool,
+  /**
+   * Callback fired when the state is changed.
+   *
+   * @param {number} index The `index` of the accordion item on which the state change occurs.
+   * @param {boolean} selected The `selected` value of the accordion item is also passed
+   */
   onChange: PropTypes.func,
+  /**
+   * A collection of valid theme types, all boolean values
+   */
   ...themePropTypes,
 };
 

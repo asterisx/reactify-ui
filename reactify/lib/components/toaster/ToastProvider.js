@@ -10,10 +10,62 @@ const { Consumer, Provider } = React.createContext();
 export class ToastProvider extends Component {
   state = { toasts: [] }
 
+  static propTypes = {
+    /**
+     * If 'true', the Toast is autodismissable and will dismiss
+     * after the timeout runs out,
+     * Defaults to 'true'
+     */
+    autoDismiss: PropTypes.bool,
+    /**
+     * The autodimss timeout
+     */
+    autoDismissTimeout: PropTypes.number,
+    /**
+     * The transition duration for the Toast transitions
+     */
+    transitionDuration: PropTypes.number,
+    /**
+     * If 'true', the countdown is paused on hover
+     * Defaults to 'false'
+     */
+    pauseOnHover: PropTypes.bool,
+    /**
+     * If 'true', the Toast will be positioned top left
+     * Defaults to 'true'
+     */
+    topLeft: PropTypes.bool,
+    /**
+     * If 'true', the Toast will be positioned top right
+     * Defaults to 'false'
+     */
+    topRight: PropTypes.bool,
+    /**
+     * If 'true', the tooltip will be positioned bottom left
+     * Defaults to 'false'
+     */
+    bottomLeft: PropTypes.bool,
+    /**
+     * If 'true', the Toast will be positioned bottom right
+     * Defaults to 'false'
+     */
+    bottomRight: PropTypes.bool,
+    /**
+     * If 'true', the Toast will be positioned bottom center
+     * Defaults to 'false'
+     */
+    bottomCenter: PropTypes.bool,
+    /**
+     * If 'true', the Toast will be positioned top center
+     * Defaults to 'false'
+     */
+    topCenter: PropTypes.bool,
+  }
+
   static defaultProps = {
+    autoDismiss: true,
     autoDismissTimeout: 5000,
     transitionDuration: 220,
-    autoDismiss: true,
     pauseOnHover: false,
     topLeft: false,
     topCenter: false,
@@ -23,18 +75,6 @@ export class ToastProvider extends Component {
     bottomRight: false,
   };
 
-  static propTypes = {
-    autoDismissTimeout: PropTypes.number,
-    transitionDuration: PropTypes.number,
-    pauseOnHover: PropTypes.bool,
-    autoDismiss: PropTypes.bool,
-    topLeft: PropTypes.bool,
-    topCenter: PropTypes.bool,
-    topRight: PropTypes.bool,
-    bottomLeft: PropTypes.bool,
-    bottomCenter: PropTypes.bool,
-    bottomRight: PropTypes.bool,
-  }
 
   addToast = (Comp) => {
     const id = uuidv1();

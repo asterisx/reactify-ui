@@ -79,10 +79,30 @@ const Button = ({
 );
 
 Button.propTypes = {
+  /**
+   * If 'true', the background is transparent
+   * and the font color matches the passed theme's color
+   * Default is 'false'
+   */
   clear: PropTypes.bool,
+  /**
+   * Used in conjunction with 'clear'
+   * If 'true' all same as clear prop + border is same as theme's color
+   * Default is 'false'
+   */
   bordered: PropTypes.bool,
+  /**
+   * If 'true', the component is disabled
+   * Default is 'false'
+   */
   disabled: PropTypes.bool,
+  /**
+   * A collection of valid theme types, all boolean values
+   */
   ...themePropTypes,
+  /**
+   * A collection of valid size types, all boolean values
+   */
   ...sizePropTypes,
 };
 

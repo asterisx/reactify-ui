@@ -1,4 +1,22 @@
 const directionCode = `
+<ToastProvider topLeft>
+  <ToastConsumer>
+    {({ addToast }) => (
+      <Button
+        onClick={
+      () => addToast(
+        <Dismiss>
+        Top Left Toast
+        </Dismiss>,
+      )
+      }
+      >
+    Show Top Left
+      </Button>
+    )}
+  </ToastConsumer>
+</ToastProvider>
+
 <ToastProvider topCenter>
     <ToastConsumer>
     {({ addToast }) => (
@@ -151,24 +169,22 @@ const pauseOnHover = `
 
 
 const simpleCode = `
-<ToastProvider>
-    <ToastConsumer>
-    {({ addToast, removeToast }) => (
-        <Button
+<ToastProvider autoDismissTimeout={10000}>
+  <ToastConsumer>
+    {({ addToast }) => (
+      <Button
         onClick={
-            () => addToast(
-            <Dismiss
-                onClose={removeToast}
-            >
-            Lorem Ipsum is not gypsum. Did you know Toast
-            </Dismiss>,
-            )
-            }
-        >
-        Show Toast
-        </Button>
+        () => addToast(
+          <Paper success>
+            Any content can go here, check this sample's code
+          </Paper>,
+        )
+        }
+      >
+    Show Toast
+      </Button>
     )}
-    </ToastConsumer>
+  </ToastConsumer>
 </ToastProvider>
 `;
 

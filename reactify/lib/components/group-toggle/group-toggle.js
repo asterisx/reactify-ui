@@ -5,7 +5,7 @@ import { styles } from './styles';
 class GroupToggle extends Component {
   static propTypes = {
     /**
-     * If 'true', the comoponent is disabled
+     * If 'true', the component is disabled
      * Default is 'false'
      */
     disabled: PropTypes.bool,

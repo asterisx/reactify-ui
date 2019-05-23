@@ -28,7 +28,7 @@ class Switch extends Component {
      */
     iconColor: PropTypes.string,
     /**
-     * If 'true', the comoponent is disabled
+     * If 'true', the component is disabled
      * Default is 'false'
      */
     disabled: PropTypes.bool,

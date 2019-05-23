@@ -41,6 +41,11 @@ class RadioGroup extends Component {
         onSelectionChange,
         ...otherProps
       } = this.props;
+
+      const { selectedIndex: selectedIndexInState } = this.state;
+
+      const { toggleSelect } = this;
+
       return (
         <div
           css={[
@@ -54,11 +59,8 @@ class RadioGroup extends Component {
           {children
             && React.Children.map(children,
               child => React.cloneElement(child, {
-                checked: this.state.selectedIndex === child.props.index,
-                onClick: (evt) => {
-                  this.toggleSelect(child.props.index);
-                  if (child.props.onClick) child.props.onClick(evt);
-                },
+                checked: selectedIndexInState === child.props.index,
+                onChange: () => toggleSelect(child.props.index),
                 primary: child.props.primary || primary,
                 secondary: child.props.secondary || secondary,
                 dark: child.props.dark || dark,
@@ -79,10 +81,28 @@ class RadioGroup extends Component {
 }
 
 RadioGroup.propTypes = {
+  /**
+   * If 'true', the component is disabled
+   * Default is 'false'
+   */
   disabled: PropTypes.bool,
+  /**
+   * A collection of valid theme types, all boolean values
+   */
   ...themePropTypes,
+  /**
+   * A collection of valid size types, all boolean values
+   */
   ...sizePropTypes,
+  /**
+   * Callback fired when new radio input is selected
+   * @param {number} index The `index` of the new radio input
+   */
   onSelectionChange: PropTypes.func,
+  /**
+   * The index of the currently selected radio input
+   * This should match the `index` prop of the radio input
+   */
   selectedIndex: PropTypes.number,
 };
 

@@ -90,12 +90,34 @@ Badge.Bubble = ({
 );
 
 Badge.Bubble.propTypes = {
+  /**
+   * If 'true', the badge is placed top left
+   * Default is 'false'
+   */
   topLeft: PropTypes.bool,
+  /**
+   * If 'true', the badge is placed top right
+   * Default is 'true'
+   */
   topRight: PropTypes.bool,
+  /**
+   * If 'true', the badge is placed bottom left
+   * Default is 'false'
+   */
   bottomLeft: PropTypes.bool,
+  /**
+   * If 'true', the badge is placed bottom right
+   * Default is 'false'
+   */
   bottomRight: PropTypes.bool,
-  ...sizePropTypes,
+  /**
+   * A collection of valid theme types, all boolean values
+   */
   ...themePropTypes,
+  /**
+   * A collection of valid size types, all boolean values
+   */
+  ...sizePropTypes,
 };
 
 Badge.Bubble.defaultProps = {

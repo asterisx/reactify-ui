@@ -10,11 +10,31 @@ import {
 
 class StarRating extends Component {
     static propTypes = {
+      /**
+       * A collection of valid theme types, all boolean values
+       */
       disabled: PropTypes.bool,
+      /**
+       * The no of stars
+       */
       highestRating: PropTypes.number,
+      /**
+       * The current rating
+       */
       rating: PropTypes.number,
-      ...sizePropTypes,
+      /**
+       * A collection of valid theme types, all boolean values
+       */
       ...themePropTypes,
+      /**
+       * A collection of valid size types, all boolean values
+       */
+      ...sizePropTypes,
+      /**
+       * Callback fired when the state is changed.
+       *
+       * @param {number} `rating` The new rating.
+       */
       onChange: PropTypes.func,
     };
 

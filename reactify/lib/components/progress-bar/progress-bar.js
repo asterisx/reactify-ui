@@ -86,11 +86,25 @@ const ProgressBar = ({
 );
 
 ProgressBar.propTypes = {
-  ...sizePropTypes,
-  ...themePropTypes,
+  /**
+   * If 'true', the text is left inside the progress bar
+   * Default value is 'true'
+   */
   textLeft: PropTypes.bool,
+  /**
+   * If 'true', the text is right inside the progress bar
+   * Default value is 'false'
+   */
   textRight: PropTypes.bool,
+  /**
+   * If 'true', the text is center inside the progress bar
+   * Default value is 'false'
+   */
   textCenter: PropTypes.bool,
+  /**
+   * Required
+   * The current progress bar value
+   */
   percentage(props, propName, componentName) {
     const percentage = props[propName];
 
@@ -105,14 +119,22 @@ ProgressBar.propTypes = {
 
     return percentage >= 0 && percentage <= 100 ? null : new Error(`Percentage must be between 0 to 100 in ${componentName}`);
   },
+  /**
+   * A collection of valid theme types, all boolean values
+   */
+  ...themePropTypes,
+  /**
+   * A collection of valid size types, all boolean values
+   */
+  ...sizePropTypes,
 };
 
 ProgressBar.defaultProps = {
-  ...defaultSizePropTypes,
-  ...defaultThemePropTypes,
   textLeft: true,
   textRight: false,
   textCenter: false,
+  ...defaultSizePropTypes,
+  ...defaultThemePropTypes,
 };
 
 export default ProgressBar;

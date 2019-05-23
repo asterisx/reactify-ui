@@ -53,11 +53,34 @@ const Alert = ({
 );
 
 Alert.propTypes = {
+  /**
+   * If 'true' shows a border on left
+   * Default is 'true'
+   */
   borderLeft: PropTypes.bool,
+  /**
+   * If 'true' shows a border on left
+   * Default is 'false'
+   */
   borderRight: PropTypes.bool,
+  /**
+   * If 'true' shows a border on left
+   * Default is 'false'
+   */
   borderTop: PropTypes.bool,
+  /**
+   * If 'true' shows a border on left
+   * Default is 'false'
+   */
   borderBottom: PropTypes.bool,
+  /**
+   * A collection of valid theme types, all boolean values
+   */
   ...themePropTypes,
+  /**
+   * If 'true', the component is disabled
+   * Default is 'false'
+   */
   disabled: PropTypes.bool,
 };
 

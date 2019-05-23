@@ -236,7 +236,13 @@ TopBar.Menu = ({
 );
 
 TopBar.propTypes = {
+  /**
+   * A collection of valid theme types, all boolean values
+   */
   ...themePropTypes,
+  /**
+   * A collection of valid size types, all boolean values
+   */
   ...sizePropTypes,
 };
 
@@ -245,13 +251,31 @@ TopBar.defaultProps = {
   ...defaultSizePropTypes,
 };
 
+TopBar.Logo.propTypes = {
+  /**
+   * A collection of valid theme types, all boolean values
+   */
+  ...themePropTypes,
+  /**
+   * A collection of valid size types, all boolean values
+   */
+  ...sizePropTypes,
+};
+
 TopBar.Logo.defaultProps = {
   ...defaultThemePropTypes,
   ...defaultSizePropTypes,
 };
 
-TopBar.Logo.propTypes = {
+
+TopBar.Body.propTypes = {
+  /**
+   * A collection of valid theme types, all boolean values
+   */
   ...themePropTypes,
+  /**
+   * A collection of valid size types, all boolean values
+   */
   ...sizePropTypes,
 };
 
@@ -260,8 +284,14 @@ TopBar.Body.defaultProps = {
   ...defaultSizePropTypes,
 };
 
-TopBar.Body.propTypes = {
+TopBar.Menu.propTypes = {
+  /**
+   * A collection of valid theme types, all boolean values
+   */
   ...themePropTypes,
+  /**
+   * A collection of valid size types, all boolean values
+   */
   ...sizePropTypes,
 };
 
@@ -270,9 +300,5 @@ TopBar.Menu.defaultProps = {
   ...defaultSizePropTypes,
 };
 
-TopBar.Menu.propTypes = {
-  ...themePropTypes,
-  ...sizePropTypes,
-};
 
 export default TopBar;

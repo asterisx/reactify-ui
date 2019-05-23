@@ -125,18 +125,69 @@ const Spinner = ({
 
 
 Spinner.propTypes = {
+  /**
+   * If 'true' the balls type is used
+   * Default is 'true'
+   */
   balls: PropTypes.bool,
+  /**
+   * If 'true' the bars type is used
+   * Default is 'false'
+   */
   bars: PropTypes.bool,
+  /**
+   * If 'true' the circle type is used
+   * Default is 'false'
+   */
   circle: PropTypes.bool,
+  /**
+   * If 'true' the clock type is used
+   * Default is 'false'
+   */
   clock: PropTypes.bool,
+  /**
+   * If 'true' the hydrogen type is used
+   * Default is 'false'
+   */
   hydrogen: PropTypes.bool,
+  /**
+   * If 'true' the loadbar type is used
+   * Default is 'false'
+   */
   loadbar: PropTypes.bool,
+  /**
+   * If 'true' the sphere type is used
+   * Default is 'false'
+   */
   sphere: PropTypes.bool,
+  /**
+   * If 'true' the slices type is used
+   * Default is 'false'
+   */
   slices: PropTypes.bool,
+  /**
+   * If 'true' the texture type is used
+   * Default is 'false'
+   */
   texture: PropTypes.bool,
+  /**
+   * If 'true' the volume type is used
+   * Default is 'false'
+   */
   volume: PropTypes.bool,
+  /**
+   * If 'true' the vortex type is used
+   * Default is 'false'
+   */
   vortex: PropTypes.bool,
+  /**
+   * If 'true' the wave type is used
+   * Default is 'false'
+   */
   wave: PropTypes.bool,
+  /**
+   * A collection of valid size types, all boolean values
+   */
   ...sizePropTypes,
 };
 

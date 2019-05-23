@@ -67,8 +67,18 @@ const Paper = ({
 );
 
 Paper.propTypes = {
-  ...sizePropTypes,
+  /**
+   * A collection of valid theme types, all boolean values
+   */
   ...themePropTypes,
+  /**
+   * A collection of valid size types, all boolean values
+   */
+  ...sizePropTypes,
+  /**
+   * If 'true', no shaodow is applied to the component
+   * Default is 'false'
+   */
   noShadow: PropTypes.bool,
 };
 
