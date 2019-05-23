@@ -3,190 +3,160 @@ import PropTypes from 'prop-types';
 import { throttle } from 'throttle-debounce';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import Portal from '../portal';
-import ListPanel from '../list-panel';
 import {
-  defaultThemePropTypes,
-  defaultSizePropTypes,
-  themePropTypes,
-  sizePropTypes,
   screenSizesInPx,
 } from '../../common';
 import { styles, BEMClassNames } from './styles';
 
 class Dropdown extends Component {
-    static Item = ({ children, ...otherProps }) => <span {...otherProps}>{children}</span>
+  static propTypes = {
+    disabled: PropTypes.bool,
+    trayOpen: PropTypes.bool,
+    // eslint-disable-next-line react/forbid-prop-types
+    label: PropTypes.any,
+    sm: PropTypes.bool,
+    md: PropTypes.bool,
+    lg: PropTypes.bool,
+    xl: PropTypes.bool,
+  }
 
-    state = {
-      screenIsSm: false,
-      screenIsMd: false,
-      screenIsLg: false,
-      screenIsXl: false,
-      isTrayOpen: this.props.trayOpen,
+  static defaultProps = {
+    disabled: false,
+    trayOpen: false,
+    label: '',
+    sm: false,
+    md: false,
+    lg: false,
+    xl: false,
+  }
+
+  state = {
+    screenIsSm: false,
+    screenIsMd: false,
+    screenIsLg: false,
+    screenIsXl: false,
+    isTrayOpen: this.props.trayOpen,
+    prevOpenProp: this.props.trayOpen,
+  }
+
+  throttledResizeListener = undefined;
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.trayOpen !== state.prevOpenProp) {
+      return {
+        isTrayOpen: props.trayOpen,
+        prevOpenProp: props.trayOpen,
+      };
     }
+    return null;
+  }
 
-    throttledResizeListener = undefined;
+  componentDidMount() {
+    this.throttledResizeListener = throttle(200, this.updateWindowDimensions);
+    window.addEventListener('resize', this.throttledResizeListener);
+    this.updateWindowDimensions();
+  }
 
-    absoluteContainerRef = React.createRef();
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.throttledResizeListener);
+  }
 
-    componentDidMount() {
-      this.throttledResizeListener = throttle(300, this.updateWindowDimensions);
-      window.addEventListener('resize', this.throttledResizeListener);
-      this.updateWindowDimensions();
+  closeTray = () => {
+    this.setState(({ isTrayOpen: false }));
+  }
+
+  toggleTray = () => {
+    this.setState(prevState => ({ isTrayOpen: !prevState.isTrayOpen }));
+  }
+
+  updateWindowDimensions = () => {
+    if (window.innerWidth <= screenSizesInPx.screenSm) {
+      this.setState({
+        screenIsSm: true,
+        screenIsMd: false,
+        screenIsLg: false,
+        screenIsXl: false,
+      });
+    } else if (window.innerWidth <= screenSizesInPx.screenMd) {
+      this.setState({
+        screenIsSm: false,
+        screenIsMd: true,
+        screenIsLg: false,
+        screenIsXl: false,
+      });
+    } else if (window.innerWidth <= screenSizesInPx.screenLg) {
+      this.setState({
+        screenIsSm: false,
+        screenIsMd: false,
+        screenIsLg: true,
+        screenIsXl: false,
+      });
+    } else if (window.innerWidth <= screenSizesInPx.screenXl) {
+      this.setState({
+        screenIsSm: false,
+        screenIsMd: false,
+        screenIsLg: false,
+        screenIsXl: true,
+      });
     }
+  }
 
-    componentWillUnmount() {
-      window.removeEventListener('resize', this.throttledResizeListener);
-    }
+  render() {
+    const {
+      children,
+      label,
+      sm,
+      md,
+      lg,
+      xl,
+      trayOpen,
+      disabled,
+      ...otherProps
+    } = this.props;
 
-    getListPanel = (items, props, callback) => (
-      <ListPanel css={[styles.listPanel]} {...props} onSelectionChange={callback}>
-        {React.Children.map(items,
-          (item) => {
-            const { children, ...otherProps } = item.props;
-            return <ListPanel.Item {...otherProps}>{children}</ListPanel.Item>;
-          })}
-      </ListPanel>
-    )
+    const {
+      screenIsSm, screenIsMd, screenIsLg, screenIsXl, isTrayOpen,
+    } = this.state;
 
-    trayToggle = () => {
-      setTimeout(() => this.setState(prevProps => ({ isTrayOpen: !prevProps.isTrayOpen })), 0);
-    }
+    const {
+      toggleTray, closeTray,
+    } = this;
 
-    onSelectedIndex = ({ index, selected }) => {
-      const { onSelectionChange } = this.props;
-      if (onSelectionChange) onSelectionChange({ index, selected });
-    }
+    return (
+      <div
+        css={[styles.container, styles.getDisabledStyle({ disabled })]}
+        onClick={toggleTray}
+        {...otherProps}
+      >
 
-    updateWindowDimensions = () => {
-      if (window.innerWidth <= screenSizesInPx.screenSm) {
-        this.setState({
-          screenIsSm: true,
-          screenIsMd: false,
-          screenIsLg: false,
-          screenIsXl: false,
-        });
-      } else if (window.innerWidth <= screenSizesInPx.screenMd) {
-        this.setState({
-          screenIsSm: false,
-          screenIsMd: true,
-          screenIsLg: false,
-          screenIsXl: false,
-        });
-      } else if (window.innerWidth <= screenSizesInPx.screenLg) {
-        this.setState({
-          screenIsSm: false,
-          screenIsMd: false,
-          screenIsLg: true,
-          screenIsXl: false,
-        });
-      } else if (window.innerWidth <= screenSizesInPx.screenXl) {
-        this.setState({
-          screenIsSm: false,
-          screenIsMd: false,
-          screenIsLg: false,
-          screenIsXl: true,
-        });
-      }
-    }
+        {isTrayOpen && <div css={styles.hiddenFixed} />}
 
-    setToFocus = (elem) => {
-      elem.focus();
-    }
+        <span>{label}</span>
 
-    render() {
-      const {
-        children,
-        label,
-        sm,
-        md,
-        lg,
-        xl,
-        onSelectionChange,
-        trayOpen,
-        disabled,
-        className,
-        ...otherProps
-      } = this.props;
-      const {
-        screenIsSm, screenIsMd, screenIsLg, screenIsXl, isTrayOpen,
-      } = this.state;
-      const { getListPanel, onSelectedIndex, trayToggle } = this;
+        <IoMdArrowDropdown className={BEMClassNames.icon} />
 
-      return (
-        <div
-          css={[styles.container, styles.getDisabledStyle({ disabled })]}
-          onClick={() => trayToggle()}
-          className={className}
-        >
-          <span>{label}</span>
-          <IoMdArrowDropdown className={BEMClassNames.icon} />
-          {isTrayOpen && (((sm && screenIsSm)
+        {isTrayOpen && (((sm && screenIsSm)
             || (md && screenIsMd)
             || (lg && screenIsLg)
             || (xl && screenIsXl))
-            ? (
-              <Portal
-                bottom
-              >
-                {closePortal => getListPanel(children, otherProps,
-                  ({ index, selected }) => { onSelectedIndex({ index, selected }); closePortal(); })
-                }
-              </Portal>
-            )
-            : (() => {
-              setTimeout(() => this.setToFocus(this.absoluteContainerRef.current), 0); return (
-                <div
-                // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-                  tabIndex={0}
-                  css={[styles.absolute]}
-                  ref={this.absoluteContainerRef}
-                  onBlur={trayToggle}
-                >
-                  {getListPanel(
-                    children,
-                    otherProps,
-                    ({ index, selected }) => { onSelectedIndex({ index, selected }); },
-                  )
-                }
-                </div>
-              );
-            })())}
-        </div>
-      );
-    }
+          ? (
+            <Portal
+              bottom
+            >
+              {closePortal => (typeof children === 'function' ? children({ closeTray: () => { closePortal(); closeTray(); } }) : children)}
+            </Portal>
+          )
+          : (
+            <div
+              css={[styles.absolute]}
+            >
+              {typeof children === 'function' ? children({ closeTray }) : children}
+            </div>
+          )
+        )}
+      </div>
+    );
+  }
 }
-
-Dropdown.propTypes = {
-  bordered: PropTypes.bool,
-  singular: PropTypes.bool,
-  multiple: PropTypes.bool,
-  disabled: PropTypes.bool,
-  trayOpen: PropTypes.bool,
-  // eslint-disable-next-line react/forbid-prop-types
-  label: PropTypes.any,
-  ...themePropTypes,
-  ...sizePropTypes,
-  sm: PropTypes.bool,
-  md: PropTypes.bool,
-  lg: PropTypes.bool,
-  xl: PropTypes.bool,
-  onSelectionChange: PropTypes.func,
-};
-
-Dropdown.defaultProps = {
-  bordered: true,
-  singular: true,
-  multiple: false,
-  disabled: false,
-  trayOpen: false,
-  label: 'Please select a value',
-  ...defaultThemePropTypes,
-  ...defaultSizePropTypes,
-  sm: false,
-  md: false,
-  lg: false,
-  xl: false,
-  onSelectionChange: () => {},
-};
 
 export default Dropdown;

@@ -45,3 +45,11 @@ export const getTimeFromMillis = (millis) => {
     days, hours, minutes, seconds,
   };
 };
+
+export const areArraysDifferent = (items1, items2, fields) => {
+  if (!Array.isArray(items1) || !Array.isArray(items2)) { return false; }
+  if (items1.length !== items2.length) { return false; }
+  return items1.every(
+    item1 => items2.find(item2 => fields.every(field => item1[field] === item2[field])),
+  );
+};

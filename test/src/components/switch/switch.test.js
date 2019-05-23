@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
+import sinon from 'sinon';
 import { displaysChildren, hasDisabledStyle } from '../../common';
 
 expect.extend(matchers);
@@ -33,6 +34,18 @@ describe('Switch Component', () => {
         const switchInput = mountWrapper.find('.reactify-ui-switch__icon').at(1);
         switchInput.simulate('click');
         expect(switchInput.props().checked).toBeFalsy();
+    });
+
+    it('should automatically go in controlled mode when checked prop is passed', () => {
+        const spy = sinon.spy();
+        const mountWrapper = mount(<Switch checked={true} onChange={spy}/>);
+        expect(mountWrapper.state().checked).toBeFalsy();
+
+        const input = mountWrapper.find('input');
+        input.simulate("change", { target: { checked: true } });
+        expect(spy.called).toBeTruthy();
+        expect(spy.firstCall.args[0].checked).toBeTruthy();
+        expect(mountWrapper.state().checked).toBeFalsy();
     });
 
     describe('props', () => {

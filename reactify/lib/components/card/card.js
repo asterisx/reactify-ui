@@ -4,7 +4,13 @@ import { styles } from './styles';
 import { sizePropTypes, defaultSizePropTypes } from '../../common';
 
 const Card = ({
-  children, small, medium, large, disabled, shadowed, ...otherProps
+  children,
+  small,
+  medium,
+  large,
+  disabled,
+  shadowed,
+  ...otherProps
 }) => (
   <div
     css={[
@@ -25,7 +31,10 @@ const Card = ({
   </div>
 );
 
-Card.Header = ({ children, ...otherProps }) => (
+Card.Header = ({
+  children,
+  ...otherProps
+}) => (
   <div
     css={[
       styles.header,
@@ -37,7 +46,10 @@ Card.Header = ({ children, ...otherProps }) => (
 );
 
 Card.Body = ({
-  bordered, borderColor, children, ...otherProps
+  bordered,
+  borderColor,
+  children,
+  ...otherProps
 }) => (
   <div
     css={[
@@ -51,7 +63,10 @@ Card.Body = ({
 );
 
 Card.Footer = ({
-  bordered, borderColor, children, ...otherProps
+  bordered,
+  borderColor,
+  children,
+  ...otherProps
 }) => (
   <div
     css={[

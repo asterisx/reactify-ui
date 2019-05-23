@@ -12,7 +12,7 @@ describe('ListPanel Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<ListPanel />);
         expect(mountWrapper).toBeDefined();
-    })
+    });
 
     displaysChildren(<ListPanel></ListPanel>);
 
@@ -24,6 +24,46 @@ describe('ListPanel Component', () => {
             const mountWrapper = mount(<ListPanel onSelectionChange={selectionCallback}><ListPanel.Item index={1}></ListPanel.Item></ListPanel>);
             mountWrapper.find(ListPanel.Item).simulate('click');
             expect(selectionCallback.called).toBeTruthy();
+        });
+
+        it('passing selected prop to list item should put it in controlled mode', () => {
+            const mountWrapper = mount(
+                <ListPanel>
+                    <ListPanel.Item selected index={1}>Item 1</ListPanel.Item>
+                    <ListPanel.Item selected index={2}>Item 2</ListPanel.Item>
+                    <ListPanel.Item selected index={3}>Item 3</ListPanel.Item>
+                </ListPanel>
+            );
+
+            const items = mountWrapper.find(ListPanel.Item);
+
+            const firstItem = items.at(0);
+            const secondItem = items.at(1);
+            const thirdItem = items.at(2);
+
+            firstItem.simulate('click');
+
+            setTimeout(() => {
+                expect(firstItem.props().selected).toBeTruthy();
+                expect(secondItem.props().selected).toBeTruthy();
+                expect(thirdItem.props().selected).toBeTruthy();
+            }, 0);
+
+            secondItem.simulate('click');
+
+            setTimeout(() => {
+                expect(firstItem.props().selected).toBeTruthy();
+                expect(secondItem.props().selected).toBeTruthy();
+                expect(thirdItem.props().selected).toBeTruthy();
+            }, 0);
+
+            thirdItem.simulate('click');
+
+            setTimeout(() => {
+                expect(firstItem.props().selected).toBeTruthy();
+                expect(secondItem.props().selected).toBeTruthy();
+                expect(thirdItem.props().selected).toBeTruthy();
+            }, 0);
         });
 
         describe('mode', () => {

@@ -2,14 +2,44 @@ import PropTypes from 'prop-types';
 import { defaultThemeColors } from './constants';
 
 export const themePropTypes = {
+  /**
+   * If true, the primary theme is applied
+   */
   primary: PropTypes.bool,
+  /**
+   * If true, the secondary theme is applied
+   */
   secondary: PropTypes.bool,
+  /**
+   * If true, the dark theme is applied
+   */
   dark: PropTypes.bool,
+  /**
+   * If true, the light theme is applied
+   */
   light: PropTypes.bool,
+  /**
+   * If true, the info theme is applied
+   */
   info: PropTypes.bool,
+  /**
+   * If true, the warning theme is applied
+   */
   warning: PropTypes.bool,
+  /**
+   * If true, the danger theme is applied
+   */
   danger: PropTypes.bool,
+  /**
+   * If true, the success theme is applied
+   */
   success: PropTypes.bool,
+  /**
+   * A collection of specifying theme values for each theme
+   * color specifies the respective theme color
+   * fontColor specifies the font color to be used for that theme
+   * This can be injected via a Provider or can be injected per component as a prop.
+   */
   theme: PropTypes.shape({
     primary: PropTypes.shape({
       color: PropTypes.string,

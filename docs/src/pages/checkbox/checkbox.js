@@ -20,15 +20,15 @@ import DemoCard from '../../components/demo-card';
 const CheckboxDemo = () => (
   <div>
     <DemoCard title="Simple Use" uniqueIdentifier="simpleUse" sourceCode={simpleCode}>
-      <Checkbox>This is a checkbox</Checkbox>
+      <Checkbox defaultChecked>This is a checkbox</Checkbox>
     </DemoCard>
 
-    <DemoCard title="Checked" uniqueIdentifier="checkedUse" sourceCode={checkedCode}>
+    <DemoCard title="Checked (Controlled)" uniqueIdentifier="checkedUse" sourceCode={checkedCode}>
       <Checkbox checked>This is a checked label</Checkbox>
     </DemoCard>
 
     <DemoCard title="Disabled" uniqueIdentifier="disabledUse" sourceCode={disabledCode}>
-      <Checkbox checked disabled>This checkbox is disabled</Checkbox>
+      <Checkbox defaultChecked disabled>This checkbox is disabled</Checkbox>
     </DemoCard>
 
     <DemoCard title="Position (left, right)" uniqueIdentifier="checkboxUse" sourceCode={labelPositionCode}>
@@ -38,7 +38,7 @@ const CheckboxDemo = () => (
     </DemoCard>
 
     <DemoCard title="Children" uniqueIdentifier="childrenUse" sourceCode={childrenCode}>
-      <Checkbox checked>
+      <Checkbox defaultChecked>
         <div className="card" style={{ width: '18rem' }}>
           <div className="card-body">
             <h5 className="card-title">Card title</h5>
@@ -50,12 +50,12 @@ const CheckboxDemo = () => (
     </DemoCard>
 
     <DemoCard title="Custom Color" uniqueIdentifier="customColorUse" sourceCode={customColorCode}>
-      <Checkbox checked iconColor="violet">Custom Color</Checkbox>
+      <Checkbox defaultChecked iconColor="violet">Custom Color</Checkbox>
     </DemoCard>
 
 
     <DemoCard title="Custom Class" uniqueIdentifier="customClassUse" sourceCode={customClassCode}>
-      <Checkbox checked className="bg-dark p-5">This checkbox has custom class</Checkbox>
+      <Checkbox defaultChecked className="bg-dark p-5">This checkbox has custom class</Checkbox>
     </DemoCard>
 
     <DemoCard title="Custom Size" uniqueIdentifier="customSizeUse" sourceCode={customSizeCode}>
@@ -70,26 +70,26 @@ const CheckboxDemo = () => (
     </DemoCard>
 
     <DemoCard title="Themes" uniqueIdentifier="customThemeUse" sourceCode={customThemeCode}>
-      <Checkbox primary className="pb-2" checked>Primary Checkbox</Checkbox>
+      <Checkbox primary className="pb-2" defaultChecked>Primary Checkbox</Checkbox>
       <br />
-      <Checkbox secondary className="pb-2" checked>Secondary Checkbox</Checkbox>
+      <Checkbox secondary className="pb-2" defaultChecked>Secondary Checkbox</Checkbox>
       <br />
-      <Checkbox dark className="pb-2" checked>Dark Checkbox</Checkbox>
+      <Checkbox dark className="pb-2" defaultChecked>Dark Checkbox</Checkbox>
       <br />
-      <Checkbox light className="pb-2" checked>Light Checkbox</Checkbox>
+      <Checkbox light className="pb-2" defaultChecked>Light Checkbox</Checkbox>
       <br />
-      <Checkbox info className="pb-2" checked>Info Checkbox</Checkbox>
+      <Checkbox info className="pb-2" defaultChecked>Info Checkbox</Checkbox>
       <br />
-      <Checkbox warning className="pb-2" checked>Warning Checkbox</Checkbox>
+      <Checkbox warning className="pb-2" defaultChecked>Warning Checkbox</Checkbox>
       <br />
-      <Checkbox danger className="pb-2" checked>Danger Checkbox</Checkbox>
+      <Checkbox danger className="pb-2" defaultChecked>Danger Checkbox</Checkbox>
       <br />
-      <Checkbox success checked>Success Checkbox</Checkbox>
+      <Checkbox success defaultChecked>Success Checkbox</Checkbox>
       <br />
     </DemoCard>
 
     <DemoCard title="onChange Event" uniqueIdentifier="onChangeUse" sourceCode={onChangeCode}>
-      <Checkbox onChange={val => alert(`checked: ${val}`)} />
+      <Checkbox onChange={({ event, checked }) => console.log(event, checked)} />
     </DemoCard>
   </div>
 );

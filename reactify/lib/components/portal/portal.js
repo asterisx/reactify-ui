@@ -12,7 +12,7 @@ class Portal extends PureComponent {
     top: true,
     autoClose: true,
     hideBackDrop: false,
-    onClose: () => {},
+    onClose: undefined,
   };
 
   static propTypes = {
@@ -182,7 +182,7 @@ class Portal extends PureComponent {
     return null;
   };
 
-  close = () => {
+  close = (event) => {
     const {
       left, right, bottom, top,
     } = this.props;
@@ -194,7 +194,7 @@ class Portal extends PureComponent {
       this.containerRef.current,
       this.containerChildRef.current,
       this.conatinerBgRef.current,
-      this.props.onClose,
+      () => { if (this.props.onClose) this.props.onClose({ event }); },
     );
   };
 

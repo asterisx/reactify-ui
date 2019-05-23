@@ -12,16 +12,33 @@ describe('Dropdown Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<Dropdown />);
         expect(mountWrapper).toBeDefined();
-    })
+    });
+
+    it('can accept anything as label', () => {
+        const someClass = 'someClass';
+        const labelSpan = <span className={someClass}></span>
+        const selectionCallback = sinon.spy();
+        const mountWrapper = mount(<Dropdown label={labelSpan} />);
+        const label = mountWrapper.findWhere(n => n.name() === 'span' && n.hasClass(someClass));
+
+        expect(label).toBeDefined();
+    });
 
     displaysChildren(<Dropdown></Dropdown>);
+
+    it('should the dropdown be closed when the fixed div is clicked', () => {
+        const mountWrapper = mount(<Dropdown trayOpen/>);
+        expect(mountWrapper.state().isTrayOpen).toBeTruthy();
+
+        const div = mountWrapper.findWhere(n => n.name() === 'div').at(1);
+        console.log(div.debug());
+    });
 
     describe('breakpoints', () => {
         it('sm', () => {
             const mountWrapper = mount(<Dropdown sm/>);
             mountWrapper.setState({screenIsSm: true, isTrayOpen: true});
             expect(mountWrapper.find(Portal)).toBeDefined();
-            
         });
         it('md', () => {
             const mountWrapper = mount(<Dropdown md/>);
@@ -38,7 +55,7 @@ describe('Dropdown Component', () => {
             mountWrapper.setState({screenIsXl: true, isTrayOpen: true});
             expect(mountWrapper.find(Portal)).toBeDefined();
         });
-    })
+    });
 
     describe('props', () => {
         it('should accept trayOpen props and reflect it in state', () => {
@@ -47,53 +64,11 @@ describe('Dropdown Component', () => {
         });
 
         it('should openTray when dropdown is clicked', () => {
-            const someClass = 'someClass';
-            const selectionCallback = sinon.spy();
-            const mountWrapper = mount(<Dropdown className={someClass}><Dropdown.Item index={1}></Dropdown.Item></Dropdown>);
-            mountWrapper.findWhere(n => n.name() === 'div' && n.hasClass(someClass)).simulate('click');
+            const mountWrapper = mount(<Dropdown />);
+            mountWrapper.find('div').at(0).simulate('click');
             setTimeout(() => {
                 expect(mountWrapper.state().isTrayOpen).toBeTruthy();
-                expect(mountWrapper.find(ListPanel)).toBeDefined();
             }, 0);
         });
-
-        it('should call dropdown onSelectionChange when listpanel item is clicked', () => {
-            const someClass = 'someClass';
-            const selectionCallback = sinon.spy();
-            const mountWrapper = mount(<Dropdown className={someClass} onSelectionChange={selectionCallback}><Dropdown.Item index={1}></Dropdown.Item></Dropdown>);
-            mountWrapper.findWhere(n => n.name() === 'div' && n.hasClass(someClass)).simulate('click');
-            setTimeout(() => {
-                mountWrapper.find(ListPanel.Item).simulate('click');
-                expect(selectionCallback.called).toBeTruthy();
-            }, 0);
-        });
-
-        hasDisabledStyle(<Dropdown></Dropdown>);
-
-        it('should accept ListPanel props and drill it to ListPanel', () => {
-            const props = {
-                primary: false,
-                secondary: false,
-                dark: false,
-                light: false,
-                info: false,
-                warning: false,
-                danger: false,
-                success: false,
-                small: false,
-                medium: false,
-                large: false,
-                bordered: false,
-                singular: false,
-                multiple: false,
-                disabled: false,
-                onSelectionChange: () => {}
-            };
-            const someClass = 'someClass';
-            const mountWrapper = mount(<Dropdown className={someClass} {...props}/>);
-            mountWrapper.findWhere(n => n.name() === 'div' && n.hasClass(someClass)).simulate('click');
-            const listPanel = mountWrapper.find(ListPanel);
-            Object.entries(props).forEach((key, value) => expect(listPanel.props[key] === value));
-        })
     });
 });

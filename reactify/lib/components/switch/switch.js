@@ -11,46 +11,77 @@ import { styles, BEMClassNames } from './styles';
 
 class Switch extends Component {
   static propTypes = {
+    /**
+     * If 'true', sets switch to checked
+     * This also makes the switch component 'Controlled'
+     */
     checked: PropTypes.bool,
+    /**
+     * If 'true', sets switch's default state to checked.
+     * Default is 'false'
+     * This does not makes the switch component 'Controlled'
+     */
+    defaultChecked: PropTypes.bool,
+    /**
+     * The color of the switch 'icon'
+     * Switch component aceepts any valid CSS value for this
+     */
     iconColor: PropTypes.string,
+    /**
+     * If 'true', the comoponent is disabled
+     * Default is 'false'
+     */
     disabled: PropTypes.bool,
+    /**
+     * A collection of valid theme types, all boolean values
+     */
     ...themePropTypes,
+    /**
+     * A collection of valid size types, all boolean values
+     */
     ...sizePropTypes,
+    /**
+     * Callback fired when the state is changed.
+     *
+     * @param {object} event The event source for the callback.
+     * You can use `event.target.checked` to get the new value
+     * @param {boolean} checked The `checked` value of the switch is also passed
+     */
     onChange: PropTypes.func,
   }
 
   static defaultProps = {
-    checked: false,
+    checked: undefined,
+    defaultChecked: undefined,
     iconColor: undefined,
     disabled: false,
     ...defaultThemePropTypes,
     ...defaultSizePropTypes,
     onChange: () => {},
-
   }
 
-  state = { checked: this.props.checked }
+  state = { checked: this.props.defaultChecked || false }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.checked !== prevProps.checked && this.props.checked !== this.state.checked) {
-      // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({ checked: this.props.checked });
+  isControlled = () => this.props.checked !== undefined;
+
+  handleOnChange = (event) => {
+    // eslint-disable-next-line prefer-destructuring
+    const checked = event.target.checked;
+
+    if (!this.isControlled()) {
+      this.setState(prevProps => ({ checked: !prevProps.checked }));
     }
-  }
 
-  toggle = () => {
-    this.setState(
-      prevProps => ({ checked: !prevProps.checked }),
-      () => {
-        if (this.props.onChange) { this.props.onChange(this.state.checked); }
-      },
-    );
+    if (this.props.onChange) {
+      this.props.onChange({ event, checked });
+    }
   }
 
   render() {
     const {
       children,
       checked,
+      defaultChecked,
       iconColor,
       primary,
       secondary,
@@ -68,6 +99,11 @@ class Switch extends Component {
       onChange,
       ...otherProps
     } = this.props;
+
+    const { handleOnChange, isControlled } = this;
+
+    const { checked: checkedInState } = this.state;
+
     return (
       <div
         css={[
@@ -98,11 +134,12 @@ class Switch extends Component {
               theme,
             }),
           ]}
+          defaultChecked={defaultChecked}
           type="checkbox"
           style={{ color: iconColor }}
-          onClick={this.toggle}
-          onChange={() => {}}
-          checked={this.state.checked}
+          onChange={handleOnChange}
+          // eslint-disable-next-line no-nested-ternary
+          checked={defaultChecked ? undefined : (isControlled() ? checked : checkedInState)}
           className={BEMClassNames.icon}
         />
         {children}

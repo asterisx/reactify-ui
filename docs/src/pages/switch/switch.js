@@ -23,7 +23,7 @@ const SwitchDemo = () => (
     </DemoCard>
 
     <DemoCard
-      title="Checked"
+      title="Checked (Controlled)"
       uniqueIdentifier="checkedUse"
       sourceCode={checkedCode}
     >
@@ -57,7 +57,7 @@ const SwitchDemo = () => (
       uniqueIdentifier="customIconColor"
       sourceCode={customIconCode}
     >
-      <Switch iconColor="red" checked><Label light>Custom Color</Label></Switch>
+      <Switch iconColor="red" defaultChecked><Label light>Custom Color</Label></Switch>
     </DemoCard>
 
     <DemoCard
@@ -65,35 +65,35 @@ const SwitchDemo = () => (
       uniqueIdentifier="customThemes"
       sourceCode={customThemeCode}
     >
-      <Switch primary checked className="mb-2">
+      <Switch primary defaultChecked className="mb-2">
         Primary Theme
       </Switch>
       <br />
-      <Switch secondary checked className="mb-2">
+      <Switch secondary defaultChecked className="mb-2">
         Secondary Theme
       </Switch>
       <br />
-      <Switch dark checked className="mb-2">
+      <Switch dark defaultChecked className="mb-2">
         Dark Theme
       </Switch>
       <br />
-      <Switch light checked className="mb-2">
+      <Switch light defaultChecked className="mb-2">
         Light Theme
       </Switch>
       <br />
-      <Switch info checked className="mb-2">
+      <Switch info defaultChecked className="mb-2">
         Info Theme
       </Switch>
       <br />
-      <Switch warning checked className="mb-2">
+      <Switch warning defaultChecked className="mb-2">
         Warning Theme
       </Switch>
       <br />
-      <Switch danger checked className="mb-2">
+      <Switch danger defaultChecked className="mb-2">
         Danger Theme
       </Switch>
       <br />
-      <Switch success checked className="mb-2">
+      <Switch success defaultChecked className="mb-2">
         Success Theme
       </Switch>
       <br />
@@ -104,7 +104,7 @@ const SwitchDemo = () => (
       uniqueIdentifier="onChange"
       sourceCode={onChangeCode}
     >
-      <Switch onChange={val => alert(`checked: ${val}`)} />
+      <Switch onChange={({ event, checked }) => console.log(event, checked)} />
     </DemoCard>
   </div>
 );

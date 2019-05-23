@@ -193,8 +193,9 @@ class Login extends React.Component {
             <Button
               success
               disabled={submit.disabled}
-              onClick={() => this.handleValueChange(
+              onClick={event => this.handleValueChange(
                 {
+                  event,
                   action: Login.actionTypes.submit,
                 },
               )

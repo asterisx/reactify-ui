@@ -13,10 +13,9 @@ describe('SearchBar Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    describe('props', () => {
-       
-        hasDisabledStyle(<SearchBar></SearchBar>);
+    hasDisabledStyle(<SearchBar></SearchBar>);
 
+    describe('props', () => {
         it('should accept placeholder text', () => {
             const placeholder = 'some placeholder';
             const mountWrapper = mount(<SearchBar placeholder={placeholder} />);
@@ -30,8 +29,22 @@ describe('SearchBar Component', () => {
             const mountWrapper = mount(<SearchBar onChange={onChangeSpy} />);
             const input = mountWrapper.find('input');
             input.simulate('change', { target: { value: inputValue } });
-            expect(onChangeSpy.calledWithExactly(inputValue)).toBeTruthy();
-        })
+            expect(onChangeSpy.firstCall.args[0].value).toBe(inputValue);
+        });
+
+        it('should automatically go in controlled mode when checked prop is passed', () => {
+            const onChangeSpy = sinon.spy();
+            const value = 'some value';
+            const mountWrapper = mount(<SearchBar value={value} onChange={onChangeSpy}/>);
+            expect(mountWrapper.state().value).toBe('');
+    
+            const newValue = 'new value';
+            const input = mountWrapper.findWhere(n => n.name() === 'input');
+            input.simulate("change", { target: { value: newValue } });
+            expect(onChangeSpy.called).toBeTruthy();
+            expect(onChangeSpy.firstCall.args[0].value).toBe(newValue);
+            expect(mountWrapper.state().value).toBe('');
+        });
 
         it('should have custom color when color prop is passed', () => {
             const color = "violet";

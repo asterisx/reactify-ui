@@ -10,6 +10,7 @@ import {
   placeholderCode,
   simpleCode,
   sizeCode,
+  valueCode,
 } from './code-refrence';
 import './search-bar.scss';
 import DemoCard from '../../components/demo-card';
@@ -31,7 +32,16 @@ const SearchBarDemo = () => (
       sourceCode={eventCode}
     >
       <h6>Check the console for events logs</h6>
-      <SearchBar onChange={value => console.log(`value: ${value}`)} />
+      <SearchBar onChange={({ event, value }) => console.log(event, value)} />
+    </DemoCard>
+
+    <DemoCard
+      title="Value (Controlled)"
+      uniqueIdentifier="valueUse"
+      sourceCode={valueCode}
+    >
+      <h6>Passing the value makes the searchbar controlled, check the log for events</h6>
+      <SearchBar value="" onChange={({ event, value }) => console.log(event, value)} />
     </DemoCard>
 
     <DemoCard

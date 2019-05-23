@@ -13,7 +13,12 @@ import {
   sizePropTypes,
   defaultSizePropTypes,
 } from './prop-types';
-import { canUseDOM, Timer, getTimeFromMillis } from './utils';
+import {
+  canUseDOM,
+  Timer,
+  getTimeFromMillis,
+  areArraysDifferent,
+} from './utils';
 
 export {
   canUseDOM,
@@ -30,4 +35,5 @@ export {
   getTimeFromMillis,
   screenSizes,
   screenSizesInPx,
+  areArraysDifferent,
 };

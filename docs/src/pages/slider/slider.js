@@ -24,11 +24,11 @@ const SliderDemo = () => (
       uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
     >
-      <Slider value={20} />
+      <Slider defaultValue={20} />
     </DemoCard>
 
     <DemoCard
-      title="Value"
+      title="Value (Controlled)"
       uniqueIdentifier="valueUse"
       sourceCode={valueCode}
     >
@@ -40,7 +40,14 @@ const SliderDemo = () => (
       uniqueIdentifier="minMaxUse"
       sourceCode={minMaxCode}
     >
-      <Slider min={200} minAllowed={400} maxAllowed={1600} max={2000} value={200} step={50} />
+      <Slider
+        min={200}
+        minAllowed={400}
+        maxAllowed={1600}
+        max={2000}
+        defaultValue={200}
+        step={50}
+      />
     </DemoCard>
 
     <DemoCard
@@ -48,7 +55,7 @@ const SliderDemo = () => (
       uniqueIdentifier="unFilledUse"
       sourceCode={unFilledCode}
     >
-      <Slider value={20} fill={false} />
+      <Slider defaultValue={20} fill={false} />
     </DemoCard>
 
     <DemoCard
@@ -56,7 +63,7 @@ const SliderDemo = () => (
       uniqueIdentifier="disabled"
       sourceCode={disabledCode}
     >
-      <Slider disabled value={20} />
+      <Slider disabled defaultValue={20} />
     </DemoCard>
 
     <DemoCard
@@ -64,7 +71,7 @@ const SliderDemo = () => (
       uniqueIdentifier="customIcon"
       sourceCode={customIconCode}
     >
-      <Slider color="red" value={20} />
+      <Slider fillColor="red" defaultValue={20} />
     </DemoCard>
 
     <DemoCard
@@ -72,7 +79,7 @@ const SliderDemo = () => (
       uniqueIdentifier="customClass"
       sourceCode={customClassCode}
     >
-      <Slider className="m-5 w-50" value={20} />
+      <Slider className="m-5 w-50" defaultValue={20} />
     </DemoCard>
 
     <DemoCard
@@ -80,16 +87,16 @@ const SliderDemo = () => (
       uniqueIdentifier="customSize"
       sourceCode={customSizeCode}
     >
-      <Slider small value={20} />
+      <Slider small defaultValue={20} />
       <br />
       <br />
-      <Slider medium value={20} />
+      <Slider medium defaultValue={20} />
       <br />
       <br />
-      <Slider large value={20} />
+      <Slider large defaultValue={20} />
       <br />
       <br />
-      <Slider style={{ fontSize: '40px' }} value={20} />
+      <Slider style={{ fontSize: '40px' }} defaultValue={20} />
       <br />
       <br />
     </DemoCard>
@@ -99,28 +106,28 @@ const SliderDemo = () => (
       uniqueIdentifier="themes"
       sourceCode={customThemeCode}
     >
-      <Slider primary value={20} />
+      <Slider primary defaultValue={20} />
       <br />
       <br />
-      <Slider secondary value={20} />
+      <Slider secondary defaultValue={20} />
       <br />
       <br />
-      <Slider dark value={20} />
+      <Slider dark defaultValue={20} />
       <br />
       <br />
-      <Slider light value={20} />
+      <Slider light defaultValue={20} />
       <br />
       <br />
-      <Slider info value={20} />
+      <Slider info defaultValue={20} />
       <br />
       <br />
-      <Slider warning value={20} />
+      <Slider warning defaultValue={20} />
       <br />
       <br />
-      <Slider danger value={20} />
+      <Slider danger defaultValue={20} />
       <br />
       <br />
-      <Slider success value={20} />
+      <Slider success defaultValue={20} />
     </DemoCard>
 
     <DemoCard
@@ -128,7 +135,7 @@ const SliderDemo = () => (
       uniqueIdentifier="onChange"
       sourceCode={onChangeCode}
     >
-      <Slider onChange={val => console.log(val)} value={20} />
+      <Slider onChange={({ event, value }) => console.log(event, value)} defaultValue={20} />
     </DemoCard>
   </div>
 );

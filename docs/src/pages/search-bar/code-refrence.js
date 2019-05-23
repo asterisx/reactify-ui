@@ -15,7 +15,7 @@ const customThemeCode = `
 
 const disabledCode = '<SearchBar disabled />';
 
-const eventCode = '<SearchBar onChange={value => console.log(\'value: \' + value)} />';
+const eventCode = '<SearchBar onChange={({ event, value }) => console.log(event, value)} />';
 
 const placeholderCode = '<SearchBar placeholder="Some Placeholder" />';
 
@@ -28,6 +28,7 @@ const sizeCode = `
 <SearchBar style={{ fontSize: '75px' }} />
 `;
 
+const valueCode = '<SearchBar value="" onChange={({ event, value }) => console.log(event, value)} />';
 
 export {
   customColorCode,
@@ -38,4 +39,5 @@ export {
   placeholderCode,
   simpleCode,
   sizeCode,
+  valueCode,
 };

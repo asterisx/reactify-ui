@@ -11,14 +11,14 @@ import {
   FaBitcoin,
 } from 'react-icons/fa';
 import {
-  selectionModeCode,
   defaultSelectionCode,
   disabledCode,
   customListCode,
   customThemeCode,
   customSizesCode,
   borderedCode,
-  onSelectionChangeCode,
+  eventsCode,
+  multipleCode,
   simpleCode,
 } from './code-refrence';
 import './list-panel.scss';
@@ -41,15 +41,14 @@ const ListPanelDemo = () => (
     </DemoCard>
 
     <DemoCard
-      title="Selection Mode"
-      uniqueIdentifier="selectionModeUse"
-      sourceCode={selectionModeCode}
+      title="Multiple Use"
+      uniqueIdentifier="multipleUse"
+      sourceCode={multipleCode}
     >
-      <h6 className="pt-3 pb-3">multiple</h6>
       <ListPanel multiple>
-        <ListPanel.Item selected index={1} bordered={false}>Item 1</ListPanel.Item>
+        <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item index={2}>Item 2</ListPanel.Item>
-        <ListPanel.Item selected index={3}>Item 3</ListPanel.Item>
+        <ListPanel.Item index={3}>Item 3</ListPanel.Item>
         <ListPanel.Item index={4}>Item 4</ListPanel.Item>
         <ListPanel.Item index={5}>Item 5</ListPanel.Item>
       </ListPanel>
@@ -111,7 +110,7 @@ const ListPanelDemo = () => (
       uniqueIdentifier="defaultSelectionUse"
       sourceCode={defaultSelectionCode}
     >
-      <ListPanel multiple>
+      <ListPanel multiple onItemClicked={props => console.log(props)}>
         <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item selected index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item index={3}>Item 3</ListPanel.Item>
@@ -171,7 +170,7 @@ const ListPanelDemo = () => (
       uniqueIdentifier="customListUse"
       sourceCode={customListCode}
     >
-      <ListPanel multiple>
+      <ListPanel>
         <ListPanel.Item index={1} bordered={false}>
           <div className="d-inline-flex justify-content-between align-items-center">
             <FaApple className="mr-4" />
@@ -289,16 +288,16 @@ const ListPanelDemo = () => (
     </DemoCard>
 
     <DemoCard
-      title="onSelectionChange"
-      uniqueIdentifier="onSelectionChangeUse"
-      sourceCode={onSelectionChangeCode}
+      title="Events Code"
+      uniqueIdentifier="eventsUse"
+      sourceCode={eventsCode}
     >
       <h6>
         <b>*</b>
         Listpanel item can also be unseletable via prop
         {' isSelectable={false}'}
       </h6>
-      <ListPanel singular onSelectionChange={({ index, selected }) => alert(`Index: ${index}\nSelected: ${selected}`)}>
+      <ListPanel onSelectionChange={({ event, index, selected }) => console.log(event, index, selected)} onItemClicked={({ event, index }) => console.log(event, index)}>
         <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
         <ListPanel.Item isSelectable={false} index={2}>Item 2</ListPanel.Item>
         <ListPanel.Item index={3}>Item 3</ListPanel.Item>

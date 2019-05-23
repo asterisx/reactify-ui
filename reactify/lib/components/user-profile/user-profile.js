@@ -87,7 +87,7 @@ class UserProfile extends Component {
             disabled,
           }),
         ]}
-        onClick={() => { this.toggleTray(); if (onClick) { onClick(); } }}
+        onClick={(event) => { this.toggleTray(); if (onClick) { onClick({ event }); } }}
         {...otherProps}
       >
         <div

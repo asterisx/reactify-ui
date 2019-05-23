@@ -1,4 +1,5 @@
-import { commonStyles, libraryName } from '../../common';
+import { darken } from 'polished';
+import { commonStyles, darkenBy, libraryName } from '../../common';
 
 const componentName = 'accordion';
 
@@ -30,4 +31,55 @@ export const styles = {
   },
 
   getDisabledStyle: commonStyles.get.disabled.style,
+
+  getFontColorStyle: commonStyles.get.font.color.forTheme,
+
+  getBackgroundStyle: ({
+    primary,
+    secondary,
+    dark,
+    light,
+    info,
+    warning,
+    danger,
+    success,
+    theme,
+  }) => ({
+    ...(commonStyles.get.backgroundColor.forTheme({
+      primary,
+      secondary,
+      dark,
+      light,
+      info,
+      warning,
+      danger,
+      success,
+      theme,
+    })),
+    ...(commonStyles.get.font.color.forTheme({
+      primary,
+      secondary,
+      dark,
+      light,
+      info,
+      warning,
+      danger,
+      success,
+      theme,
+    })),
+    '&:hover': {
+      backgroundColor:
+        darken(darkenBy, commonStyles.get.theme.color({
+          primary,
+          secondary,
+          dark,
+          light,
+          info,
+          warning,
+          danger,
+          success,
+          theme,
+        })),
+    },
+  }),
 };
