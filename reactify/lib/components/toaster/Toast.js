@@ -32,7 +32,7 @@ export const Toast = ({
         transitionState,
       }),
     ]}
-    onMouseEnter={(event) => { if (pauseOnHover && onMouseEnter) onMouseEnter(event); }}
+    onMouseEnter={pauseOnHover ? onMouseEnter : undefined}
     onMouseLeave={onMouseLeave}
   >
     {children}
