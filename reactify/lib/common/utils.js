@@ -42,27 +42,34 @@ export const getTimeFromMillis = (millis) => {
   const seconds = delta % 60;
 
   return {
-    days, hours, minutes, seconds,
+    days,
+    hours,
+    minutes,
+    seconds,
   };
 };
 
 export const areArraysDifferent = (items1, items2, fields) => {
-  if (!Array.isArray(items1) || !Array.isArray(items2)) { return false; }
-  if (items1.length !== items2.length) { return false; }
+  if (!Array.isArray(items1) || !Array.isArray(items2)) {
+    return false;
+  }
+  if (items1.length !== items2.length) {
+    return false;
+  }
   return items1.every(
     item1 => items2.find(item2 => fields.every(field => item1[field] === item2[field])),
   );
 };
 
 export function isObject(item) {
-  return (item && typeof item === 'object' && !Array.isArray(item));
+  return item && typeof item === 'object' && !Array.isArray(item);
 }
 
 /**
  * Deep merge two objects.
  * @param target
  * @param ...sources
-*/
+ */
 export const mergeDeep = (target, ...sources) => {
   if (!sources.length) return target;
   const source = sources.shift();
@@ -185,4 +192,20 @@ export const reconcileThemeProps = ({
   }
 
   return themeprops;
+};
+
+const getDocDimensions = () => {
+  const doc = document.documentElement;
+  return { height: doc.scrollHeight, width: doc.scrollWidth };
+};
+
+export const isWithinWindow = (x, y, width, height) => {
+  if (x < 0 || y < 0) return false;
+  const { height: docHeight, width: docWidth } = getDocDimensions();
+
+  if (x + width > docWidth) return false;
+
+  if (y + height > docHeight) return false;
+
+  return true;
 };

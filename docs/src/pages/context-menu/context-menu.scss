@@ -1,0 +1,11 @@
+.big-box {
+    width: 200px;
+    height: 400px;
+}
+.box {
+    position: fixed;
+    right: -300px;
+    bottom: 0;
+    min-width: 200px;
+    min-height: 400px;
+}

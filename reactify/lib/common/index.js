@@ -20,6 +20,7 @@ import {
   areArraysDifferent,
   mergeDeep,
   reconcileThemeProps,
+  isWithinWindow,
 } from './utils';
 
 export {
@@ -40,4 +41,5 @@ export {
   areArraysDifferent,
   mergeDeep,
   reconcileThemeProps,
+  isWithinWindow,
 };

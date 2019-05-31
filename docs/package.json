@@ -36,7 +36,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "preinstall": "rm -rf node_modules/reacify && npm install ../reactify",
+    "preinstall": "rm -rf node_modules/reactify && npm install ../reactify",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b gh-pages -d build"
   },
