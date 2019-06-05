@@ -76,9 +76,9 @@ const propsCode = `
 `;
 
 const simpleCode = `
-<Accordion>
+<Accordion success>
   <Accordion.Item index={1}>
-    <Accordion.Header danger>
+    <Accordion.Header warning>
       Accordion 1
     </Accordion.Header>
     <Accordion.Body>
@@ -86,9 +86,8 @@ const simpleCode = `
       A paragraph or some other content, a component too and other things too...
     </Accordion.Body>
   </Accordion.Item>
-
-  <Accordion.Item index={2}>
-    <Accordion.Header success>
+  <Accordion.Item index={2} danger>
+    <Accordion.Header>
       Accordion 2
     </Accordion.Header>
     <Accordion.Body>
@@ -96,9 +95,8 @@ const simpleCode = `
       A paragraph or some other content, a component too and other things too...
     </Accordion.Body>
   </Accordion.Item>
-
   <Accordion.Item index={3}>
-    <Accordion.Header warning>
+    <Accordion.Header>
       Accordion 3
     </Accordion.Header>
     <Accordion.Body>

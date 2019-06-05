@@ -81,3 +81,108 @@ export const mergeDeep = (target, ...sources) => {
 
   return mergeDeep(target, ...sources);
 };
+
+export const reconcileThemeProps = ({
+  props,
+  primary,
+  secondary,
+  dark,
+  light,
+  info,
+  warning,
+  danger,
+  success,
+}) => {
+  const themeprops = {
+    primary: false,
+    secondary: false,
+    dark: false,
+    light: false,
+    info: false,
+    warning: false,
+    danger: false,
+    success: false,
+  };
+
+  if (props.secondary) {
+    themeprops.secondary = true;
+    return themeprops;
+  }
+
+  if (props.dark) {
+    themeprops.dark = true;
+    return themeprops;
+  }
+
+  if (props.light) {
+    themeprops.light = true;
+    return themeprops;
+  }
+
+  if (props.info) {
+    themeprops.info = true;
+    return themeprops;
+  }
+
+  if (props.warning) {
+    themeprops.warning = true;
+    return themeprops;
+  }
+
+  if (props.danger) {
+    themeprops.danger = true;
+    return themeprops;
+  }
+
+  if (props.success) {
+    themeprops.success = true;
+    return themeprops;
+  }
+
+  if (secondary) {
+    themeprops.secondary = true;
+    return themeprops;
+  }
+
+  if (dark) {
+    themeprops.dark = true;
+    return themeprops;
+  }
+
+  if (light) {
+    themeprops.light = true;
+    return themeprops;
+  }
+
+  if (info) {
+    themeprops.info = true;
+    return themeprops;
+  }
+
+  if (warning) {
+    themeprops.warning = true;
+    return themeprops;
+  }
+
+  if (danger) {
+    themeprops.danger = true;
+    return themeprops;
+  }
+
+  if (success) {
+    themeprops.success = true;
+    return themeprops;
+  }
+
+  if (props.primary) {
+    themeprops.primary = true;
+    return themeprops;
+  }
+
+  if (primary) {
+    themeprops.primary = true;
+    return themeprops;
+  }
+
+  return themeprops;
+};
