@@ -1,7 +1,6 @@
 export const styles = {
-  menu: {},
-  position: (top, left) => ({
-    top: `${top}px`,
+  position: ({ left, top }) => ({
     left: `${left}px`,
+    top: `${top}px`,
   }),
 };

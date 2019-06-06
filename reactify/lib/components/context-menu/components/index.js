@@ -1,1 +1,1 @@
-export { default } from "./sub-menu";
+export { default } from './sub-menu';

@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
-import { FaAngleRight } from 'react-icons/fa';
-import { isWithinWindow } from '../../../common';
+import Item from '../sub-menu-item';
+import { isWithinWindow } from '../../../../common';
 import { styles } from './styles';
 
 class SubMenu extends Component {
-  static Item = ({ icon, text, sub }) => (
-    <li css={styles.item}>
-      {icon}
-      {text}
-      {sub && (<FaAngleRight /> && <SubMenu items={sub} />)}
-    </li>
-  );
-
-  state = { visible: false, left: 0, top: 0 };
-
+  state = { left: 0, top: 0 };
 
   menuRef = React.createRef();
 
   componentDidMount() {
     setTimeout(() => {
       const [left, top] = this.getPos();
-      this.setState({ visible: true, left, top });
+      this.setState({ left, top });
     }, 0);
   }
 
@@ -65,15 +56,15 @@ class SubMenu extends Component {
   render() {
     const { menuRef } = this;
     const { items, children, ...otherProps } = this.props;
-    const { visible, left, top } = this.state;
+    const { left, top } = this.state;
     return (
-      <div
+      <ul
         ref={menuRef}
-        css={[styles.sub, styles.position(left, top), visible && styles.visible]}
+        css={[styles.sub, styles.position({ left, top })]}
         {...otherProps}
       >
-        {children || items.map(item => <SubMenu.Item {...item} />)}
-      </div>
+        {children || items.map(item => <Item {...item} />)}
+      </ul>
     );
   }
 }

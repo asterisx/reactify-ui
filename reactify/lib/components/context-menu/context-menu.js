@@ -1,18 +1,35 @@
 import React, { Component } from 'react';
 import SubMenu from './components';
+import {
+  defaultThemePropTypes,
+  themePropTypes,
+} from '../../common';
 import { styles } from './styles';
 
 class ContextMenu extends Component {
-  static Content = ({ children }) => children;
+  static propTypes = {
+    /**
+     * A collection of valid theme types, all boolean values
+     * This is drilled directly to ListPanel.Item 'as is'
+     */
+    ...themePropTypes,
+  }
+
+  static defaultProps = {
+    ...defaultThemePropTypes,
+  }
 
   state = { menuShow: false, left: 0, top: 0 };
+
+  containerRef = React.createRef();
 
   componentWillUnmount() {
     document.removeEventListener('mousedown', this.onMouseDown);
   }
 
   showMenu = (x, y) => {
-    this.setState({ menuShow: true, left: x, top: y });
+    const containerRect = this.containerRef.current.getBoundingClientRect();
+    this.setState({ menuShow: true, left: x - containerRect.left, top: y - containerRect.top });
   };
 
   hideMenu = () => {
@@ -33,15 +50,15 @@ class ContextMenu extends Component {
 
   render() {
     const { items, children, ...otherProps } = this.props;
-    const { onContextMenu } = this;
+    const { onContextMenu, containerRef } = this;
     const { menuShow, top, left } = this.state;
 
     const childrenArray = React.Children.toArray(children);
 
-    /* If 'items' is passed, submenu is to be automatically generated
+    /* If 'items' is passed, submenu is to be programatically created
      */
     const subMenu = items ? (
-      <SubMenu item={items} css={styles.position(top, left)} />
+      <SubMenu items={items} css={[styles.position({ left, top })]} />
     ) : (
       childrenArray.filter(child => child && child.type === SubMenu)
     );
@@ -54,7 +71,11 @@ class ContextMenu extends Component {
       : childrenArray.filter(child => child && child.type !== SubMenu);
 
     return (
-      <div onContextMenu={onContextMenu} {...otherProps}>
+      <div
+        ref={containerRef}
+        onContextMenu={onContextMenu}
+        {...otherProps}
+      >
         {nonSubMenuChildren}
         {menuShow && subMenu}
       </div>
