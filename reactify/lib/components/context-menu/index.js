@@ -1,4 +1,4 @@
-import SubMenu from './components';
 import ContextMenu from './context-menu';
+import { SubMenu, SubMenuItem } from './components';
 
-export { SubMenu, ContextMenu };
+export { ContextMenu, SubMenu, SubMenuItem };

@@ -3,7 +3,7 @@ import { NumberCounter, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 

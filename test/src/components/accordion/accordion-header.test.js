@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
 import { darken } from 'polished';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -14,9 +14,9 @@ describe('Accordion.Header Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<Accordion.Header></Accordion.Header>);
+    displaysChildren(<Accordion.Header />);
 
-    hasDisabledStyle(<Accordion.Header></Accordion.Header>);
+    hasDisabledStyle(<Accordion.Header />);
 
     it('should call callback when its clicked', () => {
         const spy = sinon.spy();

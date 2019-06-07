@@ -2,7 +2,7 @@ import React from 'react';
 import { LegendItem, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -12,7 +12,7 @@ describe('LegendItem Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<LegendItem></LegendItem>);
+    displaysChildren(<LegendItem />);
 
     describe('props', () => {
         it('should accept className prop and pass it to the root container', () => {

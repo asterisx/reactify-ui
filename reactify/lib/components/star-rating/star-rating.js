@@ -11,7 +11,8 @@ import {
 class StarRating extends Component {
     static propTypes = {
       /**
-       * A collection of valid theme types, all boolean values
+       * If 'true', component is disabled
+       * Default is 'false'
        */
       disabled: PropTypes.bool,
       /**

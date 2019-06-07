@@ -3,7 +3,7 @@ import { Accordion, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
-import { displaysChildren } from '../../common';
+import { displaysChildren } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -13,7 +13,7 @@ describe('Accordion.Item Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<Accordion.Item index={1}></Accordion.Item>);
+    displaysChildren(<Accordion.Item index={1} />);
 
     it('should drill down props to Accordion.Header', () => {
         const spy = sinon.spy();

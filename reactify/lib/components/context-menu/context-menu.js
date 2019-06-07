@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import SubMenu from './components';
+import { SubMenu } from './components';
 import {
   defaultThemePropTypes,
   themePropTypes,
+  sizePropTypes,
+  defaultSizePropTypes,
 } from '../../common';
 import { styles } from './styles';
 
@@ -10,16 +12,22 @@ class ContextMenu extends Component {
   static propTypes = {
     /**
      * A collection of valid theme types, all boolean values
-     * This is drilled directly to ListPanel.Item 'as is'
+     * This is drilled directly to SubMenu 'as is'
      */
     ...themePropTypes,
+    /**
+     * A collection of valid size types, all boolean values
+     * This is drilled directly to SubMenu 'as is'
+     */
+    ...sizePropTypes,
   }
 
   static defaultProps = {
     ...defaultThemePropTypes,
+    ...defaultSizePropTypes,
   }
 
-  state = { menuShow: false, left: 0, top: 0 };
+  state = { showMenu: false, left: 0, top: 0 };
 
   containerRef = React.createRef();
 
@@ -29,16 +37,16 @@ class ContextMenu extends Component {
 
   showMenu = (x, y) => {
     const containerRect = this.containerRef.current.getBoundingClientRect();
-    this.setState({ menuShow: true, left: x - containerRect.left, top: y - containerRect.top });
+    this.setState({ showMenu: true, left: x - containerRect.left, top: y - containerRect.top });
   };
 
   hideMenu = () => {
-    this.setState({ menuShow: false });
+    this.setState({ showMenu: false });
   };
 
   onContextMenu = (e) => {
     e.preventDefault();
-    this.showMenu(e.pageX, e.pageY);
+    this.showMenu(e.clientX, e.clientY);
     document.addEventListener('mousedown', this.onMouseDown, false);
   };
 
@@ -49,19 +57,75 @@ class ContextMenu extends Component {
 
 
   render() {
-    const { items, children, ...otherProps } = this.props;
+    const {
+      items,
+      children,
+      primary,
+      secondary,
+      dark,
+      light,
+      info,
+      warning,
+      danger,
+      success,
+      theme,
+      small,
+      medium,
+      large,
+      ...otherProps
+    } = this.props;
     const { onContextMenu, containerRef } = this;
-    const { menuShow, top, left } = this.state;
+    const { showMenu, top, left } = this.state;
 
     const childrenArray = React.Children.toArray(children);
 
     /* If 'items' is passed, submenu is to be programatically created
      */
     const subMenu = items ? (
-      <SubMenu items={items} css={[styles.position({ left, top })]} />
-    ) : (
-      childrenArray.filter(child => child && child.type === SubMenu)
-    );
+      <SubMenu
+        primary={primary}
+        secondary={secondary}
+        dark={dark}
+        light={light}
+        info={info}
+        warning={warning}
+        danger={danger}
+        success={success}
+        theme={theme}
+        small={small}
+        medium={medium}
+        large={large}
+        items={items}
+        isBaseMenu
+        css={[
+          styles.position({ left, top }),
+          styles.getFontSizeStyle({
+            small,
+            medium,
+            large,
+          }),
+        ]}
+      />
+    ) : (() => {
+      const childSubMenu = childrenArray.find(child => child && child.type === SubMenu);
+      if (childSubMenu) {
+        return (
+          <SubMenu
+            {...childSubMenu.props}
+            css={[
+              styles.position({ left, top }),
+              styles.getFontSizeStyle({
+                small,
+                medium,
+                large,
+              }),
+            ]}
+          />
+        );
+      }
+      return undefined;
+    })();
+
 
     /* If 'items' is passed, children does (should) not contain any SubMenu component,
      else otherwise
@@ -74,10 +138,11 @@ class ContextMenu extends Component {
       <div
         ref={containerRef}
         onContextMenu={onContextMenu}
+        css={[styles.container]}
         {...otherProps}
       >
         {nonSubMenuChildren}
-        {menuShow && subMenu}
+        {showMenu && subMenu}
       </div>
     );
   }

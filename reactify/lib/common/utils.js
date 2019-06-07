@@ -194,18 +194,19 @@ export const reconcileThemeProps = ({
   return themeprops;
 };
 
-const getDocDimensions = () => {
-  const doc = document.documentElement;
-  return { height: doc.scrollHeight, width: doc.scrollWidth };
-};
+const getWindowDimensions = () => [
+  Math.min(window.innerWidth, document.documentElement.clientWidth),
+  Math.min(window.innerHeight, document.documentElement.clientHeight),
+];
 
 export const isWithinWindow = (x, y, width, height) => {
   if (x < 0 || y < 0) return false;
-  const { height: docHeight, width: docWidth } = getDocDimensions();
 
-  if (x + width > docWidth) return false;
+  const [winWidth, winHeight] = getWindowDimensions();
 
-  if (y + height > docHeight) return false;
+  if (x + width > winWidth) return false;
+
+  if (y + height > winHeight) return false;
 
   return true;
 };

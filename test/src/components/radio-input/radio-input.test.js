@@ -3,7 +3,7 @@ import { RadioInput, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -13,9 +13,9 @@ describe('Radio Input Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<RadioInput></RadioInput>);
+    displaysChildren(<RadioInput />);
 
-    hasDisabledStyle(<RadioInput></RadioInput>);
+    hasDisabledStyle(<RadioInput />);
 
     it('defaults to unchecked state', () => {
         const mountWrapper = mount(<RadioInput />);

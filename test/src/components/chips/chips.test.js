@@ -3,8 +3,7 @@ import { Chips, Chip, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
-import { darken } from 'polished';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -14,7 +13,7 @@ describe('Chips Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    hasDisabledStyle(<Chips></Chips>);
+    hasDisabledStyle(<Chips />);
 
     it("should display children prop passed", () => {
         let someClass = "someClass";

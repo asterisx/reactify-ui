@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
 import { darken } from 'polished';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -14,7 +14,7 @@ describe('TopBar Component', () => {
         expect(mountWrapper).toBeDefined();
     })
 
-    displaysChildren(<TopBar></TopBar>);
+    displaysChildren(<TopBar />);
 
     describe('props', () => {
         it('should have disabled class when disabled prop is passed', () => {

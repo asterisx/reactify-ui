@@ -3,8 +3,7 @@ import { Select, ListPanel, Checkbox, Constants, SearchBar } from '@../../../../
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
-import { darken } from 'polished';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -15,7 +14,7 @@ describe('Select Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    hasDisabledStyle(<Select></Select>);
+    hasDisabledStyle(<Select />);
 
     describe('props', () => {
         it('should call onSelectionChange function when List Panel item is clicked', () => {
@@ -23,7 +22,7 @@ describe('Select Component', () => {
             const index = 0;
             const mountWrapper = mount(
                 <Select onSelectionChange={selectionCallback}>
-                <Select.Item index={index}></Select.Item>
+                    <Select.Item index={index}></Select.Item>
                 </Select>
                 );
             mountWrapper.simulate('click');

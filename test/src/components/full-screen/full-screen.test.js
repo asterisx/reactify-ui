@@ -2,7 +2,7 @@ import React from 'react';
 import { FullScreen } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -12,7 +12,9 @@ describe('FullScreen Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<FullScreen></FullScreen>);
+    displaysChildren(<FullScreen />);
+
+    hasDisabledStyle(<FullScreen />)
 
     it('can be proramatically expanded and reset', () => {
         let expandFunc = undefined, resetFunc = undefined;
@@ -29,12 +31,6 @@ describe('FullScreen Component', () => {
             let someClass = "someClass";
             const mountWrapper = mount(<FullScreen className={someClass}></FullScreen>);
             expect(mountWrapper.hasClass(someClass)).toBeTruthy();
-        })
-
-        it('should have disabled class when disabled prop is pass', () => {
-          /*   const mountWrapper = mount(<FullScreen disabled={true} />);
-            const icon = mountWrapper.find('.reactify-ui-fullScreen__icon');
-            expect(icon.hasClass('reactify--disabled')).toBeTruthy(); */
         });
 
         it('should not display icon when hideIcon is passed', () => {
@@ -48,6 +44,7 @@ describe('FullScreen Component', () => {
         });
 
         it('should contract when contractOnEscapeKey is true', () => {
+            // TODO this fails
             const mountWrapper = mount(<FullScreen expanded contractOnEscapeKey/>);
             mountWrapper.childAt(0).simulate('keydown', {key: 'Escape', keyCode: 27, which: 27});
             expect(mountWrapper.state().expanded).toBeFalsy();

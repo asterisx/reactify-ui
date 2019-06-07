@@ -1,8 +1,8 @@
 import React from 'react';
-import { Legend, Constants } from '@../../../../reactify/build';
+import { Legend } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren } from '../../helpers';
 
 expect.extend(matchers);
 

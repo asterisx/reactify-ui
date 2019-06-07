@@ -1,8 +1,8 @@
 import React from "react";
-import { Card, Constants } from "reactify";
+import { Card } from "reactify";
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -11,6 +11,10 @@ describe("Card Component", () => {
     const mountWrapper = mount(<Card />);
     expect(mountWrapper).toBeDefined();
   });
+
+  displaysChildren(<Card />);
+
+  hasDisabledStyle(<Card />);
 
   it("should have a shadow by default", () => {
     const mountWrapper = mount(<Card />);
@@ -30,7 +34,7 @@ describe("Card Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    displaysChildren(<Card.Header></Card.Header>);
+    displaysChildren(<Card.Header />);
   });
 
   describe("Card Body", () => {
@@ -45,7 +49,7 @@ describe("Card Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    displaysChildren(<Card.Body></Card.Body>);
+    displaysChildren(<Card.Body />);
 
     it("should have bordered class", () => {
       const mountWrapper = mount(<Card.Body bordered />);
@@ -74,7 +78,7 @@ describe("Card Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    displaysChildren(<Card.Footer></Card.Footer>);
+    displaysChildren(<Card.Footer />);
 
 
     it("should have bordered style", () => {
@@ -118,7 +122,5 @@ describe("Card Component", () => {
       const mountWrapper3 = mount(<Card style={{width: width}} />);
       expect(mountWrapper3.props().style.width).toBe(width);
     });
-
-    hasDisabledStyle(<Card></Card>);
   });
 });

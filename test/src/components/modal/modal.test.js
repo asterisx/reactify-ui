@@ -3,7 +3,7 @@ import { Modal, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -13,7 +13,9 @@ describe('Modal Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    hasDisabledStyle(<Modal></Modal>);
+    displaysChildren(<Modal />)
+
+    hasDisabledStyle(<Modal />);
 
     it('should call back function when closed on outside', () => {
         const spy = sinon.spy();

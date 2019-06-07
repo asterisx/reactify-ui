@@ -2,7 +2,7 @@ import React from 'react';
 import { Paper, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -12,7 +12,9 @@ describe('Paper Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<Paper></Paper>);
+    displaysChildren(<Paper />);
+
+    hasDisabledStyle(<Paper />);
 
     describe('props', () => {
         it('should have correct size passed as props', () => {

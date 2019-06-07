@@ -2,7 +2,7 @@ import React from "react";
 import { HorizontalCard, Constants } from "reactify";
 import { mount } from "enzyme";
 import { matchers } from 'jest-emotion';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -11,6 +11,10 @@ describe("HorizontalCard Component", () => {
     const mountWrapper = mount(<HorizontalCard />);
     expect(mountWrapper).toBeDefined();
   });
+
+  displaysChildren(<HorizontalCard />);
+
+  hasDisabledStyle(<HorizontalCard />);
 
   it("should have a shadow by default", () => {
     const mountWrapper = mount(<HorizontalCard />);
@@ -29,7 +33,7 @@ describe("HorizontalCard Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    displaysChildren(<HorizontalCard></HorizontalCard>);
+    displaysChildren(<HorizontalCard />);
   });
 
   describe("HorizontalCard Body", () => {
@@ -44,7 +48,7 @@ describe("HorizontalCard Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    displaysChildren(<HorizontalCard.Body></HorizontalCard.Body>);
+    displaysChildren(<HorizontalCard.Body />);
 
     it("should have bordered class", () => {
       const mountWrapper = mount(<HorizontalCard.Body bordered />);
@@ -73,7 +77,7 @@ describe("HorizontalCard Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    displaysChildren(<HorizontalCard.Footer></HorizontalCard.Footer>);
+    displaysChildren(<HorizontalCard.Footer />);
 
     it("should have bordered class", () => {
       const mountWrapper = mount(<HorizontalCard.Footer bordered />);
@@ -116,7 +120,5 @@ describe("HorizontalCard Component", () => {
       const mountWrapper3 = mount(<HorizontalCard style={{height: height}} />);
       expect(mountWrapper3.props().style.height).toBe(height);
     });
-
-    hasDisabledStyle(<HorizontalCard></HorizontalCard>);
   });
 });

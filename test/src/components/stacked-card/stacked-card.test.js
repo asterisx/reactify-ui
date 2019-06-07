@@ -1,8 +1,8 @@
 import React from "react";
-import { StackedCard, Constants } from "reactify";
+import { StackedCard } from "reactify";
 import { mount } from "enzyme";
 import { matchers } from 'jest-emotion';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -12,6 +12,10 @@ describe("StackedCard Component", () => {
     expect(mountWrapper).toBeDefined();
   });
 
+  displaysChildren(<StackedCard />);
+
+  hasDisabledStyle(<StackedCard />);
+  
   it("should have a shadow by default", () => {
     const mountWrapper = mount(<StackedCard />);
     expect(mountWrapper).toHaveStyleRule('box-shadow', '0px 0px 5px 0px #888888');
@@ -29,7 +33,7 @@ describe("StackedCard Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    displaysChildren(<StackedCard.Header></StackedCard.Header>);
+    displaysChildren(<StackedCard.Header />);
   });
 
   describe("StackedCard Body", () => {
@@ -44,7 +48,7 @@ describe("StackedCard Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    displaysChildren(<StackedCard.Body></StackedCard.Body>);
+    displaysChildren(<StackedCard.Body />);
 
     it("should have bordered class", () => {
       const mountWrapper = mount(<StackedCard.Body bordered />);
@@ -73,7 +77,7 @@ describe("StackedCard Component", () => {
       expect(mountWrapper.hasClass(someClass)).toBeTruthy();
     });
 
-    displaysChildren(<StackedCard.Footer></StackedCard.Footer>);
+    displaysChildren(<StackedCard.Footer />);
 
     it("should have bordered class", () => {
       const mountWrapper = mount(<StackedCard.Footer bordered />);
@@ -117,8 +121,5 @@ describe("StackedCard Component", () => {
       expect(mountWrapper3.props().style.height).toBe(height);
     });
 
-    displaysChildren(<StackedCard></StackedCard>);
-
-    hasDisabledStyle(<StackedCard></StackedCard>);
   });
 });
