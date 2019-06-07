@@ -68,6 +68,11 @@ const Paper = ({
 
 Paper.propTypes = {
   /**
+    * If 'true', component is disabled
+    * Default is 'false'
+    */
+  disabled: PropTypes.bool,
+  /**
    * A collection of valid theme types, all boolean values
    */
   ...themePropTypes,
@@ -83,6 +88,7 @@ Paper.propTypes = {
 };
 
 Paper.defaultProps = {
+  disabled: false,
   ...defaultThemePropTypes,
   ...defaultSizePropTypes,
   noShadow: false,

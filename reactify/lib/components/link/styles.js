@@ -35,4 +35,6 @@ export const styles = {
   getFontSizeStyle: commonStyles.get.font.size,
 
   getFontColorStyle: commonStyles.get.font.color.ofTheme,
+
+  getDisabledStyle: commonStyles.get.disabled.style,
 };

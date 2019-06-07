@@ -3,7 +3,7 @@ import { Slider, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -13,7 +13,7 @@ describe('Slider Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    hasDisabledStyle(<Slider></Slider>);
+    hasDisabledStyle(<Slider />);
 
     it('should automatically go in controlled mode when checked prop is passed', () => {
         const spy = sinon.spy();
@@ -70,15 +70,14 @@ describe('Slider Component', () => {
 
  
         describe('should have correct theme when theme prop is passed', () => {
-            //TODO not possibly currently to pass a func toHaveStyleRule for checking
             let ThemeColors = Constants.defaultThemeColors;
             Object.keys(ThemeColors).map(key => {
                 it(`${key} theme`, () => {
                     const props = {};
                     props[key] = true;
                     const mountWrapper = mount(<Slider value={10} {...props}></Slider>);
-                    const progressDiv = mountWrapper.find('input');
-                    // expect(progressDiv).toHaveStyleRule('background', ThemeColors[key].color);
+                    const input = mountWrapper.find('input');
+                    expect(input.props().style.background).toEqual(expect.stringContaining(ThemeColors[key].color));
                 });
             });
         });

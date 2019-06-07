@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   themePropTypes,
   defaultThemePropTypes,
@@ -9,6 +10,7 @@ import { styles } from './styles';
 
 const Link = ({
   children,
+  disabled,
   primary,
   secondary,
   dark,
@@ -52,6 +54,9 @@ const Link = ({
         success,
         theme,
       }),
+      styles.getDisabledStyle({
+        disabled,
+      }),
     ]}
     {...otherProps}
   >
@@ -60,6 +65,11 @@ const Link = ({
 );
 
 Link.propTypes = {
+  /**
+    * If 'true', component is disabled
+    * Default is 'false'
+    */
+  disabled: PropTypes.bool,
   /**
    * A collection of valid theme types, all boolean values
    */
@@ -71,6 +81,7 @@ Link.propTypes = {
 };
 
 Link.defaultProps = {
+  disabled: false,
   ...defaultThemePropTypes,
   ...defaultSizePropTypes,
 };

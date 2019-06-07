@@ -3,7 +3,7 @@ import { Switch, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -13,9 +13,9 @@ describe('Switch Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<Switch></Switch>);
+    displaysChildren(<Switch />);
 
-    hasDisabledStyle(<Switch></Switch>);
+    hasDisabledStyle(<Switch />);
 
     it('defaults to unchecked state', () => {
         const mountWrapper = mount(<Switch />);

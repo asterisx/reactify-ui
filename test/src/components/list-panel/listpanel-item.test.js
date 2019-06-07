@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
 import { darken } from 'polished';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -14,14 +14,16 @@ describe('ListPanel.Item Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
+    displaysChildren(<ListPanel.Item></ListPanel.Item>);
+
+    hasDisabledStyle(<ListPanel.Item />)
+
     it('calls callback', () => {
         const onClickCallback = sinon.spy();
         const mountWrapper = mount(<ListPanel.Item onClick={onClickCallback}  index={1}/>);
         mountWrapper.simulate('click');
         expect(onClickCallback.called).toBeTruthy();
     });
-
-    displaysChildren(<ListPanel.Item></ListPanel.Item>);
 
     it('should have border when border prop is passed', () => {
         const mountWrapper = mount(<ListPanel.Item bordered index={1}/>);

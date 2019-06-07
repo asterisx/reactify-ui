@@ -2,7 +2,7 @@ import React from 'react';
 import { Label, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -12,7 +12,9 @@ describe('Label Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<Label></Label>);
+    displaysChildren(<Label />);
+
+    hasDisabledStyle(<Label />)
 
     describe('props', () => {
         it('should accept className prop and pass it to the root container', () => {

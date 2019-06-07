@@ -1,10 +1,8 @@
 import React from 'react';
-import { Dropdown, ListPanel, Constants, Portal } from '@../../../../reactify/build';
+import { Dropdown, Portal } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
-import sinon from 'sinon';
-import { darken } from 'polished';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -14,17 +12,20 @@ describe('Dropdown Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
+    displaysChildren(<Dropdown />);
+
+    hasDisabledStyle(<Dropdown />);
+
     it('can accept anything as label', () => {
         const someClass = 'someClass';
         const labelSpan = <span className={someClass}></span>
-        const selectionCallback = sinon.spy();
         const mountWrapper = mount(<Dropdown label={labelSpan} />);
         const label = mountWrapper.findWhere(n => n.name() === 'span' && n.hasClass(someClass));
 
         expect(label).toBeDefined();
     });
 
-    displaysChildren(<Dropdown></Dropdown>);
+   
 
     it('should the dropdown be closed when the fixed div is clicked', () => {
         const mountWrapper = mount(<Dropdown trayOpen/>);

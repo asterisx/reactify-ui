@@ -3,7 +3,7 @@ import { Accordion, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -13,9 +13,9 @@ describe('Accordion Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<Accordion></Accordion>);
+    displaysChildren(<Accordion />);
 
-    hasDisabledStyle(<Accordion.Header></Accordion.Header>);
+    hasDisabledStyle(<Accordion />);
 
     it('should call callback when its clicked', () => {
         const spy = sinon.spy();

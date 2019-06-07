@@ -102,6 +102,11 @@ ProgressBar.propTypes = {
    */
   textCenter: PropTypes.bool,
   /**
+   * If 'true', stripes are shown
+   * Default value is 'false'
+   */
+  striped: PropTypes.bool,
+  /**
    * Required
    * The current progress bar value
    */
@@ -133,6 +138,7 @@ ProgressBar.defaultProps = {
   textLeft: true,
   textRight: false,
   textCenter: false,
+  striped: false,
   ...defaultSizePropTypes,
   ...defaultThemePropTypes,
 };

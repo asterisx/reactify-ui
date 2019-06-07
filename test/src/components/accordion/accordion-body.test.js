@@ -3,7 +3,7 @@ import { Accordion } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
-import { displaysChildren } from '../../common';
+import { displaysChildren } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -13,5 +13,5 @@ describe('Accordion.Body Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<Accordion.Body></Accordion.Body>);
+    displaysChildren(<Accordion.Body />);
 });

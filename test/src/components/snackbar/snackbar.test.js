@@ -3,7 +3,7 @@ import { Snackbar, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -13,7 +13,7 @@ describe('Snackbar Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<Snackbar></Snackbar>);
+    displaysChildren(<Snackbar />);
 
     describe('props', () => {
         it('should accept className prop pass it to the root container', () => {

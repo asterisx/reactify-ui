@@ -2,8 +2,7 @@ import React from 'react';
 import { ProgressBar, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
-import sinon from 'sinon';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -16,11 +15,12 @@ describe('ProgressBar Component', () => {
 
     describe('props', () => {
        
-        hasDisabledStyle(<ProgressBar></ProgressBar>);
+        hasDisabledStyle(<ProgressBar  percentage={0}/>);
 
         it('should have stripes when striped is passed', () => {
-            // TODO 
-           // Currently not possible with toHaveStyleRule
+           const mountWrapper = mount(<ProgressBar percentage={50} striped/>);
+           const progressDiv = mountWrapper.findWhere(n => n.name() === 'div' && n.hasClass('reactify-ui-progress-bar__progress'));
+           expect(progressDiv).toHaveStyleRule('background-image', expect.stringContaining('linear-gradient'));
         })
 
         it('should have correct size passed as props', () => {
@@ -49,7 +49,7 @@ describe('ProgressBar Component', () => {
                 it(`${key} theme`, () => {
                     const props = {};
                     props[key] = true;
-                    const mountWrapper = mount(<ProgressBar percentage={0} {...props}></ProgressBar>);
+                    const mountWrapper = mount(<ProgressBar percentage={0} {...props}/>);
                     const progressDiv = mountWrapper.findWhere(n => n.name() === 'div' && n.hasClass('reactify-ui-progress-bar__progress'));
                     expect(progressDiv).toHaveStyleRule('background-color', ThemeColors[key].color);
                 });

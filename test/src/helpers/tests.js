@@ -1,14 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 export const displaysChildren = (Comp) => { 
     it('should display children prop passed', () => {
         let someClass = "someClass";
         let childElem = <div className={someClass} key={1}></div>;
-        const shallowWrapper = shallow(
+        const mountWrapper = mount(
         React.cloneElement(Comp, {}, [childElem])
         );
-        const childContent = shallowWrapper.find(`.${someClass}`);
+        const childContent = mountWrapper.find(`.${someClass}`);
         expect(childContent).toBeDefined();
     });
 }

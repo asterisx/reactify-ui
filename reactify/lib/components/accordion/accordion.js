@@ -5,6 +5,7 @@ import { styles, BEMClassNames } from './styles';
 import {
   defaultThemePropTypes,
   themePropTypes,
+  reconcileThemeProps,
 } from '../../common';
 
 class Accordion extends Component {
@@ -36,14 +37,19 @@ class Accordion extends Component {
             toggleItem: () => { if (onHeaderClick) onHeaderClick(index); },
             open,
             disabled,
-            primary: child.props.primary || primary,
-            secondary: child.props.secondary || secondary,
-            dark: child.props.dark || dark,
-            light: child.props.light || light,
-            info: child.props.info || info,
-            warning: child.props.warning || warning,
-            danger: child.props.danger || danger,
-            success: child.props.success || success,
+            ...reconcileThemeProps(
+              {
+                props: child.props,
+                primary,
+                secondary,
+                dark,
+                light,
+                info,
+                warning,
+                danger,
+                success,
+              },
+            ),
             theme: child.props.theme || theme,
           });
         }

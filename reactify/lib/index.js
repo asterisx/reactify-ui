@@ -3,6 +3,7 @@ import Alert from './components/alert';
 import Badge from './components/badge';
 import Button from './components/button';
 import Card from './components/card';
+import { ContextMenu, SubMenu, SubMenuItem } from './components/context-menu';
 import { Chip, Chips } from './components/chips';
 import Checkbox from './components/checkbox';
 import Dismiss from './components/dismiss';
@@ -63,6 +64,7 @@ export {
   Badge,
   Button,
   Card,
+  ContextMenu,
   Chip,
   Chips,
   Checkbox,
@@ -93,6 +95,8 @@ export {
   Spinner,
   StackedCard,
   StarRating,
+  SubMenu,
+  SubMenuItem,
   Switch,
   Snackbar,
   Tabs,

@@ -2,8 +2,7 @@ import React from 'react';
 import { Link, Constants } from '@../../../../reactify/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
-import sinon from 'sinon';
-import { displaysChildren, hasDisabledStyle } from '../../common';
+import { displaysChildren, hasDisabledStyle } from '../../helpers';
 
 expect.extend(matchers);
 
@@ -13,7 +12,9 @@ describe('Link Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<Link></Link>);
+    displaysChildren(<Link />);
+
+    hasDisabledStyle(<Link />);
 
     describe('props', () => {
         it('should have custom color when color prop is passed', () => {

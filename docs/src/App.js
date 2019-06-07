@@ -22,6 +22,7 @@ import ButtonDemo from './pages/button';
 import CardDemo from './pages/card';
 import ChipsDemo from './pages/chips';
 import CheckBoxDemo from './pages/checkbox';
+import ContextMenuDemo from './pages/context-menu';
 import DismissDemo from './pages/dismiss';
 import DropdownDemo from './pages/dropdown';
 import FullScreenDemo from './pages/full-screen';
@@ -116,6 +117,11 @@ const App = () => (
             <li className="list-group-item">
               <Link className="d-block" to="/clock">
                 Clock
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/context-menu">
+                Context Menu
               </Link>
             </li>
             <li className="list-group-item">
@@ -338,6 +344,7 @@ const App = () => (
           <Route exact path="/chips" component={ChipsDemo} />
           <Route exact path="/circle" component={CircleDemo} />
           <Route exact path="/clock" component={ClockDemo} />
+          <Route exact path="/context-menu" component={ContextMenuDemo} />
           <Route exact path="/dismiss" component={DismissDemo} />
           <Route exact path="/dropdown" component={DropdownDemo} />
           <Route exact path="/full-screen" component={FullScreenDemo} />

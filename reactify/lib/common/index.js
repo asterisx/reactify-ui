@@ -19,6 +19,8 @@ import {
   getTimeFromMillis,
   areArraysDifferent,
   mergeDeep,
+  reconcileThemeProps,
+  isWithinWindow,
 } from './utils';
 
 export {
@@ -38,4 +40,6 @@ export {
   screenSizesInPx,
   areArraysDifferent,
   mergeDeep,
+  reconcileThemeProps,
+  isWithinWindow,
 };
