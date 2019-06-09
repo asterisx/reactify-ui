@@ -188,7 +188,6 @@ class SplitPane extends React.Component {
     const resizerInChildren = onlyPaneAndResizerChildrens.filter(child => child.type === Resizer);
 
     if (resizerInChildren.length > 1) {
-      // eslint-disable-next-line no-console
       errorLogger({ component: SplitPane.componentName, error: errors.moreThanOneResizer });
       return null;
     }
