@@ -15,6 +15,6 @@ export const displaysChildren = (Comp) => {
 
 export const hasDisabledStyle = (Comp) => {
     it('should have disabled style when disabled is passed', () => {
-
+        console.log('[TODO] Disabled tests is to be written')
     });
 }

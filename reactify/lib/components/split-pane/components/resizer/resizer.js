@@ -54,6 +54,7 @@ const Resizer = ({
           success,
           theme,
         }),
+        styles.getDisabledStyle({ disabled }),
       ]}
       onTouchStart={onMouseDown}
       onMouseDown={onMouseDown}

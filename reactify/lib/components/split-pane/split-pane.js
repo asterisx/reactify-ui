@@ -249,6 +249,7 @@ class SplitPane extends React.Component {
               key: 'resizer',
               onMouseDown: startResize,
               vertical,
+              disabled,
             });
           }
           return null;

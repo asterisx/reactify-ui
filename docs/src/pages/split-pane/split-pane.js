@@ -10,6 +10,7 @@ import {
   customResizerCode,
   customThemeCode,
   onChangeCode,
+  resizerDisabledCode,
   simpleCode,
   verticalCode,
 } from './code-refrence';
@@ -94,6 +95,17 @@ const SplitPaneDemo = () => (
             </div>
           )}
         </Resizer>
+        <Pane style={{ width: '50%' }}>This is pane 2</Pane>
+      </SplitPane>
+    </DemoCard>
+
+    <DemoCard
+      title="Resizer Disabled"
+      uniqueIdentifier="resizerDisabledUse"
+      sourceCode={resizerDisabledCode}
+    >
+      <SplitPane style={{ height: '300px', width: '100%' }} disabled>
+        <Pane style={{ width: '50%' }}>This is pane 1</Pane>
         <Pane style={{ width: '50%' }}>This is pane 2</Pane>
       </SplitPane>
     </DemoCard>

@@ -14,6 +14,8 @@ export const styles = {
     height: '1em',
   },
 
+  getDisabledStyle: commonStyles.get.disabled.style,
+
   getThemedStyle: ({
     primary,
     secondary,
