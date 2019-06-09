@@ -3,8 +3,6 @@ import { ToastProvider, ToastConsumer, Button } from '@../../../../reactify/buil
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
-import { JestEnvironment } from '@jest/environment';
-import { rewire } from 'rewire';
 
 expect.extend(matchers);
 

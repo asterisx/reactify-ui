@@ -29,6 +29,7 @@ import SearchBar from './components/search-bar';
 import Select from './components/select';
 import Slider from './components/slider';
 import Spinner from './components/spinner';
+import { Pane, Resizer, SplitPane } from './components/split-pane';
 import StackedCard from './components/stacked-card';
 import StarRating from './components/star-rating';
 import Switch from './components/switch';
@@ -85,14 +86,17 @@ export {
   Modal,
   NumberCounter,
   Paper,
+  Pane,
   Portal,
   ProgressBar,
   RadioInput,
   RadioGroup,
+  Resizer,
   SearchBar,
   Select,
   Slider,
   Spinner,
+  SplitPane,
   StackedCard,
   StarRating,
   SubMenu,

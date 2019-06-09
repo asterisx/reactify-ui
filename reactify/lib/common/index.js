@@ -21,6 +21,7 @@ import {
   mergeDeep,
   reconcileThemeProps,
   isWithinWindow,
+  errorLogger,
 } from './utils';
 
 export {
@@ -42,4 +43,5 @@ export {
   mergeDeep,
   reconcileThemeProps,
   isWithinWindow,
+  errorLogger,
 };
