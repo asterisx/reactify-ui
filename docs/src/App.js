@@ -45,6 +45,7 @@ import RadioGroupDemo from './pages/radio-group';
 import SearchBarDemo from './pages/search-bar';
 import SelectDemo from './pages/select';
 import SliderDemo from './pages/slider';
+import SplitPaneDemo from './pages/split-pane';
 import StackedCardDemo from './pages/stacked-card';
 import StarRatingDemo from './pages/star-rating';
 import SwitchDemo from './pages/switch';
@@ -250,13 +251,18 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
-              <Link className="d-block" to="/Snackbar">
+              <Link className="d-block" to="/snackbar">
                 Snackbar
               </Link>
             </li>
             <li className="list-group-item">
               <Link className="d-block" to="/sphere">
                 Sphere
+              </Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="d-block" to="/split-pane">
+                Split Pane
               </Link>
             </li>
             <li className="list-group-item">
@@ -370,8 +376,9 @@ const App = () => (
           <Route exact path="/select" component={SelectDemo} />
           <Route exact path="/slices" component={SlicesDemo} />
           <Route exact path="/slider" component={SliderDemo} />
-          <Route exact path="/Snackbar" component={SnackbarDemo} />
+          <Route exact path="/snackbar" component={SnackbarDemo} />
           <Route exact path="/sphere" component={SphereDemo} />
+          <Route exact path="/split-pane" component={SplitPaneDemo} />
           <Route exact path="/stacked-card" component={StackedCardDemo} />
           <Route exact path="/star-rating" component={StarRatingDemo} />
           <Route exact path="/switch" component={SwitchDemo} />

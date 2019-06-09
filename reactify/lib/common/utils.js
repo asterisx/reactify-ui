@@ -210,3 +210,7 @@ export const isWithinWindow = (x, y, width, height) => {
 
   return true;
 };
+
+export const errorLogger = ({ component, error }) => {
+  console.error(`[${component}] ${error}`);
+};
