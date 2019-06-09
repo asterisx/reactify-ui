@@ -99,9 +99,15 @@ class SplitPane extends React.Component {
 
 
   startResize = (event) => {
+    let startPoint;
+    if (event.type === 'touchstart') {
+      startPoint = this.props.vertical ? event.touches[0].clientX : event.touches[0].clientY;
+    } else {
+      startPoint = this.props.vertical ? event.clientX : event.clientY;
+    }
     this.setState({
       isDragging: true,
-      dragStartPoint: this.props.vertical ? event.clientY : event.clientX,
+      dragStartPoint: startPoint,
     });
   }
 
@@ -121,8 +127,13 @@ class SplitPane extends React.Component {
 
   resizePanel = (event) => {
     if (this.state.isDragging) {
-      const delta = (this.props.vertical ? event.clientY : event.clientX)
-      - this.state.dragStartPoint;
+      let movePoint;
+      if (event.type === 'touchmove') {
+        movePoint = this.props.vertical ? event.touches[0].clientX : event.touches[0].clientY;
+      } else {
+        movePoint = this.props.vertical ? event.clientX : event.clientY;
+      }
+      const delta = movePoint - this.state.dragStartPoint;
       this.setState(prevState => ({
         /*
          * The initial size is the size at the time of beginning of resize (i.e) mouse down
