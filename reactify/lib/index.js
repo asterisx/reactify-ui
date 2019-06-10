@@ -34,7 +34,7 @@ import StackedCard from './components/stacked-card';
 import StarRating from './components/star-rating';
 import Switch from './components/switch';
 import Snackbar from './components/snackbar';
-import { ToastProvider, ToastConsumer } from './components/toaster';
+import { ToastProvider, ToastConsumer } from './components/toast';
 import { Tabs, Tab } from './components/tabs';
 import Text from './components/text';
 import Timer from './components/timer';
