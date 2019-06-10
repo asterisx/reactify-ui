@@ -69,7 +69,15 @@ Resizer.propTypes = {
    * A collection of valid theme types, all boolean values
    */
   ...themePropTypes,
+  /**
+   * If 'true', the reszizing is disabled
+   * Default is 'false'
+   */
   disabled: PropTypes.bool,
+  /**
+   * If 'true' the split pane is in vertical mode
+   * Defaults to 'false'
+   */
   vertical: PropTypes.bool,
 };
 

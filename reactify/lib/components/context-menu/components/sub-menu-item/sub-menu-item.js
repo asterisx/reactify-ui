@@ -10,6 +10,9 @@ import { styles } from './styles';
 
 class SubMenuItem extends Component {
   static propTypes = {
+    /**
+     * `Optional` An optional icon to show
+     */
     // eslint-disable-next-line react/forbid-prop-types
     icon: PropTypes.any,
     text: PropTypes.string,
