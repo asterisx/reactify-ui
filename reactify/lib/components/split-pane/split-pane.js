@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { throttle } from 'throttle-debounce';
 import {
   themePropTypes,
   defaultThemePropTypes,
@@ -22,6 +23,10 @@ class SplitPane extends React.Component {
      * A collection of valid theme types, all boolean values
      */
     ...themePropTypes,
+    /**
+     * If 'true' the split pane is in vertical mode
+     * Defaults to 'false'
+     */
     vertical: PropTypes.bool,
     disabled: PropTypes.bool,
     /**
@@ -51,7 +56,10 @@ class SplitPane extends React.Component {
     initialSizePane2: undefined,
   }
 
+  throttledResizeListener = undefined;
+
   componentDidMount() {
+    this.throttledResizeListener = throttle(10, this.resizePanel);
     this.addEventListeners();
     this.calculateAndSetClientSize();
   }
@@ -80,7 +88,7 @@ class SplitPane extends React.Component {
   addEventListeners = () => {
     const currentContainerRef = this.containerRef.current;
     if (currentContainerRef) {
-      currentContainerRef.addEventListener('mousemove', this.resizePanel);
+      currentContainerRef.addEventListener('mousemove', this.throttledResizeListener);
       currentContainerRef.addEventListener('mouseup', this.stopResize);
       currentContainerRef.addEventListener('touchmove', this.resizePanel);
       currentContainerRef.addEventListener('touchend', this.stopResize);
@@ -90,10 +98,10 @@ class SplitPane extends React.Component {
   removeEventListeners = () => {
     const currentContainerRef = this.containerRef.current;
     if (currentContainerRef) {
-      currentContainerRef.removeEventListener('mousemove', this.resizePanel);
+      currentContainerRef.removeEventListener('mousemove', this.throttledResizeListener);
       currentContainerRef.removeEventListener('mouseup', this.stopResize);
-      currentContainerRef.addEventListener('touchmove', this.resizePanel);
-      currentContainerRef.addEventListener('touchend', this.stopResize);
+      currentContainerRef.removeEventListener('touchmove', this.resizePanel);
+      currentContainerRef.removeEventListener('touchend', this.stopResize);
     }
   }
 
@@ -101,9 +109,9 @@ class SplitPane extends React.Component {
   startResize = (event) => {
     let startPoint;
     if (event.type === 'touchstart') {
-      startPoint = this.props.vertical ? event.touches[0].clientX : event.touches[0].clientY;
+      startPoint = this.props.vertical ? event.touches[0].clientY : event.touches[0].clientX;
     } else {
-      startPoint = this.props.vertical ? event.clientX : event.clientY;
+      startPoint = this.props.vertical ? event.clientY : event.clientX;
     }
     this.setState({
       isDragging: true,
@@ -127,11 +135,12 @@ class SplitPane extends React.Component {
 
   resizePanel = (event) => {
     if (this.state.isDragging) {
+      event.preventDefault();
       let movePoint;
       if (event.type === 'touchmove') {
-        movePoint = this.props.vertical ? event.touches[0].clientX : event.touches[0].clientY;
+        movePoint = this.props.vertical ? event.touches[0].clientY : event.touches[0].clientX;
       } else {
-        movePoint = this.props.vertical ? event.clientX : event.clientY;
+        movePoint = this.props.vertical ? event.clientY : event.clientX;
       }
       const delta = movePoint - this.state.dragStartPoint;
       this.setState(prevState => ({

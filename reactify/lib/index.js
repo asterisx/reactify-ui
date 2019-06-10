@@ -40,6 +40,7 @@ import Text from './components/text';
 import Timer from './components/timer';
 import TopBar from './components/top-bar';
 import Tooltip from './components/tooltip';
+import { TreeView, TreeViewItem } from './components/tree-view';
 import UserProfile from './components/user-profile';
 import {
   defaultThemeColors,
@@ -111,5 +112,7 @@ export {
   Tooltip,
   ToastProvider,
   ToastConsumer,
+  TreeView,
+  TreeViewItem,
   UserProfile,
 };

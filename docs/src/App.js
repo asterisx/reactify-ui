@@ -56,6 +56,7 @@ import TimerDemo from './pages/timer';
 import ToastDemo from './pages/toast';
 import TooltipDemo from './pages/tooltip';
 import TopBarDemo from './pages/top-bar';
+import TreeViewDemo from './pages/tree-view';
 import UserProfileDemo from './pages/user-profile';
 
 const App = () => (
@@ -316,6 +317,11 @@ const App = () => (
               </Link>
             </li>
             <li className="list-group-item">
+              <Link className="d-block" to="/tree-view">
+                Tree View
+              </Link>
+            </li>
+            <li className="list-group-item">
               <Link className="d-block" to="/user-profile">
                 User Profile
               </Link>
@@ -389,6 +395,7 @@ const App = () => (
           <Route exact path="/toast" component={ToastDemo} />
           <Route exact path="/tooltip" component={TooltipDemo} />
           <Route exact path="/top-bar" component={TopBarDemo} />
+          <Route exact path="/tree-view" component={TreeViewDemo} />
           <Route exact path="/user-profile" component={UserProfileDemo} />
           <Route exact path="/volume" component={VolumeDemo} />
           <Route exact path="/vortex" component={VortexDemo} />

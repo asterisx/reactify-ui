@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { SubMenu } from './components';
 import {
   defaultThemePropTypes,
@@ -10,6 +11,22 @@ import { styles } from './styles';
 
 class ContextMenu extends Component {
   static propTypes = {
+    /**
+   * A collection of a array of shape
+   * icon: PropTypes.any
+   * text: PropTypes.string,
+   * content: PropTypes.any,
+   * `Of same shape as items`
+   * sub: PropTypes.any,
+   * disabled: PropTypes.bool,
+   */
+    items: PropTypes.arrayOf(PropTypes.shape({
+      icon: PropTypes.any,
+      text: PropTypes.string,
+      content: PropTypes.any,
+      sub: PropTypes.any,
+      disabled: PropTypes.bool,
+    })),
     /**
      * A collection of valid theme types, all boolean values
      * This is drilled directly to SubMenu 'as is'

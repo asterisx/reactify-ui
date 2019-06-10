@@ -66,7 +66,7 @@ describe('SplitPane Component', () => {
                 <Pane></Pane>
             </SplitPane>
             );
-            expect(mountWrapper.childAt(0).childAt).toHaveStyleRule('flex-direction', 'column');
+            expect(mountWrapper.childAt(0).childAt(0)).toHaveStyleRule('flex-direction', 'column');
         });
     });
 
