@@ -4,27 +4,27 @@
 
 [![NPM](https://img.shields.io/npm/v/reactify.svg)](https://www.npmjs.com/package/reactify) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Install
+Check the docs [here](https://asterisx.github.io/reactify/) 
 
-```bash
-npm install --save reactify
-```
+The library is still a WIP. The following components are reamining to be built.
 
-## Usage
-
-```jsx
-import React, { Component } from 'react'
-
-import MyComponent from '@../../../../reactify/build'
-
-class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
-```
+Typeahead
+Carousel
+Name Value Pair Input
+Sidebar
+Paginator
+Multi Select Panel
+File Uploader
+Bubble Wizard
+Breadcrumbs
+Diagram
+Heirarchy View
+Date
+Chart
+Prototype
+Heat Map
+Grid
+Paged Grid
 
 ## License
 
