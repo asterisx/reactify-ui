@@ -8,23 +8,23 @@ Check the docs [here](https://asterisx.github.io/reactify/)
 
 The library is still a WIP. The following components are reamining to be built.
 
-Typeahead
-Carousel
-Name Value Pair Input
-Sidebar
-Paginator
-Multi Select Panel
-File Uploader
-Bubble Wizard
-Breadcrumbs
-Diagram
-Heirarchy View
-Date
-Chart
-Prototype
-Heat Map
-Grid
-Paged Grid
+- [ ] Typeahead
+- [ ] Carousel
+- [ ] Name Value Pair Input
+- [ ] Sidebar
+- [ ] Paginator
+- [ ] Multi Select Panel
+- [ ] File Uploader
+- [ ] Bubble Wizard
+- [ ] Breadcrumbs
+- [ ] Diagram
+- [ ] Heirarchy View
+- [ ] Date
+- [ ] Chart
+- [ ] Prototype
+- [ ] Heat Map
+- [ ] Grid
+- [ ] Paged Grid
 
 ## License
 
