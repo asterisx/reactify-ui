@@ -13,9 +13,9 @@ describe('ListPanel Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<ListPanel></ListPanel>);
+    displaysChildren(<ListPanel />);
 
-    hasDisabledStyle(<ListPanel></ListPanel>);
+    hasDisabledStyle(<ListPanel />);
 
     describe('props', () => {
         it('should call onSelectionChange function when List Panel item is clicked', () => {

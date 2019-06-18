@@ -14,7 +14,7 @@ describe('ListPanel.Item Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<ListPanel.Item></ListPanel.Item>);
+    displaysChildren(<ListPanel.Item />);
 
     hasDisabledStyle(<ListPanel.Item />)
 
