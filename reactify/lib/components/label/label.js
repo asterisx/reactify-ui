@@ -18,11 +18,11 @@ const Label = ({
   warning,
   danger,
   success,
+  theme,
   small,
   medium,
   large,
   disabled,
-  theme,
   ...otherProps
 }) => (
   <span

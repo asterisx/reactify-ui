@@ -10,6 +10,7 @@ import Dismiss from './components/dismiss';
 import Dropdown from './components/dropdown';
 import FullScreen from './components/full-screen';
 import GroupToggle from './components/group-toggle';
+import HeatMap from './components/heat-map';
 import Highlight from './components/highlight';
 import HorizontalCard from './components/horizontal-card';
 import Input from './components/input';
@@ -75,6 +76,7 @@ export {
   Dropdown,
   FullScreen,
   GroupToggle,
+  HeatMap,
   Highlight,
   HorizontalCard,
   Input,

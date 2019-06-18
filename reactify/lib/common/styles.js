@@ -65,6 +65,17 @@ const zdIndex = {
 const get = {
   font: {
     color: {
+    /**
+     * @param {boolean} primary 'true' by default
+     * @param {boolean} secondary 'false' by default
+     * @param {boolean} dark 'false' by default
+     * @param {boolean} light 'false' by default
+     * @param {boolean} info 'false' by default
+     * @param {boolean} warning 'false' by default
+     * @param {boolean} danger 'false' by default
+     * @param {boolean} success 'false' by default
+     * @returns {object} The font color which is the 'fontColor' value of theme
+     */
       forTheme: ({
         primary,
         secondary,
@@ -88,6 +99,17 @@ const get = {
           theme,
         }),
       }),
+      /**
+       * @param {boolean} primary 'true' by default
+       * @param {boolean} secondary 'false' by default
+       * @param {boolean} dark 'false' by default
+       * @param {boolean} light 'false' by default
+       * @param {boolean} info 'false' by default
+       * @param {boolean} warning 'false' by default
+       * @param {boolean} danger 'false' by default
+       * @param {boolean} success 'false' by default
+       * @returns {object} The font color which is the 'color' value of theme
+       */
       ofTheme: ({
         primary,
         secondary,
@@ -198,6 +220,17 @@ const get = {
       danger,
       success,
     }).reduce((color, [key, isTrue]) => (isTrue ? theme[key].color : color), undefined),
+    /**
+     * @param {boolean} primary 'true' by default
+     * @param {boolean} secondary 'false' by default
+     * @param {boolean} dark 'false' by default
+     * @param {boolean} light 'false' by default
+     * @param {boolean} info 'false' by default
+     * @param {boolean} warning 'false' by default
+     * @param {boolean} danger 'false' by default
+     * @param {boolean} success 'false' by default
+     * @returns {string} The fontColor value
+     */
     fontColor: ({
       primary,
       secondary,
