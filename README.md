@@ -53,12 +53,12 @@ The library is still a WIP. The following components are reamining to be built.
 - [x] Split View
 - [x] Tree View
 - [x] Heat Map
+- [x] File Upload
 - [ ] Typeahead
 - [ ] Name Value Pair Input
 - [ ] Sidebar
 - [ ] Paginator
 - [ ] Multi Select Panel
-- [ ] File Uploader
 - [ ] Bubble Wizard
 - [ ] Breadcrumbs
 - [ ] Carousel

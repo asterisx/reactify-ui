@@ -11,5 +11,5 @@ describe('HeatMap.Cell Component', () => {
 
     displaysChildren(<HeatMap.Cell />);
 
-    hasDisabledStyle(<HeatMap.Cell />)
+    hasDisabledStyle(<HeatMap.Cell />);
 });

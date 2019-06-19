@@ -22,6 +22,7 @@ import CheckBoxDemo from '../pages/checkbox';
 import ContextMenuDemo from '../pages/context-menu';
 import DismissDemo from '../pages/dismiss';
 import DropdownDemo from '../pages/dropdown';
+import FileUploadDemo from '../pages/file-upload';
 import FullScreenDemo from '../pages/full-screen';
 import GroupToggleDemo from '../pages/group-toggle';
 import HeatMapDemo from '../pages/heat-map';
@@ -129,6 +130,11 @@ export const componentsRouting = {
     name: 'Dropdown',
     path: `${componentDocsPath}/dropdown`,
     component: DropdownDemo,
+  },
+  fileUpload: {
+    name: 'File Upload',
+    path: `${componentDocsPath}/file-upload`,
+    component: FileUploadDemo,
   },
   fullScreen: {
     name: 'Full Screen',

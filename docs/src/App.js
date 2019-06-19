@@ -12,7 +12,7 @@ const App = () => (
           <h3 className="card-header">Components</h3>
           <ul className="card-body">
             {Object.values(componentsRouting).map(route => (
-              <li className="list-group-item">
+              <li className="list-group-item" key={route.name}>
                 <Link className="d-block" to={route.path}>
                   {route.name}
                 </Link>
@@ -23,7 +23,7 @@ const App = () => (
         <div className="col-10 overflow-scroll">
           <Route exact path="/reactify" component={AccordionDemo} />
           {Object.values(componentsRouting).map(route => (
-            <Route exact path={route.path} component={route.component} />
+            <Route exact path={route.path} component={route.component} key={route.name} />
           ))}
         </div>
       </div>
