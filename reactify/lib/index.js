@@ -8,6 +8,7 @@ import { Chip, Chips } from './components/chips';
 import Checkbox from './components/checkbox';
 import Dismiss from './components/dismiss';
 import Dropdown from './components/dropdown';
+import FileUpload from './components/file-upload';
 import FullScreen from './components/full-screen';
 import GroupToggle from './components/group-toggle';
 import HeatMap from './components/heat-map';
@@ -74,6 +75,7 @@ export {
   Constants,
   Dismiss,
   Dropdown,
+  FileUpload,
   FullScreen,
   GroupToggle,
   HeatMap,
