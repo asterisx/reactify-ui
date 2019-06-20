@@ -22,6 +22,7 @@ import ListPanel from './components/list-panel';
 import Login from './components/login';
 import Modal from './components/modal';
 import NumberCounter from './components/number-counter';
+import Paginator from './components/paginator';
 import Paper from './components/paper';
 import Portal from './components/portal';
 import ProgressBar from './components/progress-bar';
@@ -90,6 +91,7 @@ export {
   Login,
   Modal,
   NumberCounter,
+  Paginator,
   Paper,
   Pane,
   Portal,

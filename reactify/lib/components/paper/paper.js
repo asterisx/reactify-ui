@@ -18,11 +18,11 @@ const Paper = ({
   warning,
   danger,
   success,
+  theme,
   small,
   medium,
   large,
   disabled,
-  theme,
   noShadow,
   ...otherProps
 }) => (

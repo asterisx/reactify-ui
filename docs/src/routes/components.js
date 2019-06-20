@@ -36,6 +36,7 @@ import ListPanelDemo from '../pages/list-panel';
 import LoginDemo from '../pages/login';
 import ModalDemo from '../pages/modal';
 import NumberCounterDemo from '../pages/number-counter';
+import PaginatorDemo from '../pages/paginator';
 import PaperDemo from '../pages/paper';
 import PortalDemo from '../pages/portal';
 import ProgressBarDemo from '../pages/progress-bar';
@@ -210,6 +211,11 @@ export const componentsRouting = {
     name: 'Number Counter',
     path: `${componentDocsPath}/number-counter`,
     component: NumberCounterDemo,
+  },
+  paginator: {
+    name: 'Paginator',
+    path: `${componentDocsPath}/paginator`,
+    component: PaginatorDemo,
   },
   paper: {
     name: 'Paper',
