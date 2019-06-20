@@ -54,10 +54,10 @@ The library is still a WIP. The following components are reamining to be built.
 - [x] Tree View
 - [x] Heat Map
 - [x] File Upload
+- [x] Paginator
 - [ ] Typeahead
 - [ ] Name Value Pair Input
 - [ ] Sidebar
-- [ ] Paginator
 - [ ] Multi Select Panel
 - [ ] Bubble Wizard
 - [ ] Breadcrumbs
