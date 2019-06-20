@@ -72,24 +72,24 @@ export const styles = {
     breakpoint: {
       sm: css`
        @media (max-width: ${screenSizes.screenSm}) {
-            display: none;
+          display: none;
         }
       `,
       md: css`
        @media (max-width: ${screenSizes.screenMd}) {
-            display: none;
+          display: none;
         }
       `,
       lg: css`
        @media (max-width: ${screenSizes.screenLg}) {
-            display: none;
+          display: none;
         }
       `,
       xl: css`
         @media (max-width: ${screenSizes.screenXl}) {
-             display: none;
-         }
-       `,
+          display: none;
+        }
+      `,
     },
   },
 
