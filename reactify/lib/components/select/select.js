@@ -12,8 +12,6 @@ import SearchBar from '../search-bar';
 import ListPanel from '../list-panel';
 
 class Select extends Component {
-  static Item = ({ children, ...otherProps }) => <span {...otherProps}>{children}</span>;
-
   static propTypes = {
     /**
      * If 'true' select items are searcable
@@ -63,6 +61,8 @@ class Select extends Component {
     ...defaultSizePropTypes,
     onSelectionChange: undefined,
   }
+
+  static Item = ({ children, ...otherProps }) => <span {...otherProps}>{children}</span>;
 
   state = {
     items: [], filterText: '',

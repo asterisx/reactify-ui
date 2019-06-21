@@ -57,6 +57,7 @@ import ToastDemo from '../pages/toast';
 import TooltipDemo from '../pages/tooltip';
 import TopBarDemo from '../pages/top-bar';
 import TreeViewDemo from '../pages/tree-view';
+import TypeaheadDemo from '../pages/typeahead';
 import UserProfileDemo from '../pages/user-profile';
 
 const componentDocsPath = '';
@@ -331,6 +332,11 @@ export const componentsRouting = {
     name: 'Tree View',
     path: `${componentDocsPath}/tree-view`,
     component: TreeViewDemo,
+  },
+  typeahead: {
+    name: 'Typeahead',
+    path: `${componentDocsPath}/typeahead`,
+    component: TypeaheadDemo,
   },
   userProfile: {
     name: 'User Profile',

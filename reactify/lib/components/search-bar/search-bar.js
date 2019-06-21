@@ -42,7 +42,7 @@ class SearchBar extends Component {
      *
      * @param {object} event The event source for the callback.
      * You can use `event.target.value` to get the new value
-     * @param {number} value The `value` of the searchbar is also passed
+     * @param {string} value The `value` of the searchbar is also passed
      */
     onChange: PropTypes.func,
   }
