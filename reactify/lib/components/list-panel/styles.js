@@ -21,7 +21,6 @@ export const styles = {
     paddingRight: '0.4em',
     cursor: 'pointer',
     color: 'white',
-    transitionDuration: '0.3s',
   },
 
   getFontSizeStyle: commonStyles.get.font.size,

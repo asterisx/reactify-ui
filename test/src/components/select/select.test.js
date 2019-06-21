@@ -10,7 +10,6 @@ expect.extend(matchers);
 describe('Select Component', () => {
     it('renders correctly', () => {
         const mountWrapper = mount(<Select />);
-        mountWrapper.simulate('click');
         expect(mountWrapper).toBeDefined();
     });
 

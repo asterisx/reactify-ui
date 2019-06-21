@@ -44,6 +44,7 @@ import Timer from './components/timer';
 import TopBar from './components/top-bar';
 import Tooltip from './components/tooltip';
 import { TreeView, TreeViewItem } from './components/tree-view';
+import Typeahead from './components/typeahead';
 import UserProfile from './components/user-profile';
 import {
   defaultThemeColors,
@@ -120,5 +121,6 @@ export {
   ToastConsumer,
   TreeView,
   TreeViewItem,
+  Typeahead,
   UserProfile,
 };
