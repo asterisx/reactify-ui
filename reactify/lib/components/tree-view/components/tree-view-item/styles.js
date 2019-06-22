@@ -15,7 +15,6 @@ export const styles = {
     left: '0.8em',
   },
   icon: {
-    borderColor: 'inherit',
     cursor: 'pointer',
   },
   dflexCenter: {
