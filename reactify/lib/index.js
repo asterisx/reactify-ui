@@ -1,6 +1,7 @@
 import Accordion from './components/accordion';
 import Alert from './components/alert';
 import Badge from './components/badge';
+import Breadcrumbs from './components/breadcrumbs';
 import Button from './components/button';
 import Card from './components/card';
 import { ContextMenu, SubMenu, SubMenuItem } from './components/context-menu';
@@ -68,6 +69,7 @@ export {
   Accordion,
   Alert,
   Badge,
+  Breadcrumbs,
   Button,
   Card,
   ContextMenu,
