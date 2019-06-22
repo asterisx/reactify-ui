@@ -1,12 +1,13 @@
-# reactify
+# reactify-ui
 
-> A feature rich react UI components library
+> A feature rich and customizable React UI Components Library
 
 [![NPM](https://img.shields.io/npm/v/reactify-ui.svg)](https://www.npmjs.com/package/reactify-ui) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-Check the docs [here](https://asterisx.github.io/reactify/) 
+Check the docs [here](https://asterisx.github.io/reactify-ui/) 
 
-The library is still a WIP. The following components are reamining to be built.
+The library is still a WIP.
+The progress is below.
 
 - [x] Button
 - [x] Label
@@ -55,17 +56,16 @@ The library is still a WIP. The following components are reamining to be built.
 - [x] Heat Map
 - [x] File Upload
 - [x] Paginator
-- [ ] Typeahead
+- [X] Typeahead
+- [X] Breadcrumbs
 - [ ] Sidebar
-- [ ] Multi Select Panel
+- [ ] Prototypes
 - [ ] Bubble Wizard
-- [ ] Breadcrumbs
 - [ ] Carousel
 - [ ] Diagram
 - [ ] Heirarchy View
-- [ ] Date
-- [ ] Chart
-- [ ] Prototype
+- [ ] Dates
+- [ ] Charts
 - [ ] Grid
 
 ## License
