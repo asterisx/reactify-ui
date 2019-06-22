@@ -15,6 +15,7 @@ import {
   VortexDemo,
   WaveDemo,
 } from '../pages/spinner';
+import BreadcrumbsDemo from '../pages/breadcrumbs';
 import ButtonDemo from '../pages/button';
 import CardDemo from '../pages/card';
 import ChipsDemo from '../pages/chips';
@@ -87,6 +88,11 @@ export const componentsRouting = {
     name: 'Bars',
     path: `${componentDocsPath}/bars`,
     component: BarsDemo,
+  },
+  breadcrumbs: {
+    name: 'Breadcrumbs',
+    path: `${componentDocsPath}/breadcrumbs`,
+    component: BreadcrumbsDemo,
   },
   button: {
     name: 'Button',
