@@ -21,7 +21,7 @@ const App = () => (
           </ul>
         </div>
         <div className="col-10 overflow-scroll">
-          <Route exact path="/reactify" component={AccordionDemo} />
+          <Route exact path="/reactify-ui" component={AccordionDemo} />
           {Object.values(componentsRouting).map(route => (
             <Route exact path={route.path} component={route.component} key={route.name} />
           ))}
