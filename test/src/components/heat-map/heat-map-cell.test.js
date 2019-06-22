@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeatMap } from '@../../../../reactify/build';
+import { HeatMap } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { displaysChildren, hasDisabledStyle } from '../../helpers';
 

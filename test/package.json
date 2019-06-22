@@ -4,8 +4,7 @@
   "description": "Test coverage for reactify",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "preinstall": "rm -rf node_modules/reactify && npm install ../reactify"
+    "test": "jest"
   },
   "author": "Ashwin Singh",
   "license": "MIT",
@@ -32,7 +31,6 @@
     "polished": "^3.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "reactify": "file:../reactify",
     "rewire": "^4.0.1",
     "sinon": "^7.3.1"
   },

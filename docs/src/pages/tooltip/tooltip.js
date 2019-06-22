@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip, Paper } from '@../../../../reactify/build';
+import { Tooltip, Paper } from '@../../../../reactify-ui/build';
 import {
   customSizeCode,
   positionCode,

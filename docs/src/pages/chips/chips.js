@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import React, { Component } from 'react';
-import { Chips, Chip } from '@../../../../reactify/build';
+import { Chips, Chip } from '@../../../../reactify-ui/build';
 import {
   disabledCode,
   customColorCode,
@@ -30,7 +30,8 @@ class ListPanelDemo extends Component {
               <Chip
                 key={index}
                 onCloseClick={
-              () => this.setState(prevState => ({ simpleItems: prevState.simpleItems.filter(sit => sit !== si) }))}
+              () => this.setState(prevState => (
+                { simpleItems: prevState.simpleItems.filter(sit => sit !== si) }))}
               >
                 {si}
               </Chip>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Constants, SubMenu, SubMenuItem } from '@../../../../reactify/build';
+import { Constants, SubMenu, SubMenuItem } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import { darken } from 'polished';

@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { RadioInput } from '@../../../../reactify/build';
+import { RadioInput } from '@../../../../reactify-ui/build';
 import {
   simpleCode,
   checkedCode,

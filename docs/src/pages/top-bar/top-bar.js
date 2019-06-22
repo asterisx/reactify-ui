@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import Octicon, { MarkGithub } from '@githubprimer/octicons-react';
-import { TopBar, Paper } from '@../../../../reactify/build';
+import { TopBar, Paper } from '@../../../../reactify-ui/build';
 import {
   simpleCode,
   themeCode,

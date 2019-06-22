@@ -1,5 +1,5 @@
 import React from 'react';
-import { NumberCounter, Constants } from '@../../../../reactify/build';
+import { NumberCounter, Constants } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
@@ -12,6 +12,8 @@ describe('NumberCounter Component', () => {
         const mountWrapper = mount(<NumberCounter to={10000}/>);
         expect(mountWrapper).toBeDefined();
     });
+
+    hasDisabledStyle(<NumberCounter to={10000} />);
 
     describe('props', () => {
         //TODO change dynamically, interval, delay, onChange, onComplete
@@ -34,7 +36,7 @@ describe('NumberCounter Component', () => {
             }, 0);
         });
 
-        hasDisabledStyle(<NumberCounter></NumberCounter>);
+
 
         it('should have custom color when color prop is passed', () => {
             const color = "violet"

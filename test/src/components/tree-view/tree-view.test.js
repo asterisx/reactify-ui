@@ -1,5 +1,5 @@
 import React from 'react';
-import { Constants, TreeView, TreeViewItem } from '@../../../../reactify/build';
+import { Constants, TreeView, TreeViewItem } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';

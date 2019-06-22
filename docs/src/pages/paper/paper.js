@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { Paper } from '@../../../../reactify/build';
+import { Paper } from '@../../../../reactify-ui/build';
 import {
   customThemeCode,
   simpleCode,

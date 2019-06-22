@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown, ListPanel } from '@../../../../reactify/build';
+import { Dropdown, ListPanel } from '@../../../../reactify-ui/build';
 import {
   breakpointCode,
   disabledCode,

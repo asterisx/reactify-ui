@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   Button, Dismiss, Paper, ToastProvider, ToastConsumer,
-} from '@../../../../reactify/build';
+} from '@../../../../reactify-ui/build';
 import {
   directionCode,
   hideCode,

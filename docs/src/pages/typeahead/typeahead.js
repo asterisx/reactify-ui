@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { Typeahead, Paper } from '@../../../../reactify/build';
+import { Typeahead, Paper } from '@../../../../reactify-ui/build';
 import {
   controlledCode,
   customThemeCode,

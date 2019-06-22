@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tabs, Tab, GroupToggle, Button } from '@../../../../reactify/build';
+import { Tabs, Tab, GroupToggle, Button } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';

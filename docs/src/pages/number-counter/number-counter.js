@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { Component } from 'react';
-import { NumberCounter } from '@../../../../reactify/build';
+import { NumberCounter } from '@../../../../reactify-ui/build';
 import {
   customColorCode,
   customClassCode,

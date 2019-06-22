@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ProgressBar } from '@../../../../reactify/build';
+import { ProgressBar } from '@../../../../reactify-ui/build';
 import {
   customColorCode,
   customThemeCode,

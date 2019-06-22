@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Constants } from '@../../../../reactify/build';
+import { Link, Constants } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import { displaysChildren, hasDisabledStyle } from '../../helpers';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListPanel, Constants } from '@../../../../reactify/build';
+import { ListPanel, Constants } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
@@ -14,9 +14,9 @@ describe('ListPanel.Item Component', () => {
         expect(mountWrapper).toBeDefined();
     });
 
-    displaysChildren(<ListPanel.Item />);
+    displaysChildren(<ListPanel.Item index={1} />);
 
-    hasDisabledStyle(<ListPanel.Item />)
+    hasDisabledStyle(<ListPanel.Item index={1} />)
 
     it('calls callback', () => {
         const onClickCallback = sinon.spy();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { LegendItem, Constants } from '@../../../../reactify/build';
+import { LegendItem, Constants } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import { displaysChildren } from '../../helpers';

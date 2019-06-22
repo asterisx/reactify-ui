@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { Component } from 'react';
-import { Login } from '@../../../../reactify/build';
+import { Login } from '@../../../../reactify-ui/build';
 import {
   simpleCode,
 } from './code-refrence';

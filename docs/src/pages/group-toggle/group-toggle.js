@@ -1,5 +1,5 @@
 import React from 'react';
-import { GroupToggle, Button } from '@../../../../reactify/build';
+import { GroupToggle, Button } from '@../../../../reactify-ui/build';
 import {
   onSelectionCode,
   simpleCode,

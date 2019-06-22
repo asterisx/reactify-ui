@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { Link } from '@../../../../reactify/build';
+import { Link } from '@../../../../reactify-ui/build';
 import {
   customColorCode,
   customClassCode,

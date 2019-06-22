@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Legend, LegendItem } from '@../../../../reactify/build';
+import { Legend, LegendItem } from '@../../../../reactify-ui/build';
 import {
   childrenCode,
   customColorCode,

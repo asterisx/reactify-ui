@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserProfile, Constants } from '@../../../../reactify/build';
+import { UserProfile, Constants } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import { darken } from 'polished';

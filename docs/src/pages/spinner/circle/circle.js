@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { Spinner } from '@../../../../reactify/build';
+import { Spinner } from '@../../../../reactify-ui/build';
 import {
   customColorCode,
   customClassCode,

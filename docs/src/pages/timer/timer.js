@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   Button,
   Timer,
-} from '@../../../../reactify/build';
+} from '@../../../../reactify-ui/build';
 import {
   customColorCode,
   customThemeCode,

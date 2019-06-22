@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select } from '@../../../../reactify/build';
+import { Select } from '@../../../../reactify-ui/build';
 import {
   propsCode,
   selectableCode,

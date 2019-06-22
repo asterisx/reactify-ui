@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Label } from '@../../../../reactify/build';
+import { Switch, Label } from '@../../../../reactify-ui/build';
 import {
   simpleCode,
   checkedCode,

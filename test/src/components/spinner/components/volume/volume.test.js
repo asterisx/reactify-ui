@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner, Constants } from 'reactify/build';
+import { Spinner, Constants } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 

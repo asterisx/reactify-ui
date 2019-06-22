@@ -20,7 +20,7 @@ export class ToastController extends Component {
     /**
      * The autodimss timeout
      */
-    autoDismissTimeout: PropTypes.number,
+    autoDismissTimeout: PropTypes.number.isRequired,
     /**
      * The callback called when Toast is dismissed
      */
@@ -29,7 +29,6 @@ export class ToastController extends Component {
 
   static defaultProps = {
     autoDismiss: false,
-    autoDismissTimeout: PropTypes.number.isRequired,
     onDismiss: undefined,
   };
 

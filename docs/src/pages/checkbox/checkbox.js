@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Checkbox } from '@../../../../reactify/build';
+import { Checkbox } from '@../../../../reactify-ui/build';
 import {
   simpleCode,
   checkedCode,

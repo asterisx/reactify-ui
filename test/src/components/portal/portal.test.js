@@ -1,5 +1,5 @@
 import React from 'react';
-import { Portal } from '@../../../../reactify/build';
+import { Portal } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';

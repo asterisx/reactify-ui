@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { StackedCard, Button } from '@../../../../reactify/build';
+import { StackedCard, Button } from '@../../../../reactify-ui/build';
 import './stacked-card.scss';
 
 import {

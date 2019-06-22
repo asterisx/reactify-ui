@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Badge, NumberCounter } from '@../../../../reactify/build';
+import { Badge, NumberCounter } from '@../../../../reactify-ui/build';
 import {
   simpleCode,
   disabledCode,

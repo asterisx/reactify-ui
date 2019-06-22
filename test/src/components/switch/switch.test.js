@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Constants } from '@../../../../reactify/build';
+import { Switch, Constants } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';

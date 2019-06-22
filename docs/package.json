@@ -28,15 +28,13 @@
     "react-markdown": "^4.0.8",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
-    "react-syntax-highlighter": "^10.2.1",
-    "reactify": "file:../reactify"
+    "react-syntax-highlighter": "^10.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "preinstall": "rm -rf node_modules/reactify && npm install ../reactify",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b gh-pages -d build"
   },

@@ -4,7 +4,7 @@ import React from 'react';
 import {
   Breadcrumbs,
   Paper,
-} from '@../../../../reactify/build';
+} from '@../../../../reactify-ui/build';
 import { FaAngleRight } from 'react-icons/fa';
 import {
   declarativeCode,

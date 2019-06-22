@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProgressBar, Constants } from '@../../../../reactify/build';
+import { ProgressBar, Constants } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import { hasDisabledStyle } from '../../helpers';

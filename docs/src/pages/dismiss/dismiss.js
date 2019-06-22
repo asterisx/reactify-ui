@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Dismiss, Spinner, Button } from '@../../../../reactify/build';
+import { Dismiss, Spinner, Button } from '@../../../../reactify-ui/build';
 import {
   simpleCode,
   disabledCode,

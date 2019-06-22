@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { StarRating } from '@../../../../reactify/build';
+import { StarRating } from '@../../../../reactify-ui/build';
 import {
   simpleCode,
   sizeCode,

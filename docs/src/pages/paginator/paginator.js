@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { Paginator, Paper, SearchBar } from '@../../../../reactify/build';
+import { Paginator, Paper, SearchBar } from '@../../../../reactify-ui/build';
 import { FaFileDownload, FaFileExport } from 'react-icons/fa';
 import {
   controlledCode,

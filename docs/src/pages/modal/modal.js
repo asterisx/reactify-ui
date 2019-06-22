@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Button } from '@../../../../reactify/build';
+import { Modal, Button } from '@../../../../reactify-ui/build';
 import {
   autoCloseCode,
   hideBackdropCode,

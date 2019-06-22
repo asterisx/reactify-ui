@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileUpload } from '@../../../../reactify/build';
+import { FileUpload } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import sinon from 'sinon';
 import { displaysChildren, hasDisabledStyle } from '../../helpers';

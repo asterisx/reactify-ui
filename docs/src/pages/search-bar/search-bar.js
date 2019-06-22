@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { SearchBar } from '@../../../../reactify/build';
+import { SearchBar } from '@../../../../reactify-ui/build';
 import {
   customColorCode,
   customClassCode,

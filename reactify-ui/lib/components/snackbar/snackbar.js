@@ -89,6 +89,10 @@ class Snackbar extends Component {
 
   timeout = {};
 
+  componentWillUnmount() {
+    this.clearTimeout();
+  }
+
   dismiss = () => {
     this.setState({ in: false });
   }

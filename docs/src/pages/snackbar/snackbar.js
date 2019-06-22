@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/Button-has-type */
 import React, { Component } from 'react';
-import { Snackbar, Button } from '@../../../../reactify/build';
+import { Snackbar, Button } from '@../../../../reactify-ui/build';
 import {
   actionCode,
   childrenCode,

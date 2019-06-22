@@ -1,5 +1,5 @@
 import React from 'react';
-import { RadioInput, Constants } from '@../../../../reactify/build';
+import { RadioInput, Constants } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';

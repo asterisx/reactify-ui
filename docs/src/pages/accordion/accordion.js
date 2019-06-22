@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Accordion, Paper } from '@../../../../reactify/build';
+import { Accordion, Paper } from '@../../../../reactify-ui/build';
 import {
   customHeaderCode,
   propsCode,

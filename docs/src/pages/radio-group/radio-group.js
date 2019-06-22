@@ -1,5 +1,5 @@
 import React from 'react';
-import { RadioGroup, RadioInput } from '@../../../../reactify/build';
+import { RadioGroup, RadioInput } from '@../../../../reactify-ui/build';
 import {
   onSelectionCode,
   simpleCode,

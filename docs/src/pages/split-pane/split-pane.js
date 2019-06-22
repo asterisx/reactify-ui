@@ -5,7 +5,7 @@ import {
   Pane,
   Resizer,
   SplitPane,
-} from '@../../../../reactify/build';
+} from '@../../../../reactify-ui/build';
 import {
   customResizerCode,
   customThemeCode,

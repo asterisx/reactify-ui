@@ -2,7 +2,7 @@
 
 > A feature rich react UI components library
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/reactify-ui.svg)](https://www.npmjs.com/package/reactify-ui) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 Check the docs [here](https://asterisx.github.io/reactify/) 
 

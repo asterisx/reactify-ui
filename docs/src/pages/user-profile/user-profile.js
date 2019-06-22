@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { UserProfile } from '@../../../../reactify/build';
+import { UserProfile } from '@../../../../reactify-ui/build';
 import {
   avatarPositionCode,
   breakPointsCode,
