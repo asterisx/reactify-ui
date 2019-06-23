@@ -1,6 +1,6 @@
 {
   "name": "test",
-  "version": "0.1.1-alpha",
+  "version": "0.1.1-alpha.1",
   "description": "Test coverage for reactify",
   "main": "index.js",
   "scripts": {
