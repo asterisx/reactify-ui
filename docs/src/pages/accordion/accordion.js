@@ -19,8 +19,8 @@ const AccordionDemo = () => (
       sourceCode={simpleCode}
     >
       <Accordion success>
-        <Accordion.Item index={1}>
-          <Accordion.Header warning>
+        <Accordion.Item index={1} warning>
+          <Accordion.Header>
             Accordion 1
           </Accordion.Header>
           <Accordion.Body>
