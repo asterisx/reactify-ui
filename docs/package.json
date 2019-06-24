@@ -1,7 +1,6 @@
 {
   "name": "docs",
-  "version": "0.1.1-alpha.1",
-  "private": true,
+  "version": "0.1.1-alpha.2",
   "homepage": "https://asterisx.github.io/reactify-ui/",
   "devDependencies": {
     "eslint": "5.12.0",
@@ -21,14 +20,16 @@
   "dependencies": {
     "@githubprimer/octicons-react": "^8.5.0",
     "gh-pages": "^2.0.1",
+    "highlight.js": "^9.15.8",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-highlight": "^0.12.0",
     "react-icons": "^3.6.1",
     "react-markdown": "^4.0.8",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
-    "react-syntax-highlighter": "^10.2.1"
+    "reactify-ui": "file:../reactify-ui/"
   },
   "scripts": {
     "start": "react-scripts start",

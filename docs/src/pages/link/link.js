@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { Link } from '@../../../../reactify-ui/build';
@@ -12,13 +13,13 @@ import './link.scss';
 import DemoCard from '../../components/demo-card';
 
 const LinkDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
     >
-      <Link href="http://www.google.com">A simple Link</Link>
+      <Link href="#">A simple Link</Link>
     </DemoCard>
 
     <DemoCard
@@ -27,20 +28,20 @@ const LinkDemo = () => (
       sourceCode={sizeCode}
     >
       <h6>small</h6>
-      <Link href="http://www.google.com" small>A small Link</Link>
+      <Link href="#" small>A small Link</Link>
 
       <h6 className="pt-3">
             medium
         {' '}
         <b className="pl-3">default</b>
       </h6>
-      <Link href="http://www.google.com" medium>A medium Link</Link>
+      <Link href="#" medium>A medium Link</Link>
 
       <h6 className="pt-3">large</h6>
-      <Link href="http://www.google.com" large>A large Link</Link>
+      <Link href="#" large>A large Link</Link>
 
       <h6 className="pt-3">{'style={{ fontSize: \'75px\' }}'}</h6>
-      <Link href="http://www.google.com" style={{ fontSize: '75px' }}>A custom size Link</Link>
+      <Link href="#" style={{ fontSize: '75px' }}>A custom size Link</Link>
     </DemoCard>
 
     <DemoCard
@@ -48,7 +49,7 @@ const LinkDemo = () => (
       uniqueIdentifier="customColorUse"
       sourceCode={customColorCode}
     >
-      <Link href="http://www.google.com" style={{ color: 'violet' }}>A custom color Link</Link>
+      <Link href="#" style={{ color: 'violet' }}>A custom color Link</Link>
     </DemoCard>
 
     <DemoCard
@@ -57,28 +58,28 @@ const LinkDemo = () => (
       sourceCode={customThemeCode}
     >
       <h6>Primary</h6>
-      <Link href="http://www.google.com" primary>A primary Link</Link>
+      <Link href="#" primary>A primary Link</Link>
 
       <h6>Secondary</h6>
-      <Link href="http://www.google.com" secondary>A secondary Link</Link>
+      <Link href="#" secondary>A secondary Link</Link>
 
       <h6 className="pt-3">Dark</h6>
-      <Link href="http://www.google.com" dark>A dark Link</Link>
+      <Link href="#" dark>A dark Link</Link>
 
       <h6 className="pt-3">Light</h6>
-      <Link href="http://www.google.com" light>A light Link</Link>
+      <Link href="#" light>A light Link</Link>
 
       <h6 className="pt-3">Info</h6>
-      <Link href="http://www.google.com" info>A info Link</Link>
+      <Link href="#" info>A info Link</Link>
 
       <h6 className="pt-3">Warning</h6>
-      <Link href="http://www.google.com" warning>A warning Link</Link>
+      <Link href="#" warning>A warning Link</Link>
 
       <h6 className="pt-3">Danger</h6>
-      <Link href="http://www.google.com" danger>A danger Link</Link>
+      <Link href="#" danger>A danger Link</Link>
 
       <h6 className="pt-3">Success</h6>
-      <Link href="http://www.google.com" success>A success Link</Link>
+      <Link href="#" success>A success Link</Link>
 
     </DemoCard>
 
@@ -87,7 +88,7 @@ const LinkDemo = () => (
       uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
     >
-      <Link href="http://www.google.com" className="bg-dark Link-light p-1">A custom class Link</Link>
+      <Link href="#" className="bg-dark Link-light p-1">A custom class Link</Link>
     </DemoCard>
   </div>
 );

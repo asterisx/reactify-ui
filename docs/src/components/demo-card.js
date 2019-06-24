@@ -1,6 +1,6 @@
 import React from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import Highlight from 'react-highlight';
+import 'highlight.js/styles/vs.css';
 
 const DemoCard = ({
   title,
@@ -16,8 +16,8 @@ const DemoCard = ({
     </div>
     <div className="card-body">
       {children}
-      <div id={`${uniqueIdentifier}Demo`} className="collapse">
-        <SyntaxHighlighter language="html" style={dark}>{sourceCode}</SyntaxHighlighter>
+      <div id={`${uniqueIdentifier}Demo`} className="collapse border">
+        <Highlight className="javascript html">{sourceCode}</Highlight>
       </div>
     </div>
   </section>

@@ -38,7 +38,7 @@ class TimerDemo extends Component {
 
   render() {
     return (
-      <div>
+      <div className="w-100">
         <DemoCard
           title="Simple Use"
           uniqueIdentifier="simpleUse"

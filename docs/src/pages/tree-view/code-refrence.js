@@ -67,7 +67,7 @@ const items = [
       { text: 'Sub Option 4', key: 29 },
     ],
   },
-  { text: 'Option 2', key: 30 },
+  { text: 'Option 3', key: 30 },
   { text: 'Option 4', key: 31 },
 ];
 

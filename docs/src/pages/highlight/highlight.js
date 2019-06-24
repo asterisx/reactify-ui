@@ -36,6 +36,7 @@ class HighlightDemo extends Component {
     const { handleChange, handleCheckboxChange, handleIndexChange } = this;
     return (
       <DemoCard
+        className="w-100"
         title="Simple Use"
         uniqueIdentifier="simpleUse"
         sourceCode={simpleCode}

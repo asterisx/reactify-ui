@@ -6,6 +6,8 @@
 
 Check the docs [here](https://asterisx.github.io/reactify-ui/) 
 
+Connect with us via [spectrum](https://spectrum.chat/reactify-ui)
+
 The library is still a WIP.
 The progress is below.
 
@@ -56,9 +58,9 @@ The progress is below.
 - [x] Heat Map
 - [x] File Upload
 - [x] Paginator
-- [X] Typeahead
-- [X] Breadcrumbs
-- [ ] Sidebar
+- [x] Typeahead
+- [x] Breadcrumbs
+- [x] Sidebar
 - [ ] Prototypes
 - [ ] Bubble Wizard
 - [ ] Carousel

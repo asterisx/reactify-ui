@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FaAngleDown, FaAngleRight } from 'react-icons/fa';
@@ -21,6 +22,9 @@ class TreeViewItem extends Component {
      */
     // eslint-disable-next-line react/forbid-prop-types
     openIcon: PropTypes.any,
+    /**
+     * The text value itself
+     */
     text: PropTypes.string,
     /**
      * If passed, this is all that goes inside the menu item,
@@ -28,6 +32,16 @@ class TreeViewItem extends Component {
      */
     // eslint-disable-next-line react/forbid-prop-types
     content: PropTypes.any,
+    /**
+     * A collection of a array of shape
+     * openIcon: PropTypes.any,
+     * closeIcon: PropTypes.any,
+     * text: PropTypes.string,
+     * content: PropTypes.any,
+     * `Of same shape as sub`
+     * sub: PropTypes.any,
+     * disabled: PropTypes.bool,
+     */
     // eslint-disable-next-line react/forbid-prop-types
     sub: PropTypes.any,
     /**
@@ -44,6 +58,8 @@ class TreeViewItem extends Component {
   static defaultProps = {
     text: '',
     disabled: false,
+    content: undefined,
+    sub: undefined,
     closeIcon: <FaAngleRight />,
     openIcon: <FaAngleDown />,
     ...defaultThemePropTypes,
@@ -112,8 +128,9 @@ class TreeViewItem extends Component {
         ]}
         {...otherProps}
       >
+        {/* eslint-disable-next-line no-nested-ternary */}
         {content
-          ? content({ isTreeOpen: treeOpen, toggleSubTree: toggleTree })
+          ? (typeof content === 'function' ? content({ isTreeOpen: treeOpen, toggleSubTree: toggleTree }) : content)
           : (
             <span css={[
               styles.dflexCenter,

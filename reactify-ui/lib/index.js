@@ -31,6 +31,7 @@ import RadioInput from './components/radio-input';
 import RadioGroup from './components/radio-group';
 import SearchBar from './components/search-bar';
 import Select from './components/select';
+import { Sidebar, SidebarItem, SubSidebar } from './components/sidebar';
 import Slider from './components/slider';
 import Spinner from './components/spinner';
 import { Pane, Resizer, SplitPane } from './components/split-pane';
@@ -104,6 +105,8 @@ export {
   Resizer,
   SearchBar,
   Select,
+  Sidebar,
+  SidebarItem,
   Slider,
   Spinner,
   SplitPane,
@@ -111,6 +114,7 @@ export {
   StarRating,
   SubMenu,
   SubMenuItem,
+  SubSidebar,
   Switch,
   Snackbar,
   Tabs,

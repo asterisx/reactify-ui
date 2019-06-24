@@ -15,7 +15,7 @@ import './paginator.scss';
 import DemoCard from '../../components/demo-card';
 
 const PaginatorDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"

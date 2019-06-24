@@ -53,7 +53,7 @@ const itemsWithSomeDisabled = [
 ];
 
 const BreadcrumbsDemo = () => (
-  <>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"
@@ -118,7 +118,7 @@ const BreadcrumbsDemo = () => (
         </Breadcrumbs.Item>
       </Breadcrumbs>
     </DemoCard>
-  </>
+  </div>
 );
 
 export default BreadcrumbsDemo;

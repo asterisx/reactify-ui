@@ -1,7 +1,7 @@
 const simpleCode = `
 <TopBar>
     <TopBar.Logo>
-      <Paper success style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+      <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
     <TopBar.Body />
     <TopBar.Menu
@@ -20,7 +20,7 @@ const simpleCode = `
 const themeCode = `
 <TopBar>
     <TopBar.Logo>
-      <Paper primary style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+      <Paper primary noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
     <TopBar.Body />
     <TopBar.Menu
@@ -37,7 +37,7 @@ const themeCode = `
 
 <TopBar>
     <TopBar.Logo>
-      <Paper secondary style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+      <Paper secondary noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
     <TopBar.Body />
     <TopBar.Menu
@@ -54,7 +54,7 @@ const themeCode = `
 
 <TopBar>
     <TopBar.Logo>
-      <Paper dark style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+      <Paper dark noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
     <TopBar.Body />
     <TopBar.Menu
@@ -71,7 +71,7 @@ const themeCode = `
 
 <TopBar>
     <TopBar.Logo>
-      <Paper light style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+      <Paper light noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
     <TopBar.Body />
     <TopBar.Menu
@@ -88,7 +88,7 @@ const themeCode = `
 
 <TopBar>
     <TopBar.Logo>
-      <Paper info style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+      <Paper info noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
     <TopBar.Body />
 
@@ -107,7 +107,7 @@ const themeCode = `
 
 <TopBar>
     <TopBar.Logo>
-      <Paper warning style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+      <Paper warning noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
     <TopBar.Body />
     <TopBar.Menu
@@ -124,7 +124,7 @@ const themeCode = `
 
 <TopBar>
     <TopBar.Logo>
-      <Paper danger style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+      <Paper danger noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
     <TopBar.Body />
     <TopBar.Menu
@@ -141,7 +141,7 @@ const themeCode = `
 
 <TopBar>
     <TopBar.Logo>
-      <Paper success style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+      <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
     <TopBar.Body />
     <TopBar.Menu
@@ -158,7 +158,7 @@ const themeCode = `
 
 <TopBar>
     <TopBar.Logo>
-      <Paper success style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+      <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
     <TopBar.Body dark />
     <TopBar.Menu
@@ -177,7 +177,7 @@ const themeCode = `
 const sizeCode = `
 <TopBar small>
     <TopBar.Logo>
-      <Paper success style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+      <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
     <TopBar.Body />
     <TopBar.Menu
@@ -191,7 +191,7 @@ const sizeCode = `
 
 <TopBar medium>
     <TopBar.Logo>
-      <Paper success style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+      <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
     <TopBar.Body />
     <TopBar.Menu
@@ -208,7 +208,7 @@ const sizeCode = `
 
 <TopBar large>
     <TopBar.Logo>
-      <Paper success style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+      <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
     <TopBar.Body />
     <TopBar.Menu
@@ -225,7 +225,7 @@ const sizeCode = `
 
 <TopBar style={{ fontSize: '2em' }}>
     <TopBar.Logo>
-      <Paper success style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+      <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
     <TopBar.Body />
     <TopBar.Menu

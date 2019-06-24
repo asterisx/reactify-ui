@@ -13,7 +13,7 @@ import './switch.scss';
 import DemoCard from '../../components/demo-card';
 
 const SwitchDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"

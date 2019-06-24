@@ -18,7 +18,7 @@ import './user-profile.scss';
 import DemoCard from '../../components/demo-card';
 
 const UserProfileDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"

@@ -18,7 +18,7 @@ import './checkbox.scss';
 import DemoCard from '../../components/demo-card';
 
 const CheckboxDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard title="Simple Use" uniqueIdentifier="simpleUse" sourceCode={simpleCode}>
       <Checkbox defaultChecked>This is a checkbox</Checkbox>
     </DemoCard>

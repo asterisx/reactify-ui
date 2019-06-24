@@ -13,7 +13,7 @@ import './vortex.scss';
 import DemoCard from '../../../components/demo-card';
 
 const VortexDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"

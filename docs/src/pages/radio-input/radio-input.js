@@ -19,7 +19,7 @@ import './radio-input.scss';
 import DemoCard from '../../components/demo-card';
 
 const RadioInputDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"
