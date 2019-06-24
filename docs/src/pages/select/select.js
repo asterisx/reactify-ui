@@ -18,6 +18,7 @@ const SelectDemo = () => (
       uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
     >
+      <h6>Tray open by default</h6>
       <Select trayOpen>
         <Select.Item index={1}>Item 1</Select.Item>
         <Select.Item index={2}>Item 2</Select.Item>

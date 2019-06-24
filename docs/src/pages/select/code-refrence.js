@@ -38,7 +38,7 @@ const searchableCode = `
 </Select>
 `;
 const simpleCode = `
-<Select>
+<Select trayOpen>
   <Select.Item index={1}>Item 1</Select.Item>
   <Select.Item index={2}>Item 2</Select.Item>
   <Select.Item index={3}>Item 3</Select.Item>
