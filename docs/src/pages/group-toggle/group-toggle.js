@@ -10,7 +10,7 @@ import './group-toggle.scss';
 import DemoCard from '../../components/demo-card';
 
 const GroupToggleDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"

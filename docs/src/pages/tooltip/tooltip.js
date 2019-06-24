@@ -10,7 +10,7 @@ import './tooltip.scss';
 import DemoCard from '../../components/demo-card';
 
 const TooltipDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"

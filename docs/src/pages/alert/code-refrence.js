@@ -11,7 +11,7 @@ const childrenCode = `
   </div>
 </Alert>
 `;
-const customClassCode = '<Alert className="text-light bg-dark p-2">This is a custom class Alert</Alert >';
+const customClassCode = '<Alert className="text-light bg-dark p-2">This is a custom class Alert</Alert>';
 const customThemeCode = `
 <Alert primary>
   Primary theme

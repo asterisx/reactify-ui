@@ -31,7 +31,7 @@ const suggestions = [
 ];
 
 const PaginatorDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"

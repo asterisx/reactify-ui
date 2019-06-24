@@ -11,7 +11,7 @@ import './dropdown.scss';
 import DemoCard from '../../components/demo-card';
 
 const DropdownDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"

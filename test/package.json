@@ -1,7 +1,7 @@
 {
   "name": "test",
-  "version": "0.1.1-alpha.1",
-  "description": "Test coverage for reactify",
+  "version": "0.1.1-alpha.2",
+  "description": "Test coverage for reactify-ui",
   "main": "index.js",
   "scripts": {
     "test": "jest"

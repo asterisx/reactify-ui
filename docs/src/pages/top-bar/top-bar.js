@@ -11,7 +11,7 @@ import './top-bar.scss';
 import DemoCard from '../../components/demo-card';
 
 const TopBarDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"
@@ -19,7 +19,7 @@ const TopBarDemo = () => (
     >
       <TopBar>
         <TopBar.Logo>
-          <Paper success style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+          <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
         </TopBar.Logo>
         <TopBar.Body />
         <TopBar.Menu
@@ -42,7 +42,7 @@ const TopBarDemo = () => (
     >
       <TopBar>
         <TopBar.Logo>
-          <Paper primary style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+          <Paper primary noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
         </TopBar.Logo>
         <TopBar.Body />
         <TopBar.Menu
@@ -59,7 +59,7 @@ const TopBarDemo = () => (
       <br />
       <TopBar>
         <TopBar.Logo>
-          <Paper secondary style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+          <Paper secondary noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
         </TopBar.Logo>
         <TopBar.Body />
         <TopBar.Menu
@@ -76,7 +76,7 @@ const TopBarDemo = () => (
       <br />
       <TopBar>
         <TopBar.Logo>
-          <Paper dark style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+          <Paper dark noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
         </TopBar.Logo>
         <TopBar.Body />
         <TopBar.Menu
@@ -94,45 +94,7 @@ const TopBarDemo = () => (
       <br />
       <TopBar>
         <TopBar.Logo>
-          <Paper light style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
-        </TopBar.Logo>
-        <TopBar.Body />
-        <TopBar.Menu
-          style={{
-            display: 'inline-flex', alignContent: 'center', alignItems: 'center', padding: '0em 0.5em',
-          }}
-          warning
-        >
-          <a style={{ marginBottom: '-4px', padding: 0, fontSize: 'unset !important' }} href="https://github.com/asterisx/reactify">
-            <Octicon icon={MarkGithub} size="medium" ariaLabel="GitHub" />
-          </a>
-        </TopBar.Menu>
-      </TopBar>
-
-      <br />
-      <TopBar>
-        <TopBar.Logo>
-          <Paper info style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
-        </TopBar.Logo>
-        <TopBar.Body />
-
-
-        <TopBar.Menu
-          style={{
-            display: 'inline-flex', alignContent: 'center', alignItems: 'center', padding: '0em 0.5em',
-          }}
-          warning
-        >
-          <a style={{ padding: 0, fontSize: 'unset !important' }} href="https://github.com/asterisx/reactify">
-            <Octicon icon={MarkGithub} size="medium" ariaLabel="GitHub" />
-          </a>
-        </TopBar.Menu>
-      </TopBar>
-
-      <br />
-      <TopBar>
-        <TopBar.Logo>
-          <Paper warning style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+          <Paper light noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
         </TopBar.Logo>
         <TopBar.Body />
         <TopBar.Menu
@@ -150,7 +112,45 @@ const TopBarDemo = () => (
       <br />
       <TopBar>
         <TopBar.Logo>
-          <Paper danger style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+          <Paper info noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
+        </TopBar.Logo>
+        <TopBar.Body />
+
+
+        <TopBar.Menu
+          style={{
+            display: 'inline-flex', alignContent: 'center', alignItems: 'center', padding: '0em 0.5em',
+          }}
+          warning
+        >
+          <a style={{ padding: 0, fontSize: 'unset !important' }} href="https://github.com/asterisx/reactify">
+            <Octicon icon={MarkGithub} size="medium" ariaLabel="GitHub" />
+          </a>
+        </TopBar.Menu>
+      </TopBar>
+
+      <br />
+      <TopBar>
+        <TopBar.Logo>
+          <Paper warning noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
+        </TopBar.Logo>
+        <TopBar.Body />
+        <TopBar.Menu
+          style={{
+            display: 'inline-flex', alignContent: 'center', alignItems: 'center', padding: '0em 0.5em',
+          }}
+          warning
+        >
+          <a style={{ marginBottom: '-4px', padding: 0, fontSize: 'unset !important' }} href="https://github.com/asterisx/reactify">
+            <Octicon icon={MarkGithub} size="medium" ariaLabel="GitHub" />
+          </a>
+        </TopBar.Menu>
+      </TopBar>
+
+      <br />
+      <TopBar>
+        <TopBar.Logo>
+          <Paper danger noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
         </TopBar.Logo>
         <TopBar.Body />
         <TopBar.Menu
@@ -168,7 +168,7 @@ const TopBarDemo = () => (
       <br />
       <TopBar>
         <TopBar.Logo>
-          <Paper success style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+          <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
         </TopBar.Logo>
         <TopBar.Body />
         <TopBar.Menu
@@ -193,7 +193,7 @@ const TopBarDemo = () => (
 
       <TopBar>
         <TopBar.Logo>
-          <Paper success style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+          <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
         </TopBar.Logo>
         <TopBar.Body dark />
         <TopBar.Menu
@@ -217,7 +217,7 @@ const TopBarDemo = () => (
       <h6 className="pt-3 pb-3">small</h6>
       <TopBar small>
         <TopBar.Logo>
-          <Paper success style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+          <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
         </TopBar.Logo>
         <TopBar.Body />
         <TopBar.Menu
@@ -232,7 +232,7 @@ const TopBarDemo = () => (
       <h6 className="pt-3 pb-3">medium</h6>
       <TopBar medium>
         <TopBar.Logo>
-          <Paper success style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+          <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
         </TopBar.Logo>
         <TopBar.Body />
         <TopBar.Menu
@@ -250,7 +250,7 @@ const TopBarDemo = () => (
       <h6 className="pt-3 pb-3">large</h6>
       <TopBar large>
         <TopBar.Logo>
-          <Paper success style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+          <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
         </TopBar.Logo>
         <TopBar.Body />
         <TopBar.Menu
@@ -268,7 +268,7 @@ const TopBarDemo = () => (
       <h6 className="pt-3 pb-3">{'style={{ fontSize: \'2em\' }}'}</h6>
       <TopBar style={{ fontSize: '2em' }}>
         <TopBar.Logo>
-          <Paper success style={{ padding: '0.2em 0.4em', boxShadow: 'none' }} className="logo">reactify ui</Paper>
+          <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
         </TopBar.Logo>
         <TopBar.Body />
         <TopBar.Menu

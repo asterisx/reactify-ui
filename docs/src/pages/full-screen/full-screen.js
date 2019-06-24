@@ -16,7 +16,7 @@ import './full-screen.scss';
 import DemoCard from '../../components/demo-card';
 
 const FullScreenDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"

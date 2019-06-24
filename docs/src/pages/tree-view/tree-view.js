@@ -82,12 +82,12 @@ const items = [
       { text: 'Sub Option 4', key: 29 },
     ],
   },
-  { text: 'Option 2', key: 30 },
+  { text: 'Option 3', key: 30 },
   { text: 'Option 4', key: 31 },
 ];
 
 const TreeViewDemo = () => (
-  <>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"
@@ -170,7 +170,7 @@ const TreeViewDemo = () => (
         <TreeViewItem text="Option 2" />
       </TreeView>
     </DemoCard>
-  </>
+  </div>
 );
 
 export default TreeViewDemo;

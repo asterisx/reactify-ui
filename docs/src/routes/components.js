@@ -45,6 +45,7 @@ import RadioInputDemo from '../pages/radio-input';
 import RadioGroupDemo from '../pages/radio-group';
 import SearchBarDemo from '../pages/search-bar';
 import SelectDemo from '../pages/select';
+import SidebarDemo from '../pages/sidebar';
 import SliderDemo from '../pages/slider';
 import SplitPaneDemo from '../pages/split-pane';
 import StackedCardDemo from '../pages/stacked-card';
@@ -79,16 +80,6 @@ export const componentsRouting = {
     path: `${componentDocsPath}/badge`,
     component: BadgeDemo,
   },
-  balls: {
-    name: 'Balls',
-    path: `${componentDocsPath}/balls`,
-    component: BallsDemo,
-  },
-  bars: {
-    name: 'Bars',
-    path: `${componentDocsPath}/bars`,
-    component: BarsDemo,
-  },
   breadcrumbs: {
     name: 'Breadcrumbs',
     path: `${componentDocsPath}/breadcrumbs`,
@@ -113,16 +104,6 @@ export const componentsRouting = {
     name: 'Chips',
     path: `${componentDocsPath}/chips`,
     component: ChipsDemo,
-  },
-  circle: {
-    name: 'Circle',
-    path: `${componentDocsPath}/circle`,
-    component: CircleDemo,
-  },
-  clock: {
-    name: 'Clock',
-    path: `${componentDocsPath}/clock`,
-    component: ClockDemo,
   },
   contextMenu: {
     name: 'Context Menu',
@@ -169,11 +150,6 @@ export const componentsRouting = {
     path: `${componentDocsPath}/horizontal-card`,
     component: HorizontalCardDemo,
   },
-  hydrogen: {
-    name: 'Hydrogen',
-    path: `${componentDocsPath}/hydrogen`,
-    component: HydrogenDemo,
-  },
   input: {
     name: 'Input',
     path: `${componentDocsPath}/input`,
@@ -198,11 +174,6 @@ export const componentsRouting = {
     name: 'List Panel',
     path: `${componentDocsPath}/list-panel`,
     component: ListPanelDemo,
-  },
-  loadbar: {
-    name: 'Loadbar',
-    path: `${componentDocsPath}/loadbar`,
-    component: LoadbarDemo,
   },
   login: {
     name: 'Login',
@@ -259,10 +230,10 @@ export const componentsRouting = {
     path: `${componentDocsPath}/select`,
     component: SelectDemo,
   },
-  slices: {
-    name: 'Slices',
-    path: `${componentDocsPath}/slices`,
-    component: SlicesDemo,
+  sidebar: {
+    name: 'Sidebar',
+    path: `${componentDocsPath}/sidebar`,
+    component: SidebarDemo,
   },
   slider: {
     name: 'Slider',
@@ -274,10 +245,70 @@ export const componentsRouting = {
     path: `${componentDocsPath}/snackbar`,
     component: SnackbarDemo,
   },
-  sphere: {
-    name: 'Sphere',
-    path: `${componentDocsPath}/sphere`,
-    component: SphereDemo,
+  spinner: {
+    name: 'Spinner',
+    sub: {
+      balls: {
+        name: 'Balls',
+        path: `${componentDocsPath}/balls`,
+        component: BallsDemo,
+      },
+      bars: {
+        name: 'Bars',
+        path: `${componentDocsPath}/bars`,
+        component: BarsDemo,
+      },
+      circle: {
+        name: 'Circle',
+        path: `${componentDocsPath}/circle`,
+        component: CircleDemo,
+      },
+      clock: {
+        name: 'Clock',
+        path: `${componentDocsPath}/clock`,
+        component: ClockDemo,
+      },
+      hydrogen: {
+        name: 'Hydrogen',
+        path: `${componentDocsPath}/hydrogen`,
+        component: HydrogenDemo,
+      },
+      loadbar: {
+        name: 'Loadbar',
+        path: `${componentDocsPath}/loadbar`,
+        component: LoadbarDemo,
+      },
+      slices: {
+        name: 'Slices',
+        path: `${componentDocsPath}/slices`,
+        component: SlicesDemo,
+      },
+      sphere: {
+        name: 'Sphere',
+        path: `${componentDocsPath}/sphere`,
+        component: SphereDemo,
+      },
+      texture: {
+        name: 'Texture',
+        path: `${componentDocsPath}/texture`,
+        component: TextureDemo,
+      },
+      volume: {
+        name: 'Volume',
+        path: `${componentDocsPath}/volume`,
+        component: VolumeDemo,
+      },
+      vortex: {
+        name: 'Vortex',
+        path: `${componentDocsPath}/vortex`,
+        component: VortexDemo,
+      },
+      wave: {
+        name: 'Wave',
+        path: `${componentDocsPath}/wave`,
+        component: WaveDemo,
+      },
+    },
   },
   splitPane: {
     name: 'Split Pane',
@@ -308,11 +339,6 @@ export const componentsRouting = {
     name: 'Text',
     path: `${componentDocsPath}/text`,
     component: TextDemo,
-  },
-  texture: {
-    name: 'Texture',
-    path: `${componentDocsPath}/texture`,
-    component: TextureDemo,
   },
   timer: {
     name: 'Timer',
@@ -348,20 +374,5 @@ export const componentsRouting = {
     name: 'User Profile',
     path: `${componentDocsPath}/user-profile`,
     component: UserProfileDemo,
-  },
-  volume: {
-    name: 'Volume',
-    path: `${componentDocsPath}/volume`,
-    component: VolumeDemo,
-  },
-  vortex: {
-    name: 'Vortex',
-    path: `${componentDocsPath}/vortex`,
-    component: VortexDemo,
-  },
-  wave: {
-    name: 'Wave',
-    path: `${componentDocsPath}/wave`,
-    component: WaveDemo,
   },
 };

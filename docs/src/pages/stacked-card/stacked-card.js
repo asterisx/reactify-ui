@@ -16,7 +16,7 @@ import {
 import DemoCard from '../../components/demo-card';
 
 const StackedCardDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"

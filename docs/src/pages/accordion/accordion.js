@@ -12,7 +12,7 @@ import './accordion.scss';
 import DemoCard from '../../components/demo-card';
 
 const AccordionDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use (Themed)"
       uniqueIdentifier="simpleUse"

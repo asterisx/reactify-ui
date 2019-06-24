@@ -13,7 +13,7 @@ import './balls.scss';
 import DemoCard from '../../../components/demo-card';
 
 const BallsDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"

@@ -12,7 +12,7 @@ import './file-upload.scss';
 import DemoCard from '../../components/demo-card';
 
 const FileUploadDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"

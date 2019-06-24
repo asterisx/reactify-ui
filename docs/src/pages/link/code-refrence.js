@@ -1,31 +1,31 @@
 const customColorCode = `
-<Link href="http://www.google.com" style={{ color: 'violet' }}>A custom color Link</Link>
+<Link href="#" style={{ color: 'violet' }}>A custom color Link</Link>
 `;
 
 const customClassCode = `
-<Link href="http://www.google.com" className="bg-dark text-light p-1">A custom class Link</Link>
+<Link href="#" className="bg-dark text-light p-1">A custom class Link</Link>
 `;
 
 const customThemeCode = `
-<Link href="http://www.google.com" primary>A primary Link</Link>
-<Link href="http://www.google.com" secondary>A secondary Link</Link>
-<Link href="http://www.google.com" dark>A dark Link</Link>
-<Link href="http://www.google.com" light>A light Link</Link>
-<Link href="http://www.google.com" info>A info Link</Link>
-<Link href="http://www.google.com" warning>A warning Link</Link>
-<Link href="http://www.google.com" danger>A danger Link</Link>
-<Link href="http://www.google.com" success>A success Link</Link>
+<Link href="#" primary>A primary Link</Link>
+<Link href="#" secondary>A secondary Link</Link>
+<Link href="#" dark>A dark Link</Link>
+<Link href="#" light>A light Link</Link>
+<Link href="#" info>A info Link</Link>
+<Link href="#" warning>A warning Link</Link>
+<Link href="#" danger>A danger Link</Link>
+<Link href="#" success>A success Link</Link>
 `;
 
 const simpleCode = `
-<Link href="http://www.google.com">A simple Link</Link>
+<Link href="#">A simple Link</Link>
 `;
 
 const sizeCode = `
-<Link href="http://www.google.com" small>A small Link</Link>
-<Link href="http://www.google.com" medium>A medium Link</Link>
-<Link href="http://www.google.com" large>A large Link</Link>
-<Link href="http://www.google.com" style={{ fontSize: '75px' }}>A custom size Link</Link>
+<Link href="#" small>A small Link</Link>
+<Link href="#" medium>A medium Link</Link>
+<Link href="#" large>A large Link</Link>
+<Link href="#" style={{ fontSize: '75px' }}>A custom size Link</Link>
 `;
 
 

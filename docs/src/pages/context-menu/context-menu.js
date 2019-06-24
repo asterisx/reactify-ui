@@ -88,7 +88,7 @@ const items = [
 ];
 
 const ContextMenuDemo = () => (
-  <div>
+  <div className="w-100">
     <DemoCard
       title="Simple Use"
       uniqueIdentifier="simpleUse"
