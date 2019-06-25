@@ -12,6 +12,7 @@ export const styles = {
     borderRadius: '2px',
     justifyContent: 'space-between',
     transitionDuration: '0.3s',
+    userSelect: 'none',
   },
   margin: {
     left: {
