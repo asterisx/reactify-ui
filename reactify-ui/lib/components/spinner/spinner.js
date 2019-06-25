@@ -84,6 +84,7 @@ const Spinner = ({
   danger,
   success,
   theme,
+  style: { animationDuration, color, ...otherStyles },
   ...otherProps
 }) => (
   <div
@@ -95,6 +96,7 @@ const Spinner = ({
         large,
       }),
     ]}
+    {...otherStyles}
     {...otherProps}
   >
     {getSpinner({
@@ -119,6 +121,10 @@ const Spinner = ({
       danger,
       success,
       theme,
+      style: {
+        animationDuration,
+        color,
+      },
     })}
   </div>
 );
@@ -204,6 +210,7 @@ Spinner.defaultProps = {
   volume: false,
   vortex: false,
   wave: false,
+  style: { animationDuration: '1s', color: undefined },
   ...defaultSizePropTypes,
 };
 
