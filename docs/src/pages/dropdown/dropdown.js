@@ -79,10 +79,12 @@ const DropdownDemo = () => (
     >
       <h6 className="mt-3 mb-3">Because label is a render prop, you can pass anything you want to it.</h6>
       <Dropdown sm md label="Custom Label">
-        <ListPanel.Item index={1}>Item 1</ListPanel.Item>
-        <ListPanel.Item index={2}>Item 2</ListPanel.Item>
-        <ListPanel.Item index={3}>Item 3</ListPanel.Item>
-        <ListPanel.Item index={4}>Item 4</ListPanel.Item>
+        <ListPanel warning className="w-100">
+          <ListPanel.Item index={1}>Item 1</ListPanel.Item>
+          <ListPanel.Item index={2}>Item 2</ListPanel.Item>
+          <ListPanel.Item index={3}>Item 3</ListPanel.Item>
+          <ListPanel.Item index={4}>Item 4</ListPanel.Item>
+        </ListPanel>
       </Dropdown>
     </DemoCard>
   </div>

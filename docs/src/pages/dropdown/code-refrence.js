@@ -1,64 +1,54 @@
 const breakpointCode = `
-<Dropdown sm md>
-  <Dropdown.Item index={1}>Item 1</Dropdown.Item>
-  <Dropdown.Item index={2}>Item 2</Dropdown.Item>
-  <Dropdown.Item index={3}>Item 3</Dropdown.Item>
-  <Dropdown.Item index={4}>Item 4</Dropdown.Item>
+<Dropdown sm md label="Please select a value">
+  {closeTray => (
+    <ListPanel className="w-100" onItemClicked={() => closeTray}>
+      <ListPanel.Item index={1}>Item 1</ListPanel.Item>
+      <ListPanel.Item index={2}>Item 2</ListPanel.Item>
+      <ListPanel.Item index={3}>Item 3</ListPanel.Item>
+      <ListPanel.Item index={4}>Item 4</ListPanel.Item>
+    </ListPanel>
+  )}
 </Dropdown>
 `;
 
 const disabledCode = `
-<Dropdown disabled>
-  <Dropdown.Item index={1}>Item 1</Dropdown.Item>
-  <Dropdown.Item index={2}>Item 2</Dropdown.Item>
-  <Dropdown.Item index={3}>Item 3</Dropdown.Item>
-  <Dropdown.Item index={4}>Item 4</Dropdown.Item>
-</Dropdown>
+<Dropdown disabled label="Please select a value" />
 `;
 
 const labelCode = `
-<Dropdown sm md warning label="Custom Label">
-  <Dropdown.Item index={1}>Item 1</Dropdown.Item>
-  <Dropdown.Item index={2}>Item 2</Dropdown.Item>
-  <Dropdown.Item index={3}>Item 3</Dropdown.Item>
-  <Dropdown.Item index={4}>Item 4</Dropdown.Item>
-</Dropdown>
-`;
-
-const onSelectionCode = `
-<Dropdown sm md onSelectionChange={({ index, selected }) => console.log('Index changed ' + index + ', selected ' + selected)}>
-  <Dropdown.Item selected index={1}>Item 1</Dropdown.Item>
-  <Dropdown.Item index={2}>Item 2</Dropdown.Item>
-  <Dropdown.Item index={3}>Item 3</Dropdown.Item>
-  <Dropdown.Item index={4}>Item 4</Dropdown.Item>
-</Dropdown>
-`;
-
-const propsCode = `
-<Dropdown sm md success>
-  <Dropdown.Item selected index={1}>Item 1</Dropdown.Item>
-  <Dropdown.Item index={2}>Item 2</Dropdown.Item>
-  <Dropdown.Item index={3}>Item 3</Dropdown.Item>
-  <Dropdown.Item index={4}>Item 4</Dropdown.Item>
+<Dropdown sm md label="Custom Label">
+  <ListPanel warning className="w-100">
+    <ListPanel.Item index={1}>Item 1</ListPanel.Item>
+    <ListPanel.Item index={2}>Item 2</ListPanel.Item>
+    <ListPanel.Item index={3}>Item 3</ListPanel.Item>
+    <ListPanel.Item index={4}>Item 4</ListPanel.Item>
+  </ListPanel>
 </Dropdown>
 `;
 
 const simpleCode = `
-<Dropdown>
-  <Dropdown.Item index={1}>Item 1</Dropdown.Item>
-  <Dropdown.Item index={2}>Item 2</Dropdown.Item>
-  <Dropdown.Item index={3}>Item 3</Dropdown.Item>
-  <Dropdown.Item index={4}>Item 4</Dropdown.Item>
-  </Dropdown>
-</DemoCard>
+<Dropdown label="Please select a value">
+  {closeTray => (
+    <ListPanel onItemClicked={() => closeTray}>
+      <ListPanel.Item index={1}>Item 1</ListPanel.Item>
+      <ListPanel.Item index={2}>Item 2</ListPanel.Item>
+      <ListPanel.Item index={3}>Item 3</ListPanel.Item>
+      <ListPanel.Item index={4}>Item 4</ListPanel.Item>
+    </ListPanel>
+  )}
+</Dropdown>
 `;
 
 const trayOpenCode = `
-<Dropdown trayOpen>
-  <Dropdown.Item index={1}>Item 1</Dropdown.Item>
-  <Dropdown.Item index={2}>Item 2</Dropdown.Item>
-  <Dropdown.Item index={3}>Item 3</Dropdown.Item>
-  <Dropdown.Item index={4}>Item 4</Dropdown.Item>
+<Dropdown trayOpen label="Please select a value">
+  {closeTray => (
+    <ListPanel onItemClicked={() => closeTray}>
+      <ListPanel.Item index={1}>Item 1</ListPanel.Item>
+      <ListPanel.Item index={2}>Item 2</ListPanel.Item>
+      <ListPanel.Item index={3}>Item 3</ListPanel.Item>
+      <ListPanel.Item index={4}>Item 4</ListPanel.Item>
+    </ListPanel>
+  )}
 </Dropdown>
 `;
 
@@ -66,8 +56,6 @@ export {
   breakpointCode,
   disabledCode,
   labelCode,
-  onSelectionCode,
-  propsCode,
   simpleCode,
   trayOpenCode,
 };
