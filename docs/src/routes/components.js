@@ -27,6 +27,7 @@ import FileUploadDemo from '../pages/file-upload';
 import FullScreenDemo from '../pages/full-screen';
 import GroupToggleDemo from '../pages/group-toggle';
 import HeatMapDemo from '../pages/heat-map';
+import HeirarchyViewDemo from '../pages/heirarchy-view';
 import HighlightDemo from '../pages/highlight';
 import HorizontalCardDemo from '../pages/horizontal-card';
 import InputDemo from '../pages/input';
@@ -134,6 +135,11 @@ export const componentsRouting = {
     name: 'Group Toggle',
     path: `${componentDocsPath}/group-toggle`,
     component: GroupToggleDemo,
+  },
+  HeirarchyViewDemo: {
+    name: 'Heirarchy View',
+    path: `${componentDocsPath}/heirarchy-view`,
+    component: HeirarchyViewDemo,
   },
   heatMap: {
     name: 'Heat Map',

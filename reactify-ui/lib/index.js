@@ -13,6 +13,7 @@ import FileUpload from './components/file-upload';
 import FullScreen from './components/full-screen';
 import GroupToggle from './components/group-toggle';
 import HeatMap from './components/heat-map';
+import HeirarchyView from './components/heirarchy-view';
 import Highlight from './components/highlight';
 import HorizontalCard from './components/horizontal-card';
 import Input from './components/input';
@@ -84,6 +85,7 @@ export {
   FullScreen,
   GroupToggle,
   HeatMap,
+  HeirarchyView,
   Highlight,
   HorizontalCard,
   Input,
