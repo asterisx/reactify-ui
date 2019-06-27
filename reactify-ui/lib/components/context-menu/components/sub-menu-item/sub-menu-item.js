@@ -15,6 +15,9 @@ class SubMenuItem extends Component {
      */
     // eslint-disable-next-line react/forbid-prop-types
     icon: PropTypes.any,
+    /**
+     * The 'text' value itself
+     */
     text: PropTypes.string,
     /**
      * If passed, this is all that goes inside the menu item,
@@ -22,6 +25,15 @@ class SubMenuItem extends Component {
      */
     // eslint-disable-next-line react/forbid-prop-types
     content: PropTypes.any,
+    /**
+     * An object of shape
+     * icon: PropTypes.any,
+     * text: PropTypes.string,
+     * content: PropTypes.any,
+     * `Of same shape as sub`
+     * sub: PropTypes.any,
+     * disabled: PropTypes.bool,
+     */
     // eslint-disable-next-line react/forbid-prop-types
     sub: PropTypes.any,
     /**

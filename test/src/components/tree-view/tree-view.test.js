@@ -1,11 +1,7 @@
 import React from 'react';
 import { Constants, TreeView, TreeViewItem } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
-import { matchers } from 'jest-emotion';
-import sinon from 'sinon';
 import { displaysChildren } from '../../helpers';
-
-expect.extend(matchers);
 
 describe('TreeView Component', () => {
     it('renders correctly', () => {
@@ -37,7 +33,9 @@ describe('TreeView Component', () => {
                 val => Object.keys(items[val]).forEach(
                     (key) => { 
                         if(key !== 'key') expect(treeItems.at(val).props()[key]).toBe(items[val][key]);
-                    }));
+                    }
+                )
+            );
         });
 
         describe('should drill down themes to tree view item', () => {

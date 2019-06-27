@@ -14,7 +14,7 @@ class SidebarItem extends Component {
     // eslint-disable-next-line react/forbid-prop-types
     content: PropTypes.any,
     /**
-     * A collection of a array of shape
+     * An object of shape
      * openIcon: PropTypes.any,
      * closeIcon: PropTypes.any,
      * text: PropTypes.string,
