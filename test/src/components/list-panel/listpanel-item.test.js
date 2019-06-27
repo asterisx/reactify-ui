@@ -27,10 +27,10 @@ describe('ListPanel.Item Component', () => {
 
     it('should have border when border prop is passed', () => {
         const mountWrapper = mount(<ListPanel.Item bordered index={1}/>);
-        expect(mountWrapper).toHaveStyleRule('border-top', '1px solid darkgray');
+        expect(mountWrapper).toHaveStyleRule('border-top', '1px solid');
 
         const mountWrapper1 = mount(<ListPanel.Item bordered={false}  index={1}/>);
-        expect(mountWrapper1).not.toHaveStyleRule('border-top', '1px solid darkgray');
+        expect(mountWrapper1).not.toHaveStyleRule('border-top', '1px solid');
     });
 
     it('should have selected when selected prop is passed', () => {
