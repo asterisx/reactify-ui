@@ -1,6 +1,6 @@
 const defaultSelectionCode = `
 <ListPanel multiple onItemClicked={props => console.log(props)}>
-  <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
   <ListPanel.Item selected index={2}>Item 2</ListPanel.Item>
   <ListPanel.Item index={3}>Item 3</ListPanel.Item>
   <ListPanel.Item selected index={4}>Item 4</ListPanel.Item>
@@ -9,7 +9,7 @@ const defaultSelectionCode = `
 `;
 const borderedCode = `
 <ListPanel>
-  <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
   <ListPanel.Item index={2} bordered={false}>Item 2</ListPanel.Item>
   <ListPanel.Item index={3}>Item 3</ListPanel.Item>
   <ListPanel.Item index={4} bordered={false}>Item 4</ListPanel.Item>
@@ -18,7 +18,7 @@ const borderedCode = `
 `;
 const eventsCode = `
 <ListPanel onSelectionChange={({ event, index, selected }) => console.log(event, index, selected)} onItemClicked={({ event, index }) => console.log(event, index)}>
-  <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
   <ListPanel.Item isSelectable={false} index={2}>Item 2</ListPanel.Item>
   <ListPanel.Item index={3}>Item 3</ListPanel.Item>
   <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -27,7 +27,7 @@ const eventsCode = `
 `;
 const customSizesCode = `
 <ListPanel small>
-  <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
   <ListPanel.Item index={2}>Item 2</ListPanel.Item>
   <ListPanel.Item index={3}>Item 3</ListPanel.Item>
   <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -35,7 +35,7 @@ const customSizesCode = `
 </ListPanel>
 
 <ListPanel medium>
-  <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
   <ListPanel.Item index={2}>Item 2</ListPanel.Item>
   <ListPanel.Item index={3}>Item 3</ListPanel.Item>
   <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -43,7 +43,7 @@ const customSizesCode = `
 </ListPanel>
 
 <ListPanel large>
-  <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
   <ListPanel.Item index={2}>Item 2</ListPanel.Item>
   <ListPanel.Item index={3}>Item 3</ListPanel.Item>
   <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -51,7 +51,7 @@ const customSizesCode = `
 </ListPanel>
 
 <ListPanel style={{ fontSize: '40px' }}>
-  <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
   <ListPanel.Item index={2}>Item 2</ListPanel.Item>
   <ListPanel.Item index={3}>Item 3</ListPanel.Item>
   <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -60,7 +60,7 @@ const customSizesCode = `
 `;
 const customListCode = `
 <ListPanel multiple>
-  <ListPanel.Item index={1} bordered={false}>
+  <ListPanel.Item index={1}>
     <div className="d-inline-flex justify-content-between align-items-center">
       <FaApple className="mr-4" />
       <span className="ml-4">Apple</span>
@@ -94,7 +94,7 @@ const customListCode = `
 `;
 const customThemeCode = `
 <ListPanel primary>
-<ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+<ListPanel.Item index={1}>Item 1</ListPanel.Item>
 <ListPanel.Item index={2}>Item 2</ListPanel.Item>
 <ListPanel.Item index={3}>Item 3</ListPanel.Item>
 <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -102,7 +102,7 @@ const customThemeCode = `
 </ListPanel>
 
 <ListPanel secondary>
-<ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+<ListPanel.Item index={1}>Item 1</ListPanel.Item>
 <ListPanel.Item index={2}>Item 2</ListPanel.Item>
 <ListPanel.Item index={3}>Item 3</ListPanel.Item>
 <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -110,7 +110,7 @@ const customThemeCode = `
 </ListPanel>
 <h6 className="pt-3 pb-3">Dark theme</h6>
 <ListPanel dark>
-<ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+<ListPanel.Item index={1}>Item 1</ListPanel.Item>
 <ListPanel.Item index={2}>Item 2</ListPanel.Item>
 <ListPanel.Item index={3}>Item 3</ListPanel.Item>
 <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -118,7 +118,7 @@ const customThemeCode = `
 </ListPanel>
 
 <ListPanel light>
-<ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+<ListPanel.Item index={1}>Item 1</ListPanel.Item>
 <ListPanel.Item index={2}>Item 2</ListPanel.Item>
 <ListPanel.Item index={3}>Item 3</ListPanel.Item>
 <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -126,7 +126,7 @@ const customThemeCode = `
 </ListPanel>
 
 <ListPanel info>
-<ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+<ListPanel.Item index={1}>Item 1</ListPanel.Item>
 <ListPanel.Item index={2}>Item 2</ListPanel.Item>
 <ListPanel.Item index={3}>Item 3</ListPanel.Item>
 <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -134,7 +134,7 @@ const customThemeCode = `
 </ListPanel>
 
 <ListPanel warning>
-<ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+<ListPanel.Item index={1}>Item 1</ListPanel.Item>
 <ListPanel.Item index={2}>Item 2</ListPanel.Item>
 <ListPanel.Item index={3}>Item 3</ListPanel.Item>
 <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -142,7 +142,7 @@ const customThemeCode = `
 </ListPanel>
 
 <ListPanel danger>
-<ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+<ListPanel.Item index={1}>Item 1</ListPanel.Item>
 <ListPanel.Item index={2}>Item 2</ListPanel.Item>
 <ListPanel.Item index={3}>Item 3</ListPanel.Item>
 <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -150,7 +150,7 @@ const customThemeCode = `
 </ListPanel>
 
 <ListPanel success>
-<ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+<ListPanel.Item index={1}>Item 1</ListPanel.Item>
 <ListPanel.Item index={2}>Item 2</ListPanel.Item>
 <ListPanel.Item index={3}>Item 3</ListPanel.Item>
 <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -158,7 +158,7 @@ const customThemeCode = `
 </ListPanel>
 
 <ListPanel>
-<ListPanel.Item primary index={1} bordered={false}>Item 1</ListPanel.Item>
+<ListPanel.Item primary index={1}>Item 1</ListPanel.Item>
 <ListPanel.Item secondary index={2} bordered={false}>Item 2</ListPanel.Item>
 <ListPanel.Item light index={3} bordered={false}>Item 3</ListPanel.Item>
 <ListPanel.Item dark index={4}>Item 4</ListPanel.Item>
@@ -171,7 +171,7 @@ const customThemeCode = `
 `;
 const disabledCode = `
 <ListPanel disabled>
-  <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
   <ListPanel.Item index={2}>Item 2</ListPanel.Item>
   <ListPanel.Item index={3}>Item 3</ListPanel.Item>
   <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -179,7 +179,7 @@ const disabledCode = `
 </ListPanel>
 
 <ListPanel>
-  <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
   <ListPanel.Item disabled index={2}>Item 2</ListPanel.Item>
   <ListPanel.Item index={3}>Item 3</ListPanel.Item>
   <ListPanel.Item disabled index={4}>Item 4</ListPanel.Item>
@@ -188,7 +188,7 @@ const disabledCode = `
 `;
 const selectionModeCode = `
 <ListPanel multiple>
-  <ListPanel.Item selected index={1} bordered={false}>Item 1</ListPanel.Item>
+  <ListPanel.Item selected index={1}>Item 1</ListPanel.Item>
   <ListPanel.Item index={2}>Item 2</ListPanel.Item>
   <ListPanel.Item selected index={3}>Item 3</ListPanel.Item>
   <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -197,7 +197,7 @@ const selectionModeCode = `
 `;
 const multipleCode = `
 <ListPanel multiple>
-  <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
   <ListPanel.Item index={2}>Item 2</ListPanel.Item>
   <ListPanel.Item index={3}>Item 3</ListPanel.Item>
   <ListPanel.Item index={4}>Item 4</ListPanel.Item>
@@ -206,7 +206,7 @@ const multipleCode = `
 `;
 const simpleCode = `
 <ListPanel>
-  <ListPanel.Item index={1} bordered={false}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
   <ListPanel.Item index={2}>Item 2</ListPanel.Item>
   <ListPanel.Item index={3}>Item 3</ListPanel.Item>
   <ListPanel.Item index={4}>Item 4</ListPanel.Item>

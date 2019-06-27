@@ -107,6 +107,7 @@ class ListPanel extends Component {
           danger,
           success,
           theme,
+          isSelectable,
         }),
         selected && styles.getListItemSelectedBackgroundColorStyle({
           primary,
@@ -267,7 +268,7 @@ class ListPanel extends Component {
         ]}
         {...otherProps}
       >
-        {React.Children.map(children, (child) => {
+        {React.Children.toArray(children).map((child, index) => {
           if (child && child.type === ListPanel.Item) {
             const isControlled = child.props.selected !== undefined;
             return React.cloneElement(child, {
@@ -300,8 +301,13 @@ class ListPanel extends Component {
               large: child.props.large || large,
               disabled: child.props.disabled || disabled,
               key: child.props.index,
-              selected: isControlled ? child.props.selected : (items[child.props.index]
+              selected: isControlled
+                ? child.props.selected
+                : (items[child.props.index]
               && items[child.props.index].selected),
+              bordered: child.props.bordered !== undefined
+                ? child.props.bordered
+                : (!(index === 0 && child.type === ListPanel.Item)),
               noItemDefaultStyling: child.props.noItemDefaultStyling || noItemDefaultStyling,
             });
           }
@@ -360,7 +366,7 @@ ListPanel.Item.propTypes = {
 ListPanel.Item.defaultProps = {
   selected: undefined,
   defaultSelected: false,
-  bordered: true,
+  bordered: undefined,
   disabled: false,
   isSelectable: true,
   ...defaultThemePropTypes,

@@ -12,7 +12,7 @@ export const styles = {
     transitionDuration: '0.3s',
   },
   bordered: {
-    borderTop: '1px solid darkgray',
+    borderTop: '1px solid',
   },
   listItem: {
     paddingTop: '0.2em',
@@ -37,6 +37,7 @@ export const styles = {
     danger,
     success,
     theme,
+    isSelectable,
   }) => ({
     ...(commonStyles.get.backgroundColor.forTheme({
       primary,
@@ -61,8 +62,8 @@ export const styles = {
       theme,
     })),
     '&:hover': {
-      backgroundColor:
-        darken(darkenBy, commonStyles.get.theme.color({
+      backgroundColor: isSelectable
+        ? darken(darkenBy, commonStyles.get.theme.color({
           primary,
           secondary,
           dark,
@@ -72,7 +73,7 @@ export const styles = {
           danger,
           success,
           theme,
-        })),
+        })) : undefined,
     },
   }),
 
