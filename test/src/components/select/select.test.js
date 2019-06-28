@@ -103,7 +103,7 @@ describe('Select Component', () => {
         describe('mode', () => {
             it('in singular mode can only select one item', () =>{
                 const mountWrapper = mount(
-                    <Select singular>
+                    <Select multiple={false}>
                         <Select.Item index={1}>Item 1</Select.Item>
                         <Select.Item index={2}>Item 2</Select.Item>
                         <Select.Item index={3}>Item 3</Select.Item>

@@ -58,3 +58,13 @@ img.size-custom {
     padding: 0em;
     margin-bottom: 0.1em;
 }
+
+.font-responsive {
+    font-size: 16px;
+}
+
+@media (max-width: 480px) {
+    .font-responsive {
+        font-size: 9px;
+    }
+}

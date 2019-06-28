@@ -26,11 +26,6 @@ class Select extends Component {
      */
     allSelectable: PropTypes.bool,
     /**
-     * If 'true' only one item can be open at a time.
-     * Defaults to false
-     */
-    singular: PropTypes.bool,
-    /**
      * If 'true' multiple items can be open at a time.
      * Defaults to true
      */
@@ -55,7 +50,6 @@ class Select extends Component {
   static defaultProps = {
     searchable: false,
     allSelectable: false,
-    singular: false,
     multiple: true,
     ...defaultThemePropTypes,
     ...defaultSizePropTypes,
@@ -172,7 +166,6 @@ class Select extends Component {
       searchable,
       allSelectable,
       onClick,
-      singular,
       multiple,
       onSelectionChange,
       primary,
@@ -216,7 +209,6 @@ class Select extends Component {
     return (
       <Dropdown label="Please select a value" {...otherProps}>
         <ListPanel
-          singular={singular}
           multiple={multiple}
           primary={primary}
           secondary={secondary}

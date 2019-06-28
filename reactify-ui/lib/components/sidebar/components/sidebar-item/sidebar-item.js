@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { GoPrimitiveDot } from 'react-icons/go';
 import SubSidebar from '../sub-sidebar';
-import { styles } from './styles';
+import { styles, BEMClassNames } from './styles';
 
 class SidebarItem extends Component {
   static propTypes = {
@@ -61,6 +61,7 @@ class SidebarItem extends Component {
       sub,
       disabled,
       positionFull,
+      className,
       ...otherProps
     } = this.props;
 
@@ -101,6 +102,7 @@ class SidebarItem extends Component {
           }),
         ]}
         onClick={(event) => { event.stopPropagation(); if (subSidebar) toggleSub(); }}
+        className={`${className} ${BEMClassNames.container}`}
         {...otherProps}
       >
         <span

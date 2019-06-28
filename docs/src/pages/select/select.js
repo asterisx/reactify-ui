@@ -32,8 +32,9 @@ const SelectDemo = () => (
       uniqueIdentifier="singularUse"
       sourceCode={singularCode}
     >
-      <h6 className="mt-3 mb-3">By default select is multiple but you can use singular to make the select singular</h6>
-      <Select singular>
+      {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
+      <h6 className="mt-3 mb-3">By default select is multiple but you can use {'multiple={false}'} to make the select singular</h6>
+      <Select multiple={false}>
         <Select.Item index={1}>Item 1</Select.Item>
         <Select.Item index={2}>Item 2</Select.Item>
         <Select.Item index={3}>Item 3</Select.Item>

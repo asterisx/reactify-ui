@@ -13,14 +13,14 @@ class ModalDemo extends Component {
         fields: {
           username: {
             value: '',
-            isError: true,
+            isError: false,
             errorText: 'username error',
             isLoading: false,
             disabled: false,
           },
           password: {
             value: '',
-            isError: true,
+            isError: false,
             errorText: 'password error',
             isLoading: false,
             disabled: false,
@@ -30,7 +30,7 @@ class ModalDemo extends Component {
             disabled: false,
           },
           error: {
-            visible: true,
+            visible: false,
             text: 'main error',
           },
         },

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FaAngleLeft } from 'react-icons/fa';
-import { styles } from './styles';
+import { styles, BEMClassNames } from './styles';
 import SidebarItem from '../sidebar-item';
 
 const SubSidebar = ({
@@ -10,6 +10,7 @@ const SubSidebar = ({
   positionFull,
   header,
   onHeaderClick,
+  className,
   ...otherProps
 }) => (
   <div
@@ -18,6 +19,7 @@ const SubSidebar = ({
       positionFull && styles.w100,
       positionFull ? styles.positionFull : styles.positionLeft,
     ]}
+    className={`${className} ${BEMClassNames.container}`}
     {...otherProps}
   >
     {positionFull && (

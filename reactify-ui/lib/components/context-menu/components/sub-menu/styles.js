@@ -1,3 +1,11 @@
+import { libraryName } from '../../../../common';
+
+const componentName = 'sub-menu';
+
+export const BEMClassNames = {
+  container: `${libraryName}-${componentName}__container`,
+};
+
 export const styles = {
   sub: {
     position: 'absolute',

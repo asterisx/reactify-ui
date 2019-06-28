@@ -108,7 +108,7 @@ const simpleCode = `
 `;
 
 const singularCode = `
-<Accordion singular>
+<Accordion multiple={false}>
   <Accordion.Item index={1}>
     <Accordion.Header>
       Accordion 1

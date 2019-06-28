@@ -1,5 +1,5 @@
 const borderedColoredCode = `
-<HorizontalCard>
+<HorizontalCard className="font-responsive">
   <HorizontalCard.Header>
     <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
   </HorizontalCard.Header>
@@ -19,7 +19,7 @@ const borderedColoredCode = `
 </HorizontalCard>
 `;
 const customClassCode = `
-<HorizontalCard className="p-3">
+<HorizontalCard className="p-3 font-responsive">
   <HorizontalCard.Header>
     <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
   </HorizontalCard.Header>
@@ -39,7 +39,7 @@ const customClassCode = `
 </HorizontalCard>
 `;
 const customSizeCode = `
-<HorizontalCard small>
+<HorizontalCard small className="font-responsive">
 <HorizontalCard.Header>
   <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
 </HorizontalCard.Header>
@@ -58,7 +58,7 @@ const customSizeCode = `
 </HorizontalCard.Footer>
 </HorizontalCard>
 
-<HorizontalCard medium>
+<HorizontalCard medium className="font-responsive">
   <HorizontalCard.Header>
     <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
   </HorizontalCard.Header>
@@ -77,7 +77,7 @@ const customSizeCode = `
   </HorizontalCard.Footer>
 </HorizontalCa
 
-<HorizontalCard large>
+<HorizontalCard large className="font-responsive">
   <HorizontalCard.Header>
     <img className="size-large" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
   </HorizontalCard.Header>
@@ -115,7 +115,7 @@ const customSizeCode = `
 </HorizontalCard>
 `;
 const disabledCode = `
-<HorizontalCard disabled>
+<HorizontalCard disabled className="font-responsive">
   <HorizontalCard.Header>
     <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
   </HorizontalCard.Header>
@@ -135,7 +135,7 @@ const disabledCode = `
 </HorizontalCard>
 `;
 const noShadowCode = `
-<HorizontalCard shadowed={false}>
+<HorizontalCard shadowed={false} className="font-responsive">
   <HorizontalCard.Header>
     <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
   </HorizontalCard.Header>
@@ -155,7 +155,7 @@ const noShadowCode = `
 </HorizontalCard>
 `;
 const simpleCode = `
-<HorizontalCard>
+<HorizontalCard className="font-responsive">
 <HorizontalCard.Header>
   <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
 </HorizontalCard.Header>

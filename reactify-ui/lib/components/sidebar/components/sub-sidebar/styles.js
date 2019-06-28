@@ -1,3 +1,11 @@
+import { libraryName } from '../../../../common';
+
+const componentName = 'sub-sidebar';
+
+export const BEMClassNames = {
+  container: `${libraryName}-${componentName}__container`,
+};
+
 export const styles = {
   container: {
     background: 'inherit',

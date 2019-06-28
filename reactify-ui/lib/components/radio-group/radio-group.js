@@ -15,7 +15,7 @@ class RadioGroup extends Component {
       if (this.state.selectedIndex !== index) {
         this.setState({ selectedIndex: index }, () => {
           if (this.props.onSelectionChange) {
-            this.props.onSelectionChange(index);
+            this.props.onSelectionChange({ index });
           }
         });
       }

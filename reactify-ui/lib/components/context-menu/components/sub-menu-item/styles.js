@@ -1,5 +1,11 @@
 import { darken } from 'polished';
-import { commonStyles, darkenBy } from '../../../../common';
+import { commonStyles, darkenBy, libraryName } from '../../../../common';
+
+const componentName = 'sub-menu-item';
+
+export const BEMClassNames = {
+  container: `${libraryName}-${componentName}__container`,
+};
 
 export const styles = {
   item: {
