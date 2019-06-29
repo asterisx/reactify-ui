@@ -74,6 +74,10 @@ class Select extends Component {
     multiple: true,
     ...defaultThemePropTypes,
     ...defaultSizePropTypes,
+    sm: false,
+    md: false,
+    lg: false,
+    xl: false,
     onSelectionChange: undefined,
   }
 
