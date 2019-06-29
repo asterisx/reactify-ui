@@ -151,10 +151,12 @@ class Select extends Component {
     this.setState(
       prevState => (
         {
-          items: prevState.items.map(
+          items:
+          prevState.items.map(
+            // eslint-disable-next-line no-nested-ternary
             item => ((item.index === index)
               ? Object.assign(item, { selected: !item.selected })
-              : item),
+              : this.props.multiple ? item : Object.assign(item, { selected: false })),
           ),
         }
       ), () => {
