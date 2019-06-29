@@ -27,19 +27,7 @@ describe('Login Component', () => {
             const input = mountWrapper.findWhere(n => n.name() === 'input' && n.props().value && n.getDOMNode().value.toString() === value);
             expect(input).toBeDefined();
         });
-        it('should show loading spinner when passed via state prop', () => {
-            const config = {
-                fields: {
-                  username: {
-                    isLoading: true,
-                  },
-                }
-            };
-
-            const mountWrapper = mount(<Login state={config} updateState={() => {}}/>);
-            const spinnerUsername = mountWrapper.find(Spinner).at(0);
-            expect(spinnerUsername).toHaveStyleRule('opacity', '1 !important');
-        });
+    
         it('should show error when passed via state prop', () => {
             const errorText = 'some error';
             const config = {
@@ -101,20 +89,6 @@ describe('Login Component', () => {
             const mountWrapper = mount(<Login state={config} updateState={() => {}}/>);
             const input = mountWrapper.findWhere(n => n.name() === 'input' && n.props().value && n.getDOMNode().value.toString() === value);
             expect(input).toBeDefined();
-        });
-
-        it('should show loading spinner when passed via state prop', () => {
-            const config = {
-                fields: {
-                    password: {
-                    isLoading: true,
-                  },
-                }
-            };
-
-            const mountWrapper = mount(<Login state={config} updateState={() => {}}/>);
-            const spinnerPasword = mountWrapper.find(Spinner).at(1);
-            expect(spinnerPasword).toHaveStyleRule('opacity', '1 !important');
         });
 
         it('should show error when passed via state prop', () => {
