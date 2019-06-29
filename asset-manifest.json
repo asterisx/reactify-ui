@@ -1,15 +1,15 @@
 {
-  "main.css": "/reactify-ui/static/css/main.360c7de0.chunk.css",
-  "main.js": "/reactify-ui/static/js/main.990ee118.chunk.js",
-  "main.js.map": "/reactify-ui/static/js/main.990ee118.chunk.js.map",
+  "main.css": "/reactify-ui/static/css/main.f74dad4f.chunk.css",
+  "main.js": "/reactify-ui/static/js/main.de8e6339.chunk.js",
+  "main.js.map": "/reactify-ui/static/js/main.de8e6339.chunk.js.map",
   "runtime~main.js": "/reactify-ui/static/js/runtime~main.bc846bf3.js",
   "runtime~main.js.map": "/reactify-ui/static/js/runtime~main.bc846bf3.js.map",
   "static/css/2.9eb53f6c.chunk.css": "/reactify-ui/static/css/2.9eb53f6c.chunk.css",
-  "static/js/2.ed78e774.chunk.js": "/reactify-ui/static/js/2.ed78e774.chunk.js",
-  "static/js/2.ed78e774.chunk.js.map": "/reactify-ui/static/js/2.ed78e774.chunk.js.map",
+  "static/js/2.4d2eba9a.chunk.js": "/reactify-ui/static/js/2.4d2eba9a.chunk.js",
+  "static/js/2.4d2eba9a.chunk.js.map": "/reactify-ui/static/js/2.4d2eba9a.chunk.js.map",
   "index.html": "/reactify-ui/index.html",
-  "precache-manifest.cdd329492ee6eaa56ce6504fe520ece4.js": "/reactify-ui/precache-manifest.cdd329492ee6eaa56ce6504fe520ece4.js",
+  "precache-manifest.fdb7aca6e35abb142c8a718830417cb5.js": "/reactify-ui/precache-manifest.fdb7aca6e35abb142c8a718830417cb5.js",
   "service-worker.js": "/reactify-ui/service-worker.js",
   "static/css/2.9eb53f6c.chunk.css.map": "/reactify-ui/static/css/2.9eb53f6c.chunk.css.map",
-  "static/css/main.360c7de0.chunk.css.map": "/reactify-ui/static/css/main.360c7de0.chunk.css.map"
+  "static/css/main.f74dad4f.chunk.css.map": "/reactify-ui/static/css/main.f74dad4f.chunk.css.map"
 }
