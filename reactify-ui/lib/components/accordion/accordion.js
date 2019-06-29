@@ -123,7 +123,7 @@ class Accordion extends Component {
 
   state = {
     /* items store the accordion items's open state
-     * If the mode is singular, items is an object with a single
+     * If the mode is singular (multiple == false), items is an object with a single
      * key matching the open items's index with value like: { open: true | false }
      * If the mode is multiple, items is a collection of fields
      * where the keys are same as index and values is an object like: { open: true | false }
@@ -132,11 +132,11 @@ class Accordion extends Component {
   }
 
   componentDidMount() {
-    const { children, singular } = this.props;
+    const { children, multiple } = this.props;
     let items = {};
     React.Children.forEach(children, (child) => {
       const { index, open } = child.props;
-      if (singular && child.open) {
+      if (!multiple && child.open) {
         items = {};
       }
       items[index] = { open };
@@ -145,7 +145,7 @@ class Accordion extends Component {
   }
 
   toggleItem = (index) => {
-    if (this.props.multiple && !this.props.singular) {
+    if (this.props.multiple) {
       const { items } = this.state;
       items[index].open = !items[index].open;
       this.setState({
@@ -173,7 +173,6 @@ class Accordion extends Component {
   render() {
     const {
       children,
-      singular,
       multiple,
       disabled,
       primary,
@@ -225,11 +224,6 @@ Accordion.Body.displayName = 'Accordion.Body';
 
 Accordion.propTypes = {
   /**
-   * If 'true' only one accordion item can be open at a time.
-   * Defaults to false
-   */
-  singular: PropTypes.bool,
-  /**
    * If 'true' multiple accordion items can be open at a time.
    * Defaults to true
    */
@@ -242,7 +236,6 @@ Accordion.propTypes = {
 };
 
 Accordion.defaultProps = {
-  singular: false,
   multiple: true,
   disabled: false,
   ...defaultThemePropTypes,

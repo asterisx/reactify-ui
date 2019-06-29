@@ -8,7 +8,7 @@ import {
   defaultSizePropTypes,
   isWithinWindow,
 } from '../../../../common';
-import { styles } from './styles';
+import { styles, BEMClassNames } from './styles';
 
 class SubMenu extends Component {
   static propTypes = {
@@ -130,6 +130,7 @@ class SubMenu extends Component {
       small,
       medium,
       large,
+      className,
       ...otherProps
     } = this.props;
     const { left, top } = this.state;
@@ -137,6 +138,7 @@ class SubMenu extends Component {
       <ul
         ref={menuRef}
         css={[styles.sub, styles.position({ left, top })]}
+        className={`${className} ${BEMClassNames.container}`}
         {...otherProps}
       >
         {children || (items && items.length && items.map(item => (

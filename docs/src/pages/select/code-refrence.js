@@ -1,3 +1,11 @@
+const breakpointCode = `
+<Select sm md>
+  <Select.Item index={1}>Item 1</Select.Item>
+  <Select.Item index={2}>Item 2</Select.Item>
+  <Select.Item index={3}>Item 3</Select.Item>
+  <Select.Item index={4}>Item 4</Select.Item>
+</Select>
+`;
 const propsCode = `
 <Select success>
   <Select.Item index={1}>Item 1</Select.Item>
@@ -46,7 +54,7 @@ const simpleCode = `
 </Select>
 `;
 const singularCode = `
-<Select singular>
+<Select multiple={false}>
   <Select.Item index={1}>Item 1</Select.Item>
   <Select.Item index={2}>Item 2</Select.Item>
   <Select.Item index={3}>Item 3</Select.Item>
@@ -55,6 +63,7 @@ const singularCode = `
 `;
 
 export {
+  breakpointCode,
   propsCode,
   selectableCode,
   selectionCode,

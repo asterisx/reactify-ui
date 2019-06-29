@@ -156,6 +156,8 @@ class Dropdown extends Component {
         {...otherProps}
       >
 
+        {/** This hidden div is there to catch outside dropdown click events,
+             when that click is caught the dropdown is closed. */}
         {isTrayOpen && <div css={styles.hiddenFixed} />}
 
         <span>{label}</span>

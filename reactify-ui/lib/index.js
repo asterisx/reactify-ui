@@ -1,3 +1,5 @@
+import { ThemeProvider, ThemeConsumer } from '@emotion/core';
+
 import Accordion from './components/accordion';
 import Alert from './components/alert';
 import Badge from './components/badge';
@@ -49,6 +51,7 @@ import Tooltip from './components/tooltip';
 import { TreeView, TreeViewItem } from './components/tree-view';
 import Typeahead from './components/typeahead';
 import UserProfile from './components/user-profile';
+
 import {
   defaultThemeColors,
   commonStyles,
@@ -122,6 +125,8 @@ export {
   Tabs,
   Tab,
   Text,
+  ThemeProvider,
+  ThemeConsumer,
   Timer,
   TopBar,
   Tooltip,

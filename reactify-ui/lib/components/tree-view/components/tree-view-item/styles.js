@@ -1,4 +1,13 @@
-import { commonStyles } from '../../../../common';
+import {
+  commonStyles,
+  libraryName,
+} from '../../../../common';
+
+const componentName = 'tree-view-item';
+
+export const BEMClassNames = {
+  container: `${libraryName}-${componentName}__container`,
+};
 
 export const styles = {
   item: {

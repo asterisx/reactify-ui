@@ -10,6 +10,7 @@ import Dropdown from '../dropdown';
 import CheckBox from '../checkbox';
 import SearchBar from '../search-bar';
 import ListPanel from '../list-panel';
+import { styles } from './styles';
 
 class Select extends Component {
   static propTypes = {
@@ -26,11 +27,6 @@ class Select extends Component {
      */
     allSelectable: PropTypes.bool,
     /**
-     * If 'true' only one item can be open at a time.
-     * Defaults to false
-     */
-    singular: PropTypes.bool,
-    /**
      * If 'true' multiple items can be open at a time.
      * Defaults to true
      */
@@ -44,6 +40,26 @@ class Select extends Component {
      */
     ...sizePropTypes,
     /**
+     * If 'true', the view is optimized for sm screens
+     * Defaults to 'false'
+     */
+    sm: PropTypes.bool,
+    /**
+     * If 'true', the view is optimized for md screens
+     * Defaults to 'false'
+     */
+    md: PropTypes.bool,
+    /**
+     * If 'true', the view is optimized for lg screens
+     * Defaults to 'false'
+     */
+    lg: PropTypes.bool,
+    /**
+     * If 'true', the view is optimized for xl screens
+     * Defaults to 'false'
+     */
+    xl: PropTypes.bool,
+    /**
      * Callback fired when the state is changed.
      *
      * @param {number} index The value of index prop of the selected value.
@@ -55,10 +71,13 @@ class Select extends Component {
   static defaultProps = {
     searchable: false,
     allSelectable: false,
-    singular: false,
     multiple: true,
     ...defaultThemePropTypes,
     ...defaultSizePropTypes,
+    sm: false,
+    md: false,
+    lg: false,
+    xl: false,
     onSelectionChange: undefined,
   }
 
@@ -172,7 +191,6 @@ class Select extends Component {
       searchable,
       allSelectable,
       onClick,
-      singular,
       multiple,
       onSelectionChange,
       primary,
@@ -187,6 +205,10 @@ class Select extends Component {
       small,
       medium,
       large,
+      sm,
+      md,
+      lg,
+      xl,
       ...otherProps
     } = this.props;
 
@@ -214,9 +236,15 @@ class Select extends Component {
       child => getItem(child)));
 
     return (
-      <Dropdown label="Please select a value" {...otherProps}>
+      <Dropdown
+        sm={sm}
+        md={md}
+        lg={lg}
+        xl={xl}
+        label="Please select a value"
+        {...otherProps}
+      >
         <ListPanel
-          singular={singular}
           multiple={multiple}
           primary={primary}
           secondary={secondary}
@@ -232,6 +260,9 @@ class Select extends Component {
           large={large}
           onClick={(evt) => { evt.stopPropagation(); evt.preventDefault(); }}
           onItemClicked={handleOnChange}
+          css={[
+            styles.list,
+          ]}
         >
           {items}
         </ListPanel>

@@ -58,11 +58,11 @@ The progress is below.
 - [x] Typeahead
 - [x] Breadcrumbs
 - [x] Sidebar
+- [x] Heirarchy View
 - [ ] Prototypes
 - [ ] Bubble Wizard
 - [ ] Carousel
 - [ ] Diagram
-- [ ] Heirarchy View
 - [ ] Dates
 - [ ] Charts
 - [ ] Grid

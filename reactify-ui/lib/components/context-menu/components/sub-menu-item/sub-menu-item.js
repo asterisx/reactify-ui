@@ -6,7 +6,7 @@ import {
   themePropTypes,
 } from '../../../../common';
 import { SubMenu } from '..';
-import { styles } from './styles';
+import { styles, BEMClassNames } from './styles';
 
 class SubMenuItem extends Component {
   static propTypes = {
@@ -80,6 +80,7 @@ class SubMenuItem extends Component {
       danger,
       success,
       theme,
+      className,
       ...otherProps
     } = this.props;
     const { showChild } = this.state;
@@ -127,6 +128,7 @@ class SubMenuItem extends Component {
         ]}
         onMouseEnter={showSub}
         onMouseLeave={hideSub}
+        className={`${className} ${BEMClassNames.container}`}
         {...otherProps}
       >
         {content

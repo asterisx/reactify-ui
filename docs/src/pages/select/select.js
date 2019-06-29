@@ -1,6 +1,7 @@
 import React from 'react';
 import { Select } from '@../../../../reactify-ui/build';
 import {
+  breakpointCode,
   propsCode,
   selectableCode,
   selectionCode,
@@ -32,8 +33,9 @@ const SelectDemo = () => (
       uniqueIdentifier="singularUse"
       sourceCode={singularCode}
     >
-      <h6 className="mt-3 mb-3">By default select is multiple but you can use singular to make the select singular</h6>
-      <Select singular>
+      {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
+      <h6 className="mt-3 mb-3">By default select is multiple but you can use {'multiple={false}'} to make the select singular</h6>
+      <Select multiple={false}>
         <Select.Item index={1}>Item 1</Select.Item>
         <Select.Item index={2}>Item 2</Select.Item>
         <Select.Item index={3}>Item 3</Select.Item>
@@ -83,6 +85,21 @@ const SelectDemo = () => (
       </Select>
       <br />
       <Select large>
+        <Select.Item index={1}>Item 1</Select.Item>
+        <Select.Item index={2}>Item 2</Select.Item>
+        <Select.Item index={3}>Item 3</Select.Item>
+        <Select.Item index={4}>Item 4</Select.Item>
+      </Select>
+    </DemoCard>
+
+    <DemoCard
+      title="Breakpoints"
+      uniqueIdentifier="breakpointsUse"
+      sourceCode={breakpointCode}
+    >
+      <h6 className="mt-3 mb-3">Options will show inside a portal on screen sizes marked by props sm, md, lg, xl. Open this dropdown on a md or xs screen size</h6>
+      <h6>Tray open by default</h6>
+      <Select sm md>
         <Select.Item index={1}>Item 1</Select.Item>
         <Select.Item index={2}>Item 2</Select.Item>
         <Select.Item index={3}>Item 3</Select.Item>

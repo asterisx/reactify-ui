@@ -23,11 +23,6 @@ class ListPanel extends Component {
      */
     disabled: PropTypes.bool,
     /**
-     * If 'true' only one item can be open at a time.
-     * Defaults to false
-     */
-    singular: PropTypes.bool,
-    /**
      * If 'true' multiple items can be open at a time.
      * Defaults to true
      */
@@ -59,7 +54,6 @@ class ListPanel extends Component {
   static defaultProps = {
     bordered: true,
     disabled: false,
-    singular: true,
     multiple: false,
     ...defaultThemePropTypes,
     ...defaultSizePropTypes,
@@ -144,7 +138,7 @@ class ListPanel extends Component {
         // Is selected is not passed, it means the component is set
         // to be controlled
         if (selected === undefined) {
-          if (this.props.singular && !this.props.multiple) {
+          if (!this.props.multiple) {
             items = {};
           }
           items[index] = { selected: defaultSelected };
@@ -165,7 +159,7 @@ class ListPanel extends Component {
         // If selected is not passed, it means the component is set
         // to be controlled
         if (selected === undefined) {
-          if (props.singular && !props.multiple) {
+          if (!props.multiple) {
             items = {};
           }
           items[index] = { selected: defaultSelected };
@@ -177,7 +171,7 @@ class ListPanel extends Component {
 
   itemClicked = ({ event, index, isControlled }) => {
     if (!isControlled) {
-      if (this.props.singular && !this.props.multiple) {
+      if (!this.props.multiple) {
         const items = {};
         if (Object.prototype.hasOwnProperty.call(this.state.items, index)) {
           items[index] = { selected: !this.state.items[index].selected };
@@ -221,7 +215,6 @@ class ListPanel extends Component {
   render() {
     const {
       bordered,
-      singular,
       multiple,
       children,
       disabled,

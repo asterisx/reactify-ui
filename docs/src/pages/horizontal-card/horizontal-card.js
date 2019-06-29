@@ -23,7 +23,7 @@ const HorizontalCardDemo = () => (
       sourceCode={simpleCode}
     >
       <h4 className="pt-3 pb-3">HorizontalCard.Body, HorizontalCard.Header and HorizontalCard.Footer's children should be able to have their own width such as (width: 300px) or are block elements.</h4>
-      <HorizontalCard>
+      <HorizontalCard className="font-responsive">
         <HorizontalCard.Header>
           <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </HorizontalCard.Header>
@@ -49,7 +49,7 @@ const HorizontalCardDemo = () => (
       sourceCode={noShadowCode}
     >
       <h4 className="pt-3 pb-3">{'shadowed={false}'}</h4>
-      <HorizontalCard shadowed={false}>
+      <HorizontalCard shadowed={false} className="font-responsive">
         <HorizontalCard.Header>
           <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </HorizontalCard.Header>
@@ -75,15 +75,13 @@ const HorizontalCardDemo = () => (
       sourceCode={customSizeCode}
     >
       <h6 className="pt-3 pb-3">size="small"</h6>
-      <HorizontalCard small>
+      <HorizontalCard small className="font-responsive">
         <HorizontalCard.Header>
           <img className="size-small" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </HorizontalCard.Header>
         <HorizontalCard.Body>
           <span className="size-small">
             <h5>Avenger's Endgame</h5>
-            Adrift in space with no food or water, Tony Stark sends a message to
-            Pepper Potts as his oxygen supply starts to dwindle.
           </span>
         </HorizontalCard.Body>
         <HorizontalCard.Footer bordered>
@@ -100,7 +98,7 @@ const HorizontalCardDemo = () => (
         {' '}
         <b className="pl-3">Default Size</b>
       </h6>
-      <HorizontalCard medium>
+      <HorizontalCard medium className="font-responsive">
         <HorizontalCard.Header>
           <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </HorizontalCard.Header>
@@ -121,7 +119,7 @@ const HorizontalCardDemo = () => (
       <br />
 
       <h6 className="pt-3 pb-3">size="large"</h6>
-      <HorizontalCard large>
+      <HorizontalCard large className="font-responsive">
         <HorizontalCard.Header>
           <img className="size-large" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </HorizontalCard.Header>
@@ -167,7 +165,7 @@ const HorizontalCardDemo = () => (
       uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
     >
-      <HorizontalCard disabled>
+      <HorizontalCard disabled className="font-responsive">
         <HorizontalCard.Header>
           <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </HorizontalCard.Header>
@@ -196,7 +194,7 @@ const HorizontalCardDemo = () => (
       HorizontalCard.Body and HorizontalCard.Footer can be bordered and can optionally have a
         border color
       </h6>
-      <HorizontalCard>
+      <HorizontalCard className="font-responsive">
         <HorizontalCard.Header>
           <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </HorizontalCard.Header>
@@ -227,18 +225,18 @@ const HorizontalCardDemo = () => (
       HorizontalCard.Header,
       HorizontalCard.footer can accept custom classes
       </h6>
-      <HorizontalCard className="p-3">
+      <HorizontalCard className="text-dark font-responsive">
         <HorizontalCard.Header>
           <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </HorizontalCard.Header>
-        <HorizontalCard.Body bordered className="p-3">
+        <HorizontalCard.Body bordered className="text-dark">
           <span className="size-medium">
             <h5>Avenger's Endgame</h5>
             Adrift in space with no food or water, Tony Stark sends a message to
             Pepper Potts as his oxygen supply starts to dwindle.
           </span>
         </HorizontalCard.Body>
-        <HorizontalCard.Footer bordered className="p-3">
+        <HorizontalCard.Footer bordered className="text-dark">
           <div className=" d-flex flex-column h-100 justify-content-between">
             <Button danger>Dislike</Button>
             <Button success>Like</Button>

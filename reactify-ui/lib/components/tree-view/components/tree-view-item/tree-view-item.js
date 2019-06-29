@@ -7,7 +7,7 @@ import {
   themePropTypes,
 } from '../../../../common';
 import { TreeView } from '../..';
-import { styles } from './styles';
+import { styles, BEMClassNames } from './styles';
 import { styles as TreeViewStyles } from '../../styles';
 
 class TreeViewItem extends Component {
@@ -89,6 +89,7 @@ class TreeViewItem extends Component {
       danger,
       success,
       theme,
+      className,
       ...otherProps
     } = this.props;
     const { treeOpen } = this.state;
@@ -126,6 +127,7 @@ class TreeViewItem extends Component {
         css={[
           !content && styles.item,
         ]}
+        className={`${className} ${BEMClassNames.container}`}
         {...otherProps}
       >
         {/* eslint-disable-next-line no-nested-ternary */}

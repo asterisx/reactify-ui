@@ -27,7 +27,7 @@ const RadioGroupDemo = () => (
       uniqueIdentifier="onSelectionUse"
       sourceCode={onSelectionCode}
     >
-      <RadioGroup onSelectionChange={index => alert(`Selected index: ${index}`)}>
+      <RadioGroup onSelectionChange={({ index }) => alert(`Selected index: ${index}`)}>
         <RadioInput index={0}>option 1</RadioInput>
         <RadioInput index={1}>option 2</RadioInput>
         <RadioInput index={2}>option 3</RadioInput>

@@ -51,7 +51,7 @@ const HeirarchyViewDemo = () => (
     </DemoCard>
 
     <DemoCard
-      title="Simple Use"
+      title="Declared Use"
       uniqueIdentifier="declaredUse"
       sourceCode={declaredCode}
     >

@@ -44,7 +44,7 @@ describe('RadioGroup Component', () => {
     it('should call onSelectionChange with index when children items clicked', () => {
         const spy = sinon.spy();
         const mountWrapper = mount(
-          <RadioGroup onSelectionChange={index => spy(index)}>
+          <RadioGroup onSelectionChange={({index}) => spy(index)}>
             <RadioInput label="option 1" index={0}></RadioInput>
             <RadioInput label="option 2" index={1}></RadioInput>
             <RadioInput label="option 3" index={2}></RadioInput>

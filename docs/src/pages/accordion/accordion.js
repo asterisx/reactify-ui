@@ -56,7 +56,7 @@ const AccordionDemo = () => (
       uniqueIdentifier="singularUse"
       sourceCode={singularCode}
     >
-      <Accordion singular>
+      <Accordion multiple={false}>
         <Accordion.Item index={1}>
           <Accordion.Header>
             Accordion 1

@@ -13,16 +13,14 @@ class ModalDemo extends Component {
         fields: {
           username: {
             value: '',
-            isError: true,
+            isError: false,
             errorText: 'username error',
-            isLoading: false,
             disabled: false,
           },
           password: {
             value: '',
-            isError: true,
+            isError: false,
             errorText: 'password error',
-            isLoading: false,
             disabled: false,
           },
           submit: {
@@ -30,7 +28,7 @@ class ModalDemo extends Component {
             disabled: false,
           },
           error: {
-            visible: true,
+            visible: false,
             text: 'main error',
           },
         },
@@ -44,7 +42,7 @@ class ModalDemo extends Component {
             config: {
               fields: {
                 username: {
-                  value, isLoading: false, isError: true, errorText: 'Username cannot have spaces',
+                  value, isError: true, errorText: 'Username cannot have spaces',
                 },
               },
             },
@@ -54,7 +52,7 @@ class ModalDemo extends Component {
             config: {
               fields: {
                 username: {
-                  value, isLoading: true, isError: false, errorText: '',
+                  value, isError: false, errorText: '',
                 },
               },
             },
@@ -68,11 +66,9 @@ class ModalDemo extends Component {
             config: {
               fields: {
                 username: {
-                  isLoading: true,
                   disabled: true,
                 },
                 password: {
-                  isLoading: true,
                   disabled: true,
                 },
                 submit: {

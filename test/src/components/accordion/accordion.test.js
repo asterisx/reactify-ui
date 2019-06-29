@@ -36,7 +36,7 @@ describe('Accordion Component', () => {
     it('can only select one item when in singular mode', () => {
         const indexes = [1, 2, 3];
         const mountWrapper = mount(
-            <Accordion singular>
+            <Accordion multiple={false}>
                 <Accordion.Item index={indexes[0]}>
                     <Accordion.Header>
                     </Accordion.Header>
