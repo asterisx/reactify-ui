@@ -5,7 +5,7 @@ span.size-small {
 
 img.size-small{
     display:block;
-    width: 18em;
+    width: 18em !important;
     height: 100% !important;
 }
 
@@ -53,11 +53,11 @@ img.size-custom {
 }
 
 .font-responsive {
-    font-size: 16px;
+    
 }
 
 @media (max-width: 480px) {
     .font-responsive {
-        font-size: 9px;
+        font-size: 6px !important;
     }
 }

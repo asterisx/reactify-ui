@@ -11,14 +11,12 @@ const defaultState = {
       value: '',
       isError: false,
       errorText: '',
-      isLoading: false,
       disabled: false,
     },
     password: {
       value: '',
       isError: false,
       errorText: '',
-      isLoading: false,
       disabled: false,
     },
     submit: {
@@ -91,20 +89,13 @@ class Login extends React.Component {
               )
                 }
             />
-            <Spinner
-              css={[
-                username.isLoading && styles.opacity1,
-              ]}
-              style={{ fontSize: '70%', opacity: 0 }}
-              slices
-              primary
-            />
           </div>
           {username.isError && (
             <span
               css={[
                 styles.error,
-                styles.flexStart]}
+                styles.flexStart,
+              ]}
             >
               {username.errorText}
             </span>
@@ -137,20 +128,13 @@ class Login extends React.Component {
               )
                 }
             />
-            <Spinner
-              css={[
-                password.isLoading && styles.opacity1,
-              ]}
-              style={{ fontSize: '70%', opacity: 0 }}
-              slices
-              primary
-            />
           </div>
           {password.isError && (
             <span
               css={[
                 styles.error,
-                styles.flexStart]}
+                styles.flexStart,
+              ]}
             >
               {password.errorText}
             </span>

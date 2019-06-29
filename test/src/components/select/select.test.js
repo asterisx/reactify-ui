@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, ListPanel, Checkbox, Constants, SearchBar } from '@../../../../reactify-ui/build';
+import { Select, ListPanel, Checkbox, Constants, SearchBar, Dropdown } from '@../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
@@ -57,6 +57,20 @@ describe('Select Component', () => {
             mountWrapper.simulate('click');
             mountWrapper.find(Checkbox).simulate('click');
             expect(mountWrapper.state().items.every(item => item.selected)).toBeTruthy();
+        });
+
+        it('should accept breakpoint props and drill it down to dropdown', () => {
+            const mountWrapper = mount(
+                <Select sm md lg xl>
+                    <Select.Item index={1}>Value</Select.Item>
+                </Select>
+                );
+            
+            const dropdown = mountWrapper.find(Dropdown);
+            expect(dropdown.props().sm).toBeTruthy();
+            expect(dropdown.props().md).toBeTruthy();
+            expect(dropdown.props().lg).toBeTruthy();
+            expect(dropdown.props().xl).toBeTruthy();
         });
 
         it('passing selected prop to list item should put it in controlled mode', () => {

@@ -19,18 +19,18 @@ const borderedColoredCode = `
 </StackedCard>
 `;
 const customClassCode = `
-<StackedCard className="p-3 font-responsive">
+<StackedCard className="font-responsive">
 <StackedCard.Header>
   <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
 </StackedCard.Header>
-<StackedCard.Body bordered className="p-3">
+<StackedCard.Body bordered className="text-dark">
   <span className="size-medium">
     <h5>Avenger's Endgame</h5>
     Adrift in space with no food or water, Tony Stark sends a message to
     Pepper Potts as his oxygen supply starts to dwindle.
   </span>
 </StackedCard.Body>
-<StackedCard.Footer bordered className="p-3">
+<StackedCard.Footer bordered className="text-dark">
   <div className=" d-flex flex-column h-100 justify-content-between">
     <Button danger>Dislike</Button>
     <Button success>Like</Button>

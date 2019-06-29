@@ -19,18 +19,18 @@ const borderedColoredCode = `
 </HorizontalCard>
 `;
 const customClassCode = `
-<HorizontalCard className="p-3 font-responsive">
+<HorizontalCard className="font-responsive">
   <HorizontalCard.Header>
     <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
   </HorizontalCard.Header>
-  <HorizontalCard.Body bordered className="p-3">
+  <HorizontalCard.Body bordered className="text-dark">
     <span>
       <h5>Avenger's Endgame</h5>
       Adrift in space with no food or water, Tony Stark sends a message to
       Pepper Potts as his oxygen supply starts to dwindle.
     </span>
   </HorizontalCard.Body>
-  <HorizontalCard.Footer bordered className="p-3">
+  <HorizontalCard.Footer bordered className="text-dark">
     <div className=" d-flex flex-column h-100 justify-content-between">
       <Button theme="danger">Dislike</Button>
       <Button theme="success">Like</Button>
@@ -46,8 +46,6 @@ const customSizeCode = `
 <HorizontalCard.Body>
   <span>
     <h5>Avenger's Endgame</h5>
-    Adrift in space with no food or water, Tony Stark sends a message to
-    Pepper Potts as his oxygen supply starts to dwindle.
   </span>
 </HorizontalCard.Body>
 <HorizontalCard.Footer bordered>

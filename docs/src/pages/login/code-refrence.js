@@ -6,14 +6,12 @@ state = {
         value: '',
         isError: true,
         errorText: 'username error',
-        isLoading: false,
         disabled: false,
       },
       password: {
         value: '',
         isError: true,
         errorText: 'password error',
-        isLoading: false,
         disabled: false,
       },
       submit: {
@@ -41,11 +39,9 @@ handleLogin = ({ action, value, prevState }) => {
         config: {
           fields: {
             username: {
-              isLoading: true,
               disabled: true,
             },
             password: {
-              isLoading: true,
               disabled: true,
             },
             submit: {
