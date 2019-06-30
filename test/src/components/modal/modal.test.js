@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Constants } from '@../../../../reactify-ui/build';
+import { Modal, Constants } from '../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';

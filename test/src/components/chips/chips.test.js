@@ -1,5 +1,5 @@
 import React from 'react';
-import { Chips, Chip, Constants } from '@../../../../reactify-ui/build';
+import { Chips, Chip, Constants } from '../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';

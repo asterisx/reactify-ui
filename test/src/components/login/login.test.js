@@ -1,5 +1,5 @@
 import React from 'react';
-import { Login, Spinner, Button } from '@../../../../reactify-ui/build';
+import { Login, Spinner, Button } from '../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';

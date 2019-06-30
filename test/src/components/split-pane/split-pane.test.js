@@ -1,5 +1,5 @@
 import React from 'react';
-import { Resizer, Pane, SplitPane, Constants } from '@../../../../reactify-ui/build';
+import { Resizer, Pane, SplitPane, Constants } from '../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 

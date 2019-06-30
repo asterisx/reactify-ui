@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Constants } from '@../../../../reactify-ui/build';
+import { Alert, Constants } from '../../../../reactify-ui/build';
 import { shallow, mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import { displaysChildren, hasDisabledStyle } from '../../helpers';

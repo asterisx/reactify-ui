@@ -1,5 +1,5 @@
 import React from 'react';
-import { SubSidebar, SidebarItem } from '@../../../../reactify-ui/build';
+import { SubSidebar, SidebarItem } from '../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { displaysChildren, hasDisabledStyle } from '../../helpers';
 

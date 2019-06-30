@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToastProvider, ToastConsumer, Button } from '@../../../../reactify-ui/build';
+import { ToastProvider, ToastConsumer, Button } from '../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';
@@ -55,7 +55,7 @@ describe('Toasts Component', () => {
 
     describe('props', () => {
         it('pauseOnHover', () => {
-            const Toast = require('@../../../../reactify-ui/build/components/toast/Toast');
+            const Toast = require('@@../../../../reactify-ui/build/components/toast/Toast');
             const spy = sinon.spy();
             const mountWrapper = mount(<Toast.Toast pauseOnHover onMouseEnter={spy}><h1>Some Text</h1></Toast.Toast>);
             mountWrapper.simulate('mouseenter');
