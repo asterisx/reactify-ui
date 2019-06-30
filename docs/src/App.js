@@ -8,7 +8,8 @@ import {
   Portal,
   TopBar,
   Paper,
-  Link as LibLink, SubSidebar,
+  Link as LibLink,
+  SubSidebar,
 } from 'reactify-ui';
 import { IoIosMenu } from 'react-icons/io';
 import AccordionDemo from './pages/accordion';
@@ -73,7 +74,7 @@ class App extends Component {
         <TopBar>
           <TopBar.Logo success className="cursor-pointer">
             <IoIosMenu className="icon text-light" onClick={togglePortal} />
-            <Link to="/">
+            <Link to="/accordion">
               <Paper success large noShadow className="logo p-2 pl-4 pr-4 h-100 dflex align-items-center">reactify ui</Paper>
             </Link>
           </TopBar.Logo>
