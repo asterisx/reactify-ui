@@ -73,7 +73,7 @@ class App extends Component {
         <TopBar>
           <TopBar.Logo success className="cursor-pointer">
             <IoIosMenu className="icon text-light" onClick={togglePortal} />
-            <Link to="accordion">
+            <Link to="/">
               <Paper success large noShadow className="logo p-2 pl-4 pr-4 h-100 dflex align-items-center">reactify ui</Paper>
             </Link>
           </TopBar.Logo>
