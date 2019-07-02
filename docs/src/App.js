@@ -97,7 +97,7 @@ class App extends Component {
             </Portal>
           )}
           <div className="row">
-            <Route exact path="/reactify-ui" component={AccordionDemo} />
+            <Route exact path="/" component={AccordionDemo} />
             {Object.values(componentsRouting).map(route => (route.sub
               ? Object.values(route.sub)
                 .map(subRoute => (
