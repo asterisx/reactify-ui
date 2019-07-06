@@ -1,12 +1,8 @@
 import React from 'react';
-import AlertDemo from './components/alert';
+import AccordionDemo from './components/accordion';
 
 function IndexPage() {
-  return (
-    <div>
-      <AlertDemo />
-    </div>
-  );
+  return <AccordionDemo />;
 }
 
 export default IndexPage;

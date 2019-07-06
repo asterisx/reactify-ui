@@ -41,7 +41,9 @@ export default function withHeader(Page) {
                         className="m-1 margin-left-0_2em link-color-dark"
                         key={componentsRouting[key].sub[subKey].name}
                         content={(
-                          <Link href={componentsRouting[key].sub[subKey].path}>
+                          <Link 
+                            href={componentsRouting[key].sub[subKey].path} 
+                            as={`${process.env.HOST + componentsRouting[key].sub[subKey].path}`}>
                             {componentsRouting[key].sub[subKey].name}
                           </Link>
                     )}
@@ -56,7 +58,9 @@ export default function withHeader(Page) {
                   className="pl-3 m-1 margin-left-0_2em link-color-dark"
                   key={componentsRouting[key].name}
                   content={(
-                    <Link href={componentsRouting[key].path}>
+                    <Link 
+                      href={componentsRouting[key].path} 
+                      as={`${process.env.HOST + componentsRouting[key].path}`}>
                       {componentsRouting[key].name}
                     </Link>
               )}
@@ -74,13 +78,13 @@ export default function withHeader(Page) {
         <>
           <Head>
             <title>Reactify UI</title>
-            <link rel="shortcut icon" href="~/public/favicon.ico" />
+            <link rel="shortcut icon" href={`${process.env.HOST}/static/favicon.ico`} />
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no"
             />
             <meta name="theme-color" content="#000000" />
-            <link rel="stylesheet" href="/static/styles.css" />
+            <link rel="stylesheet" href={`${process.env.HOST}/static/styles.css`} />
             <link
               rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/vs.min.css"
@@ -134,7 +138,7 @@ export default function withHeader(Page) {
               </LibLink>
 
               <LibLink className="ml-3" href="https://spectrum.chat/reactify-ui">
-                <img className="spectrum-icon" src="/static/assets/spectrum-white.png" alt="spectrum chat" />
+                <img className="spectrum-icon" src={`${process.env.HOST}/static/assets/spectrum-white.png`} alt="spectrum chat" />
               </LibLink>
             </TopBar.Menu>
           </TopBar>
