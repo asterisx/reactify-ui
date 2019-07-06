@@ -122,7 +122,7 @@ export default function withHeader(Page) {
           <TopBar>
             <TopBar.Logo success className="cursor-pointer">
               <IoIosMenu className="icon text-light" onClick={togglePortal} />
-              <Link href="/">
+              <Link href="/" as={process.env.HOST}>
                 <Paper success large noShadow className="logo p-2 pl-4 pr-4 h-100 dflex align-items-center">reactify ui</Paper>
               </Link>
             </TopBar.Logo>
@@ -133,7 +133,7 @@ export default function withHeader(Page) {
               }}
               warning
             >
-              <LibLink href="https://github.com/asterisx/reactify">
+              <LibLink href="https://github.com/asterisx/reactify-ui">
                 <Octicon icon={MarkGithub} size="medium" ariaLabel="GitHub" />
               </LibLink>
 
