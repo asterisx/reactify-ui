@@ -1,0 +1,228 @@
+.link-color-dark a {
+    color: #343a40!important;
+}
+
+.spectrum-icon {
+    width: 2em;
+    height: 100%;
+}
+
+.overflow-scroll {
+    overflow-y: scroll !important;
+}
+
+.min-w-250px {
+    min-width: 250px;
+}
+
+.icon {
+   width: 70px;
+   height: 50px;
+   margin-right: -1.4em;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.margin-left-0_2em {
+    margin-left: 0.2em !important;
+}
+
+.badge_img-message {
+    margin-top: -0.5em;
+    margin-bottom: -0.5em;
+}
+
+.context-menu_big-box {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-upload_fixed-size {
+    width: 100%;
+    height: 100px;
+    border: 2px solid lightgray;
+    background: lightgray;
+    color: gray;
+}
+
+.file-upload_hoverable:hover {
+    border: 2px solid black;
+    color: black;
+    background: gray;
+}
+
+.file-upload_hovered {
+    border: 2px solid black;
+    color: black;
+    background: gray;
+}
+
+.fixed-h-w {
+    height: 100px;
+    width: 350px;
+}
+
+.bgViolet .reactify-ui-progress-bar__progress {
+    background-color: violet;
+}
+
+.h-160px {
+    height: 160px;
+}
+
+.w-300px {
+    width: 300px;
+}
+
+.reactify-ui-tabs__toggle {
+    align-self: flex-end;
+}
+
+@media (max-width: 480px) {
+    .heirarchy-view_font-responsive {
+        font-size: 9px;
+    }
+}
+
+span.horizontal-card_size-small {
+    display: inline-block;
+    width: 18em;
+}
+
+img.horizontal-card_size-small{
+    display:block;
+    width: 18em !important;
+    height: 100% !important;
+}
+
+span.horizontal-card_size-medium {
+    display: inline-block;
+    width: 22.5em;
+}
+ 
+img.horizontal-card_size-medium{
+    display:block;
+  width: 22.5em;
+   height: 15em;
+}
+ 
+img.horizontal-card_size-large{
+   display:block;
+   width: 30em;
+   height: 20em;
+}
+
+span.horizontal-card_size-medium {
+    display: inline-block;
+    width: 30em;
+}
+
+span.horizontal-card_size-custom {
+    display: inline-block;
+    width: 100px;
+    font-size: 0.7em;
+}
+
+img.horizontal-card_size-custom {
+    display: block;
+    width: 150px;
+    height: 100px;
+}
+.horizontal-card_font-small {
+    font-size: 1em !important;
+}
+
+.horizontal-card_margin-padding-small {
+    margin-top: 0.1em;
+    padding: 0em;
+    margin-bottom: 0.1em;
+}
+
+@media (max-width: 480px) {
+    .horizontal-card_font-responsive {
+        font-size: 6px !important;
+    }
+}
+
+span.stacked-card_size-small {
+    display: inline-block;
+    width: 18em;
+}
+
+img.stacked-card_size-small{
+    display:block;
+    width: 200px;
+    height: 100% !important;
+}
+
+span.stacked-card_size-medium {
+    display: inline-block;
+    width: 22.5em;
+}
+ 
+img.stacked-card_size-medium{
+    display:block;
+    width: 16em;
+    height: 100%;
+}
+ 
+img.stacked-card_size-large{
+   display:block;
+   width: 20em;
+   height: 100%;
+}
+
+span.stacked-card_size-medium {
+    display: inline-block;
+    width: 30em;
+}
+
+span.stacked-card_size-custom {
+    display: inline-block;
+    width: 100px;
+    font-size: 0.7em;
+}
+
+img.stacked-card_size-custom {
+    display: block;
+    width: 100px;
+    height: 100%;
+}
+
+.stacked-card_header-margin-left-small {
+    margin-left: 3em;
+}
+
+.stacked-card_header-margin-left-small-negative {
+    margin-left: -3em;
+}
+.stacked-card_font-small {
+    font-size: 1em !important;
+}
+
+.stacked-card_margin-padding-small {
+    margin-top: 0.1em;
+    padding: 0em;
+    margin-bottom: 0.1em;
+}
+
+@media (max-width: 480px) {
+    .stacked-card_font-responsive {
+        font-size: 6px;
+    }
+}
+
+.customSize .reactify-ui-tooltip__bubble {
+    font-size: 30px;
+}
+
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, ListPanel, Checkbox, Constants, SearchBar, Dropdown } from '@../../../../reactify-ui/build';
+import { Select, ListPanel, Checkbox, Constants, SearchBar, Dropdown } from '../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import sinon from 'sinon';

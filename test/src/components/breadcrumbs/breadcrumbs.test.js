@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumbs } from '@../../../../reactify-ui/build';
+import { Breadcrumbs } from '../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { displaysChildren, hasDisabledStyle } from '../../helpers';
 

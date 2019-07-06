@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Constants } from '@../../../../reactify-ui/build';
+import { Input, Constants } from '../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeirarchyView } from '@../../../../reactify-ui/build';
+import { HeirarchyView } from '../../../../reactify-ui/build';
 import { mount } from 'enzyme';
 import { displaysChildren } from '../../helpers';
 

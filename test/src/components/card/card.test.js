@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "@../../../../reactify-ui/build";
+import { Card } from "@@../../../../reactify-ui/build";
 import { mount } from 'enzyme';
 import { matchers } from 'jest-emotion';
 import { displaysChildren, hasDisabledStyle } from '../../helpers';
