@@ -3,6 +3,7 @@
 import React from 'react';
 import { SearchBar } from '@../../../../reactify-ui/build';
 import {
+  controlledCode,
   customColorCode,
   customClassCode,
   customThemeCode,
@@ -11,7 +12,6 @@ import {
   placeholderCode,
   simpleCode,
   sizeCode,
-  valueCode,
 } from './code-refrence';
 import { DemoCard, withHeader } from '../../../common';
 
@@ -35,12 +35,12 @@ const SearchBarDemo = () => (
     </DemoCard>
 
     <DemoCard
-      title="Value (Controlled)"
+      title="Controlled"
       uniqueIdentifier="valueUse"
-      sourceCode={valueCode}
+      sourceCode={controlledCode}
     >
       <h6>Passing the value makes the searchbar controlled, check the log for events</h6>
-      <SearchBar value="" onChange={({ event, value }) => console.log(event, value)} />
+      <SearchBar value="" isControlled onChange={({ event, value }) => console.log(event, value)} />
     </DemoCard>
 
     <DemoCard

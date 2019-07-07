@@ -28,6 +28,11 @@ class ListPanel extends Component {
      */
     multiple: PropTypes.bool,
     /**
+     * If 'true', makes the item controlled
+     * Default is 'false'.
+     */
+    isControlled: PropTypes.bool,
+    /**
      * A collection of valid theme types, all boolean values
      * This is drilled directly to ListPanel.Item 'as is'
      */
@@ -39,7 +44,7 @@ class ListPanel extends Component {
     ...sizePropTypes,
     /**
      * Callback fired when the state is changed.
-     *
+     * @param {object} val of shape:
      * @param {number} index The value of index prop of the selected value.
      * @param {object} event The 'event' itself
      * @param {boolean} [selected] The `selected` value of the selected item is also passed
@@ -55,6 +60,7 @@ class ListPanel extends Component {
     bordered: true,
     disabled: false,
     multiple: false,
+    isControlled: false,
     ...defaultThemePropTypes,
     ...defaultSizePropTypes,
     onItemClicked: undefined,
@@ -75,11 +81,11 @@ class ListPanel extends Component {
     medium,
     large,
     selected,
-    defaultSelected,
     bordered,
     children,
     disabled,
     isSelectable,
+    isControlled,
     onClick,
     noItemDefaultStyling,
     ...otherProps
@@ -132,16 +138,15 @@ class ListPanel extends Component {
 
   componentDidMount() {
     let items = {};
+    const { isControlled } = this.props;
     React.Children.forEach(this.props.children, (child) => {
       if (child && child.props) {
-        const { index, selected, defaultSelected } = child.props;
-        // Is selected is not passed, it means the component is set
-        // to be controlled
-        if (selected === undefined) {
+        const { index, selected } = child.props;
+        if (!isControlled) {
           if (!this.props.multiple) {
             items = {};
           }
-          items[index] = { selected: defaultSelected };
+          items[index] = { selected };
         }
       }
     });
@@ -153,24 +158,23 @@ class ListPanel extends Component {
   static getDerivedStateFromProps(props, state) {
     if (!areArraysDifferent(state.items, props.children, ['index', 'selected'])) { return null; }
     let { items } = state;
+    const { isControlled } = this.props;
     React.Children.forEach(props.children, (child) => {
       if (child && child.props) {
-        const { index, selected, defaultSelected } = child.props;
-        // If selected is not passed, it means the component is set
-        // to be controlled
-        if (selected === undefined) {
+        const { index, selected } = child.props;
+        if (!isControlled) {
           if (!props.multiple) {
             items = {};
           }
-          items[index] = { selected: defaultSelected };
+          items[index] = { selected };
         }
       }
     });
     return { items };
   }
 
-  itemClicked = ({ event, index, isControlled }) => {
-    if (!isControlled) {
+  itemClicked = ({ event, index }) => {
+    if (!this.props.isControlled) {
       if (!this.props.multiple) {
         const items = {};
         if (Object.prototype.hasOwnProperty.call(this.state.items, index)) {
@@ -230,6 +234,7 @@ class ListPanel extends Component {
       small,
       medium,
       large,
+      isControlled,
       onSelectionChange,
       onItemClicked,
       noItemDefaultStyling,
@@ -263,14 +268,12 @@ class ListPanel extends Component {
       >
         {React.Children.toArray(children).map((child, index) => {
           if (child && child.type === ListPanel.Item) {
-            const isControlled = child.props.selected !== undefined;
             return React.cloneElement(child, {
               onClick: (event) => {
                 if (child.props.isSelectable) {
                   itemClicked({
                     event,
                     index: child.props.index,
-                    isControlled,
                   });
                 }
                 if (child.props.onClick) child.props.onClick(event);
@@ -314,15 +317,9 @@ class ListPanel extends Component {
 ListPanel.Item.propTypes = {
   /**
    * If 'true', makes the item selected
-   * This also makes the item 'Controlled'
+   * Default to 'false'.
    */
   selected: PropTypes.bool,
-  /**
-   * If 'true', makes the item selected
-   * Default is 'false'
-   * This does **not** makes the item 'Controlled'
-   */
-  defaultSelected: PropTypes.bool,
   /**
    * This is used to set a borderTop to the item
    */
@@ -357,8 +354,7 @@ ListPanel.Item.propTypes = {
 };
 
 ListPanel.Item.defaultProps = {
-  selected: undefined,
-  defaultSelected: false,
+  selected: false,
   bordered: undefined,
   disabled: false,
   isSelectable: true,

@@ -12,19 +12,18 @@ import { styles, BEMClassNames } from './styles';
 class Checkbox extends Component {
   static propTypes = {
     /**
-     * If 'true', sets switch to checked
-     * This also makes the switch component 'Controlled'
+     * If 'true', sets checkbox to checked
+     * Default to 'false'.
      */
     checked: PropTypes.bool,
     /**
-     * If 'true', sets switch's default state to checked.
-     * Default is 'false'
-     * This does not makes the switch component 'Controlled'
+     * If 'true', makes the checkbox component 'Controlled'
+     * Default to 'false'
      */
-    defaultChecked: PropTypes.bool,
+    isControlled: PropTypes.bool,
     /**
-     * The color of the switch 'icon'
-     * Switch component aceepts any valid CSS value for this
+     * The color of the checkbox 'icon'
+     * aceepts any valid CSS value for this
      */
     iconColor: PropTypes.string,
     /**
@@ -42,17 +41,16 @@ class Checkbox extends Component {
     ...sizePropTypes,
     /**
      * Callback fired when the state is changed.
-     *
+     * @param {object} val of shape:
      * @param {object} event The event source for the callback.
-     * You can use `event.target.checked` to get the new value
-     * @param {boolean} checked The `checked` value of the switch is also passed
+     * @param {boolean} checked The `checked` value of the checkbox is also passed.
      */
     onChange: PropTypes.func,
   }
 
   static defaultProps = {
     checked: undefined,
-    defaultChecked: undefined,
+    isControlled: false,
     iconColor: undefined,
     disabled: false,
     ...defaultThemePropTypes,
@@ -60,12 +58,10 @@ class Checkbox extends Component {
     onChange: () => {},
   }
 
-  state = { checked: this.props.defaultChecked || false }
-
-  isControlled = () => this.props.checked !== undefined;
+  state = { checked: this.props.checked }
 
   handleCheckboxClick = (event) => {
-    if (!this.isControlled()) {
+    if (!this.props.isControlled) {
       this.setState(prevState => ({ checked: !prevState.checked }),
         () => {
           if (this.props.onChange) {
@@ -83,7 +79,7 @@ class Checkbox extends Component {
     const {
       disabled,
       checked,
-      defaultChecked,
+      isControlled,
       iconColor,
       primary,
       secondary,
@@ -102,9 +98,13 @@ class Checkbox extends Component {
       ...otherProps
     } = this.props;
 
-    const { handleCheckboxClick, isControlled } = this;
+    const { handleCheckboxClick } = this;
 
     const { checked: checkedInState } = this.state;
+
+    const currChecked = isControlled
+      ? checked
+      : checkedInState;
 
     return (
       <div
@@ -140,7 +140,7 @@ class Checkbox extends Component {
           style={{ color: iconColor }}
           className={BEMClassNames.icon}
         >
-          {(isControlled() ? checked : checkedInState) ? (
+          {currChecked ? (
             <IoIosCheckboxOutline />
           ) : <IoIosSquareOutline />}
         </div>

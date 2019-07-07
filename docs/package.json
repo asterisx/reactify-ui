@@ -8,7 +8,8 @@
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
-    "eslint": "5.12.0",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-react-app": "^3.0.8",
     "eslint-config-standard": "^11.0.0",
@@ -19,9 +20,7 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-standard": "^3.1.0",
-    "sass-loader": "^7.1.0",
-    "node-sass": "^4.11.0"
+    "eslint-plugin-standard": "^3.1.0"
   },
   "dependencies": {
     "@githubprimer/octicons-react": "^8.5.0",
@@ -35,7 +34,7 @@
     "react-icons": "^3.6.1"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "NODE_ENV=development npm run build && NODE_ENV=development npm run start",
     "build": "next build",
     "start": "next start",
     "export": "next export",

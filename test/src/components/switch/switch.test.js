@@ -36,9 +36,9 @@ describe('Switch Component', () => {
         expect(switchInput.props().checked).toBeFalsy();
     });
 
-    it('should automatically go in controlled mode when checked prop is passed', () => {
+    it('should automatically go in controlled mode when isControlled prop is passed', () => {
         const spy = sinon.spy();
-        const mountWrapper = mount(<Switch checked={true} onChange={spy}/>);
+        const mountWrapper = mount(<Switch isControlled onChange={spy}/>);
         expect(mountWrapper.state().checked).toBeFalsy();
 
         const input = mountWrapper.find('input');

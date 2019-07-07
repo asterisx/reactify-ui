@@ -32,18 +32,18 @@ describe('SearchBar Component', () => {
             expect(onChangeSpy.firstCall.args[0].value).toBe(inputValue);
         });
 
-        it('should automatically go in controlled mode when checked prop is passed', () => {
+        it('should automatically go in controlled mode when isControlled prop is passed', () => {
             const onChangeSpy = sinon.spy();
             const value = 'some value';
-            const mountWrapper = mount(<SearchBar value={value} onChange={onChangeSpy}/>);
-            expect(mountWrapper.state().value).toBe('');
+            const mountWrapper = mount(<SearchBar value={value} isControlled onChange={onChangeSpy}/>);
+            expect(mountWrapper.state().value).toBe(value);
     
             const newValue = 'new value';
             const input = mountWrapper.findWhere(n => n.name() === 'input');
             input.simulate("change", { target: { value: newValue } });
             expect(onChangeSpy.called).toBeTruthy();
             expect(onChangeSpy.firstCall.args[0].value).toBe(newValue);
-            expect(mountWrapper.state().value).toBe('');
+            expect(mountWrapper.state().value).toBe(value);
         });
 
         it('should have custom color when color prop is passed', () => {

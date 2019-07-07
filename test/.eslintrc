@@ -3,7 +3,8 @@
     "extends": [
         "plugin:jest/recommended", 
         "react-app",
-        "airbnb"
+        "airbnb",
+        "jest"
     ],
     "rules": {
         "jest/no-disabled-tests": "warn",

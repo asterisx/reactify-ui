@@ -13,18 +13,17 @@ class Switch extends Component {
   static propTypes = {
     /**
      * If 'true', sets switch to checked
-     * This also makes the switch component 'Controlled'
+     * Defaults to 'false'.
      */
     checked: PropTypes.bool,
     /**
-     * If 'true', sets switch's default state to checked.
-     * Default is 'false'
-     * This does not makes the switch component 'Controlled'
+     * If 'true', makes the switch component 'Controlled'
+     * Default to 'false'
      */
-    defaultChecked: PropTypes.bool,
+    isControlled: PropTypes.bool,
     /**
      * The color of the switch 'icon'
-     * Switch component aceepts any valid CSS value for this
+     * aceepts any valid CSS value for this
      */
     iconColor: PropTypes.string,
     /**
@@ -42,7 +41,7 @@ class Switch extends Component {
     ...sizePropTypes,
     /**
      * Callback fired when the state is changed.
-     *
+     * @param {object} val of shape:
      * @param {object} event The event source for the callback.
      * You can use `event.target.checked` to get the new value
      * @param {boolean} checked The `checked` value of the switch is also passed
@@ -52,7 +51,7 @@ class Switch extends Component {
 
   static defaultProps = {
     checked: undefined,
-    defaultChecked: undefined,
+    isControlled: false,
     iconColor: undefined,
     disabled: false,
     ...defaultThemePropTypes,
@@ -60,15 +59,12 @@ class Switch extends Component {
     onChange: () => {},
   }
 
-  state = { checked: this.props.defaultChecked || false }
-
-  isControlled = () => this.props.checked !== undefined;
+  state = { checked: this.props.checked }
 
   handleOnChange = (event) => {
-    // eslint-disable-next-line prefer-destructuring
-    const checked = event.target.checked;
+    const { checked } = event.target;
 
-    if (!this.isControlled()) {
+    if (!this.props.isControlled) {
       this.setState(prevProps => ({ checked: !prevProps.checked }));
     }
 
@@ -81,7 +77,7 @@ class Switch extends Component {
     const {
       children,
       checked,
-      defaultChecked,
+      isControlled,
       iconColor,
       primary,
       secondary,
@@ -100,9 +96,13 @@ class Switch extends Component {
       ...otherProps
     } = this.props;
 
-    const { handleOnChange, isControlled } = this;
+    const { handleOnChange } = this;
 
     const { checked: checkedInState } = this.state;
+
+    const currChecked = isControlled
+      ? checked
+      : checkedInState;
 
     return (
       <div
@@ -134,12 +134,10 @@ class Switch extends Component {
               theme,
             }),
           ]}
-          defaultChecked={defaultChecked}
           type="checkbox"
           style={{ color: iconColor }}
           onChange={handleOnChange}
-          // eslint-disable-next-line no-nested-ternary
-          checked={defaultChecked ? undefined : (isControlled() ? checked : checkedInState)}
+          checked={currChecked}
           className={BEMClassNames.icon}
         />
         {children}

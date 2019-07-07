@@ -13,7 +13,8 @@ import { styles } from './styles';
 class SearchBar extends Component {
   static propTypes = {
     /**
-     * If 'true' the slider is disabled
+     * If 'true' the SearchBar is disabled.
+     * Default to 'false'.
      */
     disabled: PropTypes.bool,
     /**
@@ -22,9 +23,10 @@ class SearchBar extends Component {
      */
     value: PropTypes.string,
     /**
-     * Used to set the default value
+     * If 'true', makes the searchBar component 'Controlled'
+     * Default to 'false'
      */
-    defaultValue: PropTypes.string,
+    isControlled: PropTypes.bool,
     /**
      * A placeholder for input
      */
@@ -39,7 +41,7 @@ class SearchBar extends Component {
     ...sizePropTypes,
     /**
      * Callback fired when the state is changed.
-     *
+     * @param {object} val of shape:
      * @param {object} event The event source for the callback.
      * You can use `event.target.value` to get the new value
      * @param {string} value The `value` of the searchbar is also passed
@@ -49,22 +51,19 @@ class SearchBar extends Component {
 
   static defaultProps = {
     disabled: false,
-    value: undefined,
-    defaultValue: '',
+    value: '',
+    isControlled: false,
     placeholder: '',
     ...defaultThemePropTypes,
     ...defaultSizePropTypes,
     onChange: undefined,
   }
 
-  state = { value: this.props.defaultValue || '' };
-
-  isControlled = () => this.props.value !== undefined;
+  state = { value: this.props.value };
 
   handleOnChange = (event) => {
-    // eslint-disable-next-line prefer-destructuring
-    const value = event.target.value;
-    if (!this.isControlled()) {
+    const { value } = event.target;
+    if (!this.props.isControlled) {
       this.setState({ value });
     }
 
@@ -74,7 +73,7 @@ class SearchBar extends Component {
   }
 
   clearInput = (event) => {
-    if (!this.isControlled()) {
+    if (!this.props.isControlled) {
       this.setState({ value: '' });
     }
 
@@ -100,15 +99,16 @@ class SearchBar extends Component {
       disabled,
       onChange,
       value,
+      isControlled,
       placeholder,
       ...otherProps
     } = this.props;
 
     const { value: valueInState } = this.state;
 
-    const { isControlled, handleOnChange, clearInput } = this;
+    const { handleOnChange, clearInput } = this;
 
-    const currValue = isControlled()
+    const currValue = isControlled
       ? value
       : valueInState;
 

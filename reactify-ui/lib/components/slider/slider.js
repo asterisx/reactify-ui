@@ -20,13 +20,13 @@ class Slider extends Component {
     disabled: PropTypes.bool,
     /**
      * Used to set the value of the slider,
-     * passing this makes the slider 'controlled'
      */
     value: PropTypes.number,
     /**
-     * Used to set the default value
+     * If 'true', makes the slider component 'Controlled'
+     * Default to 'false'
      */
-    defaultValue: PropTypes.number,
+    isControlled: PropTypes.bool,
     /**
      * The min value of the slider
      */
@@ -57,7 +57,7 @@ class Slider extends Component {
     ...sizePropTypes,
     /**
      * Callback fired when the state is changed.
-     *
+     * @param {object} val of shape:
      * @param {object} event The event source for the callback.
      * You can use `event.target.value` to get the new value
      * @param {number} value The `value` of the slider is also passed
@@ -69,8 +69,8 @@ class Slider extends Component {
   static defaultProps = {
     fill: true,
     disabled: false,
-    value: undefined,
-    defaultValue: 0,
+    value: 0,
+    isControlled: false,
     min: 0,
     max: 100,
     minAllowed: 0,
@@ -86,16 +86,13 @@ class Slider extends Component {
 
   state = {
     value:
-    Slider.getValue(this.props.defaultValue, this.props.minAllowed, this.props.maxAllowed),
+    Slider.getValue(this.props.value, this.props.minAllowed, this.props.maxAllowed),
   };
-
-
-  isControlled = () => this.props.value !== undefined;
 
   handleOnChange = (event) => {
     // eslint-disable-next-line prefer-destructuring
     const value = event.target.value;
-    if (!this.isControlled()) {
+    if (!this.props.isControlled) {
       this.setState(({
         value:
         Slider.getValue(value, this.props.minAllowed, this.props.maxAllowed),
@@ -126,7 +123,7 @@ class Slider extends Component {
       fillColor,
       style,
       value,
-      defaultValue,
+      isControlled,
       min,
       max,
       maxAllowed,
@@ -135,11 +132,11 @@ class Slider extends Component {
       ...otherProps
     } = this.props;
 
-    const { handleOnChange, isControlled } = this;
+    const { handleOnChange } = this;
 
     const { value: valueInState } = this.state;
 
-    const currValue = isControlled()
+    const currValue = isControlled
       ? Slider.getValue(value, minAllowed, maxAllowed)
       : valueInState;
 
