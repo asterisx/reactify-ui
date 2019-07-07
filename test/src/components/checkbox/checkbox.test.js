@@ -18,8 +18,8 @@ describe('Checkbox Component', () => {
         expect(mountWrapper.state().checked).toBeFalsy();
     });
 
-    it('should be checked when defaultChecked prop is passed', () => {
-        const mountWrapper = mount(<Checkbox defaultChecked />);
+    it('should be checked when checked prop is passed', () => {
+        const mountWrapper = mount(<Checkbox checked />);
         expect(mountWrapper.state().checked).toBeTruthy();
     });
 
@@ -29,14 +29,14 @@ describe('Checkbox Component', () => {
         expect(mountWrapper.state().checked).toBeTruthy();
     });
 
-    it('should automatically go in controlled mode when checked prop is passed', () => {
+    it('should automatically go in controlled mode when isControlled is passed', () => {
         const spy = sinon.spy();
-        const mountWrapper = mount(<Checkbox checked={true} onChange={spy}/>);
+        const mountWrapper = mount(<Checkbox isControlled onChange={spy}/>);
         expect(mountWrapper.state().checked).toBeFalsy();
 
         mountWrapper.simulate('click');
         expect(spy.called).toBeTruthy();
-        expect(spy.firstCall.args[0].checked).toBeFalsy();
+        expect(spy.firstCall.args[0].checked).toBeTruthy();
         expect(mountWrapper.state().checked).toBeFalsy();
     });
 

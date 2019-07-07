@@ -5,9 +5,19 @@
     ],
     "plugins": [
         "@babel/plugin-proposal-class-properties",
-        ["transform-define", {
-            "process.env.NODE_ENV": "production",
-            "process.env.HOST": "https://asterisx.github.io/reactify-ui"
-          }]
-    ]
+    ],
+    "env": {
+        "production": {
+            "plugins": [["transform-define", {
+                "process.env.NODE_ENV": "production",
+                "process.env.HOST": "https://asterisx.github.io/reactify-ui"
+            }]]
+        },
+        "development": {
+            "plugins": [["transform-define", {
+                "process.env.NODE_ENV": "development",
+                "process.env.HOST": ""
+            }]]
+        }
+    }
 }

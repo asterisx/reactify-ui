@@ -41,9 +41,10 @@ export default function withHeader(Page) {
                         className="m-1 margin-left-0_2em link-color-dark"
                         key={componentsRouting[key].sub[subKey].name}
                         content={(
-                          <Link 
-                            href={componentsRouting[key].sub[subKey].path} 
-                            as={`${process.env.HOST + componentsRouting[key].sub[subKey].path}`}>
+                          <Link
+                            href={componentsRouting[key].sub[subKey].path}
+                            as={`${process.env.HOST + componentsRouting[key].sub[subKey].path}`}
+                          >
                             {componentsRouting[key].sub[subKey].name}
                           </Link>
                     )}
@@ -58,9 +59,10 @@ export default function withHeader(Page) {
                   className="pl-3 m-1 margin-left-0_2em link-color-dark"
                   key={componentsRouting[key].name}
                   content={(
-                    <Link 
-                      href={componentsRouting[key].path} 
-                      as={`${process.env.HOST + componentsRouting[key].path}`}>
+                    <Link
+                      href={componentsRouting[key].path}
+                      as={`${process.env.HOST + componentsRouting[key].path}`}
+                    >
                       {componentsRouting[key].name}
                     </Link>
               )}
@@ -101,6 +103,10 @@ export default function withHeader(Page) {
               href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
               crossOrigin="anonymous"
+            />
+            <link
+              href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+              rel="stylesheet"
             />
             <script
               src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

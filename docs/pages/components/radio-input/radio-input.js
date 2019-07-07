@@ -4,17 +4,17 @@
 import React from 'react';
 import { RadioInput } from '@../../../../reactify-ui/build';
 import {
-  simpleCode,
-  checkedCode,
-  disabledCode,
+  childrenCode,
+  controlledCode,
+  customClassCode,
   customIconCode,
   customSizeCode,
   customThemeCode,
+  disabledCode,
   onChangeCode,
   labelCode,
   labelPositionCode,
-  childrenCode,
-  customClassCode,
+  simpleCode,
 } from './code-refrence';
 import { DemoCard, withHeader } from '../../../common';
 
@@ -29,11 +29,11 @@ const RadioInputDemo = () => (
     </DemoCard>
 
     <DemoCard
-      title="Checked (Controlled)"
+      title="Controlled (checked)"
       uniqueIdentifier="checkedUse"
-      sourceCode={checkedCode}
+      sourceCode={controlledCode}
     >
-      <RadioInput checked className="align-self-center" />
+      <RadioInput checked isControlled className="align-self-center" />
     </DemoCard>
 
     <DemoCard
@@ -41,7 +41,7 @@ const RadioInputDemo = () => (
       uniqueIdentifier="disabled"
       sourceCode={disabledCode}
     >
-      <RadioInput disabled defaultChecked className="align-self-center">This is disabled</RadioInput>
+      <RadioInput disabled checked className="align-self-center">This is disabled</RadioInput>
     </DemoCard>
 
     <DemoCard
@@ -49,7 +49,7 @@ const RadioInputDemo = () => (
       uniqueIdentifier="label"
       sourceCode={labelCode}
     >
-      <RadioInput defaultChecked>Dogs, cats and birds</RadioInput>
+      <RadioInput checked>Dogs, cats and birds</RadioInput>
     </DemoCard>
 
     <DemoCard
@@ -57,9 +57,9 @@ const RadioInputDemo = () => (
       uniqueIdentifier="labelPosition"
       sourceCode={labelPositionCode}
     >
-      <RadioInput defaultChecked>Dogs, cats and birds</RadioInput>
+      <RadioInput checked>Dogs, cats and birds</RadioInput>
       <br />
-      <RadioInput defaultChecked style={{ flexDirection: 'row-reverse' }}>Dogs, cats and birds</RadioInput>
+      <RadioInput checked style={{ flexDirection: 'row-reverse' }}>Dogs, cats and birds</RadioInput>
     </DemoCard>
 
     <DemoCard
@@ -67,7 +67,7 @@ const RadioInputDemo = () => (
       uniqueIdentifier="children"
       sourceCode={childrenCode}
     >
-      <RadioInput defaultChecked>
+      <RadioInput checked>
         <div className="card" style={{ width: '18rem' }}>
           <div className="card-body">
             <h5 className="card-title">Card title</h5>
@@ -83,7 +83,7 @@ const RadioInputDemo = () => (
       uniqueIdentifier="customIcon"
       sourceCode={customIconCode}
     >
-      <RadioInput iconColor="red" defaultChecked>Dogs, cats and birds</RadioInput>
+      <RadioInput iconColor="red" checked>Dogs, cats and birds</RadioInput>
     </DemoCard>
 
     <DemoCard
@@ -114,21 +114,21 @@ const RadioInputDemo = () => (
       uniqueIdentifier="themes"
       sourceCode={customThemeCode}
     >
-      <RadioInput primary className="pb-2" defaultChecked>Primary</RadioInput>
+      <RadioInput primary className="pb-2" checked>Primary</RadioInput>
       <br />
-      <RadioInput secondary className="pb-2" defaultChecked>Secondary</RadioInput>
+      <RadioInput secondary className="pb-2" checked>Secondary</RadioInput>
       <br />
-      <RadioInput dark className="pb-2" defaultChecked>Dark</RadioInput>
+      <RadioInput dark className="pb-2" checked>Dark</RadioInput>
       <br />
-      <RadioInput light className="pb-2" defaultChecked>Light</RadioInput>
+      <RadioInput light className="pb-2" checked>Light</RadioInput>
       <br />
-      <RadioInput info className="pb-2" defaultChecked>Info</RadioInput>
+      <RadioInput info className="pb-2" checked>Info</RadioInput>
       <br />
-      <RadioInput warning className="pb-2" defaultChecked>Warning</RadioInput>
+      <RadioInput warning className="pb-2" checked>Warning</RadioInput>
       <br />
-      <RadioInput danger className="pb-2" defaultChecked>Danger</RadioInput>
+      <RadioInput danger className="pb-2" checked>Danger</RadioInput>
       <br />
-      <RadioInput success className="pb-2" defaultChecked>Success</RadioInput>
+      <RadioInput success className="pb-2" checked>Success</RadioInput>
     </DemoCard>
 
     <DemoCard

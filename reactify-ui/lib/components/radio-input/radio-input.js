@@ -12,19 +12,18 @@ import { styles, BEMClassNames } from './styles';
 class RadioInput extends Component {
   static propTypes = {
     /**
-     * If 'true', sets switch to checked
-     * This also makes the switch component 'Controlled'
+     * If 'true', sets radio-input to checked
+     * Defaults to 'false'.
      */
     checked: PropTypes.bool,
     /**
-     * If 'true', sets switch's default state to checked.
-     * Default is 'false'
-     * This does not makes the switch component 'Controlled'
+     * If 'true', makes the radio-input component 'Controlled'
+     * Default to 'false'
      */
-    defaultChecked: PropTypes.bool,
+    isControlled: PropTypes.bool,
     /**
-     * The color of the switch 'icon'
-     * Switch component aceepts any valid CSS value for this
+     * The color of the radio-input 'icon'
+     * aceepts any valid CSS value for this
      */
     iconColor: PropTypes.string,
     /**
@@ -42,17 +41,17 @@ class RadioInput extends Component {
     ...sizePropTypes,
     /**
      * Callback fired when the state is changed.
-     *
+     * @param {object} val of shape:
      * @param {object} event The event source for the callback.
      * You can use `event.target.checked` to get the new value
-     * @param {boolean} checked The `checked` value of the switch is also passed
+     * @param {boolean} checked The `checked` value of the radio-input is also passed
      */
     onChange: PropTypes.func,
   }
 
   static defaultProps = {
     checked: undefined,
-    defaultChecked: undefined,
+    isControlled: false,
     iconColor: undefined,
     disabled: false,
     ...defaultThemePropTypes,
@@ -60,16 +59,13 @@ class RadioInput extends Component {
     onChange: () => {},
   }
 
-  state = { checked: this.props.defaultChecked || false }
-
-
-  isControlled = () => this.props.checked !== undefined;
+  state = { checked: this.props.checked }
 
   handleOnChange = (event) => {
     // eslint-disable-next-line prefer-destructuring
     const checked = event.target.checked;
 
-    if (!this.isControlled()) {
+    if (!this.props.isControlled) {
       this.setState(prevProps => ({ checked: !prevProps.checked }));
     }
 
@@ -89,7 +85,7 @@ class RadioInput extends Component {
     const {
       children,
       checked,
-      defaultChecked,
+      isControlled,
       iconColor,
       disabled,
       primary,
@@ -109,9 +105,13 @@ class RadioInput extends Component {
       ...otherProps
     } = this.props;
 
-    const { handleOnChange, isControlled } = this;
+    const { handleOnChange } = this;
 
     const { checked: checkedInState } = this.state;
+
+    const currChecked = isControlled
+      ? checked
+      : checkedInState;
 
     return (
       <div
@@ -143,12 +143,11 @@ class RadioInput extends Component {
               theme,
             }),
           ]}
-          defaultChecked={defaultChecked}
           type="checkbox"
           style={{ color: iconColor }}
           onChange={evt => handleOnChange(evt)}
           // eslint-disable-next-line no-nested-ternary
-          checked={defaultChecked ? undefined : (isControlled() ? checked : checkedInState)}
+          checked={currChecked}
           className={BEMClassNames.icon}
         />
         {children}

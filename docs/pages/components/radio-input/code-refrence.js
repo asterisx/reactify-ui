@@ -1,31 +1,5 @@
-const simpleCode = '<RadioInput />';
-const checkedCode = '<RadioInput defaultChecked />';
-const disabledCode = '<RadioInput disabled defaultChecked className="align-self-center">This is disabled</RadioInput>';
-const customIconCode = '<RadioInput iconColor="red" defaultChecked>Dogs, cats and birds</RadioInput>';
-const customSizeCode = `
-<RadioInput small>small</RadioInput>
-<RadioInput medium>medium</RadioInput>
-<RadioInput large>large</RadioInput>
-<RadioInput style={{ fontSize: '40px' }}>style={{ fontSize:'40px' }}</RadioInput>
-`;
-const customThemeCode = `
-<RadioInput primary defaultChecked>Primary</RadioInput>
-<RadioInput secondary defaultChecked>Secondary</RadioInput>
-<RadioInput dark defaultChecked>Dark</RadioInput>
-<RadioInput light defaultChecked>Light</RadioInput>
-<RadioInput info defaultChecked>Info</RadioInput>
-<RadioInput warning defaultChecked>Warning</RadioInput>
-<RadioInput danger defaultChecked>Danger</RadioInput>
-<RadioInput success defaultChecked>Success</RadioInput>
-`;
-const onChangeCode = '<RadioInput onChange={val => alert("checked: " + val}")} />';
-const labelCode = '<RadioInput defaultChecked>Dogs, cats and birds</RadioInput>';
-const labelPositionCode = `
-<RadioInput defaultChecked>Dogs, cats and birds</RadioInput>
-<RadioInput defaultChecked style={{ flexDirection: 'row-reverse' }}>Dogs, cats and birds</RadioInput>
-`;
 const childrenCode = `
-<RadioInput defaultChecked>
+<RadioInput checked>
   <div className="card" style={{ width: '18rem' }}>
     <div className="card-body">
       <h5 className="card-title">Card title</h5>
@@ -35,18 +9,65 @@ const childrenCode = `
   </div>
 </RadioInput>
 `;
+
+const controlledCode = '<RadioInput checked isControlled />';
+
 const customClassCode = '<RadioInput className="text-light bg-dark p-2">This RadioInput has custom class</RadioInput>';
 
+const customIconCode = '<RadioInput iconColor="red" checked>Dogs, cats and birds</RadioInput>';
+
+const customSizeCode = `
+<RadioInput small>small</RadioInput>
+
+<RadioInput medium>medium</RadioInput>
+
+<RadioInput large>large</RadioInput>
+
+<RadioInput style={{ fontSize: '40px' }}>style={{ fontSize:'40px' }}</RadioInput>
+`;
+
+const customThemeCode = `
+<RadioInput primary checked>Primary</RadioInput>
+
+<RadioInput secondary checked>Secondary</RadioInput>
+
+<RadioInput dark checked>Dark</RadioInput>
+
+<RadioInput light checked>Light</RadioInput>
+
+<RadioInput info checked>Info</RadioInput>
+
+<RadioInput warning checked>Warning</RadioInput>
+
+<RadioInput danger checked>Danger</RadioInput>
+
+<RadioInput success checked>Success</RadioInput>
+`;
+
+const disabledCode = '<RadioInput disabled checked className="align-self-center">This is disabled</RadioInput>';
+
+const onChangeCode = '<RadioInput onChange={val => alert("checked: " + val}")} />';
+
+const labelCode = '<RadioInput checked>Dogs, cats and birds</RadioInput>';
+
+const labelPositionCode = `
+<RadioInput checked>Dogs, cats and birds</RadioInput>
+
+<RadioInput checked style={{ flexDirection: 'row-reverse' }}>Dogs, cats and birds</RadioInput>
+`;
+
+const simpleCode = '<RadioInput />';
+
 export {
-  simpleCode,
-  checkedCode,
-  disabledCode,
+  childrenCode,
+  controlledCode,
+  customClassCode,
   customIconCode,
   customSizeCode,
   customThemeCode,
+  disabledCode,
   onChangeCode,
   labelCode,
   labelPositionCode,
-  childrenCode,
-  customClassCode,
+  simpleCode,
 };

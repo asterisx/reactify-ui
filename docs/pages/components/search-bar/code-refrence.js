@@ -1,15 +1,24 @@
+const controlledCode = '<SearchBar value="" isControlled onChange={({ event, value }) => console.log(event, value)} />';
+
 const customColorCode = "<SearchBar style={{ color: 'violet' }} />";
 
 const customClassCode = '<SearchBar className="bg-dark p-3" />';
 
 const customThemeCode = `
 <SearchBar primary />
+
 <SearchBar secondary />
+
 <SearchBar dark />
+
 <SearchBar light />
+
 <SearchBar info />
+
 <SearchBar warning />
+
 <SearchBar danger />
+
 <SearchBar success />
 `;
 
@@ -23,14 +32,16 @@ const simpleCode = '<SearchBar />';
 
 const sizeCode = `
 <SearchBar small />
+
 <SearchBar medium />
+
 <SearchBar large />
+
 <SearchBar style={{ fontSize: '75px' }} />
 `;
 
-const valueCode = '<SearchBar value="" onChange={({ event, value }) => console.log(event, value)} />';
-
 export {
+  controlledCode,
   customColorCode,
   customClassCode,
   customThemeCode,
@@ -39,5 +50,4 @@ export {
   placeholderCode,
   simpleCode,
   sizeCode,
-  valueCode,
 };

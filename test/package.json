@@ -16,8 +16,10 @@
     "@babel/preset-react": "^7.0.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
+    "eslint": "^6.0.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-react-app": "^3.0.8",
+    "eslint-plugin-jest": "^22.7.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.7.1",
     "jest-emotion": "^10.0.10"
@@ -25,7 +27,6 @@
   "dependencies": {
     "babel-plugin-react-css-modules": "^5.2.4",
     "babel-plugin-transform-rename-import": "^2.3.0",
-    "eslint-plugin-jest": "^22.4.1",
     "polished": "^3.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

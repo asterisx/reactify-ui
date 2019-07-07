@@ -15,17 +15,18 @@ describe('Slider Component', () => {
 
     hasDisabledStyle(<Slider />);
 
-    it('should automatically go in controlled mode when checked prop is passed', () => {
+    it('should automatically go in controlled mode when isControlled prop is passed', () => {
+        const value = 20;
         const spy = sinon.spy();
-        const mountWrapper = mount(<Slider value={20} onChange={spy}/>);
-        expect(mountWrapper.state().value).toBe(0);
+        const mountWrapper = mount(<Slider value={value} isControlled onChange={spy}/>);
+        expect(mountWrapper.state().value).toBe(value);
 
-        const value = 10;
+        const newValue = 10;
         const input = mountWrapper.findWhere(n => n.name() === 'input');
-        input.simulate("change", { target: { value } });
+        input.simulate("change", { target: { value: newValue } });
         expect(spy.called).toBeTruthy();
-        expect(spy.firstCall.args[0].value).toBe(value);
-        expect(mountWrapper.state().value).toBe(0);
+        expect(spy.firstCall.args[0].value).toBe(newValue);
+        expect(mountWrapper.state().value).toBe(value);
     });
 
     describe('props', () => {
@@ -40,11 +41,11 @@ describe('Slider Component', () => {
             const input1 = mountWrapper1.find('input');
             expect(input1.props().value).toBe(maxAllowed);
 
-            const mountWrapper2 = mount(<Slider defaultValue={0} minAllowed={minAllowed} />);
+            const mountWrapper2 = mount(<Slider value={0} minAllowed={minAllowed} />);
             const input2 = mountWrapper2.find('input');
             expect(input2.props().value).toBe(minAllowed);
 
-            const mountWrapper3 = mount(<Slider defaultValue={100} maxAllowed={maxAllowed} />);
+            const mountWrapper3 = mount(<Slider value={100} maxAllowed={maxAllowed} />);
             const input3 = mountWrapper3.find('input');
             expect(input3.props().value).toBe(maxAllowed);
         });

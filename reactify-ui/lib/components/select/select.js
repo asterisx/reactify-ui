@@ -260,6 +260,7 @@ class Select extends Component {
           small={small}
           medium={medium}
           large={large}
+          isControlled
           onClick={(evt) => { evt.stopPropagation(); evt.preventDefault(); }}
           onItemClicked={handleOnChange}
           css={[

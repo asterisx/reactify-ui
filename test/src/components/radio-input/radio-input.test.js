@@ -22,20 +22,20 @@ describe('Radio Input Component', () => {
         expect(mountWrapper.state().checked).toBeFalsy();
     });
 
-    it('should be checked when defaultChecked prop is passed', () => {
-        const mountWrapper = mount(<RadioInput defaultChecked={true}/>);
+    it('should be checked when checked prop is passed', () => {
+        const mountWrapper = mount(<RadioInput checked/>);
         expect(mountWrapper.state().checked).toBeTruthy();
     })
 
     it('should change state when clicked', () => {
-        const mountWrapper = mount(<RadioInput defaultChecked/>);
+        const mountWrapper = mount(<RadioInput checked/>);
         mountWrapper.simulate('click');
         expect(mountWrapper.state().checked).toBeTruthy();
     });
 
-    it('should automatically go in controlled mode when checked prop is passed', () => {
+    it('should automatically go in controlled mode when isControlled prop is passed', () => {
         const spy = sinon.spy();
-        const mountWrapper = mount(<RadioInput checked={true} onChange={spy}/>);
+        const mountWrapper = mount(<RadioInput isControlled onChange={spy}/>);
         expect(mountWrapper.state().checked).toBeFalsy();
 
         const input = mountWrapper.find('input');

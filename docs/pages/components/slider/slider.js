@@ -4,16 +4,16 @@
 import React from 'react';
 import { Slider } from '@../../../../reactify-ui/build';
 import {
-  simpleCode,
-  valueCode,
-  disabledCode,
+  controlledCode,
+  customClassCode,
   customIconCode,
   customSizeCode,
   customThemeCode,
+  disabledCode,
   onChangeCode,
-  customClassCode,
-  unFilledCode,
   minMaxCode,
+  unFilledCode,
+  simpleCode,
 } from './code-refrence';
 import { DemoCard, withHeader } from '../../../common';
 
@@ -24,15 +24,15 @@ const SliderDemo = () => (
       uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
     >
-      <Slider defaultValue={20} />
+      <Slider value={20} />
     </DemoCard>
 
     <DemoCard
-      title="Value (Controlled)"
+      title="Controlled"
       uniqueIdentifier="valueUse"
-      sourceCode={valueCode}
+      sourceCode={controlledCode}
     >
-      <Slider value={50} />
+      <Slider value={50} isControlled />
     </DemoCard>
 
     <DemoCard
@@ -45,7 +45,7 @@ const SliderDemo = () => (
         minAllowed={400}
         maxAllowed={1600}
         max={2000}
-        defaultValue={200}
+        value={200}
         step={50}
       />
     </DemoCard>
@@ -55,7 +55,7 @@ const SliderDemo = () => (
       uniqueIdentifier="unFilledUse"
       sourceCode={unFilledCode}
     >
-      <Slider defaultValue={20} fill={false} />
+      <Slider value={20} fill={false} />
     </DemoCard>
 
     <DemoCard
@@ -63,7 +63,7 @@ const SliderDemo = () => (
       uniqueIdentifier="disabled"
       sourceCode={disabledCode}
     >
-      <Slider disabled defaultValue={20} />
+      <Slider disabled value={20} />
     </DemoCard>
 
     <DemoCard
@@ -71,7 +71,7 @@ const SliderDemo = () => (
       uniqueIdentifier="customIcon"
       sourceCode={customIconCode}
     >
-      <Slider fillColor="red" defaultValue={20} />
+      <Slider fillColor="red" value={20} />
     </DemoCard>
 
     <DemoCard
@@ -79,7 +79,7 @@ const SliderDemo = () => (
       uniqueIdentifier="customClass"
       sourceCode={customClassCode}
     >
-      <Slider className="m-5 w-50" defaultValue={20} />
+      <Slider className="m-5 w-50" value={20} />
     </DemoCard>
 
     <DemoCard
@@ -87,16 +87,16 @@ const SliderDemo = () => (
       uniqueIdentifier="customSize"
       sourceCode={customSizeCode}
     >
-      <Slider small defaultValue={20} />
+      <Slider small value={20} />
       <br />
       <br />
-      <Slider medium defaultValue={20} />
+      <Slider medium value={20} />
       <br />
       <br />
-      <Slider large defaultValue={20} />
+      <Slider large value={20} />
       <br />
       <br />
-      <Slider style={{ fontSize: '40px' }} defaultValue={20} />
+      <Slider style={{ fontSize: '40px' }} value={20} />
       <br />
       <br />
     </DemoCard>
@@ -106,28 +106,28 @@ const SliderDemo = () => (
       uniqueIdentifier="themes"
       sourceCode={customThemeCode}
     >
-      <Slider primary defaultValue={20} />
+      <Slider primary value={20} />
       <br />
       <br />
-      <Slider secondary defaultValue={20} />
+      <Slider secondary value={20} />
       <br />
       <br />
-      <Slider dark defaultValue={20} />
+      <Slider dark value={20} />
       <br />
       <br />
-      <Slider light defaultValue={20} />
+      <Slider light value={20} />
       <br />
       <br />
-      <Slider info defaultValue={20} />
+      <Slider info value={20} />
       <br />
       <br />
-      <Slider warning defaultValue={20} />
+      <Slider warning value={20} />
       <br />
       <br />
-      <Slider danger defaultValue={20} />
+      <Slider danger value={20} />
       <br />
       <br />
-      <Slider success defaultValue={20} />
+      <Slider success value={20} />
     </DemoCard>
 
     <DemoCard
@@ -135,7 +135,7 @@ const SliderDemo = () => (
       uniqueIdentifier="onChange"
       sourceCode={onChangeCode}
     >
-      <Slider onChange={({ event, value }) => console.log(event, value)} defaultValue={20} />
+      <Slider onChange={({ event, value }) => console.log(event, value)} value={20} />
     </DemoCard>
   </div>
 );

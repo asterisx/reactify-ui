@@ -4,31 +4,31 @@
 import React from 'react';
 import { Checkbox } from '@../../../../reactify-ui/build';
 import {
-  simpleCode,
-  checkedCode,
-  disabledCode,
+  childrenCode,
+  controlledCode,
+  customClassCode,
   customColorCode,
   customSizeCode,
   customThemeCode,
-  onChangeCode,
+  disabledCode,
   labelPositionCode,
-  childrenCode,
-  customClassCode,
+  onChangeCode,
+  simpleCode,
 } from './code-refrence';
 import { DemoCard, withHeader } from '../../../common';
 
 const CheckboxDemo = () => (
   <div className="w-100">
     <DemoCard title="Simple Use" uniqueIdentifier="simpleUse" sourceCode={simpleCode}>
-      <Checkbox defaultChecked>This is a checkbox</Checkbox>
+      <Checkbox checked>This is a checkbox</Checkbox>
     </DemoCard>
 
-    <DemoCard title="Checked (Controlled)" uniqueIdentifier="checkedUse" sourceCode={checkedCode}>
-      <Checkbox checked>This is a checked label</Checkbox>
+    <DemoCard title="Controlled (checked)" uniqueIdentifier="controlledUse" sourceCode={controlledCode}>
+      <Checkbox checked isControlled>This is a checked label</Checkbox>
     </DemoCard>
 
     <DemoCard title="Disabled" uniqueIdentifier="disabledUse" sourceCode={disabledCode}>
-      <Checkbox defaultChecked disabled>This checkbox is disabled</Checkbox>
+      <Checkbox checked disabled>This checkbox is disabled</Checkbox>
     </DemoCard>
 
     <DemoCard title="Position (left, right)" uniqueIdentifier="checkboxUse" sourceCode={labelPositionCode}>
@@ -38,7 +38,7 @@ const CheckboxDemo = () => (
     </DemoCard>
 
     <DemoCard title="Children" uniqueIdentifier="childrenUse" sourceCode={childrenCode}>
-      <Checkbox defaultChecked>
+      <Checkbox checked>
         <div className="card" style={{ width: '18rem' }}>
           <div className="card-body">
             <h5 className="card-title">Card title</h5>
@@ -50,12 +50,12 @@ const CheckboxDemo = () => (
     </DemoCard>
 
     <DemoCard title="Custom Color" uniqueIdentifier="customColorUse" sourceCode={customColorCode}>
-      <Checkbox defaultChecked iconColor="violet">Custom Color</Checkbox>
+      <Checkbox checked iconColor="violet">Custom Color</Checkbox>
     </DemoCard>
 
 
     <DemoCard title="Custom Class" uniqueIdentifier="customClassUse" sourceCode={customClassCode}>
-      <Checkbox defaultChecked className="bg-dark p-5">This checkbox has custom class</Checkbox>
+      <Checkbox checked className="bg-dark p-5">This checkbox has custom class</Checkbox>
     </DemoCard>
 
     <DemoCard title="Custom Size" uniqueIdentifier="customSizeUse" sourceCode={customSizeCode}>
@@ -70,21 +70,21 @@ const CheckboxDemo = () => (
     </DemoCard>
 
     <DemoCard title="Themes" uniqueIdentifier="customThemeUse" sourceCode={customThemeCode}>
-      <Checkbox primary className="pb-2" defaultChecked>Primary Checkbox</Checkbox>
+      <Checkbox primary className="pb-2" checked>Primary Checkbox</Checkbox>
       <br />
-      <Checkbox secondary className="pb-2" defaultChecked>Secondary Checkbox</Checkbox>
+      <Checkbox secondary className="pb-2" checked>Secondary Checkbox</Checkbox>
       <br />
-      <Checkbox dark className="pb-2" defaultChecked>Dark Checkbox</Checkbox>
+      <Checkbox dark className="pb-2" checked>Dark Checkbox</Checkbox>
       <br />
-      <Checkbox light className="pb-2" defaultChecked>Light Checkbox</Checkbox>
+      <Checkbox light className="pb-2" checked>Light Checkbox</Checkbox>
       <br />
-      <Checkbox info className="pb-2" defaultChecked>Info Checkbox</Checkbox>
+      <Checkbox info className="pb-2" checked>Info Checkbox</Checkbox>
       <br />
-      <Checkbox warning className="pb-2" defaultChecked>Warning Checkbox</Checkbox>
+      <Checkbox warning className="pb-2" checked>Warning Checkbox</Checkbox>
       <br />
-      <Checkbox danger className="pb-2" defaultChecked>Danger Checkbox</Checkbox>
+      <Checkbox danger className="pb-2" checked>Danger Checkbox</Checkbox>
       <br />
-      <Checkbox success defaultChecked>Success Checkbox</Checkbox>
+      <Checkbox success checked>Success Checkbox</Checkbox>
       <br />
     </DemoCard>
 
