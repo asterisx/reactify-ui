@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["8c37"],{"6D5f":function(n,t,w){(window.__NEXT_P=window.__NEXT_P||[]).push(["/getting-started/features",function(){var n=w("SZhA");return{page:n.default||n}}])},SZhA:function(n,t){}},[["6D5f","5d41"]]]);

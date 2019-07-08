@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["8f10"],{"5k+l":function(n,w,i){(window.__NEXT_P=window.__NEXT_P||[]).push(["/getting-started/why-this-library",function(){var n=i("CBY2");return{page:n.default||n}}])},CBY2:function(n,w){}},[["5k+l","5d41"]]]);
