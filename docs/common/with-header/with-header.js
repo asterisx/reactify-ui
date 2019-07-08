@@ -175,7 +175,7 @@ export default function withHeader(Page) {
           </Head>
 
           <TopBar>
-            <TopBar.Logo success className="cursor-pointer">
+            <TopBar.Logo success className="cursor-pointer d-flex align-items-center">
               <IoIosMenu className="icon text-light" onClick={togglePortal} />
               <Link href="/" as={process.env.HOST}>
                 <Paper success large noShadow className="logo p-2 pr-4 h-100 d-inline-flex align-items-center">reactify ui</Paper>
