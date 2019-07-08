@@ -25,7 +25,6 @@ export default function withHeader(Page) {
     render() {
       const sideMenu = callback => (
         <Paper noShadow light className="d-block min-w-250px pl-2 pr-2">
-          <h4 className="border-bottom p-1">Components</h4>
           <Sidebar light className="w-100 pl-3 h-100">
             <SidebarItem
               className="m-1"
