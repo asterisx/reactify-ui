@@ -49,8 +49,8 @@ export default Page = () => <div>
       </Text>
       <LibLink>
         <Link
-          href="/documentation/accordion"
-          as={`${process.env.HOST}/documentation/accordion`}
+          href="/components/accordion"
+          as={`${process.env.HOST}/components/accordion`}
         >
           Check out the documentation.
         </Link>
