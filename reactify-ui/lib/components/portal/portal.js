@@ -54,7 +54,7 @@ class Portal extends PureComponent {
 
   containerChildRef = React.createRef();
 
-  conatinerBgRef = React.createRef();
+  containerBgRef = React.createRef();
 
   containerRef = React.createRef();
 
@@ -69,7 +69,7 @@ class Portal extends PureComponent {
       top,
       this.containerRef.current,
       this.containerChildRef.current,
-      this.conatinerBgRef.current,
+      this.containerBgRef.current,
       hideBackDrop,
     );
   }
@@ -220,7 +220,7 @@ class Portal extends PureComponent {
       top,
       this.containerRef.current,
       this.containerChildRef.current,
-      this.conatinerBgRef.current,
+      this.containerBgRef.current,
       () => { if (this.props.onClose) this.props.onClose({ event }); },
     );
   };
@@ -245,7 +245,7 @@ class Portal extends PureComponent {
         {...otherProps}
       >
         <div
-          ref={this.conatinerBgRef}
+          ref={this.containerBgRef}
           onClick={autoClose ? this.close : undefined}
           css={[
             styles.bg,

@@ -1,6 +1,30 @@
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
+    height: 100%;
 }
+
+#__next {
+    height: 100%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.width-75 {
+    width: 75%;
+}
+
+@media screen and (max-width: 480px) {
+    .width-m-95 {
+        width: 95% !important;
+    }
+}
+
 
 .link-color-dark a {
     color: #343a40!important;
@@ -22,7 +46,6 @@ body {
 .icon {
    width: 70px;
    height: 50px;
-   margin-right: -1.4em;
 }
 
 .cursor-pointer {
@@ -229,4 +252,8 @@ img.stacked-card_size-custom {
 .logo {
     font-family: 'Dancing Script', cursive;
     font-weight: 700;
-    }
+}
+
+.reactify-ui-portal__children  {
+    background: white;
+}

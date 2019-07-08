@@ -57,7 +57,7 @@ const NumberCounterDemo = () => (
       <h6>Primary</h6>
       <Paper primary>Paper has some text, it can act as a base for building components</Paper>
 
-      <h6>Secondary</h6>
+      <h6 className="pt-3">Secondary</h6>
       <Paper secondary>Paper has some text, it can act as a base for building components</Paper>
 
       <h6 className="pt-3">Dark</h6>
