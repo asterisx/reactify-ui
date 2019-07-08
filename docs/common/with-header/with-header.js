@@ -24,50 +24,99 @@ export default function withHeader(Page) {
 
     render() {
       const sideMenu = callback => (
-        <Paper light className="d-block min-w-250px pl-2 pr-2">
+        <Paper noShadow light className="d-block min-w-250px pl-2 pr-2">
           <h4 className="border-bottom p-1">Components</h4>
-          <Sidebar light className="w-100 pl-3">
-            {Object.keys(componentsRouting).map(key => (componentsRouting[key].sub
-              ? (
-                <SidebarItem
-                  className="m-1"
-                  key={componentsRouting[key].name}
-                  text={componentsRouting[key].name}
-                >
-                  <SubSidebar className="m-3">
-                    {Object.keys(componentsRouting[key].sub).map(subKey => (
-                      <SidebarItem
-                        onClick={callback}
-                        className="m-1 margin-left-0_2em link-color-dark"
-                        key={componentsRouting[key].sub[subKey].name}
-                        content={(
-                          <Link
-                            href={componentsRouting[key].sub[subKey].path}
-                            as={`${process.env.HOST + componentsRouting[key].sub[subKey].path}`}
-                          >
-                            {componentsRouting[key].sub[subKey].name}
-                          </Link>
-                    )}
-                      />
-                    ))}
-                  </SubSidebar>
-                </SidebarItem>
-              )
-              : (
+          <Sidebar light className="w-100 pl-3 h-100">
+            <SidebarItem
+              className="m-1"
+              key="getting-started"
+              text="Getting Started"
+            >
+              <SubSidebar className="m-3">
                 <SidebarItem
                   onClick={callback}
-                  className="pl-3 m-1 margin-left-0_2em link-color-dark"
-                  key={componentsRouting[key].name}
                   content={(
                     <Link
-                      href={componentsRouting[key].path}
-                      as={`${process.env.HOST + componentsRouting[key].path}`}
+                      href="/getting-started/installation"
+                      as={`${process.env.HOST}/getting-started/installation`}
                     >
-                      {componentsRouting[key].name}
+                    Installation
                     </Link>
-              )}
+                  )}
                 />
-              )))}
+                <SidebarItem
+                  onClick={callback}
+                  content={(
+                    <Link
+                      href="/getting-started/why-this-library"
+                      as={`${process.env.HOST}/getting-started/why-this-library`}
+                    >
+                    Why this library
+                    </Link>
+                  )}
+                />
+                <SidebarItem
+                  onClick={callback}
+                  content={(
+                    <Link
+                      href="/getting-started/features"
+                      as={`${process.env.HOST}/getting-started/features`}
+                    >
+                    Features
+                    </Link>
+                  )}
+                />
+              </SubSidebar>
+            </SidebarItem>
+            <SidebarItem
+              className="m-1"
+              key="components"
+              text="Components"
+            >
+              <SubSidebar className="m-3">
+                {Object.keys(componentsRouting).map(key => (componentsRouting[key].sub
+                  ? (
+                    <SidebarItem
+                      className="m-1"
+                      key={componentsRouting[key].name}
+                      text={componentsRouting[key].name}
+                    >
+                      <SubSidebar className="m-3">
+                        {Object.keys(componentsRouting[key].sub).map(subKey => (
+                          <SidebarItem
+                            onClick={callback}
+                            className="m-1 margin-left-0_2em link-color-dark"
+                            key={componentsRouting[key].sub[subKey].name}
+                            content={(
+                              <Link
+                                href={componentsRouting[key].sub[subKey].path}
+                                as={`${process.env.HOST + componentsRouting[key].sub[subKey].path}`}
+                              >
+                                {componentsRouting[key].sub[subKey].name}
+                              </Link>
+                    )}
+                          />
+                        ))}
+                      </SubSidebar>
+                    </SidebarItem>
+                  )
+                  : (
+                    <SidebarItem
+                      onClick={callback}
+                      className="pl-3 m-1 margin-left-0_2em link-color-dark"
+                      key={componentsRouting[key].name}
+                      content={(
+                        <Link
+                          href={componentsRouting[key].path}
+                          as={`${process.env.HOST + componentsRouting[key].path}`}
+                        >
+                          {componentsRouting[key].name}
+                        </Link>
+                      )}
+                    />
+                  )))}
+              </SubSidebar>
+            </SidebarItem>
           </Sidebar>
         </Paper>
       );
@@ -77,7 +126,7 @@ export default function withHeader(Page) {
       const { togglePortal } = this;
 
       return (
-        <>
+        <div className="d-flex flex-column h-100">
           <Head>
             <title>Reactify UI</title>
             <link rel="shortcut icon" href={`${process.env.HOST}/static/favicon.ico`} />
@@ -129,7 +178,7 @@ export default function withHeader(Page) {
             <TopBar.Logo success className="cursor-pointer">
               <IoIosMenu className="icon text-light" onClick={togglePortal} />
               <Link href="/" as={process.env.HOST}>
-                <Paper success large noShadow className="logo p-2 pl-4 pr-4 h-100 dflex align-items-center">reactify ui</Paper>
+                <Paper success large noShadow className="logo p-2 pr-4 h-100 d-inline-flex align-items-center">reactify ui</Paper>
               </Link>
             </TopBar.Logo>
             <TopBar.Body />
@@ -137,9 +186,8 @@ export default function withHeader(Page) {
               style={{
                 display: 'inline-flex', alignContent: 'center', alignItems: 'center', padding: '0em 0.5em',
               }}
-              warning
             >
-              <LibLink href="https://github.com/asterisx/reactify-ui">
+              <LibLink style={{ color: 'white' }} href="https://github.com/asterisx/reactify-ui">
                 <Octicon icon={MarkGithub} size="medium" ariaLabel="GitHub" />
               </LibLink>
 
@@ -148,17 +196,17 @@ export default function withHeader(Page) {
               </LibLink>
             </TopBar.Menu>
           </TopBar>
-          <div className="container-fluid">
+          <div className="container-fluid flex-grow-1">
             {isPortalOpen && (
               <Portal left onClose={togglePortal}>
                 {closePortal => sideMenu(closePortal)}
               </Portal>
             )}
-            <div className="row">
+            <div className="row h-100">
               <Page />
             </div>
           </div>
-        </>
+        </div>
       );
     }
   };

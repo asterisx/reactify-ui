@@ -73,6 +73,7 @@ module.exports = {
       '/components/tree-view': { page: '/components/tree-view' },
       '/components/typeahead': { page: '/components/typeahead' },
       '/components/user-profile': { page: '/components/user-profile' },
+      '/getting-started/installation': { page: '/getting-started/installation' },
     };
   },
 };
