@@ -14,14 +14,52 @@ import {
   simpleCode,
   welcomeMessageCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  avatarPositionLink,
+  breakPointsLink,
+  customColorLink,
+  customThemeLink,
+  customClassLink,
+  closeProgramaticallyLink,
+  disabledLink,
+  dropDownPlacementLink,
+  showMessageLink,
+  simpleLink,
+  welcomeMessageLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Typeahead',
+    link: `${Constants.componentsPath}/typeahead`,
+  },
+  nextLink: {
+    text: undefined,
+    link: undefined,
+  },
+};
 
 const UserProfileDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="User Profile">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/user-profile`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
@@ -31,8 +69,8 @@ const UserProfileDemo = () => (
 
     <DemoCard
       title="Disabled"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
@@ -43,8 +81,8 @@ const UserProfileDemo = () => (
 
     <DemoCard
       title="Avatar Position"
-      uniqueIdentifier="avatarPositionUse"
       sourceCode={avatarPositionCode}
+      externalSampleLink={avatarPositionLink}
     >
       <h6>Avatar Position: left</h6>
       <UserProfile
@@ -63,8 +101,8 @@ const UserProfileDemo = () => (
 
     <DemoCard
       title="Show Message"
-      uniqueIdentifier="showMessageUse"
       sourceCode={showMessageCode}
+      externalSampleLink={showMessageLink}
     >
       <h6>showMessage true (Default)</h6>
       <UserProfile
@@ -83,8 +121,8 @@ const UserProfileDemo = () => (
 
     <DemoCard
       title="Welcome Message"
-      uniqueIdentifier="welcomeMessageUse"
       sourceCode={welcomeMessageCode}
+      externalSampleLink={welcomeMessageLink}
     >
       <h6>Default welcomeMessage is 'Welcome'</h6>
       <UserProfile
@@ -96,8 +134,8 @@ const UserProfileDemo = () => (
 
     <DemoCard
       title="Drop Down Placement"
-      uniqueIdentifier="dropDownPlacementUse"
       sourceCode={dropDownPlacementCode}
+      externalSampleLink={dropDownPlacementLink}
     >
       <h6>dropDownPlacement bottom (Default)</h6>
       <UserProfile
@@ -120,8 +158,8 @@ const UserProfileDemo = () => (
 
     <DemoCard
       title="Close Tray Programatically"
-      uniqueIdentifier="closeTrayProgramaticallyUse"
       sourceCode={closeProgramaticallyCode}
+      externalSampleLink={closeProgramaticallyLink}
     >
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
@@ -141,8 +179,8 @@ const UserProfileDemo = () => (
 
     <DemoCard
       title="Breakpoints, hides name and welcome message on these brakpoints"
-      uniqueIdentifier="breakpointsUse"
       sourceCode={breakPointsCode}
+      externalSampleLink={breakPointsLink}
     >
       <h5>Can except a string or array of the following values: sm, md, lg, xl</h5>
       <h6>
@@ -168,8 +206,8 @@ const UserProfileDemo = () => (
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="themesUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <h6>Primary Theme (this is used by default)</h6>
       <UserProfile
@@ -230,8 +268,8 @@ const UserProfileDemo = () => (
 
     <DemoCard
       title="Custom Color"
-      uniqueIdentifier="customColorUse"
       sourceCode={customColorCode}
+      externalSampleLink={customColorLink}
     >
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
@@ -242,8 +280,8 @@ const UserProfileDemo = () => (
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <UserProfile
         imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
@@ -252,7 +290,15 @@ const UserProfileDemo = () => (
         className="p-3"
       />
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(UserProfileDemo);

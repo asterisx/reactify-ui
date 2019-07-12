@@ -4,19 +4,52 @@ import { Spinner } from '../../../../../reactify-ui/build';
 import {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   customSpeedCode,
   simpleCode,
-  sizeCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../../common';
+
+import {
+  customColorLink,
+  customClassLink,
+  customSizeLink,
+  customThemeLink,
+  customSpeedLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Snackbar',
+    link: `${Constants.componentsPath}/snackbar`,
+  },
+  nextLink: {
+    text: 'Spinner - Bars',
+    link: `${Constants.componentsPath}/spinner/bars`,
+  },
+};
 
 const BallsDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Spinner - balls">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/spinner/balls`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Spinner
         balls
@@ -25,8 +58,8 @@ const BallsDemo = () => (
 
     <DemoCard
       title="Size"
-      uniqueIdentifier="sizeUse"
-      sourceCode={sizeCode}
+      sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <h6>small</h6>
       <Spinner
@@ -55,8 +88,8 @@ const BallsDemo = () => (
 
     <DemoCard
       title="Custom Color (any valid CSS solor)"
-      uniqueIdentifier="customColorUse"
       sourceCode={customColorCode}
+      externalSampleLink={customColorLink}
     >
       <Spinner
         style={{ color: 'violet' }}
@@ -65,8 +98,8 @@ const BallsDemo = () => (
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="themeUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <h6>Primary</h6>
       <Spinner
@@ -111,8 +144,8 @@ const BallsDemo = () => (
 
     <DemoCard
       title="Controlling Speed"
-      uniqueIdentifier="customSpeedUse"
       sourceCode={customSpeedCode}
+      externalSampleLink={customSpeedLink}
     >
       <h6 className="mt-3 mb-3">Slow</h6>
       <Spinner
@@ -127,14 +160,22 @@ const BallsDemo = () => (
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <Spinner
         className="bg-dark text-light"
       />
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(BallsDemo);

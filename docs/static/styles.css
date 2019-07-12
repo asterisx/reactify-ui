@@ -44,7 +44,7 @@ body {
 }
 
 .icon {
-   width: 70px;
+   width: 60px;
    height: 50px;
 }
 
@@ -256,4 +256,12 @@ img.stacked-card_size-custom {
 
 .reactify-ui-portal__children  {
     background: white;
+}
+
+.child-pre-m-0 > pre {
+    margin: 0 !important;
+}
+
+.h-800px {
+    height: 800px;
 }

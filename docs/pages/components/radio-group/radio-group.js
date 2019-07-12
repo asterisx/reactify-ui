@@ -6,14 +6,44 @@ import {
   simpleCode,
   disabledCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  onSelectionLink,
+  simpleLink,
+  disabledLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Progress Bar',
+    link: `${Constants.componentsPath}/progress-bar`,
+  },
+  nextLink: {
+    text: 'Radio Input',
+    link: `${Constants.componentsPath}/radio-input`,
+  },
+};
 
 const RadioGroupDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Radio Group">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/radio-group`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <RadioGroup>
         <RadioInput index={0}>option 1</RadioInput>
@@ -24,8 +54,8 @@ const RadioGroupDemo = () => (
 
     <DemoCard
       title="onSelection"
-      uniqueIdentifier="onSelectionUse"
       sourceCode={onSelectionCode}
+      externalSampleLink={onSelectionLink}
     >
       <RadioGroup onSelectionChange={({ index }) => alert(`Selected index: ${index}`)}>
         <RadioInput index={0}>option 1</RadioInput>
@@ -36,8 +66,8 @@ const RadioGroupDemo = () => (
 
     <DemoCard
       title="Disabled"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <RadioGroup disabled>
         <RadioInput index={0}>option 1</RadioInput>
@@ -45,7 +75,15 @@ const RadioGroupDemo = () => (
         <RadioInput index={2}>option 3</RadioInput>
       </RadioGroup>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(RadioGroupDemo);

@@ -5,25 +5,58 @@
 import React, { Component } from 'react';
 import { Chips, Chip } from '@../../../../reactify-ui/build';
 import {
-  disabledCode,
   customColorCode,
+  customSizeCode,
   customThemeCode,
-  customSizesCode,
+  disabledCode,
   onCloseCode,
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customColorLink,
+  customSizesLink,
+  customThemeLink,
+  disabledLink,
+  onCloseLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Checkbox',
+    link: `${Constants.componentsPath}/checkbox`,
+  },
+  nextLink: {
+    text: 'Context Menu',
+    link: `${Constants.componentsPath}/context-menu`,
+  },
+};
 
 class ListPanelDemo extends Component {
   state = { simpleItems: ['Chip 1', 'Chip 2', 'Chip 3'] };
 
   render() {
     return (
-      <div className="w-100">
+      <DemoPage componentName="Chips">
+        <ComponentInfo
+          productionReady
+          responsive
+          githubLink={`${Constants.githubComponentsPath}/chips`}
+        />
         <DemoCard
           title="Simple Use"
-          uniqueIdentifier="simpleUse"
           sourceCode={simpleCode}
+          externalSampleLink={simpleLink}
         >
           <Chips>
             {this.state.simpleItems.map((si, index) => (
@@ -41,16 +74,16 @@ class ListPanelDemo extends Component {
 
         <DemoCard
           title="Custom Color"
-          uniqueIdentifier="customColorUse"
           sourceCode={customColorCode}
+          externalSampleLink={customColorLink}
         >
           <Chip style={{ backgroundColor: 'violet' }}>Custom Color</Chip>
         </DemoCard>
 
         <DemoCard
           title="Disabled Use"
-          uniqueIdentifier="disabledUse"
           sourceCode={disabledCode}
+          externalSampleLink={disabledLink}
         >
           <h6>
             disabled
@@ -76,8 +109,8 @@ class ListPanelDemo extends Component {
 
         <DemoCard
           title="Custom Sizes"
-          uniqueIdentifier="customSizesUse"
-          sourceCode={customSizesCode}
+          sourceCode={customSizeCode}
+          externalSampleLink={customSizesLink}
         >
           <h6 className="pt-3 pb-3">size="small"</h6>
           <Chip small>Item 1</Chip>
@@ -93,13 +126,12 @@ class ListPanelDemo extends Component {
 
           <h3 className="pt-3 pb-3">size="40px"</h3>
           <Chip style={{ fontSize: '40px' }}>Item 1</Chip>
-
         </DemoCard>
 
         <DemoCard
           title="Theme Use"
-          uniqueIdentifier="themeUse"
           sourceCode={customThemeCode}
+          externalSampleLink={customThemeLink}
         >
           <h6 className="pt-3 pb-3">Primary theme</h6>
           <Chip primary>Item 1</Chip>
@@ -124,17 +156,24 @@ class ListPanelDemo extends Component {
 
           <h6 className="pt-3 pb-3">Success theme</h6>
           <Chip success>Item 1</Chip>
-
         </DemoCard>
 
         <DemoCard
           title="onCloseEvent"
-          uniqueIdentifier="onCloseChangeUse"
           sourceCode={onCloseCode}
+          externalSampleLink={onCloseLink}
         >
           <Chip onCloseClick={() => alert('Close Clicked')}>Item 1</Chip>
         </DemoCard>
-      </div>
+
+        <BottomNav
+          className="mt-4 mb-4"
+          prevLinkText={bottomNavLinks.prevLink.text}
+          prevLink={bottomNavLinks.prevLink.link}
+          nextLinkText={bottomNavLinks.nextLink.text}
+          nextLink={bottomNavLinks.nextLink.link}
+        />
+      </DemoPage>
     );
   }
 }

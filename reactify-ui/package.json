@@ -28,21 +28,24 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
     "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-npm i -S react-docgenstandard-react": "^6.0.0",
     "eslint-config-react-app": "^3.0.8",
     "eslint-config-standard": "^11.0.0",
-    "eslint-config-standard-react": "^6.0.0",
     "eslint-plugin-flowtype": "^2.50.3",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-standard": "^3.1.0"
+    "eslint-plugin-standard": "^3.1.0",
+    "react-docgen": "^4.1.1"
   },
   "scripts": {
-    "build": "rm -rf build && babel lib --out-dir build"
+    "build": "rm -rf build && babel lib --out-dir build",
+    "generate-doc": "react-docgen lib/components -o documentation.json"
   },
   "eslintConfig": {
     "extends": "react-app"

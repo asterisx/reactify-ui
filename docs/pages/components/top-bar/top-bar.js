@@ -3,18 +3,48 @@ import React from 'react';
 import Octicon, { MarkGithub } from '@githubprimer/octicons-react';
 import { TopBar, Paper } from '@../../../../reactify-ui/build';
 import {
+  customSizeCode,
+  customThemeCode,
   simpleCode,
-  themeCode,
-  sizeCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customSizeLink,
+  customThemeLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Tooltip',
+    link: `${Constants.componentsPath}/tooltip`,
+  },
+  nextLink: {
+    text: 'Tree View',
+    link: `${Constants.componentsPath}/tree-view`,
+  },
+};
 
 const TopBarDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Top Bar">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/top-bar`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <TopBar>
         <TopBar.Logo>
@@ -36,8 +66,8 @@ const TopBarDemo = () => (
 
     <DemoCard
       title="Theme Use"
-      uniqueIdentifier="themesUse"
-      sourceCode={themeCode}
+      sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <TopBar>
         <TopBar.Logo>
@@ -210,8 +240,8 @@ const TopBarDemo = () => (
 
     <DemoCard
       title="Size Use"
-      uniqueIdentifier="sizeUse"
-      sourceCode={sizeCode}
+      sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <h6 className="pt-3 pb-3">small</h6>
       <TopBar small>
@@ -282,7 +312,15 @@ const TopBarDemo = () => (
         </TopBar.Menu>
       </TopBar>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(TopBarDemo);

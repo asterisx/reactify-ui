@@ -7,7 +7,32 @@ import {
   stylingCode,
   tabsDisabledCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  simpleLink,
+  stylingLink,
+  tabsDisabledLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Switch',
+    link: `${Constants.componentsPath}/switch`,
+  },
+  nextLink: {
+    text: 'Text',
+    link: `${Constants.componentsPath}/text`,
+  },
+};
 
 class TabsDemo extends Component {
   state = {
@@ -17,11 +42,16 @@ class TabsDemo extends Component {
 
   render() {
     return (
-      <div className="w-100">
+      <DemoPage componentName="Tabs">
+        <ComponentInfo
+          productionReady
+          responsive
+          githubLink={`${Constants.githubComponentsPath}/tabs`}
+        />
         <DemoCard
           title="Simple Use"
-          uniqueIdentifier="simpleUse"
           sourceCode={simpleCode}
+          externalSampleLink={simpleLink}
         >
           <Tabs
             selectedIndex={this.state.simpleSelectedIndex}
@@ -94,8 +124,8 @@ class TabsDemo extends Component {
 
         <DemoCard
           title="Tabs Disabled"
-          uniqueIdentifier="tabsDisabledUse"
           sourceCode={tabsDisabledCode}
+          externalSampleLink={tabsDisabledLink}
         >
           <Tabs
             tabsDisabled
@@ -137,8 +167,8 @@ class TabsDemo extends Component {
 
         <DemoCard
           title="Styling"
-          uniqueIdentifier="stylingUse"
           sourceCode={stylingCode}
+          externalSampleLink={stylingLink}
         >
           <Tabs
             onSelectionChange={
@@ -190,7 +220,15 @@ class TabsDemo extends Component {
             </Tab>
           </Tabs>
         </DemoCard>
-      </div>
+
+        <BottomNav
+          className="mt-4 mb-4"
+          prevLinkText={bottomNavLinks.prevLink.text}
+          prevLink={bottomNavLinks.prevLink.link}
+          nextLinkText={bottomNavLinks.nextLink.text}
+          nextLink={bottomNavLinks.nextLink.link}
+        />
+      </DemoPage>
     );
   }
 }

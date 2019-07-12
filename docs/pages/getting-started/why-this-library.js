@@ -30,7 +30,7 @@ const Installation = () => (
     <h4 className="mt-3 align-self-start ml-2">So, why a new UI components library?</h4>
     <p className="mt-3 align-self-start ml-2">Here are some of the features we added which we thought other libs were lacking and they help take much of the pain away.</p>
     <Paper secondary className="align-self-center d-block p-3 m-1 mt-3 width-m-95 width-75 mx-auto">
-        <ul className="h4">
+        <ul className="h6">
             <li className="mb-4">
                 <b>Component Composition.</b> Most of the components are built to accept other components as children which can be used to make some new powerful and interesting components.
                 <br />

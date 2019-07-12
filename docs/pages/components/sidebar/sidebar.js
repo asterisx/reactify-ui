@@ -14,7 +14,33 @@ import {
   simpleFullCode,
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customDeclarativeLink,
+  customThemeLink,
+  simpleFullLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Select',
+    link: `${Constants.componentsPath}/select`,
+  },
+  nextLink: {
+    text: 'Slider',
+    link: `${Constants.componentsPath}/slider`,
+  },
+};
 
 const items = [
   {
@@ -89,27 +115,32 @@ const items = [
 ];
 
 const SidebarDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Sidebar">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/sidebar`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Sidebar className="w-300px" items={items} />
     </DemoCard>
 
     <DemoCard
       title="Simple Use (positionFull)"
-      uniqueIdentifier="simpleFullUse"
       sourceCode={simpleFullCode}
+      externalSampleLink={simpleFullLink}
     >
       <Sidebar className="w-300px h-160px" items={items} positionFull />
     </DemoCard>
 
     <DemoCard
       title="Themes Use"
-      uniqueIdentifier="themesUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <h5>Theming is only for the default icons</h5>
       <h5>Primary Theme</h5>
@@ -130,8 +161,8 @@ const SidebarDemo = () => (
 
     <DemoCard
       title="Custom Content (Declarative)"
-      uniqueIdentifier="customDeclarativeUse"
       sourceCode={customDeclarativeCode}
+      externalSampleLink={customDeclarativeLink}
     >
       <h5>Declared Menu</h5>
       <Sidebar className="w-300px">
@@ -180,7 +211,15 @@ const SidebarDemo = () => (
         <SidebarItem text="Option 2" />
       </Sidebar>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(SidebarDemo);

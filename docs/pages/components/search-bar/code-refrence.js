@@ -4,6 +4,16 @@ const customColorCode = "<SearchBar style={{ color: 'violet' }} />";
 
 const customClassCode = '<SearchBar className="bg-dark p-3" />';
 
+const customSizeCode = `
+<SearchBar small />
+
+<SearchBar medium />
+
+<SearchBar large />
+
+<SearchBar style={{ fontSize: '75px' }} />
+`;
+
 const customThemeCode = `
 <SearchBar primary />
 
@@ -30,24 +40,14 @@ const placeholderCode = '<SearchBar placeholder="Some Placeholder" />';
 
 const simpleCode = '<SearchBar />';
 
-const sizeCode = `
-<SearchBar small />
-
-<SearchBar medium />
-
-<SearchBar large />
-
-<SearchBar style={{ fontSize: '75px' }} />
-`;
-
 export {
   controlledCode,
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   disabledCode,
   eventCode,
   placeholderCode,
   simpleCode,
-  sizeCode,
 };

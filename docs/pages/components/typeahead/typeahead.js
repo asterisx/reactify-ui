@@ -4,16 +4,47 @@ import React from 'react';
 import { Typeahead, Paper } from '@../../../../reactify-ui/build';
 import {
   controlledCode,
+  customSizeCode,
   customThemeCode,
   declarativeCode,
   disabledCode,
   eventsCode,
-  preSearchTermUse,
   notSelectableCode,
+  preSearchTermCode,
   simpleCode,
-  sizeCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  controlledLink,
+  customSizeLink,
+  customThemeLink,
+  declarativeLink,
+  disabledLink,
+  eventsLink,
+  notSelectableLink,
+  preSearchTermLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Tree View',
+    link: `${Constants.componentsPath}/tree-view`,
+  },
+  nextLink: {
+    text: 'User Profile',
+    link: `${Constants.componentsPath}/user-profile`,
+  },
+};
 
 const suggestions = [
   {
@@ -31,112 +62,117 @@ const suggestions = [
 ];
 
 const PaginatorDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Typeahead">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/typeahead`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
-      <Typeahead suggestions={suggestions} />
+      <Typeahead style={{ background: 'white' }} suggestions={suggestions} />
     </DemoCard>
 
     <DemoCard
       title="Controlled"
-      uniqueIdentifier="isControlledUse"
       sourceCode={controlledCode}
+      externalSampleLink={controlledLink}
     >
       <h6>
         Passing in isControlled makes this to be controlled,
         which means no filtering is performed.
       </h6>
-      <Typeahead isControlled suggestions={suggestions} />
+      <Typeahead style={{ background: 'white' }} isControlled suggestions={suggestions} />
     </DemoCard>
 
     <DemoCard
       title="Not Selectable"
-      uniqueIdentifier="notSelectable"
       sourceCode={notSelectableCode}
+      externalSampleLink={notSelectableLink}
     >
       <h6>
         Passing in isSelectable false will make the suggestion non selectable
       </h6>
-      <Typeahead isSelectable={false} suggestions={suggestions} />
+      <Typeahead style={{ background: 'white' }} isSelectable={false} suggestions={suggestions} />
     </DemoCard>
 
     <DemoCard
       title="Disabled Use"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
-      <Typeahead disabled suggestions={suggestions} />
+      <Typeahead style={{ background: 'white' }} disabled suggestions={suggestions} />
     </DemoCard>
 
     <DemoCard
       title="Pre SearchTerm"
-      uniqueIdentifier="preSearchTermUse"
-      sourceCode={preSearchTermUse}
+      sourceCode={preSearchTermCode}
+      externalSampleLink={preSearchTermLink}
     >
-      <Typeahead searchTerm="value" suggestions={suggestions} />
+      <Typeahead style={{ background: 'white' }} searchTerm="value" suggestions={suggestions} />
     </DemoCard>
 
     <DemoCard
       title="Size"
-      uniqueIdentifier="sizeUse"
-      sourceCode={sizeCode}
+      sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <h6>small</h6>
-      <Typeahead suggestions={suggestions} small />
+      <Typeahead style={{ background: 'white' }} suggestions={suggestions} small />
 
       <h6 className="pt-3">
             medium
         {' '}
         <b className="pl-3">default</b>
       </h6>
-      <Typeahead suggestions={suggestions} medium />
+      <Typeahead style={{ background: 'white' }} suggestions={suggestions} medium />
 
       <h6 className="pt-3">large</h6>
-      <Typeahead suggestions={suggestions} large />
+      <Typeahead style={{ background: 'white' }} suggestions={suggestions} large />
 
       <h6 className="pt-3">{'style={{ fontSize: \'75px\' }}'}</h6>
-      <Typeahead suggestions={suggestions} style={{ fontSize: '75px' }} />
+      <Typeahead style={{ background: 'white', fontSize: '75px' }} suggestions={suggestions} />
     </DemoCard>
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="themesUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <h6>Primary</h6>
-      <Typeahead suggestions={suggestions} primary />
+      <Typeahead style={{ background: 'white' }} suggestions={suggestions} primary />
 
       <h6>Secondary</h6>
-      <Typeahead suggestions={suggestions} secondary />
+      <Typeahead style={{ background: 'white' }} suggestions={suggestions} secondary />
 
       <h6 className="pt-3">Dark</h6>
-      <Typeahead suggestions={suggestions} dark />
+      <Typeahead style={{ background: 'white' }} suggestions={suggestions} dark />
 
       <h6 className="pt-3">Light</h6>
-      <Typeahead suggestions={suggestions} light />
+      <Typeahead style={{ background: 'white' }} suggestions={suggestions} light />
 
       <h6 className="pt-3">Info</h6>
-      <Typeahead suggestions={suggestions} info />
+      <Typeahead style={{ background: 'white' }} suggestions={suggestions} info />
 
       <h6 className="pt-3">Warning</h6>
-      <Typeahead suggestions={suggestions} warning />
+      <Typeahead style={{ background: 'white' }} suggestions={suggestions} warning />
 
       <h6 className="pt-3">Danger</h6>
-      <Typeahead suggestions={suggestions} danger />
+      <Typeahead style={{ background: 'white' }} suggestions={suggestions} danger />
 
       <h6 className="pt-3">Success</h6>
-      <Typeahead suggestions={suggestions} success />
+      <Typeahead style={{ background: 'white' }} suggestions={suggestions} success />
     </DemoCard>
 
     <DemoCard
       title="Declarative"
-      uniqueIdentifier="declarativeUse"
       sourceCode={declarativeCode}
+      externalSampleLink={declarativeLink}
     >
-      <Typeahead onChange={(...args) => console.log(...args)}>
+      <Typeahead style={{ background: 'white' }} onChange={(...args) => console.log(...args)}>
         <Typeahead.Suggestion
           isSelectable={false}
           index={1}
@@ -161,12 +197,20 @@ const PaginatorDemo = () => (
 
     <DemoCard
       title="Events"
-      uniqueIdentifier="eventsUse"
       sourceCode={eventsCode}
+      externalSampleLink={eventsLink}
     >
-      <Typeahead suggestions={suggestions} onChange={(...args) => console.log(...args)} />
+      <Typeahead style={{ background: 'white' }} suggestions={suggestions} onChange={(...args) => console.log(...args)} />
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(PaginatorDemo);

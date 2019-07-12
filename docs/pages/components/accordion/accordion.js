@@ -9,14 +9,46 @@ import {
   simpleCode,
   singularCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customHeaderLink,
+  propsLink,
+  simpleUseLink,
+  singularUseLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: undefined,
+    link: undefined,
+  },
+  nextLink: {
+    text: 'Alert',
+    link: `${Constants.componentsPath}/alert`,
+  },
+};
 
 const AccordionDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Accordion">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/accordion`}
+    />
+
     <DemoCard
       title="Simple Use (Themed)"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleUseLink}
     >
       <Accordion success>
         <Accordion.Item index={1} warning>
@@ -53,8 +85,8 @@ const AccordionDemo = () => (
 
     <DemoCard
       title="Singular"
-      uniqueIdentifier="singularUse"
       sourceCode={singularCode}
+      externalSampleLink={singularUseLink}
     >
       <Accordion multiple={false}>
         <Accordion.Item index={1}>
@@ -91,8 +123,8 @@ const AccordionDemo = () => (
 
     <DemoCard
       title="Props"
-      uniqueIdentifier="propsUse"
       sourceCode={propsCode}
+      externalSampleLink={propsLink}
     >
       <Accordion onChange={({ index, opened }) => { console.log(index, opened); }}>
         <Accordion.Item index={1} open>
@@ -138,8 +170,8 @@ const AccordionDemo = () => (
 
     <DemoCard
       title="Custom Header"
-      uniqueIdentifier="customHeaderUse"
       sourceCode={customHeaderCode}
+      externalSampleLink={customHeaderLink}
     >
       <Accordion onChange={({ index, opened }) => { console.log(index, opened); }}>
         <Accordion.Item index={1}>
@@ -173,7 +205,15 @@ const AccordionDemo = () => (
         </Accordion.Item>
       </Accordion>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(AccordionDemo);

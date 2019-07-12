@@ -12,6 +12,28 @@ const customClassCode = `
 />
 `;
 
+const customSizeCode = `
+<Spinner
+  clock
+  small
+/>
+
+<Spinner
+  clock
+  medium
+/>
+
+<Spinner
+  clock
+  large
+/>  
+
+<Spinner
+  clock
+  style={{ fontSize: '75px' }}
+/>
+`;
+
 const customThemeCode = `
 <Spinner
   clock
@@ -61,28 +83,6 @@ const simpleCode = `
 />
 `;
 
-const sizeCode = `
-<Spinner
-  clock
-  small
-/>
-
-<Spinner
-  clock
-  medium
-/>
-
-<Spinner
-  clock
-  large
-/>  
-
-<Spinner
-  clock
-  style={{ fontSize: '75px' }}
-/>
-`;
-
 const customSpeedCode = `
 <Spinner
   clock
@@ -98,8 +98,8 @@ const customSpeedCode = `
 export {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   customSpeedCode,
   simpleCode,
-  sizeCode,
 };

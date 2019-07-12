@@ -12,6 +12,28 @@ const customClassCode = `
 />
 `;
 
+const customSizeCode = `
+<Spinner
+  wave
+  small
+/>
+
+<Spinner
+  wave
+  medium
+/>
+
+<Spinner
+  wave
+  large
+/>  
+
+<Spinner
+  wave
+  style={{ fontSize: '75px' }}
+/>
+`;
+
 const customThemeCode = `
 <Spinner
   wave
@@ -61,28 +83,6 @@ const simpleCode = `
 />
 `;
 
-const sizeCode = `
-<Spinner
-  wave
-  small
-/>
-
-<Spinner
-  wave
-  medium
-/>
-
-<Spinner
-  wave
-  large
-/>  
-
-<Spinner
-  wave
-  style={{ fontSize: '75px' }}
-/>
-`;
-
 const customSpeedCode = `
 <Spinner
   wave
@@ -98,8 +98,8 @@ const customSpeedCode = `
 export {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   customSpeedCode,
   simpleCode,
-  sizeCode,
 };

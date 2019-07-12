@@ -30,7 +30,7 @@ const Installation = () => (
     </Breadcrumbs>
     <Paper className="d-block width-m-95 width-50 p-3 m-1 mt-5 align-self-center" secondary>
       <h4>To install the library </h4>
-      <Highlight className="javascript html"> npm i reactify-ui </Highlight>
+      <Highlight className="javascript html">npm i reactify-ui</Highlight>
     </Paper>
     <Paper className="d-block width-m-95 width-50 p-3 m-1 mt-5 align-self-center" secondary>
       <h4>Basic Usage </h4>
@@ -52,7 +52,7 @@ export default Page = () => <div>
           href="/components/accordion"
           as={`${process.env.HOST}/components/accordion`}
         >
-          Check out the documentation.
+          Check out the components.
         </Link>
       </LibLink>
     </div>

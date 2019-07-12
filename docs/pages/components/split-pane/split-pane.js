@@ -15,14 +15,47 @@ import {
   simpleCode,
   verticalCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customResizerLink,
+  customThemeLink,
+  onChangeLink,
+  resizerDisabledLink,
+  simpleLink,
+  verticalLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Spinner - Wave',
+    link: `${Constants.componentsPath}/spinner/wave`,
+  },
+  nextLink: {
+    text: 'Stacked Card',
+    link: `${Constants.componentsPath}/stacked-card`,
+  },
+};
 
 const SplitPaneDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Split Pane">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/split-pane`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <SplitPane style={{ height: '300px', width: '100%' }}>
         <Pane style={{ width: '50%' }}>This is pane 1</Pane>
@@ -32,8 +65,8 @@ const SplitPaneDemo = () => (
 
     <DemoCard
       title="Theming"
-      uniqueIdentifier="themingUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <SplitPane style={{ height: '80px', width: '100%' }}>
         <Pane style={{ width: '50%' }}>This is pane 1</Pane>
@@ -78,8 +111,8 @@ const SplitPaneDemo = () => (
 
     <DemoCard
       title="Custom Resizer"
-      uniqueIdentifier="customResizerUse"
       sourceCode={customResizerCode}
+      externalSampleLink={customResizerLink}
     >
       <SplitPane style={{ height: '300px', width: '100%' }}>
         <Pane style={{ width: '50%' }}>This is pane 1</Pane>
@@ -101,8 +134,8 @@ const SplitPaneDemo = () => (
 
     <DemoCard
       title="Resizer Disabled"
-      uniqueIdentifier="resizerDisabledUse"
       sourceCode={resizerDisabledCode}
+      externalSampleLink={resizerDisabledLink}
     >
       <SplitPane style={{ height: '300px', width: '100%' }} disabled>
         <Pane style={{ width: '50%' }}>This is pane 1</Pane>
@@ -112,8 +145,8 @@ const SplitPaneDemo = () => (
 
     <DemoCard
       title="Vertical"
-      uniqueIdentifier="verticalUse"
       sourceCode={verticalCode}
+      externalSampleLink={verticalLink}
     >
       <SplitPane style={{ maxHeight: '700px' }} vertical>
         <Pane style={{ height: '300px' }}>This is div 1</Pane>
@@ -123,15 +156,23 @@ const SplitPaneDemo = () => (
 
     <DemoCard
       title="onChange Event"
-      uniqueIdentifier="onChangeUse"
       sourceCode={onChangeCode}
+      externalSampleLink={onChangeLink}
     >
       <SplitPane onChange={({ delta }) => console.log(delta)}>
         <Pane style={{ height: '300px' }}>This is pane 1</Pane>
         <Pane style={{ height: '300px' }}>This is pane 2</Pane>
       </SplitPane>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(SplitPaneDemo);

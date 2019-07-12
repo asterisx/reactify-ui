@@ -4,26 +4,58 @@ import { Text } from '@../../../../reactify-ui/build';
 import {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   simpleCode,
-  sizeCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customColorLink,
+  customClassLink,
+  customSizeLink,
+  customThemeLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Tabs',
+    link: `${Constants.componentsPath}/tabs`,
+  },
+  nextLink: {
+    text: 'Timer',
+    link: `${Constants.componentsPath}/timer`,
+  },
+};
 
 const TextDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Text">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/text`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Text>A simple text</Text>
     </DemoCard>
 
     <DemoCard
       title="Size"
-      uniqueIdentifier="sizeUse"
-      sourceCode={sizeCode}
+      sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <h6>small</h6>
       <Text small>A small text</Text>
@@ -44,16 +76,16 @@ const TextDemo = () => (
 
     <DemoCard
       title="Custom Color (any valid CSS solor)"
-      uniqueIdentifier="customColorUse"
       sourceCode={customColorCode}
+      externalSampleLink={customColorLink}
     >
       <Text style={{ color: 'violet' }}>A custom color text</Text>
     </DemoCard>
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="themeUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <h6>Primary</h6>
       <Text primary>A primary text</Text>
@@ -78,17 +110,24 @@ const TextDemo = () => (
 
       <h6 className="pt-3">Success</h6>
       <Text success>A success text</Text>
-
     </DemoCard>
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <Text className="bg-dark text-light p-1">A custom class text</Text>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(TextDemo);

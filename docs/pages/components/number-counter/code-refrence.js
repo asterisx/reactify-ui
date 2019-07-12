@@ -14,6 +14,32 @@ const customClassCode = `
 />
 `;
 
+const customSizeCode = `
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  small
+/>
+
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  medium
+/>
+
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  large
+/>
+
+<NumberCounter
+  from={this.state.simpleCounter.from}
+  to={this.state.simpleCounter.to}
+  style={{ fontSize: '75px' }}
+/>
+`;
+
 const customThemeCode = `
 <NumberCounter
   from={this.state.simpleCounter.from}
@@ -63,23 +89,6 @@ const customThemeCode = `
 />
 `;
 
-const closeProgramaticallyCode = `
-<UserProfile
-  imgPath="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  userName="Joe"
->
-{closeTray => (
-  <button
-    className="btn btn-dark p-5"
-    onClick={() => closeTray}
-    type="button"
-  >
-Close Tray
-  </button>
-)}
-</UserProfile>
-`;
-
 const disabledCode = `
 <NumberCounter
   from={this.state.simpleCounter.from}
@@ -94,15 +103,13 @@ const dynamicCode = `
   to={this.state.directionCounter.to}
 />
 
-<button
-  type="button"
-  className="btn btn-primary d-inline"
+<Button
   onClick={
     () => this.setState({ directionCounter: { to: Math.floor(Math.random() * 10000) } })
   }
 >
   Random
-</button>
+</Button>
 `;
 
 const delayCode = `
@@ -137,14 +144,13 @@ const resetCode = `
   interval={100}
 >
 {reset => (
-  <button
-    type="button"
-    className="btn btn-primary d-block ml-3"
+  <Button
+    className="ml-3"
     onClick={() => reset()}
   >
     Reset
-  </button>
-)}
+  </Button>
+)
 </NumberCounter>
 `;
 
@@ -155,38 +161,11 @@ const simpleCode = `
 />
 `;
 
-const sizeCode = `
-<NumberCounter
-  from={this.state.simpleCounter.from}
-  to={this.state.simpleCounter.to}
-  small
-/>
-
-<NumberCounter
-  from={this.state.simpleCounter.from}
-  to={this.state.simpleCounter.to}
-  medium
-/>
-
-<NumberCounter
-  from={this.state.simpleCounter.from}
-  to={this.state.simpleCounter.to}
-  large
-/>
-
-<NumberCounter
-  from={this.state.simpleCounter.from}
-  to={this.state.simpleCounter.to}
-  style={{ fontSize: '75px' }}
-/>
-`;
-
-
 export {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
-  closeProgramaticallyCode,
   disabledCode,
   delayCode,
   dynamicCode,
@@ -194,5 +173,4 @@ export {
   intervalCode,
   resetCode,
   simpleCode,
-  sizeCode,
 };

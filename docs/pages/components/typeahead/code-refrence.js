@@ -1,8 +1,11 @@
-const disabledCode = '<Typeahead disabled suggestions={suggestions} />';
-
-const preSearchTermUse = '<Typeahead searchTerm="value" suggestions={suggestions} />';
-
 const controlledCode = '<Typeahead isControlled suggestions={suggestions} />';
+
+const customSizeCode = `
+<Typeahead suggestions={suggestions} small />
+<Typeahead suggestions={suggestions} medium />
+<Typeahead suggestions={suggestions} large />
+<Typeahead suggestions={suggestions} style={{ fontSize: '75px' }} />
+`;
 
 const customThemeCode = `
 <Typeahead suggestions={suggestions} primary />
@@ -14,6 +17,8 @@ const customThemeCode = `
 <Typeahead suggestions={suggestions} danger />
 <Typeahead suggestions={suggestions} success />
 `;
+
+const disabledCode = '<Typeahead disabled suggestions={suggestions} />';
 
 const declarativeCode = `
 <Typeahead onChange={(...args) => console.log(...args)}>
@@ -43,23 +48,18 @@ const eventsCode = '<Typeahead suggestions={suggestions} onChange={(...args) => 
 
 const notSelectableCode = '<Typeahead isSelectable={false} suggestions={suggestions} />';
 
-const simpleCode = '<Typeahead suggestions={suggestions} />';
+const preSearchTermCode = '<Typeahead searchTerm="value" suggestions={suggestions} />';
 
-const sizeCode = `
-<Typeahead suggestions={suggestions} small />
-<Typeahead suggestions={suggestions} medium />
-<Typeahead suggestions={suggestions} large />
-<Typeahead suggestions={suggestions} style={{ fontSize: '75px' }} />
-`;
+const simpleCode = '<Typeahead suggestions={suggestions} />';
 
 export {
   controlledCode,
+  customSizeCode,
   customThemeCode,
   declarativeCode,
   disabledCode,
   eventsCode,
-  preSearchTermUse,
   notSelectableCode,
+  preSearchTermCode,
   simpleCode,
-  sizeCode,
 };

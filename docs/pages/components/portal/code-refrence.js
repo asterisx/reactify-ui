@@ -1,7 +1,43 @@
-const simpleCode = `
-<Button onClick={() => this.setState({ simplePortalOpen: true })}>Open Portal</Button>
-{this.state.simplePortalOpen && (
-<Portal top>
+const autoCloseCode = `
+<Button
+onClick={() => this.setState({ autoClosePortalOpen: true })}
+>
+  Open Portal
+</Button>
+{this.state.autoClosePortalOpen && (
+<Portal top autoClose={false}>
+{closePortal => (
+  <div
+    style={{
+      width: '100%',
+      height: '100px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignContent: 'center',
+      alignItems: 'center',
+      background: 'white',
+    }}
+  >
+    <input
+      style={{ fontSize: '20px' }}
+      type="button"
+      value="Close"
+      onClick={() => this.setState({ autoClosePortalOpen: true }, closePortal())}
+    />
+  </div>
+)}
+</Portal>
+)}
+`;
+
+const hideBackdropCode = `
+<Button
+  onClick={() => this.setState({ hideBackdropPortalOpen: true })}
+>
+    Open Portal
+</Button>
+{this.state.hideBackdropPortalOpen && (
+<Portal top hideBackDrop>
   {closePortal => (
     <div
       style={{
@@ -18,13 +54,46 @@ const simpleCode = `
         style={{ fontSize: '20px' }}
         type="button"
         value="Close"
-        onClick={() => this.setState({ simplePortalOpen: true }, closePortal())}
+        onClick={() => this.setState({ hideBackdropPortalOpen: true }, closePortal())}
       />
     </div>
   )}
 </Portal>
 )}
 `;
+
+const onCloseCode = `
+<Button
+onClick={() => this.setState({ onClosePortal: true })}
+>
+  Open Portal
+</Button>
+{this.state.onClosePortal && (
+<Portal top hideBackDrop onClose={() => { this.setState({ onClosePortal: false }); alert('Closed'); }}>
+{closePortal => (
+  <div
+    style={{
+      width: '100%',
+      height: '100px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignContent: 'center',
+      alignItems: 'center',
+      background: 'white',
+    }}
+  >
+    <input
+      style={{ fontSize: '20px' }}
+      type="button"
+      value="Close"
+      onClick={closePortal}
+    />
+  </div>
+)}
+</Portal>
+)}
+`;
+
 const portalLocationCode = `
 <Button onClick={() => this.setState({ topPortalOpen: true })}>Open Top Portal</Button>
   {this.state.topPortalOpen && (
@@ -143,45 +212,10 @@ onClick={() => this.setState({ rightPortalOpen: true })}
 )}
 `;
 
-const autoCloseCode = `
-<Button
-onClick={() => this.setState({ autoClosePortalOpen: true })}
->
-  Open Portal
-</Button>
-{this.state.autoClosePortalOpen && (
-<Portal top autoClose={false}>
-{closePortal => (
-  <div
-    style={{
-      width: '100%',
-      height: '100px',
-      display: 'flex',
-      justifyContent: 'center',
-      alignContent: 'center',
-      alignItems: 'center',
-      background: 'white',
-    }}
-  >
-    <input
-      style={{ fontSize: '20px' }}
-      type="button"
-      value="Close"
-      onClick={() => this.setState({ autoClosePortalOpen: true }, closePortal())}
-    />
-  </div>
-)}
-</Portal>
-)}
-`;
-const hideBackdropCode = `
-<Button
-  onClick={() => this.setState({ hideBackdropPortalOpen: true })}
->
-    Open Portal
-</Button>
-{this.state.hideBackdropPortalOpen && (
-<Portal top hideBackDrop>
+const simpleCode = `
+<Button onClick={() => this.setState({ simplePortalOpen: true })}>Open Portal</Button>
+{this.state.simplePortalOpen && (
+<Portal top>
   {closePortal => (
     <div
       style={{
@@ -198,41 +232,10 @@ const hideBackdropCode = `
         style={{ fontSize: '20px' }}
         type="button"
         value="Close"
-        onClick={() => this.setState({ hideBackdropPortalOpen: true }, closePortal())}
+        onClick={() => this.setState({ simplePortalOpen: true }, closePortal())}
       />
     </div>
   )}
-</Portal>
-)}
-`;
-const onCloseCode = `
-<Button
-onClick={() => this.setState({ onClosePortal: true })}
->
-  Open Portal
-</Button>
-{this.state.onClosePortal && (
-<Portal top hideBackDrop onClose={() => { this.setState({ onClosePortal: false }); alert('Closed'); }}>
-{closePortal => (
-  <div
-    style={{
-      width: '100%',
-      height: '100px',
-      display: 'flex',
-      justifyContent: 'center',
-      alignContent: 'center',
-      alignItems: 'center',
-      background: 'white',
-    }}
-  >
-    <input
-      style={{ fontSize: '20px' }}
-      type="button"
-      value="Close"
-      onClick={closePortal}
-    />
-  </div>
-)}
 </Portal>
 )}
 `;
@@ -240,7 +243,7 @@ onClick={() => this.setState({ onClosePortal: true })}
 export {
   autoCloseCode,
   hideBackdropCode,
-  simpleCode,
-  portalLocationCode,
   onCloseCode,
+  portalLocationCode,
+  simpleCode,
 };

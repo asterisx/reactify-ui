@@ -18,6 +18,7 @@ const borderedColoredCode = `
   </HorizontalCard.Footer>
 </HorizontalCard>
 `;
+
 const customClassCode = `
 <HorizontalCard className="font-responsive">
   <HorizontalCard.Header>
@@ -38,6 +39,7 @@ const customClassCode = `
   </HorizontalCard.Footer>
 </HorizontalCard>
 `;
+
 const customSizeCode = `
 <HorizontalCard small className="font-responsive">
 <HorizontalCard.Header>
@@ -112,6 +114,7 @@ const customSizeCode = `
   </HorizontalCard.Footer>
 </HorizontalCard>
 `;
+
 const disabledCode = `
 <HorizontalCard disabled className="font-responsive">
   <HorizontalCard.Header>
@@ -132,6 +135,7 @@ const disabledCode = `
   </HorizontalCard.Footer>
 </HorizontalCard>
 `;
+
 const noShadowCode = `
 <HorizontalCard shadowed={false} className="font-responsive">
   <HorizontalCard.Header>
@@ -152,6 +156,7 @@ const noShadowCode = `
   </HorizontalCard.Footer>
 </HorizontalCard>
 `;
+
 const simpleCode = `
 <HorizontalCard className="font-responsive">
 <HorizontalCard.Header>

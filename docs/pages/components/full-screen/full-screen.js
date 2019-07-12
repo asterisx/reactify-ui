@@ -4,22 +4,58 @@
 import React from 'react';
 import { FullScreen, Button } from '@../../../../reactify-ui/build';
 import {
-  simpleCode,
-  disabledCode,
-  expandedDefaultCode,
-  hideIconCode,
   childrenCode,
   contractOnEscapeKeyCode,
   customClassCode,
+  disabledCode,
+  expandedDefaultCode,
+  expandResetProgramaticallyCode,
+  hideIconCode,
+  simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  childrenLink,
+  contractOnEscapeKeyLink,
+  customClassLink,
+  disabledLink,
+  expandedDefaultLink,
+  expandResetProgramaticallyLink,
+  hideIconLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'File Upload',
+    link: `${Constants.componentsPath}/file-upload`,
+  },
+  nextLink: {
+    text: 'Group Toggle',
+    link: `${Constants.componentsPath}/group-toggle`,
+  },
+};
 
 const FullScreenDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Full Screen">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/full-screen`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <FullScreen>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -28,8 +64,8 @@ const FullScreenDemo = () => (
 
     <DemoCard
       title="Expand reset programatically"
-      uniqueIdentifier="simpleUse"
-      sourceCode={simpleCode}
+      sourceCode={expandResetProgramaticallyCode}
+      externalSampleLink={expandResetProgramaticallyLink}
     >
       <FullScreen hideIcon>
         {({ expand, reset }) => (
@@ -44,8 +80,8 @@ const FullScreenDemo = () => (
 
     <DemoCard
       title="Expanded Default"
-      uniqueIdentifier="expandedDefaultUse"
       sourceCode={expandedDefaultCode}
+      externalSampleLink={expandedDefaultLink}
     >
       <FullScreen expanded>
         {({ reset }) => (
@@ -59,8 +95,8 @@ const FullScreenDemo = () => (
 
     <DemoCard
       title="Hide Icon"
-      uniqueIdentifier="hideIconUse"
       sourceCode={hideIconCode}
+      externalSampleLink={hideIconLink}
     >
       <FullScreen hideIcon>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -69,8 +105,8 @@ const FullScreenDemo = () => (
 
     <DemoCard
       title="Disabled"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <FullScreen disabled>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -79,11 +115,11 @@ const FullScreenDemo = () => (
 
     <DemoCard
       title="Children"
-      uniqueIdentifier="childrenUse"
       sourceCode={childrenCode}
+      externalSampleLink={childrenLink}
     >
       <FullScreen className="p-2">
-        <div className="card text-dark" style={{ width: '18rem' }}>
+        <div className="card text-dark" style={{ maxWidth: '18rem' }}>
           <div className="card-body">
             <h5 className="card-title">Card title</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -95,8 +131,8 @@ const FullScreenDemo = () => (
 
     <DemoCard
       title="Contract on Esc key"
-      uniqueIdentifier="contractOnEscKeyUse"
       sourceCode={contractOnEscapeKeyCode}
+      externalSampleLink={contractOnEscapeKeyLink}
     >
       <FullScreen contractOnEscapeKey>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -105,14 +141,22 @@ const FullScreenDemo = () => (
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <FullScreen className="text-light bg-dark p-2 shadow">
         Custom Class FullScreen
       </FullScreen>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(FullScreenDemo);

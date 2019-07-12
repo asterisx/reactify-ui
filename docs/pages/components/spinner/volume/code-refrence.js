@@ -12,6 +12,28 @@ const customClassCode = `
 />
 `;
 
+const customSizeCode = `
+<Spinner
+  volume
+  small
+/>
+
+<Spinner
+  volume
+  medium
+/>
+
+<Spinner
+  volume
+  large
+/>  
+
+<Spinner
+  volume
+  style={{ fontSize: '75px' }}
+/>
+`;
+
 const customThemeCode = `
 <Spinner
   volume
@@ -61,28 +83,6 @@ const simpleCode = `
 />
 `;
 
-const sizeCode = `
-<Spinner
-  volume
-  small
-/>
-
-<Spinner
-  volume
-  medium
-/>
-
-<Spinner
-  volume
-  large
-/>  
-
-<Spinner
-  volume
-  style={{ fontSize: '75px' }}
-/>
-`;
-
 const customSpeedCode = `
 <Spinner
   volume
@@ -98,8 +98,8 @@ const customSpeedCode = `
 export {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   customSpeedCode,
   simpleCode,
-  sizeCode,
 };

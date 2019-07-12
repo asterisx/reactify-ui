@@ -1,5 +1,6 @@
-const simpleCode = '<StarRating />';
-const sizeCode = `
+const customClassCode = '<StarRating className="bg-dark text-light" />';
+
+const customSizeCode = `
 <StarRating small />
 
 <StarRating medium />
@@ -8,6 +9,8 @@ const sizeCode = `
 
 <StarRating size={{ fontSize: '40px' }} />
 `;
+
+
 const customThemeCode = `
 <StarRating primary />
 
@@ -27,21 +30,25 @@ const customThemeCode = `
 
 <StarRating style={{ color: 'violet' }} />
 `;
+
 const disabledCode = '<StarRating disabled />';
-const customClassCode = '<StarRating className="bg-dark text-light" />';
+
 const onChangeCode = '<StarRating onChange={rating => alert(\'Rated: \' + rating + \' stars\')} />';
+
 const propsCode = `
 <StarRating highestRating={10} />
 
 <StarRating rating={2} />
 `;
 
+const simpleCode = '<StarRating />';
+
 export {
-  simpleCode,
-  sizeCode,
+  customClassCode,
+  customSizeCode,
   customThemeCode,
   disabledCode,
-  customClassCode,
   onChangeCode,
   propsCode,
+  simpleCode,
 };

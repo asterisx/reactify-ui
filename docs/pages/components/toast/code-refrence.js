@@ -108,7 +108,7 @@ const directionCode = `
 </ToastProvider>
 `;
 
-const hideCode = `
+const hideProgramaticallyCode = `
 <ToastProvider>
     <ToastConsumer>
     {({ addToast, removeToast }) => {
@@ -145,7 +145,7 @@ const hideCode = `
 </ToastProvider>
 `;
 
-const pauseOnHover = `
+const pauseOnHoverCode = `
 <ToastProvider pauseOnHover>
     <ToastConsumer>
       {({ addToast, removeToast }) => (
@@ -190,7 +190,7 @@ const simpleCode = `
 
 export {
   directionCode,
-  hideCode,
-  pauseOnHover,
+  hideProgramaticallyCode,
+  pauseOnHoverCode,
   simpleCode,
 };

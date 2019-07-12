@@ -8,9 +8,36 @@ Check the docs [here](https://asterisx.github.io/reactify-ui/)
 
 Connect with us via [spectrum](https://spectrum.chat/reactify-ui)
 
-The library is still a WIP.
-The progress is below.
+**The library is in alpha.**
 
+## Installation
+`npm i reactify-ui`
+
+## Basic Usage
+`import { Button } from 'reactify-ui';
+
+export default Page = () => <div>
+  <Button>Primary Button</Button>
+</div>`
+
+## Why this library
+
+- **Component Composition.** Most of the components are built to accept other components as children which can be used to make some new powerful and interesting components.
+The idea is to make these components behave like *containers* with some functionalities as their name suggest and let them accept any content inside.
+Due to the vastness of permutation and combinations, many new UI elements can be made by stacking together the lib ones.
+[Check out the recipes section.](https://asterisx.github.io/reactify-ui/advanced/recipes)
+
+- **Inbuilt support for theming**
+[Check out the theming section.](https://asterisx.github.io/reactify-ui/advanced/theming)
+
+- **Easy styling** with support for many kinds of styling, i.e the components do not have any preference when it comes to styling and support multiple ways of styling.
+You can pass className, the styles prop and most components have BEM class names if you wish to target that way.
+[Check out the styling section.](https://asterisx.github.io/reactify-ui/advanced/styling)
+
+- **Extensive components list.** There are a lot of components included by default.
+[Check out the components section.](https://asterisx.github.io/reactify-ui/components/accordion)
+
+## Progress
 - [x] Button
 - [x] Label
 - [x] Toggle Switch

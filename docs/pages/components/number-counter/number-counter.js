@@ -1,10 +1,14 @@
 /* eslint-disable no-console */
 /* eslint-disable react/no-unescaped-entities */
 import React, { Component } from 'react';
-import { NumberCounter } from '@../../../../reactify-ui/build';
+import {
+  Button,
+  NumberCounter,
+} from '@../../../../reactify-ui/build';
 import {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   disabledCode,
   delayCode,
@@ -13,9 +17,41 @@ import {
   intervalCode,
   resetCode,
   simpleCode,
-  sizeCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customColorLink,
+  customClassLink,
+  customSizeLink,
+  customThemeLink,
+  disabledLink,
+  delayLink,
+  dynamicLink,
+  eventLink,
+  intervalLink,
+  resetLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Modal',
+    link: `${Constants.componentsPath}/modal`,
+  },
+  nextLink: {
+    text: 'Paginator',
+    link: `${Constants.componentsPath}/paginator`,
+  },
+};
 
 class NumberCounterDemo extends Component {
   state = {
@@ -25,11 +61,16 @@ class NumberCounterDemo extends Component {
 
   render() {
     return (
-      <div className="w-100">
+      <DemoPage componentName="Number Counter">
+        <ComponentInfo
+          productionReady
+          responsive
+          githubLink={`${Constants.githubComponentsPath}/number-counter`}
+        />
         <DemoCard
           title="Simple Use"
-          uniqueIdentifier="simpleUse"
           sourceCode={simpleCode}
+          externalSampleLink={simpleLink}
         >
           <NumberCounter
             from={this.state.simpleCounter.from}
@@ -39,8 +80,8 @@ class NumberCounterDemo extends Component {
 
         <DemoCard
           title="Events"
-          uniqueIdentifier="eventsUse"
           sourceCode={eventCode}
+          externalSampleLink={eventLink}
         >
           <h6>Check the console for events logs</h6>
           <NumberCounter
@@ -53,8 +94,8 @@ class NumberCounterDemo extends Component {
 
         <DemoCard
           title="Reset"
-          uniqueIdentifier="resetUse"
           sourceCode={resetCode}
+          externalSampleLink={resetLink}
         >
           <NumberCounter
             from={this.state.simpleCounter.from}
@@ -62,21 +103,20 @@ class NumberCounterDemo extends Component {
             interval={100}
           >
             {reset => (
-              <button
-                type="button"
-                className="btn btn-primary d-block ml-3"
+              <Button
+                className="ml-3"
                 onClick={() => reset()}
               >
-                Reset
-              </button>
+             Reset
+              </Button>
             )}
           </NumberCounter>
         </DemoCard>
 
         <DemoCard
           title="Change Values Dynamically"
-          uniqueIdentifier="changeDirectionUse"
           sourceCode={dynamicCode}
+          externalSampleLink={dynamicLink}
         >
           <div>
             <NumberCounter
@@ -85,15 +125,13 @@ class NumberCounterDemo extends Component {
             />
           </div>
 
-          <button
-            type="button"
-            className="btn btn-primary d-inline"
+          <Button
             onClick={
-              () => this.setState({ directionCounter: { to: Math.floor(Math.random() * 10000) } })
-            }
+            () => this.setState({ directionCounter: { to: Math.floor(Math.random() * 10000) } })
+          }
           >
             Random
-          </button>
+          </Button>
           <span className="pl-3">
             <b className="pr-3">New to:</b>
             {this.state.directionCounter.to}
@@ -103,8 +141,8 @@ class NumberCounterDemo extends Component {
 
         <DemoCard
           title="Interval"
-          uniqueIdentifier="intervalUse"
           sourceCode={intervalCode}
+          externalSampleLink={intervalLink}
         >
           <h6>{'interval={1000}'}</h6>
           <NumberCounter
@@ -116,8 +154,8 @@ class NumberCounterDemo extends Component {
 
         <DemoCard
           title="Delay"
-          uniqueIdentifier="delayUse"
           sourceCode={delayCode}
+          externalSampleLink={delayLink}
         >
           <h6>{'delay={15000}'}</h6>
           <NumberCounter
@@ -129,8 +167,8 @@ class NumberCounterDemo extends Component {
 
         <DemoCard
           title="Disabled Use"
-          uniqueIdentifier="disabledUse"
           sourceCode={disabledCode}
+          externalSampleLink={disabledLink}
         >
           <NumberCounter
             from={this.state.simpleCounter.from}
@@ -141,8 +179,8 @@ class NumberCounterDemo extends Component {
 
         <DemoCard
           title="Size"
-          uniqueIdentifier="sizeUse"
-          sourceCode={sizeCode}
+          sourceCode={customSizeCode}
+          externalSampleLink={customSizeLink}
         >
           <h6>small</h6>
           <NumberCounter
@@ -179,8 +217,8 @@ class NumberCounterDemo extends Component {
 
         <DemoCard
           title="Custom Color (any valid CSS solor)"
-          uniqueIdentifier="customColorUse"
           sourceCode={customColorCode}
+          externalSampleLink={customColorLink}
         >
           <NumberCounter
             from={this.state.simpleCounter.from}
@@ -191,8 +229,8 @@ class NumberCounterDemo extends Component {
 
         <DemoCard
           title="Themes"
-          uniqueIdentifier="themeUse"
           sourceCode={customThemeCode}
+          externalSampleLink={customThemeLink}
         >
           <h6>Primary</h6>
           <NumberCounter
@@ -253,8 +291,8 @@ class NumberCounterDemo extends Component {
 
         <DemoCard
           title="Custom Class"
-          uniqueIdentifier="customClassUse"
           sourceCode={customClassCode}
+          externalSampleLink={customClassLink}
         >
           <NumberCounter
             from={this.state.simpleCounter.from}
@@ -262,7 +300,15 @@ class NumberCounterDemo extends Component {
             className="bg-dark p-3"
           />
         </DemoCard>
-      </div>
+
+        <BottomNav
+          className="mt-4 mb-4"
+          prevLinkText={bottomNavLinks.prevLink.text}
+          prevLink={bottomNavLinks.prevLink.link}
+          nextLinkText={bottomNavLinks.nextLink.text}
+          nextLink={bottomNavLinks.nextLink.link}
+        />
+      </DemoPage>
     );
   }
 }

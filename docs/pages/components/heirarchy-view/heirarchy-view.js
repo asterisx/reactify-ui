@@ -8,7 +8,32 @@ import {
   declaredVerticalCode,
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  declaredLink,
+  declaredVerticalLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Heat Map',
+    link: `${Constants.componentsPath}/heat-map`,
+  },
+  nextLink: {
+    text: 'Highlight',
+    link: `${Constants.componentsPath}/highlight`,
+  },
+};
 
 const item = {
   text: 'L0',
@@ -40,19 +65,24 @@ const item = {
 };
 
 const HeirarchyViewDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Heirarchy View">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/heirarchy-view`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <HeirarchyView className="heirarchy-view_font-responsive" item={item} />
     </DemoCard>
 
     <DemoCard
       title="Declared Use"
-      uniqueIdentifier="declaredUse"
       sourceCode={declaredCode}
+      externalSampleLink={declaredLink}
     >
       <HeirarchyView className="heirarchy-view_font-responsive">
         <HeirarchyView.Item content={<Paper className="p-3" large warning>L0</Paper>}>
@@ -75,8 +105,8 @@ const HeirarchyViewDemo = () => (
 
     <DemoCard
       title="Declared Use (Vertical)"
-      uniqueIdentifier="declaredUseVertical"
       sourceCode={declaredVerticalCode}
+      externalSampleLink={declaredVerticalLink}
     >
       <HeirarchyView className="heirarchy-view_font-responsive">
         <HeirarchyView.Item vertical content={<Paper className="p-3" large warning>L0</Paper>}>
@@ -96,7 +126,15 @@ const HeirarchyViewDemo = () => (
         </HeirarchyView.Item>
       </HeirarchyView>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(HeirarchyViewDemo);

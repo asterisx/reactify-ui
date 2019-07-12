@@ -3,7 +3,7 @@ const simpleCode = `
   <Badge.Bubble>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 `;
 const disabledCode = `
@@ -11,7 +11,7 @@ const disabledCode = `
   <Badge.Bubble>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 `;
 const childrenCode = `
@@ -33,7 +33,7 @@ const customClassCode = `
   <Badge.Bubble>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 `;
 const customThemeCode = `
@@ -41,56 +41,56 @@ const customThemeCode = `
   <Badge.Bubble primary>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 
 <Badge>
   <Badge.Bubble secondary>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 
 <Badge>
   <Badge.Bubble dark>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 
 <Badge>
   <Badge.Bubble light>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 
 <Badge>
   <Badge.Bubble info>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 
 <Badge>
   <Badge.Bubble warning>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 
 <Badge>
   <Badge.Bubble danger>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 
 <Badge>
   <Badge.Bubble success>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 `;
 const customContentCode = `
@@ -102,17 +102,17 @@ const customContentCode = `
       light
     />
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="200px" width="200px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="200px" width="200px" />
 </Badge>
 
 <Badge>
   <Badge.Bubble />
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 
 <Badge>
   <Badge.Bubble danger />
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 `;
 const customPositionCode = `
@@ -120,28 +120,28 @@ const customPositionCode = `
   <Badge.Bubble topLeft>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 
 <Badge>
   <Badge.Bubble topRight>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 
 <Badge>
   <Badge.Bubble bottomRight>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 
 <Badge>
   <Badge.Bubble bottomLeft>
     10
   </Badge.Bubble>
-  <img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+  <img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 `;
 const customSizeCode = `
@@ -149,28 +149,28 @@ const customSizeCode = `
 <Badge.Bubble small>
   10
 </Badge.Bubble>
-<img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="50px" width="50px" />
+<img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
 </Badge>
 
 <Badge>
 <Badge.Bubble medium>
   10
 </Badge.Bubble>
-<img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="100px" width="100px" />
+<img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="100px" width="100px" />
 </Badge>
 
 <Badge>
 <Badge.Bubble large>
   10
 </Badge.Bubble>
-<img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="200px" width="200px" />
+<img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="200px" width="200px" />
 </Badge>
 
 <Badge>
 <Badge.Bubble style={{ fontSize: '35px' }}>
   10
 </Badge.Bubble>
-<img className="img-message" src="https://asterisx.github.io/reactify/assets/mail.png" height="200px" width="200px" />
+<img className="img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="200px" width="200px" />
 </Badge>
 `;
 

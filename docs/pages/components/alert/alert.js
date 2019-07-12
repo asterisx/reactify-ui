@@ -11,14 +11,48 @@ import {
   childrenCode,
   customClassCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  childrenLink,
+  customBorderLink,
+  customClassLink,
+  customThemeLink,
+  directionLink,
+  disabledLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Accordion',
+    link: `${Constants.componentsPath}/accordion`,
+  },
+  nextLink: {
+    text: 'Badge',
+    link: `${Constants.componentsPath}/badge`,
+  },
+};
 
 const AlertDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Alert">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink="https://github.com/asterisx/reactify-ui/tree/master/reactify-ui/lib/components/alert"
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Alert className="align-self-center">
           A simple alert
@@ -27,8 +61,8 @@ const AlertDemo = () => (
 
     <DemoCard
       title="Disabled"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <Alert disabled>
           This is disabled
@@ -37,8 +71,8 @@ const AlertDemo = () => (
 
     <DemoCard
       title="Direction (can accept a string or an array. Valid values 'left', 'right', 'top', 'bottom')"
-      uniqueIdentifier="directionUse"
       sourceCode={borderPositionCode}
+      externalSampleLink={directionLink}
     >
       <Alert borderLeft>
           This is a left alert!
@@ -63,13 +97,12 @@ const AlertDemo = () => (
       <Alert borderLeft borderRight>
           This is a two direction alert!
       </Alert>
-      <br />
     </DemoCard>
 
     <DemoCard
       title="Children"
-      uniqueIdentifier="childrenUse"
       sourceCode={childrenCode}
+      externalSampleLink={childrenLink}
     >
       <Alert>
         <div className="card" style={{ width: '18rem' }}>
@@ -84,8 +117,8 @@ const AlertDemo = () => (
 
     <DemoCard
       title="Custom Border"
-      uniqueIdentifier="customBorderUse"
       sourceCode={customColorCode}
+      externalSampleLink={customBorderLink}
     >
       <Alert style={{ borderColor: 'violet' }}>
           Alert with custom border color
@@ -94,8 +127,8 @@ const AlertDemo = () => (
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <Alert className="text-light bg-dark p-2">
         This Alert has custom class
@@ -104,8 +137,8 @@ const AlertDemo = () => (
 
     <DemoCard
       title="Theme"
-      uniqueIdentifier="customTheme"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <Alert primary>
         Primary theme
@@ -140,7 +173,15 @@ const AlertDemo = () => (
           Success theme
       </Alert>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(AlertDemo);

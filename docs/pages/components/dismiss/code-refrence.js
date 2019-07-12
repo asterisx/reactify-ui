@@ -1,13 +1,3 @@
-const simpleCode = `
-<Dismiss className="align-self-center">
-  A simple Dismiss
-</Dismiss>
-`;
-const disabledCode = `
-<Dismiss disabled>
-  This is disabled
-</Dismiss>
-`;
 const childrenCode = `
 <Dismiss style={{ width: 'auto' }}>
   <div className="card" style={{ width: '18rem', color: 'black' }}>
@@ -19,11 +9,45 @@ const childrenCode = `
   </div>
 </Dismiss>
 `;
+
 const customClassCode = `
 <Dismiss className="text-light bg-dark w-100">
   This Dismiss has custom class
 </Dismiss>
 `;
+
+const customColorCode = `
+<Dismiss style={{ backgroundColor: 'violet' }}>
+  Dismiss with custom background color
+</Dismiss>
+`;
+
+const customEventCode = `
+<Dismiss onClose={() => alert('Closed')}>
+  This Dismiss has event handler
+</Dismiss>
+`;
+
+const customIconCode = `
+<Dismiss
+  icon={<Spinner small light clock />}
+  closeIcon={<Button small light clear>Ok</Button>}
+  style={{ width: '300px' }}
+>
+  Time is running out!!! Apply for the application within a week.
+</Dismiss>
+`;
+
+const customSizeCode = `
+<Dismiss small>Small Dismiss</Dismiss>
+
+<Dismiss medium>Medium Dismiss</Dismiss>
+
+<Dismiss large>Large Dismiss</Dismiss>
+
+<Dismiss style={{ fontSize: '35px' }}>Custom Size Dismiss</Dismiss>
+`;
+
 const customThemeCode = `
 <Dismiss primary>
   Primary theme
@@ -57,46 +81,27 @@ const customThemeCode = `
   Success theme
 </Dismiss>
 `;
-const customColorCode = `
-<Dismiss style={{ backgroundColor: 'violet' }}>
-  Dismiss with custom background color
+
+const disabledCode = `
+<Dismiss disabled>
+  This is disabled
 </Dismiss>
 `;
 
-const sizeCode = `
-<Dismiss small>Small Dismiss</Dismiss>
-
-<Dismiss medium>Medium Dismiss</Dismiss>
-
-<Dismiss large>Large Dismiss</Dismiss>
-
-<Dismiss style={{ fontSize: '35px' }}>Custom Size Dismiss</Dismiss>
-`;
-
-const customEventCode = `
-<Dismiss onClose={() => alert('Closed')}>
-  This Dismiss has event handler
-</Dismiss>
-`;
-
-const customIconCode = `
-<Dismiss
-  icon={<Spinner small light clock />}
-  closeIcon={<Button small light clear>Ok</Button>}
-  style={{ width: '300px' }}
->
-  Time is running out!!! Apply for the application within a week.
+const simpleCode = `
+<Dismiss className="align-self-center">
+  A simple Dismiss
 </Dismiss>
 `;
 
 export {
-  simpleCode,
-  disabledCode,
-  customThemeCode,
   customColorCode,
   customEventCode,
   childrenCode,
   customClassCode,
   customIconCode,
-  sizeCode,
+  customSizeCode,
+  customThemeCode,
+  disabledCode,
+  simpleCode,
 };

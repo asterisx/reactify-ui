@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 import uuidv1 from 'uuid/v1';
 import PropTypes from 'prop-types';
-import { ToastController } from './ToastController';
-import { ToastContainer } from './ToastContainer';
+import { ToastController } from './toast-controller';
+import { ToastContainer } from './toast-container';
 import { canUseDOM } from '../../common';
 
 const { Consumer, Provider } = React.createContext();

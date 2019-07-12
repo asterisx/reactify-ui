@@ -4,19 +4,52 @@ import { Spinner } from '../../../../../reactify-ui/build';
 import {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   customSpeedCode,
   simpleCode,
-  sizeCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../../common';
+
+import {
+  customColorLink,
+  customClassLink,
+  customSizeLink,
+  customThemeLink,
+  customSpeedLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Spinner - Bars',
+    link: `${Constants.componentsPath}/spinner/bars`,
+  },
+  nextLink: {
+    text: 'Spinner - Clock',
+    link: `${Constants.componentsPath}/spinner/clock`,
+  },
+};
 
 const CircleDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Spinner - circle">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/spinner/circle`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Spinner
         circle
@@ -25,8 +58,8 @@ const CircleDemo = () => (
 
     <DemoCard
       title="Size"
-      uniqueIdentifier="sizeUse"
-      sourceCode={sizeCode}
+      sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <h6>small</h6>
       <Spinner
@@ -59,8 +92,8 @@ const CircleDemo = () => (
 
     <DemoCard
       title="Custom Color (any valid CSS solor)"
-      uniqueIdentifier="customColorUse"
       sourceCode={customColorCode}
+      externalSampleLink={customColorLink}
     >
       <Spinner
         circle
@@ -70,8 +103,8 @@ const CircleDemo = () => (
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="themeUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <h6>Primary</h6>
       <Spinner
@@ -124,8 +157,8 @@ const CircleDemo = () => (
 
     <DemoCard
       title="Controlling Speed"
-      uniqueIdentifier="customSpeedUse"
       sourceCode={customSpeedCode}
+      externalSampleLink={customSpeedLink}
     >
       <h6 className="mt-3 mb-3">Slow</h6>
       <Spinner
@@ -142,15 +175,23 @@ const CircleDemo = () => (
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <Spinner
         circle
         className="bg-dark"
       />
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(CircleDemo);

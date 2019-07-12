@@ -4,27 +4,60 @@ import { Input } from '@../../../../reactify-ui/build';
 import {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   propsCode,
   simpleCode,
-  sizeCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customColorLink,
+  customClassLink,
+  customSizeLink,
+  customThemeLink,
+  propsLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Horizontal Card',
+    link: `${Constants.componentsPath}/horizontal-card`,
+  },
+  nextLink: {
+    text: 'Label',
+    link: `${Constants.componentsPath}/label`,
+  },
+};
 
 const InputDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Input">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/input`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Input />
     </DemoCard>
 
     <DemoCard
       title="Size"
-      uniqueIdentifier="sizeUse"
-      sourceCode={sizeCode}
+      sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <h6>small</h6>
       <Input small defaultValue="A small input" type="text" />
@@ -44,17 +77,17 @@ const InputDemo = () => (
     </DemoCard>
 
     <DemoCard
-      title="Custom Color (any valid CSS solor)"
-      uniqueIdentifier="customColorUse"
+      title="Custom Color (Border) (any valid CSS solor)"
       sourceCode={customColorCode}
+      externalSampleLink={customColorLink}
     >
       <Input style={{ borderColor: 'violet' }} defaultValue="A custom color Input" type="text" />
     </DemoCard>
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="themeUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <h6>Primary</h6>
       <Input primary defaultValue="A primary Input" type="text" />
@@ -83,22 +116,30 @@ const InputDemo = () => (
 
     <DemoCard
       title="Props"
-      uniqueIdentifier="propsUse"
       sourceCode={propsCode}
+      externalSampleLink={propsLink}
     >
-      <h6 className="mt-3 mb-3">Input is merely a input with some styles applied and execpt the size and theme props all other props are passed as is.</h6>
+      <h6 className="mt-3 mb-3">Input is merely a input with some styles applied and except the size and theme props all other props are passed as is.</h6>
       <Input style={{ borderColor: 'violet' }} defaultValue="password" type="password" />
     </DemoCard>
 
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <Input className="bg-dark Input-light p-1" />
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(InputDemo);

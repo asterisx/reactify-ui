@@ -11,7 +11,32 @@ import {
   customThemeCode,
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customDeclarativeLink,
+  customThemeLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Top Bar',
+    link: `${Constants.componentsPath}/top-bar`,
+  },
+  nextLink: {
+    text: 'Typeahead',
+    link: `${Constants.componentsPath}/typeahead`,
+  },
+};
 
 const items = [
   {
@@ -86,19 +111,24 @@ const items = [
 ];
 
 const TreeViewDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Tree View">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/tree-view`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <TreeView items={items} />
     </DemoCard>
 
     <DemoCard
       title="Themes Use"
-      uniqueIdentifier="themesUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <h5>Theming is only for the default icons</h5>
       <h5>Primary Theme</h5>
@@ -119,8 +149,8 @@ const TreeViewDemo = () => (
 
     <DemoCard
       title="Custom Content (Declarative)"
-      uniqueIdentifier="customDeclarativeUse"
       sourceCode={customDeclarativeCode}
+      externalSampleLink={customDeclarativeLink}
     >
       <h5>Declared Menu</h5>
       <TreeView>
@@ -169,7 +199,15 @@ const TreeViewDemo = () => (
         <TreeViewItem text="Option 2" />
       </TreeView>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(TreeViewDemo);

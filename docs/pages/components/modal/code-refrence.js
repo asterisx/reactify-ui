@@ -1,66 +1,3 @@
-const simpleCode = `
-<Button onClick={() => this.setState({ simpleModalOpen: true })}>Open Modal</Button>
-{this.state.simpleModalOpen && (
-<Modal onClose={() => this.setState({ simpleModalOpen: false })}>
-  {closeToggle => (
-    <div
-      style={{
-        width: '100%',
-        height: '250px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignContent: 'center',
-        alignItems: 'center',
-        background: 'white',
-      }}
-    >
-      <input
-        style={{ fontSize: '20px' }}
-        type="button"
-        value="Close"
-        onClick={closeToggle}
-      />
-    </div>
-  )}
-</Modal>
-)}
-`;
-
-const autoCloseCode = `
-<Button
-onClick={() => this.setState({ autoCloseModalOpen: true })}
->
-  Open Modal
-</Button>
-{this.state.autoCloseModalOpen && (
-<Modal autoClose={false}>
-{closeToggle => (
-  <div
-    style={{
-      width: '100%',
-      height: '250px',
-      display: 'flex',
-      justifyContent: 'center',
-      alignContent: 'center',
-      alignItems: 'center',
-      background: 'white',
-    }}
-  >
-    <input
-      style={{ fontSize: '20px' }}
-      type="button"
-      value="Close"
-      onClick={
-          () => {
-            this.setState({ autoCloseModalOpen: false });
-            closeToggle();
-          }}
-    />
-  </div>
-)}
-</Modal>
-)}
-`;
 const hideBackdropCode = `
 <Button
 onClick={() => this.setState({ hideBackdropModalOpen: true })}
@@ -95,6 +32,7 @@ onClose={() => this.setState({ hideBackdropModalOpen: false })}
 </Modal>
 )}
 `;
+
 const onCloseCode = `
 <Button
   onClick={() => this.setState({ onCloseModal: true })}
@@ -126,6 +64,7 @@ const onCloseCode = `
 </Modal>
 )}
 `;
+
 const modalSizeCode = `
 <Button
   onClick={() => this.setState({ smallModalOpen: true })}
@@ -247,10 +186,75 @@ onClick={() => this.setState({ mediumModalOpen: true })}
 </Modal>
 )}
 `;
+
+const notAutoCloseCode = `
+<Button
+onClick={() => this.setState({ autoCloseModalOpen: true })}
+>
+  Open Modal
+</Button>
+{this.state.autoCloseModalOpen && (
+<Modal autoClose={false}>
+{closeToggle => (
+  <div
+    style={{
+      width: '100%',
+      height: '250px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignContent: 'center',
+      alignItems: 'center',
+      background: 'white',
+    }}
+  >
+    <input
+      style={{ fontSize: '20px' }}
+      type="button"
+      value="Close"
+      onClick={
+          () => {
+            this.setState({ autoCloseModalOpen: false });
+            closeToggle();
+          }}
+    />
+  </div>
+)}
+</Modal>
+)}
+`;
+
+const simpleCode = `
+<Button onClick={() => this.setState({ simpleModalOpen: true })}>Open Modal</Button>
+{this.state.simpleModalOpen && (
+<Modal onClose={() => this.setState({ simpleModalOpen: false })}>
+  {closeToggle => (
+    <div
+      style={{
+        width: '100%',
+        height: '250px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center',
+        background: 'white',
+      }}
+    >
+      <input
+        style={{ fontSize: '20px' }}
+        type="button"
+        value="Close"
+        onClick={closeToggle}
+      />
+    </div>
+  )}
+</Modal>
+)}
+`;
+
 export {
-  autoCloseCode,
   hideBackdropCode,
-  simpleCode,
   onCloseCode,
   modalSizeCode,
+  notAutoCloseCode,
+  simpleCode,
 };

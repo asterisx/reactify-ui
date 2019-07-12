@@ -16,7 +16,40 @@ import {
   positionCode,
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  actionLink,
+  childrenLink,
+  customColorLink,
+  customClassLink,
+  customThemeLink,
+  durationLink,
+  disabledLink,
+  dismissLink,
+  messageLink,
+  positionLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Slider',
+    link: `${Constants.componentsPath}/slider`,
+  },
+  nextLink: {
+    text: 'Spinner - Balls',
+    link: `${Constants.componentsPath}/spinner/balls`,
+  },
+};
 
 class SnackbarDemo extends Component {
   state = {
@@ -47,11 +80,16 @@ class SnackbarDemo extends Component {
 
   render() {
     return (
-      <div className="w-100">
+      <DemoPage componentName="Snackbar">
+        <ComponentInfo
+          productionReady
+          responsive
+          githubLink={`${Constants.githubComponentsPath}/snackbar`}
+        />
         <DemoCard
           title="Simple Use"
-          uniqueIdentifier="simpleUse"
           sourceCode={simpleCode}
+          externalSampleLink={simpleLink}
         >
           <Button
             onClick={() => this.setState({ showSimpleSnackbar: true })}
@@ -70,8 +108,8 @@ class SnackbarDemo extends Component {
 
         <DemoCard
           title="Message"
-          uniqueIdentifier="messageUse"
           sourceCode={messageCode}
+          externalSampleLink={messageLink}
         >
           <Button
             onClick={() => this.setState({ showMessageSnackbar: true })}
@@ -90,8 +128,8 @@ class SnackbarDemo extends Component {
 
         <DemoCard
           title="Action, action click"
-          uniqueIdentifier="actionUse"
           sourceCode={actionCode}
+          externalSampleLink={actionLink}
         >
           <ul>
             <li>action="undo"</li>
@@ -111,15 +149,15 @@ class SnackbarDemo extends Component {
             duration={3000}
             action="undo"
             onActionClick={() => { this.setState({ showActionSnackbar: false }); alert('Acion Clicked'); }}
-            message="Disabled Snackbar :)"
+            message="Action Snackbar :)"
           />
           )}
         </DemoCard>
 
         <DemoCard
           title="Disabled Use"
-          uniqueIdentifier="disabledUse"
           sourceCode={disabledCode}
+          externalSampleLink={disabledLink}
         >
           <Button
             onClick={() => this.setState({ showDisabledSnackbar: true })}
@@ -140,8 +178,8 @@ class SnackbarDemo extends Component {
 
         <DemoCard
           title="Show Dismiss and onClose event"
-          uniqueIdentifier="dismissUse"
           sourceCode={dismissCode}
+          externalSampleLink={dismissLink}
         >
           <ul>
             <li>showDismiss="true"</li>
@@ -167,8 +205,8 @@ class SnackbarDemo extends Component {
 
         <DemoCard
           title="Duration"
-          uniqueIdentifier="durationUse"
           sourceCode={durationCode}
+          externalSampleLink={durationLink}
         >
           <Button
             onClick={() => this.setState({ showdurationSnackbar: true })}
@@ -188,8 +226,8 @@ class SnackbarDemo extends Component {
 
         <DemoCard
           title="Custom Color"
-          uniqueIdentifier="colorUse"
           sourceCode={customColorCode}
+          externalSampleLink={customColorLink}
         >
           <Button
             onClick={() => this.setState({ showColorSnackbar: true })}
@@ -210,8 +248,8 @@ class SnackbarDemo extends Component {
 
         <DemoCard
           title="Children"
-          uniqueIdentifier="childrenUse"
           sourceCode={childrenCode}
+          externalSampleLink={childrenLink}
         >
           <Button
             onClick={() => this.setState({ showImageSnackbar: true })}
@@ -232,8 +270,8 @@ class SnackbarDemo extends Component {
 
         <DemoCard
           title="Custom Postion (default is top-right)"
-          uniqueIdentifier="positionUse"
           sourceCode={positionCode}
+          externalSampleLink={positionLink}
         >
           <Button
             onClick={() => this.setState({ showPositionTopLeftSnackbar: true })}
@@ -352,8 +390,8 @@ class SnackbarDemo extends Component {
 
         <DemoCard
           title="Theme"
-          uniqueIdentifier="customThemeUse"
           sourceCode={customThemeCode}
+          externalSampleLink={customThemeLink}
         >
           <Button
             onClick={() => this.setState({ showThemePrimarySnackbar: true })}
@@ -510,8 +548,8 @@ class SnackbarDemo extends Component {
 
         <DemoCard
           title="Custom Class"
-          uniqueIdentifier="customClassUse"
           sourceCode={customClassCode}
+          externalSampleLink={customClassLink}
         >
           <Button
             onClick={() => this.setState({ showClassNameSnackbar: true })}
@@ -529,7 +567,15 @@ class SnackbarDemo extends Component {
               />
             )}
         </DemoCard>
-      </div>
+
+        <BottomNav
+          className="mt-4 mb-4"
+          prevLinkText={bottomNavLinks.prevLink.text}
+          prevLink={bottomNavLinks.prevLink.link}
+          nextLinkText={bottomNavLinks.nextLink.text}
+          nextLink={bottomNavLinks.nextLink.link}
+        />
+      </DemoPage>
     );
   }
 }

@@ -29,7 +29,7 @@ const Installation = () => (
     </Breadcrumbs>
     <h4 className="mt-3 align-self-start ml-2">The following are some of the features</h4>
     <Paper secondary className="align-self-center d-block p-3 m-1 mt-3 width-m-95 width-75 mx-auto">
-        <ul className="h4">
+        <ul className="h6">
             <li className="mb-4">
                 <b>Extensive components list.</b> There are a lot of components included by default.
                 <br />

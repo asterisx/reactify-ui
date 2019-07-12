@@ -10,14 +10,47 @@ import {
   simpleCode,
   noShadowCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  borderedColoredLink,
+  customClassLink,
+  customSizeLink,
+  disabledLink,
+  simpleLink,
+  noShadowLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Button',
+    link: `${Constants.componentsPath}/button`,
+  },
+  nextLink: {
+    text: 'Checkbox',
+    link: `${Constants.componentsPath}/checkbox`,
+  },
+};
 
 const CardDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Card">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/card`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Card>
         <Card.Header>
@@ -42,8 +75,8 @@ const CardDemo = () => (
 
     <DemoCard
       title="No Shadow"
-      uniqueIdentifier="noShadowUse"
       sourceCode={noShadowCode}
+      externalSampleLink={noShadowLink}
     >
       <h4 className="pt-3 pb-3">{'shadowed={false}'}</h4>
       <Card shadowed={false}>
@@ -68,8 +101,8 @@ const CardDemo = () => (
 
     <DemoCard
       title="Custom Sizes"
-      uniqueIdentifier="customSizes"
       sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <h6 className="pt-3 pb-3">small</h6>
       <Card small>
@@ -163,8 +196,8 @@ const CardDemo = () => (
 
     <DemoCard
       title="Disabled Use"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <Card disabled>
         <Card.Header>
@@ -188,8 +221,8 @@ const CardDemo = () => (
 
     <DemoCard
       title="Bordered & Border Color"
-      uniqueIdentifier="borderedColored"
       sourceCode={borderedColoredCode}
+      externalSampleLink={borderedColoredLink}
     >
       <h6 className="pb-3">
         Card.Body and Card.Footer can be bordered and can optionally have a
@@ -199,7 +232,7 @@ const CardDemo = () => (
         <Card.Header>
           <img className="w-100" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
         </Card.Header>
-        <Card.Body bordered borderColor="violet">
+        <Card.Body bordered style={{ borderColor: 'violet' }}>
           <span>
             <h5>Avenger's Endgame</h5>
             Adrift in space with no food or water, Tony Stark sends a message to
@@ -217,8 +250,8 @@ const CardDemo = () => (
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <h6>
         Card, Card.Body, Card.Header, Card.footer can accept custom classes
@@ -242,7 +275,15 @@ const CardDemo = () => (
         </Card.Footer>
       </Card>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(CardDemo);
