@@ -73,7 +73,13 @@ module.exports = {
       '/components/tree-view': { page: '/components/tree-view' },
       '/components/typeahead': { page: '/components/typeahead' },
       '/components/user-profile': { page: '/components/user-profile' },
+      '/documentation': { page: '/documentation' },
+      '/getting-started/features': { page: '/getting-started/features' },
       '/getting-started/installation': { page: '/getting-started/installation' },
+      '/getting-started/why-this-library': { page: '/getting-started/why-this-library' },
+      '/advanced/recipes': { page: '/advanced/recipes' },
+      '/advanced/themes': { page: '/advanced/themes' },
+      '/advanced/styling': { page: '/advanced/styling' },
     };
   },
 };
