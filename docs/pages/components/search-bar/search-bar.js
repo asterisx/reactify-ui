@@ -6,29 +6,65 @@ import {
   controlledCode,
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   disabledCode,
   eventCode,
   placeholderCode,
   simpleCode,
-  sizeCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  controlledLink,
+  customColorLink,
+  customClassLink,
+  customSizeLink,
+  customThemeLink,
+  disabledLink,
+  eventLink,
+  placeholderLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Radio Input',
+    link: `${Constants.componentsPath}/radio-input`,
+  },
+  nextLink: {
+    text: 'Select',
+    link: `${Constants.componentsPath}/select`,
+  },
+};
 
 const SearchBarDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Search Bar">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/search-bar`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <SearchBar />
     </DemoCard>
 
     <DemoCard
       title="Events"
-      uniqueIdentifier="eventsUse"
       sourceCode={eventCode}
+      externalSampleLink={eventLink}
     >
       <h6>Check the console for events logs</h6>
       <SearchBar onChange={({ event, value }) => console.log(event, value)} />
@@ -36,8 +72,8 @@ const SearchBarDemo = () => (
 
     <DemoCard
       title="Controlled"
-      uniqueIdentifier="valueUse"
       sourceCode={controlledCode}
+      externalSampleLink={controlledLink}
     >
       <h6>Passing the value makes the searchbar controlled, check the log for events</h6>
       <SearchBar value="" isControlled onChange={({ event, value }) => console.log(event, value)} />
@@ -45,24 +81,24 @@ const SearchBarDemo = () => (
 
     <DemoCard
       title="Disabled Use"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <SearchBar disabled />
     </DemoCard>
 
     <DemoCard
       title="Placeholder"
-      uniqueIdentifier="placeHolderUse"
       sourceCode={placeholderCode}
+      externalSampleLink={placeholderLink}
     >
       <SearchBar placeholder="Some Placeholder" />
     </DemoCard>
 
     <DemoCard
       title="Size"
-      uniqueIdentifier="sizeUse"
-      sourceCode={sizeCode}
+      sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <h6>small</h6>
       <SearchBar small />
@@ -83,16 +119,16 @@ const SearchBarDemo = () => (
 
     <DemoCard
       title="Custom Color (any valid CSS solor)"
-      uniqueIdentifier="customColorUse"
       sourceCode={customColorCode}
+      externalSampleLink={customColorLink}
     >
       <SearchBar style={{ color: 'violet' }} />
     </DemoCard>
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="themeUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <h6>Primary</h6>
       <SearchBar primary />
@@ -121,12 +157,20 @@ const SearchBarDemo = () => (
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <SearchBar className="bg-dark p-3" />
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 

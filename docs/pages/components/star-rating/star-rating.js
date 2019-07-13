@@ -4,29 +4,63 @@ import React from 'react';
 import { StarRating } from '@../../../../reactify-ui/build';
 import {
   simpleCode,
-  sizeCode,
+  customSizeCode,
   customThemeCode,
   disabledCode,
   customClassCode,
   onChangeCode,
   propsCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customClassLink,
+  customSizeLink,
+  customThemeLink,
+  disabledLink,
+  onChangeLink,
+  propsLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Stacked Card',
+    link: `${Constants.componentsPath}/stacked-card`,
+  },
+  nextLink: {
+    text: 'Switch',
+    link: `${Constants.componentsPath}/switch`,
+  },
+};
 
 const StarRatingDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Star Rating">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/star-rating`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <StarRating />
     </DemoCard>
 
     <DemoCard
       title="Size Code"
-      uniqueIdentifier="sizeUse"
-      sourceCode={sizeCode}
+      sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <h6>small</h6>
       <StarRating small />
@@ -43,8 +77,8 @@ const StarRatingDemo = () => (
 
     <DemoCard
       title="Props"
-      uniqueIdentifier="propsUse"
       sourceCode={propsCode}
+      externalSampleLink={propsLink}
     >
       <h6>
         {'highestRating={10}'}
@@ -57,13 +91,12 @@ const StarRatingDemo = () => (
         <b>{'rating={2}'}</b>
       </h6>
       <StarRating rating={2} />
-
     </DemoCard>
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="themesUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <h6>primary</h6>
       <StarRating primary />
@@ -95,28 +128,36 @@ const StarRatingDemo = () => (
 
     <DemoCard
       title="onChange Event"
-      uniqueIdentifier="onChangedUse"
       sourceCode={onChangeCode}
+      externalSampleLink={onChangeLink}
     >
       <StarRating onChange={rating => alert(`Rated: ${rating} stars`)} />
     </DemoCard>
 
     <DemoCard
       title="Disabled"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <StarRating disabled />
     </DemoCard>
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClass"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <StarRating className="bg-dark text-light" />
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(StarRatingDemo);

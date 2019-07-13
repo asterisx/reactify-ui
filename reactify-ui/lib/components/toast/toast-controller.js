@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Transition } from 'react-transition-group';
 import PropTypes from 'prop-types';
-import { Toast } from './Toast';
+import { Toast } from './toast';
 import Dismiss from '../dismiss';
 import { Timer } from '../../common';
 

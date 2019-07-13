@@ -7,13 +7,40 @@ import {
   ContextMenu, SubMenu, SubMenuItem, Paper,
 } from '@../../../../reactify-ui/build';
 import {
-  customDeclarativeCode,
-  customEventCode,
   customThemeCode,
+  customEventCode,
+  customDeclarativeCode,
+  customSizeCode,
   simpleCode,
-  sizeCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customEventLink,
+  customDeclarativeLink,
+  customSizeLink,
+  customThemeLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Chips',
+    link: `${Constants.componentsPath}/chips`,
+  },
+  nextLink: {
+    text: 'Dismiss',
+    link: `${Constants.componentsPath}/dismiss`,
+  },
+};
 
 const items = [
   {
@@ -88,11 +115,15 @@ const items = [
 ];
 
 const ContextMenuDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Context Menu">
+    <ComponentInfo
+      productionReady
+      githubLink={`${Constants.githubComponentsPath}/context-menu`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <ContextMenu className="border" items={items}>
         <h6><i>Each items 'item' should have a unique key (check sample code)</i></h6>
@@ -102,27 +133,33 @@ const ContextMenuDemo = () => (
 
     <DemoCard
       title="Themes Use"
-      uniqueIdentifier="themesUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <ContextMenu className="border" items={items}>
         <Paper className="w-100" primary>Primary Theme</Paper>
       </ContextMenu>
+      <br />
       <ContextMenu className="border" items={items} secondary>
         <Paper className="w-100" secondary>Secondary Theme</Paper>
       </ContextMenu>
+      <br />
       <ContextMenu className="border" items={items} info>
         <Paper className="w-100" info>Info Theme</Paper>
       </ContextMenu>
+      <br />
       <ContextMenu className="border" items={items} light>
         <Paper className="w-100" light>Light Theme</Paper>
       </ContextMenu>
+      <br />
       <ContextMenu className="border" items={items} warning>
         <Paper className="w-100" warning>Warning Theme</Paper>
       </ContextMenu>
+      <br />
       <ContextMenu className="border" items={items} danger>
         <Paper className="w-100" danger>Danger Theme</Paper>
       </ContextMenu>
+      <br />
       <ContextMenu className="border" items={items} success>
         <Paper className="w-100" success>Success Theme</Paper>
       </ContextMenu>
@@ -130,15 +167,17 @@ const ContextMenuDemo = () => (
 
     <DemoCard
       title="Size Use"
-      uniqueIdentifier="sizeUse"
-      sourceCode={sizeCode}
+      sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <ContextMenu className="border" items={items} small>
         <div>Small Menu</div>
       </ContextMenu>
+      <br />
       <ContextMenu className="border" items={items} medium>
         <div>Medium Menu</div>
       </ContextMenu>
+      <br />
       <ContextMenu className="border" items={items} large>
         <div>Large Menu</div>
       </ContextMenu>
@@ -146,8 +185,8 @@ const ContextMenuDemo = () => (
 
     <DemoCard
       title="Custom Content (Declarative)"
-      uniqueIdentifier="customDeclarativeUse"
       sourceCode={customDeclarativeCode}
+      externalSampleLink={customDeclarativeLink}
     >
       <ContextMenu className="border">
         <div>Declared Menu</div>
@@ -161,7 +200,7 @@ const ContextMenuDemo = () => (
           <SubMenuItem text="Option 2" />
         </SubMenu>
       </ContextMenu>
-
+      <br />
       <ContextMenu className="border">
         <div>Declared Menu with custom content</div>
         <SubMenu>
@@ -180,8 +219,8 @@ const ContextMenuDemo = () => (
 
     <DemoCard
       title="Events"
-      uniqueIdentifier="eventsUse"
       sourceCode={customEventCode}
+      externalSampleLink={customEventLink}
     >
       <ContextMenu className="border">
         <div>
@@ -194,7 +233,15 @@ const ContextMenuDemo = () => (
         </SubMenu>
       </ContextMenu>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(ContextMenuDemo);

@@ -3,14 +3,43 @@ import React, { Component } from 'react';
 import { ProgressBar } from '@../../../../reactify-ui/build';
 import {
   customColorCode,
+  customSizeCode,
   customThemeCode,
   noTextCode,
   runningCode,
   simpleCode,
-  sizeCode,
   stripedCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customColorLink,
+  customSizeLink,
+  customThemeLink,
+  noTextLink,
+  runningLink,
+  simpleLink,
+  stripedLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Portal',
+    link: `${Constants.componentsPath}/portal`,
+  },
+  nextLink: {
+    text: 'Radio Group',
+    link: `${Constants.componentsPath}/radio-group`,
+  },
+};
 
 class ProgressBarDemo extends Component {
   state = { runningPercentage: 0 }
@@ -27,43 +56,48 @@ class ProgressBarDemo extends Component {
 
   render() {
     return (
-      <div className="w-100">
+      <DemoPage componentName="Progress Bar">
+        <ComponentInfo
+          productionReady
+          responsive
+          githubLink={`${Constants.githubComponentsPath}/progress-bar`}
+        />
         <DemoCard
-          title="Simple Use"
-          uniqueIdentifier="simpleUse"
+          title="Simple"
           sourceCode={simpleCode}
+          externalSampleLink={simpleLink}
         >
           <ProgressBar percentage={30}>30% complete</ProgressBar>
         </DemoCard>
 
         <DemoCard
-          title="Striped Use"
-          uniqueIdentifier="stripedUse"
+          title="Striped"
           sourceCode={stripedCode}
+          externalSampleLink={stripedLink}
         >
           <ProgressBar striped percentage={30}>30% complete</ProgressBar>
         </DemoCard>
 
         <DemoCard
-          title="Running Demo"
-          uniqueIdentifier="runningDemoUse"
+          title="Running"
           sourceCode={runningCode}
+          externalSampleLink={runningLink}
         >
           <ProgressBar striped dark style={{ transitionDuration: '700ms' }} percentage={this.state.runningPercentage}>{`${this.state.runningPercentage}% complete`}</ProgressBar>
         </DemoCard>
 
         <DemoCard
-          title="No text Demo"
-          uniqueIdentifier="noTextUse"
+          title="No text"
           sourceCode={noTextCode}
+          externalSampleLink={noTextLink}
         >
           <ProgressBar striped percentage={30} />
         </DemoCard>
 
         <DemoCard
-          title="Custom Color Demo"
-          uniqueIdentifier="customColorUse"
+          title="Custom Color"
           sourceCode={customColorCode}
+          externalSampleLink={customColorLink}
         >
           <h6 className="pb-3">
             You have to directly add the background-color css property
@@ -79,8 +113,8 @@ class ProgressBarDemo extends Component {
 
         <DemoCard
           title="Sizes"
-          uniqueIdentifier="sizeUse"
-          sourceCode={sizeCode}
+          sourceCode={customSizeCode}
+          externalSampleLink={customSizeLink}
         >
           <ProgressBar striped small percentage={30}>30% complete</ProgressBar>
           <br />
@@ -92,9 +126,9 @@ class ProgressBarDemo extends Component {
         </DemoCard>
 
         <DemoCard
-          title="Theme"
-          uniqueIdentifier="themeUse"
+          title="Themes"
           sourceCode={customThemeCode}
+          externalSampleLink={customThemeLink}
         >
           <ProgressBar striped primary percentage={60}>60% complete</ProgressBar>
           <br />
@@ -112,7 +146,15 @@ class ProgressBarDemo extends Component {
           <br />
           <ProgressBar striped success percentage={60}>60% complete</ProgressBar>
         </DemoCard>
-      </div>
+
+        <BottomNav
+          className="mt-4 mb-4"
+          prevLinkText={bottomNavLinks.prevLink.text}
+          prevLink={bottomNavLinks.prevLink.link}
+          nextLinkText={bottomNavLinks.nextLink.text}
+          nextLink={bottomNavLinks.nextLink.link}
+        />
+      </DemoPage>
     );
   }
 }

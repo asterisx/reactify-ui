@@ -7,17 +7,50 @@ import {
   customClassCode,
   customSizeCode,
   disabledCode,
-  noShadowCode,
   simpleCode,
+  noShadowCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  borderedColoredLink,
+  customClassLink,
+  customSizeLink,
+  disabledLink,
+  simpleLink,
+  noShadowLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Highlight',
+    link: `${Constants.componentsPath}/highlight`,
+  },
+  nextLink: {
+    text: 'Input',
+    link: `${Constants.componentsPath}/input`,
+  },
+};
 
 const HorizontalCardDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Horizontal Card">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/horizontal-card`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <h4 className="pt-3 pb-3">HorizontalCard.Body, HorizontalCard.Header and HorizontalCard.Footer's children should be able to have their own width such as (width: 300px) or are block elements.</h4>
       <HorizontalCard className="horizontal-card_font-responsive">
@@ -42,8 +75,8 @@ const HorizontalCardDemo = () => (
 
     <DemoCard
       title="No Shadow"
-      uniqueIdentifier="noShadowUse"
       sourceCode={noShadowCode}
+      externalSampleLink={noShadowLink}
     >
       <h4 className="pt-3 pb-3">{'shadowed={false}'}</h4>
       <HorizontalCard shadowed={false} className="horizontal-card_font-responsive">
@@ -68,8 +101,8 @@ const HorizontalCardDemo = () => (
 
     <DemoCard
       title="Custom Sizes (i.e height of card)"
-      uniqueIdentifier="customSizes"
       sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <h6 className="pt-3 pb-3">size="small"</h6>
       <HorizontalCard small className="horizontal-card_font-responsive">
@@ -159,8 +192,8 @@ const HorizontalCardDemo = () => (
 
     <DemoCard
       title="Disabled Use"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <HorizontalCard disabled className="horizontal-card_font-responsive">
         <HorizontalCard.Header>
@@ -184,8 +217,8 @@ const HorizontalCardDemo = () => (
 
     <DemoCard
       title="Bordered & Border Color"
-      uniqueIdentifier="borderedColored"
       sourceCode={borderedColoredCode}
+      externalSampleLink={borderedColoredLink}
     >
       <h6 className="pb-3">
       HorizontalCard.Body and HorizontalCard.Footer can be bordered and can optionally have a
@@ -213,8 +246,8 @@ const HorizontalCardDemo = () => (
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <h6 className="pb-3 pt-3">
       HorizontalCard,
@@ -241,7 +274,15 @@ const HorizontalCardDemo = () => (
         </HorizontalCard.Footer>
       </HorizontalCard>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(HorizontalCardDemo);

@@ -1,3 +1,13 @@
+const customSizeCode = `
+<Paper small>Paper has some text, it can act as a base for building components</Paper>
+
+<Paper medium>Paper has some text, it can act as a base for building components</Paper>
+
+<Paper large>Paper has some text, it can act as a base for building components</Paper>
+
+<Paper style={{ fontSize: '75px' }}>Paper has some text, it can act as a base for building components</Paper>
+`;
+
 const customThemeCode = `
 <Paper primary>Paper has some text, it can act as a base for building components</Paper>
 
@@ -21,23 +31,13 @@ const simpleCode = `
 <Paper>Paper has some text, it can act as a base for building components</Paper>
 `;
 
-const sizeCode = `
-<Paper small>Paper has some text, it can act as a base for building components</Paper>
-
-<Paper medium>Paper has some text, it can act as a base for building components</Paper>
-
-<Paper large>Paper has some text, it can act as a base for building components</Paper>
-
-<Paper style={{ fontSize: '75px' }}>Paper has some text, it can act as a base for building components</Paper>
-`;
-
 const noShadowCode = `
 <Paper noShadow>Paper has some text, it can act as a base for building components</Paper>
 `;
 
 export {
+  customSizeCode,
   customThemeCode,
   simpleCode,
-  sizeCode,
   noShadowCode,
 };

@@ -7,14 +7,46 @@ import {
   simpleCode,
   trayOpenCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  breakpointLink,
+  disabledLink,
+  labelLink,
+  simpleLink,
+  trayOpenLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Dismiss',
+    link: `${Constants.componentsPath}/dismiss`,
+  },
+  nextLink: {
+    text: 'File Upload',
+    link: `${Constants.componentsPath}/file-upload`,
+  },
+};
 
 const DropdownDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Dropdown">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/dropdown`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Dropdown label="Please select a value">
         {closeTray => (
@@ -30,8 +62,8 @@ const DropdownDemo = () => (
 
     <DemoCard
       title="Tray Open dy default"
-      uniqueIdentifier="trayOpenDefaultUse"
       sourceCode={trayOpenCode}
+      externalSampleLink={trayOpenLink}
     >
       <Dropdown trayOpen label="Please select a value">
         {closeTray => (
@@ -47,8 +79,8 @@ const DropdownDemo = () => (
 
     <DemoCard
       title="Breakpoints"
-      uniqueIdentifier="breakpointsUse"
       sourceCode={breakpointCode}
+      externalSampleLink={breakpointLink}
     >
       <h6 className="mt-3 mb-3">Options will show inside a portal on screen sizes marked by props sm, md, lg, xl. Open this dropdown on a md or xs screen size</h6>
       <Dropdown sm md label="Please select a value">
@@ -65,16 +97,16 @@ const DropdownDemo = () => (
 
     <DemoCard
       title="Disabled"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <Dropdown disabled label="Please select a value" />
     </DemoCard>
 
     <DemoCard
       title="Label"
-      uniqueIdentifier="Label"
       sourceCode={labelCode}
+      externalSampleLink={labelLink}
     >
       <h6 className="mt-3 mb-3">Because label is a render prop, you can pass anything you want to it.</h6>
       <Dropdown sm md label="Custom Label">
@@ -86,7 +118,15 @@ const DropdownDemo = () => (
         </ListPanel>
       </Dropdown>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(DropdownDemo);

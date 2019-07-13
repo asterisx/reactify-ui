@@ -9,7 +9,34 @@ import {
   eventsCode,
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customThemeLink,
+  declarativeLink,
+  disabledLink,
+  eventsLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Group Toggle',
+    link: `${Constants.componentsPath}/group-toggle`,
+  },
+  nextLink: {
+    text: 'Heirarchy View',
+    link: `${Constants.componentsPath}/heirarchy-view`,
+  },
+};
 
 const items = [
   [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
@@ -19,11 +46,16 @@ const items = [
 ];
 
 const HeatMapDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="HeatMap">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/heat-map`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <h6>With explicit height and width</h6>
       <HeatMap items={items} className="fixed-h-w" />
@@ -33,9 +65,18 @@ const HeatMapDemo = () => (
     </DemoCard>
 
     <DemoCard
+      title="Disabled"
+      sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
+    >
+      <h6>When disabled, cells are not clickable</h6>
+      <HeatMap items={items} disabled />
+    </DemoCard>
+
+    <DemoCard
       title="Themes"
-      uniqueIdentifier="themeUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <h6>The following are responsive</h6>
       <h6>Primary</h6>
@@ -68,26 +109,17 @@ const HeatMapDemo = () => (
 
     <DemoCard
       title="Events"
-      uniqueIdentifier="eventsUse"
       sourceCode={eventsCode}
+      externalSampleLink={eventsLink}
     >
       <h6>Check console for event log</h6>
       <HeatMap items={items} onCellClick={({ row, column }) => console.log(`row: ${row}, column: ${column}`)} />
     </DemoCard>
 
     <DemoCard
-      title="Disabled"
-      uniqueIdentifier="disabledUse"
-      sourceCode={disabledCode}
-    >
-      <h6>When disabled, cells are not clickable</h6>
-      <HeatMap items={items} disabled />
-    </DemoCard>
-
-    <DemoCard
       title="Declaration Code"
-      uniqueIdentifier="decalrativeUse"
       sourceCode={declarativeCode}
+      externalSampleLink={declarativeLink}
     >
       <h6>
         Declarative code does not add any background to the heat map.
@@ -120,7 +152,15 @@ const HeatMapDemo = () => (
         </HeatMap.Row>
       </HeatMap>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(HeatMapDemo);

@@ -1,12 +1,3 @@
-const defaultSelectionCode = `
-<ListPanel multiple onItemClicked={props => console.log(props)}>
-  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
-  <ListPanel.Item selected index={2}>Item 2</ListPanel.Item>
-  <ListPanel.Item index={3}>Item 3</ListPanel.Item>
-  <ListPanel.Item selected index={4}>Item 4</ListPanel.Item>
-  <ListPanel.Item index={5}>Item 5</ListPanel.Item>
-</ListPanel>
-`;
 const borderedCode = `
 <ListPanel>
   <ListPanel.Item index={1}>Item 1</ListPanel.Item>
@@ -16,48 +7,7 @@ const borderedCode = `
   <ListPanel.Item index={5}>Item 5</ListPanel.Item>
 </ListPanel>
 `;
-const eventsCode = `
-<ListPanel onSelectionChange={({ event, index, selected }) => console.log(event, index, selected)} onItemClicked={({ event, index }) => console.log(event, index)}>
-  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
-  <ListPanel.Item isSelectable={false} index={2}>Item 2</ListPanel.Item>
-  <ListPanel.Item index={3}>Item 3</ListPanel.Item>
-  <ListPanel.Item index={4}>Item 4</ListPanel.Item>
-  <ListPanel.Item index={5}>Item 5</ListPanel.Item>
-</ListPanel>
-`;
-const customSizesCode = `
-<ListPanel small>
-  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
-  <ListPanel.Item index={2}>Item 2</ListPanel.Item>
-  <ListPanel.Item index={3}>Item 3</ListPanel.Item>
-  <ListPanel.Item index={4}>Item 4</ListPanel.Item>
-  <ListPanel.Item index={5}>Item 5</ListPanel.Item>
-</ListPanel>
 
-<ListPanel medium>
-  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
-  <ListPanel.Item index={2}>Item 2</ListPanel.Item>
-  <ListPanel.Item index={3}>Item 3</ListPanel.Item>
-  <ListPanel.Item index={4}>Item 4</ListPanel.Item>
-  <ListPanel.Item index={5}>Item 5</ListPanel.Item>
-</ListPanel>
-
-<ListPanel large>
-  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
-  <ListPanel.Item index={2}>Item 2</ListPanel.Item>
-  <ListPanel.Item index={3}>Item 3</ListPanel.Item>
-  <ListPanel.Item index={4}>Item 4</ListPanel.Item>
-  <ListPanel.Item index={5}>Item 5</ListPanel.Item>
-</ListPanel>
-
-<ListPanel style={{ fontSize: '40px' }}>
-  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
-  <ListPanel.Item index={2}>Item 2</ListPanel.Item>
-  <ListPanel.Item index={3}>Item 3</ListPanel.Item>
-  <ListPanel.Item index={4}>Item 4</ListPanel.Item>
-  <ListPanel.Item index={5}>Item 5</ListPanel.Item>
-</ListPanel>
-`;
 const customListCode = `
 <ListPanel multiple>
   <ListPanel.Item index={1}>
@@ -92,6 +42,41 @@ const customListCode = `
   </ListPanel.Item>
 </ListPanel>
 `;
+
+const customSizeCode = `
+<ListPanel small>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={2}>Item 2</ListPanel.Item>
+  <ListPanel.Item index={3}>Item 3</ListPanel.Item>
+  <ListPanel.Item index={4}>Item 4</ListPanel.Item>
+  <ListPanel.Item index={5}>Item 5</ListPanel.Item>
+</ListPanel>
+
+<ListPanel medium>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={2}>Item 2</ListPanel.Item>
+  <ListPanel.Item index={3}>Item 3</ListPanel.Item>
+  <ListPanel.Item index={4}>Item 4</ListPanel.Item>
+  <ListPanel.Item index={5}>Item 5</ListPanel.Item>
+</ListPanel>
+
+<ListPanel large>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={2}>Item 2</ListPanel.Item>
+  <ListPanel.Item index={3}>Item 3</ListPanel.Item>
+  <ListPanel.Item index={4}>Item 4</ListPanel.Item>
+  <ListPanel.Item index={5}>Item 5</ListPanel.Item>
+</ListPanel>
+
+<ListPanel style={{ fontSize: '40px' }}>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
+  <ListPanel.Item index={2}>Item 2</ListPanel.Item>
+  <ListPanel.Item index={3}>Item 3</ListPanel.Item>
+  <ListPanel.Item index={4}>Item 4</ListPanel.Item>
+  <ListPanel.Item index={5}>Item 5</ListPanel.Item>
+</ListPanel>
+`;
+
 const customThemeCode = `
 <ListPanel primary>
 <ListPanel.Item index={1}>Item 1</ListPanel.Item>
@@ -169,6 +154,17 @@ const customThemeCode = `
 <ListPanel.Item style={{ backgroundColor: 'violet' }} index={9}>Item 9</ListPanel.Item>
 </ListPanel>
 `;
+
+const defaultSelectionCode = `
+<ListPanel multiple onItemClicked={props => console.log(props)}>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
+  <ListPanel.Item selected index={2}>Item 2</ListPanel.Item>
+  <ListPanel.Item index={3}>Item 3</ListPanel.Item>
+  <ListPanel.Item selected index={4}>Item 4</ListPanel.Item>
+  <ListPanel.Item index={5}>Item 5</ListPanel.Item>
+</ListPanel>
+`;
+
 const disabledCode = `
 <ListPanel disabled>
   <ListPanel.Item index={1}>Item 1</ListPanel.Item>
@@ -186,15 +182,17 @@ const disabledCode = `
   <ListPanel.Item index={5}>Item 5</ListPanel.Item>
 </ListPanel>
 `;
-const selectionModeCode = `
-<ListPanel multiple>
-  <ListPanel.Item selected index={1}>Item 1</ListPanel.Item>
-  <ListPanel.Item index={2}>Item 2</ListPanel.Item>
-  <ListPanel.Item selected index={3}>Item 3</ListPanel.Item>
+
+const eventsCode = `
+<ListPanel onSelectionChange={({ event, index, selected }) => console.log(event, index, selected)} onItemClicked={({ event, index }) => console.log(event, index)}>
+  <ListPanel.Item index={1}>Item 1</ListPanel.Item>
+  <ListPanel.Item isSelectable={false} index={2}>Item 2</ListPanel.Item>
+  <ListPanel.Item index={3}>Item 3</ListPanel.Item>
   <ListPanel.Item index={4}>Item 4</ListPanel.Item>
   <ListPanel.Item index={5}>Item 5</ListPanel.Item>
 </ListPanel>
 `;
+
 const multipleCode = `
 <ListPanel multiple>
   <ListPanel.Item index={1}>Item 1</ListPanel.Item>
@@ -204,6 +202,7 @@ const multipleCode = `
   <ListPanel.Item index={5}>Item 5</ListPanel.Item>
 </ListPanel>
 `;
+
 const simpleCode = `
 <ListPanel>
   <ListPanel.Item index={1}>Item 1</ListPanel.Item>
@@ -215,13 +214,12 @@ const simpleCode = `
 `;
 
 export {
-  selectionModeCode,
+  borderedCode,
+  customListCode,
+  customSizeCode,
+  customThemeCode,
   defaultSelectionCode,
   disabledCode,
-  customListCode,
-  customThemeCode,
-  customSizesCode,
-  borderedCode,
   eventsCode,
   multipleCode,
   simpleCode,

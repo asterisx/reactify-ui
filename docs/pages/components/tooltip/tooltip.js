@@ -2,26 +2,57 @@ import React from 'react';
 import { Tooltip, Paper } from '@../../../../reactify-ui/build';
 import {
   customSizeCode,
+  customThemeCode,
   positionCode,
   simpleCode,
-  themesCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customSizeLink,
+  customThemeLink,
+  positionLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Toast',
+    link: `${Constants.componentsPath}/toast`,
+  },
+  nextLink: {
+    text: 'Top Bar',
+    link: `${Constants.componentsPath}/top-bar`,
+  },
+};
 
 const TooltipDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Tooltip">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/tooltip`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Tooltip content="I am a simple tooltip">Hover over me to show tooltip</Tooltip>
     </DemoCard>
 
     <DemoCard
       title="Positioning"
-      uniqueIdentifier="positioningUse"
       sourceCode={positionCode}
+      externalSampleLink={positionLink}
     >
       <div className="d-flex justify-items-center">
         <Tooltip top content="I am a top tooltip">Hover over me to show top tooltip</Tooltip>
@@ -36,8 +67,8 @@ const TooltipDemo = () => (
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="themesUse"
-      sourceCode={themesCode}
+      sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <Tooltip primary content="I am a primary tooltip"><Paper primary className="pl-2 pr-2 m-2">Hover over me to show primary tooltip</Paper></Tooltip>
       <br />
@@ -54,13 +85,12 @@ const TooltipDemo = () => (
       <Tooltip danger content="I am a danger tooltip"><Paper danger className="pl-2 pr-2 m-2">Hover over me to show danger tooltip</Paper></Tooltip>
       <br />
       <Tooltip success content="I am a success tooltip"><Paper success className="pl-2 pr-2 m-2">Hover over me to show success tooltip</Paper></Tooltip>
-      <br />
     </DemoCard>
 
     <DemoCard
       title="Sizes"
-      uniqueIdentifier="sizingUse"
       sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <Tooltip small content="I am a small tooltip">Hover over me to show small tooltip</Tooltip>
       <br />
@@ -70,7 +100,15 @@ const TooltipDemo = () => (
       <br />
       <Tooltip className="customSize" content="I am a custom size tooltip">Hover over me to show custom size tooltip</Tooltip>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(TooltipDemo);

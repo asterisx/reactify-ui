@@ -10,14 +10,48 @@ import {
   simpleCode,
   singularCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  breakpointLink,
+  propsLink,
+  selectableLink,
+  selectionLink,
+  searchableLink,
+  simpleLink,
+  singularLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Search Bar',
+    link: `${Constants.componentsPath}/search-bar`,
+  },
+  nextLink: {
+    text: 'Sidebar',
+    link: `${Constants.componentsPath}/sidebar`,
+  },
+};
 
 const SelectDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Select">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/select`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <h6>Tray open by default</h6>
       <Select trayOpen>
@@ -30,8 +64,8 @@ const SelectDemo = () => (
 
     <DemoCard
       title="Singular"
-      uniqueIdentifier="singularUse"
       sourceCode={singularCode}
+      externalSampleLink={singularLink}
     >
       {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
       <h6 className="mt-3 mb-3">By default select is multiple but you can use {'multiple={false}'} to make the select singular</h6>
@@ -45,8 +79,8 @@ const SelectDemo = () => (
 
     <DemoCard
       title="Selectable"
-      uniqueIdentifier="selectableUse"
       sourceCode={selectableCode}
+      externalSampleLink={selectableLink}
     >
       <Select allSelectable>
         <Select.Item index={1}>Item 1</Select.Item>
@@ -58,8 +92,8 @@ const SelectDemo = () => (
 
     <DemoCard
       title="Searchable"
-      uniqueIdentifier="searchableUse"
       sourceCode={searchableCode}
+      externalSampleLink={searchableLink}
     >
       <Select searchable>
         <Select.Item index={1}>some</Select.Item>
@@ -67,13 +101,12 @@ const SelectDemo = () => (
         <Select.Item index={3}>some other value</Select.Item>
         <Select.Item index={4}>value also</Select.Item>
       </Select>
-
     </DemoCard>
 
     <DemoCard
       title="Props"
-      uniqueIdentifier="propsUse"
       sourceCode={propsCode}
+      externalSampleLink={propsLink}
     >
       <h6 className="mt-3 mb-3">Under the hood Select is a dropdown, so all props you pass to select will be drilled to dropdown</h6>
       <h6 className="mt-3 mb-3">Select also uses list panel and list panel props are pases as is, i.e theme props and size props</h6>
@@ -94,8 +127,8 @@ const SelectDemo = () => (
 
     <DemoCard
       title="Breakpoints"
-      uniqueIdentifier="breakpointsUse"
       sourceCode={breakpointCode}
+      externalSampleLink={breakpointLink}
     >
       <h6 className="mt-3 mb-3">Options will show inside a portal on screen sizes marked by props sm, md, lg, xl. Open this dropdown on a md or xs screen size</h6>
       <h6>Tray open by default</h6>
@@ -109,8 +142,8 @@ const SelectDemo = () => (
 
     <DemoCard
       title="onSelection"
-      uniqueIdentifier="selectionUse"
       sourceCode={selectionCode}
+      externalSampleLink={selectionLink}
     >
       <Select searchable allSelectable onSelectionChange={props => console.log(props)}>
         <Select.Item index={1}>Item 1</Select.Item>
@@ -119,7 +152,15 @@ const SelectDemo = () => (
         <Select.Item index={4}>Item 4</Select.Item>
       </Select>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(SelectDemo);

@@ -6,6 +6,13 @@ const customClassCode = `
 <Link href="#" className="bg-dark text-light p-1">A custom class Link</Link>
 `;
 
+const customSizeCode = `
+<Link href="#" small>A small Link</Link>
+<Link href="#" medium>A medium Link</Link>
+<Link href="#" large>A large Link</Link>
+<Link href="#" style={{ fontSize: '75px' }}>A custom size Link</Link>
+`;
+
 const customThemeCode = `
 <Link href="#" primary>A primary Link</Link>
 <Link href="#" secondary>A secondary Link</Link>
@@ -21,18 +28,11 @@ const simpleCode = `
 <Link href="#">A simple Link</Link>
 `;
 
-const sizeCode = `
-<Link href="#" small>A small Link</Link>
-<Link href="#" medium>A medium Link</Link>
-<Link href="#" large>A large Link</Link>
-<Link href="#" style={{ fontSize: '75px' }}>A custom size Link</Link>
-`;
-
 
 export {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   simpleCode,
-  sizeCode,
 };

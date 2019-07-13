@@ -6,6 +6,13 @@ const customClassCode = `
 <Text className="bg-dark text-light p-1">A custom class text</Text>
 `;
 
+const customSizeCode = `
+<Text small>A small text</Text>
+<Text medium>A medium text</Text>
+<Text large>A large text</Text>
+<Text style={{ fontSize: '75px' }}>A custom size text</Text>
+`;
+
 const customThemeCode = `
 <Text primary>A primary text</Text>
 <Text secondary>A secondary text</Text>
@@ -21,18 +28,10 @@ const simpleCode = `
 <Text>A simple text</Text>
 `;
 
-const sizeCode = `
-<Text small>A small text</Text>
-<Text medium>A medium text</Text>
-<Text large>A large text</Text>
-<Text style={{ fontSize: '75px' }}>A custom size text</Text>
-`;
-
-
 export {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   simpleCode,
-  sizeCode,
 };

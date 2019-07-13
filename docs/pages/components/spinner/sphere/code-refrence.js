@@ -12,6 +12,28 @@ const customClassCode = `
 />
 `;
 
+const customSizeCode = `
+<Spinner
+  sphere
+  small
+/>
+
+<Spinner
+  sphere
+  medium
+/>
+
+<Spinner
+  sphere
+  large
+/>  
+
+<Spinner
+  sphere
+  style={{ fontSize: '75px' }}
+/>
+`;
+
 const customThemeCode = `
 <Spinner
   sphere
@@ -61,28 +83,6 @@ const simpleCode = `
 />
 `;
 
-const sizeCode = `
-<Spinner
-  sphere
-  small
-/>
-
-<Spinner
-  sphere
-  medium
-/>
-
-<Spinner
-  sphere
-  large
-/>  
-
-<Spinner
-  sphere
-  style={{ fontSize: '75px' }}
-/>
-`;
-
 const customSpeedCode = `
 <Spinner
   sphere
@@ -98,8 +98,8 @@ const customSpeedCode = `
 export {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   customSpeedCode,
   simpleCode,
-  sizeCode,
 };

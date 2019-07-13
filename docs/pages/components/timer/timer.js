@@ -5,13 +5,41 @@ import {
 } from '@../../../../reactify-ui/build';
 import {
   customColorCode,
+  customSizeCode,
   customThemeCode,
   customClassCode,
   propsCode,
   simpleCode,
-  sizeCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customColorLink,
+  customSizeLink,
+  customThemeLink,
+  customClassLink,
+  propsLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Text',
+    link: `${Constants.componentsPath}/text`,
+  },
+  nextLink: {
+    text: 'Toast',
+    link: `${Constants.componentsPath}/toast`,
+  },
+};
 
 const millisOfFuture = Date.now() + (1000 * 5 * 30);
 const millisOfPast = Date.now() - (1000 * 5);
@@ -37,11 +65,16 @@ class TimerDemo extends Component {
 
   render() {
     return (
-      <div className="w-100">
+      <DemoPage componentName="Timer">
+        <ComponentInfo
+          productionReady
+          responsive
+          githubLink={`${Constants.githubComponentsPath}/timer`}
+        />
         <DemoCard
           title="Simple Use"
-          uniqueIdentifier="simpleUse"
           sourceCode={simpleCode}
+          externalSampleLink={simpleLink}
         >
           <Timer milliseconds={millisOfFuture} />
           <br />
@@ -50,8 +83,8 @@ class TimerDemo extends Component {
 
         <DemoCard
           title="Props"
-          uniqueIdentifier="propsUse"
           sourceCode={propsCode}
+          externalSampleLink={propsLink}
         >
           <Timer
             milliseconds={millisOfSomeDistantPast}
@@ -92,8 +125,8 @@ class TimerDemo extends Component {
 
         <DemoCard
           title="Size"
-          uniqueIdentifier="sizeUse"
-          sourceCode={sizeCode}
+          sourceCode={customSizeCode}
+          externalSampleLink={customSizeLink}
         >
           <h6>small</h6>
           <Timer
@@ -129,8 +162,8 @@ class TimerDemo extends Component {
 
         <DemoCard
           title="Custom Color (any valid CSS solor)"
-          uniqueIdentifier="customColorUse"
           sourceCode={customColorCode}
+          externalSampleLink={customColorLink}
         >
           <Timer
             milliseconds={millisOfSomeDistantPast}
@@ -140,8 +173,8 @@ class TimerDemo extends Component {
 
         <DemoCard
           title="Themes"
-          uniqueIdentifier="themeUse"
           sourceCode={customThemeCode}
+          externalSampleLink={customThemeLink}
         >
           <h6>Primary</h6>
           <Timer
@@ -201,15 +234,23 @@ class TimerDemo extends Component {
 
         <DemoCard
           title="Custom Class"
-          uniqueIdentifier="customClassUse"
           sourceCode={customClassCode}
+          externalSampleLink={customClassLink}
         >
           <Timer
             milliseconds={millisOfSomeDistantPast}
             className="bg-dark text-light p-3"
           />
         </DemoCard>
-      </div>
+
+        <BottomNav
+          className="mt-4 mb-4"
+          prevLinkText={bottomNavLinks.prevLink.text}
+          prevLink={bottomNavLinks.prevLink.link}
+          nextLinkText={bottomNavLinks.nextLink.text}
+          nextLink={bottomNavLinks.nextLink.link}
+        />
+      </DemoPage>
     );
   }
 }

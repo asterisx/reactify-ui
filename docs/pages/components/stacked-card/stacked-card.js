@@ -7,17 +7,50 @@ import {
   customClassCode,
   customSizeCode,
   disabledCode,
-  noShadowCode,
   simpleCode,
+  noShadowCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  borderedColoredLink,
+  customClassLink,
+  customSizeLink,
+  disabledLink,
+  simpleLink,
+  noShadowLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Split Pane',
+    link: `${Constants.componentsPath}/split-pane`,
+  },
+  nextLink: {
+    text: 'Star Rating',
+    link: `${Constants.componentsPath}/star-rating`,
+  },
+};
 
 const StackedCardDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Stacked Card">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/stacked-card`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <h4 className="pt-3 pb-3">StackedCard.Body, StackedCard.Header and StackedCard.Footer's children should be able to have their own width such as (width: 300px) or are block elements.</h4>
       <StackedCard className="stacked-card_font-responsive">
@@ -42,8 +75,8 @@ const StackedCardDemo = () => (
 
     <DemoCard
       title="No Shadow"
-      uniqueIdentifier="noShadowUse"
       sourceCode={noShadowCode}
+      externalSampleLink={noShadowLink}
     >
       <h4 className="pt-3 pb-3">{'shadowed={false}'}</h4>
       <StackedCard shadowed={false} className="stacked-card_font-responsive">
@@ -68,8 +101,8 @@ const StackedCardDemo = () => (
 
     <DemoCard
       title="Custom Sizes (i.e height of card)"
-      uniqueIdentifier="customSizes"
       sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <h6 className="pt-3 pb-3">small</h6>
       <StackedCard small className="stacked-card_font-responsive">
@@ -160,8 +193,8 @@ const StackedCardDemo = () => (
 
     <DemoCard
       title="Disabled Use"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <StackedCard disabled className="stacked-card_font-responsive">
         <StackedCard.Header>
@@ -185,8 +218,8 @@ const StackedCardDemo = () => (
 
     <DemoCard
       title="Bordered & Border Color"
-      uniqueIdentifier="borderedColored"
       sourceCode={borderedColoredCode}
+      externalSampleLink={borderedColoredLink}
     >
       <h6 className="pb-3">
       StackedCard.Body and StackedCard.Footer can be bordered and can optionally have a
@@ -214,8 +247,8 @@ const StackedCardDemo = () => (
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <h6 className="pb-3 pt-3">
       StackedCard,
@@ -242,7 +275,15 @@ const StackedCardDemo = () => (
         </StackedCard.Footer>
       </StackedCard>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(StackedCardDemo);

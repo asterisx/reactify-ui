@@ -4,44 +4,80 @@
 import React from 'react';
 import { Dismiss, Spinner, Button } from '@../../../../reactify-ui/build';
 import {
-  simpleCode,
-  disabledCode,
-  customThemeCode,
   customColorCode,
   customEventCode,
-  customIconCode,
   childrenCode,
   customClassCode,
-  sizeCode,
+  customIconCode,
+  customSizeCode,
+  customThemeCode,
+  disabledCode,
+  simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  childrenLink,
+  customColorLink,
+  customEventLink,
+  customIconLink,
+  customClassLink,
+  customSizeLink,
+  customThemeLink,
+  disabledLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Context Menu',
+    link: `${Constants.componentsPath}/context-menu`,
+  },
+  nextLink: {
+    text: 'Dropdown',
+    link: `${Constants.componentsPath}/dropdown`,
+  },
+};
 
 const DismissDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Dismiss">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/dismiss`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Dismiss className="align-self-center">
-          A simple Dismiss
+        A simple Dismiss
       </Dismiss>
     </DemoCard>
 
     <DemoCard
       title="Disabled"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <Dismiss disabled>
-          This is disabled
+        This is disabled
       </Dismiss>
     </DemoCard>
 
     <DemoCard
       title="Custom Sizes"
-      uniqueIdentifier="customSizes"
-      sourceCode={sizeCode}
+      sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <Dismiss small>Small Dismiss</Dismiss>
       <br />
@@ -57,8 +93,8 @@ const DismissDemo = () => (
 
     <DemoCard
       title="Children"
-      uniqueIdentifier="childrenUse"
       sourceCode={childrenCode}
+      externalSampleLink={childrenLink}
     >
       <Dismiss style={{ width: 'auto' }}>
         <div className="card" style={{ width: '18rem', color: 'black' }}>
@@ -73,18 +109,18 @@ const DismissDemo = () => (
 
     <DemoCard
       title="Custom Background"
-      uniqueIdentifier="customBackgroundUse"
       sourceCode={customColorCode}
+      externalSampleLink={customColorLink}
     >
       <Dismiss style={{ backgroundColor: 'violet' }}>
-          Dismiss with custom background color
+        Dismiss with custom background color
       </Dismiss>
     </DemoCard>
 
     <DemoCard
       title="Custom Icon"
-      uniqueIdentifier="customIcondUse"
       sourceCode={customIconCode}
+      externalSampleLink={customIconLink}
     >
       <Dismiss
         icon={<Spinner small light clock />}
@@ -96,19 +132,9 @@ const DismissDemo = () => (
     </DemoCard>
 
     <DemoCard
-      title="Custom Class"
-      uniqueIdentifier="customClassUse"
-      sourceCode={customClassCode}
-    >
-      <Dismiss className="text-light bg-dark w-100">
-        This Dismiss has custom class
-      </Dismiss>
-    </DemoCard>
-
-    <DemoCard
       title="Theme"
-      uniqueIdentifier="customTheme"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <Dismiss primary>
         Primary theme
@@ -121,45 +147,63 @@ const DismissDemo = () => (
       <br />
       <br />
       <Dismiss dark>
-          Dark theme
+        Dark theme
       </Dismiss>
       <br />
       <br />
       <Dismiss light>
-          Light theme
+        Light theme
       </Dismiss>
       <br />
       <br />
       <Dismiss info>
-          Info theme
+        Info theme
       </Dismiss>
       <br />
       <br />
       <Dismiss warning>
-          Warning theme
+        Warning theme
       </Dismiss>
       <br />
       <br />
       <Dismiss danger>
-          Danger theme
+        Danger theme
       </Dismiss>
       <br />
       <br />
       <Dismiss success>
-          Success theme
+        Success theme
+      </Dismiss>
+    </DemoCard>
+
+    <DemoCard
+      title="Custom Class"
+      sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
+    >
+      <Dismiss className="text-light bg-dark w-100">
+        This Dismiss has custom class
       </Dismiss>
     </DemoCard>
 
     <DemoCard
       title="Custom Event"
-      uniqueIdentifier="customEventUse"
       sourceCode={customEventCode}
+      externalSampleLink={customEventLink}
     >
       <Dismiss onClose={() => alert('Closed')}>
         This Dismiss has event handler
       </Dismiss>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(DismissDemo);

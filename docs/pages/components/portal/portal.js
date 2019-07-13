@@ -4,11 +4,38 @@ import { Portal, Button } from '@../../../../reactify-ui/build';
 import {
   autoCloseCode,
   hideBackdropCode,
-  simpleCode,
-  portalLocationCode,
   onCloseCode,
+  portalLocationCode,
+  simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  autoCloseLink,
+  hideBackdropLink,
+  onCloseLink,
+  portalLocationLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Paper',
+    link: `${Constants.componentsPath}/paper`,
+  },
+  nextLink: {
+    text: 'Progress Bar',
+    link: `${Constants.componentsPath}/progress-bar`,
+  },
+};
 
 class PortalDemo extends Component {
     state = {
@@ -24,11 +51,16 @@ class PortalDemo extends Component {
 
     render() {
       return (
-        <div className="w-100">
+        <DemoPage componentName="Portal">
+          <ComponentInfo
+            productionReady
+            responsive
+            githubLink={`${Constants.githubComponentsPath}/portal`}
+          />
           <DemoCard
             title="Simple Use"
-            uniqueIdentifier="simpleUse"
             sourceCode={simpleCode}
+            externalSampleLink={simpleLink}
           >
             <Button onClick={() => this.setState({ simplePortalOpen: true })}>Open Portal</Button>
             {this.state.simplePortalOpen && (
@@ -59,8 +91,8 @@ class PortalDemo extends Component {
 
           <DemoCard
             title="Portal Location"
-            uniqueIdentifier="portalLocationUse"
             sourceCode={portalLocationCode}
+            externalSampleLink={portalLocationLink}
           >
             <Button onClick={() => this.setState({ topPortalOpen: true })}>Open Top Portal</Button>
             {this.state.topPortalOpen && (
@@ -180,13 +212,12 @@ class PortalDemo extends Component {
               )}
             </Portal>
             )}
-            <br />
           </DemoCard>
 
           <DemoCard
             title="Auto Close"
-            uniqueIdentifier="autoCloseUse"
             sourceCode={autoCloseCode}
+            externalSampleLink={autoCloseLink}
           >
             <h6 className="pb-3">
               By default the portal closes when clicking outside the portal
@@ -231,8 +262,8 @@ class PortalDemo extends Component {
 
           <DemoCard
             title="Hide Backdrop"
-            uniqueIdentifier="hideBackdropUse"
             sourceCode={hideBackdropCode}
+            externalSampleLink={hideBackdropLink}
           >
             <h6 className="pb-3">
                 To make the backdrop opaque
@@ -274,8 +305,8 @@ class PortalDemo extends Component {
 
           <DemoCard
             title="onClose Event"
-            uniqueIdentifier="onCloseUse"
             sourceCode={onCloseCode}
+            externalSampleLink={onCloseLink}
           >
             <Button
               onClick={() => this.setState({ onClosePortal: true })}
@@ -307,7 +338,15 @@ class PortalDemo extends Component {
             </Portal>
             )}
           </DemoCard>
-        </div>
+
+          <BottomNav
+            className="mt-4 mb-4"
+            prevLinkText={bottomNavLinks.prevLink.text}
+            prevLink={bottomNavLinks.prevLink.link}
+            nextLinkText={bottomNavLinks.nextLink.text}
+            nextLink={bottomNavLinks.nextLink.link}
+          />
+        </DemoPage>
       );
     }
 }

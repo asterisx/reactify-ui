@@ -1,13 +1,3 @@
-const simpleCode = `
-  <Label>
-    Simple Label
-  </Label>
-`;
-const disabledCode = `
-  <Label disabled>
-    Disabled Label
-  </Label>
-`;
 const childrenCode = `
 <Label medium className="p-2">
   <div className="card text-dark" style={{ width: '18rem' }}>
@@ -24,11 +14,35 @@ const childrenCode = `
   </div>
 </Label>
 `;
+
 const customClassCode = `
 <Label className="text-light bg-dark p-2 shadow">
   Custom Class Label
 </Label>
 `;
+
+const customColorCode = `
+<Label style={{ backgroundColor: 'violet' }}>Simple Label</Label>
+`;
+
+const customSizeCode = `
+<Label small>
+  Small Label
+</Label>
+
+<Label medium>
+  Medium Label
+</Label>
+
+<Label large>
+  Large Label
+</Label>
+
+<Label style={{ fontSize: '35px' }}>
+  Label with size 35px
+</Label>
+`;
+
 const customThemeCode = `
 <Label primary>
   Primary Theme
@@ -62,33 +76,25 @@ const customThemeCode = `
   Success Theme
 </Label>
 `;
-const customColorCode = `
-<Label style={{ backgroundColor: 'violet' }}>Simple Label</Label>
+
+const disabledCode = `
+  <Label disabled>
+    Disabled Label
+  </Label>
 `;
-const customSizeCode = `
-<Label small>
-  Small Label
-</Label>
 
-<Label medium>
-  Medium Label
-</Label>
-
-<Label large>
-  Large Label
-</Label>
-
-<Label style={{ fontSize: '35px' }}>
-  Label with size 35px
-</Label>
+const simpleCode = `
+  <Label>
+    Simple Label
+  </Label>
 `;
 
 export {
-  simpleCode,
-  disabledCode,
-  customThemeCode,
-  customColorCode,
   childrenCode,
+  customColorCode,
   customClassCode,
   customSizeCode,
+  customThemeCode,
+  disabledCode,
+  simpleCode,
 };

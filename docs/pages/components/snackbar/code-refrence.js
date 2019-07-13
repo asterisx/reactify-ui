@@ -3,7 +3,7 @@ const actionCode = `
     duration={3000}
     action="undo"
     onActionClick={() => alert("Acion Clicked")} 
-    message="Disabled Snackbar :)"
+    message="Action Snackbar :)"
 />
 `;
 const childrenCode = `

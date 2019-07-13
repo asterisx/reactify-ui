@@ -11,14 +11,47 @@ import {
   directionCode,
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  childrenLink,
+  customColorLink,
+  customClassLink,
+  customThemeLink,
+  directionLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Label',
+    link: `${Constants.componentsPath}/label`,
+  },
+  nextLink: {
+    text: 'Link',
+    link: `${Constants.componentsPath}/link`,
+  },
+};
 
 const LegendDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Legend">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/legend`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Legend>
         <LegendItem>Inventory</LegendItem>
@@ -26,9 +59,9 @@ const LegendDemo = () => (
     </DemoCard>
 
     <DemoCard
-      title="Direction (vertical or horizontal), default is horizontal"
-      uniqueIdentifier="directionUse"
+      title="Direction, vertical or horizontal (default)"
       sourceCode={directionCode}
+      externalSampleLink={directionLink}
     >
       <h6>Vertical</h6>
       <Legend vertical>
@@ -46,8 +79,8 @@ const LegendDemo = () => (
 
     <DemoCard
       title="Children, Legend and Legend items both accept children"
-      uniqueIdentifier="childrenUse"
       sourceCode={childrenCode}
+      externalSampleLink={childrenLink}
     >
       <h6>LegendItem's are usually used as children for Legend, but both Legend and LegendItems's can accept any children</h6>
       <Legend vertical>
@@ -58,8 +91,8 @@ const LegendDemo = () => (
 
     <DemoCard
       title="Custom Color"
-      uniqueIdentifier="customColorUse"
       sourceCode={customColorCode}
+      externalSampleLink={customColorLink}
     >
       <Legend>
         <LegendItem iconColor="violet">Inventory</LegendItem>
@@ -68,8 +101,8 @@ const LegendDemo = () => (
 
     <DemoCard
       title="Theme"
-      uniqueIdentifier="customTheme"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <Legend vertical>
         <LegendItem primary>Primary Theme</LegendItem>
@@ -85,14 +118,22 @@ const LegendDemo = () => (
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <Legend className="p-2 bg-primary">
         <LegendItem className="text-light bg-secondary pr-1 pl-1">Inventory</LegendItem>
       </Legend>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(LegendDemo);

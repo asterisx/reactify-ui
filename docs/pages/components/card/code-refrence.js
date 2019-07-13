@@ -3,7 +3,7 @@ const borderedColoredCode = `
   <Card.Header>
     <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
   </Card.Header>
-  <Card.Body bordered borderColor="violet">
+  <Card.Body bordered style={{ borderColor: 'violet' }}>
     <span>
       <h5>Avenger's Endgame</h5>
       Adrift in space with no food or water, Tony Stark sends a message to

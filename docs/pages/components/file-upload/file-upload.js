@@ -9,14 +9,44 @@ import {
   disabledCode,
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  clickableLink,
+  disabledLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Dropdown',
+    link: `${Constants.componentsPath}/dropdown`,
+  },
+  nextLink: {
+    text: 'Full Screen',
+    link: `${Constants.componentsPath}/full-screen`,
+  },
+};
 
 const FileUploadDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="File Upload">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/file-upload`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <h6>Check console for onChange event</h6>
       <FileUpload
@@ -32,8 +62,8 @@ const FileUploadDemo = () => (
 
     <DemoCard
       title="Clickable"
-      uniqueIdentifier="clickableUse"
       sourceCode={clickableCode}
+      externalSampleLink={clickableLink}
     >
       <h6>Check console for onChange event</h6>
       <FileUpload
@@ -50,8 +80,8 @@ const FileUploadDemo = () => (
 
     <DemoCard
       title="Disabled"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <FileUpload
         disabled
@@ -63,7 +93,15 @@ const FileUploadDemo = () => (
         )}
       </FileUpload>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(FileUploadDemo);

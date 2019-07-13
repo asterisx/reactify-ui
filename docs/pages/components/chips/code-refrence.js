@@ -1,10 +1,8 @@
-const onCloseCode = `
-<Chip onCloseClick={() => alert('Close Clicked')}>Item 1</Chip>
-`;
 const customColorCode = `
 <Chip style={{ backgroundColor: 'violet' }}>Custom Color</Chip>
 `;
-const customSizesCode = `
+
+const customSizeCode = `
 <Chip small>Item 1</Chip>
 
 <Chip medium>Item 1</Chip>
@@ -31,6 +29,7 @@ const customThemeCode = `
 
 <Chip success>Item 1</Chip>
 `;
+
 const disabledCode = `
 <Chips disabled>
   <Chip key={1}>Item 1</Chip>
@@ -43,7 +42,10 @@ const disabledCode = `
   <Chip key={2}>Item 2</Chip>
   <Chip key={3}>Item 3</Chip>
 </Chips>
+`;
 
+const onCloseCode = `
+<Chip onCloseClick={() => alert('Close Clicked')}>Item 1</Chip>
 `;
 
 const simpleCode = `
@@ -61,10 +63,10 @@ const simpleCode = `
 `;
 
 export {
-  disabledCode,
   customColorCode,
+  customSizeCode,
   customThemeCode,
-  customSizesCode,
+  disabledCode,
   onCloseCode,
   simpleCode,
 };

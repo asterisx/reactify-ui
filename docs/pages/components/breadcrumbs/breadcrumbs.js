@@ -13,7 +13,33 @@ import {
   seperatorCode,
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  declarativeLink,
+  disabledLink,
+  seperatorLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Badge',
+    link: `${Constants.componentsPath}/badge`,
+  },
+  nextLink: {
+    text: 'Button',
+    link: `${Constants.componentsPath}/button`,
+  },
+};
 
 const items = [
   {
@@ -53,11 +79,16 @@ const itemsWithSomeDisabled = [
 ];
 
 const BreadcrumbsDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Breadcrumbs">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/breadcrumbs`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <h6>Check the console for events</h6>
       <Breadcrumbs items={items} />
@@ -65,8 +96,8 @@ const BreadcrumbsDemo = () => (
 
     <DemoCard
       title="Disabled Use"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <Breadcrumbs items={items} disabled />
       <h5 className="mt-3">Single item disabled</h5>
@@ -88,16 +119,16 @@ const BreadcrumbsDemo = () => (
 
     <DemoCard
       title="Seperator"
-      uniqueIdentifier="seperatorUse"
       sourceCode={seperatorCode}
+      externalSampleLink={seperatorLink}
     >
       <Breadcrumbs items={items} seperator={<FaAngleRight />} />
     </DemoCard>
 
     <DemoCard
       title="Declarative"
-      uniqueIdentifier="customDeclarativeUse"
       sourceCode={declarativeCode}
+      externalSampleLink={declarativeLink}
     >
       <ul>
         {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
@@ -118,7 +149,15 @@ const BreadcrumbsDemo = () => (
         </Breadcrumbs.Item>
       </Breadcrumbs>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(BreadcrumbsDemo);

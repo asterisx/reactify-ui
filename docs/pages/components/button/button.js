@@ -13,22 +13,58 @@ import {
   clearCode,
   clearBorderedCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  childrenLink,
+  clearBorderedLink,
+  clearLink,
+  customClassLink,
+  customColorLink,
+  customSizeLink,
+  customThemeLink,
+  disabledLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Breadcrumbs',
+    link: `${Constants.componentsPath}/breadcrumbs`,
+  },
+  nextLink: {
+    text: 'Card',
+    link: `${Constants.componentsPath}/card`,
+  },
+};
 
 const ButtonDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Button">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/button`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Button>Default Button</Button>
     </DemoCard>
 
     <DemoCard
       title="Custom Sizes"
-      uniqueIdentifier="customSizes"
       sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <Button small>Small Button</Button>
       <br />
@@ -44,8 +80,8 @@ const ButtonDemo = () => (
 
     <DemoCard
       title="Custom Themes"
-      uniqueIdentifier="customTheme"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <Button primary>Primary Button</Button>
       <br />
@@ -73,16 +109,16 @@ const ButtonDemo = () => (
 
     <DemoCard
       title="Disabled Use"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <Button disabled>Disabled Button</Button>
     </DemoCard>
 
     <DemoCard
       title="Children"
-      uniqueIdentifier="childrenUse"
       sourceCode={childrenCode}
+      externalSampleLink={childrenLink}
     >
       <Button>
         <div className="card text-dark" style={{ width: '18rem' }}>
@@ -96,24 +132,24 @@ const ButtonDemo = () => (
 
     <DemoCard
       title="Custom Color, any valid css color (hex, rgb etc...) will work."
-      uniqueIdentifier="customColorUse"
       sourceCode={customColorCode}
+      externalSampleLink={customColorLink}
     >
       <Button style={{ backgroundColor: 'violter', color: 'white' }}>Custom Color Button</Button>
     </DemoCard>
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <Button className="p-5">Custom Class Button</Button>
     </DemoCard>
 
     <DemoCard
       title="Clear"
-      uniqueIdentifier="clear"
       sourceCode={clearCode}
+      externalSampleLink={clearLink}
     >
       <Button primary clear>Primary Button</Button>
       <br />
@@ -141,8 +177,8 @@ const ButtonDemo = () => (
 
     <DemoCard
       title="Clear & Bordered"
-      uniqueIdentifier="clearBordered"
       sourceCode={clearBorderedCode}
+      externalSampleLink={clearBorderedLink}
     >
       <Button primary clear bordered>Primary Button</Button>
       <br />
@@ -167,7 +203,15 @@ const ButtonDemo = () => (
       <br />
       <Button success clear bordered>Success Button</Button>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(ButtonDemo);

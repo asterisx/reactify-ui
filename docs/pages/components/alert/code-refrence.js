@@ -1,5 +1,5 @@
-const simpleCode = '<Alert>A simple alert</Alert >';
-const disabledCode = '<Alert disabled>This is disabled</Alert >';
+const simpleCode = '<Alert>A simple alert</Alert>';
+const disabledCode = '<Alert disabled>This is disabled</Alert>';
 const childrenCode = `
 <Alert>
   <div className = "card" style = {{ width: "18rem" }}>

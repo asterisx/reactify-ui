@@ -257,9 +257,9 @@ Accordion.Item.propTypes = {
   disabled: PropTypes.bool,
   /**
    * Callback fired when the state is changed.
-   *
+   * An object of shape:
    * @param {number} index The `index` of the accordion item on which the state change occurs.
-   * @param {boolean} selected The `selected` value of the accordion item is also passed
+   * @param {boolean} opened The `opened` value of the accordion item is also passed
    */
   onChange: PropTypes.func,
   /**

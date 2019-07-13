@@ -12,6 +12,28 @@ const customClassCode = `
 />
 `;
 
+const customSizeCode = `
+<Spinner
+  vortex
+  small
+/>
+
+<Spinner
+  vortex
+  medium
+/>
+
+<Spinner
+  vortex
+  large
+/>  
+
+<Spinner
+  vortex
+  style={{ fontSize: '75px' }}
+/>
+`;
+
 const customThemeCode = `
 <Spinner
   vortex
@@ -61,28 +83,6 @@ const simpleCode = `
 />
 `;
 
-const sizeCode = `
-<Spinner
-  vortex
-  small
-/>
-
-<Spinner
-  vortex
-  medium
-/>
-
-<Spinner
-  vortex
-  large
-/>  
-
-<Spinner
-  vortex
-  style={{ fontSize: '75px' }}
-/>
-`;
-
 const customSpeedCode = `
 <Spinner
   vortex
@@ -98,8 +98,8 @@ const customSpeedCode = `
 export {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   customSpeedCode,
   simpleCode,
-  sizeCode,
 };

@@ -5,26 +5,59 @@ import { Link } from '@../../../../reactify-ui/build';
 import {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   simpleCode,
-  sizeCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customColorLink,
+  customClassLink,
+  customSizeLink,
+  customThemeLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Legend',
+    link: `${Constants.componentsPath}/legend`,
+  },
+  nextLink: {
+    text: 'List Panel',
+    link: `${Constants.componentsPath}/list-panel`,
+  },
+};
+
 
 const LinkDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Link">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/link`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Link href="#">A simple Link</Link>
     </DemoCard>
 
     <DemoCard
       title="Size"
-      uniqueIdentifier="sizeUse"
-      sourceCode={sizeCode}
+      sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <h6>small</h6>
       <Link href="#" small>A small Link</Link>
@@ -45,16 +78,16 @@ const LinkDemo = () => (
 
     <DemoCard
       title="Custom Color (any valid CSS solor)"
-      uniqueIdentifier="customColorUse"
       sourceCode={customColorCode}
+      externalSampleLink={customColorLink}
     >
       <Link href="#" style={{ color: 'violet' }}>A custom color Link</Link>
     </DemoCard>
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="themeUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <h6>Primary</h6>
       <Link href="#" primary>A primary Link</Link>
@@ -79,17 +112,24 @@ const LinkDemo = () => (
 
       <h6 className="pt-3">Success</h6>
       <Link href="#" success>A success Link</Link>
-
     </DemoCard>
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <Link href="#" className="bg-dark Link-light p-1">A custom class Link</Link>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(LinkDemo);

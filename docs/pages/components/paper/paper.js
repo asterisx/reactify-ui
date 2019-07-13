@@ -2,35 +2,66 @@
 import React from 'react';
 import { Paper } from '@../../../../reactify-ui/build';
 import {
+  customSizeCode,
   customThemeCode,
   simpleCode,
-  sizeCode,
   noShadowCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  customSizeLink,
+  customThemeLink,
+  simpleLink,
+  noShadowLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Paginator',
+    link: `${Constants.componentsPath}/paginator`,
+  },
+  nextLink: {
+    text: 'Portal',
+    link: `${Constants.componentsPath}/portal`,
+  },
+};
 
 const NumberCounterDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Paper">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/paper`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Paper>Paper has some text, it can act as a base for building components</Paper>
     </DemoCard>
 
     <DemoCard
       title="No Shadow"
-      uniqueIdentifier="noShadowUse"
       sourceCode={noShadowCode}
+      externalSampleLink={noShadowLink}
     >
       <Paper noShadow>Paper has some text, it can act as a base for building components</Paper>
     </DemoCard>
 
     <DemoCard
       title="Size"
-      uniqueIdentifier="sizeUse"
-      sourceCode={sizeCode}
+      sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <h6>small</h6>
       <Paper small>Paper has some text, it can act as a base for building components</Paper>
@@ -51,8 +82,8 @@ const NumberCounterDemo = () => (
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="themeUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <h6>Primary</h6>
       <Paper primary>Paper has some text, it can act as a base for building components</Paper>
@@ -78,7 +109,15 @@ const NumberCounterDemo = () => (
       <h6 className="pt-3">Success</h6>
       <Paper success>Paper has some text, it can act as a base for building components</Paper>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(NumberCounterDemo);

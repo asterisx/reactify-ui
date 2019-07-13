@@ -32,7 +32,7 @@ const disabledCode = '<Paginator noOfPages={5} isControlled onChange={(...args) 
 const eventsCode = '<Paginator noOfPages={5} onChange={(...args) => console.log(...args)} />';
 
 const responsiveCode = `
-<Paginator noOfPages={5} sm md>
+<Paginator noOfPages={5} sm md className="w-100">
   <Paginator.Before>
     <Paper light noShadow className="w-100">
       <SearchBar className="w-100" />

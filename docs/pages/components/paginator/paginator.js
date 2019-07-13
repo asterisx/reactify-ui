@@ -12,22 +12,56 @@ import {
   responsiveCode,
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  controlledLink,
+  customThemeLink,
+  contentLink,
+  disabledLink,
+  eventsLink,
+  responsiveLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Number Counter',
+    link: `${Constants.componentsPath}/number-counter`,
+  },
+  nextLink: {
+    text: 'Paper',
+    link: `${Constants.componentsPath}/paper`,
+  },
+};
 
 const PaginatorDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Paginator">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/paginator`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Paginator noOfPages={5} />
     </DemoCard>
 
     <DemoCard
       title="Controlled"
-      uniqueIdentifier="controlledUse"
       sourceCode={controlledCode}
+      externalSampleLink={controlledLink}
     >
       <h6>
         Passing the isControlled prop makes the paginator controlled,
@@ -38,16 +72,16 @@ const PaginatorDemo = () => (
 
     <DemoCard
       title="Disabled Use"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <Paginator noOfPages={5} disabled />
     </DemoCard>
 
     <DemoCard
       title="Putting Content Before and After"
-      uniqueIdentifier="contentBeforeAfterUse"
       sourceCode={contentCode}
+      externalSampleLink={contentLink}
     >
       <Paginator noOfPages={5}>
         <Paginator.Before>
@@ -66,10 +100,10 @@ const PaginatorDemo = () => (
 
     <DemoCard
       title="Responsive"
-      uniqueIdentifier="responsiveUse"
       sourceCode={responsiveCode}
+      externalSampleLink={responsiveLink}
     >
-      <Paginator noOfPages={5} sm md>
+      <Paginator noOfPages={5} sm md className="w-100">
         <Paginator.Before>
           <Paper light noShadow className="w-100">
             <SearchBar className="w-100" />
@@ -86,8 +120,8 @@ const PaginatorDemo = () => (
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="themeUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <Paginator noOfPages={5} primary />
       <br />
@@ -115,13 +149,21 @@ const PaginatorDemo = () => (
 
     <DemoCard
       title="Events"
-      uniqueIdentifier="eventsUse"
       sourceCode={eventsCode}
+      externalSampleLink={eventsLink}
     >
       <h6>Check console for events</h6>
       <Paginator noOfPages={5} onChange={(...args) => console.log(...args)} />
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(PaginatorDemo);

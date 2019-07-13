@@ -6,6 +6,13 @@ const customClassCode = `
 <Input className="bg-dark Input-light p-1" />
 `;
 
+const customSizeCode = `
+<Input small defaultValue="A small input" type="text" />
+<Input medium defaultValue="A medium input" type="text" />
+<Input large defaultValue="A large input" type="text" />
+<Input style={{ fontSize: '75px' }} defaultValue="A custom size input" type="text" />
+`;
+
 const customThemeCode = `
 <Input primary defaultValue="A primary Input" type="text" />
 <Input secondary defaultValue="A Secondary Input" type="text" />
@@ -25,19 +32,11 @@ const simpleCode = `
 <Input />
 `;
 
-const sizeCode = `
-<Input small defaultValue="A small input" type="text" />
-<Input medium defaultValue="A medium input" type="text" />
-<Input large defaultValue="A large input" type="text" />
-<Input style={{ fontSize: '75px' }} defaultValue="A custom size input" type="text" />
-`;
-
-
 export {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   propsCode,
   simpleCode,
-  sizeCode,
 };

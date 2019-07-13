@@ -1,4 +1,4 @@
-import { ToastProvider, ToastConsumer } from './ToastProvider';
+import { ToastProvider, ToastConsumer } from './toast-provider';
 
 export {
   ToastProvider,

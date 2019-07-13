@@ -12,6 +12,28 @@ const customClassCode = `
 />
 `;
 
+const customSizeCode = `
+<Spinner
+  hydrogen
+  small
+/>
+
+<Spinner
+  hydrogen
+  medium
+/>
+
+<Spinner
+  hydrogen
+  large
+/>  
+
+<Spinner
+  hydrogen
+  style={{ fontSize: '75px' }}
+/>
+`;
+
 const customThemeCode = `
 <Spinner
   hydrogen
@@ -61,28 +83,6 @@ const simpleCode = `
 />
 `;
 
-const sizeCode = `
-<Spinner
-  hydrogen
-  small
-/>
-
-<Spinner
-  hydrogen
-  medium
-/>
-
-<Spinner
-  hydrogen
-  large
-/>  
-
-<Spinner
-  hydrogen
-  style={{ fontSize: '75px' }}
-/>
-`;
-
 const customSpeedCode = `
 <Spinner
   hydrogen
@@ -98,8 +98,8 @@ const customSpeedCode = `
 export {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   customSpeedCode,
   simpleCode,
-  sizeCode,
 };

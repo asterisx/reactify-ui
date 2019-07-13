@@ -1,3 +1,60 @@
+const customThemeCode = `
+<TreeView items={items} primary />
+<TreeView items={items} secondary />
+<TreeView items={items} info />
+<TreeView items={items} light />
+<TreeView items={items} warning />
+<TreeView items={items} danger />
+<TreeView items={items} success />
+`;
+
+const customDeclarativeCode = `
+<TreeView>
+  <TreeViewItem
+    key={1}
+    text="Option 1"
+  >
+    <TreeView>
+      <TreeViewItem key={1} text="Option 1" />
+      <TreeViewItem key={2} text="Option 2" />
+    </TreeView>
+  </TreeViewItem>
+  <TreeViewItem
+    key={2}
+    text="Option 2"
+  />
+</TreeView>
+
+<TreeView>
+  <TreeViewItem
+    key={1}
+    content={
+      ({ isTreeOpen, toggleSubTree }) => (
+        <Button
+          className="w-100"
+          onClick={toggleSubTree}
+          danger={isTreeOpen}
+          success={!isTreeOpen}
+        >
+          {isTreeOpen ? 'Close Sub Tree' : 'Open Sub Tree'}
+        </Button>
+      )}
+  >
+    <TreeView>
+      <TreeViewItem
+        key={1}
+        text="Sub Option 1"
+      />
+      <TreeViewItem
+        key={2}
+        text="Sub Option 2"
+      />
+    </TreeView>
+  </TreeViewItem>
+  <TreeViewItem text="Option 2" />
+</TreeView>
+`;
+
 const simpleCode = `
 const items = [
   {
@@ -72,63 +129,6 @@ const items = [
 ];
 
 <TreeView items={items} />
-`;
-const customThemeCode = `
-<TreeView items={items} primary />
-<TreeView items={items} secondary />
-<TreeView items={items} info />
-<TreeView items={items} light />
-<TreeView items={items} warning />
-<TreeView items={items} danger />
-<TreeView items={items} success />
-`;
-
-
-const customDeclarativeCode = `
-<TreeView>
-  <TreeViewItem
-    key={1}
-    text="Option 1"
-  >
-    <TreeView>
-      <TreeViewItem key={1} text="Option 1" />
-      <TreeViewItem key={2} text="Option 2" />
-    </TreeView>
-  </TreeViewItem>
-  <TreeViewItem
-    key={2}
-    text="Option 2"
-  />
-</TreeView>
-
-<TreeView>
-  <TreeViewItem
-    key={1}
-    content={
-      ({ isTreeOpen, toggleSubTree }) => (
-        <Button
-          className="w-100"
-          onClick={toggleSubTree}
-          danger={isTreeOpen}
-          success={!isTreeOpen}
-        >
-          {isTreeOpen ? 'Close Sub Tree' : 'Open Sub Tree'}
-        </Button>
-      )}
-  >
-    <TreeView>
-      <TreeViewItem
-        key={1}
-        text="Sub Option 1"
-      />
-      <TreeViewItem
-        key={2}
-        text="Sub Option 2"
-      />
-    </TreeView>
-  </TreeViewItem>
-  <TreeViewItem text="Option 2" />
-</TreeView>
 `;
 
 export {

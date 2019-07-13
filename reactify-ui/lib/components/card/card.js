@@ -47,7 +47,6 @@ Card.Header = ({
 
 Card.Body = ({
   bordered,
-  borderColor,
   children,
   ...otherProps
 }) => (
@@ -64,7 +63,6 @@ Card.Body = ({
 
 Card.Footer = ({
   bordered,
-  borderColor,
   children,
   ...otherProps
 }) => (

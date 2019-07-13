@@ -2,13 +2,40 @@
 import React, { Component } from 'react';
 import { Modal, Button } from '@../../../../reactify-ui/build';
 import {
-  autoCloseCode,
   hideBackdropCode,
   simpleCode,
   modalSizeCode,
+  notAutoCloseCode,
   onCloseCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  hideBackdropLink,
+  onCloseLink,
+  modalSizeLink,
+  notAutoCloseLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Login',
+    link: `${Constants.componentsPath}/login`,
+  },
+  nextLink: {
+    text: 'Number Counter',
+    link: `${Constants.componentsPath}/number-counter`,
+  },
+};
 
 class ModalDemo extends Component {
     state = {
@@ -24,11 +51,16 @@ class ModalDemo extends Component {
 
     render() {
       return (
-        <div className="w-100">
+        <DemoPage componentName="Modal">
+          <ComponentInfo
+            productionReady
+            responsive
+            githubLink={`${Constants.githubComponentsPath}/modal`}
+          />
           <DemoCard
             title="Simple Use"
-            uniqueIdentifier="simpleUse"
             sourceCode={simpleCode}
+            externalSampleLink={simpleLink}
           >
             <Button onClick={() => this.setState({ simpleModalOpen: true })}>Open Modal</Button>
             {this.state.simpleModalOpen && (
@@ -58,9 +90,9 @@ class ModalDemo extends Component {
           </DemoCard>
 
           <DemoCard
-            title="Modal Location"
-            uniqueIdentifier="ModalLocationUse"
+            title="Modal Size"
             sourceCode={modalSizeCode}
+            externalSampleLink={modalSizeLink}
           >
             <Button
               onClick={() => this.setState({ smallModalOpen: true })}
@@ -184,13 +216,12 @@ class ModalDemo extends Component {
               )}
             </Modal>
             )}
-            <br />
           </DemoCard>
 
           <DemoCard
-            title="Auto Close"
-            uniqueIdentifier="autoCloseUse"
-            sourceCode={autoCloseCode}
+            title="Auto Close (not)"
+            sourceCode={notAutoCloseCode}
+            externalSampleLink={notAutoCloseLink}
           >
             <h6 className="pb-3">
               By default the Modal closes when clicking outside the Modal
@@ -235,8 +266,8 @@ class ModalDemo extends Component {
 
           <DemoCard
             title="Hide Backdrop"
-            uniqueIdentifier="hideBackdropUse"
             sourceCode={hideBackdropCode}
+            externalSampleLink={hideBackdropLink}
           >
             <h6 className="pb-3">
                 To make the backdrop opaque
@@ -277,8 +308,8 @@ class ModalDemo extends Component {
 
           <DemoCard
             title="onClose Event"
-            uniqueIdentifier="onCloseUse"
             sourceCode={onCloseCode}
+            externalSampleLink={onCloseLink}
           >
             <Button
               onClick={() => this.setState({ onCloseModal: true })}
@@ -310,7 +341,15 @@ class ModalDemo extends Component {
             </Modal>
             )}
           </DemoCard>
-        </div>
+
+          <BottomNav
+            className="mt-4 mb-4"
+            prevLinkText={bottomNavLinks.prevLink.text}
+            prevLink={bottomNavLinks.prevLink.link}
+            nextLinkText={bottomNavLinks.nextLink.text}
+            nextLink={bottomNavLinks.nextLink.link}
+          />
+        </DemoPage>
       );
     }
 }

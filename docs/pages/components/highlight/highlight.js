@@ -9,7 +9,30 @@ import {
 import {
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Heirarchy View',
+    link: `${Constants.componentsPath}/heirarchy-view`,
+  },
+  nextLink: {
+    text: 'Horizontal Card',
+    link: `${Constants.componentsPath}/horizontal-card`,
+  },
+};
 
 class HighlightDemo extends Component {
   state = {
@@ -34,56 +57,62 @@ class HighlightDemo extends Component {
     const { selectedIndex, filter, insensitive } = this.state;
     const { handleChange, handleCheckboxChange, handleIndexChange } = this;
     return (
-      <DemoCard
-        className="w-100"
-        title="Simple Use"
-        uniqueIdentifier="simpleUse"
-        sourceCode={simpleCode}
-      >
-        <div>
-          <div className="d-flex">
-            <Input
-              value={filter}
-              onChange={handleChange}
-              style={{ fontSize: '0.8em' }}
-            />
-            <Checkbox
-              checked={insensitive}
-              onChange={handleCheckboxChange}
-              className="ml-2"
-              style={{ fontSize: '1em' }}
-            >
+      <DemoPage componentName="Highlight">
+        <ComponentInfo
+          productionReady
+          responsive
+          githubLink={`${Constants.githubComponentsPath}/highlight`}
+        />
+        <DemoCard
+          className="w-100"
+          title="Simple Use"
+          sourceCode={simpleCode}
+          externalSampleLink={simpleLink}
+        >
+          <div>
+            <div className="d-flex">
+              <Input
+                value={filter}
+                onChange={handleChange}
+                style={{ fontSize: '0.8em' }}
+              />
+              <Checkbox
+                checked={insensitive}
+                onChange={handleCheckboxChange}
+                className="ml-2"
+                style={{ fontSize: '1em' }}
+              >
               Case Insensitive
-            </Checkbox>
+              </Checkbox>
 
-          </div>
-          <RadioGroup
-            className="d-flex flex-row mt-4 mb-2"
-            selectedIndex={selectedIndex}
-            onSelectionChange={handleIndexChange}
-            style={{ fontSize: '0.7em' }}
-          >
-            <RadioInput index={0}>Primary</RadioInput>
-            <RadioInput index={1}>Secondary</RadioInput>
-            <RadioInput index={2}>Dark</RadioInput>
-            <RadioInput index={3}>Light</RadioInput>
-            <RadioInput index={4}>Info</RadioInput>
-            <RadioInput index={5}>Warning</RadioInput>
-            <RadioInput index={6}>Danger</RadioInput>
-            <RadioInput index={7}>Success</RadioInput>
-          </RadioGroup>
-          <Highlight
-            insensitive={insensitive}
-            filter={filter}
-            primary={selectedIndex === 0}
-            secondary={selectedIndex === 1}
-            dark={selectedIndex === 2}
-            light={selectedIndex === 3}
-            info={selectedIndex === 4}
-            warning={selectedIndex === 5}
-            danger={selectedIndex === 6}
-            success={selectedIndex === 7}
-          >
+            </div>
+            <RadioGroup
+              className="d-flex flex-row mt-4 mb-2"
+              selectedIndex={selectedIndex}
+              onSelectionChange={handleIndexChange}
+              style={{ fontSize: '0.7em' }}
+            >
+              <RadioInput index={0}>Primary</RadioInput>
+              <RadioInput index={1}>Secondary</RadioInput>
+              <RadioInput index={2}>Dark</RadioInput>
+              <RadioInput index={3}>Light</RadioInput>
+              <RadioInput index={4}>Info</RadioInput>
+              <RadioInput index={5}>Warning</RadioInput>
+              <RadioInput index={6}>Danger</RadioInput>
+              <RadioInput index={7}>Success</RadioInput>
+            </RadioGroup>
+            <Highlight
+              insensitive={insensitive}
+              filter={filter}
+              primary={selectedIndex === 0}
+              secondary={selectedIndex === 1}
+              dark={selectedIndex === 2}
+              light={selectedIndex === 3}
+              info={selectedIndex === 4}
+              warning={selectedIndex === 5}
+              danger={selectedIndex === 6}
+              success={selectedIndex === 7}
+            >
             Lastly, she pictured to herself how this same little sister of hers would,
             in the after-time, be herself a grown woman; and how she would keep, through
             all her riper years, the simple and loving heart of her childhood; and how
@@ -92,9 +121,18 @@ class HighlightDemo extends Component {
             of long ago; and how she would feel with all their simple sorrows, and find a
             pleasure in all their simple joys, remembering her own child-life, and the
             happy summer days.
-          </Highlight>
-        </div>
-      </DemoCard>
+            </Highlight>
+          </div>
+        </DemoCard>
+
+        <BottomNav
+          className="mt-4 mb-4"
+          prevLinkText={bottomNavLinks.prevLink.text}
+          prevLink={bottomNavLinks.prevLink.link}
+          nextLinkText={bottomNavLinks.nextLink.text}
+          nextLink={bottomNavLinks.nextLink.link}
+        />
+      </DemoPage>
     );
   }
 }

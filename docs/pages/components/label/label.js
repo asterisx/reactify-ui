@@ -4,30 +4,72 @@
 import React from 'react';
 import { Label } from '@../../../../reactify-ui/build';
 import {
-  simpleCode,
-  disabledCode,
-  customThemeCode,
-  customColorCode,
   childrenCode,
+  customColorCode,
   customClassCode,
   customSizeCode,
+  customThemeCode,
+  disabledCode,
+  simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  childrenLink,
+  customClassLink,
+  customColorLink,
+  customSizeLink,
+  customThemeLink,
+  disabledLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Input',
+    link: `${Constants.componentsPath}/input`,
+  },
+  nextLink: {
+    text: 'Legend',
+    link: `${Constants.componentsPath}/legend`,
+  },
+};
 
 const LabelDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Label">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/label`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Label>Simple Label</Label>
     </DemoCard>
 
     <DemoCard
+      title="Disabled"
+      sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
+    >
+      <Label disabled>Disabled Label</Label>
+    </DemoCard>
+
+    <DemoCard
       title="Custom Sizes"
-      uniqueIdentifier="customSizes"
       sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <Label small className="mb-2">
         Small Label
@@ -44,13 +86,12 @@ const LabelDemo = () => (
       <Label style={{ fontSize: '35px' }} className="mb-2">
         Label with size 35px
       </Label>
-      <br />
     </DemoCard>
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="customThemes"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <Label primary className="mb-2">
         Primary Theme
@@ -83,22 +124,12 @@ const LabelDemo = () => (
       <Label success className="mb-2">
         Success Theme
       </Label>
-      <br />
-    </DemoCard>
-
-    <DemoCard
-      title="Disabled"
-      uniqueIdentifier="simpleUse"
-      sourceCode={disabledCode}
-    >
-      <Label disabled>Disabled Label</Label>
-      <br />
     </DemoCard>
 
     <DemoCard
       title="Children"
-      uniqueIdentifier="childrenUse"
       sourceCode={childrenCode}
+      externalSampleLink={childrenLink}
     >
       <Label medium className="p-2">
         <div className="card text-dark" style={{ width: '18rem' }}>
@@ -114,28 +145,34 @@ const LabelDemo = () => (
           </div>
         </div>
       </Label>
-      <br />
     </DemoCard>
 
     <DemoCard
       title="Custom Color, any valid css color (hex, rgb etc...) will work."
-      uniqueIdentifier="customColorUse"
       sourceCode={customColorCode}
+      externalSampleLink={customColorLink}
     >
       <Label style={{ backgroundColor: 'violet' }}>Simple Label</Label>
-      <br />
     </DemoCard>
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <Label className="text-light bg-dark p-2 shadow">
         Custom Class Label
       </Label>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(LabelDemo);

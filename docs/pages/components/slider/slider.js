@@ -15,30 +15,67 @@ import {
   unFilledCode,
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  controlledLink,
+  customClassLink,
+  customIconLink,
+  customSizeLink,
+  customThemeLink,
+  disabledLink,
+  onChangeLink,
+  minMaxLink,
+  unFilledLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Sidebar',
+    link: `${Constants.componentsPath}/sidebar`,
+  },
+  nextLink: {
+    text: 'Snackbar',
+    link: `${Constants.componentsPath}/snackbar`,
+  },
+};
 
 const SliderDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Slider">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/slider`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Slider value={20} />
     </DemoCard>
 
     <DemoCard
       title="Controlled"
-      uniqueIdentifier="valueUse"
       sourceCode={controlledCode}
+      externalSampleLink={controlledLink}
     >
       <Slider value={50} isControlled />
     </DemoCard>
 
     <DemoCard
       title="Min Max Step"
-      uniqueIdentifier="minMaxUse"
       sourceCode={minMaxCode}
+      externalSampleLink={minMaxLink}
     >
       <Slider
         min={200}
@@ -52,40 +89,40 @@ const SliderDemo = () => (
 
     <DemoCard
       title="Un Filled"
-      uniqueIdentifier="unFilledUse"
       sourceCode={unFilledCode}
+      externalSampleLink={unFilledLink}
     >
       <Slider value={20} fill={false} />
     </DemoCard>
 
     <DemoCard
       title="Disabled"
-      uniqueIdentifier="disabled"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <Slider disabled value={20} />
     </DemoCard>
 
     <DemoCard
       title="Custom Icon Color, any valid css color (hex, rgb etc...) will work."
-      uniqueIdentifier="customIcon"
       sourceCode={customIconCode}
+      externalSampleLink={customIconLink}
     >
       <Slider fillColor="red" value={20} />
     </DemoCard>
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClass"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <Slider className="m-5 w-50" value={20} />
     </DemoCard>
 
     <DemoCard
       title="Custom Size"
-      uniqueIdentifier="customSize"
       sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <Slider small value={20} />
       <br />
@@ -97,14 +134,12 @@ const SliderDemo = () => (
       <br />
       <br />
       <Slider style={{ fontSize: '40px' }} value={20} />
-      <br />
-      <br />
     </DemoCard>
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="themes"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <Slider primary value={20} />
       <br />
@@ -132,12 +167,20 @@ const SliderDemo = () => (
 
     <DemoCard
       title="onChange Event"
-      uniqueIdentifier="onChange"
       sourceCode={onChangeCode}
+      externalSampleLink={onChangeLink}
     >
       <Slider onChange={({ event, value }) => console.log(event, value)} value={20} />
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(SliderDemo);

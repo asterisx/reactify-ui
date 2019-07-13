@@ -1,5 +1,53 @@
-const simpleCode = `
-<TopBar>
+const customSizeCode = `
+<TopBar small>
+    <TopBar.Logo>
+      <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
+    </TopBar.Logo>
+    <TopBar.Body />
+    <TopBar.Menu
+      style={{
+        display: 'inline-flex', alignContent: 'center', alignItems: 'center', padding: '0em 0.5em',
+      }}
+      warning
+    >
+    </TopBar.Menu>
+</TopBar>
+
+<TopBar medium>
+    <TopBar.Logo>
+      <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
+    </TopBar.Logo>
+    <TopBar.Body />
+    <TopBar.Menu
+      style={{
+        display: 'inline-flex', alignContent: 'center', alignItems: 'center', padding: '0em 0.5em',
+      }}
+      warning
+    >
+      <a style={{ padding: 0, fontSize: 'unset !important' }} href="https://github.com/asterisx/reactify">
+        <Octicon icon={MarkGithub} size="medium" ariaLabel="GitHub" />
+      </a>
+    </TopBar.Menu>
+</TopBar>
+
+<TopBar large>
+    <TopBar.Logo>
+      <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
+    </TopBar.Logo>
+    <TopBar.Body />
+    <TopBar.Menu
+      style={{
+        display: 'inline-flex', alignContent: 'center', alignItems: 'center', padding: '0em 0.5em',
+      }}
+      warning
+    >
+      <a style={{ padding: 0, fontSize: 'unset !important' }} href="https://github.com/asterisx/reactify">
+        <Octicon icon={MarkGithub} size="medium" ariaLabel="GitHub" />
+      </a>
+    </TopBar.Menu>
+</TopBar>
+
+<TopBar style={{ fontSize: '2em' }}>
     <TopBar.Logo>
       <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
@@ -17,7 +65,7 @@ const simpleCode = `
 </TopBar>
 `;
 
-const themeCode = `
+const customThemeCode = `
 <TopBar>
     <TopBar.Logo>
       <Paper primary noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
@@ -174,56 +222,8 @@ const themeCode = `
 </TopBar>
 `;
 
-const sizeCode = `
-<TopBar small>
-    <TopBar.Logo>
-      <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
-    </TopBar.Logo>
-    <TopBar.Body />
-    <TopBar.Menu
-      style={{
-        display: 'inline-flex', alignContent: 'center', alignItems: 'center', padding: '0em 0.5em',
-      }}
-      warning
-    >
-    </TopBar.Menu>
-</TopBar>
-
-<TopBar medium>
-    <TopBar.Logo>
-      <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
-    </TopBar.Logo>
-    <TopBar.Body />
-    <TopBar.Menu
-      style={{
-        display: 'inline-flex', alignContent: 'center', alignItems: 'center', padding: '0em 0.5em',
-      }}
-      warning
-    >
-      <a style={{ padding: 0, fontSize: 'unset !important' }} href="https://github.com/asterisx/reactify">
-        <Octicon icon={MarkGithub} size="medium" ariaLabel="GitHub" />
-      </a>
-    </TopBar.Menu>
-</TopBar>
-
-<TopBar large>
-    <TopBar.Logo>
-      <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
-    </TopBar.Logo>
-    <TopBar.Body />
-    <TopBar.Menu
-      style={{
-        display: 'inline-flex', alignContent: 'center', alignItems: 'center', padding: '0em 0.5em',
-      }}
-      warning
-    >
-      <a style={{ padding: 0, fontSize: 'unset !important' }} href="https://github.com/asterisx/reactify">
-        <Octicon icon={MarkGithub} size="medium" ariaLabel="GitHub" />
-      </a>
-    </TopBar.Menu>
-</TopBar>
-
-<TopBar style={{ fontSize: '2em' }}>
+const simpleCode = `
+<TopBar>
     <TopBar.Logo>
       <Paper success noShadow className="logo p-2 h-100 dflex align-items-center">reactify ui</Paper>
     </TopBar.Logo>
@@ -242,7 +242,7 @@ const sizeCode = `
 `;
 
 export {
+  customSizeCode,
+  customThemeCode,
   simpleCode,
-  themeCode,
-  sizeCode,
 };

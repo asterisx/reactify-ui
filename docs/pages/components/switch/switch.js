@@ -10,38 +10,72 @@ import {
   onChangeCode,
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  controlledLink,
+  customIconLink,
+  customSizeLink,
+  customThemeLink,
+  disabledLink,
+  onChangeLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Star Rating',
+    link: `${Constants.componentsPath}/star-rating`,
+  },
+  nextLink: {
+    text: 'Tabs',
+    link: `${Constants.componentsPath}/tabs`,
+  },
+};
 
 const SwitchDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Switch">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/switch`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Switch className="align-self-center" />
     </DemoCard>
 
     <DemoCard
       title="Controlled (checked))"
-      uniqueIdentifier="checkedUse"
       sourceCode={controlledCode}
+      externalSampleLink={controlledLink}
     >
       <Switch checked isControlled className="align-self-center" />
     </DemoCard>
 
     <DemoCard
       title="Disabled"
-      uniqueIdentifier="disabled"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <Switch disabled checked className="align-self-center" />
     </DemoCard>
 
     <DemoCard
       title="Custom Sizes"
-      uniqueIdentifier="customSizes"
       sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <Switch small>Small Switch</Switch>
       <br />
@@ -54,16 +88,16 @@ const SwitchDemo = () => (
 
     <DemoCard
       title="Custom Icon Color, any valid css color (hex, rgb etc...) will work."
-      uniqueIdentifier="customIconColor"
       sourceCode={customIconCode}
+      externalSampleLink={customIconLink}
     >
       <Switch iconColor="red" checked><Label light>Custom Color</Label></Switch>
     </DemoCard>
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="customThemes"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <Switch primary checked className="mb-2">
         Primary Theme
@@ -96,17 +130,24 @@ const SwitchDemo = () => (
       <Switch success checked className="mb-2">
         Success Theme
       </Switch>
-      <br />
     </DemoCard>
 
     <DemoCard
       title="onChange Event"
-      uniqueIdentifier="onChange"
       sourceCode={onChangeCode}
+      externalSampleLink={onChangeLink}
     >
       <Switch onChange={({ event, checked }) => console.log(event, checked)} />
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(SwitchDemo);

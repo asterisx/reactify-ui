@@ -13,143 +13,177 @@ import {
   customClassCode,
   customSizeCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  childrenLink,
+  customClassLink,
+  customContentLink,
+  customPositionLink,
+  customSizeLink,
+  customThemeLink,
+  disabledLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Alert',
+    link: `${Constants.componentsPath}/alert`,
+  },
+  nextLink: {
+    text: 'Breadcrumbs',
+    link: `${Constants.componentsPath}/breadcrumbs`,
+  },
+};
 
 const BadgeDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="Badge">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/badge`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <Badge>
         <Badge.Bubble>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
     </DemoCard>
 
     <DemoCard
       title="Disabled"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <Badge disabled>
         <Badge.Bubble>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
     </DemoCard>
 
     <DemoCard
       title="Custom Sizes"
-      uniqueIdentifier="customSize"
       sourceCode={customSizeCode}
+      externalSampleLink={customSizeLink}
     >
       <Badge className="pb-2">
         <Badge.Bubble small>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge className="pb-2">
         <Badge.Bubble medium>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="100px" width="100px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="100px" width="100px" />
       </Badge>
       <br />
       <Badge className="pb-2">
         <Badge.Bubble large>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="200px" width="200px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="200px" width="200px" />
       </Badge>
       <br />
       <Badge className="pb-2">
         <Badge.Bubble style={{ fontSize: '35px' }}>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="200px" width="200px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="200px" width="200px" />
       </Badge>
-      <br />
     </DemoCard>
 
     <DemoCard
       title="Themes"
-      uniqueIdentifier="themesUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <Badge className="pb-2">
         <Badge.Bubble primary>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge className="pb-2">
         <Badge.Bubble secondary>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge className="pb-2">
         <Badge.Bubble dark>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge className="pb-2">
         <Badge.Bubble light>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge className="pb-2">
         <Badge.Bubble info>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge className="pb-2">
         <Badge.Bubble warning>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge className="pb-2">
         <Badge.Bubble danger>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <Badge className="pb-2">
         <Badge.Bubble success>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
     </DemoCard>
 
     <DemoCard
       title="Position: (Valid values topLeft, topRight, bottomRight, bottomLeft)"
-      uniqueIdentifier="positionUse"
       sourceCode={customPositionCode}
+      externalSampleLink={customPositionLink}
     >
       <Badge>
         <Badge.Bubble topLeft>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <br />
@@ -157,7 +191,7 @@ const BadgeDemo = () => (
         <Badge.Bubble topRight>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <br />
@@ -165,7 +199,7 @@ const BadgeDemo = () => (
         <Badge.Bubble bottomRight>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
       <br />
       <br />
@@ -173,16 +207,14 @@ const BadgeDemo = () => (
         <Badge.Bubble bottomLeft>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
-      <br />
-      <br />
     </DemoCard>
 
     <DemoCard
       title="Children"
-      uniqueIdentifier="children"
       sourceCode={childrenCode}
+      externalSampleLink={childrenLink}
     >
       <Badge>
         <Badge.Bubble medium>
@@ -200,8 +232,8 @@ const BadgeDemo = () => (
 
     <DemoCard
       title="Custom Content"
-      uniqueIdentifier="customContentUse"
       sourceCode={customContentCode}
+      externalSampleLink={customContentLink}
     >
       <Badge>
         <Badge.Bubble medium>
@@ -211,7 +243,7 @@ const BadgeDemo = () => (
             light
           />
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="200px" width="200px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="200px" width="200px" />
       </Badge>
 
       <h6 className="pt-3 pb-3">
@@ -223,7 +255,7 @@ const BadgeDemo = () => (
 
       <Badge>
         <Badge.Bubble />
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
 
       <br />
@@ -231,23 +263,31 @@ const BadgeDemo = () => (
 
       <Badge>
         <Badge.Bubble danger />
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
     </DemoCard>
 
     <DemoCard
       title="Custom Class"
-      uniqueIdentifier="customClassUse"
       sourceCode={customClassCode}
+      externalSampleLink={customClassLink}
     >
       <Badge className="text-light bg-dark p-2 shadow">
         <Badge.Bubble>
           10
         </Badge.Bubble>
-        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/assets/mail.png" height="50px" width="50px" />
+        <img className="badge_img-message" src="https://asterisx.github.io/reactify-ui/static/assets/mail.png" height="50px" width="50px" />
       </Badge>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(BadgeDemo);

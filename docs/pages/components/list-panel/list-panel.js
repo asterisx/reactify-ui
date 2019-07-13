@@ -12,24 +12,60 @@ import {
 } from 'react-icons/fa';
 import { ListPanel } from '@../../../../reactify-ui/build';
 import {
+  borderedCode,
+  customListCode,
+  customSizeCode,
+  customThemeCode,
   defaultSelectionCode,
   disabledCode,
-  customListCode,
-  customThemeCode,
-  customSizesCode,
-  borderedCode,
   eventsCode,
   multipleCode,
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  borderedLink,
+  customListLink,
+  customSizesLink,
+  customThemeLink,
+  defaultSelectionLink,
+  disabledLink,
+  eventsLink,
+  multipleLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Link',
+    link: `${Constants.componentsPath}/link`,
+  },
+  nextLink: {
+    text: 'Login',
+    link: `${Constants.componentsPath}/login`,
+  },
+};
 
 const ListPanelDemo = () => (
-  <div className="w-100">
+  <DemoPage componentName="List Panel">
+    <ComponentInfo
+      productionReady
+      responsive
+      githubLink={`${Constants.githubComponentsPath}/list-panel`}
+    />
     <DemoCard
       title="Simple Use"
-      uniqueIdentifier="simpleUse"
       sourceCode={simpleCode}
+      externalSampleLink={simpleLink}
     >
       <ListPanel>
         <ListPanel.Item index={1}>Item 1</ListPanel.Item>
@@ -42,8 +78,8 @@ const ListPanelDemo = () => (
 
     <DemoCard
       title="Multiple Use"
-      uniqueIdentifier="multipleUse"
       sourceCode={multipleCode}
+      externalSampleLink={multipleLink}
     >
       <ListPanel multiple>
         <ListPanel.Item index={1}>Item 1</ListPanel.Item>
@@ -56,8 +92,8 @@ const ListPanelDemo = () => (
 
     <DemoCard
       title="Disabled Use"
-      uniqueIdentifier="disabledUse"
       sourceCode={disabledCode}
+      externalSampleLink={disabledLink}
     >
       <h6>
         disabled
@@ -88,8 +124,8 @@ const ListPanelDemo = () => (
 
     <DemoCard
       title="Bordered"
-      uniqueIdentifier="borderedUse"
       sourceCode={borderedCode}
+      externalSampleLink={borderedLink}
     >
       <h6 className="pt-3 pb-3">
         ListPanel Item has a bordered property for top border
@@ -107,8 +143,8 @@ const ListPanelDemo = () => (
 
     <DemoCard
       title="Default Selected"
-      uniqueIdentifier="defaultSelectionUse"
       sourceCode={defaultSelectionCode}
+      externalSampleLink={defaultSelectionLink}
     >
       <ListPanel multiple onItemClicked={props => console.log(props)}>
         <ListPanel.Item index={1}>Item 1</ListPanel.Item>
@@ -121,8 +157,8 @@ const ListPanelDemo = () => (
 
     <DemoCard
       title="Custom Sizes"
-      uniqueIdentifier="customSizesUse"
-      sourceCode={customSizesCode}
+      sourceCode={customSizeCode}
+      externalSampleLink={customSizesLink}
     >
       <h6 className="pt-3 pb-3">size="small"</h6>
       <ListPanel small>
@@ -167,8 +203,8 @@ const ListPanelDemo = () => (
 
     <DemoCard
       title="Custom List"
-      uniqueIdentifier="customListUse"
       sourceCode={customListCode}
+      externalSampleLink={customListLink}
     >
       <ListPanel>
         <ListPanel.Item index={1}>
@@ -206,8 +242,8 @@ const ListPanelDemo = () => (
 
     <DemoCard
       title="Theme Use"
-      uniqueIdentifier="themeUse"
       sourceCode={customThemeCode}
+      externalSampleLink={customThemeLink}
     >
       <h6 className="pt-3 pb-3">Primary theme</h6>
       <ListPanel primary>
@@ -289,8 +325,8 @@ const ListPanelDemo = () => (
 
     <DemoCard
       title="Events Code"
-      uniqueIdentifier="eventsUse"
       sourceCode={eventsCode}
+      externalSampleLink={eventsLink}
     >
       <h6>
         <b>*</b>
@@ -305,7 +341,15 @@ const ListPanelDemo = () => (
         <ListPanel.Item index={5}>Item 5</ListPanel.Item>
       </ListPanel>
     </DemoCard>
-  </div>
+
+    <BottomNav
+      className="mt-4 mb-4"
+      prevLinkText={bottomNavLinks.prevLink.text}
+      prevLink={bottomNavLinks.prevLink.link}
+      nextLinkText={bottomNavLinks.nextLink.text}
+      nextLink={bottomNavLinks.nextLink.link}
+    />
+  </DemoPage>
 );
 
 export default withHeader(ListPanelDemo);

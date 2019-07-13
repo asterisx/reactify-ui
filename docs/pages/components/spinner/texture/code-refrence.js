@@ -12,6 +12,28 @@ const customClassCode = `
 />
 `;
 
+const customSizeCode = `
+<Spinner
+  texture
+  small
+/>
+
+<Spinner
+  texture
+  medium
+/>
+
+<Spinner
+  texture
+  large
+/>  
+
+<Spinner
+  texture
+  style={{ fontSize: '75px' }}
+/>
+`;
+
 const customThemeCode = `
 <Spinner
   texture
@@ -61,28 +83,6 @@ const simpleCode = `
 />
 `;
 
-const sizeCode = `
-<Spinner
-  texture
-  small
-/>
-
-<Spinner
-  texture
-  medium
-/>
-
-<Spinner
-  texture
-  large
-/>  
-
-<Spinner
-  texture
-  style={{ fontSize: '75px' }}
-/>
-`;
-
 const customSpeedCode = `
 <Spinner
   texture
@@ -98,8 +98,8 @@ const customSpeedCode = `
 export {
   customColorCode,
   customClassCode,
+  customSizeCode,
   customThemeCode,
   customSpeedCode,
   simpleCode,
-  sizeCode,
 };

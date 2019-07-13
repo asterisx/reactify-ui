@@ -4,22 +4,53 @@ import {
 } from '@../../../../reactify-ui/build';
 import {
   directionCode,
-  hideCode,
-  pauseOnHover,
+  hideProgramaticallyCode,
+  pauseOnHoverCode,
   simpleCode,
 } from './code-refrence';
-import { DemoCard, withHeader } from '../../../common';
+
+import {
+  directionLink,
+  hideProgramaticallyLink,
+  pauseOnHoverLink,
+  simpleLink,
+} from './external-sample-links';
+
+import {
+  BottomNav,
+  ComponentInfo,
+  Constants,
+  DemoPage,
+  DemoCard,
+  withHeader,
+} from '../../../common';
+
+const bottomNavLinks = {
+  prevLink: {
+    text: 'Timer',
+    link: `${Constants.componentsPath}/timer`,
+  },
+  nextLink: {
+    text: 'Tooltip',
+    link: `${Constants.componentsPath}/tooltip`,
+  },
+};
 
 class ToastDemo extends Component {
   state = { toastId: undefined };
 
   render() {
     return (
-      <div className="w-100">
+      <DemoPage componentName="Toast">
+        <ComponentInfo
+          productionReady
+          responsive
+          githubLink={`${Constants.githubComponentsPath}/toast`}
+        />
         <DemoCard
           title="Simple Use"
-          uniqueIdentifier="simpleUse"
           sourceCode={simpleCode}
+          externalSampleLink={simpleLink}
         >
           <ToastProvider autoDismissTimeout={10000}>
             <ToastConsumer>
@@ -43,8 +74,8 @@ class ToastDemo extends Component {
 
         <DemoCard
           title="Hide Programatically"
-          uniqueIdentifier="hideUse"
-          sourceCode={hideCode}
+          sourceCode={hideProgramaticallyCode}
+          externalSampleLink={hideProgramaticallyLink}
         >
           <ToastProvider>
             <ToastConsumer>
@@ -85,8 +116,8 @@ class ToastDemo extends Component {
 
         <DemoCard
           title="Direction Use"
-          uniqueIdentifier="directionUse"
           sourceCode={directionCode}
+          externalSampleLink={directionLink}
         >
           <ToastProvider topLeft>
             <ToastConsumer>
@@ -208,8 +239,8 @@ class ToastDemo extends Component {
 
         <DemoCard
           title="PauseOnHover"
-          uniqueIdentifier="pauseOnHoverUse"
-          sourceCode={pauseOnHover}
+          sourceCode={pauseOnHoverCode}
+          externalSampleLink={pauseOnHoverLink}
         >
           <ToastProvider pauseOnHover>
             <ToastConsumer>
@@ -231,7 +262,15 @@ class ToastDemo extends Component {
             </ToastConsumer>
           </ToastProvider>
         </DemoCard>
-      </div>
+
+        <BottomNav
+          className="mt-4 mb-4"
+          prevLinkText={bottomNavLinks.prevLink.text}
+          prevLink={bottomNavLinks.prevLink.link}
+          nextLinkText={bottomNavLinks.nextLink.text}
+          nextLink={bottomNavLinks.nextLink.link}
+        />
+      </DemoPage>
     );
   }
 }
