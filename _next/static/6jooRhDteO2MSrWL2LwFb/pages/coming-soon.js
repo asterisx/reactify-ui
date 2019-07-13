@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["7030"],{grO0:function(n,t,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/coming-soon",function(){var n=e("w/X4");return{page:n.default||n}}])},"w/X4":function(n,t,e){"use strict";e.r(t);var o=e("q1tI"),u=e.n(o),w=e("IUY8");t.default=Object(w.g)(function(){return u.a.createElement(w.b,null)})}},[["grO0","5d41","9da1"]]]);

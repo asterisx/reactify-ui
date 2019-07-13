@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["5506"],{gq5y:function(n,e,u){"use strict";u.r(e);var o=u("q1tI"),t=u.n(o),a=u("IUY8");e.default=t.a.createElement(a.b,null)},u3io:function(n,e,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/full-screen",function(){var n=u("gq5y");return{page:n.default||n}}])}},[["u3io","5d41","9da1"]]]);

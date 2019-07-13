@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["8b76"],{"9A2s":function(n,t,a){"use strict";a.r(t);var e=a("q1tI"),u=a.n(e),o=a("IUY8");t.default=u.a.createElement(o.b,null)},UuBy:function(n,t,a){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/heat-map",function(){var n=a("9A2s");return{page:n.default||n}}])}},[["UuBy","5d41","9da1"]]]);

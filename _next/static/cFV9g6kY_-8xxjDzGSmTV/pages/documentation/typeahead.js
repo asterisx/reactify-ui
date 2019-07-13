@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["32dc"],{G7vC:function(n,e,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/typeahead",function(){var n=t("UgB6");return{page:n.default||n}}])},UgB6:function(n,e,t){"use strict";t.r(e);var a=t("q1tI"),d=t.n(a),o=t("IUY8");e.default=d.a.createElement(o.b,null)}},[["G7vC","5d41","9da1"]]]);

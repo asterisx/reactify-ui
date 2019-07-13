@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["5975"],{"0Z7q":function(n,o,t){"use strict";t.r(o);var e=t("q1tI"),a=t.n(e),d=t("IUY8");o.default=a.a.createElement(d.b,null)},P4Jr:function(n,o,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/dropdown",function(){var n=t("0Z7q");return{page:n.default||n}}])}},[["P4Jr","5d41","9da1"]]]);

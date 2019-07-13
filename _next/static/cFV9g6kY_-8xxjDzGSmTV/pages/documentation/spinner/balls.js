@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["346b"],{Qk32:function(n,e,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/spinner/balls",function(){var n=t("cJzM");return{page:n.default||n}}])},cJzM:function(n,e,t){"use strict";t.r(e);var a=t("q1tI"),o=t.n(a),u=t("IUY8");e.default=o.a.createElement(u.b,null)}},[["Qk32","5d41","9da1"]]]);

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["8007"],{AE55:function(n,t,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/spinner/texture",function(){var n=e("DrtY");return{page:n.default||n}}])},DrtY:function(n,t,e){"use strict";e.r(t);var u=e("q1tI"),a=e.n(u),o=e("IUY8");t.default=a.a.createElement(o.b,null)}},[["AE55","5d41","9da1"]]]);

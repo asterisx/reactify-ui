@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["3054"],{"7IOd":function(n,t,e){"use strict";e.r(t);var a=e("q1tI"),d=e.n(a),o=e("IUY8");t.default=d.a.createElement(o.b,null)},"F5+W":function(n,t,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/split-pane",function(){var n=e("7IOd");return{page:n.default||n}}])}},[["F5+W","5d41","9da1"]]]);

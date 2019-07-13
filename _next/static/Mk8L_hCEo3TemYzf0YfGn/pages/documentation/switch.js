@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["6946"],{OPfT:function(n,t,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/switch",function(){var n=e("blM4");return{page:n.default||n}}])},blM4:function(n,t,e){"use strict";e.r(t);var a=e("q1tI"),o=e.n(a),u=e("IUY8");t.default=o.a.createElement(u.b,null)}},[["OPfT","5d41","9da1"]]]);

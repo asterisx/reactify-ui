@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["7030"],{grO0:function(n,o,w){(window.__NEXT_P=window.__NEXT_P||[]).push(["/coming-soon",function(){var n=w("w/X4");return{page:n.default||n}}])},"w/X4":function(n,o,w){"use strict";w.r(o);var i=w("IUY8");o.default=Object(i.g)(i.b)}},[["grO0","5d41","9da1"]]]);

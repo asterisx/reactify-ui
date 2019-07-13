@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["1040"],{XjRl:function(n,o,t){"use strict";t.r(o);var a=t("q1tI"),e=t.n(a),i=t("IUY8");o.default=e.a.createElement(i.b,null)},giEF:function(n,o,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/accordion",function(){var n=t("XjRl");return{page:n.default||n}}])}},[["giEF","5d41","9da1"]]]);

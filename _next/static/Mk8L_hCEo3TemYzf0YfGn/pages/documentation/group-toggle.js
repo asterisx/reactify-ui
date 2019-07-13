@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["4779"],{"98fV":function(n,t,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/group-toggle",function(){var n=e("ATzO");return{page:n.default||n}}])},ATzO:function(n,t,e){"use strict";e.r(t);var o=e("q1tI"),u=e.n(o),a=e("IUY8");t.default=u.a.createElement(a.b,null)}},[["98fV","5d41","9da1"]]]);

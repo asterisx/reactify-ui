@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["9715"],{WzFd:function(n,e,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/paper",function(){var n=t("zP2r");return{page:n.default||n}}])},zP2r:function(n,e,t){"use strict";t.r(e);var a=t("q1tI"),d=t.n(a),o=t("IUY8");e.default=d.a.createElement(o.b,null)}},[["WzFd","5d41","9da1"]]]);

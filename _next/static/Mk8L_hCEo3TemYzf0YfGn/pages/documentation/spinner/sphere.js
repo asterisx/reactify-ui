@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["3b1d"],{"/IsX":function(n,e,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/spinner/sphere",function(){var n=t("5q4P");return{page:n.default||n}}])},"5q4P":function(n,e,t){"use strict";t.r(e);var a=t("q1tI"),o=t.n(a),u=t("IUY8");e.default=o.a.createElement(u.b,null)}},[["/IsX","5d41","9da1"]]]);

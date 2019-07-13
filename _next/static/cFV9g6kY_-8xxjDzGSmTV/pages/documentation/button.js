@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["c699"],{"2WSw":function(n,t,e){"use strict";e.r(t);var o=e("q1tI"),u=e.n(o),w=e("IUY8");t.default=u.a.createElement(w.b,null)},qrNI:function(n,t,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/button",function(){var n=e("2WSw");return{page:n.default||n}}])}},[["qrNI","5d41","9da1"]]]);

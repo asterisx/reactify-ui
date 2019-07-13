@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["1f74"],{"Eb/t":function(n,t,a){"use strict";a.r(t);var o=a("q1tI"),e=a.n(o),u=a("IUY8");t.default=e.a.createElement(u.b,null)},"Nq/5":function(n,t,a){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/horizontal-card",function(){var n=a("Eb/t");return{page:n.default||n}}])}},[["Nq/5","5d41","9da1"]]]);

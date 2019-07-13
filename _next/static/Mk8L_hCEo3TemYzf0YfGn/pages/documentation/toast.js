@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["d8e9"],{"/xgy":function(n,t,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/toast",function(){var n=e("Y94l");return{page:n.default||n}}])},Y94l:function(n,t,e){"use strict";e.r(t);var a=e("q1tI"),o=e.n(a),u=e("IUY8");t.default=o.a.createElement(u.b,null)}},[["/xgy","5d41","9da1"]]]);

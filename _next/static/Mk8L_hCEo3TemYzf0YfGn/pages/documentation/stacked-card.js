@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["63ec"],{ZV8y:function(n,e,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/stacked-card",function(){var n=t("qJgB");return{page:n.default||n}}])},qJgB:function(n,e,t){"use strict";t.r(e);var a=t("q1tI"),c=t.n(a),d=t("IUY8");e.default=c.a.createElement(d.b,null)}},[["ZV8y","5d41","9da1"]]]);

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["28ae"],{b1Es:function(n,e,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/number-counter",function(){var n=t("plFX");return{page:n.default||n}}])},plFX:function(n,e,t){"use strict";t.r(e);var u=t("q1tI"),a=t.n(u),o=t("IUY8");e.default=a.a.createElement(o.b,null)}},[["b1Es","5d41","9da1"]]]);

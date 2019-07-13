@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["aa4b"],{YhXl:function(n,e,t){"use strict";t.r(e);var a=t("q1tI"),o=t.n(a),u=t("IUY8");e.default=o.a.createElement(u.b,null)},xP9M:function(n,e,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/spinner/vortex",function(){var n=t("YhXl");return{page:n.default||n}}])}},[["xP9M","5d41","9da1"]]]);

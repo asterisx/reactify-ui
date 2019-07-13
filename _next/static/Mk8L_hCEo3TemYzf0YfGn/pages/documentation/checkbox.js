@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["8f45"],{"0B6b":function(n,e,t){"use strict";t.r(e);var o=t("q1tI"),a=t.n(o),u=t("IUY8");e.default=a.a.createElement(u.b,null)},"5rBj":function(n,e,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/checkbox",function(){var n=t("0B6b");return{page:n.default||n}}])}},[["5rBj","5d41","9da1"]]]);

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["7547"],{bTxp:function(n,t,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/timer",function(){var n=e("i33r");return{page:n.default||n}}])},i33r:function(n,t,e){"use strict";e.r(t);var i=e("q1tI"),a=e.n(i),o=e("IUY8");t.default=a.a.createElement(o.b,null)}},[["bTxp","5d41","9da1"]]]);

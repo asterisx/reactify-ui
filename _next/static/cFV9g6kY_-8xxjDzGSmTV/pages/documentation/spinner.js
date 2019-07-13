@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["817f"],{FgXu:function(n,a,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/spinner",function(){var n=e("oAaw");return{page:n.default||n}}])},oAaw:function(n,a,e){"use strict";e.r(a);var o=e("q1tI"),t=e.n(o),u=e("IUY8");a.default=t.a.createElement(u.b,null)}},[["FgXu","5d41","9da1"]]]);

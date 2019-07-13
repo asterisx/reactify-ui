@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["5141"],{AU30:function(n,e,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/documentation/spinner/clock",function(){var n=t("PUqE");return{page:n.default||n}}])},PUqE:function(n,e,t){"use strict";t.r(e);var o=t("q1tI"),a=t.n(o),u=t("IUY8");e.default=a.a.createElement(u.b,null)}},[["AU30","5d41","9da1"]]]);

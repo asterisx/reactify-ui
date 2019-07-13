@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["b9c3"],{HXAN:function(n,w){},IdNf:function(n,w,d){(window.__NEXT_P=window.__NEXT_P||[]).push(["/getting-started",function(){var n=d("HXAN");return{page:n.default||n}}])}},[["IdNf","5d41"]]]);
