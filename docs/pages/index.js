@@ -4,7 +4,7 @@ import { Link, Paper, Text } from '@../../../../reactify-ui/build';
 import { withHeader } from '../common';
 
 const index = () => (
-  <div className="p-3 w-100 align-self-start h-800px justify-self-center d-flex flex-column align-items-center justify-content-center">
+  <div className="p-3 w-100 h-max-md-100 align-self-start h-800px justify-self-center d-flex flex-column align-items-center justify-content-center">
     <Text className="d-block logo" success style={{ fontSize: '4em' }}>
       <i>reactify ui</i>
     </Text>

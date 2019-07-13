@@ -115,7 +115,7 @@ export default function withHeader(Page) {
                 {closePortal => <SideBar className="d-block" onClick={closePortal} />}
               </Portal>
             )}
-            <div className="d-flex flex-row">
+            <div className="d-flex flex-row h-max-md-100">
               <SideBar className="d-none d-lg-block overflow-auto border-right mt-4 mb-4" />
               <Page />
             </div>
