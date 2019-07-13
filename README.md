@@ -14,11 +14,13 @@ Connect with us via [spectrum](https://spectrum.chat/reactify-ui)
 `npm i reactify-ui`
 
 ## Basic Usage
-`import { Button } from 'reactify-ui';
+```jsx
+import { Button } from 'reactify-ui';
 
 export default Page = () => <div>
   <Button>Primary Button</Button>
-</div>`
+</div>
+```
 
 ## Why this library
 

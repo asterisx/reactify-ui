@@ -1,22 +1,20 @@
 /* eslint-disable react/jsx-indent */
 import React from 'react';
-import Link from 'next/link';
 import Highlight from 'react-highlight';
 import {
   Breadcrumbs,
   Paper,
-  Link as LibLink,
+  Link,
   Text,
 } from '@../../../../reactify-ui/build';
 import { withHeader } from '../../common';
 
 const Installation = () => (
-  <div className="w-100 d-flex flex-column mt-3">
+  <div className="w-100 h-800px d-flex flex-column mt-3">
     <Breadcrumbs className="ml-2 align-self-start">
       <Breadcrumbs.Item key={0}>
         <Link
-          href="/"
-          as={process.env.HOST}
+          href={process.env.HOST}
         >
           Home
         </Link>
@@ -47,14 +45,11 @@ export default Page = () => <div>
       <Text className="mr-1">
         Looking for next steps?
       </Text>
-      <LibLink>
         <Link
-          href="/components/accordion"
-          as={`${process.env.HOST}/components/accordion`}
+          href={`${process.env.HOST}/components/accordion`}
         >
           Check out the components.
         </Link>
-      </LibLink>
     </div>
   </div>
 );

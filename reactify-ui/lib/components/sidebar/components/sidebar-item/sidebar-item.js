@@ -102,7 +102,7 @@ class SidebarItem extends Component {
           }),
         ]}
         onClick={(event) => { event.stopPropagation(); if (subSidebar) toggleSub(); }}
-        className={`${className} ${BEMClassNames.container}`}
+        className={`${className || ''} ${BEMClassNames.container}`}
         {...otherProps}
       >
         <span

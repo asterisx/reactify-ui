@@ -138,7 +138,7 @@ class SubMenu extends Component {
       <ul
         ref={menuRef}
         css={[styles.sub, styles.position({ left, top })]}
-        className={`${className} ${BEMClassNames.container}`}
+        className={`${className || ''} ${BEMClassNames.container}`}
         {...otherProps}
       >
         {children || (items && items.length && items.map(item => (

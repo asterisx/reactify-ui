@@ -1,7 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
 import { FaCheck, FaMobile } from 'react-icons/fa';
-import { Paper, Text } from '@../../../../reactify-ui/build';
+import { Link, Paper, Text } from '@../../../../reactify-ui/build';
 import { withHeader } from '../common';
 
 const index = () => (
@@ -53,8 +52,7 @@ const index = () => (
     </div>
 
     <Link
-      href="/getting-started/installation"
-      as={`${process.env.HOST}/getting-started/installation`}
+      href={`${process.env.HOST}/getting-started/installation`}
     >
       Get Started
     </Link>

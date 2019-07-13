@@ -128,7 +128,7 @@ class SubMenuItem extends Component {
         ]}
         onMouseEnter={showSub}
         onMouseLeave={hideSub}
-        className={`${className} ${BEMClassNames.container}`}
+        className={`${className || ''} ${BEMClassNames.container}`}
         {...otherProps}
       >
         {content

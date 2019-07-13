@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
 import {
   FaAngleLeft,
   FaAngleRight,
 } from 'react-icons/fa';
 import {
   Button,
+  Link,
 } from '../../../reactify-ui/build';
 
 const BottomNav = ({
@@ -24,7 +24,7 @@ const BottomNav = ({
   >
     {prevLink && (
       <div className="d-inline">
-        <Link href={prevLink} as={process.env.HOST + prevLink}>
+        <Link style={{ textDecoration: 'none' }} href={process.env.HOST + prevLink}>
           <Button
             light
             large
@@ -39,7 +39,7 @@ const BottomNav = ({
 
     {nextLink && (
       <div className="d-inline ml-auto">
-        <Link href={nextLink} as={process.env.HOST + nextLink}>
+        <Link style={{ textDecoration: 'none' }} href={process.env.HOST + nextLink}>
           <Button
             light
             large

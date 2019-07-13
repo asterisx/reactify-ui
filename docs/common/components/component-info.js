@@ -30,7 +30,7 @@ const ComponentInfo = ({
     </div>
     {githubLink && (
     <Button light>
-      <Link href={githubLink} className="d-flex align-items-center text-muted">
+      <Link style={{ textDecoration: 'none' }} href={githubLink} className="d-flex align-items-center text-muted">
         <Octicon icon={MarkGithub} size="small" ariaLabel="GitHub" />
         <span className="ml-1 d-none d-lg-inline d-xl-inline">Check the source</span>
       </Link>

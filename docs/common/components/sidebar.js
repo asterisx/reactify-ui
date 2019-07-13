@@ -26,34 +26,34 @@ const SideBar = ({ onClick, className, ...otherProps }) => (
             onClick={onClick}
             content={(
               <Link
-                href="/getting-started/installation"
-                as={`${process.env.HOST}/getting-started/installation`}
+                dark
+                href={`${process.env.HOST}/getting-started/installation`}
               >
-                    Installation
+                Installation
               </Link>
-                  )}
+            )}
           />
           <SidebarItem
             onClick={onClick}
             content={(
               <Link
-                href="/getting-started/why-this-library"
-                as={`${process.env.HOST}/getting-started/why-this-library`}
+                dark
+                href={`${process.env.HOST}/getting-started/why-this-library`}
               >
-                    Why this library
+                Why this library
               </Link>
-                  )}
+            )}
           />
           <SidebarItem
             onClick={onClick}
             content={(
               <Link
-                href="/getting-started/features"
-                as={`${process.env.HOST}/getting-started/features`}
+                dark
+                href={`${process.env.HOST}/getting-started/features`}
               >
-                    Features
+                Features
               </Link>
-                  )}
+            )}
           />
         </SubSidebar>
       </SidebarItem>
@@ -66,7 +66,6 @@ const SideBar = ({ onClick, className, ...otherProps }) => (
           {Object.keys(componentsRouting).map(key => (componentsRouting[key].sub
             ? (
               <SidebarItem
-                className="m-1"
                 key={componentsRouting[key].name}
                 text={componentsRouting[key].name}
               >
@@ -74,12 +73,11 @@ const SideBar = ({ onClick, className, ...otherProps }) => (
                   {Object.keys(componentsRouting[key].sub).map(subKey => (
                     <SidebarItem
                       onClick={onClick}
-                      className="m-1 margin-left-0_2em link-color-dark"
+                      className="margin-left-0_2em link-color-dark"
                       key={componentsRouting[key].sub[subKey].name}
                       content={(
                         <Link
-                          href={componentsRouting[key].sub[subKey].path}
-                          as={`${process.env.HOST + componentsRouting[key].sub[subKey].path}`}
+                          href={process.env.HOST + componentsRouting[key].sub[subKey].path}
                         >
                           {componentsRouting[key].sub[subKey].name}
                         </Link>
@@ -92,12 +90,11 @@ const SideBar = ({ onClick, className, ...otherProps }) => (
             : (
               <SidebarItem
                 onClick={onClick}
-                className="pl-3 m-1 margin-left-0_2em link-color-dark"
+                className="margin-left-0_2em link-color-dark"
                 key={componentsRouting[key].name}
                 content={(
                   <Link
-                    href={componentsRouting[key].path}
-                    as={`${process.env.HOST + componentsRouting[key].path}`}
+                    href={process.env.HOST + componentsRouting[key].path}
                   >
                     {componentsRouting[key].name}
                   </Link>

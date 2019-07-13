@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import Octicon, { MarkGithub } from '@githubprimer/octicons-react';
 import { IoIosMenu } from 'react-icons/io';
 import {
   Button,
-  Link as LibLink,
+  Link,
   Paper,
   Portal,
   Text,
@@ -81,7 +80,7 @@ export default function withHeader(Page) {
                 <IoIosMenu className="icon text-light" />
               </Button>
 
-              <Link href="/" as={process.env.HOST}>
+              <Link style={{ textDecoration: 'none' }} href={process.env.HOST}>
                 <Button success large style={{ borderRadius: 0 }} className="logo p-2 pl-4 pr-4 h-100 d-inline-flex align-items-center">reactify ui</Button>
               </Link>
             </TopBar.Logo>
@@ -92,21 +91,21 @@ export default function withHeader(Page) {
               }}
             >
               <Button>
-                <LibLink style={{ color: 'white', textDecoration: 'none' }} href="https://github.com/asterisx/reactify-ui">
+                <Link style={{ color: 'white', textDecoration: 'none' }} href="https://github.com/asterisx/reactify-ui">
                   <div className="d-flex align-items-center">
                     <Octicon icon={MarkGithub} size="medium" ariaLabel="GitHub" />
                     <span className="d-none d-lg-inline ml-2">Fork me on Github</span>
                   </div>
-                </LibLink>
+                </Link>
               </Button>
 
               <Button className="ml-3">
-                <LibLink style={{ color: 'white', textDecoration: 'none' }} href="https://spectrum.chat/reactify-ui">
+                <Link style={{ color: 'white', textDecoration: 'none' }} href="https://spectrum.chat/reactify-ui">
                   <div className="d-flex align-items-center">
                     <img className="spectrum-icon" src={`${process.env.HOST}/static/assets/spectrum-white.png`} alt="spectrum chat" />
                     <span className="d-none d-lg-inline ml-2">Connect via spectrum</span>
                   </div>
-                </LibLink>
+                </Link>
               </Button>
             </TopBar.Menu>
           </TopBar>
@@ -123,8 +122,8 @@ export default function withHeader(Page) {
             <Paper secondary noShadow className="w-100 p-3 d-flex">
               <div className="align-flex-start d-flex flex-column justify-content-between">
                 <Text dark>Quick Links</Text>
-                <LibLink dark href="https://github.com/asterisx/reactify-ui" className="d-block mt-2">Github</LibLink>
-                <LibLink dark href="#" className="d-block mt-2">Twitter</LibLink>
+                <Link dark href="https://github.com/asterisx/reactify-ui" className="d-block mt-2">Github</Link>
+                <Link dark href="#" className="d-block mt-2">Twitter</Link>
               </div>
             </Paper>
           </div>

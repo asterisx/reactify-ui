@@ -19,7 +19,7 @@ const SubSidebar = ({
       positionFull && styles.w100,
       positionFull ? styles.positionFull : styles.positionLeft,
     ]}
-    className={`${className} ${BEMClassNames.container}`}
+    className={`${className || ''} ${BEMClassNames.container}`}
     {...otherProps}
   >
     {positionFull && (
