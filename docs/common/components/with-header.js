@@ -12,7 +12,7 @@ import {
 } from '../../../reactify-ui/build';
 import SideBar from './sidebar';
 
-export default function withHeader(Page) {
+export default function withHeader(Page, pageParentClassName) {
   return class extends Component {
     state = { isPortalOpen: false }
 
@@ -115,7 +115,7 @@ export default function withHeader(Page) {
                 {closePortal => <SideBar className="d-block" onClick={closePortal} />}
               </Portal>
             )}
-            <div className="d-flex flex-row h-max-md-100">
+            <div className={`d-flex flex-row ${pageParentClassName || ''}`}>
               <SideBar className="d-none d-lg-block overflow-auto border-right mt-4 mb-4" />
               <Page />
             </div>

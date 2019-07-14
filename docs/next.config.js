@@ -78,7 +78,7 @@ module.exports = {
       '/getting-started/installation': { page: '/getting-started/installation' },
       '/getting-started/why-this-library': { page: '/getting-started/why-this-library' },
       '/advanced/recipes': { page: '/advanced/recipes' },
-      '/advanced/themes': { page: '/advanced/themes' },
+      '/advanced/theming': { page: '/advanced/theming' },
       '/advanced/styling': { page: '/advanced/styling' },
     };
   },

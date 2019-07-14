@@ -74,4 +74,4 @@ const Installation = () => (
   </div>
 );
 
-export default withHeader(Installation);
+export default withHeader(Installation, 'h-max-md-100');

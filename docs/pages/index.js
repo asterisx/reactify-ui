@@ -58,4 +58,4 @@ const index = () => (
     </Link>
   </div>
 );
-export default withHeader(index);
+export default withHeader(index, 'h-max-md-100');

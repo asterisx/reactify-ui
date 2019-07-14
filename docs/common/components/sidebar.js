@@ -103,6 +103,48 @@ const SideBar = ({ onClick, className, ...otherProps }) => (
             )))}
         </SubSidebar>
       </SidebarItem>
+      <Sidebar light className="w-100 pl-3 h-100">
+      <SidebarItem
+        className="m-1"
+        key="advanced"
+        text="Advanced"
+      >
+        <SubSidebar className="m-3">
+          <SidebarItem
+            onClick={onClick}
+            content={(
+              <Link
+                dark
+                href={`${process.env.HOST}/advanced/recipes`}
+              >
+                Recipes
+              </Link>
+            )}
+          />
+          <SidebarItem
+            onClick={onClick}
+            content={(
+              <Link
+                dark
+                href={`${process.env.HOST}/advanced/styling`}
+              >
+                Styling
+              </Link>
+            )}
+          />
+          <SidebarItem
+            onClick={onClick}
+            content={(
+              <Link
+                dark
+                href={`${process.env.HOST}/advanced/theming`}
+              >
+                Theming
+              </Link>
+            )}
+          />
+        </SubSidebar>
+      </SidebarItem>
     </Sidebar>
   </Paper>
 );

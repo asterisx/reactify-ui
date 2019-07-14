@@ -26,6 +26,7 @@ export default Page = () => <div>
 
 - **Component Composition.** Most of the components are built to accept other components as children which can be used to make some new powerful and interesting components.
 The idea is to make these components behave like *containers* with some functionalities as their name suggest and let them accept any content inside.
+They have default behaviors as is expected of them or as there names suggest but also allow advanced use cases.
 Due to the vastness of permutation and combinations, many new UI elements can be made by stacking together the lib ones.
 [Check out the recipes section.](https://asterisx.github.io/reactify-ui/advanced/recipes)
 

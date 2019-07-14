@@ -37,6 +37,7 @@ const Installation = () => (
                 <br />
                 <br />
                 The idea is to make these components behave like &quot;containers&quot; with some functionalities as their name suggest and let them accept any content inside.
+                They have default behaviors as is expected of them or as there names suggest but also allow advanced use cases.
                 <br />
                 <br />
                 Due to the vastness of permutation and combinations, many new UI elements can be made by stacking together the lib ones.
@@ -74,4 +75,4 @@ const Installation = () => (
   </div>
 );
 
-export default withHeader(Installation);
+export default withHeader(Installation, 'h-max-md-100');
