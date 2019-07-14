@@ -1,12 +1,14 @@
 import {
+  darkenBy,
   defaultThemeColors,
   libraryName,
-  darkenBy,
   lightenBy,
   screenSizes,
   screenSizesInPx,
 } from './constants';
-import { commonStyles } from './styles';
+import {
+  commonStyles,
+} from './styles';
 import {
   themePropTypes,
   defaultThemePropTypes,

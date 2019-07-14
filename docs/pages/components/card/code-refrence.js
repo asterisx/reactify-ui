@@ -1,7 +1,7 @@
 const borderedColoredCode = `
 <Card>
   <Card.Header>
-    <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+    <img src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
   </Card.Header>
   <Card.Body bordered style={{ borderColor: 'violet' }}>
     <span>
@@ -21,7 +21,7 @@ const borderedColoredCode = `
 const customClassCode = `
 <Card className="p-3">
   <Card.Header>
-    <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+    <img src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
   </Card.Header>
   <Card.Body bordered className="p-3">
     <span>
@@ -41,7 +41,7 @@ const customClassCode = `
 const customSizeCode = `
 <Card small>
 <Card.Header>
-  <img className="w-100" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+  <img className="w-100" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
 </Card.Header>
 <Card.Body>
   <span>
@@ -60,7 +60,7 @@ const customSizeCode = `
 
 <Card medium>
 <Card.Header>
-  <img className="w-100" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+  <img className="w-100" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
 </Card.Header>
 <Card.Body>
   <span>
@@ -79,7 +79,7 @@ const customSizeCode = `
 
 <Card large>
 <Card.Header>
-  <img className="w-100" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+  <img className="w-100" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
 </Card.Header>
 <Card.Body>
   <span>
@@ -98,7 +98,7 @@ const customSizeCode = `
 
 <Card style={{ width: '350px' }}>
   <Card.Header>
-    <img className="w-100" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+    <img className="w-100" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
   </Card.Header>
   <Card.Body>
     <span>
@@ -118,7 +118,7 @@ const customSizeCode = `
 const disabledCode = `
 <Card disabled>
   <Card.Header>
-    <img className="w-100" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+    <img className="w-100" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
   </Card.Header>
   <Card.Body>
     <span>
@@ -138,7 +138,7 @@ const disabledCode = `
 const noShadowCode = `
 <Card shadowed={false}>
 <Card.Header>
-  <img className="w-100" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+  <img className="w-100" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
 </Card.Header>
 <Card.Body>
   <span>
@@ -158,7 +158,7 @@ const noShadowCode = `
 const simpleCode = `
 <Card>
   <Card.Header>
-    <img src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+    <img src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
   </Card.Header>
   <Card.Body>
     <span>

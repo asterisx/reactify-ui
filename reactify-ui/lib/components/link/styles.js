@@ -1,8 +1,9 @@
 import { darken } from 'polished';
-import { commonStyles } from '../../common';
+import {
+  commonStyles,
+} from '../../common';
 
 export const styles = {
-
   linkStyle: ({
     primary,
     secondary,
@@ -16,19 +17,21 @@ export const styles = {
   }) => ({
     textDecoration: 'none',
     cursor: 'pointer',
-    ':hover': {
-      color: darken(0.2, commonStyles.get.theme.color({
-        primary,
-        secondary,
-        dark,
-        light,
-        info,
-        warning,
-        danger,
-        success,
-        theme,
-      })),
-      textDecoration: 'underline',
+    '@media (hover: hover)': {
+      ':hover': {
+        color: darken(0.2, commonStyles.get.theme.color({
+          primary,
+          secondary,
+          dark,
+          light,
+          info,
+          warning,
+          danger,
+          success,
+          theme,
+        })),
+        textDecoration: 'underline',
+      },
     },
   }),
 

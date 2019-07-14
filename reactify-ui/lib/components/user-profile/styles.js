@@ -2,7 +2,10 @@
 import { css } from '@emotion/core';
 import { darken } from 'polished';
 import {
-  commonStyles, libraryName, darkenBy, screenSizes,
+  commonStyles,
+  darkenBy,
+  libraryName,
+  screenSizes,
 } from '../../common';
 
 const componentName = 'user-profile';
@@ -117,7 +120,7 @@ export const styles = {
       success,
       theme,
     })),
-    '&:hover': {
+    '@media (hover: hover)': {
       backgroundColor:
         darken(darkenBy, commonStyles.get.theme.color({
           primary,

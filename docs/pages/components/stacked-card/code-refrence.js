@@ -1,7 +1,7 @@
 const borderedColoredCode = `
 <StackedCard className="font-responsive">
   <StackedCard.Header>
-    <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+    <img className="size-medium" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
   </StackedCard.Header>
   <StackedCard.Body bordered style={{ borderColor: 'violet' }}>
     <span className="size-medium">
@@ -21,7 +21,7 @@ const borderedColoredCode = `
 const customClassCode = `
 <StackedCard className="font-responsive">
 <StackedCard.Header>
-  <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+  <img className="size-medium" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
 </StackedCard.Header>
 <StackedCard.Body bordered className="text-dark">
   <span className="size-medium">
@@ -41,7 +41,7 @@ const customClassCode = `
 const customSizeCode = `
 <StackedCard small className="font-responsive">
 <StackedCard.Header>
-  <img className="size-small" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+  <img className="size-small" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
 </StackedCard.Header>
 <StackedCard.Body>
   <span className="size-small">
@@ -60,7 +60,7 @@ const customSizeCode = `
 
 <StackedCard medium className="font-responsive">
   <StackedCard.Header>
-    <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+    <img className="size-medium" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
   </StackedCard.Header>
   <StackedCard.Body>
     <span className="size-medium">
@@ -79,7 +79,7 @@ const customSizeCode = `
 
 <StackedCard large className="font-responsive">
 <StackedCard.Header>
-  <img className="size-large" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+  <img className="size-large" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
 </StackedCard.Header>
 <StackedCard.Body>
   <span className="size-large">
@@ -98,7 +98,7 @@ const customSizeCode = `
 
 <StackedCard style={{ height: '100px', marginLeft: '3em' }} className="header-margin-left-small">
 <StackedCard.Header style={{ marginLeft: '-3em' }} className="header-margin-left-small-negative">
-  <img className="size-custom" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+  <img className="size-custom" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
 </StackedCard.Header>
 <StackedCard.Body className="p-1 m-0">
   <span className="size-custom">
@@ -117,7 +117,7 @@ const customSizeCode = `
 const disabledCode = `
 <StackedCard disabled className="font-responsive">
   <StackedCard.Header>
-    <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+    <img className="size-medium" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
   </StackedCard.Header>
   <StackedCard.Body>
     <span className="size-medium">
@@ -137,7 +137,7 @@ const disabledCode = `
 const noShadowCode = `
 <StackedCard shadowed={false} className="font-responsive">
   <StackedCard.Header>
-    <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+    <img className="size-medium" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
   </StackedCard.Header>
   <StackedCard.Body>
     <span className="size-medium">
@@ -157,7 +157,7 @@ const noShadowCode = `
 const simpleCode = `
 <StackedCard className="font-responsive">
   <StackedCard.Header>
-    <img className="size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+    <img className="size-medium" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
   </StackedCard.Header>
   <StackedCard.Body>
     <span className="size-medium">

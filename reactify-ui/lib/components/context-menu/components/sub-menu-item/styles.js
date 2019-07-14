@@ -1,5 +1,9 @@
 import { darken } from 'polished';
-import { commonStyles, darkenBy, libraryName } from '../../../../common';
+import {
+  commonStyles,
+  darkenBy,
+  libraryName,
+} from '../../../../common';
 
 const componentName = 'sub-menu-item';
 
@@ -63,8 +67,9 @@ export const styles = {
       success,
       theme,
     })),
-    '&:hover': {
-      backgroundColor:
+    '@media (hover: hover)': {
+      ':hover': {
+        backgroundColor:
         darken(darkenBy, commonStyles.get.theme.color({
           primary,
           secondary,
@@ -76,6 +81,7 @@ export const styles = {
           success,
           theme,
         })),
+      },
     },
   }),
 

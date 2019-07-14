@@ -1,5 +1,8 @@
 import { darken } from 'polished';
-import { commonStyles, darkenBy } from '../../../../common';
+import {
+  commonStyles,
+  darkenBy,
+} from '../../../../common';
 
 export const styles = {
   resizer: {
@@ -49,8 +52,9 @@ export const styles = {
       success,
       theme,
     })),
-    '&:hover': {
-      backgroundColor:
+    '@media (hover: hover)': {
+      ':hover': {
+        backgroundColor:
         darken(darkenBy, commonStyles.get.theme.color({
           primary,
           secondary,
@@ -62,6 +66,7 @@ export const styles = {
           success,
           theme,
         })),
+      },
     },
   }),
 };

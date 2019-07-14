@@ -1,8 +1,9 @@
 import { darken } from 'polished';
-import { commonStyles } from '../../common';
+import {
+  commonStyles,
+} from '../../common';
 
 export const styles = {
-
   inputStyle: ({
     primary,
     secondary,
@@ -34,8 +35,10 @@ export const styles = {
       borderColor: themeColor,
       padding: '0px 4px',
       outline: 0,
-      ':hover': {
-        borderColor: darken(0.2, themeColor),
+      '@media (hover: hover)': {
+        ':hover': {
+          borderColor: darken(0.2, themeColor),
+        },
       },
     });
   },

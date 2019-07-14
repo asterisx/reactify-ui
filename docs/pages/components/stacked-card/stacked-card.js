@@ -55,7 +55,7 @@ const StackedCardDemo = () => (
       <h4 className="pt-3 pb-3">StackedCard.Body, StackedCard.Header and StackedCard.Footer's children should be able to have their own width such as (width: 300px) or are block elements.</h4>
       <StackedCard className="stacked-card_font-responsive">
         <StackedCard.Header>
-          <img className="stacked-card_size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+          <img className="stacked-card_size-medium" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
         </StackedCard.Header>
         <StackedCard.Body>
           <span className="stacked-card_size-medium">
@@ -81,7 +81,7 @@ const StackedCardDemo = () => (
       <h4 className="pt-3 pb-3">{'shadowed={false}'}</h4>
       <StackedCard shadowed={false} className="stacked-card_font-responsive">
         <StackedCard.Header>
-          <img className="stacked-card_size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+          <img className="stacked-card_size-medium" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
         </StackedCard.Header>
         <StackedCard.Body>
           <span className="stacked-card_size-medium">
@@ -107,7 +107,7 @@ const StackedCardDemo = () => (
       <h6 className="pt-3 pb-3">small</h6>
       <StackedCard small className="stacked-card_font-responsive">
         <StackedCard.Header>
-          <img className="stacked-card_size-small" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+          <img className="stacked-card_size-small" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
         </StackedCard.Header>
         <StackedCard.Body>
           <span className="stacked-card_size-small">
@@ -131,7 +131,7 @@ const StackedCardDemo = () => (
       </h6>
       <StackedCard medium className="stacked-card_font-responsive">
         <StackedCard.Header>
-          <img className="stacked-card_size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+          <img className="stacked-card_size-medium" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
         </StackedCard.Header>
         <StackedCard.Body>
           <span className="stacked-card_size-medium">
@@ -152,7 +152,7 @@ const StackedCardDemo = () => (
       <h6 className="pt-3 pb-3">large</h6>
       <StackedCard large className="stacked-card_font-responsive">
         <StackedCard.Header>
-          <img className="stacked-card_size-large" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+          <img className="stacked-card_size-large" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
         </StackedCard.Header>
         <StackedCard.Body>
           <span className="stacked-card_size-large">
@@ -174,7 +174,7 @@ const StackedCardDemo = () => (
       </h6>
       <StackedCard style={{ height: '100px', marginLeft: '3em' }} className="stacked-card_header-margin-left-small">
         <StackedCard.Header style={{ marginLeft: '-3em' }} className="header-margin-left-small-negative">
-          <img className="stacked-card_size-custom" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+          <img className="stacked-card_size-custom" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
         </StackedCard.Header>
         <StackedCard.Body className="p-1 m-0">
           <span className="stacked-card_size-custom">
@@ -198,7 +198,7 @@ const StackedCardDemo = () => (
     >
       <StackedCard disabled className="stacked-card_font-responsive">
         <StackedCard.Header>
-          <img className="stacked-card_size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+          <img className="stacked-card_size-medium" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
         </StackedCard.Header>
         <StackedCard.Body>
           <span className="stacked-card_size-medium">
@@ -227,7 +227,7 @@ const StackedCardDemo = () => (
       </h6>
       <StackedCard className="stacked-card_font-responsive">
         <StackedCard.Header>
-          <img className="stacked-card_size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+          <img className="stacked-card_size-medium" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
         </StackedCard.Header>
         <StackedCard.Body bordered style={{ borderColor: 'violet' }}>
           <span className="stacked-card_size-medium">
@@ -258,7 +258,7 @@ const StackedCardDemo = () => (
       </h6>
       <StackedCard className="stacked-card_font-responsive">
         <StackedCard.Header>
-          <img className="stacked-card_size-medium" src="https://cdn.vox-cdn.com/thumbor/4IYvR8-vUE1-ZpXaJb3D9P9cLTM=/0x0:1600x1067/1200x800/filters:focal(1142x577:1398x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59293003/avengers_poster.0.jpg" />
+          <img className="stacked-card_size-medium" src="https://asterisx.github.io/reactify-ui/static/assets/avengers.jpg" />
         </StackedCard.Header>
         <StackedCard.Body bordered className="text-dark">
           <span className="stacked-card_size-medium">

@@ -103,7 +103,6 @@ const SideBar = ({ onClick, className, ...otherProps }) => (
             )))}
         </SubSidebar>
       </SidebarItem>
-      <Sidebar light className="w-100 pl-3 h-100">
       <SidebarItem
         className="m-1"
         key="advanced"

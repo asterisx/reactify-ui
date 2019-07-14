@@ -1,5 +1,8 @@
 import { darken } from 'polished';
-import { commonStyles, darkenBy } from '../../common';
+import {
+  commonStyles,
+  darkenBy,
+} from '../../common';
 
 export const styles = {
   container: {
@@ -61,19 +64,21 @@ export const styles = {
       success,
       theme,
     })),
-    '&:hover': {
-      backgroundColor: isSelectable
-        ? darken(darkenBy, commonStyles.get.theme.color({
-          primary,
-          secondary,
-          dark,
-          light,
-          info,
-          warning,
-          danger,
-          success,
-          theme,
-        })) : undefined,
+    '@media (hover: hover)': {
+      ':hover': {
+        backgroundColor: isSelectable
+          ? darken(darkenBy, commonStyles.get.theme.color({
+            primary,
+            secondary,
+            dark,
+            light,
+            info,
+            warning,
+            danger,
+            success,
+            theme,
+          })) : undefined,
+      },
     },
   }),
 

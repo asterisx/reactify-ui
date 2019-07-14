@@ -1,5 +1,9 @@
 import { darken } from 'polished';
-import { commonStyles, darkenBy, libraryName } from '../../common';
+import {
+  commonStyles,
+  darkenBy,
+  libraryName,
+} from '../../common';
 
 const componentName = 'accordion';
 
@@ -22,8 +26,10 @@ export const styles = {
     color: '#444',
     userSelect: 'none',
     backgroundColor: '#eee',
-    ':hover': {
-      backgroundColor: '#ccc',
+    '@media (hover: hover)': {
+      ':hover': {
+        backgroundColor: '#ccc',
+      },
     },
   },
   body: {
@@ -67,8 +73,9 @@ export const styles = {
       success,
       theme,
     })),
-    '&:hover': {
-      backgroundColor:
+    '@media (hover: hover)': {
+      ':hover': {
+        backgroundColor:
         darken(darkenBy, commonStyles.get.theme.color({
           primary,
           secondary,
@@ -80,6 +87,7 @@ export const styles = {
           success,
           theme,
         })),
+      },
     },
   }),
 };

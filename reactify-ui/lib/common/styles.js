@@ -5,7 +5,7 @@ const disabledStyle = {
   cursor: 'not-allowed',
   pointerEvents: 'none',
   opacity: '0.6 !important',
-  '&:hover': {
+  ':hover': {
     pointerEvents: ' none !important',
   },
 };

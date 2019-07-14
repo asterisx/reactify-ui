@@ -1,5 +1,7 @@
 import { darken } from 'polished';
-import { commonStyles } from '../../common';
+import {
+  commonStyles,
+} from '../../common';
 
 export const styles = {
   container: {
@@ -67,8 +69,10 @@ export const styles = {
       transition: 'fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
       userSelect: 'none',
       flexShrink: 0,
-      ':hover': {
-        color: darken(0.2, fontColor),
+      '@media (hover: hover)': {
+        ':hover': {
+          color: darken(0.2, fontColor),
+        },
       },
     });
   },
