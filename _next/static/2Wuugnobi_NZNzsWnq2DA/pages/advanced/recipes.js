@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["8ccf"],{IFz6:function(n,a,c){(window.__NEXT_P=window.__NEXT_P||[]).push(["/advanced/recipes",function(){var n=c("UK8u");return{page:n.default||n}}])},UK8u:function(n,a,c){"use strict";c.r(a);var d=c("IUY8");a.default=Object(d.g)(d.b,"max-md-100")}},[["IFz6","5d41","9da1"]]]);
