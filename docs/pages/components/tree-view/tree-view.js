@@ -5,7 +5,7 @@ import {
   Button,
   TreeView,
   TreeViewItem,
-} from '@../../../../reactify-ui/build';
+} from '../../../../reactify-ui/build';
 import {
   customDeclarativeCode,
   customThemeCode,

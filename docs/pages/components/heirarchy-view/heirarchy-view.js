@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { HeirarchyView, Paper } from '@../../../../reactify-ui/build';
+import { HeirarchyView, Paper } from '../../../../reactify-ui/build';
 import {
   declaredCode,
   declaredVerticalCode,

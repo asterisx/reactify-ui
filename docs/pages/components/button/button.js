@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { Button } from '@../../../../reactify-ui/build';
+import { Button } from '../../../../reactify-ui/build';
 
 import {
   simpleCode,

@@ -124,7 +124,7 @@ const dropDownPlacementCode = `
   userName="Joe"
   showMessage
 >
-  <img alt="" width="auto" height="100px" src="https://i.gifer.com/YYdO.gif" />
+  <img alt="" width="auto" height="100px" src="https://asterisx.github.io/reactify-ui/static/assets/monkey.gif" />
 </UserProfile>
 
 <UserProfile
@@ -132,7 +132,7 @@ const dropDownPlacementCode = `
   userName="Joe"
   dropDownTop
   >
-  <img alt="" width="auto" height="100px" src="https://i.gifer.com/YYdO.gif" />
+  <img alt="" width="auto" height="100px" src="https://asterisx.github.io/reactify-ui/static/assets/monkey.gif" />
 </UserProfile>
 `;
 

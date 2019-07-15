@@ -2,7 +2,7 @@ const actionCode = `
 <Snackbar
     duration={3000}
     action="undo"
-    onActionClick={() => alert("Acion Clicked")} 
+    onActionClick={() => console.log("Acion Clicked")} 
     message="Action Snackbar :)"
 />
 `;
@@ -11,7 +11,7 @@ const childrenCode = `
     style={{backgroundColor: 'transparent'}}
     duration={5000}
 >
-    <img alt="" width="auto" height="100px" src="https://i.gifer.com/YYdO.gif" />
+    <img alt="" width="auto" height="100px" src="https://asterisx.github.io/reactify-ui/static/assets/monkey.gif" />
 </Snackbar>
 `;
 const customColorCode = `

@@ -35,6 +35,7 @@ export const styles = {
       borderColor: themeColor,
       padding: '0px 4px',
       outline: 0,
+      background: 'transparent',
       '@media (hover: hover)': {
         ':hover': {
           borderColor: darken(0.2, themeColor),

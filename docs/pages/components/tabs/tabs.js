@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   Button, Tabs, Tab, Paper,
-} from '@../../../../reactify-ui/build';
+} from '../../../../reactify-ui/build';
 import {
   simpleCode,
   stylingCode,

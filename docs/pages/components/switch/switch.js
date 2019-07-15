@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
-import { Switch, Label } from '@../../../../reactify-ui/build';
+import { Switch, Label } from '../../../../reactify-ui/build';
 import {
   controlledCode,
   customIconCode,
@@ -137,6 +137,7 @@ const SwitchDemo = () => (
       sourceCode={onChangeCode}
       externalSampleLink={onChangeLink}
     >
+      <p>Check console for events</p>
       <Switch onChange={({ event, checked }) => console.log(event, checked)} />
     </DemoCard>
 

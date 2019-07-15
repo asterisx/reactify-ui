@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
-import { GroupToggle, Button } from '@../../../../reactify-ui/build';
+import { GroupToggle, Button } from '../../../../reactify-ui/build';
 import {
   disabledCode,
   onSelectionCode,

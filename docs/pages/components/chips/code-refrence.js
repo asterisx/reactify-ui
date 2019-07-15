@@ -45,7 +45,7 @@ const disabledCode = `
 `;
 
 const onCloseCode = `
-<Chip onCloseClick={() => alert('Close Clicked')}>Item 1</Chip>
+<Chip onCloseClick={() => console.log('Close Clicked')}>Item 1</Chip>
 `;
 
 const simpleCode = `

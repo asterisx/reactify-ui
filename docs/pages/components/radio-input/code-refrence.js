@@ -46,7 +46,7 @@ const customThemeCode = `
 
 const disabledCode = '<RadioInput disabled checked className="align-self-center">This is disabled</RadioInput>';
 
-const onChangeCode = '<RadioInput onChange={val => alert("checked: " + val}")} />';
+const onChangeCode = '<RadioInput onChange={val => console.log("checked: " + val}")} />';
 
 const labelCode = '<RadioInput checked>Dogs, cats and birds</RadioInput>';
 

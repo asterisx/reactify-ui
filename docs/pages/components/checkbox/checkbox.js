@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Checkbox } from '@../../../../reactify-ui/build';
+import { Checkbox } from '../../../../reactify-ui/build';
 import {
   childrenCode,
   controlledCode,
@@ -164,6 +164,7 @@ const CheckboxDemo = () => (
       sourceCode={onChangeCode}
       externalSampleLink={onChangeLink}
     >
+      <p>Check console for events</p>
       <Checkbox onChange={({ event, checked }) => console.log(event, checked)} />
     </DemoCard>
 

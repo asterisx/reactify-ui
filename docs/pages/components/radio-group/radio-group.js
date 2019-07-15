@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 import React from 'react';
-import { RadioGroup, RadioInput } from '@../../../../reactify-ui/build';
+import { RadioGroup, RadioInput } from '../../../../reactify-ui/build';
 import {
   onSelectionCode,
   simpleCode,
@@ -57,7 +57,8 @@ const RadioGroupDemo = () => (
       sourceCode={onSelectionCode}
       externalSampleLink={onSelectionLink}
     >
-      <RadioGroup onSelectionChange={({ index }) => alert(`Selected index: ${index}`)}>
+      <p>Check console for log</p>
+      <RadioGroup onSelectionChange={({ index }) => console.log(`Selected index: ${index}`)}>
         <RadioInput index={0}>option 1</RadioInput>
         <RadioInput index={1}>option 2</RadioInput>
         <RadioInput index={2}>option 3</RadioInput>

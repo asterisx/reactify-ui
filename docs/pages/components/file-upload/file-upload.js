@@ -3,7 +3,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { FileUpload } from '@../../../../reactify-ui/build';
+import { FileUpload } from '../../../../reactify-ui/build';
 import {
   clickableCode,
   disabledCode,

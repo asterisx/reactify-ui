@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Dismiss, Spinner, Button } from '@../../../../reactify-ui/build';
+import { Dismiss, Spinner, Button } from '../../../../reactify-ui/build';
 import {
   customColorCode,
   customEventCode,
@@ -191,8 +191,8 @@ const DismissDemo = () => (
       sourceCode={customEventCode}
       externalSampleLink={customEventLink}
     >
-      <Dismiss onClose={() => alert('Closed')}>
-        This Dismiss has event handler
+      <Dismiss onClose={() => console.log('Closed')}>
+        This Dismiss has event handler, check console
       </Dismiss>
     </DemoCard>
 

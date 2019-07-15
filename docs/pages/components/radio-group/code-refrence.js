@@ -1,5 +1,5 @@
 const onSelectionCode = `
-<RadioGroup onSelectionChange={({ index }) => alert('Selected index: ' + index)}>
+<RadioGroup onSelectionChange={({ index }) => console.log('Selected index: ' + index)}>
   <RadioInput index={0}>option 1</RadioInput>
   <RadioInput index={1}>option 1</RadioInput>
   <RadioInput index={2}>option 1</RadioInput>

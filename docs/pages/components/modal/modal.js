@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 import React, { Component } from 'react';
-import { Modal, Button } from '@../../../../reactify-ui/build';
+import { Modal, Button } from '../../../../reactify-ui/build';
 import {
   hideBackdropCode,
   simpleCode,

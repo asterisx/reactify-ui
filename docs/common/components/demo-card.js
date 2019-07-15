@@ -57,8 +57,10 @@ class DemoCard extends Component {
                   </div>
                 </div>
                 <div>
-                  <Paper secondary noShadow style={{ background: '#F2F1EF' }} className="w-100 p-lg-3 p-1">
-                    {children}
+                  <Paper secondary noShadow style={{ background: '#F2F1EF' }} className="w-100 p-lg-3 p-1 d-flex flex-column justify-content-center">
+                    <div>
+                      {children}
+                    </div>
                   </Paper>
                 </div>
               </div>

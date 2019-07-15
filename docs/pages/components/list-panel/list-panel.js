@@ -10,7 +10,7 @@ import {
   FaAudible,
   FaBitcoin,
 } from 'react-icons/fa';
-import { ListPanel } from '@../../../../reactify-ui/build';
+import { ListPanel } from '../../../../reactify-ui/build';
 import {
   borderedCode,
   customListCode,

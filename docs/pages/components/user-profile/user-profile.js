@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { UserProfile } from '@../../../../reactify-ui/build';
+import { UserProfile } from '../../../../reactify-ui/build';
 import {
   avatarPositionCode,
   breakPointsCode,
@@ -143,7 +143,7 @@ const UserProfileDemo = () => (
         userName="Joe"
         showMessage
       >
-        <img alt="" width="auto" height="100px" src="https://i.gifer.com/YYdO.gif" />
+        <img alt="" width="auto" height="100px" src="https://asterisx.github.io/reactify-ui/static/assets/monkey.gif" />
       </UserProfile>
 
       <h6 className="mt-5">dropDownPlacement top</h6>
@@ -152,7 +152,7 @@ const UserProfileDemo = () => (
         userName="Joe"
         dropDownTop
       >
-        <img alt="" width="auto" height="100px" src="https://i.gifer.com/YYdO.gif" />
+        <img alt="" width="auto" height="100px" src="https://asterisx.github.io/reactify-ui/static/assets/monkey.gif" />
       </UserProfile>
     </DemoCard>
 

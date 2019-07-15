@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { RadioInput } from '@../../../../reactify-ui/build';
+import { RadioInput } from '../../../../reactify-ui/build';
 import {
   childrenCode,
   controlledCode,
@@ -144,7 +144,6 @@ const RadioInputDemo = () => (
       <RadioInput large>large</RadioInput>
       <br />
       <RadioInput style={{ fontSize: '40px' }}>{'style={{ fontSize: \'40px\' }}'}</RadioInput>
-      <br />
     </DemoCard>
 
     <DemoCard
@@ -174,6 +173,7 @@ const RadioInputDemo = () => (
       sourceCode={onChangeCode}
       externalSampleLink={onChangeLink}
     >
+      <p>Check console for events</p>
       <RadioInput onChange={({ event, checked }) => console.log(event, checked)} />
     </DemoCard>
 

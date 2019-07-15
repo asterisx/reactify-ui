@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 import React, { Component } from 'react';
-import { Portal, Button } from '@../../../../reactify-ui/build';
+import { Portal, Button } from '../../../../reactify-ui/build';
 import {
   autoCloseCode,
   hideBackdropCode,

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { Component } from 'react';
-import { ProgressBar } from '@../../../../reactify-ui/build';
+import { ProgressBar } from '../../../../reactify-ui/build';
 import {
   customColorCode,
   customSizeCode,

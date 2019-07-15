@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import {
   Button,
   NumberCounter,
-} from '@../../../../reactify-ui/build';
+} from '../../../../reactify-ui/build';
 import {
   customColorCode,
   customClassCode,

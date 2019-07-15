@@ -33,7 +33,7 @@ const customThemeCode = `
 
 const disabledCode = '<StarRating disabled />';
 
-const onChangeCode = '<StarRating onChange={rating => alert(\'Rated: \' + rating + \' stars\')} />';
+const onChangeCode = '<StarRating onChange={rating => console.log(\'Rated: \' + rating + \' stars\')} />';
 
 const propsCode = `
 <StarRating highestRating={10} />

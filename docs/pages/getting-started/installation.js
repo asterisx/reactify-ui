@@ -6,7 +6,7 @@ import {
   Paper,
   Link,
   Text,
-} from '@../../../../reactify-ui/build';
+} from '../../../reactify-ui/build';
 import { withHeader } from '../../common';
 
 const Installation = () => (

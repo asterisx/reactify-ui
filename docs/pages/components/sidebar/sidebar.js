@@ -7,7 +7,7 @@ import {
   SidebarItem,
   SubSidebar,
   Link,
-} from '@../../../../reactify-ui/build';
+} from '../../../../reactify-ui/build';
 import {
   customDeclarativeCode,
   customThemeCode,

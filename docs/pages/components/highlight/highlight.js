@@ -5,7 +5,7 @@ import {
   RadioGroup,
   RadioInput,
   Input,
-} from '@../../../../reactify-ui/build';
+} from '../../../../reactify-ui/build';
 import {
   simpleCode,
 } from './code-refrence';

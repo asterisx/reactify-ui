@@ -6,7 +6,7 @@ import { FaAngleRight } from 'react-icons/fa';
 import {
   Breadcrumbs,
   Paper,
-} from '@../../../../reactify-ui/build';
+} from '../../../../reactify-ui/build';
 import {
   declarativeCode,
   disabledCode,

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { HorizontalCard, Button } from '@../../../../reactify-ui/build';
+import { HorizontalCard, Button } from '../../../../reactify-ui/build';
 import {
   borderedColoredCode,
   customClassCode,

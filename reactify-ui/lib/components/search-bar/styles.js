@@ -13,6 +13,7 @@ export const styles = {
     outline: 'none',
     color: 'gray',
     padding: '4px',
+    background: 'transparent',
   },
   hidden: {
     visibility: 'hidden',

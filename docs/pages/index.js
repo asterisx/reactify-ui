@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaCheck, FaMobile } from 'react-icons/fa';
-import { Link, Paper, Text } from '@../../../../reactify-ui/build';
+import { Link, Paper, Text } from '../../reactify-ui/build';
 import { withHeader } from '../common';
 
 const index = () => (

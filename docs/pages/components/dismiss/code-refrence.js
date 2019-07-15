@@ -23,7 +23,7 @@ const customColorCode = `
 `;
 
 const customEventCode = `
-<Dismiss onClose={() => alert('Closed')}>
+<Dismiss onClose={() => console.log('Closed')}>
   This Dismiss has event handler
 </Dismiss>
 `;

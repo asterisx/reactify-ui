@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { StarRating } from '@../../../../reactify-ui/build';
+import { StarRating } from '../../../../reactify-ui/build';
 import {
   simpleCode,
   customSizeCode,
@@ -131,7 +131,8 @@ const StarRatingDemo = () => (
       sourceCode={onChangeCode}
       externalSampleLink={onChangeLink}
     >
-      <StarRating onChange={rating => alert(`Rated: ${rating} stars`)} />
+      <p>Check console for log</p>
+      <StarRating onChange={rating => console.log(`Rated: ${rating} stars`)} />
     </DemoCard>
 
     <DemoCard

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
-import { Select } from '@../../../../reactify-ui/build';
+import { Select } from '../../../../reactify-ui/build';
 import {
   breakpointCode,
   propsCode,

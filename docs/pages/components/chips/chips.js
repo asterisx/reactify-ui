@@ -3,7 +3,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import React, { Component } from 'react';
-import { Chips, Chip } from '@../../../../reactify-ui/build';
+import { Chips, Chip } from '../../../../reactify-ui/build';
 import {
   customColorCode,
   customSizeCode,
@@ -163,7 +163,8 @@ class ListPanelDemo extends Component {
           sourceCode={onCloseCode}
           externalSampleLink={onCloseLink}
         >
-          <Chip onCloseClick={() => alert('Close Clicked')}>Item 1</Chip>
+          <p>Check the console for logs</p>
+          <Chip onCloseClick={() => console.log('Close Clicked')}>Item 1</Chip>
         </DemoCard>
 
         <BottomNav

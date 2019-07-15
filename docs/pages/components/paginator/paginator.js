@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { FaFileDownload, FaFileExport } from 'react-icons/fa';
-import { Paginator, Paper, SearchBar } from '@../../../../reactify-ui/build';
+import { Paginator, Paper, SearchBar } from '../../../../reactify-ui/build';
 import {
   controlledCode,
   customThemeCode,

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { HeatMap } from '@../../../../reactify-ui/build';
+import { HeatMap } from '../../../../reactify-ui/build';
 import {
   customThemeCode,
   declarativeCode,

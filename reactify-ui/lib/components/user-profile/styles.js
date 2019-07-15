@@ -121,7 +121,8 @@ export const styles = {
       theme,
     })),
     '@media (hover: hover)': {
-      backgroundColor:
+      ':hover': {
+        backgroundColor:
         darken(darkenBy, commonStyles.get.theme.color({
           primary,
           secondary,
@@ -133,6 +134,7 @@ export const styles = {
           success,
           theme,
         })),
+      },
     },
   }),
 

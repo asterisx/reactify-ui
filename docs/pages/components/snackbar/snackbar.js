@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/Button-has-type */
 import React, { Component } from 'react';
-import { Snackbar, Button } from '@../../../../reactify-ui/build';
+import { Snackbar, Button } from '../../../../reactify-ui/build';
 import {
   actionCode,
   childrenCode,
@@ -134,7 +134,7 @@ class SnackbarDemo extends Component {
           <ul>
             <li>action="undo"</li>
             <li>
-              {'onActionClick={() => alert("Acion Clicked")}'}
+              {'onActionClick={() => console.log("Acion Clicked")}'}
             </li>
           </ul>
           <Button
@@ -148,7 +148,7 @@ class SnackbarDemo extends Component {
             onClose={() => this.setState({ showActionSnackbar: false })}
             duration={3000}
             action="undo"
-            onActionClick={() => { this.setState({ showActionSnackbar: false }); alert('Acion Clicked'); }}
+            onActionClick={() => { this.setState({ showActionSnackbar: false }); console.log('Acion Clicked'); }}
             message="Action Snackbar :)"
           />
           )}
@@ -184,7 +184,7 @@ class SnackbarDemo extends Component {
           <ul>
             <li>showDismiss="true"</li>
             <li>
-              {' onClose={() => alert("Snackbar is closed")}'}
+              {' onClose={() => console.log("Snackbar is closed")}'}
             </li>
           </ul>
           <Button
@@ -197,7 +197,7 @@ class SnackbarDemo extends Component {
             <Snackbar
               showDismiss
               message="Click on dismiss to dismiss now!"
-              onClose={() => { this.setState({ showDismissSnackbar: false }); alert('Snackbar is closed'); }}
+              onClose={() => { this.setState({ showDismissSnackbar: false }); console.log('Snackbar is closed'); }}
               duration={5000}
             />
           )}
@@ -263,7 +263,7 @@ class SnackbarDemo extends Component {
               style={{ backgroundColor: 'transparent' }}
               duration={5000}
             >
-              <img alt="" width="auto" height="100px" src="https://i.gifer.com/YYdO.gif" />
+              <img alt="" width="auto" height="100px" src="https://asterisx.github.io/reactify-ui/static/assets/monkey.gif" />
             </Snackbar>
             )}
         </DemoCard>

@@ -5,7 +5,7 @@ import React from 'react';
 import { FaFileSignature } from 'react-icons/fa';
 import {
   ContextMenu, SubMenu, SubMenuItem, Paper,
-} from '@../../../../reactify-ui/build';
+} from '../../../../reactify-ui/build';
 import {
   customThemeCode,
   customEventCode,
