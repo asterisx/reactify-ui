@@ -96,7 +96,7 @@ const Spinner = ({
         large,
       }),
     ]}
-    {...otherStyles}
+    style={...otherStyles}
     {...otherProps}
   >
     {getSpinner({
