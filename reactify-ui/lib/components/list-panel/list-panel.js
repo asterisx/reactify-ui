@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   areArraysDifferent,
   defaultThemePropTypes,
@@ -106,7 +108,7 @@ class ListPanel extends Component {
           warning,
           danger,
           success,
-          theme,
+          theme: merge(defaultThemePropTypes.theme, theme),
           isSelectable,
         }),
         selected && styles.getListItemSelectedBackgroundColorStyle({
@@ -118,7 +120,7 @@ class ListPanel extends Component {
           warning,
           danger,
           success,
-          theme,
+          theme: merge(defaultThemePropTypes.theme, theme),
         }),
         bordered && styles.bordered,
         styles.getFontSizeStyle({
@@ -261,7 +263,7 @@ class ListPanel extends Component {
             warning,
             danger,
             success,
-            theme,
+            theme: merge(defaultThemePropTypes.theme, theme),
           }),
         ]}
         {...otherProps}
@@ -365,4 +367,4 @@ ListPanel.Item.defaultProps = {
 
 ListPanel.Item.displayName = 'ListPanel.Item';
 
-export default ListPanel;
+export default withTheme(ListPanel);

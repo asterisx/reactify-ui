@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { Transition } from 'react-transition-group';
 import { defaultThemePropTypes, themePropTypes } from '../../common';
 import { styles, BEMClassNames } from './styles';
@@ -162,7 +164,7 @@ class Snackbar extends Component {
                 warning,
                 danger,
                 success,
-                theme,
+                theme: merge(defaultThemePropTypes.theme, theme),
               }),
               styles.getFontColorStyle({
                 primary,
@@ -173,7 +175,7 @@ class Snackbar extends Component {
                 warning,
                 danger,
                 success,
-                theme,
+                theme: merge(defaultThemePropTypes.theme, theme),
               }),
               styles.getDisabledStyle({
                 disabled,
@@ -245,4 +247,4 @@ class Snackbar extends Component {
   }
 }
 
-export default Snackbar;
+export default withTheme(Snackbar);

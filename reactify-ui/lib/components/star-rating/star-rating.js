@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { styles, BEMClassNames } from './styles';
 import {
   themePropTypes,
@@ -131,7 +133,7 @@ class StarRating extends Component {
               warning,
               danger,
               success,
-              theme,
+              theme: merge(defaultThemePropTypes.theme, theme),
             }),
             styles.getDisabledStyle({
               disabled,
@@ -145,4 +147,4 @@ class StarRating extends Component {
     }
 }
 
-export default StarRating;
+export default withTheme(StarRating);

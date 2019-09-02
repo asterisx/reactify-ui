@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   themePropTypes,
   defaultThemePropTypes,
@@ -36,7 +38,7 @@ const Link = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
       styles.getFontSizeStyle({
         small,
@@ -52,7 +54,7 @@ const Link = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
       styles.getDisabledStyle({
         disabled,
@@ -86,4 +88,4 @@ Link.defaultProps = {
   ...defaultSizePropTypes,
 };
 
-export default Link;
+export default withTheme(Link);

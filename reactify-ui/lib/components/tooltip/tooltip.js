@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   themePropTypes,
   defaultThemePropTypes,
@@ -111,7 +113,7 @@ class Tooltip extends Component {
                 warning,
                 danger,
                 success,
-                theme,
+                theme: merge(defaultThemePropTypes.theme, theme),
               }),
             ]}
             className={BEMClassNames.bubble}
@@ -126,7 +128,7 @@ class Tooltip extends Component {
                 warning,
                 danger,
                 success,
-                theme,
+                theme: merge(defaultThemePropTypes.theme, theme),
               }),
               styles.getFontSizeStyle({
                 small,
@@ -150,4 +152,4 @@ class Tooltip extends Component {
   }
 }
 
-export default Tooltip;
+export default withTheme(Tooltip);

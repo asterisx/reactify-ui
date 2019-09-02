@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { SubMenu } from './components';
 import {
   defaultThemePropTypes,
@@ -108,7 +110,7 @@ class ContextMenu extends Component {
         warning={warning}
         danger={danger}
         success={success}
-        theme={theme}
+        theme={merge(defaultThemePropTypes.theme, theme)}
         small={small}
         medium={medium}
         large={large}
@@ -165,4 +167,4 @@ class ContextMenu extends Component {
   }
 }
 
-export default ContextMenu;
+export default withTheme(ContextMenu);

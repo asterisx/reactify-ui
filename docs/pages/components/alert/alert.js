@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Alert } from '../../../../reactify-ui/build';
+import { Alert, ThemeProvider } from '../../../../reactify-ui/build';
 import {
   simpleCode,
   disabledCode,
@@ -30,6 +30,41 @@ import {
   DemoCard,
   withHeader,
 } from '../../../common';
+
+const theme = {
+  primary: {
+    color: '#336e7b',
+    fontColor: '#fff',
+  },
+  secondary: {
+    color: '#e8e8e8',
+    fontColor: '#141414',
+  },
+  dark: {
+    color: '#141414',
+    fontColor: '#fff',
+  },
+  light: {
+    color: '#fff',
+    fontColor: '#141414',
+  },
+  info: {
+    color: '#3498db',
+    fontColor: '#FFF',
+  },
+  warning: {
+    color: '#f39c12',
+    fontColor: '#FFF',
+  },
+  danger: {
+    color: '#e74c3c',
+    fontColor: '#FFF',
+  },
+  success: {
+    color: '#FFC0CB',
+    fontColor: '#000',
+  },
+};
 
 const bottomNavLinks = {
   prevLink: {
@@ -169,9 +204,11 @@ const AlertDemo = () => (
           Danger theme
       </Alert>
       <br />
-      <Alert success>
+      <ThemeProvider theme={theme}>
+        <Alert success>
           Success theme
-      </Alert>
+        </Alert>
+      </ThemeProvider>
     </DemoCard>
 
     <BottomNav

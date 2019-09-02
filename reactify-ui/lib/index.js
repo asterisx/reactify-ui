@@ -1,4 +1,4 @@
-import { ThemeProvider, ThemeConsumer } from '@emotion/core';
+import { ThemeProvider } from 'emotion-theming';
 
 import Accordion from './components/accordion';
 import Alert from './components/alert';
@@ -126,7 +126,6 @@ export {
   Tab,
   Text,
   ThemeProvider,
-  ThemeConsumer,
   Timer,
   TopBar,
   Tooltip,
@@ -135,5 +134,5 @@ export {
   TreeView,
   TreeViewItem,
   Typeahead,
-  UserProfile,
+  UserProfile
 };

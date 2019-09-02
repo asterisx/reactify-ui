@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { IoIosSquareOutline, IoIosCheckboxOutline } from 'react-icons/io';
 import {
   defaultThemePropTypes,
@@ -134,7 +136,7 @@ class Checkbox extends Component {
               warning,
               danger,
               success,
-              theme,
+              theme: merge(defaultThemePropTypes.theme, theme),
             }),
           ]}
           style={{ color: iconColor }}
@@ -150,4 +152,4 @@ class Checkbox extends Component {
   }
 }
 
-export default Checkbox;
+export default withTheme(Checkbox);

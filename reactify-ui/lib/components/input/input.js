@@ -1,4 +1,6 @@
 import React from 'react';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   themePropTypes,
   defaultThemePropTypes,
@@ -33,7 +35,7 @@ const Input = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
       styles.getFontSizeStyle({
         small,
@@ -61,4 +63,4 @@ Input.defaultProps = {
   ...defaultSizePropTypes,
 };
 
-export default Input;
+export default withTheme(Input);

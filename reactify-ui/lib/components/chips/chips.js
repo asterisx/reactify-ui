@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { IoIosCloseCircle } from 'react-icons/io';
 import { styles } from './styles';
 import {
@@ -39,7 +41,7 @@ const Chip = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
       styles.getFontColorStyle({
         primary,
@@ -50,7 +52,7 @@ const Chip = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
       styles.getFontSizeStyle({
         small,
@@ -142,7 +144,9 @@ Chips.defaultProps = {
   disabled: false,
 };
 
+const withThemeChip = withTheme(Chip);
+
 export {
-  Chip,
+  withThemeChip,
   Chips,
 };

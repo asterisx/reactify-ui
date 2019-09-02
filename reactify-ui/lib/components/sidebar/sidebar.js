@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   themePropTypes,
   defaultThemePropTypes,
@@ -49,7 +51,7 @@ const Sidebar = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
       styles.getDisabledStyle({
         disabled,
@@ -63,7 +65,7 @@ const Sidebar = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       })]}
     {...otherProps}
   >
@@ -121,4 +123,4 @@ Sidebar.defaultProps = {
   ...defaultSizePropTypes,
 };
 
-export default Sidebar;
+export default withTheme(Sidebar);

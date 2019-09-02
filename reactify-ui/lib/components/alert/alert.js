@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { defaultThemePropTypes, themePropTypes } from '../../common';
 import { styles } from './styles';
 
@@ -40,7 +42,7 @@ const Alert = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
       styles.getDisabledStyle({
         disabled,
@@ -95,4 +97,4 @@ Alert.defaultProps = {
 
 Alert.displayName = 'Alert';
 
-export default Alert;
+export default withTheme(Alert);

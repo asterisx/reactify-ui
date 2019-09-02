@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { renderToString } from 'react-dom/server';
+import {
+  defaultThemePropTypes,
+} from '../../common';
 import Label from '../label';
 
 const replaceAll = (target, strReplace, callback) => {
@@ -80,7 +85,7 @@ const Highlight = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       })
     }
     {...otherProps}
@@ -104,4 +109,4 @@ Highlight.defaultProps = {
   insensitive: false,
 };
 
-export default Highlight;
+export default withTheme(Highlight);

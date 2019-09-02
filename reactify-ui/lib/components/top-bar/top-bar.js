@@ -1,4 +1,6 @@
 import React from 'react';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   themePropTypes,
   defaultThemePropTypes,
@@ -40,7 +42,7 @@ const TopBar = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
       styles.getBackgroundColorStyle({
         primary,
@@ -51,7 +53,7 @@ const TopBar = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
     ]}
     {...otherProps}
@@ -78,7 +80,7 @@ const TopBar = ({
   </div>
 );
 
-TopBar.Logo = ({
+TopBar.Logo = withTheme(({
   children,
   primary,
   secondary,
@@ -128,9 +130,9 @@ TopBar.Logo = ({
   >
     {children}
   </div>
-);
+));
 
-TopBar.Body = ({
+TopBar.Body = withTheme(({
   children,
   primary,
   secondary,
@@ -181,9 +183,9 @@ TopBar.Body = ({
   >
     {children}
   </div>
-);
+));
 
-TopBar.Menu = ({
+TopBar.Menu = withTheme(({
   children,
   primary,
   secondary,
@@ -233,7 +235,7 @@ TopBar.Menu = ({
   >
     {children}
   </div>
-);
+));
 
 TopBar.propTypes = {
   /**
@@ -301,4 +303,4 @@ TopBar.Menu.defaultProps = {
 };
 
 
-export default TopBar;
+export default withTheme(TopBar);

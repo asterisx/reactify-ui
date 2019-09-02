@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   defaultThemePropTypes,
   themePropTypes,
@@ -140,7 +142,7 @@ class RadioInput extends Component {
               warning,
               danger,
               success,
-              theme,
+              theme: merge(defaultThemePropTypes.theme, theme),
             }),
           ]}
           type="checkbox"
@@ -156,4 +158,4 @@ class RadioInput extends Component {
   }
 }
 
-export default RadioInput;
+export default withTheme(RadioInput);

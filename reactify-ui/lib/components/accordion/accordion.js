@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FaPlus, FaMinus } from 'react-icons/fa';
+import { withTheme } from 'emotion-theming';
 import { styles, BEMClassNames } from './styles';
 import {
   defaultThemePropTypes,
@@ -9,7 +10,7 @@ import {
 } from '../../common';
 
 class Accordion extends Component {
-  static Item = ({
+  static Item = withTheme(({
     children,
     index,
     open,
@@ -56,7 +57,7 @@ class Accordion extends Component {
         return child;
       })}
     </div>
-  )
+  ))
 
   static Header = ({
     children,
@@ -287,4 +288,4 @@ Accordion.Header.defaultProps = {
   ...defaultThemePropTypes,
 };
 
-export default Accordion;
+export default withTheme(Accordion);

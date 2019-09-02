@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   themePropTypes,
   defaultThemePropTypes,
@@ -65,7 +67,7 @@ const HeatMap = ({
               warning,
               danger,
               success,
-              theme,
+              theme: merge(defaultThemePropTypes.theme, theme),
               opacity: (+columnValue - minValInItems) / spread,
             })}`,
           }}
@@ -175,4 +177,4 @@ HeatMap.defaultProps = {
   ...defaultThemePropTypes,
 };
 
-export default HeatMap;
+export default withTheme(HeatMap);

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { styles } from './styles';
 import {
   defaultThemePropTypes,
@@ -157,7 +159,7 @@ class Slider extends Component {
             warning,
             danger,
             success,
-            theme,
+            theme: merge(defaultThemePropTypes.theme, theme),
             fillColor,
             value: currValue,
             min,
@@ -178,4 +180,4 @@ class Slider extends Component {
   }
 }
 
-export default Slider;
+export default withTheme(Slider);

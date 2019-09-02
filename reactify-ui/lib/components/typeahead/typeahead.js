@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   themePropTypes,
+  defaultThemePropTypes,
   sizePropTypes,
 } from '../../common';
 import ListPanel from '../list-panel';
@@ -201,7 +204,7 @@ class Typeahead extends Component {
           warning={warning}
           danger={danger}
           success={success}
-          theme={theme}
+          theme={merge(defaultThemePropTypes.theme, theme)}
           small={small}
           medium={medium}
           large={large}
@@ -220,7 +223,7 @@ class Typeahead extends Component {
           warning={warning}
           danger={danger}
           success={success}
-          theme={theme}
+          theme={merge(defaultThemePropTypes.theme, theme)}
           small={small}
           medium={medium}
           large={large}
@@ -263,4 +266,4 @@ Typeahead.Suggestion.defaultProps = {
   isSelectable: undefined,
 };
 
-export default Typeahead;
+export default withTheme(Typeahead);

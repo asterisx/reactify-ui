@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   defaultThemePropTypes,
   themePropTypes,
@@ -131,7 +133,7 @@ class Switch extends Component {
               warning,
               danger,
               success,
-              theme,
+              theme: merge(defaultThemePropTypes.theme, theme),
             }),
           ]}
           type="checkbox"
@@ -146,4 +148,4 @@ class Switch extends Component {
   }
 }
 
-export default Switch;
+export default withTheme(Switch);

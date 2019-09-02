@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { styles } from './styles';
 import {
   themePropTypes,
@@ -42,7 +44,7 @@ const Label = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
       styles.getFontColorStyle({
         primary,
@@ -53,7 +55,7 @@ const Label = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
       styles.getDisabledStyle({
         disabled,
@@ -86,4 +88,4 @@ Label.defaultProps = {
   ...defaultSizePropTypes,
 };
 
-export default Label;
+export default withTheme(Label);

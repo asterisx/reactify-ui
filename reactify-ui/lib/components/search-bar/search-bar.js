@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { FaSearch } from 'react-icons/fa';
 import { IoIosCloseCircle } from 'react-icons/io';
 import {
@@ -130,7 +132,7 @@ class SearchBar extends Component {
             warning,
             danger,
             success,
-            theme,
+            theme: merge(defaultThemePropTypes.theme, theme),
           }),
           styles.getDisabledStyle({ disabled }),
         ]}
@@ -157,4 +159,4 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+export default withTheme(SearchBar);

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { styles, BEMClassNames } from './styles';
 import {
   themePropTypes,
@@ -180,7 +182,7 @@ class NumberCounter extends Component {
               warning,
               danger,
               success,
-              theme,
+              theme: merge(defaultThemePropTypes.theme, theme),
             }),
             styles.getDisabledStyle({
               disabled,
@@ -197,4 +199,4 @@ class NumberCounter extends Component {
     }
 }
 
-export default NumberCounter;
+export default withTheme(NumberCounter);

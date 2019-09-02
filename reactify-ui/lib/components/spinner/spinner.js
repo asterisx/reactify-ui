@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   Balls,
   Bars,
@@ -14,7 +16,11 @@ import {
   Vortex,
   Wave,
 } from './components';
-import { defaultSizePropTypes, sizePropTypes } from '../../common';
+import {
+  defaultSizePropTypes,
+  defaultThemePropTypes,
+  sizePropTypes,
+} from '../../common';
 import { styles } from './styles';
 
 const getSpinner = ({
@@ -96,7 +102,7 @@ const Spinner = ({
         large,
       }),
     ]}
-    style={...otherStyles}
+    style={otherStyles}
     {...otherProps}
   >
     {getSpinner({
@@ -120,7 +126,7 @@ const Spinner = ({
       warning,
       danger,
       success,
-      theme,
+      theme: merge(defaultThemePropTypes.theme, theme),
       style: {
         animationDuration,
         color,
@@ -214,4 +220,4 @@ Spinner.defaultProps = {
   ...defaultSizePropTypes,
 };
 
-export default Spinner;
+export default withTheme(Spinner);

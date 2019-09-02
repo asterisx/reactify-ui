@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   FaRegDotCircle,
   FaInfo,
@@ -122,7 +124,7 @@ class Dismiss extends Component {
           warning,
           danger,
           success,
-          theme,
+          theme: merge(defaultThemePropTypes.theme, theme),
         }),
         styles.getFontColorStyle({
           primary,
@@ -133,7 +135,7 @@ class Dismiss extends Component {
           warning,
           danger,
           success,
-          theme,
+          theme: merge(defaultThemePropTypes.theme, theme),
         }),
         styles.getFontSizeStyle({
           small,
@@ -177,4 +179,4 @@ class Dismiss extends Component {
   }
 }
 
-export default Dismiss;
+export default withTheme(Dismiss);

@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { styles } from './styles';
 import {
   defaultThemePropTypes,
@@ -69,7 +71,7 @@ Badge.Bubble = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
       styles.getFontColorStyle({
         primary,
@@ -136,4 +138,4 @@ Badge.defaultProps = {
   disabled: false,
 };
 
-export default Badge;
+export default withTheme(Badge);

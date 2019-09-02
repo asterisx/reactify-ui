@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   defaultThemePropTypes,
   themePropTypes,
@@ -43,7 +45,7 @@ const Button = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
       styles.getFontColorStyle({
         primary,
@@ -54,7 +56,7 @@ const Button = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
       clear && styles.getClearThemedStyle({
         primary,
@@ -65,7 +67,7 @@ const Button = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
         bordered,
       }),
       styles.getDisabledStyle({
@@ -113,4 +115,4 @@ Button.defaultProps = {
   ...defaultThemePropTypes,
 };
 
-export default Button;
+export default withTheme(Button);

@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { styles, BEMClassNames } from './styles';
 import { defaultThemePropTypes, themePropTypes } from '../../common';
 
@@ -53,7 +55,7 @@ const LegendItem = ({
           warning,
           danger,
           success,
-          theme,
+          theme: merge(defaultThemePropTypes.theme, theme),
         }),
       ]}
       style={{ backgroundColor: iconColor }}
@@ -103,7 +105,9 @@ LegendItem.defaultProps = {
   ...defaultThemePropTypes,
 };
 
+const withThemeLegendItem = withTheme(LegendItem);
+
 export {
   Legend,
-  LegendItem,
+  withThemeLegendItem,
 };

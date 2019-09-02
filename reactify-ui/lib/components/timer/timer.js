@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import Time from './components';
 import { styles } from './styles';
 import {
@@ -159,7 +161,7 @@ class Timer extends Component {
             warning,
             danger,
             success,
-            theme,
+            theme: merge(defaultThemePropTypes.theme, theme),
           }),
           styles.getFontSizeStyle({
             small,
@@ -175,4 +177,4 @@ class Timer extends Component {
   }
 }
 
-export default Timer;
+export default withTheme(Timer);

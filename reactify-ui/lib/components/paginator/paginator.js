@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   FaAngleDoubleRight,
   FaAngleRight,
@@ -142,7 +144,7 @@ class Paginator extends Component {
             warning,
             danger,
             success,
-            theme,
+            theme: merge(defaultThemePropTypes.theme, theme),
           }),
           styles.getFontColorStyle({
             primary,
@@ -153,7 +155,7 @@ class Paginator extends Component {
             warning,
             danger,
             success,
-            theme,
+            theme: merge(defaultThemePropTypes.theme, theme),
           }),
           styles.getDisabledStyle({ disabled }),
           sm && styles.flexColumnDirectionOn.breakpoint.sm,
@@ -244,4 +246,4 @@ class Paginator extends Component {
   }
 }
 
-export default Paginator;
+export default withTheme(Paginator);

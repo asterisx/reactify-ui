@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   defaultThemePropTypes,
   themePropTypes,
@@ -52,7 +54,7 @@ const ProgressBar = ({
           warning,
           danger,
           success,
-          theme,
+          theme: merge(defaultThemePropTypes.theme, theme),
         }),
         styles.getFontColorStyle({
           primary,
@@ -63,7 +65,7 @@ const ProgressBar = ({
           warning,
           danger,
           success,
-          theme,
+          theme: merge(defaultThemePropTypes.theme, theme),
         }),
         styles.animation,
         striped && styles.striped,
@@ -143,4 +145,4 @@ ProgressBar.defaultProps = {
   ...defaultThemePropTypes,
 };
 
-export default ProgressBar;
+export default withTheme(ProgressBar);

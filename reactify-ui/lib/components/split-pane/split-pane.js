@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { throttle } from 'throttle-debounce';
 import {
   themePropTypes,
@@ -219,7 +221,7 @@ class SplitPane extends React.Component {
           warning={warning}
           danger={danger}
           success={success}
-          theme={theme}
+          theme={merge(defaultThemePropTypes.theme, theme)}
         />
       );
     }
@@ -278,4 +280,4 @@ class SplitPane extends React.Component {
   }
 }
 
-export default SplitPane;
+export default withTheme(SplitPane);

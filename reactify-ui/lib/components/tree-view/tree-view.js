@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   defaultThemePropTypes,
   themePropTypes,
@@ -35,7 +37,7 @@ const TreeView = ({
         warning={warning}
         danger={danger}
         success={success}
-        theme={theme}
+        theme={merge(defaultThemePropTypes.theme, theme)}
         {...item}
       />
     )))}
@@ -73,4 +75,4 @@ TreeView.defaultProps = {
   ...defaultThemePropTypes,
 };
 
-export default TreeView;
+export default withTheme(TreeView);

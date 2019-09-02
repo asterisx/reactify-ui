@@ -1,4 +1,6 @@
 import React from 'react';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   themePropTypes,
   defaultThemePropTypes,
@@ -39,7 +41,7 @@ const Text = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
     ]}
     {...otherProps}
@@ -64,4 +66,4 @@ Text.defaultProps = {
   ...defaultSizePropTypes,
 };
 
-export default Text;
+export default withTheme(Text);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
 import {
   defaultThemePropTypes,
   defaultSizePropTypes,
@@ -274,4 +275,4 @@ class Select extends Component {
   }
 }
 
-export default Select;
+export default withTheme(Select);

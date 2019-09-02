@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import {
   themePropTypes,
   defaultThemePropTypes,
@@ -43,7 +45,7 @@ const Paper = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
       styles.getDisabledStyle({
         disabled,
@@ -57,7 +59,7 @@ const Paper = ({
         warning,
         danger,
         success,
-        theme,
+        theme: merge(defaultThemePropTypes.theme, theme),
       }),
     ]}
     {...otherProps}
@@ -94,4 +96,4 @@ Paper.defaultProps = {
   noShadow: false,
 };
 
-export default Paper;
+export default withTheme(Paper);

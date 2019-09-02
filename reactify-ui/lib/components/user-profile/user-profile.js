@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withTheme } from 'emotion-theming';
+import merge from 'lodash/merge';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { styles, BEMClassNames } from './styles';
 import { defaultThemePropTypes, themePropTypes } from '../../common';
@@ -156,7 +158,7 @@ class UserProfile extends Component {
             warning,
             danger,
             success,
-            theme,
+            theme: merge(defaultThemePropTypes.theme, theme),
           }),
           styles.getFontColorStyle({
             primary,
@@ -167,7 +169,7 @@ class UserProfile extends Component {
             warning,
             danger,
             success,
-            theme,
+            theme: merge(defaultThemePropTypes.theme, theme),
           }),
           styles.getDisabledStyle({
             disabled,
@@ -222,4 +224,4 @@ class UserProfile extends Component {
   }
 }
 
-export default UserProfile;
+export default withTheme(UserProfile);
